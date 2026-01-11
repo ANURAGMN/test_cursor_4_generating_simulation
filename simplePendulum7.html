@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Simple Pendulum – Class 7 (Compare & Explore)</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f4f6f8;
+      color: #222;
+    }
+    #app {
+      max-width: 420px;
+      margin: auto;
+      padding: 10px;
+    }
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      margin: 8px 4px;
+      color: #444;
+    }
+    .sim-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      margin-bottom: 12px;
+    }
+    .visual {
+      position: relative;
+      height: 38vh;
+      min-height: 260px;
+      background: #eef3f9;
+      border-radius: 12px;
+      overflow: hidden;
+      touch-action: none;
+    }
+    canvas { width: 100%; height: 100%; display: block; }
+    .static-hint {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 8px;
+      padding: 6px 8px;
+      font-size: 11px;
+      line-height: 1.3;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    }
+    .metrics {
+      position: absolute;
+      left: 8px;
+      bottom: 8px;
+      background: rgba(255,255,255,0.96);
+      border-radius: 8px;
+      padding: 6px 8px;
+      font-size: 11px;
+      line-height: 1.4;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    }
+    .control-toggle {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      background: #007AFF;
+      color: #fff;
+      font-size: 11px;
+      padding: 6px 8px;
+      border-radius: 8px;
+      user-select: none;
+    }
+    .control-overlay {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,0.97);
+      border-top: 1px solid #ddd;
+      padding: 8px;
+      transform: translateY(100%);
+      transition: transform .25s ease;
+    }
+    .control-overlay.open { transform: translateY(0); }
+    .control-group { margin-bottom: 6px; }
+    .control-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      margin-bottom: 2px;
+      color: #333;
+    }
+    .segmented {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .segmented button {
+      flex: 1;
+      padding: 6px;
+      border-radius: 6px;
+      border: none;
+      font-size: 11px;
+      background: #e0e0e0;
+    }
+    .segmented button.active {
+      background: #007AFF;
+      color: white;
+      font-weight: 700;
+    }
+    .row {
+      display: flex;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .row button {
+      flex: 1;
+      padding: 8px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 700;
+      font-size: 12px;
+    }
+    .btn-primary { background: #007AFF; color: #fff; }
+    .btn-secondary { background: #e9edf3; color: #222; }
+    .btn-danger { background: #ff3b30; color: #fff; }
+    .submit-btn {
+      width: 100%;
+      margin-top: 6px;
+      padding: 8px;
+      border-radius: 8px;
+      border: none;
+      background: #007AFF;
+      color: white;
+      font-weight: 700;
+    }
+    .notes {
+      margin-top: 10px;
+      background: #fff;
+      border-radius: 14px;
+      padding: 10px 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .notes h3 {
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+    .notes ul { padding-left: 18px; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="section-title">Reference (baseline)</div>
+    <div class="sim-card" id="ref"></div>
+
+    <div class="section-title">Experiment (change & observe)</div>
+    <div class="sim-card" id="exp"></div>
+
+    <div class="notes">
+      <h3>What to learn (Class 7)</h3>
+      <ul>
+        <li><b>Time period (T)</b> = time taken for one complete to-and-fro swing.</li>
+        <li><b>For small swings</b>, \(T \approx 2\pi\sqrt{L/g}\). So T increases when <b>length (L)</b> increases.</li>
+        <li><b>Mass</b> does not change the time period (it changes how “heavy” the bob feels, not how fast it swings).</li>
+        <li>Try: keep L same, change mass → compare measured period.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+    function lerp(a, b, t) { return a + (b - a) * t; }
+
+    function createPendulumSimulation(containerId, options) {
+      const c = document.getElementById(containerId);
+      const showControls = !!options.showControls;
+      const showHint = !!options.showHint;
+
+      c.innerHTML = `
+        <div class="visual">
+          ${showHint ? `<div class="static-hint">Drag the bob to set the swing angle</div>` : ``}
+          ${showControls ? `<div class="control-toggle">Adjust</div>` : ``}
+          <canvas></canvas>
+          <div class="metrics">
+            Length: <span class="mL"></span><br>
+            Gravity: <span class="mG"></span><br>
+            Mass: <span class="mM"></span><br>
+            Theory T: <span class="mT"></span><br>
+            Measured T: <span class="mTm"></span>
+          </div>
+          ${showControls ? `
+          <div class="control-overlay">
+            <div class="segmented">
+              <button class="active" data-env="Earth">Earth</button>
+              <button data-env="Moon">Moon</button>
+              <button data-env="Jupiter">Jupiter</button>
+            </div>
+            <div class="control-group">
+              <div class="control-label"><span>Length (cm)</span><span class="lval"></span></div>
+              <input type="range" class="len" min="20" max="120" value="60">
+            </div>
+            <div class="control-group">
+              <div class="control-label"><span>Mass (g)</span><span class="mval"></span></div>
+              <input type="range" class="mass" min="50" max="500" value="150">
+            </div>
+            <div class="control-group">
+              <div class="control-label"><span>Damping</span><span class="dval"></span></div>
+              <input type="range" class="damp" min="0" max="0.06" step="0.002" value="0.010">
+            </div>
+            <div class="row">
+              <button class="btn-primary start">Start</button>
+              <button class="btn-secondary reset">Reset</button>
+              <button class="btn-danger stop">Stop</button>
+            </div>
+            <button class="submit-btn">Close</button>
+          </div>` : ``}
+        </div>
+      `;
+
+      const visual = c.querySelector(".visual");
+      const canvas = c.querySelector("canvas");
+      const ctx = canvas.getContext("2d");
+
+      const mL = c.querySelector(".mL");
+      const mG = c.querySelector(".mG");
+      const mM = c.querySelector(".mM");
+      const mT = c.querySelector(".mT");
+      const mTm = c.querySelector(".mTm");
+
+      const envG = { Earth: 9.8, Moon: 1.62, Jupiter: 24.79 };
+
+      const state = {
+        env: options.env || "Earth",
+        g: envG[options.env || "Earth"] || 9.8,
+        L: (options.lengthCm || 60) / 100,
+        massG: options.massG || 150,
+        damping: options.damping ?? 0.010,
+        theta: (options.angleDeg || 25) * Math.PI / 180,
+        omega: 0,
+        running: false,
+        t: 0,
+        dragging: false,
+        measured: [],
+        lastTheta: null,
+        lastCrossTime: null
+      };
+
+      const initial = {
+        env: state.env,
+        g: state.g,
+        L: state.L,
+        massG: state.massG,
+        damping: state.damping,
+        theta: state.theta
+      };
+
+      function theoryPeriod() {
+        // small-angle approximation (good for class 7 + small swings)
+        return 2 * Math.PI * Math.sqrt(state.L / state.g);
+      }
+
+      function avg(arr) {
+        if (!arr.length) return null;
+        let s = 0;
+        for (const x of arr) s += x;
+        return s / arr.length;
+      }
+
+      function resizeCanvas() {
+        const r = visual.getBoundingClientRect();
+        const dpr = Math.min(2, window.devicePixelRatio || 1);
+        canvas.width = Math.max(1, Math.floor(r.width * dpr));
+        canvas.height = Math.max(1, Math.floor(r.height * dpr));
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      function bobRadiusPx() {
+        // mass does NOT affect physics, only visual size
+        return clamp(lerp(10, 18, (state.massG - 50) / (500 - 50)), 10, 18);
+      }
+
+      function getGeometry() {
+        const r = visual.getBoundingClientRect();
+        const w = r.width;
+        const h = r.height;
+        const pivot = { x: w * 0.5, y: 28 };
+        // map real length to pixels so it fits nicely
+        const maxLenPx = Math.max(140, h - 70);
+        const lenPx = clamp((state.L / 1.2) * maxLenPx, 80, maxLenPx); // 1.2 m ≈ max slider
+        const dx = Math.sin(state.theta) * lenPx;
+        const dy = Math.cos(state.theta) * lenPx;
+        const bob = { x: pivot.x + dx, y: pivot.y + dy };
+        return { w, h, pivot, bob, lenPx };
+      }
+
+      function draw() {
+        const r = visual.getBoundingClientRect();
+        const w = r.width;
+        const h = r.height;
+
+        ctx.clearRect(0, 0, w, h);
+
+        // background grid-ish hint
+        ctx.fillStyle = "#eef3f9";
+        ctx.fillRect(0, 0, w, h);
+
+        const { pivot, bob } = getGeometry();
+
+        // ceiling
+        ctx.strokeStyle = "rgba(0,0,0,0.10)";
+        ctx.lineWidth = 6;
+        ctx.beginPath();
+        ctx.moveTo(0, pivot.y - 12);
+        ctx.lineTo(w, pivot.y - 12);
+        ctx.stroke();
+
+        // string
+        ctx.strokeStyle = "#2b2b2b";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(pivot.x, pivot.y);
+        ctx.lineTo(bob.x, bob.y);
+        ctx.stroke();
+
+        // pivot point
+        ctx.fillStyle = "#2b2b2b";
+        ctx.beginPath();
+        ctx.arc(pivot.x, pivot.y, 4, 0, Math.PI * 2);
+        ctx.fill();
+
+        // bob
+        const br = bobRadiusPx();
+        ctx.fillStyle = "#007AFF";
+        ctx.beginPath();
+        ctx.arc(bob.x, bob.y, br, 0, Math.PI * 2);
+        ctx.fill();
+
+        // small angle marker arc
+        ctx.strokeStyle = "rgba(0,0,0,0.18)";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        const arcR = 40;
+        ctx.arc(pivot.x, pivot.y, arcR, Math.PI/2 - state.theta, Math.PI/2);
+        ctx.stroke();
+
+        ctx.fillStyle = "rgba(0,0,0,0.65)";
+        ctx.font = "12px system-ui, -apple-system, BlinkMacSystemFont, sans-serif";
+        const deg = Math.abs(state.theta) * 180 / Math.PI;
+        ctx.fillText(`${deg.toFixed(0)}°`, pivot.x + 8, pivot.y + 16);
+      }
+
+      function updateMetrics() {
+        mL.textContent = `${(state.L * 100).toFixed(0)} cm`;
+        mG.textContent = `${state.env} (${state.g.toFixed(2)} m/s²)`;
+        mM.textContent = `${state.massG.toFixed(0)} g`;
+        mT.textContent = `${theoryPeriod().toFixed(2)} s`;
+        const m = avg(state.measured);
+        mTm.textContent = m ? `${m.toFixed(2)} s (avg of ${state.measured.length})` : "—";
+      }
+
+      function resetMeasurements() {
+        state.measured = [];
+        state.lastTheta = null;
+        state.lastCrossTime = null;
+      }
+
+      function resetMotion() {
+        state.theta = initial.theta;
+        state.omega = 0;
+        state.t = 0;
+        resetMeasurements();
+      }
+
+      function step(dt) {
+        // Simple pendulum: theta'' + (g/L) sin(theta) + damping*theta' = 0
+        const gOverL = state.g / state.L;
+        const damp = state.damping;
+
+        function deriv(theta, omega) {
+          const dtheta = omega;
+          const domega = -gOverL * Math.sin(theta) - damp * omega;
+          return [dtheta, domega];
+        }
+
+        // RK4
+        const [k1t, k1o] = deriv(state.theta, state.omega);
+        const [k2t, k2o] = deriv(state.theta + 0.5*dt*k1t, state.omega + 0.5*dt*k1o);
+        const [k3t, k3o] = deriv(state.theta + 0.5*dt*k2t, state.omega + 0.5*dt*k2o);
+        const [k4t, k4o] = deriv(state.theta + dt*k3t, state.omega + dt*k3o);
+
+        state.theta += (dt/6) * (k1t + 2*k2t + 2*k3t + k4t);
+        state.omega += (dt/6) * (k1o + 2*k2o + 2*k3o + k4o);
+
+        // record period using same-direction zero crossings (negative→positive with omega > 0)
+        if (state.lastTheta !== null) {
+          const prev = state.lastTheta;
+          const curr = state.theta;
+          if (prev < 0 && curr >= 0 && state.omega > 0) {
+            if (state.lastCrossTime !== null) {
+              const p = state.t - state.lastCrossTime;
+              if (p > 0.2 && p < 20) {
+                state.measured.push(p);
+                if (state.measured.length > 6) state.measured.shift();
+              }
+            }
+            state.lastCrossTime = state.t;
+          }
+        }
+        state.lastTheta = state.theta;
+      }
+
+      let lastFrame = null;
+      function frame(ts) {
+        if (lastFrame === null) lastFrame = ts;
+        const dtRaw = (ts - lastFrame) / 1000;
+        lastFrame = ts;
+
+        // clamp dt to keep stable if tab was inactive
+        const dt = clamp(dtRaw, 0, 0.033);
+
+        if (state.running && !state.dragging) {
+          // substeps for smoother physics
+          const sub = 3;
+          const sdt = dt / sub;
+          for (let i = 0; i < sub; i++) {
+            state.t += sdt;
+            step(sdt);
+          }
+        }
+
+        draw();
+        updateMetrics();
+        requestAnimationFrame(frame);
+      }
+
+      function setEnvironment(envName) {
+        state.env = envName;
+        state.g = envG[envName] || 9.8;
+        resetMeasurements();
+      }
+
+      // Drag to set angle
+      function pointerToAngle(clientX, clientY) {
+        const rect = visual.getBoundingClientRect();
+        const x = clientX - rect.left;
+        const y = clientY - rect.top;
+        const { pivot } = getGeometry();
+        const dx = x - pivot.x;
+        const dy = y - pivot.y;
+        // angle from vertical: theta = atan2(dx, dy)
+        return Math.atan2(dx, Math.max(1e-6, dy));
+      }
+
+      function dist2(a, b) {
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        return dx*dx + dy*dy;
+      }
+
+      visual.onpointerdown = (e) => {
+        // only start drag if near bob
+        const rect = visual.getBoundingClientRect();
+        const p = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+        const { bob } = getGeometry();
+        const br = bobRadiusPx() + 10;
+        if (dist2(p, bob) <= br*br) {
+          visual.setPointerCapture(e.pointerId);
+          state.dragging = true;
+          state.running = false;
+          state.omega = 0;
+          resetMeasurements();
+        }
+      };
+
+      visual.onpointermove = (e) => {
+        if (!state.dragging) return;
+        const a = pointerToAngle(e.clientX, e.clientY);
+        state.theta = clamp(a, -1.25, 1.25); // about ±72°
+        state.omega = 0;
+      };
+
+      visual.onpointerup = () => {
+        state.dragging = false;
+      };
+      visual.onpointercancel = () => {
+        state.dragging = false;
+      };
+
+      // Controls (optional)
+      if (showControls) {
+        const overlay = c.querySelector(".control-overlay");
+        const toggle = c.querySelector(".control-toggle");
+        const len = c.querySelector(".len");
+        const mass = c.querySelector(".mass");
+        const damp = c.querySelector(".damp");
+        const lval = c.querySelector(".lval");
+        const mval = c.querySelector(".mval");
+        const dval = c.querySelector(".dval");
+        const startBtn = c.querySelector(".start");
+        const resetBtn = c.querySelector(".reset");
+        const stopBtn = c.querySelector(".stop");
+
+        function syncLabels() {
+          lval.textContent = `${(+len.value).toFixed(0)} cm`;
+          mval.textContent = `${(+mass.value).toFixed(0)} g`;
+          dval.textContent = `${(+damp.value).toFixed(3)}`;
+        }
+
+        toggle.onclick = () => {
+          overlay.classList.toggle("open");
+          len.value = (state.L * 100).toFixed(0);
+          mass.value = state.massG.toFixed(0);
+          damp.value = state.damping.toFixed(3);
+          // env buttons
+          c.querySelectorAll(".segmented button").forEach(btn => {
+            btn.classList.toggle("active", btn.dataset.env === state.env);
+          });
+          syncLabels();
+        };
+
+        c.querySelector(".submit-btn").onclick = () => overlay.classList.remove("open");
+
+        c.querySelectorAll(".segmented button").forEach(btn => {
+          btn.onclick = () => {
+            c.querySelectorAll(".segmented button").forEach(x => x.classList.remove("active"));
+            btn.classList.add("active");
+            setEnvironment(btn.dataset.env);
+          };
+        });
+
+        len.oninput = (e) => {
+          state.L = clamp((+e.target.value) / 100, 0.2, 1.2);
+          resetMeasurements();
+          syncLabels();
+        };
+        mass.oninput = (e) => {
+          state.massG = clamp(+e.target.value, 50, 500);
+          syncLabels();
+        };
+        damp.oninput = (e) => {
+          state.damping = clamp(+e.target.value, 0, 0.06);
+          syncLabels();
+        };
+
+        startBtn.onclick = () => { state.running = !state.running; startBtn.textContent = state.running ? "Pause" : "Start"; };
+        resetBtn.onclick = () => { resetMotion(); };
+        stopBtn.onclick = () => { state.running = false; startBtn.textContent = "Start"; };
+      }
+
+      // Initial render loop
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+      requestAnimationFrame(frame);
+
+      // First paint / labels
+      draw();
+      updateMetrics();
+    }
+
+    // Baseline: fixed settings (no adjust panel)
+    createPendulumSimulation("ref", {
+      showControls: false,
+      showHint: false,
+      env: "Earth",
+      lengthCm: 60,
+      massG: 150,
+      damping: 0.010,
+      angleDeg: 25
+    });
+
+    // Experiment: adjustable + hint
+    createPendulumSimulation("exp", {
+      showControls: true,
+      showHint: true,
+      env: "Earth",
+      lengthCm: 60,
+      massG: 150,
+      damping: 0.010,
+      angleDeg: 25
+    });
+  </script>
+</body>
+</html>
+
