@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Red Rose as an Indicator – Natural Acid-Base Test</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 420px;
+  margin: auto;
+  padding: 10px;
+}
+
+.header {
+  text-align: center;
+  color: #c2185b;
+  padding: 12px;
+}
+
+.header h1 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.header p {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 8px 4px;
+  color: #880e4f;
+}
+
+/* ---------- Card ---------- */
+.sim-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  margin-bottom: 12px;
+}
+
+/* ---------- Visual ---------- */
+.visual {
+  position: relative;
+  height: 34vh;
+  min-height: 250px;
+  background: linear-gradient(145deg, #fff5f5 0%, #fce4ec 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  touch-action: none;
+}
+
+svg { width: 100%; height: 100%; }
+
+.static-hint {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 11px;
+  line-height: 1.3;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  z-index: 10;
+}
+
+.metrics {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  background: rgba(255,255,255,0.96);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 11px;
+  line-height: 1.5;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+
+.metric-value {
+  font-weight: 600;
+  color: #007AFF;
+}
+
+.metric-value.acidic { color: #e74c3c; }
+.metric-value.basic { color: #2e7d32; }
+.metric-value.neutral { color: #9e9e9e; }
+
+.control-toggle {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: #e91e63;
+  color: #fff;
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ---------- Controls Overlay ---------- */
+.control-overlay {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.97);
+  border-top: 1px solid #f8bbd9;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: transform .25s ease;
+  max-height: 55%;
+  overflow-y: auto;
+}
+
+.control-overlay.open { transform: translateY(0); }
+
+.control-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.solution-btn {
+  padding: 8px 4px;
+  border-radius: 8px;
+  border: 2px solid #fce4ec;
+  font-size: 9px;
+  background: #fff;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.solution-btn.active {
+  border-color: #e91e63;
+  background: #fce4ec;
+}
+
+.solution-btn .icon { font-size: 18px; display: block; margin-bottom: 2px; }
+
+.submit-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #e91e63;
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ---------- Test Button ---------- */
+.test-btn {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(233,30,99,0.3);
+}
+
+.test-btn:active {
+  transform: scale(0.95);
+}
+
+/* ---------- Legend ---------- */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.legend-color.original { background: linear-gradient(90deg, #d81b60 0%, #ad1457 100%); }
+.legend-color.acidic { background: linear-gradient(90deg, #ef5350 0%, #f44336 100%); }
+.legend-color.basic { background: linear-gradient(90deg, #66bb6a 0%, #43a047 100%); }
+.legend-color.neutral { background: linear-gradient(90deg, #d81b60 0%, #ad1457 100%); }
+
+/* ---------- Takeaway ---------- */
+.takeaway {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  display: none;
+}
+
+.takeaway.show {
+  display: block;
+}
+
+.takeaway-title {
+  font-weight: 600;
+  color: #880e4f;
+  margin-bottom: 4px;
+}
+
+/* Preparation info */
+.prep-info {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.prep-title {
+  font-weight: 600;
+  color: #c2185b;
+  margin-bottom: 6px;
+}
+
+.prep-steps {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.prep-step {
+  flex-shrink: 0;
+  text-align: center;
+  width: 70px;
+}
+
+.prep-step .icon { font-size: 24px; }
+.prep-step .text { font-size: 9px; color: #666; }
+</style>
+</head>
+
+<body>
+<div id="app">
+
+<div class="header">
+  <h1>🌹 Red Rose as an Indicator</h1>
+  <p>Natural acid-base indicator from flower petals</p>
+</div>
+
+<div class="section-title">Reference (Original extract color)</div>
+<div class="sim-card" id="ref"></div>
+
+<div class="section-title">Experiment (Add solutions to extract)</div>
+<div class="sim-card" id="exp"></div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-color original"></div> Original (Pinkish-red)</div>
+  <div class="legend-item"><div class="legend-color acidic"></div> Acidic → Red shade</div>
+  <div class="legend-item"><div class="legend-color basic"></div> Basic → Green shade</div>
+</div>
+
+<div class="prep-info">
+  <div class="prep-title">🧪 How to prepare red rose extract:</div>
+  <div class="prep-steps">
+    <div class="prep-step"><div class="icon">🌹</div><div class="text">Collect fallen petals</div></div>
+    <div class="prep-step"><div class="icon">💧</div><div class="text">Wash with water</div></div>
+    <div class="prep-step"><div class="icon">🫕</div><div class="text">Crush petals</div></div>
+    <div class="prep-step"><div class="icon">🔥</div><div class="text">Add hot water</div></div>
+    <div class="prep-step"><div class="icon">⏱️</div><div class="text">Wait 10 min</div></div>
+    <div class="prep-step"><div class="icon">🧫</div><div class="text">Filter extract</div></div>
+  </div>
+</div>
+
+<div class="takeaway" id="takeaway">
+  <div class="takeaway-title">💡 What you discovered:</div>
+  Red rose extract is a <strong>natural acid-base indicator</strong>! It turns <span style="color:#e53935">RED</span> in acidic solutions and <span style="color:#43a047">GREEN</span> in basic solutions. This confirms the same classification as litmus paper – both give consistent results!
+</div>
+
+</div>
+
+<script>
+const SOLUTIONS = {
+  'lemon': { name: 'Lemon Juice', icon: '🍋', type: 'acidic', resultColor: '#ef5350', colorName: 'Red' },
+  'vinegar': { name: 'Vinegar', icon: '🍶', type: 'acidic', resultColor: '#f44336', colorName: 'Red' },
+  'amla': { name: 'Amla Juice', icon: '🫒', type: 'acidic', resultColor: '#e53935', colorName: 'Red' },
+  'soap': { name: 'Soap Solution', icon: '🧼', type: 'basic', resultColor: '#66bb6a', colorName: 'Green' },
+  'baking': { name: 'Baking Soda', icon: '🥄', type: 'basic', resultColor: '#43a047', colorName: 'Green' },
+  'lime': { name: 'Lime Water', icon: '💧', type: 'basic', resultColor: '#4caf50', colorName: 'Green' },
+  'water': { name: 'Tap Water', icon: '🚰', type: 'neutral', resultColor: '#d81b60', colorName: 'No change' },
+  'sugar': { name: 'Sugar Solution', icon: '🍬', type: 'neutral', resultColor: '#c2185b', colorName: 'No change' },
+  'salt': { name: 'Salt Solution', icon: '🧂', type: 'neutral', resultColor: '#ad1457', colorName: 'No change' }
+};
+
+function createSimulation(containerId, isExperiment) {
+  const c = document.getElementById(containerId);
+  const defaultSolution = isExperiment ? 'lemon' : 'water';
+  
+  c.innerHTML = `
+  <div class="visual">
+    <div class="static-hint">
+      ${isExperiment ? '👆 Select solution & tap "Add"' : '🌹 Original rose extract color'}
+    </div>
+
+    ${isExperiment ? '<button class="control-toggle">Adjust</button>' : ''}
+
+    <svg viewBox="0 0 400 280">
+      <!-- Lab bench background -->
+      <rect x="0" y="220" width="400" height="60" fill="#8d6e63"/>
+      <rect x="0" y="220" width="400" height="5" fill="#6d4c41"/>
+      
+      <!-- Test tube holder -->
+      <rect x="150" y="100" width="100" height="120" fill="#90a4ae" rx="5"/>
+      <rect x="160" y="105" width="80" height="5" fill="#607d8b"/>
+      
+      <!-- Test tube A (Rose Extract) -->
+      <g id="${containerId}-tube-a" transform="translate(175, 115)">
+        <rect x="0" y="0" width="24" height="90" rx="12" fill="#e0e0e0" stroke="#bdbdbd" stroke-width="2"/>
+        <rect x="2" y="10" width="20" height="70" rx="10" fill="#d81b60" id="${containerId}-extract-color"/>
+        <text x="12" y="-5" text-anchor="middle" font-size="10" fill="#666">A</text>
+      </g>
+      
+      <!-- Dropper with solution -->
+      <g id="${containerId}-dropper" transform="translate(280, 50)" opacity="${isExperiment ? 1 : 0.3}">
+        <rect x="-10" y="0" width="20" height="35" rx="3" fill="#ffb74d"/>
+        <ellipse cx="0" cy="0" rx="14" ry="10" fill="#ef6c00"/>
+        <rect x="-5" y="35" width="10" height="25" fill="#90a4ae"/>
+        <circle cx="0" cy="65" r="5" fill="#64b5f6" id="${containerId}-drop" opacity="0"/>
+        <text x="0" y="-15" text-anchor="middle" font-size="10" fill="#666" id="${containerId}-dropper-label">${isExperiment ? SOLUTIONS[defaultSolution].icon : ''}</text>
+      </g>
+      
+      <!-- Rose decoration -->
+      <g transform="translate(50, 150)">
+        <text x="0" y="0" font-size="40">🌹</text>
+        <text x="20" y="50" font-size="8" fill="#888">Rose Extract</text>
+      </g>
+      
+      <!-- Result label -->
+      <text x="187" y="240" text-anchor="middle" font-size="11" fill="#fff" id="${containerId}-result-label">${isExperiment ? 'Ready to test' : 'Original color'}</text>
+    </svg>
+
+    <div class="metrics">
+      Solution: <span class="metric-value" id="${containerId}-solution-name">${isExperiment ? SOLUTIONS[defaultSolution].name : 'None (original)'}</span><br>
+      Extract Color: <span class="metric-value" id="${containerId}-color-status">Pinkish-red</span><br>
+      Nature: <span class="metric-value ${isExperiment ? '' : 'neutral'}" id="${containerId}-nature">${isExperiment ? '?' : 'Original'}</span>
+    </div>
+
+    ${isExperiment ? '<button class="test-btn" id="test-action">💧 Add</button>' : ''}
+
+    ${isExperiment ? `
+    <div class="control-overlay">
+      <div class="control-label">Select a solution to add:</div>
+      <div class="solution-grid">
+        <button class="solution-btn active" data-solution="lemon"><span class="icon">🍋</span>Lemon Juice</button>
+        <button class="solution-btn" data-solution="vinegar"><span class="icon">🍶</span>Vinegar</button>
+        <button class="solution-btn" data-solution="amla"><span class="icon">🫒</span>Amla Juice</button>
+        <button class="solution-btn" data-solution="soap"><span class="icon">🧼</span>Soap</button>
+        <button class="solution-btn" data-solution="baking"><span class="icon">🥄</span>Baking Soda</button>
+        <button class="solution-btn" data-solution="lime"><span class="icon">💧</span>Lime Water</button>
+        <button class="solution-btn" data-solution="water"><span class="icon">🚰</span>Tap Water</button>
+        <button class="solution-btn" data-solution="sugar"><span class="icon">🍬</span>Sugar</button>
+        <button class="solution-btn" data-solution="salt"><span class="icon">🧂</span>Salt</button>
+      </div>
+      <button class="submit-btn">Submit</button>
+    </div>
+    ` : ''}
+  </div>`;
+
+  if (!isExperiment) return;
+
+  // State
+  let state = {
+    solution: 'lemon',
+    tested: false
+  };
+
+  const extractColor = c.querySelector(`#${containerId}-extract-color`);
+  const drop = c.querySelector(`#${containerId}-drop`);
+  const dropperLabel = c.querySelector(`#${containerId}-dropper-label`);
+  const solutionName = c.querySelector(`#${containerId}-solution-name`);
+  const colorStatus = c.querySelector(`#${containerId}-color-status`);
+  const natureDisplay = c.querySelector(`#${containerId}-nature`);
+  const resultLabel = c.querySelector(`#${containerId}-result-label`);
+  const overlay = c.querySelector('.control-overlay');
+  const testBtn = c.querySelector('#test-action');
+
+  function updateDisplay() {
+    const sol = SOLUTIONS[state.solution];
+    dropperLabel.textContent = sol.icon;
+    solutionName.textContent = sol.name;
+  }
+
+  function animateDrop(callback) {
+    const sol = SOLUTIONS[state.solution];
+    drop.style.fill = sol.resultColor;
+    drop.style.transition = 'none';
+    drop.setAttribute('opacity', '1');
+    drop.setAttribute('cy', '65');
+    
+    setTimeout(() => {
+      drop.style.transition = 'cy 0.5s ease-in, opacity 0.3s';
+      drop.setAttribute('cy', '100');
+      
+      setTimeout(() => {
+        drop.setAttribute('opacity', '0');
+        callback();
+      }, 500);
+    }, 50);
+  }
+
+  function runTest() {
+    const sol = SOLUTIONS[state.solution];
+    state.tested = true;
+
+    animateDrop(() => {
+      // Change extract color
+      extractColor.style.transition = 'fill 0.6s ease';
+      extractColor.style.fill = sol.resultColor;
+
+      // Update metrics
+      colorStatus.textContent = sol.colorName;
+      colorStatus.className = `metric-value ${sol.type}`;
+      
+      natureDisplay.textContent = sol.type.charAt(0).toUpperCase() + sol.type.slice(1);
+      natureDisplay.className = `metric-value ${sol.type}`;
+
+      // Update result label
+      if (sol.type === 'acidic') {
+        resultLabel.textContent = '→ Red (Acidic)';
+      } else if (sol.type === 'basic') {
+        resultLabel.textContent = '→ Green (Basic)';
+      } else {
+        resultLabel.textContent = '→ No change (Neutral)';
+      }
+
+      // Show takeaway
+      document.getElementById('takeaway').classList.add('show');
+    });
+  }
+
+  function resetTest() {
+    state.tested = false;
+    extractColor.style.fill = '#d81b60';
+    colorStatus.textContent = 'Pinkish-red';
+    colorStatus.className = 'metric-value';
+    natureDisplay.textContent = '?';
+    natureDisplay.className = 'metric-value';
+    resultLabel.textContent = 'Ready to test';
+  }
+
+  // Event Listeners
+  testBtn.onclick = runTest;
+
+  c.querySelector('.control-toggle').onclick = () => {
+    overlay.classList.toggle('open');
+  };
+
+  c.querySelectorAll('.solution-btn').forEach(btn => {
+    btn.onclick = () => {
+      c.querySelectorAll('.solution-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.solution = btn.dataset.solution;
+      updateDisplay();
+    };
+  });
+
+  c.querySelector('.submit-btn').onclick = () => {
+    overlay.classList.remove('open');
+    resetTest();
+  };
+
+  updateDisplay();
+}
+
+createSimulation('ref', false);
+createSimulation('exp', true);
+</script>
+</body>
+</html>

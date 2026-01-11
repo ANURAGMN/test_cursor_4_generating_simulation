@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Litmus as an Indicator – Acids & Bases</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 420px;
+  margin: auto;
+  padding: 10px;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  padding: 12px;
+}
+
+.header h1 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.header p {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 8px 4px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* ---------- Card ---------- */
+.sim-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-bottom: 12px;
+}
+
+/* ---------- Visual ---------- */
+.visual {
+  position: relative;
+  height: 34vh;
+  min-height: 240px;
+  background: linear-gradient(145deg, #fafafa 0%, #f0f0f0 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  touch-action: none;
+}
+
+svg { width: 100%; height: 100%; }
+
+.static-hint {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 11px;
+  line-height: 1.3;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  z-index: 10;
+}
+
+.metrics {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  background: rgba(255,255,255,0.96);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 11px;
+  line-height: 1.5;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+
+.metric-value {
+  font-weight: 600;
+  color: #007AFF;
+}
+
+.metric-value.acidic { color: #e74c3c; }
+.metric-value.basic { color: #3498db; }
+.metric-value.neutral { color: #95a5a6; }
+
+.control-toggle {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: #007AFF;
+  color: #fff;
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ---------- Controls Overlay ---------- */
+.control-overlay {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.97);
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: transform .25s ease;
+  max-height: 50%;
+  overflow-y: auto;
+}
+
+.control-overlay.open { transform: translateY(0); }
+
+.control-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.solution-btn {
+  padding: 8px 4px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  font-size: 9px;
+  background: #fff;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.solution-btn.active {
+  border-color: #007AFF;
+  background: #e3f2fd;
+}
+
+.solution-btn .icon { font-size: 16px; }
+
+.submit-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #007AFF;
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ---------- Test Button ---------- */
+.test-btn {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.test-btn:active {
+  transform: scale(0.95);
+}
+
+/* ---------- Legend ---------- */
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 8px;
+  font-size: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legend-dot.acidic { background: #e74c3c; }
+.legend-dot.basic { background: #3498db; }
+.legend-dot.neutral { background: #95a5a6; }
+
+/* ---------- Takeaway ---------- */
+.takeaway {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  display: none;
+}
+
+.takeaway.show {
+  display: block;
+}
+
+.takeaway-title {
+  font-weight: 600;
+  color: #2e7d32;
+  margin-bottom: 4px;
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+
+<div class="header">
+  <h1>🧪 Litmus as an Indicator</h1>
+  <p>Test substances with litmus paper</p>
+</div>
+
+<div class="section-title">Reference (Neutral - Tap Water)</div>
+<div class="sim-card" id="ref"></div>
+
+<div class="section-title">Experiment (Choose & Test)</div>
+<div class="sim-card" id="exp"></div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot acidic"></div> Acidic (turns blue→red)</div>
+  <div class="legend-item"><div class="legend-dot basic"></div> Basic (turns red→blue)</div>
+  <div class="legend-item"><div class="legend-dot neutral"></div> Neutral (no change)</div>
+</div>
+
+<div class="takeaway" id="takeaway">
+  <div class="takeaway-title">💡 What you discovered:</div>
+  <strong>Blue litmus</strong> turns red in acidic substances. <strong>Red litmus</strong> turns blue in basic substances. <strong>Neutral</strong> substances don't change either litmus. This is how we classify substances as acidic, basic, or neutral!
+</div>
+
+</div>
+
+<script>
+const SOLUTIONS = {
+  'lemon': { name: 'Lemon Juice', icon: '🍋', type: 'acidic', blueResult: 'red', redResult: 'red' },
+  'vinegar': { name: 'Vinegar', icon: '🍶', type: 'acidic', blueResult: 'red', redResult: 'red' },
+  'amla': { name: 'Amla Juice', icon: '🫒', type: 'acidic', blueResult: 'red', redResult: 'red' },
+  'soap': { name: 'Soap Solution', icon: '🧼', type: 'basic', blueResult: 'blue', redResult: 'blue' },
+  'baking': { name: 'Baking Soda', icon: '🥄', type: 'basic', blueResult: 'blue', redResult: 'blue' },
+  'lime': { name: 'Lime Water', icon: '💧', type: 'basic', blueResult: 'blue', redResult: 'blue' },
+  'water': { name: 'Tap Water', icon: '🚰', type: 'neutral', blueResult: 'blue', redResult: 'red' },
+  'sugar': { name: 'Sugar Solution', icon: '🍬', type: 'neutral', blueResult: 'blue', redResult: 'red' },
+  'salt': { name: 'Salt Solution', icon: '🧂', type: 'neutral', blueResult: 'blue', redResult: 'red' }
+};
+
+function createSimulation(containerId, isExperiment) {
+  const c = document.getElementById(containerId);
+  const defaultSolution = isExperiment ? 'lemon' : 'water';
+  
+  c.innerHTML = `
+  <div class="visual">
+    <div class="static-hint">
+      ${isExperiment ? '👆 Select solution & tap "Test"' : '📊 Reference: Neutral result'}
+    </div>
+
+    ${isExperiment ? '<button class="control-toggle">Adjust</button>' : ''}
+
+    <svg viewBox="0 0 400 280">
+      <!-- Background Tile -->
+      <rect x="40" y="180" width="320" height="80" rx="4" fill="#eceff1" stroke="#cfd8dc" stroke-width="2"/>
+      <text x="200" y="250" text-anchor="middle" font-size="10" fill="#90a4ae">White Tile Surface</text>
+      
+      <!-- Dropper -->
+      <g id="${containerId}-dropper" transform="translate(200, 40)">
+        <rect x="-8" y="0" width="16" height="40" rx="3" fill="#ffb74d"/>
+        <ellipse cx="0" cy="0" rx="12" ry="8" fill="#ef6c00"/>
+        <rect x="-4" y="40" width="8" height="20" fill="#90a4ae"/>
+        <circle cx="0" cy="65" r="4" fill="#64b5f6" id="${containerId}-drop" opacity="0"/>
+      </g>
+      
+      <!-- Blue Litmus Paper -->
+      <g id="${containerId}-blue-group">
+        <rect x="80" y="190" width="60" height="50" rx="2" fill="#2196f3" id="${containerId}-blue-paper"/>
+        <text x="110" y="175" text-anchor="middle" font-size="10" fill="#666">Blue Litmus</text>
+        <circle cx="110" cy="215" r="12" fill="transparent" stroke="#fff" stroke-width="2" stroke-dasharray="4 2"/>
+      </g>
+      
+      <!-- Red Litmus Paper -->
+      <g id="${containerId}-red-group">
+        <rect x="260" y="190" width="60" height="50" rx="2" fill="#f44336" id="${containerId}-red-paper"/>
+        <text x="290" y="175" text-anchor="middle" font-size="10" fill="#666">Red Litmus</text>
+        <circle cx="290" cy="215" r="12" fill="transparent" stroke="#fff" stroke-width="2" stroke-dasharray="4 2"/>
+      </g>
+      
+      <!-- Solution Bottle -->
+      <g transform="translate(200, 100)">
+        <rect x="-25" y="0" width="50" height="60" rx="5" fill="#e3f2fd" stroke="#90caf9" stroke-width="2"/>
+        <rect x="-15" y="-15" width="30" height="18" rx="3" fill="#42a5f5"/>
+        <text x="0" y="35" text-anchor="middle" font-size="8" fill="#1565c0" id="${containerId}-bottle-label">${SOLUTIONS[defaultSolution].icon}</text>
+      </g>
+      
+      <!-- Result indicators -->
+      <text x="110" y="265" text-anchor="middle" font-size="9" fill="#666" id="${containerId}-blue-result">—</text>
+      <text x="290" y="265" text-anchor="middle" font-size="9" fill="#666" id="${containerId}-red-result">—</text>
+    </svg>
+
+    <div class="metrics">
+      Solution: <span class="metric-value" id="${containerId}-solution-name">${SOLUTIONS[defaultSolution].name}</span><br>
+      Blue Litmus: <span class="metric-value" id="${containerId}-blue-status">Blue</span><br>
+      Red Litmus: <span class="metric-value" id="${containerId}-red-status">Red</span><br>
+      Nature: <span class="metric-value ${SOLUTIONS[defaultSolution].type}" id="${containerId}-nature">${isExperiment ? '?' : 'Neutral'}</span>
+    </div>
+
+    ${isExperiment ? '<button class="test-btn" id="test-action">💧 Test</button>' : ''}
+
+    ${isExperiment ? `
+    <div class="control-overlay">
+      <div class="control-label">Select a solution to test:</div>
+      <div class="solution-grid">
+        <button class="solution-btn active" data-solution="lemon"><span class="icon">🍋</span><br>Lemon Juice</button>
+        <button class="solution-btn" data-solution="vinegar"><span class="icon">🍶</span><br>Vinegar</button>
+        <button class="solution-btn" data-solution="amla"><span class="icon">🫒</span><br>Amla Juice</button>
+        <button class="solution-btn" data-solution="soap"><span class="icon">🧼</span><br>Soap Solution</button>
+        <button class="solution-btn" data-solution="baking"><span class="icon">🥄</span><br>Baking Soda</button>
+        <button class="solution-btn" data-solution="lime"><span class="icon">💧</span><br>Lime Water</button>
+        <button class="solution-btn" data-solution="water"><span class="icon">🚰</span><br>Tap Water</button>
+        <button class="solution-btn" data-solution="sugar"><span class="icon">🍬</span><br>Sugar Solution</button>
+        <button class="solution-btn" data-solution="salt"><span class="icon">🧂</span><br>Salt Solution</button>
+      </div>
+      <button class="submit-btn">Submit</button>
+    </div>
+    ` : ''}
+  </div>`;
+
+  // Reference simulation - show neutral result immediately
+  if (!isExperiment) {
+    return;
+  }
+
+  // State
+  let state = {
+    solution: 'lemon',
+    tested: false
+  };
+
+  const bluePaper = c.querySelector(`#${containerId}-blue-paper`);
+  const redPaper = c.querySelector(`#${containerId}-red-paper`);
+  const drop = c.querySelector(`#${containerId}-drop`);
+  const bottleLabel = c.querySelector(`#${containerId}-bottle-label`);
+  const solutionName = c.querySelector(`#${containerId}-solution-name`);
+  const blueStatus = c.querySelector(`#${containerId}-blue-status`);
+  const redStatus = c.querySelector(`#${containerId}-red-status`);
+  const blueResult = c.querySelector(`#${containerId}-blue-result`);
+  const redResult = c.querySelector(`#${containerId}-red-result`);
+  const natureDisplay = c.querySelector(`#${containerId}-nature`);
+  const overlay = c.querySelector('.control-overlay');
+  const testBtn = c.querySelector('#test-action');
+
+  function updateDisplay() {
+    const sol = SOLUTIONS[state.solution];
+    bottleLabel.textContent = sol.icon;
+    solutionName.textContent = sol.name;
+  }
+
+  function animateDrop(callback) {
+    drop.style.transition = 'none';
+    drop.setAttribute('opacity', '1');
+    drop.setAttribute('cy', '65');
+    
+    setTimeout(() => {
+      drop.style.transition = 'cy 0.4s ease-in, opacity 0.2s';
+      drop.setAttribute('cy', '150');
+      
+      setTimeout(() => {
+        drop.setAttribute('opacity', '0');
+        callback();
+      }, 400);
+    }, 50);
+  }
+
+  function runTest() {
+    const sol = SOLUTIONS[state.solution];
+    state.tested = true;
+
+    animateDrop(() => {
+      // Update blue litmus
+      if (sol.blueResult === 'red') {
+        bluePaper.style.transition = 'fill 0.5s';
+        bluePaper.style.fill = '#f44336';
+        blueStatus.textContent = 'Red ↓';
+        blueStatus.className = 'metric-value acidic';
+        blueResult.textContent = '→ Red (Acidic)';
+      } else {
+        blueStatus.textContent = 'Blue (unchanged)';
+        blueStatus.className = 'metric-value';
+        blueResult.textContent = '→ No change';
+      }
+
+      // Update red litmus
+      if (sol.redResult === 'blue') {
+        redPaper.style.transition = 'fill 0.5s';
+        redPaper.style.fill = '#2196f3';
+        redStatus.textContent = 'Blue ↑';
+        redStatus.className = 'metric-value basic';
+        redResult.textContent = '→ Blue (Basic)';
+      } else {
+        redStatus.textContent = 'Red (unchanged)';
+        redStatus.className = 'metric-value';
+        redResult.textContent = '→ No change';
+      }
+
+      // Update nature
+      natureDisplay.textContent = sol.type.charAt(0).toUpperCase() + sol.type.slice(1);
+      natureDisplay.className = `metric-value ${sol.type}`;
+
+      // Show takeaway after a few tests
+      document.getElementById('takeaway').classList.add('show');
+    });
+  }
+
+  function resetTest() {
+    state.tested = false;
+    bluePaper.style.fill = '#2196f3';
+    redPaper.style.fill = '#f44336';
+    blueStatus.textContent = 'Blue';
+    blueStatus.className = 'metric-value';
+    redStatus.textContent = 'Red';
+    redStatus.className = 'metric-value';
+    blueResult.textContent = '—';
+    redResult.textContent = '—';
+    natureDisplay.textContent = '?';
+    natureDisplay.className = 'metric-value';
+  }
+
+  // Event Listeners
+  testBtn.onclick = runTest;
+
+  c.querySelector('.control-toggle').onclick = () => {
+    overlay.classList.toggle('open');
+  };
+
+  c.querySelectorAll('.solution-btn').forEach(btn => {
+    btn.onclick = () => {
+      c.querySelectorAll('.solution-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.solution = btn.dataset.solution;
+      updateDisplay();
+    };
+  });
+
+  c.querySelector('.submit-btn').onclick = () => {
+    overlay.classList.remove('open');
+    resetTest();
+  };
+
+  updateDisplay();
+}
+
+createSimulation('ref', false);
+createSimulation('exp', true);
+</script>
+</body>
+</html>

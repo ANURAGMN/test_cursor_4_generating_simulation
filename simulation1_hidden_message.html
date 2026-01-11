@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Hidden Message Reveal – Acids & Bases Introduction</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 420px;
+  margin: auto;
+  padding: 10px;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  padding: 12px;
+}
+
+.header h1 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.header p {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* ---------- Card ---------- */
+.sim-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 8px 4px;
+  color: #444;
+}
+
+/* ---------- Visual ---------- */
+.visual {
+  position: relative;
+  height: 32vh;
+  min-height: 220px;
+  background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  touch-action: none;
+}
+
+svg { width: 100%; height: 100%; }
+
+/* ---------- Static Hint ---------- */
+.static-hint {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 11px;
+  line-height: 1.3;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  z-index: 10;
+}
+
+/* ---------- Metrics ---------- */
+.metrics {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  background: rgba(255,255,255,0.96);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 11px;
+  line-height: 1.4;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+
+.metric-value {
+  font-weight: 600;
+  color: #007AFF;
+}
+
+/* ---------- Control Toggle ---------- */
+.control-toggle {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: #007AFF;
+  color: #fff;
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ---------- Controls Overlay ---------- */
+.control-overlay {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.97);
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: transform .25s ease;
+}
+
+.control-overlay.open { transform: translateY(0); }
+
+.segmented {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.segmented button {
+  flex: 1;
+  padding: 8px 4px;
+  border-radius: 8px;
+  border: none;
+  font-size: 10px;
+  background: #e0e0e0;
+  cursor: pointer;
+}
+
+.segmented button.active {
+  background: #007AFF;
+  color: white;
+  font-weight: 600;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #007AFF;
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ---------- Spray Button ---------- */
+.spray-btn {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.spray-btn:active {
+  transform: scale(0.95);
+}
+
+/* ---------- SVG Elements ---------- */
+.paper {
+  fill: #fff;
+  stroke: #ddd;
+  stroke-width: 2;
+}
+
+.paper-coating {
+  fill: #fff8e1;
+  opacity: 0;
+}
+
+.hidden-text {
+  font-family: 'Georgia', serif;
+  font-size: 24px;
+  fill: #6b4423;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.spray-bottle {
+  cursor: pointer;
+}
+
+.spray-droplets {
+  opacity: 0;
+}
+
+.droplet {
+  fill: #81d4fa;
+}
+
+/* ---------- Takeaway ---------- */
+.takeaway {
+  background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  display: none;
+}
+
+.takeaway.show {
+  display: block;
+}
+
+.takeaway-title {
+  font-weight: 600;
+  color: #f57c00;
+  margin-bottom: 4px;
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+
+<div class="header">
+  <h1>🧪 Hidden Message Reveal</h1>
+  <p>Discover how substances reveal secrets!</p>
+</div>
+
+<div class="section-title">Reference (Plain paper)</div>
+<div class="sim-card" id="ref"></div>
+
+<div class="section-title">Experiment (Tap "Spray" to reveal)</div>
+<div class="sim-card" id="exp"></div>
+
+<div class="takeaway" id="takeaway">
+  <div class="takeaway-title">💡 What you discovered:</div>
+  The hidden message appeared because the spray solution reacted with the invisible writing. This is how <strong>indicators</strong> work – they change color based on the nature of a substance (acidic or basic)!
+</div>
+
+</div>
+
+<script>
+function createSimulation(containerId, isExperiment) {
+  const c = document.getElementById(containerId);
+  
+  c.innerHTML = `
+  <div class="visual">
+    <div class="static-hint">
+      ${isExperiment ? '👆 Tap "Spray" to reveal message' : '📄 Paper with invisible writing'}
+    </div>
+
+    ${isExperiment ? '<button class="control-toggle">Adjust</button>' : ''}
+
+    <svg viewBox="0 0 400 300">
+      <!-- Science Fair Background -->
+      <rect x="0" y="0" width="400" height="300" fill="#f5f5f5"/>
+      <text x="200" y="25" text-anchor="middle" font-size="14" fill="#666">🎪 Science Fair</text>
+      
+      <!-- Paper -->
+      <rect class="paper" x="80" y="60" width="240" height="180" rx="4"/>
+      
+      <!-- Invisible coating (turmeric solution dried) -->
+      <rect class="paper-coating" id="${containerId}-coating" x="80" y="60" width="240" height="180" rx="4"/>
+      
+      <!-- Hidden Message -->
+      <text class="hidden-text" id="${containerId}-text1" x="200" y="120" text-anchor="middle">Welcome to the</text>
+      <text class="hidden-text" id="${containerId}-text2" x="200" y="155" text-anchor="middle">Wonderful World</text>
+      <text class="hidden-text" id="${containerId}-text3" x="200" y="190" text-anchor="middle">of Science!</text>
+      
+      <!-- Spray Droplets Animation -->
+      <g class="spray-droplets" id="${containerId}-droplets">
+        <circle class="droplet" cx="120" cy="100" r="3"/>
+        <circle class="droplet" cx="150" cy="85" r="2"/>
+        <circle class="droplet" cx="180" cy="95" r="4"/>
+        <circle class="droplet" cx="210" cy="80" r="2"/>
+        <circle class="droplet" cx="240" cy="90" r="3"/>
+        <circle class="droplet" cx="270" cy="85" r="2"/>
+        <circle class="droplet" cx="140" cy="130" r="3"/>
+        <circle class="droplet" cx="200" cy="125" r="4"/>
+        <circle class="droplet" cx="260" cy="135" r="3"/>
+        <circle class="droplet" cx="130" cy="170" r="2"/>
+        <circle class="droplet" cx="190" cy="165" r="3"/>
+        <circle class="droplet" cx="250" cy="175" r="4"/>
+      </g>
+      
+      <!-- Spray Bottle -->
+      ${isExperiment ? `
+      <g class="spray-bottle" transform="translate(320, 250)">
+        <rect x="-20" y="-40" width="40" height="50" rx="5" fill="#42a5f5"/>
+        <rect x="-10" y="-55" width="20" height="18" rx="3" fill="#1976d2"/>
+        <rect x="0" y="-60" width="8" height="8" rx="2" fill="#0d47a1"/>
+        <text x="0" y="-20" text-anchor="middle" font-size="8" fill="white">SPRAY</text>
+      </g>
+      ` : ''}
+    </svg>
+
+    <div class="metrics">
+      Spray: <span class="metric-value" id="${containerId}-spray-status">${isExperiment ? 'Not applied' : 'N/A'}</span><br>
+      Message: <span class="metric-value" id="${containerId}-msg-status">${isExperiment ? 'Hidden (0%)' : 'Hidden'}</span><br>
+      ${isExperiment ? `Solution: <span class="metric-value" id="${containerId}-solution">Soap (Basic)</span>` : 'Type: Reference'}
+    </div>
+
+    ${isExperiment ? '<button class="spray-btn" id="spray-action">💨 Spray</button>' : ''}
+
+    ${isExperiment ? `
+    <div class="control-overlay">
+      <div class="segmented">
+        <button class="active" data-solution="soap">Soap Solution<br>(Basic)</button>
+        <button data-solution="water">Plain Water<br>(Neutral)</button>
+        <button data-solution="lemon">Lemon Juice<br>(Acidic)</button>
+      </div>
+      <button class="submit-btn">Submit</button>
+    </div>
+    ` : ''}
+  </div>`;
+
+  if (!isExperiment) return;
+
+  // State
+  let state = {
+    solution: 'soap',
+    sprayed: false,
+    revealed: 0
+  };
+
+  const coating = c.querySelector(`#${containerId}-coating`);
+  const text1 = c.querySelector(`#${containerId}-text1`);
+  const text2 = c.querySelector(`#${containerId}-text2`);
+  const text3 = c.querySelector(`#${containerId}-text3`);
+  const droplets = c.querySelector(`#${containerId}-droplets`);
+  const sprayStatus = c.querySelector(`#${containerId}-spray-status`);
+  const msgStatus = c.querySelector(`#${containerId}-msg-status`);
+  const solutionDisplay = c.querySelector(`#${containerId}-solution`);
+  const overlay = c.querySelector('.control-overlay');
+  const sprayBtn = c.querySelector('#spray-action');
+
+  function updateSolutionDisplay() {
+    const labels = {
+      'soap': 'Soap (Basic)',
+      'water': 'Water (Neutral)',
+      'lemon': 'Lemon (Acidic)'
+    };
+    solutionDisplay.textContent = labels[state.solution];
+  }
+
+  function animateSpray() {
+    // Animate droplets
+    droplets.style.opacity = '1';
+    droplets.style.transition = 'opacity 0.3s';
+    
+    let drops = droplets.querySelectorAll('.droplet');
+    drops.forEach((drop, i) => {
+      drop.style.transition = 'transform 0.5s ease-out, opacity 0.5s';
+      setTimeout(() => {
+        drop.style.transform = 'translateY(40px)';
+        drop.style.opacity = '0.3';
+      }, i * 50);
+    });
+
+    setTimeout(() => {
+      droplets.style.opacity = '0';
+      drops.forEach(drop => {
+        drop.style.transform = 'translateY(0)';
+        drop.style.opacity = '1';
+      });
+    }, 800);
+  }
+
+  function revealMessage() {
+    state.sprayed = true;
+    sprayStatus.textContent = 'Applied ✓';
+    animateSpray();
+
+    setTimeout(() => {
+      if (state.solution === 'soap') {
+        // Basic solution reveals the message (turmeric turns red)
+        coating.style.opacity = '0.3';
+        coating.style.fill = '#ffccbc';
+        text1.style.opacity = '1';
+        text1.style.fill = '#d84315';
+        text2.style.opacity = '1';
+        text2.style.fill = '#d84315';
+        text3.style.opacity = '1';
+        text3.style.fill = '#d84315';
+        state.revealed = 100;
+        msgStatus.textContent = 'Visible (100%)';
+        
+        // Show takeaway
+        document.getElementById('takeaway').classList.add('show');
+      } else if (state.solution === 'water') {
+        // Neutral - paper gets wet, very faint text
+        coating.style.opacity = '0.2';
+        coating.style.fill = '#e3f2fd';
+        text1.style.opacity = '0.15';
+        text2.style.opacity = '0.15';
+        text3.style.opacity = '0.15';
+        state.revealed = 15;
+        msgStatus.textContent = 'Barely visible (15%)';
+      } else if (state.solution === 'lemon') {
+        // Acidic - no change, turmeric stays yellow
+        coating.style.opacity = '0.15';
+        coating.style.fill = '#fffde7';
+        text1.style.opacity = '0.1';
+        text2.style.opacity = '0.1';
+        text3.style.opacity = '0.1';
+        state.revealed = 10;
+        msgStatus.textContent = 'Hidden (10%)';
+      }
+    }, 500);
+  }
+
+  function resetSimulation() {
+    state.sprayed = false;
+    state.revealed = 0;
+    coating.style.opacity = '0';
+    text1.style.opacity = '0';
+    text2.style.opacity = '0';
+    text3.style.opacity = '0';
+    text1.style.fill = '#6b4423';
+    text2.style.fill = '#6b4423';
+    text3.style.fill = '#6b4423';
+    sprayStatus.textContent = 'Not applied';
+    msgStatus.textContent = 'Hidden (0%)';
+    document.getElementById('takeaway').classList.remove('show');
+  }
+
+  // Event Listeners
+  sprayBtn.onclick = revealMessage;
+
+  c.querySelector('.control-toggle').onclick = () => {
+    overlay.classList.toggle('open');
+  };
+
+  c.querySelectorAll('.segmented button').forEach(btn => {
+    btn.onclick = () => {
+      c.querySelectorAll('.segmented button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.solution = btn.dataset.solution;
+      updateSolutionDisplay();
+    };
+  });
+
+  c.querySelector('.submit-btn').onclick = () => {
+    overlay.classList.remove('open');
+    resetSimulation();
+  };
+}
+
+createSimulation('ref', false);
+createSimulation('exp', true);
+</script>
+</body>
+</html>
