@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 2: Exploring Substances – Interactive Simulations</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  padding: 30px 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.header .subtitle {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.header .badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  margin-top: 10px;
+}
+
+/* Framework Section */
+.framework {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.framework h2 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.framework-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.framework-item {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 12px;
+  border-left: 4px solid #667eea;
+}
+
+.framework-item h3 {
+  font-size: 12px;
+  color: #667eea;
+  margin-bottom: 6px;
+}
+
+.framework-item p {
+  font-size: 11px;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Simulations Grid */
+.simulations {
+  display: grid;
+  gap: 15px;
+}
+
+.sim-card {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  gap: 15px;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.sim-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+.sim-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.sim-icon.s1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.sim-icon.s2 { background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); }
+.sim-icon.s3 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.sim-icon.s4 { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
+.sim-icon.s5 { background: linear-gradient(135deg, #f9a825 0%, #ff8f00 100%); }
+
+.sim-info h3 {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.sim-info p {
+  font-size: 11px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.sim-info .tags {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.sim-info .tag {
+  font-size: 9px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.sim-info .tag.interaction { background: #e3f2fd; color: #1565c0; }
+.sim-info .tag.concept { background: #fce4ec; color: #c2185b; }
+
+.sim-arrow {
+  color: #007AFF;
+  font-size: 20px;
+}
+
+/* Standards Section */
+.standards {
+  background: rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 20px;
+  color: white;
+}
+
+.standards h2 {
+  font-size: 14px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.standards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.standard-item {
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 11px;
+}
+
+.standard-item .icon {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.standard-item .text {
+  opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  color: rgba(255,255,255,0.7);
+  font-size: 11px;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h1>📚 Chapter 2: Exploring Substances</h1>
+    <div class="subtitle">Acidic, Basic, and Neutral – Interactive Simulations</div>
+    <div class="badge">NCERT Class 7 Science • 5 Concepts</div>
+  </div>
+
+  <div class="framework">
+    <h2>📋 Concept Generation Framework</h2>
+    <div class="framework-grid">
+      <div class="framework-item">
+        <h3>1. Gesture-First Design</h3>
+        <p>All interactions use touch gestures (tap, drag) optimized for mobile phones. No hover or keyboard required.</p>
+      </div>
+      <div class="framework-item">
+        <h3>2. Metrics as Learning Language</h3>
+        <p>Clear visual metrics (color, percentage, status) help students observe and quantify changes.</p>
+      </div>
+      <div class="framework-item">
+        <h3>3. Adjust → Submit → Observe</h3>
+        <p>Students configure settings, submit, then observe results. Learning happens through discovery.</p>
+      </div>
+      <div class="framework-item">
+        <h3>4. Comparison-Driven</h3>
+        <p>Reference + Experiment panels allow side-by-side comparison for deeper understanding.</p>
+      </div>
+      <div class="framework-item">
+        <h3>5. Observation Before Explanation</h3>
+        <p>Takeaways appear only after the student has interacted and observed the phenomenon.</p>
+      </div>
+      <div class="framework-item">
+        <h3>6. Mobile-First Layout</h3>
+        <p>420px max-width, thumb-friendly buttons, and clear typography for small screens.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="simulations">
+    <a href="simulation1_hidden_message.html" class="sim-card">
+      <div class="sim-icon s1">🎪</div>
+      <div class="sim-info">
+        <h3>1. Setting the Context: Hidden Message</h3>
+        <p>Experience the science fair mystery! Spray different solutions on paper to reveal hidden messages and discover how indicators work.</p>
+        <div class="tags">
+          <span class="tag interaction">Tap to spray</span>
+          <span class="tag concept">Introduction to indicators</span>
+        </div>
+      </div>
+      <div class="sim-arrow">→</div>
+    </a>
+
+    <a href="simulation2_litmus_indicator.html" class="sim-card">
+      <div class="sim-icon s2">🧪</div>
+      <div class="sim-info">
+        <h3>2. Litmus as an Indicator</h3>
+        <p>Test 9 different substances with blue and red litmus paper. Watch the color changes and classify substances as acidic, basic, or neutral.</p>
+        <div class="tags">
+          <span class="tag interaction">Select & test</span>
+          <span class="tag concept">Acid-base classification</span>
+        </div>
+      </div>
+      <div class="sim-arrow">→</div>
+    </a>
+
+    <a href="simulation3_acids_bases_properties.html" class="sim-card">
+      <div class="sim-icon s3">🔬</div>
+      <div class="sim-info">
+        <h3>3. Properties of Acids & Bases</h3>
+        <p>Explore how acids taste sour and bases feel soapy/slippery. Discover that bitter gourd is bitter but NOT basic!</p>
+        <div class="tags">
+          <span class="tag interaction">Explore substances</span>
+          <span class="tag concept">Physical properties</span>
+        </div>
+      </div>
+      <div class="sim-arrow">→</div>
+    </a>
+
+    <a href="simulation4_red_rose_indicator.html" class="sim-card">
+      <div class="sim-icon s4">🌹</div>
+      <div class="sim-info">
+        <h3>4. Red Rose as an Indicator</h3>
+        <p>Prepare natural indicator from rose petals! Watch it turn red in acids and green in bases – confirming litmus results.</p>
+        <div class="tags">
+          <span class="tag interaction">Add solutions</span>
+          <span class="tag concept">Natural indicators</span>
+        </div>
+      </div>
+      <div class="sim-arrow">→</div>
+    </a>
+
+    <a href="simulation5_turmeric_indicator.html" class="sim-card">
+      <div class="sim-icon s5">🟡</div>
+      <div class="sim-info">
+        <h3>5. Turmeric as an Indicator</h3>
+        <p>The golden spice detects bases! Learn why turmeric only turns red with bases and cannot differentiate acids from neutrals.</p>
+        <div class="tags">
+          <span class="tag interaction">Drop & observe</span>
+          <span class="tag concept">Partial indicator</span>
+        </div>
+      </div>
+      <div class="sim-arrow">→</div>
+    </a>
+  </div>
+
+  <div class="standards">
+    <h2>✅ Design Standards Applied</h2>
+    <div class="standards-grid">
+      <div class="standard-item">
+        <div class="icon">📱</div>
+        <div class="text">Mobile-optimized (OnePlus/Android)</div>
+      </div>
+      <div class="standard-item">
+        <div class="icon">👆</div>
+        <div class="text">Touch gestures only</div>
+      </div>
+      <div class="standard-item">
+        <div class="icon">📊</div>
+        <div class="text">Clear visual metrics</div>
+      </div>
+      <div class="standard-item">
+        <div class="icon">🔄</div>
+        <div class="text">Reference + Experiment</div>
+      </div>
+      <div class="standard-item">
+        <div class="icon">💡</div>
+        <div class="text">Self-discovery learning</div>
+      </div>
+      <div class="standard-item">
+        <div class="icon">📝</div>
+        <div class="text">Compact takeaways</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Based on NCERT Class 7 Science – Chapter 2: Exploring Substances<br>
+    Simulations follow AgenticAI design guidelines
+  </div>
+</div>
+
+</body>
+</html>
