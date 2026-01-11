@@ -80,15 +80,24 @@ svg { width: 100%; height: 100%; }
 }
 
 .metrics {
-  position: absolute;
-  left: 8px;
-  bottom: 8px;
-  background: rgba(255,255,255,0.96);
+  background: #fce4ec;
   border-radius: 8px;
-  padding: 6px 8px;
+  padding: 8px 12px;
   font-size: 11px;
-  line-height: 1.5;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  line-height: 1.6;
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+}
+
+.metric-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.metric-label {
+  color: #666;
 }
 
 .metric-value {
@@ -100,33 +109,13 @@ svg { width: 100%; height: 100%; }
 .metric-value.basic { color: #2e7d32; }
 .metric-value.neutral { color: #9e9e9e; }
 
-.control-toggle {
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  background: #e91e63;
-  color: #fff;
-  font-size: 11px;
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-}
-
-/* ---------- Controls Overlay ---------- */
-.control-overlay {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.97);
-  border-top: 1px solid #f8bbd9;
+/* ---------- Control Panel ---------- */
+.control-panel {
+  background: #fce4ec;
+  border-radius: 10px;
   padding: 10px;
-  transform: translateY(100%);
-  transition: transform .25s ease;
-  max-height: 55%;
-  overflow-y: auto;
+  margin-top: 8px;
 }
-
-.control-overlay.open { transform: translateY(0); }
 
 .control-label {
   font-size: 11px;
@@ -337,10 +326,8 @@ function createSimulation(containerId, isExperiment) {
   c.innerHTML = `
   <div class="visual">
     <div class="static-hint">
-      ${isExperiment ? '👆 Select solution & tap "Add"' : '🌹 Original rose extract color'}
+      ${isExperiment ? '👆 Select solution below & tap "Add"' : '🌹 Original rose extract color'}
     </div>
-
-    ${isExperiment ? '<button class="control-toggle">Adjust</button>' : ''}
 
     <svg viewBox="0 0 400 280">
       <!-- Lab bench background -->
@@ -377,32 +364,31 @@ function createSimulation(containerId, isExperiment) {
       <text x="187" y="240" text-anchor="middle" font-size="11" fill="#fff" id="${containerId}-result-label">${isExperiment ? 'Ready to test' : 'Original color'}</text>
     </svg>
 
-    <div class="metrics">
-      Solution: <span class="metric-value" id="${containerId}-solution-name">${isExperiment ? SOLUTIONS[defaultSolution].name : 'None (original)'}</span><br>
-      Extract Color: <span class="metric-value" id="${containerId}-color-status">Pinkish-red</span><br>
-      Nature: <span class="metric-value ${isExperiment ? '' : 'neutral'}" id="${containerId}-nature">${isExperiment ? '?' : 'Original'}</span>
-    </div>
-
     ${isExperiment ? '<button class="test-btn" id="test-action">💧 Add</button>' : ''}
+  </div>
 
-    ${isExperiment ? `
-    <div class="control-overlay">
-      <div class="control-label">Select a solution to add:</div>
-      <div class="solution-grid">
-        <button class="solution-btn active" data-solution="lemon"><span class="icon">🍋</span>Lemon Juice</button>
-        <button class="solution-btn" data-solution="vinegar"><span class="icon">🍶</span>Vinegar</button>
-        <button class="solution-btn" data-solution="amla"><span class="icon">🫒</span>Amla Juice</button>
-        <button class="solution-btn" data-solution="soap"><span class="icon">🧼</span>Soap</button>
-        <button class="solution-btn" data-solution="baking"><span class="icon">🥄</span>Baking Soda</button>
-        <button class="solution-btn" data-solution="lime"><span class="icon">💧</span>Lime Water</button>
-        <button class="solution-btn" data-solution="water"><span class="icon">🚰</span>Tap Water</button>
-        <button class="solution-btn" data-solution="sugar"><span class="icon">🍬</span>Sugar</button>
-        <button class="solution-btn" data-solution="salt"><span class="icon">🧂</span>Salt</button>
-      </div>
-      <button class="submit-btn">Submit</button>
+  <div class="metrics">
+    <div class="metric-item"><span class="metric-label">Solution:</span> <span class="metric-value" id="${containerId}-solution-name">${isExperiment ? SOLUTIONS[defaultSolution].name : 'None (original)'}</span></div>
+    <div class="metric-item"><span class="metric-label">Nature:</span> <span class="metric-value ${isExperiment ? '' : 'neutral'}" id="${containerId}-nature">${isExperiment ? '?' : 'Original'}</span></div>
+    <div class="metric-item" style="grid-column: span 2;"><span class="metric-label">Extract Color:</span> <span class="metric-value" id="${containerId}-color-status">Pinkish-red</span></div>
+  </div>
+
+  ${isExperiment ? `
+  <div class="control-panel">
+    <div class="control-label">Select a solution to add:</div>
+    <div class="solution-grid">
+      <button class="solution-btn active" data-solution="lemon"><span class="icon">🍋</span>Lemon Juice</button>
+      <button class="solution-btn" data-solution="vinegar"><span class="icon">🍶</span>Vinegar</button>
+      <button class="solution-btn" data-solution="amla"><span class="icon">🫒</span>Amla Juice</button>
+      <button class="solution-btn" data-solution="soap"><span class="icon">🧼</span>Soap</button>
+      <button class="solution-btn" data-solution="baking"><span class="icon">🥄</span>Baking Soda</button>
+      <button class="solution-btn" data-solution="lime"><span class="icon">💧</span>Lime Water</button>
+      <button class="solution-btn" data-solution="water"><span class="icon">🚰</span>Tap Water</button>
+      <button class="solution-btn" data-solution="sugar"><span class="icon">🍬</span>Sugar</button>
+      <button class="solution-btn" data-solution="salt"><span class="icon">🧂</span>Salt</button>
     </div>
-    ` : ''}
-  </div>`;
+  </div>
+  ` : ''}`;
 
   if (!isExperiment) return;
 
@@ -419,7 +405,6 @@ function createSimulation(containerId, isExperiment) {
   const colorStatus = c.querySelector(`#${containerId}-color-status`);
   const natureDisplay = c.querySelector(`#${containerId}-nature`);
   const resultLabel = c.querySelector(`#${containerId}-result-label`);
-  const overlay = c.querySelector('.control-overlay');
   const testBtn = c.querySelector('#test-action');
 
   function updateDisplay() {
@@ -489,23 +474,15 @@ function createSimulation(containerId, isExperiment) {
   // Event Listeners
   testBtn.onclick = runTest;
 
-  c.querySelector('.control-toggle').onclick = () => {
-    overlay.classList.toggle('open');
-  };
-
   c.querySelectorAll('.solution-btn').forEach(btn => {
     btn.onclick = () => {
       c.querySelectorAll('.solution-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       state.solution = btn.dataset.solution;
+      resetTest();
       updateDisplay();
     };
   });
-
-  c.querySelector('.submit-btn').onclick = () => {
-    overlay.classList.remove('open');
-    resetTest();
-  };
 
   updateDisplay();
 }

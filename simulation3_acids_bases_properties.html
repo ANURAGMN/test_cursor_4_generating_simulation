@@ -81,16 +81,24 @@ svg { width: 100%; height: 100%; }
 }
 
 .metrics {
-  position: absolute;
-  left: 8px;
-  bottom: 8px;
-  background: rgba(255,255,255,0.96);
+  background: #f8f9fa;
   border-radius: 8px;
-  padding: 6px 8px;
+  padding: 8px 12px;
   font-size: 11px;
-  line-height: 1.5;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-  max-width: 55%;
+  line-height: 1.6;
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+}
+
+.metric-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.metric-label {
+  color: #666;
 }
 
 .metric-value {
@@ -101,31 +109,13 @@ svg { width: 100%; height: 100%; }
 .metric-value.acidic { color: #e74c3c; }
 .metric-value.basic { color: #3498db; }
 
-.control-toggle {
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  background: #007AFF;
-  color: #fff;
-  font-size: 11px;
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-}
-
-/* ---------- Controls Overlay ---------- */
-.control-overlay {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.97);
-  border-top: 1px solid #ddd;
+/* ---------- Control Panel ---------- */
+.control-panel {
+  background: #f8f9fa;
+  border-radius: 10px;
   padding: 10px;
-  transform: translateY(100%);
-  transition: transform .25s ease;
+  margin-top: 8px;
 }
-
-.control-overlay.open { transform: translateY(0); }
 
 .control-label {
   font-size: 11px;
@@ -435,10 +425,8 @@ function createSimulation(containerId, isExperiment) {
   c.innerHTML = `
   <div class="visual">
     <div class="static-hint">
-      ${isExperiment ? '👆 Select substance & tap "Explore"' : '📊 Reference: Acidic (Lemon)'}
+      ${isExperiment ? '👆 Select substance below & tap "Explore"' : '📊 Reference: Acidic (Lemon)'}
     </div>
-
-    ${isExperiment ? '<button class="control-toggle">Adjust</button>' : ''}
 
     <svg viewBox="0 0 400 300">
       <!-- Background -->
@@ -469,13 +457,6 @@ function createSimulation(containerId, isExperiment) {
       </g>
     </svg>
 
-    <div class="metrics">
-      Substance: <span class="metric-value" id="${containerId}-sub-name">${SUBSTANCES[defaultSubstance].name}</span><br>
-      Type: <span class="metric-value ${SUBSTANCES[defaultSubstance].type.includes('acidic') ? 'acidic' : 'basic'}" id="${containerId}-type">${SUBSTANCES[defaultSubstance].type === 'neutral-bitter' ? 'NOT basic!' : SUBSTANCES[defaultSubstance].type.charAt(0).toUpperCase() + SUBSTANCES[defaultSubstance].type.slice(1)}</span><br>
-      Taste: <span class="metric-value" id="${containerId}-taste-val">${isExperiment ? '?' : SUBSTANCES[defaultSubstance].taste}</span><br>
-      Touch: <span class="metric-value" id="${containerId}-touch-val">${isExperiment ? '?' : SUBSTANCES[defaultSubstance].touch}</span>
-    </div>
-
     <div class="property-display" id="${containerId}-property-card">
       <div class="property-title" id="${containerId}-prop-title">Properties</div>
       <div class="property-item"><span class="property-icon">👅</span> <span id="${containerId}-prop-taste">—</span></div>
@@ -484,24 +465,30 @@ function createSimulation(containerId, isExperiment) {
     </div>
 
     ${isExperiment ? '<button class="explore-btn" id="explore-action">🔍 Explore</button>' : ''}
+  </div>
 
-    ${isExperiment ? `
-    <div class="control-overlay">
-      <div class="control-label">Select a substance to explore:</div>
-      <div class="substance-grid">
-        <button class="substance-btn" data-sub="lemon"><span class="icon">🍋</span>Lemon</button>
-        <button class="substance-btn active" data-sub="baking"><span class="icon">🥄</span>Baking Soda</button>
-        <button class="substance-btn" data-sub="vinegar"><span class="icon">🍶</span>Vinegar</button>
-        <button class="substance-btn" data-sub="soap"><span class="icon">🧼</span>Soap Solution</button>
-        <button class="substance-btn" data-sub="amla"><span class="icon">🫒</span>Amla</button>
-        <button class="substance-btn" data-sub="tamarind"><span class="icon">🌰</span>Tamarind</button>
-        <button class="substance-btn" data-sub="curd"><span class="icon">🥛</span>Curd</button>
-        <button class="substance-btn" data-sub="karela"><span class="icon">🥒</span>Bitter Gourd</button>
-      </div>
-      <button class="submit-btn">Submit</button>
+  <div class="metrics">
+    <div class="metric-item"><span class="metric-label">Substance:</span> <span class="metric-value" id="${containerId}-sub-name">${SUBSTANCES[defaultSubstance].name}</span></div>
+    <div class="metric-item"><span class="metric-label">Type:</span> <span class="metric-value ${SUBSTANCES[defaultSubstance].type.includes('acidic') ? 'acidic' : 'basic'}" id="${containerId}-type">${SUBSTANCES[defaultSubstance].type === 'neutral-bitter' ? 'NOT basic!' : SUBSTANCES[defaultSubstance].type.charAt(0).toUpperCase() + SUBSTANCES[defaultSubstance].type.slice(1)}</span></div>
+    <div class="metric-item"><span class="metric-label">Taste:</span> <span class="metric-value" id="${containerId}-taste-val">${isExperiment ? '?' : SUBSTANCES[defaultSubstance].taste}</span></div>
+    <div class="metric-item"><span class="metric-label">Touch:</span> <span class="metric-value" id="${containerId}-touch-val">${isExperiment ? '?' : SUBSTANCES[defaultSubstance].touch}</span></div>
+  </div>
+
+  ${isExperiment ? `
+  <div class="control-panel">
+    <div class="control-label">Select a substance to explore:</div>
+    <div class="substance-grid">
+      <button class="substance-btn" data-sub="lemon"><span class="icon">🍋</span>Lemon</button>
+      <button class="substance-btn active" data-sub="baking"><span class="icon">🥄</span>Baking Soda</button>
+      <button class="substance-btn" data-sub="vinegar"><span class="icon">🍶</span>Vinegar</button>
+      <button class="substance-btn" data-sub="soap"><span class="icon">🧼</span>Soap Solution</button>
+      <button class="substance-btn" data-sub="amla"><span class="icon">🫒</span>Amla</button>
+      <button class="substance-btn" data-sub="tamarind"><span class="icon">🌰</span>Tamarind</button>
+      <button class="substance-btn" data-sub="curd"><span class="icon">🥛</span>Curd</button>
+      <button class="substance-btn" data-sub="karela"><span class="icon">🥒</span>Bitter Gourd</button>
     </div>
-    ` : ''}
-  </div>`;
+  </div>
+  ` : ''}`;
 
   if (!isExperiment) return;
 
@@ -525,7 +512,6 @@ function createSimulation(containerId, isExperiment) {
   const propTaste = c.querySelector(`#${containerId}-prop-taste`);
   const propTouch = c.querySelector(`#${containerId}-prop-touch`);
   const propChemical = c.querySelector(`#${containerId}-prop-chemical`);
-  const overlay = c.querySelector('.control-overlay');
   const exploreBtn = c.querySelector('#explore-action');
 
   function updateDisplay() {
@@ -590,23 +576,15 @@ function createSimulation(containerId, isExperiment) {
   // Event Listeners
   exploreBtn.onclick = animateExplore;
 
-  c.querySelector('.control-toggle').onclick = () => {
-    overlay.classList.toggle('open');
-  };
-
   c.querySelectorAll('.substance-btn').forEach(btn => {
     btn.onclick = () => {
       c.querySelectorAll('.substance-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       state.substance = btn.dataset.sub;
+      resetExplore();
       updateDisplay();
     };
   });
-
-  c.querySelector('.submit-btn').onclick = () => {
-    overlay.classList.remove('open');
-    resetExplore();
-  };
 
   updateDisplay();
 }

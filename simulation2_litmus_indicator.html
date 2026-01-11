@@ -81,15 +81,28 @@ svg { width: 100%; height: 100%; }
 }
 
 .metrics {
-  position: absolute;
-  left: 8px;
-  bottom: 8px;
-  background: rgba(255,255,255,0.96);
+  background: #f8f9fa;
   border-radius: 8px;
-  padding: 6px 8px;
+  padding: 8px 12px;
   font-size: 11px;
-  line-height: 1.5;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  line-height: 1.6;
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+}
+
+.metric-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.metric-label {
+  color: #666;
+}
+
+.metrics.full-width {
+  grid-template-columns: 1fr;
 }
 
 .metric-value {
@@ -101,33 +114,13 @@ svg { width: 100%; height: 100%; }
 .metric-value.basic { color: #3498db; }
 .metric-value.neutral { color: #95a5a6; }
 
-.control-toggle {
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  background: #007AFF;
-  color: #fff;
-  font-size: 11px;
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-}
-
-/* ---------- Controls Overlay ---------- */
-.control-overlay {
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.97);
-  border-top: 1px solid #ddd;
+/* ---------- Control Panel ---------- */
+.control-panel {
+  background: #f8f9fa;
+  border-radius: 10px;
   padding: 10px;
-  transform: translateY(100%);
-  transition: transform .25s ease;
-  max-height: 50%;
-  overflow-y: auto;
+  margin-top: 8px;
 }
-
-.control-overlay.open { transform: translateY(0); }
 
 .control-label {
   font-size: 11px;
@@ -292,10 +285,8 @@ function createSimulation(containerId, isExperiment) {
   c.innerHTML = `
   <div class="visual">
     <div class="static-hint">
-      ${isExperiment ? '👆 Select solution & tap "Test"' : '📊 Reference: Neutral result'}
+      ${isExperiment ? '👆 Select solution below & tap "Test"' : '📊 Reference: Neutral result'}
     </div>
-
-    ${isExperiment ? '<button class="control-toggle">Adjust</button>' : ''}
 
     <svg viewBox="0 0 400 280">
       <!-- Background Tile -->
@@ -336,33 +327,32 @@ function createSimulation(containerId, isExperiment) {
       <text x="290" y="265" text-anchor="middle" font-size="9" fill="#666" id="${containerId}-red-result">—</text>
     </svg>
 
-    <div class="metrics">
-      Solution: <span class="metric-value" id="${containerId}-solution-name">${SOLUTIONS[defaultSolution].name}</span><br>
-      Blue Litmus: <span class="metric-value" id="${containerId}-blue-status">Blue</span><br>
-      Red Litmus: <span class="metric-value" id="${containerId}-red-status">Red</span><br>
-      Nature: <span class="metric-value ${SOLUTIONS[defaultSolution].type}" id="${containerId}-nature">${isExperiment ? '?' : 'Neutral'}</span>
-    </div>
-
     ${isExperiment ? '<button class="test-btn" id="test-action">💧 Test</button>' : ''}
+  </div>
 
-    ${isExperiment ? `
-    <div class="control-overlay">
-      <div class="control-label">Select a solution to test:</div>
-      <div class="solution-grid">
-        <button class="solution-btn active" data-solution="lemon"><span class="icon">🍋</span><br>Lemon Juice</button>
-        <button class="solution-btn" data-solution="vinegar"><span class="icon">🍶</span><br>Vinegar</button>
-        <button class="solution-btn" data-solution="amla"><span class="icon">🫒</span><br>Amla Juice</button>
-        <button class="solution-btn" data-solution="soap"><span class="icon">🧼</span><br>Soap Solution</button>
-        <button class="solution-btn" data-solution="baking"><span class="icon">🥄</span><br>Baking Soda</button>
-        <button class="solution-btn" data-solution="lime"><span class="icon">💧</span><br>Lime Water</button>
-        <button class="solution-btn" data-solution="water"><span class="icon">🚰</span><br>Tap Water</button>
-        <button class="solution-btn" data-solution="sugar"><span class="icon">🍬</span><br>Sugar Solution</button>
-        <button class="solution-btn" data-solution="salt"><span class="icon">🧂</span><br>Salt Solution</button>
-      </div>
-      <button class="submit-btn">Submit</button>
+  <div class="metrics">
+    <div class="metric-item"><span class="metric-label">Solution:</span> <span class="metric-value" id="${containerId}-solution-name">${SOLUTIONS[defaultSolution].name}</span></div>
+    <div class="metric-item"><span class="metric-label">Nature:</span> <span class="metric-value ${SOLUTIONS[defaultSolution].type}" id="${containerId}-nature">${isExperiment ? '?' : 'Neutral'}</span></div>
+    <div class="metric-item"><span class="metric-label">Blue Litmus:</span> <span class="metric-value" id="${containerId}-blue-status">Blue</span></div>
+    <div class="metric-item"><span class="metric-label">Red Litmus:</span> <span class="metric-value" id="${containerId}-red-status">Red</span></div>
+  </div>
+
+  ${isExperiment ? `
+  <div class="control-panel">
+    <div class="control-label">Select a solution to test:</div>
+    <div class="solution-grid">
+      <button class="solution-btn active" data-solution="lemon"><span class="icon">🍋</span><br>Lemon Juice</button>
+      <button class="solution-btn" data-solution="vinegar"><span class="icon">🍶</span><br>Vinegar</button>
+      <button class="solution-btn" data-solution="amla"><span class="icon">🫒</span><br>Amla Juice</button>
+      <button class="solution-btn" data-solution="soap"><span class="icon">🧼</span><br>Soap Solution</button>
+      <button class="solution-btn" data-solution="baking"><span class="icon">🥄</span><br>Baking Soda</button>
+      <button class="solution-btn" data-solution="lime"><span class="icon">💧</span><br>Lime Water</button>
+      <button class="solution-btn" data-solution="water"><span class="icon">🚰</span><br>Tap Water</button>
+      <button class="solution-btn" data-solution="sugar"><span class="icon">🍬</span><br>Sugar Solution</button>
+      <button class="solution-btn" data-solution="salt"><span class="icon">🧂</span><br>Salt Solution</button>
     </div>
-    ` : ''}
-  </div>`;
+  </div>
+  ` : ''}`;
 
   // Reference simulation - show neutral result immediately
   if (!isExperiment) {
@@ -385,7 +375,6 @@ function createSimulation(containerId, isExperiment) {
   const blueResult = c.querySelector(`#${containerId}-blue-result`);
   const redResult = c.querySelector(`#${containerId}-red-result`);
   const natureDisplay = c.querySelector(`#${containerId}-nature`);
-  const overlay = c.querySelector('.control-overlay');
   const testBtn = c.querySelector('#test-action');
 
   function updateDisplay() {
@@ -467,23 +456,15 @@ function createSimulation(containerId, isExperiment) {
   // Event Listeners
   testBtn.onclick = runTest;
 
-  c.querySelector('.control-toggle').onclick = () => {
-    overlay.classList.toggle('open');
-  };
-
   c.querySelectorAll('.solution-btn').forEach(btn => {
     btn.onclick = () => {
       c.querySelectorAll('.solution-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       state.solution = btn.dataset.solution;
+      resetTest();
       updateDisplay();
     };
   });
-
-  c.querySelector('.submit-btn').onclick = () => {
-    overlay.classList.remove('open');
-    resetTest();
-  };
 
   updateDisplay();
 }
