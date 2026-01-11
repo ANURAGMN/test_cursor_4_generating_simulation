@@ -1,0 +1,123 @@
+{
+    "unit_name": "Exploring Substances: Acidic, Basic, and Neutral",
+    "topics": [
+        {
+            "topic_name": "Introduction to Acids, Bases, and Indicators",
+            "concepts": [
+                {
+                    "concept_name": "Setting the Context",
+                    "summary": "The chapter begins at a science fair where a hidden message is revealed on paper using a spray. This introduces the concept of color changes in substances, which is explored further.",
+                    "details": "Ashwin and Keerthi observe a white paper turning to reveal a welcome message when sprayed with a liquid, sparking curiosity about color changes in substances.",
+                    "examples": [
+                        "Hidden message at science fair"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Nature — Our Science Laboratory",
+            "concepts": [
+                {
+                    "concept_name": "Litmus as an Indicator",
+                    "summary": "Litmus is a natural dye from lichens. Blue litmus turns red in acidic substances, and red litmus turns blue in basic substances. Substances that change neither are neutral.",
+                    "details": "Litmus is available as solution or paper strips. It helps classify substances as acidic, basic, or neutral based on color change.",
+                    "examples": [
+                        "Lemon juice (acidic)",
+                        "Soap solution (basic)",
+                        "Tap water (neutral)"
+                    ]
+                },
+                {
+                    "concept_name": "Properties of Acids and Bases",
+                    "summary": "Acidic substances often taste sour and can be found in fruits. Basic substances feel soapy/slippery and often taste bitter, but not all bitter things are bases.",
+                    "details": "Common acids include citric acid in lemon and ascorbic acid in amla. Bases like baking soda feel slippery. Safety caution: Do not taste unknown substances.",
+                    "examples": [
+                        "Lemon (sour, acidic)",
+                        "Baking soda (soapy, basic)",
+                        "Bitter gourd (bitter but not basic)"
+                    ]
+                },
+                {
+                    "concept_name": "Red Rose as an Indicator",
+                    "summary": "Extract from red rose petals can act as an acid-base indicator. It turns red in acidic solutions and green in basic solutions.",
+                    "details": "The extract is prepared by crushing petals in hot water. It confirms the same classification as litmus paper.",
+                    "examples": [
+                        "Lemon juice turns extract red",
+                        "Soap solution turns extract green"
+                    ]
+                },
+                {
+                    "concept_name": "Turmeric as an Indicator",
+                    "summary": "Turmeric paper turns red in basic solutions but remains yellow in acidic and neutral solutions. It is useful for identifying bases.",
+                    "details": "Turmeric paper is made by dipping filter paper in turmeric paste. It cannot differentiate between acids and neutrals.",
+                    "examples": [
+                        "Soap solution turns turmeric paper red",
+                        "Lemon juice leaves it yellow"
+                    ]
+                },
+                {
+                    "concept_name": "Olfactory Indicators",
+                    "summary": "Some substances, like onion, change their smell in acidic or basic mediums. These are called olfactory indicators.",
+                    "details": "Chopped onions lose their pungent smell when treated with a base (like baking soda) but retain it with an acid (like tamarind water).",
+                    "examples": [
+                        "Onion smell changes with tamarind water (acid) and baking soda (base)"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "What Happens When Acidic Substances Mix with Basic Substances?",
+            "concepts": [
+                {
+                    "concept_name": "Neutralisation Reaction",
+                    "summary": "When an acid and a base are mixed in the right amounts, they cancel each other out in a neutralisation reaction, forming salt, water, and heat.",
+                    "details": "The reaction is: Acid + Base → Salt + Water + Heat. The resulting solution is neutral (neither acidic nor basic).",
+                    "examples": [
+                        "Lemon juice (acid) + Lime water (base) → neutral solution"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Neutralisation in Daily Life",
+            "concepts": [
+                {
+                    "concept_name": "Treating Ant Bites",
+                    "summary": "Ant bites inject formic acid, causing pain. Applying a base like moist baking soda neutralises the acid and relieves pain.",
+                    "details": "This is a practical application of neutralisation where a base counteracts an acid.",
+                    "examples": [
+                        "Moist baking soda on ant bite"
+                    ]
+                },
+                {
+                    "concept_name": "Soil Treatment",
+                    "summary": "Soil can become too acidic or basic for plants. Acidic soil is treated with lime (a base), and basic soil is treated with organic matter (which releases acids).",
+                    "details": "Farmers use neutralisation to adjust soil pH for better plant growth.",
+                    "examples": [
+                        "Adding lime to acidic soil",
+                        "Adding compost to basic soil"
+                    ]
+                },
+                {
+                    "concept_name": "Treating Industrial Waste",
+                    "summary": "Factory waste that is acidic can harm aquatic life. It can be neutralised by adding basic substances before releasing it into water bodies.",
+                    "details": "This helps protect ecosystems like lakes and rivers from acidic pollution.",
+                    "examples": [
+                        "Neutralising acidic factory waste before dumping"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Science in Context",
+            "concepts": [
+                {
+                    "concept_name": "Acharya Prafulla Chandra Ray",
+                    "summary": "Known as the 'Father of Modern Indian Chemistry', he advanced chemical research in India, established the first pharmaceutical company, and promoted Indian scientific heritage.",
+                    "details": "He highlighted ancient Indian chemistry and advocated for education in mother tongues.",
+                    "examples": []
+                }
+            ]
+        }
+    ]
+}
