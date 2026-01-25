@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Soil Treatment - Neutralisation in Agriculture</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#app {
+  max-width: 500px;
+  margin: auto;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.sim-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.farm-scene {
+  position: relative;
+  height: 320px;
+  background: linear-gradient(180deg, #87CEEB 0%, #87CEEB 60%, transparent 60%);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.sun {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 50px;
+}
+
+.cloud {
+  position: absolute;
+  top: 30px;
+  font-size: 40px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.cloud:nth-child(2) { left: 30px; }
+.cloud:nth-child(3) { left: 150px; animation-delay: 1s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.soil-area {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  transition: background 0.8s ease;
+}
+
+.soil-area.acidic {
+  background: linear-gradient(180deg, #8D6E63 0%, #5D4037 100%);
+}
+
+.soil-area.basic {
+  background: linear-gradient(180deg, #78909C 0%, #546E7A 100%);
+}
+
+.soil-area.neutral {
+  background: linear-gradient(180deg, #6D4C41 0%, #4E342E 100%);
+}
+
+.plant-container {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.plant {
+  font-size: 60px;
+  transition: all 0.8s ease;
+}
+
+.plant.wilted {
+  filter: grayscale(80%) brightness(0.7);
+  transform: rotate(-10deg);
+}
+
+.plant.healthy {
+  filter: none;
+  transform: rotate(0deg);
+}
+
+.soil-type-indicator {
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.soil-type-indicator.acidic {
+  color: #E65100;
+  border: 2px solid #FF9800;
+}
+
+.soil-type-indicator.basic {
+  color: #1565C0;
+  border: 2px solid #2196F3;
+}
+
+.soil-type-indicator.neutral {
+  color: #2E7D32;
+  border: 2px solid #4CAF50;
+}
+
+.treatment-options {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.treatment-item {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  opacity: 0.5;
+}
+
+.treatment-item.available {
+  opacity: 1;
+}
+
+.treatment-item.available:hover {
+  transform: scale(1.1);
+}
+
+.treatment-icon {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.treatment-label {
+  font-size: 10px;
+  color: white;
+  margin-top: 5px;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.soil-selector {
+  margin-bottom: 20px;
+}
+
+.selector-label {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.soil-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.soil-btn {
+  padding: 10px 20px;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.soil-btn:hover {
+  border-color: #999;
+}
+
+.soil-btn.acidic.active {
+  background: #FFF3E0;
+  border-color: #FF9800;
+  color: #E65100;
+}
+
+.soil-btn.basic.active {
+  background: #E3F2FD;
+  border-color: #2196F3;
+  color: #1565C0;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.treat-btn {
+  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.treat-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.treat-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.reset-btn {
+  background: #f5f5f5;
+  color: #666;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: #e0e0e0;
+}
+
+.info-box {
+  padding: 15px;
+  background: #E8F5E9;
+  border-radius: 12px;
+  border-left: 4px solid #4CAF50;
+}
+
+.info-box h3 {
+  font-size: 14px;
+  color: #2E7D32;
+  margin-bottom: 8px;
+}
+
+.info-box p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.treatment-guide {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+}
+
+.guide-card {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.guide-card.acidic-guide {
+  background: #FFF3E0;
+  border: 1px solid #FFE0B2;
+}
+
+.guide-card.basic-guide {
+  background: #E3F2FD;
+  border: 1px solid #BBDEFB;
+}
+
+.guide-icon {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.guide-title {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.guide-card.acidic-guide .guide-title { color: #E65100; }
+.guide-card.basic-guide .guide-title { color: #1565C0; }
+
+.guide-treatment {
+  font-size: 11px;
+  color: #666;
+}
+
+.guide-arrow {
+  font-size: 16px;
+}
+
+.ph-meter {
+  margin-top: 15px;
+  padding: 15px;
+  background: #FAFAFA;
+  border-radius: 12px;
+}
+
+.ph-label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.ph-bar {
+  height: 20px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, 
+    #F44336 0%, 
+    #FF9800 25%, 
+    #FFEB3B 40%, 
+    #4CAF50 50%, 
+    #8BC34A 60%,
+    #03A9F4 75%, 
+    #3F51B5 100%
+  );
+  position: relative;
+}
+
+.ph-pointer {
+  position: absolute;
+  top: -5px;
+  width: 4px;
+  height: 30px;
+  background: #333;
+  border-radius: 2px;
+  transition: left 0.8s ease;
+}
+
+.ph-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #666;
+  margin-top: 5px;
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+  <div class="header">
+    <h1>🌱 Soil Treatment</h1>
+    <p>Balancing soil pH for healthy plants</p>
+  </div>
+
+  <div class="sim-card">
+    <div class="soil-selector">
+      <div class="selector-label">Select soil type to treat:</div>
+      <div class="soil-buttons">
+        <button class="soil-btn acidic" data-type="acidic">🟠 Acidic Soil</button>
+        <button class="soil-btn basic" data-type="basic">🔵 Basic Soil</button>
+      </div>
+    </div>
+    
+    <div class="farm-scene">
+      <span class="cloud">☁️</span>
+      <span class="cloud">☁️</span>
+      <div class="sun">☀️</div>
+      
+      <div class="soil-type-indicator" id="soilIndicator">Select a soil type</div>
+      
+      <div class="plant-container">
+        <div class="plant" id="plant">🌱</div>
+      </div>
+      
+      <div class="soil-area neutral" id="soilArea"></div>
+      
+      <div class="treatment-options">
+        <div class="treatment-item" id="limeOption" data-treatment="lime">
+          <div class="treatment-icon">iteite�ite ite</div>
+          <div class="treatment-label">Quicklite me (Base)</div>
+        </div>
+        <div class="treatment-item" id="compostOption" data-treatment="compost">
+          <div class="treatment-icon">🍂</div>
+          <div class="treatment-label">Compost (Acidic)</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ph-meter">
+      <div class="ph-label">Soil pH Level</div>
+      <div class="ph-bar">
+        <div class="ph-pointer" id="phPointer" style="left: 50%;"></div>
+      </div>
+      <div class="ph-labels">
+        <span>Acidic (pH 4)</span>
+        <span>Neutral (pH 7)</span>
+        <span>Basic (pH 10)</span>
+      </div>
+    </div>
+    
+    <div class="controls" style="margin-top: 15px;">
+      <button class="treat-btn" id="treatBtn" disabled>🌿 Apply Treatment</button>
+      <button class="reset-btn" id="resetBtn">Reset</button>
+    </div>
+    
+    <div class="info-box">
+      <h3>💡 Why Soil pH Matters</h3>
+      <p id="explanation">Plants grow best in soil with the right pH level (usually around neutral pH 7). Soil that's too acidic or too basic can prevent plants from absorbing nutrients properly.</p>
+    </div>
+    
+    <div class="treatment-guide">
+      <div class="guide-card acidic-guide">
+        <div class="guide-icon">🟠</div>
+        <div class="guide-title">Acidic Soil</div>
+        <div class="guide-arrow">↓</div>
+        <div class="guide-treatment">Add <strong>Lime</strong> (base)<br>to neutralise</div>
+      </div>
+      <div class="guide-card basic-guide">
+        <div class="guide-icon">🔵</div>
+        <div class="guide-title">Basic Soil</div>
+        <div class="guide-arrow">↓</div>
+        <div class="guide-treatment">Add <strong>Compost</strong><br>(releases acids)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const soilBtns = document.querySelectorAll('.soil-btn');
+const treatBtn = document.getElementById('treatBtn');
+const resetBtn = document.getElementById('resetBtn');
+const soilArea = document.getElementById('soilArea');
+const soilIndicator = document.getElementById('soilIndicator');
+const plant = document.getElementById('plant');
+const phPointer = document.getElementById('phPointer');
+const limeOption = document.getElementById('limeOption');
+const compostOption = document.getElementById('compostOption');
+const explanation = document.getElementById('explanation');
+
+let selectedSoil = null;
+let selectedTreatment = null;
+let isTreated = false;
+
+soilBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (isTreated) return;
+    
+    soilBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedSoil = btn.dataset.type;
+    
+    // Update scene
+    soilArea.className = `soil-area ${selectedSoil}`;
+    plant.classList.add('wilted');
+    plant.classList.remove('healthy');
+    
+    if (selectedSoil === 'acidic') {
+      soilIndicator.textContent = '🟠 Acidic Soil (pH 4-5)';
+      soilIndicator.className = 'soil-type-indicator acidic';
+      phPointer.style.left = '15%';
+      limeOption.classList.add('available');
+      compostOption.classList.remove('available');
+      explanation.innerHTML = `<strong>Problem: Acidic Soil!</strong> This soil has too much acid (low pH). Plants struggle to absorb nutrients like nitrogen and phosphorus. We need to add <strong>lime (quicklime)</strong>, which is a base, to neutralise the acid.`;
+    } else {
+      soilIndicator.textContent = '🔵 Basic Soil (pH 9-10)';
+      soilIndicator.className = 'soil-type-indicator basic';
+      phPointer.style.left = '85%';
+      compostOption.classList.add('available');
+      limeOption.classList.remove('available');
+      explanation.innerHTML = `<strong>Problem: Basic Soil!</strong> This soil is too alkaline (high pH). Plants can't absorb iron and other micronutrients. We need to add <strong>organic compost</strong>, which releases acids as it decomposes, to neutralise the base.`;
+    }
+    
+    treatBtn.disabled = false;
+  });
+});
+
+limeOption.addEventListener('click', () => {
+  if (limeOption.classList.contains('available') && !isTreated) {
+    selectedTreatment = 'lime';
+    limeOption.querySelector('.treatment-icon').style.boxShadow = '0 0 0 3px #4CAF50';
+  }
+});
+
+compostOption.addEventListener('click', () => {
+  if (compostOption.classList.contains('available') && !isTreated) {
+    selectedTreatment = 'compost';
+    compostOption.querySelector('.treatment-icon').style.boxShadow = '0 0 0 3px #4CAF50';
+  }
+});
+
+treatBtn.addEventListener('click', () => {
+  if (!selectedSoil || isTreated) return;
+  
+  isTreated = true;
+  
+  // Animate treatment
+  setTimeout(() => {
+    soilArea.className = 'soil-area neutral';
+    soilIndicator.textContent = '🟢 Neutral Soil (pH 7)';
+    soilIndicator.className = 'soil-type-indicator neutral';
+    plant.classList.remove('wilted');
+    plant.classList.add('healthy');
+    plant.textContent = '🌿';
+    phPointer.style.left = '50%';
+    
+    if (selectedSoil === 'acidic') {
+      explanation.innerHTML = `<strong>Success!</strong> The lime (calcium oxide - a base) neutralised the acidic soil. The reaction: <em>Acid + Base → Salt + Water</em>. Now the soil pH is balanced around 7, and plants can absorb nutrients properly! 🌿`;
+    } else {
+      explanation.innerHTML = `<strong>Success!</strong> The organic compost releases acids as it decomposes, neutralising the basic soil. This brings the pH closer to 7, allowing plants to thrive and absorb nutrients like iron! 🌿`;
+    }
+    
+    treatBtn.disabled = true;
+  }, 500);
+});
+
+resetBtn.addEventListener('click', () => {
+  selectedSoil = null;
+  selectedTreatment = null;
+  isTreated = false;
+  
+  soilBtns.forEach(b => b.classList.remove('active'));
+  soilArea.className = 'soil-area neutral';
+  soilIndicator.textContent = 'Select a soil type';
+  soilIndicator.className = 'soil-type-indicator';
+  plant.textContent = '🌱';
+  plant.classList.remove('wilted', 'healthy');
+  phPointer.style.left = '50%';
+  limeOption.classList.remove('available');
+  compostOption.classList.remove('available');
+  limeOption.querySelector('.treatment-icon').style.boxShadow = '';
+  compostOption.querySelector('.treatment-icon').style.boxShadow = '';
+  
+  treatBtn.disabled = true;
+  
+  explanation.innerHTML = 'Plants grow best in soil with the right pH level (usually around neutral pH 7). Soil that\'s too acidic or too basic can prevent plants from absorbing nutrients properly.';
+});
+</script>
+</body>
+</html>

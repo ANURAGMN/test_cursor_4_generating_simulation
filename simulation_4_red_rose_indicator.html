@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Red Rose Indicator - Natural Acid-Base Indicator</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#app {
+  max-width: 500px;
+  margin: auto;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.sim-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.lab-scene {
+  position: relative;
+  height: 380px;
+  background: linear-gradient(180deg, #FFF8E1 0%, #FFE0B2 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.bench {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(180deg, #8D6E63 0%, #5D4037 100%);
+}
+
+.preparation-area {
+  padding: 15px;
+  text-align: center;
+}
+
+.prep-title {
+  font-size: 14px;
+  color: #E65100;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.rose-container {
+  position: relative;
+  display: inline-block;
+}
+
+.rose {
+  font-size: 60px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.extract-beaker {
+  width: 80px;
+  height: 100px;
+  background: rgba(255,255,255,0.4);
+  border: 3px solid rgba(255,255,255,0.6);
+  border-radius: 8px 8px 20px 20px;
+  margin: 15px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.rose-extract {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: linear-gradient(180deg, #E91E63 0%, #C2185B 100%);
+  border-radius: 0 0 17px 17px;
+  transition: background 1s ease;
+}
+
+.test-area {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.test-tube-container {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.test-tube-container:hover {
+  transform: scale(1.05);
+}
+
+.test-tube-container.selected {
+  transform: scale(1.1);
+}
+
+.test-tube {
+  width: 35px;
+  height: 100px;
+  background: rgba(255,255,255,0.4);
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 0 0 20px 20px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.test-solution {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  border-radius: 0 0 18px 18px;
+  transition: background 1s ease;
+}
+
+.lemon-tube .test-solution {
+  background: linear-gradient(180deg, #FFF176 0%, #FFEB3B 100%);
+}
+
+.soap-tube .test-solution {
+  background: linear-gradient(180deg, #E1BEE7 0%, #CE93D8 100%);
+}
+
+.water-tube .test-solution {
+  background: linear-gradient(180deg, #B3E5FC 0%, #81D4FA 100%);
+}
+
+.tube-label {
+  font-size: 11px;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #5D4037;
+}
+
+.result-indicator {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.result-indicator.show {
+  opacity: 1;
+}
+
+.result-indicator.acidic {
+  color: #C62828;
+  border: 2px solid #C62828;
+}
+
+.result-indicator.basic {
+  color: #2E7D32;
+  border: 2px solid #2E7D32;
+}
+
+.result-indicator.neutral {
+  color: #E91E63;
+  border: 2px solid #E91E63;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.add-btn {
+  background: linear-gradient(135deg, #E91E63 0%, #C2185B 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.5);
+}
+
+.add-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.reset-btn {
+  background: #f5f5f5;
+  color: #666;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: #e0e0e0;
+}
+
+.info-box {
+  padding: 15px;
+  background: #FCE4EC;
+  border-radius: 12px;
+  border-left: 4px solid #E91E63;
+}
+
+.info-box h3 {
+  font-size: 14px;
+  color: #C2185B;
+  margin-bottom: 8px;
+}
+
+.info-box p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.color-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+  padding: 12px;
+  background: #FAFAFA;
+  border-radius: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.color-swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.swatch-red { background: linear-gradient(135deg, #F44336 0%, #C62828 100%); }
+.swatch-green { background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%); }
+.swatch-pink { background: linear-gradient(135deg, #E91E63 0%, #C2185B 100%); }
+
+.instruction {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.prep-steps {
+  background: #FFF3E0;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 15px 0;
+  font-size: 12px;
+  color: #E65100;
+}
+
+.prep-steps ol {
+  margin-left: 20px;
+}
+
+.prep-steps li {
+  margin-bottom: 4px;
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+  <div class="header">
+    <h1>🌹 Red Rose Indicator</h1>
+    <p>Using flower extract to test acids and bases</p>
+  </div>
+
+  <div class="sim-card">
+    <div class="instruction">👆 Select a solution, then add rose extract to test</div>
+    
+    <div class="lab-scene">
+      <div class="preparation-area">
+        <div class="prep-title">Rose Petal Extract</div>
+        <div class="rose-container">
+          <div class="rose">🌹</div>
+        </div>
+        <div class="extract-beaker">
+          <div class="rose-extract" id="extractColor"></div>
+        </div>
+      </div>
+      
+      <div class="test-area">
+        <div class="test-tube-container lemon-tube" data-type="acidic" data-name="Lemon Juice">
+          <div class="test-tube">
+            <div class="test-solution" id="lemonSolution"></div>
+          </div>
+          <div class="tube-label">🍋 Lemon<br>Juice</div>
+        </div>
+        
+        <div class="test-tube-container soap-tube" data-type="basic" data-name="Soap Solution">
+          <div class="test-tube">
+            <div class="test-solution" id="soapSolution"></div>
+          </div>
+          <div class="tube-label">🧼 Soap<br>Solution</div>
+        </div>
+        
+        <div class="test-tube-container water-tube" data-type="neutral" data-name="Water">
+          <div class="test-tube">
+            <div class="test-solution" id="waterSolution"></div>
+          </div>
+          <div class="tube-label">💧 Pure<br>Water</div>
+        </div>
+      </div>
+      
+      <div class="result-indicator" id="result"></div>
+      <div class="bench"></div>
+    </div>
+    
+    <div class="controls">
+      <button class="add-btn" id="addBtn" disabled>🌹 Add Rose Extract</button>
+      <button class="reset-btn" id="resetBtn">Reset</button>
+    </div>
+    
+    <div class="prep-steps">
+      <strong>How to Prepare Rose Extract:</strong>
+      <ol>
+        <li>Collect fresh red rose petals</li>
+        <li>Crush petals with a little hot water</li>
+        <li>Filter to get the colored extract</li>
+        <li>Use this extract as a natural indicator!</li>
+      </ol>
+    </div>
+    
+    <div class="info-box">
+      <h3>💡 How Rose Extract Works</h3>
+      <p id="explanation">Red rose petal extract contains natural pigments that change color based on pH. It's a wonderful natural indicator that you can make at home!</p>
+    </div>
+    
+    <div class="color-legend">
+      <div class="legend-item">
+        <div class="color-swatch swatch-red"></div>
+        <span>Acidic (Red)</span>
+      </div>
+      <div class="legend-item">
+        <div class="color-swatch swatch-green"></div>
+        <span>Basic (Green)</span>
+      </div>
+      <div class="legend-item">
+        <div class="color-swatch swatch-pink"></div>
+        <span>Neutral (Pink)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const tubes = document.querySelectorAll('.test-tube-container');
+const addBtn = document.getElementById('addBtn');
+const resetBtn = document.getElementById('resetBtn');
+const result = document.getElementById('result');
+const explanation = document.getElementById('explanation');
+
+const lemonSolution = document.getElementById('lemonSolution');
+const soapSolution = document.getElementById('soapSolution');
+const waterSolution = document.getElementById('waterSolution');
+
+let selectedTube = null;
+
+const originalColors = {
+  lemon: 'linear-gradient(180deg, #FFF176 0%, #FFEB3B 100%)',
+  soap: 'linear-gradient(180deg, #E1BEE7 0%, #CE93D8 100%)',
+  water: 'linear-gradient(180deg, #B3E5FC 0%, #81D4FA 100%)'
+};
+
+tubes.forEach(tube => {
+  tube.addEventListener('click', () => {
+    tubes.forEach(t => t.classList.remove('selected'));
+    tube.classList.add('selected');
+    selectedTube = {
+      element: tube,
+      type: tube.dataset.type,
+      name: tube.dataset.name
+    };
+    addBtn.disabled = false;
+    result.classList.remove('show');
+  });
+});
+
+addBtn.addEventListener('click', () => {
+  if (!selectedTube) return;
+  
+  const type = selectedTube.type;
+  const name = selectedTube.name;
+  const tubeClass = selectedTube.element.classList;
+  
+  let solutionEl;
+  if (tubeClass.contains('lemon-tube')) {
+    solutionEl = lemonSolution;
+  } else if (tubeClass.contains('soap-tube')) {
+    solutionEl = soapSolution;
+  } else {
+    solutionEl = waterSolution;
+  }
+  
+  setTimeout(() => {
+    if (type === 'acidic') {
+      solutionEl.style.background = 'linear-gradient(180deg, #EF5350 0%, #C62828 100%)';
+      result.textContent = `${name} turns extract RED → Acidic!`;
+      result.className = 'result-indicator show acidic';
+      explanation.innerHTML = `<strong>Red Color = Acidic!</strong> When rose extract is added to ${name}, the natural pigments react with the acid and turn <span style="color:#C62828">RED</span>. This confirms that ${name} is acidic, just like litmus paper would show!`;
+    } else if (type === 'basic') {
+      solutionEl.style.background = 'linear-gradient(180deg, #66BB6A 0%, #2E7D32 100%)';
+      result.textContent = `${name} turns extract GREEN → Basic!`;
+      result.className = 'result-indicator show basic';
+      explanation.innerHTML = `<strong>Green Color = Basic!</strong> When rose extract is added to ${name}, the natural pigments react with the base and turn <span style="color:#2E7D32">GREEN</span>. This confirms that ${name} is basic!`;
+    } else {
+      solutionEl.style.background = 'linear-gradient(180deg, #F48FB1 0%, #E91E63 100%)';
+      result.textContent = `${name} keeps extract PINK → Neutral!`;
+      result.className = 'result-indicator show neutral';
+      explanation.innerHTML = `<strong>Pink Color = Neutral!</strong> When rose extract is added to ${name}, the color remains <span style="color:#E91E63">PINK</span> (original color). This shows that ${name} is neutral - neither acidic nor basic!`;
+    }
+  }, 300);
+});
+
+resetBtn.addEventListener('click', () => {
+  tubes.forEach(t => t.classList.remove('selected'));
+  selectedTube = null;
+  addBtn.disabled = true;
+  result.classList.remove('show');
+  
+  lemonSolution.style.background = originalColors.lemon;
+  soapSolution.style.background = originalColors.soap;
+  waterSolution.style.background = originalColors.water;
+  
+  explanation.textContent = "Red rose petal extract contains natural pigments that change color based on pH. It's a wonderful natural indicator that you can make at home!";
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Litmus Paper Indicator - Acids, Bases & Neutrals</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#app {
+  max-width: 500px;
+  margin: auto;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.sim-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.lab-bench {
+  position: relative;
+  height: 350px;
+  background: linear-gradient(180deg, #E8F5E9 0%, #C8E6C9 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.bench-surface {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(180deg, #8D6E63 0%, #6D4C41 100%);
+}
+
+.solutions-area {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.solution {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.solution:hover {
+  transform: scale(1.05);
+}
+
+.solution.selected {
+  transform: scale(1.1);
+}
+
+.beaker {
+  width: 60px;
+  height: 80px;
+  background: rgba(255,255,255,0.3);
+  border: 3px solid rgba(255,255,255,0.5);
+  border-radius: 5px 5px 15px 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  border-radius: 0 0 12px 12px;
+}
+
+.solution-label {
+  font-size: 11px;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.lemon .liquid { background: linear-gradient(180deg, #FFF176 0%, #FFD54F 100%); }
+.soap .liquid { background: linear-gradient(180deg, #E1BEE7 0%, #CE93D8 100%); }
+.water .liquid { background: linear-gradient(180deg, #B3E5FC 0%, #81D4FA 100%); }
+.vinegar .liquid { background: linear-gradient(180deg, #FFECB3 0%, #FFD54F 100%); }
+.baking-soda .liquid { background: linear-gradient(180deg, #F5F5F5 0%, #E0E0E0 100%); }
+
+.litmus-area {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.litmus-container {
+  text-align: center;
+}
+
+.litmus-paper {
+  width: 30px;
+  height: 80px;
+  border-radius: 4px;
+  margin: 0 auto;
+  transition: background-color 1s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.blue-litmus {
+  background: #2196F3;
+}
+
+.red-litmus {
+  background: #F44336;
+}
+
+.litmus-label {
+  font-size: 12px;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #555;
+}
+
+.result-display {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.result-display.show {
+  opacity: 1;
+}
+
+.result-display.acidic { color: #F44336; border: 2px solid #F44336; }
+.result-display.basic { color: #2196F3; border: 2px solid #2196F3; }
+.result-display.neutral { color: #4CAF50; border: 2px solid #4CAF50; }
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.test-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.test-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.test-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.reset-btn {
+  background: #f5f5f5;
+  color: #666;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: #e0e0e0;
+}
+
+.info-box {
+  padding: 15px;
+  background: #E3F2FD;
+  border-radius: 12px;
+  border-left: 4px solid #2196F3;
+}
+
+.info-box h3 {
+  font-size: 14px;
+  color: #1565C0;
+  margin-bottom: 8px;
+}
+
+.info-box p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+  padding: 10px;
+  background: #FAFAFA;
+  border-radius: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legend-dot.acidic { background: #F44336; }
+.legend-dot.basic { background: #2196F3; }
+.legend-dot.neutral { background: #4CAF50; }
+
+.instruction {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 15px;
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+  <div class="header">
+    <h1>🧪 Litmus Paper Test</h1>
+    <p>Learn how litmus indicates acids, bases, and neutrals</p>
+  </div>
+
+  <div class="sim-card">
+    <div class="instruction">👆 Select a solution, then click "Test with Litmus"</div>
+    
+    <div class="lab-bench">
+      <div class="solutions-area">
+        <div class="solution lemon" data-type="acidic" data-name="Lemon Juice">
+          <div class="beaker"><div class="liquid"></div></div>
+          <div class="solution-label">🍋 Lemon<br>Juice</div>
+        </div>
+        <div class="solution soap" data-type="basic" data-name="Soap Solution">
+          <div class="beaker"><div class="liquid"></div></div>
+          <div class="solution-label">🧼 Soap<br>Solution</div>
+        </div>
+        <div class="solution water" data-type="neutral" data-name="Tap Water">
+          <div class="beaker"><div class="liquid"></div></div>
+          <div class="solution-label">💧 Tap<br>Water</div>
+        </div>
+        <div class="solution vinegar" data-type="acidic" data-name="Vinegar">
+          <div class="beaker"><div class="liquid"></div></div>
+          <div class="solution-label">🫙 Vinegar</div>
+        </div>
+        <div class="solution baking-soda" data-type="basic" data-name="Baking Soda">
+          <div class="beaker"><div class="liquid"></div></div>
+          <div class="solution-label">🥄 Baking<br>Soda</div>
+        </div>
+      </div>
+      
+      <div class="litmus-area">
+        <div class="litmus-container">
+          <div class="litmus-paper blue-litmus" id="blueLitmus"></div>
+          <div class="litmus-label">Blue Litmus</div>
+        </div>
+        <div class="litmus-container">
+          <div class="litmus-paper red-litmus" id="redLitmus"></div>
+          <div class="litmus-label">Red Litmus</div>
+        </div>
+      </div>
+      
+      <div class="result-display" id="result"></div>
+      <div class="bench-surface"></div>
+    </div>
+    
+    <div class="controls">
+      <button class="test-btn" id="testBtn" disabled>Test with Litmus</button>
+      <button class="reset-btn" id="resetBtn">Reset</button>
+    </div>
+    
+    <div class="info-box">
+      <h3>💡 How Litmus Works</h3>
+      <p id="explanation">Litmus is a natural dye extracted from lichens. It comes as blue or red paper strips. Select a solution above to test its nature!</p>
+    </div>
+    
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-dot acidic"></div>
+        <span>Acidic</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot basic"></div>
+        <span>Basic</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot neutral"></div>
+        <span>Neutral</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const solutions = document.querySelectorAll('.solution');
+const blueLitmus = document.getElementById('blueLitmus');
+const redLitmus = document.getElementById('redLitmus');
+const testBtn = document.getElementById('testBtn');
+const resetBtn = document.getElementById('resetBtn');
+const result = document.getElementById('result');
+const explanation = document.getElementById('explanation');
+
+let selectedSolution = null;
+
+solutions.forEach(solution => {
+  solution.addEventListener('click', () => {
+    solutions.forEach(s => s.classList.remove('selected'));
+    solution.classList.add('selected');
+    selectedSolution = {
+      type: solution.dataset.type,
+      name: solution.dataset.name
+    };
+    testBtn.disabled = false;
+    result.classList.remove('show');
+  });
+});
+
+testBtn.addEventListener('click', () => {
+  if (!selectedSolution) return;
+  
+  const type = selectedSolution.type;
+  const name = selectedSolution.name;
+  
+  // Reset colors first
+  blueLitmus.style.backgroundColor = '#2196F3';
+  redLitmus.style.backgroundColor = '#F44336';
+  
+  setTimeout(() => {
+    if (type === 'acidic') {
+      blueLitmus.style.backgroundColor = '#F44336'; // Blue turns red
+      redLitmus.style.backgroundColor = '#F44336'; // Red stays red
+      result.textContent = `${name} is ACIDIC!`;
+      result.className = 'result-display show acidic';
+      explanation.innerHTML = `<strong>Acidic!</strong> The blue litmus paper turned <span style="color:#F44336">RED</span> because ${name} is acidic. Red litmus stays red in acids. Acids contain hydrogen ions (H⁺) which cause this color change.`;
+    } else if (type === 'basic') {
+      blueLitmus.style.backgroundColor = '#2196F3'; // Blue stays blue
+      redLitmus.style.backgroundColor = '#2196F3'; // Red turns blue
+      result.textContent = `${name} is BASIC!`;
+      result.className = 'result-display show basic';
+      explanation.innerHTML = `<strong>Basic!</strong> The red litmus paper turned <span style="color:#2196F3">BLUE</span> because ${name} is basic. Blue litmus stays blue in bases. Bases contain hydroxide ions (OH⁻) which cause this color change.`;
+    } else {
+      blueLitmus.style.backgroundColor = '#2196F3'; // Blue stays blue
+      redLitmus.style.backgroundColor = '#F44336'; // Red stays red
+      result.textContent = `${name} is NEUTRAL!`;
+      result.className = 'result-display show neutral';
+      explanation.innerHTML = `<strong>Neutral!</strong> Neither litmus paper changed color because ${name} is neutral. Neutral substances have a balanced pH and don't affect litmus paper.`;
+    }
+  }, 100);
+});
+
+resetBtn.addEventListener('click', () => {
+  solutions.forEach(s => s.classList.remove('selected'));
+  selectedSolution = null;
+  testBtn.disabled = true;
+  blueLitmus.style.backgroundColor = '#2196F3';
+  redLitmus.style.backgroundColor = '#F44336';
+  result.classList.remove('show');
+  explanation.textContent = "Litmus is a natural dye extracted from lichens. It comes as blue or red paper strips. Select a solution above to test its nature!";
+});
+</script>
+</body>
+</html>

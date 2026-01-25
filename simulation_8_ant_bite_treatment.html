@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Treating Ant Bites - Neutralisation in Daily Life</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#app {
+  max-width: 500px;
+  margin: auto;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+.sim-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.scene {
+  position: relative;
+  height: 350px;
+  background: linear-gradient(180deg, #87CEEB 0%, #98FB98 80%, #228B22 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(180deg, #228B22 0%, #006400 100%);
+}
+
+.arm-container {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arm {
+  width: 150px;
+  height: 200px;
+  background: linear-gradient(90deg, #FFCC80 0%, #FFB74D 50%, #FFCC80 100%);
+  border-radius: 30px 30px 40px 40px;
+  position: relative;
+}
+
+.bite-area {
+  position: absolute;
+  top: 80px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #FFCC80;
+  transition: all 0.5s ease;
+}
+
+.bite-area.inflamed {
+  background: radial-gradient(circle, #FF5252 0%, #FFCC80 70%);
+  box-shadow: 0 0 20px rgba(255, 82, 82, 0.5);
+}
+
+.bite-area.healed {
+  background: #FFCC80;
+  box-shadow: none;
+}
+
+.ant {
+  position: absolute;
+  font-size: 20px;
+  animation: crawl 3s linear infinite;
+}
+
+.ant:nth-child(1) { top: 60px; left: 30px; animation-delay: 0s; }
+.ant:nth-child(2) { top: 100px; left: 100px; animation-delay: 1s; }
+.ant:nth-child(3) { top: 140px; left: 20px; animation-delay: 2s; }
+
+@keyframes crawl {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+.pain-indicator {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: all 0.5s ease;
+}
+
+.pain-indicator.pain {
+  background: #FFEBEE;
+  color: #C62828;
+  border: 2px solid #EF5350;
+}
+
+.pain-indicator.relief {
+  background: #E8F5E9;
+  color: #2E7D32;
+  border: 2px solid #4CAF50;
+}
+
+.treatment-box {
+  position: absolute;
+  bottom: 70px;
+  right: 20px;
+  text-align: center;
+}
+
+.baking-soda-container {
+  width: 60px;
+  height: 80px;
+  background: linear-gradient(180deg, #ECEFF1 0%, #CFD8DC 100%);
+  border-radius: 8px;
+  margin: 0 auto;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.baking-soda-container:hover {
+  transform: scale(1.05);
+}
+
+.soda-label {
+  font-size: 8px;
+  color: #455A64;
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.treatment-label {
+  font-size: 11px;
+  color: #37474F;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.application-effect {
+  position: absolute;
+  top: 60px;
+  left: 30px;
+  width: 80px;
+  height: 80px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.application-effect.show {
+  opacity: 1;
+}
+
+.paste-dot {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  animation: appear 0.5s ease forwards;
+}
+
+.paste-dot:nth-child(1) { top: 20px; left: 30px; animation-delay: 0.1s; }
+.paste-dot:nth-child(2) { top: 35px; left: 20px; animation-delay: 0.2s; }
+.paste-dot:nth-child(3) { top: 30px; left: 45px; animation-delay: 0.3s; }
+
+@keyframes appear {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+.formic-acid-label {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,82,82,0.2);
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 11px;
+  color: #C62828;
+  border: 1px dashed #EF5350;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.formic-acid-label.show {
+  opacity: 1;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.bite-btn {
+  background: linear-gradient(135deg, #EF5350 0%, #C62828 100%);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(239, 83, 80, 0.4);
+}
+
+.bite-btn:hover {
+  transform: translateY(-2px);
+}
+
+.treat-btn {
+  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.treat-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.treat-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.reset-btn {
+  background: #f5f5f5;
+  color: #666;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: #e0e0e0;
+}
+
+.info-box {
+  padding: 15px;
+  background: #FFF3E0;
+  border-radius: 12px;
+  border-left: 4px solid #FF9800;
+}
+
+.info-box h3 {
+  font-size: 14px;
+  color: #E65100;
+  margin-bottom: 8px;
+}
+
+.info-box p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.science-box {
+  margin-top: 15px;
+  padding: 15px;
+  background: #E3F2FD;
+  border-radius: 12px;
+}
+
+.science-box h4 {
+  font-size: 13px;
+  color: #1565C0;
+  margin-bottom: 8px;
+}
+
+.equation {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+}
+
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.step.active {
+  background: #E8F5E9;
+  color: #2E7D32;
+}
+
+.step.inactive {
+  background: #F5F5F5;
+  color: #9E9E9E;
+}
+
+.step-icon {
+  font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+  <div class="header">
+    <h1>🐜 Treating Ant Bites</h1>
+    <p>Using neutralisation to relieve pain</p>
+  </div>
+
+  <div class="sim-card">
+    <div class="scene">
+      <div class="pain-indicator" id="painIndicator">😊 Healthy Skin</div>
+      
+      <div class="arm-container">
+        <div class="arm">
+          <span class="ant">🐜</span>
+          <span class="ant">🐜</span>
+          <span class="ant">🐜</span>
+          <div class="bite-area" id="biteArea"></div>
+          <div class="application-effect" id="applicationEffect">
+            <div class="paste-dot"></div>
+            <div class="paste-dot"></div>
+            <div class="paste-dot"></div>
+          </div>
+        </div>
+        <div class="formic-acid-label" id="formicLabel">⚠️ Formic Acid Injected!</div>
+      </div>
+      
+      <div class="treatment-box">
+        <div class="baking-soda-container" id="sodaBox">
+          <div class="soda-label">BAKING<br>SODA</div>
+        </div>
+        <div class="treatment-label">🥄 Moist Baking Soda<br>(Base)</div>
+      </div>
+      
+      <div class="ground"></div>
+    </div>
+    
+    <div class="step-indicator">
+      <div class="step inactive" id="step1">
+        <span class="step-icon">🐜</span>
+        <span>Ant Bites</span>
+      </div>
+      <div class="step inactive" id="step2">
+        <span class="step-icon">😣</span>
+        <span>Pain (Acid)</span>
+      </div>
+      <div class="step inactive" id="step3">
+        <span class="step-icon">🥄</span>
+        <span>Apply Base</span>
+      </div>
+      <div class="step inactive" id="step4">
+        <span class="step-icon">😊</span>
+        <span>Relief!</span>
+      </div>
+    </div>
+    
+    <div class="controls" style="margin-top:15px;">
+      <button class="bite-btn" id="biteBtn">🐜 Simulate Ant Bite</button>
+      <button class="treat-btn" id="treatBtn" disabled>🥄 Apply Treatment</button>
+      <button class="reset-btn" id="resetBtn">Reset</button>
+    </div>
+    
+    <div class="info-box">
+      <h3>💡 Why Does This Work?</h3>
+      <p id="explanation">When an ant bites, it injects <strong>formic acid</strong> into your skin, causing pain and irritation. Applying a base like moist baking soda neutralises the acid and provides relief!</p>
+    </div>
+    
+    <div class="science-box">
+      <h4>🔬 The Science Behind It</h4>
+      <div class="equation">
+        Formic Acid (ant bite) + Baking Soda (base) → Salt + Water + Relief!
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const biteBtn = document.getElementById('biteBtn');
+const treatBtn = document.getElementById('treatBtn');
+const resetBtn = document.getElementById('resetBtn');
+const biteArea = document.getElementById('biteArea');
+const painIndicator = document.getElementById('painIndicator');
+const formicLabel = document.getElementById('formicLabel');
+const applicationEffect = document.getElementById('applicationEffect');
+const explanation = document.getElementById('explanation');
+
+const steps = [
+  document.getElementById('step1'),
+  document.getElementById('step2'),
+  document.getElementById('step3'),
+  document.getElementById('step4')
+];
+
+let state = 'normal'; // normal, bitten, treated
+
+function updateSteps(activeIndex) {
+  steps.forEach((step, i) => {
+    if (i <= activeIndex) {
+      step.classList.add('active');
+      step.classList.remove('inactive');
+    } else {
+      step.classList.remove('active');
+      step.classList.add('inactive');
+    }
+  });
+}
+
+biteBtn.addEventListener('click', () => {
+  if (state !== 'normal') return;
+  state = 'bitten';
+  
+  biteArea.classList.add('inflamed');
+  painIndicator.textContent = '😣 Ouch! Pain from ant bite';
+  painIndicator.className = 'pain-indicator pain';
+  formicLabel.classList.add('show');
+  
+  updateSteps(1);
+  
+  treatBtn.disabled = false;
+  biteBtn.disabled = true;
+  
+  explanation.innerHTML = `<strong>Ant Bite!</strong> The ant has injected <span style="color:#C62828">formic acid</span> into your skin. This acid causes the burning sensation and pain. We need to neutralise it with a base!`;
+});
+
+treatBtn.addEventListener('click', () => {
+  if (state !== 'bitten') return;
+  state = 'treated';
+  
+  updateSteps(2);
+  applicationEffect.classList.add('show');
+  
+  setTimeout(() => {
+    biteArea.classList.remove('inflamed');
+    biteArea.classList.add('healed');
+    painIndicator.textContent = '😊 Relief! Pain neutralised';
+    painIndicator.className = 'pain-indicator relief';
+    formicLabel.classList.remove('show');
+    
+    updateSteps(3);
+    
+    explanation.innerHTML = `<strong>Relief!</strong> The baking soda (a base) neutralised the formic acid from the ant bite. The <span style="color:#2E7D32">neutralisation reaction</span> converted the acid into harmless salt and water, stopping the burning sensation!`;
+  }, 1000);
+  
+  treatBtn.disabled = true;
+});
+
+resetBtn.addEventListener('click', () => {
+  state = 'normal';
+  
+  biteArea.classList.remove('inflamed', 'healed');
+  painIndicator.textContent = '😊 Healthy Skin';
+  painIndicator.className = 'pain-indicator';
+  formicLabel.classList.remove('show');
+  applicationEffect.classList.remove('show');
+  
+  steps.forEach(step => {
+    step.classList.remove('active');
+    step.classList.add('inactive');
+  });
+  
+  biteBtn.disabled = false;
+  treatBtn.disabled = true;
+  
+  explanation.innerHTML = 'When an ant bites, it injects <strong>formic acid</strong> into your skin, causing pain and irritation. Applying a base like moist baking soda neutralises the acid and provides relief!';
+});
+</script>
+</body>
+</html>

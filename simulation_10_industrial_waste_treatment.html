@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Industrial Waste Treatment - Protecting Our Waters</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#app {
+  max-width: 500px;
+  margin: auto;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.sim-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.industrial-scene {
+  position: relative;
+  height: 380px;
+  background: linear-gradient(180deg, #B0BEC5 0%, #78909C 30%, #546E7A 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.factory {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+
+.factory-building {
+  width: 80px;
+  height: 100px;
+  background: linear-gradient(180deg, #455A64 0%, #37474F 100%);
+  border-radius: 5px 5px 0 0;
+}
+
+.chimney {
+  position: absolute;
+  top: -40px;
+  left: 30px;
+  width: 20px;
+  height: 50px;
+  background: #37474F;
+}
+
+.smoke {
+  position: absolute;
+  top: -60px;
+  left: 25px;
+  font-size: 25px;
+  animation: smokeRise 2s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+@keyframes smokeRise {
+  0% { transform: translateY(0); opacity: 0.6; }
+  100% { transform: translateY(-20px); opacity: 0; }
+}
+
+.pipe-system {
+  position: absolute;
+  top: 100px;
+  left: 110px;
+}
+
+.pipe {
+  width: 150px;
+  height: 20px;
+  background: #607D8B;
+  border-radius: 10px;
+}
+
+.pipe-down {
+  width: 20px;
+  height: 80px;
+  background: #607D8B;
+  margin-left: 130px;
+  border-radius: 0 0 10px 10px;
+}
+
+.waste-flow {
+  position: absolute;
+  top: 180px;
+  left: 235px;
+  width: 15px;
+  height: 60px;
+  border-radius: 0 0 8px 8px;
+  transition: background 0.8s ease;
+}
+
+.waste-flow.acidic {
+  background: linear-gradient(180deg, #F44336 0%, #C62828 100%);
+  animation: flowPulse 1s ease-in-out infinite;
+}
+
+.waste-flow.neutral {
+  background: linear-gradient(180deg, #81C784 0%, #4CAF50 100%);
+}
+
+@keyframes flowPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.treatment-tank {
+  position: absolute;
+  top: 130px;
+  right: 40px;
+  text-align: center;
+}
+
+.tank {
+  width: 70px;
+  height: 90px;
+  background: linear-gradient(180deg, #ECEFF1 0%, #CFD8DC 100%);
+  border-radius: 10px;
+  border: 3px solid #90A4AE;
+  position: relative;
+  overflow: hidden;
+}
+
+.tank-liquid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(180deg, #90CAF9 0%, #42A5F5 100%);
+  border-radius: 0 0 7px 7px;
+}
+
+.tank-label {
+  font-size: 10px;
+  color: #37474F;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+.river-area {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  transition: background 0.8s ease;
+}
+
+.river-area.polluted {
+  background: linear-gradient(180deg, #8D6E63 0%, #5D4037 50%, #4E342E 100%);
+}
+
+.river-area.clean {
+  background: linear-gradient(180deg, #4FC3F7 0%, #29B6F6 50%, #0288D1 100%);
+}
+
+.fish-container {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+}
+
+.fish {
+  font-size: 35px;
+  transition: all 0.8s ease;
+}
+
+.fish.dead {
+  filter: grayscale(100%);
+  transform: rotate(180deg);
+}
+
+.fish.alive {
+  filter: none;
+  transform: rotate(0deg);
+  animation: swim 2s ease-in-out infinite;
+}
+
+@keyframes swim {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+.status-indicator {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.status-indicator.danger {
+  color: #C62828;
+  border: 2px solid #EF5350;
+}
+
+.status-indicator.safe {
+  color: #2E7D32;
+  border: 2px solid #4CAF50;
+}
+
+.warning-sign {
+  position: absolute;
+  bottom: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFC107;
+  color: #333;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.warning-sign.show {
+  opacity: 1;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.action-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.release-btn {
+  background: linear-gradient(135deg, #F44336 0%, #C62828 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(244, 67, 54, 0.4);
+}
+
+.release-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.treat-btn {
+  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.treat-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.action-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.reset-btn {
+  background: #f5f5f5;
+  color: #666;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: #e0e0e0;
+}
+
+.info-box {
+  padding: 15px;
+  background: #E3F2FD;
+  border-radius: 12px;
+  border-left: 4px solid #2196F3;
+}
+
+.info-box h3 {
+  font-size: 14px;
+  color: #1565C0;
+  margin-bottom: 8px;
+}
+
+.info-box p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.process-flow {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  background: #FAFAFA;
+  border-radius: 12px;
+}
+
+.process-step {
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 11px;
+}
+
+.process-step.danger {
+  background: #FFEBEE;
+  color: #C62828;
+}
+
+.process-step.treatment {
+  background: #E8F5E9;
+  color: #2E7D32;
+}
+
+.process-step.safe {
+  background: #E3F2FD;
+  color: #1565C0;
+}
+
+.process-icon {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.process-arrow {
+  font-size: 20px;
+  color: #999;
+}
+
+.ph-display {
+  margin-top: 15px;
+  padding: 12px;
+  background: #ECEFF1;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.ph-value {
+  font-size: 24px;
+  font-weight: bold;
+  transition: color 0.5s ease;
+}
+
+.ph-value.acidic { color: #C62828; }
+.ph-value.neutral { color: #2E7D32; }
+
+.ph-label {
+  font-size: 12px;
+  color: #666;
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+  <div class="header">
+    <h1>🏭 Industrial Waste Treatment</h1>
+    <p>Protecting aquatic life through neutralisation</p>
+  </div>
+
+  <div class="sim-card">
+    <div class="industrial-scene">
+      <div class="factory">
+        <div class="chimney"></div>
+        <div class="smoke">💨</div>
+        <div class="factory-building"></div>
+      </div>
+      
+      <div class="pipe-system">
+        <div class="pipe"></div>
+        <div class="pipe-down"></div>
+      </div>
+      
+      <div class="waste-flow" id="wasteFlow"></div>
+      
+      <div class="treatment-tank">
+        <div class="tank">
+          <div class="tank-liquid"></div>
+        </div>
+        <div class="tank-label">⚗️ Base Solution<br>(Neutraliser)</div>
+      </div>
+      
+      <div class="status-indicator" id="statusIndicator">⏳ Waiting...</div>
+      
+      <div class="warning-sign" id="warningSign">⚠️ ACIDIC WASTE - DANGER!</div>
+      
+      <div class="river-area clean" id="riverArea">
+        <div class="fish-container">
+          <div class="fish alive" id="fish1">🐟</div>
+          <div class="fish alive" id="fish2">🐠</div>
+          <div class="fish alive" id="fish3">🐟</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ph-display">
+      <div class="ph-value neutral" id="phValue">pH 7.0</div>
+      <div class="ph-label">Water pH Level</div>
+    </div>
+    
+    <div class="controls" style="margin-top: 15px;">
+      <button class="action-btn release-btn" id="releaseBtn">🏭 Release Untreated Waste</button>
+      <button class="action-btn treat-btn" id="treatBtn" disabled>⚗️ Neutralise & Release</button>
+      <button class="reset-btn" id="resetBtn">Reset</button>
+    </div>
+    
+    <div class="info-box">
+      <h3>💡 Why Treatment Matters</h3>
+      <p id="explanation">Factory waste is often acidic and can kill fish and other aquatic life if released directly into rivers. By adding a base to neutralise the acid, we protect our ecosystems!</p>
+    </div>
+    
+    <div class="process-flow">
+      <div class="process-step danger">
+        <div class="process-icon">🏭</div>
+        <div>Acidic<br>Waste</div>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step treatment">
+        <div class="process-icon">⚗️</div>
+        <div>Add Base<br>(Neutralise)</div>
+      </div>
+      <div class="process-arrow">→</div>
+      <div class="process-step safe">
+        <div class="process-icon">💧</div>
+        <div>Safe Water<br>(pH 7)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const releaseBtn = document.getElementById('releaseBtn');
+const treatBtn = document.getElementById('treatBtn');
+const resetBtn = document.getElementById('resetBtn');
+const wasteFlow = document.getElementById('wasteFlow');
+const riverArea = document.getElementById('riverArea');
+const statusIndicator = document.getElementById('statusIndicator');
+const warningSign = document.getElementById('warningSign');
+const phValue = document.getElementById('phValue');
+const explanation = document.getElementById('explanation');
+
+const fish1 = document.getElementById('fish1');
+const fish2 = document.getElementById('fish2');
+const fish3 = document.getElementById('fish3');
+
+let state = 'initial'; // initial, polluted, treated
+
+releaseBtn.addEventListener('click', () => {
+  if (state !== 'initial') return;
+  state = 'polluted';
+  
+  // Show acidic waste flow
+  wasteFlow.classList.add('acidic');
+  wasteFlow.classList.remove('neutral');
+  warningSign.classList.add('show');
+  
+  setTimeout(() => {
+    // Pollute river
+    riverArea.classList.remove('clean');
+    riverArea.classList.add('polluted');
+    
+    // Kill fish
+    [fish1, fish2, fish3].forEach(fish => {
+      fish.classList.remove('alive');
+      fish.classList.add('dead');
+    });
+    
+    // Update status
+    statusIndicator.textContent = '☠️ POLLUTION DISASTER!';
+    statusIndicator.className = 'status-indicator danger';
+    
+    // Update pH
+    phValue.textContent = 'pH 3.0';
+    phValue.className = 'ph-value acidic';
+    
+    explanation.innerHTML = `<strong>DISASTER!</strong> Untreated acidic waste (pH 3) has killed the fish! The acid destroyed their gills and disrupted the ecosystem. This is why <span style="color:#C62828">factories MUST neutralise waste</span> before releasing it.`;
+    
+    releaseBtn.disabled = true;
+    treatBtn.disabled = false;
+  }, 1000);
+});
+
+treatBtn.addEventListener('click', () => {
+  if (state !== 'polluted') return;
+  state = 'treated';
+  
+  // Show treatment process
+  wasteFlow.classList.remove('acidic');
+  wasteFlow.classList.add('neutral');
+  warningSign.classList.remove('show');
+  
+  setTimeout(() => {
+    // Clean river
+    riverArea.classList.remove('polluted');
+    riverArea.classList.add('clean');
+    
+    // Revive fish (new generation)
+    [fish1, fish2, fish3].forEach(fish => {
+      fish.classList.remove('dead');
+      fish.classList.add('alive');
+    });
+    
+    // Update status
+    statusIndicator.textContent = '✅ WATER SAFE!';
+    statusIndicator.className = 'status-indicator safe';
+    
+    // Update pH
+    phValue.textContent = 'pH 7.0';
+    phValue.className = 'ph-value neutral';
+    
+    explanation.innerHTML = `<strong>SUCCESS!</strong> By adding a base to the acidic waste, we performed a <span style="color:#2E7D32">neutralisation reaction</span>: Acid + Base → Salt + Water. The treated water (pH 7) is now safe for aquatic life!`;
+    
+    treatBtn.disabled = true;
+  }, 1000);
+});
+
+resetBtn.addEventListener('click', () => {
+  state = 'initial';
+  
+  wasteFlow.classList.remove('acidic', 'neutral');
+  riverArea.classList.remove('polluted');
+  riverArea.classList.add('clean');
+  warningSign.classList.remove('show');
+  
+  [fish1, fish2, fish3].forEach(fish => {
+    fish.classList.remove('dead');
+    fish.classList.add('alive');
+  });
+  
+  statusIndicator.textContent = '⏳ Waiting...';
+  statusIndicator.className = 'status-indicator';
+  
+  phValue.textContent = 'pH 7.0';
+  phValue.className = 'ph-value neutral';
+  
+  releaseBtn.disabled = false;
+  treatBtn.disabled = true;
+  
+  explanation.innerHTML = 'Factory waste is often acidic and can kill fish and other aquatic life if released directly into rivers. By adding a base to neutralise the acid, we protect our ecosystems!';
+});
+</script>
+</body>
+</html>

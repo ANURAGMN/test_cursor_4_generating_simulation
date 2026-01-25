@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Hidden Message Revealed - Acid Base Introduction</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#app {
+  max-width: 500px;
+  margin: auto;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.sim-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.scene {
+  position: relative;
+  height: 300px;
+  background: linear-gradient(180deg, #87CEEB 0%, #E0F6FF 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.science-fair-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(180deg, #8B4513 0%, #654321 100%);
+}
+
+.banner {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFE4B5;
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #8B4513;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.paper {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 140px;
+  background: #FFFEF0;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+
+.hidden-message {
+  font-size: 18px;
+  font-weight: bold;
+  color: transparent;
+  text-align: center;
+  transition: color 1.5s ease;
+  line-height: 1.4;
+}
+
+.hidden-message.revealed {
+  color: #E91E63;
+}
+
+.spray-bottle {
+  position: absolute;
+  bottom: 100px;
+  right: 60px;
+  width: 60px;
+  height: 100px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.spray-bottle:hover {
+  transform: scale(1.1);
+}
+
+.spray-bottle:active {
+  transform: scale(0.95);
+}
+
+.bottle-body {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  width: 40px;
+  height: 60px;
+  background: linear-gradient(90deg, #4FC3F7 0%, #29B6F6 50%, #4FC3F7 100%);
+  border-radius: 8px 8px 12px 12px;
+}
+
+.bottle-neck {
+  position: absolute;
+  bottom: 60px;
+  left: 18px;
+  width: 24px;
+  height: 15px;
+  background: linear-gradient(90deg, #4FC3F7 0%, #29B6F6 50%, #4FC3F7 100%);
+  border-radius: 4px 4px 0 0;
+}
+
+.spray-nozzle {
+  position: absolute;
+  bottom: 75px;
+  left: 15px;
+  width: 30px;
+  height: 25px;
+  background: #333;
+  border-radius: 6px;
+}
+
+.spray-trigger {
+  position: absolute;
+  bottom: 78px;
+  left: 45px;
+  width: 15px;
+  height: 12px;
+  background: #333;
+  border-radius: 3px;
+}
+
+.spray-particles {
+  position: absolute;
+  bottom: 95px;
+  left: -80px;
+  width: 100px;
+  height: 60px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.spray-particles.active {
+  opacity: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(233, 30, 99, 0.6);
+  border-radius: 50%;
+  animation: spray 0.8s ease-out forwards;
+}
+
+@keyframes spray {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(0.3);
+    opacity: 0;
+  }
+}
+
+.controls {
+  text-align: center;
+}
+
+.spray-btn {
+  background: linear-gradient(135deg, #E91E63 0%, #C2185B 100%);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+}
+
+.spray-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.5);
+}
+
+.spray-btn:active {
+  transform: translateY(0);
+}
+
+.reset-btn {
+  background: #f5f5f5;
+  color: #666;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: #e0e0e0;
+}
+
+.info-box {
+  margin-top: 20px;
+  padding: 15px;
+  background: #FFF3E0;
+  border-radius: 12px;
+  border-left: 4px solid #FF9800;
+}
+
+.info-box h3 {
+  font-size: 14px;
+  color: #E65100;
+  margin-bottom: 8px;
+}
+
+.info-box p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.characters {
+  position: absolute;
+  bottom: 85px;
+  left: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.character {
+  width: 40px;
+  height: 60px;
+  position: relative;
+}
+
+.char-head {
+  width: 25px;
+  height: 25px;
+  background: #FFCC80;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.char-body {
+  width: 30px;
+  height: 35px;
+  border-radius: 8px 8px 0 0;
+  margin: 0 auto;
+  margin-top: -5px;
+}
+
+.ashwin .char-body { background: #42A5F5; }
+.keerthi .char-body { background: #EC407A; }
+</style>
+</head>
+
+<body>
+<div id="app">
+  <div class="header">
+    <h1>🔬 Science Fair Mystery</h1>
+    <p>Discover how indicators reveal hidden messages!</p>
+  </div>
+
+  <div class="sim-card">
+    <div class="scene">
+      <div class="banner">🎪 SCIENCE FAIR</div>
+      
+      <div class="paper">
+        <div class="hidden-message" id="message">
+          Welcome to<br>Science Fair!
+        </div>
+      </div>
+      
+      <div class="characters">
+        <div class="character ashwin">
+          <div class="char-head"></div>
+          <div class="char-body"></div>
+        </div>
+        <div class="character keerthi">
+          <div class="char-head"></div>
+          <div class="char-body"></div>
+        </div>
+      </div>
+      
+      <div class="spray-bottle" id="sprayBottle">
+        <div class="spray-nozzle"></div>
+        <div class="spray-trigger"></div>
+        <div class="bottle-neck"></div>
+        <div class="bottle-body"></div>
+        <div class="spray-particles" id="particles"></div>
+      </div>
+      
+      <div class="science-fair-bg"></div>
+    </div>
+    
+    <div class="controls">
+      <button class="spray-btn" id="sprayBtn">🧴 Spray the Indicator</button>
+      <button class="reset-btn" id="resetBtn">Reset</button>
+    </div>
+    
+    <div class="info-box">
+      <h3>💡 What's Happening?</h3>
+      <p id="explanation">The paper appears blank, but it has a hidden message written with a special solution. Click the spray button to reveal it!</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const message = document.getElementById('message');
+const sprayBtn = document.getElementById('sprayBtn');
+const resetBtn = document.getElementById('resetBtn');
+const sprayBottle = document.getElementById('sprayBottle');
+const particles = document.getElementById('particles');
+const explanation = document.getElementById('explanation');
+
+let isRevealed = false;
+let sprayCount = 0;
+
+function createParticles() {
+  particles.innerHTML = '';
+  for (let i = 0; i < 15; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.setProperty('--tx', `${-40 - Math.random() * 60}px`);
+    particle.style.setProperty('--ty', `${-20 + Math.random() * 40}px`);
+    particle.style.left = `${Math.random() * 30}px`;
+    particle.style.top = `${Math.random() * 30}px`;
+    particle.style.animationDelay = `${Math.random() * 0.3}s`;
+    particles.appendChild(particle);
+  }
+  particles.classList.add('active');
+  setTimeout(() => particles.classList.remove('active'), 800);
+}
+
+function spray() {
+  createParticles();
+  sprayCount++;
+  
+  if (sprayCount >= 3 && !isRevealed) {
+    message.classList.add('revealed');
+    isRevealed = true;
+    explanation.innerHTML = `<strong>Amazing!</strong> The indicator spray contains a substance that reacts with the invisible writing (written in a basic solution). This reaction causes a color change, revealing the hidden message! This demonstrates how <strong>acid-base indicators</strong> work by changing color when they contact acidic or basic substances.`;
+    sprayBtn.textContent = '✨ Message Revealed!';
+    sprayBtn.style.background = 'linear-gradient(135deg, #4CAF50 0%, #388E3C 100%)';
+  } else if (!isRevealed) {
+    explanation.textContent = `Spraying... ${3 - sprayCount} more spray${3 - sprayCount > 1 ? 's' : ''} needed to reveal the message!`;
+  }
+}
+
+function reset() {
+  message.classList.remove('revealed');
+  isRevealed = false;
+  sprayCount = 0;
+  explanation.textContent = "The paper appears blank, but it has a hidden message written with a special solution. Click the spray button to reveal it!";
+  sprayBtn.textContent = '🧴 Spray the Indicator';
+  sprayBtn.style.background = 'linear-gradient(135deg, #E91E63 0%, #C2185B 100%)';
+}
+
+sprayBtn.addEventListener('click', spray);
+sprayBottle.addEventListener('click', spray);
+resetBtn.addEventListener('click', reset);
+</script>
+</body>
+</html>
