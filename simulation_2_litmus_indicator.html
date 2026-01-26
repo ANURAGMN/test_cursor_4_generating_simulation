@@ -38,7 +38,7 @@ body {
   text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-.header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.header h1 { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
 .header p { font-size: 12px; opacity: 0.95; }
 
 .section-title {
@@ -52,15 +52,15 @@ body {
 .sim-card {
   background: #fff;
   border-radius: 14px;
-  padding: 8px;
+  padding: 10px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 12px;
 }
 
 .visual {
   position: relative;
-  height: 34vh;
-  min-height: 260px;
+  height: 38vh;
+  min-height: 280px;
   background: linear-gradient(145deg, #e8f5e9 0%, #c8e6c9 100%);
   border-radius: 12px;
   overflow: hidden;
@@ -77,7 +77,7 @@ svg { width: 100%; height: 100%; display: block; }
   left: 8px;
   background: rgba(255,255,255,0.95);
   border-radius: 8px;
-  padding: 6px 8px;
+  padding: 6px 10px;
   font-size: 11px;
   line-height: 1.3;
   box-shadow: 0 3px 8px rgba(0,0,0,0.12);
@@ -87,13 +87,13 @@ svg { width: 100%; height: 100%; display: block; }
 .metrics {
   background: #e8f5e9;
   border-radius: 8px;
-  padding: 8px 12px;
+  padding: 10px 12px;
   font-size: 11px;
   line-height: 1.6;
-  margin-top: 8px;
+  margin-top: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4px 12px;
+  gap: 6px 12px;
 }
 
 .metric-item { display: flex; justify-content: space-between; }
@@ -107,27 +107,27 @@ svg { width: 100%; height: 100%; display: block; }
   background: #e8f5e9;
   border-radius: 10px;
   padding: 10px;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .control-label {
   font-size: 11px;
   font-weight: 600;
   color: #666;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .solution-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
+  gap: 8px;
 }
 
 .solution-btn {
-  padding: 8px 4px;
-  border-radius: 8px;
+  padding: 10px 6px;
+  border-radius: 10px;
   border: 2px solid #c8e6c9;
-  font-size: 9px;
+  font-size: 10px;
   background: #fff;
   cursor: pointer;
   text-align: center;
@@ -139,18 +139,18 @@ svg { width: 100%; height: 100%; display: block; }
 
 .solution-btn:active { transform: scale(0.95); }
 .solution-btn.active { border-color: #11998e; background: #e8f5e9; }
-.solution-btn .icon { font-size: 18px; display: block; margin-bottom: 2px; }
+.solution-btn .icon { font-size: 20px; display: block; margin-bottom: 3px; }
 
 .test-btn {
   position: absolute;
-  right: 8px;
-  bottom: 8px;
+  right: 10px;
+  bottom: 10px;
   background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
   color: white;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
-  padding: 10px 16px;
-  border-radius: 20px;
+  padding: 12px 20px;
+  border-radius: 25px;
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(17,153,142,0.3);
@@ -164,16 +164,16 @@ svg { width: 100%; height: 100%; display: block; }
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-  padding: 10px;
+  gap: 12px;
+  padding: 12px;
   background: #fff;
   border-radius: 10px;
-  margin-top: 10px;
-  font-size: 10px;
+  margin-top: 12px;
+  font-size: 11px;
 }
 
-.legend-item { display: flex; align-items: center; gap: 4px; }
-.legend-color { width: 20px; height: 12px; border-radius: 3px; }
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-color { width: 24px; height: 14px; border-radius: 4px; }
 .legend-color.blue { background: #2196f3; }
 .legend-color.red { background: #f44336; }
 .legend-color.no-change { background: #9e9e9e; }
@@ -181,77 +181,47 @@ svg { width: 100%; height: 100%; display: block; }
 .insight-box {
   background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
   border-radius: 10px;
-  padding: 10px;
-  margin-top: 10px;
-  font-size: 11px;
+  padding: 12px;
+  margin-top: 12px;
+  font-size: 12px;
   line-height: 1.5;
   border-left: 4px solid #11998e;
 }
 
-.insight-title { font-weight: 600; color: #00695c; margin-bottom: 4px; }
+.insight-title { font-weight: 600; color: #00695c; margin-bottom: 6px; }
 
 .real-world {
   background: #fff;
   border-radius: 10px;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 12px;
+  margin-top: 12px;
   font-size: 11px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
-.real-world .icon { font-size: 36px; }
-.real-world .text { flex: 1; line-height: 1.4; }
-.real-world .highlight-acid { color: #d32f2f; font-weight: 600; }
+.real-world .icon { font-size: 40px; }
+.real-world .text { flex: 1; line-height: 1.5; }
 .real-world .highlight-base { color: #1565c0; font-weight: 600; }
 
 .takeaway {
   background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
   border-radius: 10px;
   padding: 12px;
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 12px;
   line-height: 1.5;
   display: none;
 }
 
 .takeaway.show { display: block; }
-.takeaway-title { font-weight: 600; color: #1b5e20; margin-bottom: 4px; }
-
-.prep-info {
-  background: #fff;
-  border-radius: 10px;
-  padding: 10px;
-  margin-top: 10px;
-  font-size: 11px;
-}
-
-.prep-title { font-weight: 600; color: #00695c; margin-bottom: 6px; }
-
-.prep-steps {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-
-.prep-steps::-webkit-scrollbar { display: none; }
-.prep-step { flex-shrink: 0; text-align: center; width: 70px; }
-.prep-step .icon { font-size: 22px; }
-.prep-step .text { font-size: 9px; color: #666; }
-
-/* SVG animation classes */
-.litmus-paper {
-  transition: transform 0.5s ease, fill 0.5s ease;
-}
+.takeaway-title { font-weight: 600; color: #1b5e20; margin-bottom: 6px; }
 
 @media screen and (max-width: 380px) {
-  .solution-grid { gap: 4px; }
-  .solution-btn { padding: 6px 2px; font-size: 8px; }
-  .solution-btn .icon { font-size: 16px; }
+  .solution-grid { gap: 6px; }
+  .solution-btn { padding: 8px 4px; font-size: 9px; }
+  .solution-btn .icon { font-size: 18px; }
 }
 
 @supports (padding: max(0px)) {
@@ -271,11 +241,8 @@ svg { width: 100%; height: 100%; display: block; }
   <p>The classic indicator for acids and bases!</p>
 </div>
 
-<div class="section-title">Reference (Original litmus papers)</div>
-<div class="sim-card" id="ref"></div>
-
-<div class="section-title">Experiment (Test different solutions)</div>
-<div class="sim-card" id="exp"></div>
+<div class="section-title">Test different solutions with litmus paper</div>
+<div class="sim-card" id="sim"></div>
 
 <div class="legend">
   <div class="legend-item"><div class="legend-color blue"></div> Blue Litmus</div>
@@ -295,20 +262,9 @@ svg { width: 100%; height: 100%; display: block; }
   </div>
 </div>
 
-<div class="prep-info">
-  <div class="prep-title">🧪 How litmus paper works:</div>
-  <div class="prep-steps">
-    <div class="prep-step"><div class="icon">🌿</div><div class="text">Extract from lichens</div></div>
-    <div class="prep-step"><div class="icon">🔵</div><div class="text">Blue paper (natural)</div></div>
-    <div class="prep-step"><div class="icon">🔴</div><div class="text">Red paper (acid treated)</div></div>
-    <div class="prep-step"><div class="icon">💧</div><div class="text">Dip in solution</div></div>
-    <div class="prep-step"><div class="icon">👀</div><div class="text">Observe color</div></div>
-  </div>
-</div>
-
 <div class="takeaway" id="takeaway">
   <div class="takeaway-title">💡 What you discovered:</div>
-  Litmus is a <strong>complete indicator</strong> because it can identify all three types: <span style="color:#d32f2f;font-weight:600">ACIDIC</span> (blue→red), <span style="color:#1565c0;font-weight:600">BASIC</span> (red→blue), and <span style="color:#2e7d32;font-weight:600">NEUTRAL</span> (no change).
+  <span id="takeaway-text">Litmus is a complete indicator that can identify acidic, basic, and neutral substances!</span>
 </div>
 
 </div>
@@ -326,258 +282,230 @@ const SOLUTIONS = {
   'salt': { name: 'Salt Solution', icon: '🧂', type: 'neutral', blueResult: '#2196f3', redResult: '#f44336' }
 };
 
-function createSimulation(containerId, isExperiment) {
-  const c = document.getElementById(containerId);
-  const defaultSolution = isExperiment ? 'lemon' : 'water';
+const container = document.getElementById('sim');
+const defaultSolution = 'lemon';
+
+container.innerHTML = `
+<div class="visual">
+  <div class="static-hint">👆 Select solution & tap "Dip"</div>
+
+  <svg viewBox="0 0 400 300">
+    <!-- Lab bench -->
+    <rect x="30" y="210" width="340" height="70" rx="4" fill="#8d6e63"/>
+    <rect x="30" y="210" width="340" height="8" rx="2" fill="#6d4c41"/>
+    
+    <!-- Beaker in center -->
+    <g transform="translate(200, 90)">
+      <path d="M-45,25 L-40,95 Q-40,105 -30,105 L30,105 Q40,105 40,95 L45,25 Z" 
+            fill="rgba(255,255,255,0.4)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+      <ellipse cx="0" cy="25" rx="45" ry="9" fill="rgba(255,255,255,0.3)"/>
+      <rect x="-35" y="38" width="70" height="55" rx="2" fill="#81d4fa" id="liquid"/>
+      <text x="0" y="125" text-anchor="middle" font-size="11" fill="#666" id="beaker-label">${SOLUTIONS[defaultSolution].name}</text>
+      <text x="0" y="15" font-size="18" text-anchor="middle" id="beaker-icon">${SOLUTIONS[defaultSolution].icon}</text>
+    </g>
+    
+    <!-- Blue Litmus Paper -->
+    <rect class="litmus-paper" x="60" y="60" width="35" height="90" rx="3" fill="#2196f3" id="blue-paper" stroke="#1976d2" stroke-width="1"/>
+    <text x="77" y="170" text-anchor="middle" font-size="10" fill="#1976d2" font-weight="600">Blue Litmus</text>
+    <text x="77" y="185" text-anchor="middle" font-size="9" fill="#666" id="blue-status">Original</text>
+    
+    <!-- Red Litmus Paper -->
+    <rect class="litmus-paper" x="305" y="60" width="35" height="90" rx="3" fill="#f44336" id="red-paper" stroke="#d32f2f" stroke-width="1"/>
+    <text x="322" y="170" text-anchor="middle" font-size="10" fill="#d32f2f" font-weight="600">Red Litmus</text>
+    <text x="322" y="185" text-anchor="middle" font-size="9" fill="#666" id="red-status">Original</text>
+    
+    <!-- Result indicator -->
+    <g id="result-box" opacity="0">
+      <rect x="140" y="195" width="120" height="28" rx="14" fill="#fff" stroke="#4caf50" stroke-width="2"/>
+      <text x="200" y="214" text-anchor="middle" font-size="12" fill="#4caf50" font-weight="600" id="result-text">Result</text>
+    </g>
+  </svg>
+
+  <button class="test-btn" id="test-btn">💧 Dip Papers</button>
+</div>
+
+<div class="metrics">
+  <div class="metric-item"><span class="metric-label">Solution:</span> <span class="metric-value" id="solution-name">${SOLUTIONS[defaultSolution].name}</span></div>
+  <div class="metric-item"><span class="metric-label">Blue Litmus:</span> <span class="metric-value" id="blue-result">Blue</span></div>
+  <div class="metric-item"><span class="metric-label">Red Litmus:</span> <span class="metric-value" id="red-result">Red</span></div>
+  <div class="metric-item"><span class="metric-label">Conclusion:</span> <span class="metric-value" id="conclusion">?</span></div>
+</div>
+
+<div class="control-panel">
+  <div class="control-label">Select a solution to test:</div>
+  <div class="solution-grid">
+    <button class="solution-btn active" data-solution="lemon"><span class="icon">🍋</span>Lemon</button>
+    <button class="solution-btn" data-solution="vinegar"><span class="icon">🍶</span>Vinegar</button>
+    <button class="solution-btn" data-solution="curd"><span class="icon">🥛</span>Curd</button>
+    <button class="solution-btn" data-solution="soap"><span class="icon">🧼</span>Soap</button>
+    <button class="solution-btn" data-solution="baking"><span class="icon">🥄</span>Baking Soda</button>
+    <button class="solution-btn" data-solution="lime"><span class="icon">💧</span>Lime Water</button>
+    <button class="solution-btn" data-solution="water"><span class="icon">🚰</span>Tap Water</button>
+    <button class="solution-btn" data-solution="sugar"><span class="icon">🍬</span>Sugar</button>
+    <button class="solution-btn" data-solution="salt"><span class="icon">🧂</span>Salt</button>
+  </div>
+</div>`;
+
+let state = { solution: 'lemon', animating: false };
+
+const bluePaper = document.getElementById('blue-paper');
+const redPaper = document.getElementById('red-paper');
+const blueStatus = document.getElementById('blue-status');
+const redStatus = document.getElementById('red-status');
+const liquid = document.getElementById('liquid');
+const beakerLabel = document.getElementById('beaker-label');
+const beakerIcon = document.getElementById('beaker-icon');
+const solutionName = document.getElementById('solution-name');
+const blueResult = document.getElementById('blue-result');
+const redResult = document.getElementById('red-result');
+const conclusion = document.getElementById('conclusion');
+const resultBox = document.getElementById('result-box');
+const resultText = document.getElementById('result-text');
+const testBtn = document.getElementById('test-btn');
+const takeaway = document.getElementById('takeaway');
+const takeawayText = document.getElementById('takeaway-text');
+
+const blueOrigX = 60, blueOrigY = 60;
+const redOrigX = 305, redOrigY = 60;
+const blueDipX = 130, blueDipY = 100;
+const redDipX = 235, redDipY = 100;
+
+function updateDisplay() {
+  const sol = SOLUTIONS[state.solution];
+  beakerLabel.textContent = sol.name;
+  beakerIcon.textContent = sol.icon;
+  solutionName.textContent = sol.name;
   
-  c.innerHTML = `
-  <div class="visual">
-    <div class="static-hint">
-      ${isExperiment ? '👆 Select solution & tap "Dip"' : '📄 Original litmus papers'}
-    </div>
+  if (sol.type === 'acidic') liquid.setAttribute('fill', '#ffcdd2');
+  else if (sol.type === 'basic') liquid.setAttribute('fill', '#bbdefb');
+  else liquid.setAttribute('fill', '#b3e5fc');
+}
 
-    <svg viewBox="0 0 400 300">
-      <!-- Lab bench -->
-      <rect x="30" y="210" width="340" height="70" rx="4" fill="#8d6e63"/>
-      <rect x="30" y="210" width="340" height="8" rx="2" fill="#6d4c41"/>
+function animatePaper(paper, startX, startY, endX, endY, duration) {
+  return new Promise(resolve => {
+    const startTime = performance.now();
+    
+    function animate(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2;
       
-      <!-- Beaker in center -->
-      <g id="${containerId}-beaker" transform="translate(200, 90)">
-        <path d="M-45,25 L-40,95 Q-40,105 -30,105 L30,105 Q40,105 40,95 L45,25 Z" 
-              fill="rgba(255,255,255,0.4)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
-        <ellipse cx="0" cy="25" rx="45" ry="9" fill="rgba(255,255,255,0.3)"/>
-        <rect x="-35" y="38" width="70" height="55" rx="2" fill="#81d4fa" id="${containerId}-liquid"/>
-        <text x="0" y="125" text-anchor="middle" font-size="10" fill="#666" id="${containerId}-beaker-label">${isExperiment ? SOLUTIONS[defaultSolution].name : 'Empty'}</text>
-        <text x="0" y="15" font-size="16" text-anchor="middle" id="${containerId}-beaker-icon">${isExperiment ? SOLUTIONS[defaultSolution].icon : ''}</text>
-      </g>
+      paper.setAttribute('x', startX + (endX - startX) * eased);
+      paper.setAttribute('y', startY + (endY - startY) * eased);
       
-      <!-- Blue Litmus Paper -->
-      <rect class="litmus-paper" x="60" y="60" width="35" height="90" rx="3" fill="#2196f3" id="${containerId}-blue-paper" stroke="#1976d2" stroke-width="1"/>
-      <text x="77" y="170" text-anchor="middle" font-size="9" fill="#1976d2" font-weight="600">Blue Litmus</text>
-      <text x="77" y="185" text-anchor="middle" font-size="8" fill="#666" id="${containerId}-blue-status">Original</text>
-      
-      <!-- Red Litmus Paper -->
-      <rect class="litmus-paper" x="305" y="60" width="35" height="90" rx="3" fill="#f44336" id="${containerId}-red-paper" stroke="#d32f2f" stroke-width="1"/>
-      <text x="322" y="170" text-anchor="middle" font-size="9" fill="#d32f2f" font-weight="600">Red Litmus</text>
-      <text x="322" y="185" text-anchor="middle" font-size="8" fill="#666" id="${containerId}-red-status">Original</text>
-      
-      <!-- Result indicator -->
-      <g id="${containerId}-result" opacity="0">
-        <rect x="140" y="195" width="120" height="28" rx="14" fill="#fff" stroke="#4caf50" stroke-width="2"/>
-        <text x="200" y="214" text-anchor="middle" font-size="11" fill="#4caf50" font-weight="600" id="${containerId}-result-text">Result</text>
-      </g>
-    </svg>
-
-    ${isExperiment ? '<button class="test-btn" id="test-action">💧 Dip Papers</button>' : ''}
-  </div>
-
-  <div class="metrics">
-    <div class="metric-item"><span class="metric-label">Solution:</span> <span class="metric-value" id="${containerId}-solution-name">${isExperiment ? SOLUTIONS[defaultSolution].name : 'None'}</span></div>
-    <div class="metric-item"><span class="metric-label">Blue Litmus:</span> <span class="metric-value" id="${containerId}-blue-result">Blue</span></div>
-    <div class="metric-item"><span class="metric-label">Red Litmus:</span> <span class="metric-value" id="${containerId}-red-result">Red</span></div>
-    <div class="metric-item"><span class="metric-label">Conclusion:</span> <span class="metric-value" id="${containerId}-conclusion">${isExperiment ? '?' : '—'}</span></div>
-  </div>
-
-  ${isExperiment ? `
-  <div class="control-panel">
-    <div class="control-label">Select a solution to test:</div>
-    <div class="solution-grid">
-      <button class="solution-btn active" data-solution="lemon"><span class="icon">🍋</span>Lemon</button>
-      <button class="solution-btn" data-solution="vinegar"><span class="icon">🍶</span>Vinegar</button>
-      <button class="solution-btn" data-solution="curd"><span class="icon">🥛</span>Curd</button>
-      <button class="solution-btn" data-solution="soap"><span class="icon">🧼</span>Soap</button>
-      <button class="solution-btn" data-solution="baking"><span class="icon">🥄</span>Baking Soda</button>
-      <button class="solution-btn" data-solution="lime"><span class="icon">💧</span>Lime Water</button>
-      <button class="solution-btn" data-solution="water"><span class="icon">🚰</span>Tap Water</button>
-      <button class="solution-btn" data-solution="sugar"><span class="icon">🍬</span>Sugar</button>
-      <button class="solution-btn" data-solution="salt"><span class="icon">🧂</span>Salt</button>
-    </div>
-  </div>
-  ` : ''}`;
-
-  if (!isExperiment) return;
-
-  let state = { solution: 'lemon', tested: false, animating: false };
-
-  const bluePaper = c.querySelector(`#${containerId}-blue-paper`);
-  const redPaper = c.querySelector(`#${containerId}-red-paper`);
-  const blueStatus = c.querySelector(`#${containerId}-blue-status`);
-  const redStatus = c.querySelector(`#${containerId}-red-status`);
-  const liquid = c.querySelector(`#${containerId}-liquid`);
-  const beakerLabel = c.querySelector(`#${containerId}-beaker-label`);
-  const beakerIcon = c.querySelector(`#${containerId}-beaker-icon`);
-  const solutionName = c.querySelector(`#${containerId}-solution-name`);
-  const blueResult = c.querySelector(`#${containerId}-blue-result`);
-  const redResult = c.querySelector(`#${containerId}-red-result`);
-  const conclusion = c.querySelector(`#${containerId}-conclusion`);
-  const resultBox = c.querySelector(`#${containerId}-result`);
-  const resultText = c.querySelector(`#${containerId}-result-text`);
-  const testBtn = c.querySelector('#test-action');
-
-  // Original positions
-  const blueOrigX = 60, blueOrigY = 60;
-  const redOrigX = 305, redOrigY = 60;
-  // Dip positions (near beaker)
-  const blueDipX = 130, blueDipY = 100;
-  const redDipX = 235, redDipY = 100;
-
-  function updateDisplay() {
-    const sol = SOLUTIONS[state.solution];
-    beakerLabel.textContent = sol.name;
-    beakerIcon.textContent = sol.icon;
-    solutionName.textContent = sol.name;
-    
-    // Change liquid color based on solution type
-    if (sol.type === 'acidic') liquid.setAttribute('fill', '#ffcdd2');
-    else if (sol.type === 'basic') liquid.setAttribute('fill', '#bbdefb');
-    else liquid.setAttribute('fill', '#b3e5fc');
-  }
-
-  function animatePaper(paper, startX, startY, endX, endY, duration) {
-    return new Promise(resolve => {
-      const startTime = performance.now();
-      
-      function animate(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        
-        // Ease in-out
-        const eased = progress < 0.5 
-          ? 2 * progress * progress 
-          : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-        
-        const currentX = startX + (endX - startX) * eased;
-        const currentY = startY + (endY - startY) * eased;
-        
-        paper.setAttribute('x', currentX);
-        paper.setAttribute('y', currentY);
-        
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        } else {
-          resolve();
-        }
-      }
-      
-      requestAnimationFrame(animate);
-    });
-  }
-
-  async function runTest() {
-    if (state.animating) return;
-    state.animating = true;
-    state.tested = true;
-    
-    const sol = SOLUTIONS[state.solution];
-    
-    // Move papers to beaker
-    await Promise.all([
-      animatePaper(bluePaper, blueOrigX, blueOrigY, blueDipX, blueDipY, 400),
-      animatePaper(redPaper, redOrigX, redOrigY, redDipX, redDipY, 400)
-    ]);
-    
-    // Wait a moment (dipping)
-    await new Promise(r => setTimeout(r, 500));
-    
-    // Change colors based on solution
-    bluePaper.setAttribute('fill', sol.blueResult);
-    redPaper.setAttribute('fill', sol.redResult);
-    
-    // Wait a moment
-    await new Promise(r => setTimeout(r, 300));
-    
-    // Move papers back
-    await Promise.all([
-      animatePaper(bluePaper, blueDipX, blueDipY, blueOrigX, blueOrigY, 400),
-      animatePaper(redPaper, redDipX, redDipY, redOrigX, redOrigY, 400)
-    ]);
-    
-    // Update status labels and metrics
-    if (sol.type === 'acidic') {
-      blueStatus.textContent = '→ Red!';
-      redStatus.textContent = 'No change';
-      blueResult.textContent = 'Red ⚠️';
-      blueResult.className = 'metric-value acidic';
-      redResult.textContent = 'Red';
-      redResult.className = 'metric-value';
-      conclusion.textContent = 'ACIDIC';
-      conclusion.className = 'metric-value acidic';
-      resultText.textContent = '🔴 ACIDIC';
-      resultText.setAttribute('fill', '#d32f2f');
-      resultBox.querySelector('rect').setAttribute('stroke', '#d32f2f');
-    } else if (sol.type === 'basic') {
-      blueStatus.textContent = 'No change';
-      redStatus.textContent = '→ Blue!';
-      blueResult.textContent = 'Blue';
-      blueResult.className = 'metric-value';
-      redResult.textContent = 'Blue ⚠️';
-      redResult.className = 'metric-value basic';
-      conclusion.textContent = 'BASIC';
-      conclusion.className = 'metric-value basic';
-      resultText.textContent = '🔵 BASIC';
-      resultText.setAttribute('fill', '#1565c0');
-      resultBox.querySelector('rect').setAttribute('stroke', '#1565c0');
-    } else {
-      blueStatus.textContent = 'No change';
-      redStatus.textContent = 'No change';
-      blueResult.textContent = 'Blue';
-      blueResult.className = 'metric-value';
-      redResult.textContent = 'Red';
-      redResult.className = 'metric-value';
-      conclusion.textContent = 'NEUTRAL';
-      conclusion.className = 'metric-value neutral';
-      resultText.textContent = '⚪ NEUTRAL';
-      resultText.setAttribute('fill', '#2e7d32');
-      resultBox.querySelector('rect').setAttribute('stroke', '#2e7d32');
+      if (progress < 1) requestAnimationFrame(animate);
+      else resolve();
     }
+    
+    requestAnimationFrame(animate);
+  });
+}
 
-    resultBox.setAttribute('opacity', '1');
-    document.getElementById('takeaway').classList.add('show');
-    state.animating = false;
-  }
-
-  function resetTest() {
-    if (state.animating) return;
-    state.tested = false;
-    
-    // Reset paper positions and colors
-    bluePaper.setAttribute('x', blueOrigX);
-    bluePaper.setAttribute('y', blueOrigY);
-    bluePaper.setAttribute('fill', '#2196f3');
-    
-    redPaper.setAttribute('x', redOrigX);
-    redPaper.setAttribute('y', redOrigY);
-    redPaper.setAttribute('fill', '#f44336');
-    
-    blueStatus.textContent = 'Original';
-    redStatus.textContent = 'Original';
+async function runTest() {
+  if (state.animating) return;
+  state.animating = true;
+  
+  const sol = SOLUTIONS[state.solution];
+  
+  await Promise.all([
+    animatePaper(bluePaper, blueOrigX, blueOrigY, blueDipX, blueDipY, 400),
+    animatePaper(redPaper, redOrigX, redOrigY, redDipX, redDipY, 400)
+  ]);
+  
+  await new Promise(r => setTimeout(r, 500));
+  
+  bluePaper.setAttribute('fill', sol.blueResult);
+  redPaper.setAttribute('fill', sol.redResult);
+  
+  await new Promise(r => setTimeout(r, 300));
+  
+  await Promise.all([
+    animatePaper(bluePaper, blueDipX, blueDipY, blueOrigX, blueOrigY, 400),
+    animatePaper(redPaper, redDipX, redDipY, redOrigX, redOrigY, 400)
+  ]);
+  
+  if (sol.type === 'acidic') {
+    blueStatus.textContent = '→ Red!';
+    redStatus.textContent = 'No change';
+    blueResult.textContent = 'Red ⚠️';
+    blueResult.className = 'metric-value acidic';
+    redResult.textContent = 'Red';
+    redResult.className = 'metric-value';
+    conclusion.textContent = 'ACIDIC';
+    conclusion.className = 'metric-value acidic';
+    resultText.textContent = '🔴 ACIDIC';
+    resultText.setAttribute('fill', '#d32f2f');
+    resultBox.querySelector('rect').setAttribute('stroke', '#d32f2f');
+    takeawayText.textContent = `${sol.name} is ACIDIC! Blue litmus turned red because acids release H⁺ ions.`;
+  } else if (sol.type === 'basic') {
+    blueStatus.textContent = 'No change';
+    redStatus.textContent = '→ Blue!';
+    blueResult.textContent = 'Blue';
+    blueResult.className = 'metric-value';
+    redResult.textContent = 'Blue ⚠️';
+    redResult.className = 'metric-value basic';
+    conclusion.textContent = 'BASIC';
+    conclusion.className = 'metric-value basic';
+    resultText.textContent = '🔵 BASIC';
+    resultText.setAttribute('fill', '#1565c0');
+    resultBox.querySelector('rect').setAttribute('stroke', '#1565c0');
+    takeawayText.textContent = `${sol.name} is BASIC! Red litmus turned blue because bases release OH⁻ ions.`;
+  } else {
+    blueStatus.textContent = 'No change';
+    redStatus.textContent = 'No change';
     blueResult.textContent = 'Blue';
     blueResult.className = 'metric-value';
     redResult.textContent = 'Red';
     redResult.className = 'metric-value';
-    conclusion.textContent = '?';
-    conclusion.className = 'metric-value';
-    resultBox.setAttribute('opacity', '0');
+    conclusion.textContent = 'NEUTRAL';
+    conclusion.className = 'metric-value neutral';
+    resultText.textContent = '⚪ NEUTRAL';
+    resultText.setAttribute('fill', '#2e7d32');
+    resultBox.querySelector('rect').setAttribute('stroke', '#2e7d32');
+    takeawayText.textContent = `${sol.name} is NEUTRAL! Neither litmus paper changed color because it has balanced pH.`;
   }
 
-  testBtn.onclick = runTest;
-
-  c.querySelectorAll('.solution-btn').forEach(btn => {
-    btn.onclick = () => {
-      if (state.animating) return;
-      c.querySelectorAll('.solution-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      state.solution = btn.dataset.solution;
-      resetTest();
-      updateDisplay();
-    };
-  });
-
-  updateDisplay();
+  resultBox.setAttribute('opacity', '1');
+  takeaway.classList.add('show');
+  state.animating = false;
 }
 
-createSimulation('ref', false);
-createSimulation('exp', true);
+function resetTest() {
+  if (state.animating) return;
+  
+  bluePaper.setAttribute('x', blueOrigX);
+  bluePaper.setAttribute('y', blueOrigY);
+  bluePaper.setAttribute('fill', '#2196f3');
+  
+  redPaper.setAttribute('x', redOrigX);
+  redPaper.setAttribute('y', redOrigY);
+  redPaper.setAttribute('fill', '#f44336');
+  
+  blueStatus.textContent = 'Original';
+  redStatus.textContent = 'Original';
+  blueResult.textContent = 'Blue';
+  blueResult.className = 'metric-value';
+  redResult.textContent = 'Red';
+  redResult.className = 'metric-value';
+  conclusion.textContent = '?';
+  conclusion.className = 'metric-value';
+  resultBox.setAttribute('opacity', '0');
+}
+
+testBtn.onclick = runTest;
+
+container.querySelectorAll('.solution-btn').forEach(btn => {
+  btn.onclick = () => {
+    if (state.animating) return;
+    container.querySelectorAll('.solution-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.solution = btn.dataset.solution;
+    resetTest();
+    updateDisplay();
+  };
+});
+
+updateDisplay();
 </script>
 </body>
 </html>

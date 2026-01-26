@@ -38,7 +38,7 @@ body {
   text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-.header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.header h1 { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
 .header p { font-size: 12px; opacity: 0.95; }
 
 .section-title {
@@ -52,15 +52,15 @@ body {
 .sim-card {
   background: #fff;
   border-radius: 14px;
-  padding: 8px;
+  padding: 10px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 12px;
 }
 
 .visual {
   position: relative;
-  height: 34vh;
-  min-height: 260px;
+  height: 38vh;
+  min-height: 280px;
   background: linear-gradient(145deg, #fce4ec 0%, #f8bbd9 100%);
   border-radius: 12px;
   overflow: hidden;
@@ -77,7 +77,7 @@ svg { width: 100%; height: 100%; display: block; }
   left: 8px;
   background: rgba(255,255,255,0.95);
   border-radius: 8px;
-  padding: 6px 8px;
+  padding: 6px 10px;
   font-size: 11px;
   line-height: 1.3;
   box-shadow: 0 3px 8px rgba(0,0,0,0.12);
@@ -87,13 +87,13 @@ svg { width: 100%; height: 100%; display: block; }
 .metrics {
   background: #fce4ec;
   border-radius: 8px;
-  padding: 8px 12px;
+  padding: 10px 12px;
   font-size: 11px;
   line-height: 1.6;
-  margin-top: 8px;
+  margin-top: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4px 12px;
+  gap: 6px 12px;
 }
 
 .metric-item { display: flex; justify-content: space-between; }
@@ -107,27 +107,27 @@ svg { width: 100%; height: 100%; display: block; }
   background: #fce4ec;
   border-radius: 10px;
   padding: 10px;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .control-label {
   font-size: 11px;
   font-weight: 600;
   color: #666;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .solution-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
+  gap: 8px;
 }
 
 .solution-btn {
-  padding: 8px 4px;
-  border-radius: 8px;
+  padding: 10px 6px;
+  border-radius: 10px;
   border: 2px solid #f8bbd9;
-  font-size: 9px;
+  font-size: 10px;
   background: #fff;
   cursor: pointer;
   text-align: center;
@@ -139,18 +139,18 @@ svg { width: 100%; height: 100%; display: block; }
 
 .solution-btn:active { transform: scale(0.95); }
 .solution-btn.active { border-color: #e91e63; background: #fce4ec; }
-.solution-btn .icon { font-size: 18px; display: block; margin-bottom: 2px; }
+.solution-btn .icon { font-size: 20px; display: block; margin-bottom: 3px; }
 
 .test-btn {
   position: absolute;
-  right: 8px;
-  bottom: 8px;
+  right: 10px;
+  bottom: 10px;
   background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
   color: white;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
-  padding: 10px 16px;
-  border-radius: 20px;
+  padding: 12px 20px;
+  border-radius: 25px;
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(233,30,99,0.3);
@@ -164,16 +164,16 @@ svg { width: 100%; height: 100%; display: block; }
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-  padding: 10px;
+  gap: 12px;
+  padding: 12px;
   background: #fff;
   border-radius: 10px;
-  margin-top: 10px;
-  font-size: 10px;
+  margin-top: 12px;
+  font-size: 11px;
 }
 
-.legend-item { display: flex; align-items: center; gap: 4px; }
-.legend-color { width: 20px; height: 12px; border-radius: 3px; }
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-color { width: 24px; height: 14px; border-radius: 4px; }
 .legend-color.original { background: #e91e63; }
 .legend-color.acidic { background: #d32f2f; }
 .legend-color.basic { background: #4caf50; }
@@ -181,56 +181,56 @@ svg { width: 100%; height: 100%; display: block; }
 .insight-box {
   background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
   border-radius: 10px;
-  padding: 10px;
-  margin-top: 10px;
-  font-size: 11px;
+  padding: 12px;
+  margin-top: 12px;
+  font-size: 12px;
   line-height: 1.5;
   border-left: 4px solid #e91e63;
 }
 
-.insight-title { font-weight: 600; color: #c2185b; margin-bottom: 4px; }
+.insight-title { font-weight: 600; color: #c2185b; margin-bottom: 6px; }
 
 .real-world {
   background: #fff;
   border-radius: 10px;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 12px;
+  margin-top: 12px;
   font-size: 11px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
-.real-world .icon { font-size: 36px; }
-.real-world .text { flex: 1; line-height: 1.4; }
+.real-world .icon { font-size: 40px; }
+.real-world .text { flex: 1; line-height: 1.5; }
 .real-world .highlight { color: #c2185b; font-weight: 600; }
 
 .takeaway {
   background: linear-gradient(135deg, #f8bbd9 0%, #f48fb1 100%);
   border-radius: 10px;
   padding: 12px;
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 12px;
   line-height: 1.5;
   display: none;
 }
 
 .takeaway.show { display: block; }
-.takeaway-title { font-weight: 600; color: #880e4f; margin-bottom: 4px; }
+.takeaway-title { font-weight: 600; color: #880e4f; margin-bottom: 6px; }
 
 .prep-info {
   background: #fff;
   border-radius: 10px;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 12px;
+  margin-top: 12px;
   font-size: 11px;
 }
 
-.prep-title { font-weight: 600; color: #c2185b; margin-bottom: 6px; }
+.prep-title { font-weight: 600; color: #c2185b; margin-bottom: 8px; }
 
 .prep-steps {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   overflow-x: auto;
   padding-bottom: 4px;
   -webkit-overflow-scrolling: touch;
@@ -238,14 +238,14 @@ svg { width: 100%; height: 100%; display: block; }
 }
 
 .prep-steps::-webkit-scrollbar { display: none; }
-.prep-step { flex-shrink: 0; text-align: center; width: 65px; }
-.prep-step .icon { font-size: 22px; }
-.prep-step .text { font-size: 9px; color: #666; }
+.prep-step { flex-shrink: 0; text-align: center; width: 60px; }
+.prep-step .icon { font-size: 24px; }
+.prep-step .text { font-size: 9px; color: #666; margin-top: 4px; }
 
 @media screen and (max-width: 380px) {
-  .solution-grid { gap: 4px; }
-  .solution-btn { padding: 6px 2px; font-size: 8px; }
-  .solution-btn .icon { font-size: 16px; }
+  .solution-grid { gap: 6px; }
+  .solution-btn { padding: 8px 4px; font-size: 9px; }
+  .solution-btn .icon { font-size: 18px; }
 }
 
 @supports (padding: max(0px)) {
@@ -265,11 +265,8 @@ svg { width: 100%; height: 100%; display: block; }
   <p>Nature's beautiful acid-base detector!</p>
 </div>
 
-<div class="section-title">Reference (Original rose extract)</div>
-<div class="sim-card" id="ref"></div>
-
-<div class="section-title">Experiment (Test different solutions)</div>
-<div class="sim-card" id="exp"></div>
+<div class="section-title">Test solutions with rose petal extract</div>
+<div class="sim-card" id="sim"></div>
 
 <div class="legend">
   <div class="legend-item"><div class="legend-color original"></div> Original (Pink)</div>
@@ -282,6 +279,17 @@ svg { width: 100%; height: 100%; display: block; }
   Rose petal extract turns <strong style="color:#d32f2f">RED in acids</strong> and <strong style="color:#2e7d32">GREEN in bases</strong>. It stays <strong style="color:#e91e63">PINK in neutral</strong> solutions. This makes it a complete natural indicator!
 </div>
 
+<div class="prep-info">
+  <div class="prep-title">🧪 How to prepare rose petal extract:</div>
+  <div class="prep-steps">
+    <div class="prep-step"><div class="icon">🌹</div><div class="text">Collect petals</div></div>
+    <div class="prep-step"><div class="icon">✂️</div><div class="text">Crush them</div></div>
+    <div class="prep-step"><div class="icon">🔥</div><div class="text">Add hot water</div></div>
+    <div class="prep-step"><div class="icon">⏳</div><div class="text">Let it steep</div></div>
+    <div class="prep-step"><div class="icon">🧪</div><div class="text">Filter & use</div></div>
+  </div>
+</div>
+
 <div class="real-world">
   <div class="icon">🌺</div>
   <div class="text">
@@ -289,20 +297,9 @@ svg { width: 100%; height: 100%; display: block; }
   </div>
 </div>
 
-<div class="prep-info">
-  <div class="prep-title">🧪 How to prepare rose petal extract:</div>
-  <div class="prep-steps">
-    <div class="prep-step"><div class="icon">🌹</div><div class="text">Collect red rose petals</div></div>
-    <div class="prep-step"><div class="icon">✂️</div><div class="text">Crush petals</div></div>
-    <div class="prep-step"><div class="icon">🔥</div><div class="text">Add hot water</div></div>
-    <div class="prep-step"><div class="icon">⏳</div><div class="text">Let it steep</div></div>
-    <div class="prep-step"><div class="icon">🧪</div><div class="text">Filter & use</div></div>
-  </div>
-</div>
-
 <div class="takeaway" id="takeaway">
   <div class="takeaway-title">💡 What you discovered:</div>
-  Rose extract is a <strong>complete natural indicator</strong>: <span style="color:#d32f2f;font-weight:600">RED = Acidic</span>, <span style="color:#2e7d32;font-weight:600">GREEN = Basic</span>, <span style="color:#e91e63;font-weight:600">PINK = Neutral</span>. It confirms the same results as litmus paper!
+  <span id="takeaway-text">Rose extract is a complete natural indicator!</span>
 </div>
 
 </div>
@@ -320,226 +317,212 @@ const SOLUTIONS = {
   'salt': { name: 'Salt Solution', icon: '🧂', type: 'neutral', resultColor: '#f06292', colorName: 'Pink (unchanged)' }
 };
 
-function createSimulation(containerId, isExperiment) {
-  const c = document.getElementById(containerId);
-  const defaultSolution = isExperiment ? 'lemon' : 'water';
-  
-  c.innerHTML = `
-  <div class="visual">
-    <div class="static-hint">
-      ${isExperiment ? '👆 Select solution & tap "Add"' : '🌹 Original pink rose extract'}
-    </div>
+const container = document.getElementById('sim');
+const defaultSolution = 'lemon';
 
-    <svg viewBox="0 0 400 280">
-      <!-- Lab bench -->
-      <rect x="30" y="200" width="340" height="70" rx="4" fill="#8d6e63"/>
-      <rect x="30" y="200" width="340" height="8" rx="2" fill="#6d4c41"/>
-      
-      <!-- Rose and mortar -->
-      <g transform="translate(60, 60)">
-        <text x="0" y="0" font-size="40">🌹</text>
-        <text x="20" y="50" font-size="9" fill="#888">Rose Petals</text>
-      </g>
-      
-      <!-- Extract beaker -->
-      <g id="${containerId}-extract" transform="translate(200, 80)">
-        <path d="M-35,20 L-30,90 Q-30,100 -20,100 L20,100 Q30,100 30,90 L35,20 Z" 
-              fill="rgba(255,255,255,0.4)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
-        <ellipse cx="0" cy="20" rx="35" ry="8" fill="rgba(255,255,255,0.3)"/>
-        <rect x="-25" y="35" width="50" height="55" rx="2" fill="#e91e63" id="${containerId}-liquid"/>
-        <text x="0" y="120" text-anchor="middle" font-size="9" fill="#666">Rose Extract</text>
-      </g>
-      
-      <!-- Test tubes -->
-      <g id="${containerId}-tubes">
-        <g id="${containerId}-tube1" transform="translate(300, 70)">
-          <rect x="-15" y="0" width="30" height="80" rx="10" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
-          <rect x="-12" y="20" width="24" height="50" rx="8" fill="#e91e63" id="${containerId}-tube1-liquid"/>
-          <text x="0" y="100" text-anchor="middle" font-size="8" fill="#666" id="${containerId}-tube1-label">Test 1</text>
-        </g>
-        <g id="${containerId}-tube2" transform="translate(340, 70)">
-          <rect x="-15" y="0" width="30" height="80" rx="10" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
-          <rect x="-12" y="20" width="24" height="50" rx="8" fill="#e91e63" id="${containerId}-tube2-liquid"/>
-          <text x="0" y="100" text-anchor="middle" font-size="8" fill="#666" id="${containerId}-tube2-label">Test 2</text>
-        </g>
-      </g>
-      
-      <!-- Dropper -->
-      <g id="${containerId}-dropper" transform="translate(200, 20)" opacity="${isExperiment ? 1 : 0.3}">
-        <rect x="-8" y="0" width="16" height="30" rx="3" fill="#90a4ae"/>
-        <ellipse cx="0" cy="0" rx="12" ry="8" fill="#78909c"/>
-        <rect x="-4" y="30" width="8" height="20" fill="#b0bec5"/>
-        <circle cx="0" cy="55" r="4" fill="#81d4fa" id="${containerId}-drop" opacity="0"/>
-        <text x="0" y="-12" text-anchor="middle" font-size="12" id="${containerId}-dropper-icon">${isExperiment ? SOLUTIONS[defaultSolution].icon : ''}</text>
-      </g>
-      
-      <!-- Result badge -->
-      <g id="${containerId}-result" opacity="0" transform="translate(200, 240)">
-        <rect x="-50" y="-12" width="100" height="24" rx="12" fill="#fff" stroke="#4caf50" stroke-width="2"/>
-        <text x="0" y="4" text-anchor="middle" font-size="10" fill="#4caf50" font-weight="600" id="${containerId}-result-text">Result</text>
-      </g>
-    </svg>
+container.innerHTML = `
+<div class="visual">
+  <div class="static-hint">👆 Select solution & tap "Add"</div>
 
-    ${isExperiment ? '<button class="test-btn" id="test-action">💧 Add Solution</button>' : ''}
+  <svg viewBox="0 0 400 300">
+    <!-- Lab bench -->
+    <rect x="30" y="220" width="340" height="60" rx="4" fill="#8d6e63"/>
+    <rect x="30" y="220" width="340" height="8" rx="2" fill="#6d4c41"/>
+    
+    <!-- Rose and mortar -->
+    <g transform="translate(70, 50)">
+      <text x="0" y="0" font-size="45">🌹</text>
+      <text x="22" y="55" font-size="9" fill="#888">Rose Petals</text>
+    </g>
+    
+    <!-- Extract beaker -->
+    <g transform="translate(200, 70)">
+      <path d="M-40,20 L-35,100 Q-35,110 -25,110 L25,110 Q35,110 35,100 L40,20 Z" 
+            fill="rgba(255,255,255,0.4)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+      <ellipse cx="0" cy="20" rx="40" ry="8" fill="rgba(255,255,255,0.3)"/>
+      <rect x="-30" y="35" width="60" height="65" rx="2" fill="#e91e63" id="extract-liquid"/>
+      <text x="0" y="130" text-anchor="middle" font-size="10" fill="#666">Rose Extract</text>
+    </g>
+    
+    <!-- Test tubes -->
+    <g transform="translate(320, 60)">
+      <rect x="-18" y="0" width="36" height="100" rx="12" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
+      <rect x="-14" y="20" width="28" height="65" rx="8" fill="#e91e63" id="test-liquid"/>
+      <text x="0" y="120" text-anchor="middle" font-size="10" fill="#666" id="test-label">Test Tube</text>
+    </g>
+    
+    <!-- Dropper -->
+    <g id="dropper" transform="translate(200, 15)">
+      <rect x="-10" y="0" width="20" height="35" rx="4" fill="#90a4ae"/>
+      <ellipse cx="0" cy="0" rx="14" ry="9" fill="#78909c"/>
+      <rect x="-5" y="35" width="10" height="25" fill="#b0bec5"/>
+      <circle cx="0" cy="65" r="5" fill="#81d4fa" id="drop" opacity="0"/>
+      <text x="0" y="-15" text-anchor="middle" font-size="14" id="dropper-icon">${SOLUTIONS[defaultSolution].icon}</text>
+    </g>
+    
+    <!-- Result badge -->
+    <g id="result-box" opacity="0">
+      <rect x="135" y="190" width="130" height="28" rx="14" fill="#fff" stroke="#4caf50" stroke-width="2"/>
+      <text x="200" y="209" text-anchor="middle" font-size="12" fill="#4caf50" font-weight="600" id="result-text">Result</text>
+    </g>
+  </svg>
+
+  <button class="test-btn" id="test-btn">💧 Add Solution</button>
+</div>
+
+<div class="metrics">
+  <div class="metric-item"><span class="metric-label">Solution:</span> <span class="metric-value" id="solution-name">${SOLUTIONS[defaultSolution].name}</span></div>
+  <div class="metric-item"><span class="metric-label">Type:</span> <span class="metric-value" id="type-display">?</span></div>
+  <div class="metric-item"><span class="metric-label">Color Change:</span> <span class="metric-value" id="color-display">Pink</span></div>
+  <div class="metric-item"><span class="metric-label">Conclusion:</span> <span class="metric-value" id="conclusion">?</span></div>
+</div>
+
+<div class="control-panel">
+  <div class="control-label">Select a solution to test:</div>
+  <div class="solution-grid">
+    <button class="solution-btn active" data-solution="lemon"><span class="icon">🍋</span>Lemon</button>
+    <button class="solution-btn" data-solution="vinegar"><span class="icon">🍶</span>Vinegar</button>
+    <button class="solution-btn" data-solution="orange"><span class="icon">🍊</span>Orange</button>
+    <button class="solution-btn" data-solution="soap"><span class="icon">🧼</span>Soap</button>
+    <button class="solution-btn" data-solution="baking"><span class="icon">🥄</span>Baking Soda</button>
+    <button class="solution-btn" data-solution="lime"><span class="icon">💧</span>Lime Water</button>
+    <button class="solution-btn" data-solution="water"><span class="icon">🚰</span>Tap Water</button>
+    <button class="solution-btn" data-solution="milk"><span class="icon">🥛</span>Milk</button>
+    <button class="solution-btn" data-solution="salt"><span class="icon">🧂</span>Salt</button>
   </div>
+</div>`;
 
-  <div class="metrics">
-    <div class="metric-item"><span class="metric-label">Solution:</span> <span class="metric-value" id="${containerId}-solution-name">${isExperiment ? SOLUTIONS[defaultSolution].name : 'None'}</span></div>
-    <div class="metric-item"><span class="metric-label">Type:</span> <span class="metric-value" id="${containerId}-type-display">${isExperiment ? '?' : '—'}</span></div>
-    <div class="metric-item"><span class="metric-label">Color Change:</span> <span class="metric-value" id="${containerId}-color-display">Pink</span></div>
-    <div class="metric-item"><span class="metric-label">Conclusion:</span> <span class="metric-value" id="${containerId}-conclusion">${isExperiment ? '?' : '—'}</span></div>
-  </div>
+let state = { solution: 'lemon', animating: false };
 
-  ${isExperiment ? `
-  <div class="control-panel">
-    <div class="control-label">Select a solution to test:</div>
-    <div class="solution-grid">
-      <button class="solution-btn active" data-solution="lemon"><span class="icon">🍋</span>Lemon</button>
-      <button class="solution-btn" data-solution="vinegar"><span class="icon">🍶</span>Vinegar</button>
-      <button class="solution-btn" data-solution="orange"><span class="icon">🍊</span>Orange</button>
-      <button class="solution-btn" data-solution="soap"><span class="icon">🧼</span>Soap</button>
-      <button class="solution-btn" data-solution="baking"><span class="icon">🥄</span>Baking Soda</button>
-      <button class="solution-btn" data-solution="lime"><span class="icon">💧</span>Lime Water</button>
-      <button class="solution-btn" data-solution="water"><span class="icon">🚰</span>Tap Water</button>
-      <button class="solution-btn" data-solution="milk"><span class="icon">🥛</span>Milk</button>
-      <button class="solution-btn" data-solution="salt"><span class="icon">🧂</span>Salt</button>
-    </div>
-  </div>
-  ` : ''}`;
+const testLiquid = document.getElementById('test-liquid');
+const testLabel = document.getElementById('test-label');
+const drop = document.getElementById('drop');
+const dropper = document.getElementById('dropper');
+const dropperIcon = document.getElementById('dropper-icon');
+const solutionName = document.getElementById('solution-name');
+const typeDisplay = document.getElementById('type-display');
+const colorDisplay = document.getElementById('color-display');
+const conclusion = document.getElementById('conclusion');
+const resultBox = document.getElementById('result-box');
+const resultText = document.getElementById('result-text');
+const testBtn = document.getElementById('test-btn');
+const takeaway = document.getElementById('takeaway');
+const takeawayText = document.getElementById('takeaway-text');
 
-  if (!isExperiment) return;
-
-  let state = { solution: 'lemon', tested: false, currentTube: 1 };
-
-  const tube1Liquid = c.querySelector(`#${containerId}-tube1-liquid`);
-  const tube2Liquid = c.querySelector(`#${containerId}-tube2-liquid`);
-  const tube1Label = c.querySelector(`#${containerId}-tube1-label`);
-  const tube2Label = c.querySelector(`#${containerId}-tube2-label`);
-  const drop = c.querySelector(`#${containerId}-drop`);
-  const dropper = c.querySelector(`#${containerId}-dropper`);
-  const dropperIcon = c.querySelector(`#${containerId}-dropper-icon`);
-  const solutionName = c.querySelector(`#${containerId}-solution-name`);
-  const typeDisplay = c.querySelector(`#${containerId}-type-display`);
-  const colorDisplay = c.querySelector(`#${containerId}-color-display`);
-  const conclusion = c.querySelector(`#${containerId}-conclusion`);
-  const resultBox = c.querySelector(`#${containerId}-result`);
-  const resultText = c.querySelector(`#${containerId}-result-text`);
-  const testBtn = c.querySelector('#test-action');
-
-  const tubes = [tube1Liquid, tube2Liquid];
-  const labels = [tube1Label, tube2Label];
-  const positions = [300, 340];
-
-  function updateDisplay() {
-    const sol = SOLUTIONS[state.solution];
-    dropperIcon.textContent = sol.icon;
-    solutionName.textContent = sol.name;
-  }
-
-  function animateDrop(callback) {
-    const sol = SOLUTIONS[state.solution];
-    const targetX = positions[state.currentTube - 1];
-    
-    dropper.style.transition = 'transform 0.3s ease';
-    dropper.setAttribute('transform', `translate(${targetX}, 20)`);
-    
-    setTimeout(() => {
-      drop.style.fill = sol.resultColor;
-      drop.style.transition = 'none';
-      drop.setAttribute('opacity', '1');
-      drop.setAttribute('cy', '55');
-      
-      setTimeout(() => {
-        drop.style.transition = 'cy 0.4s ease-in, opacity 0.3s';
-        drop.setAttribute('cy', '100');
-        
-        setTimeout(() => {
-          drop.setAttribute('opacity', '0');
-          callback();
-        }, 400);
-      }, 100);
-    }, 300);
-  }
-
-  function runTest() {
-    const sol = SOLUTIONS[state.solution];
-    state.tested = true;
-
-    animateDrop(() => {
-      const currentTube = tubes[state.currentTube - 1];
-      const currentLabel = labels[state.currentTube - 1];
-      
-      currentTube.style.transition = 'fill 0.5s ease';
-      currentTube.style.fill = sol.resultColor;
-      currentLabel.textContent = sol.name;
-
-      typeDisplay.textContent = sol.type.charAt(0).toUpperCase() + sol.type.slice(1);
-      typeDisplay.className = `metric-value ${sol.type}`;
-      
-      colorDisplay.textContent = sol.colorName;
-      colorDisplay.className = `metric-value ${sol.type}`;
-
-      if (sol.type === 'acidic') {
-        conclusion.textContent = 'ACIDIC';
-        conclusion.className = 'metric-value acidic';
-        resultText.textContent = '🔴 ACIDIC';
-        resultText.style.fill = '#d32f2f';
-      } else if (sol.type === 'basic') {
-        conclusion.textContent = 'BASIC';
-        conclusion.className = 'metric-value basic';
-        resultText.textContent = '🟢 BASIC';
-        resultText.style.fill = '#2e7d32';
-      } else {
-        conclusion.textContent = 'NEUTRAL';
-        conclusion.className = 'metric-value neutral';
-        resultText.textContent = '🩷 NEUTRAL';
-        resultText.style.fill = '#e91e63';
-      }
-
-      resultBox.style.transition = 'opacity 0.3s';
-      resultBox.style.opacity = '1';
-      
-      state.currentTube = (state.currentTube % 2) + 1;
-      document.getElementById('takeaway').classList.add('show');
-    });
-  }
-
-  function resetTest() {
-    state.tested = false;
-    state.currentTube = 1;
-    
-    tubes.forEach((t, i) => {
-      t.style.fill = '#e91e63';
-      labels[i].textContent = `Test ${i + 1}`;
-    });
-    
-    dropper.setAttribute('transform', 'translate(200, 20)');
-    typeDisplay.textContent = '?';
-    typeDisplay.className = 'metric-value';
-    colorDisplay.textContent = 'Pink';
-    colorDisplay.className = 'metric-value';
-    conclusion.textContent = '?';
-    conclusion.className = 'metric-value';
-    resultBox.style.opacity = '0';
-  }
-
-  testBtn.onclick = runTest;
-
-  c.querySelectorAll('.solution-btn').forEach(btn => {
-    btn.onclick = () => {
-      c.querySelectorAll('.solution-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      state.solution = btn.dataset.solution;
-      resetTest();
-      updateDisplay();
-    };
-  });
-
-  updateDisplay();
+function updateDisplay() {
+  const sol = SOLUTIONS[state.solution];
+  dropperIcon.textContent = sol.icon;
+  solutionName.textContent = sol.name;
 }
 
-createSimulation('ref', false);
-createSimulation('exp', true);
+function animateDrop(callback) {
+  const sol = SOLUTIONS[state.solution];
+  
+  // Move dropper to test tube
+  dropper.style.transition = 'transform 0.4s ease';
+  dropper.setAttribute('transform', 'translate(320, 15)');
+  
+  setTimeout(() => {
+    drop.setAttribute('fill', sol.resultColor);
+    drop.setAttribute('opacity', '1');
+    drop.setAttribute('cy', '65');
+    
+    // Animate drop falling
+    let cy = 65;
+    const dropInterval = setInterval(() => {
+      cy += 8;
+      drop.setAttribute('cy', cy);
+      if (cy > 120) {
+        clearInterval(dropInterval);
+        drop.setAttribute('opacity', '0');
+        callback();
+      }
+    }, 30);
+  }, 400);
+}
+
+function runTest() {
+  if (state.animating) return;
+  state.animating = true;
+  
+  const sol = SOLUTIONS[state.solution];
+
+  animateDrop(() => {
+    // Change test tube color
+    testLiquid.style.transition = 'fill 0.6s ease';
+    testLiquid.setAttribute('fill', sol.resultColor);
+    testLabel.textContent = sol.name;
+
+    typeDisplay.textContent = sol.type.charAt(0).toUpperCase() + sol.type.slice(1);
+    typeDisplay.className = `metric-value ${sol.type}`;
+    
+    colorDisplay.textContent = sol.colorName;
+    colorDisplay.className = `metric-value ${sol.type}`;
+
+    if (sol.type === 'acidic') {
+      conclusion.textContent = 'ACIDIC';
+      conclusion.className = 'metric-value acidic';
+      resultText.textContent = '🔴 ACIDIC';
+      resultText.setAttribute('fill', '#d32f2f');
+      resultBox.querySelector('rect').setAttribute('stroke', '#d32f2f');
+      takeawayText.textContent = `${sol.name} turned the rose extract RED, confirming it's acidic!`;
+    } else if (sol.type === 'basic') {
+      conclusion.textContent = 'BASIC';
+      conclusion.className = 'metric-value basic';
+      resultText.textContent = '🟢 BASIC';
+      resultText.setAttribute('fill', '#2e7d32');
+      resultBox.querySelector('rect').setAttribute('stroke', '#2e7d32');
+      takeawayText.textContent = `${sol.name} turned the rose extract GREEN, confirming it's basic!`;
+    } else {
+      conclusion.textContent = 'NEUTRAL';
+      conclusion.className = 'metric-value neutral';
+      resultText.textContent = '🩷 NEUTRAL';
+      resultText.setAttribute('fill', '#e91e63');
+      resultBox.querySelector('rect').setAttribute('stroke', '#e91e63');
+      takeawayText.textContent = `${sol.name} kept the rose extract PINK, confirming it's neutral!`;
+    }
+
+    resultBox.style.transition = 'opacity 0.3s';
+    resultBox.setAttribute('opacity', '1');
+    takeaway.classList.add('show');
+    
+    // Move dropper back
+    setTimeout(() => {
+      dropper.setAttribute('transform', 'translate(200, 15)');
+      state.animating = false;
+    }, 500);
+  });
+}
+
+function resetTest() {
+  if (state.animating) return;
+  
+  testLiquid.setAttribute('fill', '#e91e63');
+  testLabel.textContent = 'Test Tube';
+  dropper.setAttribute('transform', 'translate(200, 15)');
+  typeDisplay.textContent = '?';
+  typeDisplay.className = 'metric-value';
+  colorDisplay.textContent = 'Pink';
+  colorDisplay.className = 'metric-value';
+  conclusion.textContent = '?';
+  conclusion.className = 'metric-value';
+  resultBox.setAttribute('opacity', '0');
+}
+
+testBtn.onclick = runTest;
+
+container.querySelectorAll('.solution-btn').forEach(btn => {
+  btn.onclick = () => {
+    if (state.animating) return;
+    container.querySelectorAll('.solution-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.solution = btn.dataset.solution;
+    resetTest();
+    updateDisplay();
+  };
+});
+
+updateDisplay();
 </script>
 </body>
 </html>
