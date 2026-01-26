@@ -2,564 +2,581 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Neutralisation Reaction - Acid + Base = Salt + Water</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#4facfe">
+<title>Neutralisation Reaction – Acid + Base = Salt + Water</title>
 
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   min-height: 100vh;
-  padding: 20px;
+  min-height: -webkit-fill-available;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  -webkit-font-smoothing: antialiased;
 }
 
 #app {
-  max-width: 500px;
+  max-width: 420px;
   margin: auto;
+  padding: 10px;
+  padding-top: max(10px, env(safe-area-inset-top));
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
 }
 
 .header {
   text-align: center;
-  color: white;
-  margin-bottom: 20px;
+  color: #fff;
+  padding: 12px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-.header h1 {
-  font-size: 24px;
-  margin-bottom: 8px;
-}
+.header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.header p { font-size: 12px; opacity: 0.95; }
 
-.header p {
-  font-size: 14px;
-  opacity: 0.9;
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 8px 4px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .sim-card {
   background: #fff;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-bottom: 12px;
 }
 
-.reaction-scene {
+.visual {
   position: relative;
-  height: 400px;
-  background: linear-gradient(180deg, #E3F2FD 0%, #BBDEFB 100%);
-  border-radius: 16px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.bench {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
-  background: linear-gradient(180deg, #607D8B 0%, #455A64 100%);
-}
-
-.equation-display {
-  text-align: center;
-  padding: 15px;
-  background: rgba(255,255,255,0.8);
-  margin: 10px;
+  height: 38vh;
+  min-height: 280px;
+  background: linear-gradient(145deg, #e3f2fd 0%, #bbdefb 100%);
   border-radius: 12px;
-  font-size: 14px;
+  overflow: hidden;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+svg { width: 100%; height: 100%; display: block; }
+
+.static-hint {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 11px;
+  line-height: 1.3;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  z-index: 10;
+}
+
+.equation-box {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 10px;
   font-weight: 600;
-}
-
-.equation {
-  color: #1565C0;
-}
-
-.reaction-area {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 20px;
-  padding: 20px;
-  height: 260px;
-}
-
-.beaker-container {
+  color: #1565c0;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
   text-align: center;
 }
 
-.beaker {
-  width: 80px;
-  height: 110px;
-  background: rgba(255,255,255,0.4);
-  border: 3px solid rgba(255,255,255,0.6);
-  border-radius: 10px 10px 25px 25px;
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto;
+.metrics {
+  background: #e3f2fd;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
 }
 
-.beaker-liquid {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  border-radius: 0 0 22px 22px;
-  transition: all 0.8s ease;
-}
+.metric-item { display: flex; justify-content: space-between; }
+.metric-label { color: #666; }
+.metric-value { font-weight: 600; color: #007AFF; }
+.metric-value.acidic { color: #d32f2f; }
+.metric-value.basic { color: #1565c0; }
+.metric-value.neutral { color: #2e7d32; }
 
-.acid-beaker .beaker-liquid {
-  background: linear-gradient(180deg, #FFCDD2 0%, #EF5350 100%);
-}
-
-.base-beaker .beaker-liquid {
-  background: linear-gradient(180deg, #BBDEFB 0%, #42A5F5 100%);
-}
-
-.result-beaker .beaker-liquid {
-  background: linear-gradient(180deg, #E8F5E9 0%, #81C784 100%);
-  height: 0;
-}
-
-.beaker-label {
-  font-size: 12px;
-  margin-top: 10px;
-  font-weight: 600;
-  color: #37474F;
-}
-
-.plus-sign, .arrow-sign, .equals-sign {
-  font-size: 30px;
-  font-weight: bold;
-  color: #455A64;
-  align-self: center;
-  margin-bottom: 50px;
-}
-
-.reaction-effects {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-
-.reaction-effects.show {
-  opacity: 1;
-}
-
-.heat-indicator {
-  font-size: 40px;
-  animation: pulse 0.5s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-}
-
-.bubbles {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.bubbles.show {
-  opacity: 1;
-}
-
-.bubble {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: rgba(255,255,255,0.7);
-  border-radius: 50%;
-  animation: rise 1.5s ease-in-out infinite;
-}
-
-.bubble:nth-child(2) { left: 20px; animation-delay: 0.3s; }
-.bubble:nth-child(3) { left: 40px; animation-delay: 0.6s; }
-
-@keyframes rise {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-50px); opacity: 0; }
-}
-
-.ph-indicator {
-  position: absolute;
-  bottom: 60px;
-  right: 15px;
-  background: white;
-  padding: 10px 15px;
+.control-panel {
+  background: #e3f2fd;
   border-radius: 10px;
-  font-size: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 10px;
+  margin-top: 8px;
 }
 
-.ph-scale {
-  display: flex;
-  gap: 2px;
-  margin-top: 5px;
-}
-
-.ph-block {
-  width: 12px;
-  height: 20px;
-  border-radius: 2px;
-}
-
-.ph-pointer {
-  position: absolute;
-  bottom: -8px;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 8px solid #333;
-  transition: left 0.8s ease;
-}
-
-.controls {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-
-.mix-btn {
-  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
-  color: white;
-  border: none;
-  padding: 14px 35px;
-  border-radius: 25px;
-  font-size: 15px;
+.control-label {
+  font-size: 11px;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
-}
-
-.mix-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
-}
-
-.mix-btn:disabled {
-  background: #ccc;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-.reset-btn {
-  background: #f5f5f5;
   color: #666;
+  margin-bottom: 6px;
+}
+
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.slider-row label {
+  font-size: 10px;
+  color: #666;
+  width: 60px;
+}
+
+.slider-row input[type="range"] {
+  flex: 1;
+  height: 6px;
+  -webkit-appearance: none;
+  background: linear-gradient(90deg, #ef5350 0%, #4caf50 50%, #2196f3 100%);
+  border-radius: 3px;
+  outline: none;
+}
+
+.slider-row input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border: 2px solid #1565c0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-value {
+  font-size: 10px;
+  font-weight: 600;
+  color: #1565c0;
+  width: 30px;
+  text-align: right;
+}
+
+.test-btn {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 20px;
   border: none;
-  padding: 14px 25px;
-  border-radius: 25px;
-  font-size: 14px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(76,175,80,0.3);
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.1s ease;
 }
 
-.reset-btn:hover {
-  background: #e0e0e0;
-}
+.test-btn:active { transform: scale(0.95); }
 
-.info-box {
-  padding: 15px;
-  background: #E8F5E9;
-  border-radius: 12px;
-  border-left: 4px solid #4CAF50;
-}
-
-.info-box h3 {
-  font-size: 14px;
-  color: #2E7D32;
-  margin-bottom: 8px;
-}
-
-.info-box p {
-  font-size: 13px;
-  color: #666;
-  line-height: 1.5;
-}
-
-.products-display {
+.products-box {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin-top: 15px;
-  padding: 15px;
-  background: #FAFAFA;
-  border-radius: 12px;
+  gap: 20px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
 .product-item {
   text-align: center;
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
 }
 
-.product-icon {
-  font-size: 30px;
+.product-item.active { opacity: 1; }
+.product-icon { font-size: 28px; }
+.product-label { font-size: 10px; color: #666; margin-top: 4px; }
+
+.insight-box {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  border-left: 4px solid #4caf50;
+}
+
+.insight-title { font-weight: 600; color: #2e7d32; margin-bottom: 4px; }
+
+.real-world {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.real-world .icon { font-size: 36px; }
+.real-world .text { flex: 1; line-height: 1.4; }
+.real-world .highlight { color: #1565c0; font-weight: 600; }
+
+.takeaway {
+  background: linear-gradient(135deg, #bbdefb 0%, #90caf9 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  display: none;
+}
+
+.takeaway.show { display: block; }
+.takeaway-title { font-weight: 600; color: #0d47a1; margin-bottom: 4px; }
+
+.ph-scale {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.ph-bar {
+  height: 16px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f44336 0%, #ff9800 15%, #ffeb3b 30%, #4caf50 50%, #8bc34a 60%, #03a9f4 75%, #3f51b5 100%);
+  position: relative;
   margin-bottom: 5px;
 }
 
-.product-label {
-  font-size: 12px;
+.ph-pointer {
+  position: absolute;
+  top: -4px;
+  width: 4px;
+  height: 24px;
+  background: #333;
+  border-radius: 2px;
+  transition: left 0.8s ease;
+}
+
+.ph-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
   color: #666;
 }
 
-.slider-container {
-  margin: 15px 0;
-  padding: 15px;
-  background: #F5F5F5;
-  border-radius: 12px;
+@media screen and (max-width: 380px) {
+  .slider-row label { width: 50px; font-size: 9px; }
+  .products-box { gap: 15px; padding: 10px; }
+  .product-icon { font-size: 24px; }
 }
 
-.slider-label {
-  display: flex;
-  justify-content: space-between;
-  font-size: 13px;
-  margin-bottom: 8px;
-  color: #555;
-}
-
-.amount-slider {
-  width: 100%;
-  height: 8px;
-  -webkit-appearance: none;
-  background: linear-gradient(90deg, #EF5350 0%, #4CAF50 50%, #42A5F5 100%);
-  border-radius: 4px;
-  outline: none;
-}
-
-.amount-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  background: white;
-  border: 3px solid #333;
-  border-radius: 50%;
-  cursor: pointer;
+@supports (padding: max(0px)) {
+  #app {
+    padding-left: max(10px, env(safe-area-inset-left));
+    padding-right: max(10px, env(safe-area-inset-right));
+  }
 }
 </style>
 </head>
 
 <body>
 <div id="app">
-  <div class="header">
-    <h1>⚗️ Neutralisation Reaction</h1>
-    <p>What happens when acid meets base?</p>
-  </div>
 
-  <div class="sim-card">
-    <div class="reaction-scene">
-      <div class="equation-display">
-        <span class="equation">Acid + Base → Salt + Water + Heat</span>
-      </div>
-      
-      <div class="reaction-area">
-        <div class="beaker-container acid-beaker">
-          <div class="beaker">
-            <div class="beaker-liquid" id="acidLiquid"></div>
-          </div>
-          <div class="beaker-label">🍋 Lemon Juice<br>(Acid)</div>
-        </div>
-        
-        <div class="plus-sign">+</div>
-        
-        <div class="beaker-container base-beaker">
-          <div class="beaker">
-            <div class="beaker-liquid" id="baseLiquid"></div>
-          </div>
-          <div class="beaker-label">💧 Lime Water<br>(Base)</div>
-        </div>
-        
-        <div class="arrow-sign">→</div>
-        
-        <div class="beaker-container result-beaker">
-          <div class="beaker">
-            <div class="beaker-liquid" id="resultLiquid"></div>
-            <div class="bubbles" id="bubbles">
-              <div class="bubble"></div>
-              <div class="bubble"></div>
-              <div class="bubble"></div>
-            </div>
-          </div>
-          <div class="beaker-label">🧂 Neutral<br>Solution</div>
-        </div>
-      </div>
-      
-      <div class="reaction-effects" id="reactionEffects">
-        <div class="heat-indicator">🔥</div>
-      </div>
-      
-      <div class="ph-indicator">
-        <div>pH Scale</div>
-        <div class="ph-scale">
-          <div class="ph-block" style="background:#F44336"></div>
-          <div class="ph-block" style="background:#FF5722"></div>
-          <div class="ph-block" style="background:#FF9800"></div>
-          <div class="ph-block" style="background:#FFC107"></div>
-          <div class="ph-block" style="background:#FFEB3B"></div>
-          <div class="ph-block" style="background:#CDDC39"></div>
-          <div class="ph-block" style="background:#8BC34A"></div>
-          <div class="ph-block" style="background:#4CAF50"></div>
-          <div class="ph-block" style="background:#009688"></div>
-          <div class="ph-block" style="background:#00BCD4"></div>
-          <div class="ph-block" style="background:#03A9F4"></div>
-          <div class="ph-block" style="background:#2196F3"></div>
-          <div class="ph-block" style="background:#3F51B5"></div>
-          <div class="ph-block" style="background:#673AB7"></div>
-          <div class="ph-pointer" id="phPointer" style="left: 84px;"></div>
-        </div>
-        <div style="display:flex;justify-content:space-between;font-size:10px;margin-top:3px;">
-          <span>Acid</span>
-          <span>Neutral</span>
-          <span>Base</span>
-        </div>
-      </div>
-      
-      <div class="bench"></div>
-    </div>
-    
-    <div class="slider-container">
-      <div class="slider-label">
-        <span>Adjust Base Amount:</span>
-        <span id="ratioLabel">Equal amounts</span>
-      </div>
-      <input type="range" class="amount-slider" id="baseSlider" min="0" max="100" value="50">
-    </div>
-    
-    <div class="controls">
-      <button class="mix-btn" id="mixBtn">🧪 Mix Solutions</button>
-      <button class="reset-btn" id="resetBtn">Reset</button>
-    </div>
-    
-    <div class="info-box">
-      <h3>💡 The Neutralisation Reaction</h3>
-      <p id="explanation">When an acid and a base are mixed in the right proportions, they react to form salt, water, and release heat. The resulting solution becomes neutral!</p>
-    </div>
-    
-    <div class="products-display">
-      <div class="product-item">
-        <div class="product-icon">🧂</div>
-        <div class="product-label">Salt<br>(formed)</div>
-      </div>
-      <div class="product-item">
-        <div class="product-icon">💧</div>
-        <div class="product-label">Water<br>(formed)</div>
-      </div>
-      <div class="product-item">
-        <div class="product-icon">🔥</div>
-        <div class="product-label">Heat<br>(released)</div>
-      </div>
-    </div>
+<div class="header">
+  <h1>⚗️ Neutralisation Reaction</h1>
+  <p>What happens when acid meets base?</p>
+</div>
+
+<div class="section-title">Mix acid and base to observe the reaction</div>
+<div class="sim-card" id="sim"></div>
+
+<div class="products-box">
+  <div class="product-item" id="prod-salt">
+    <div class="product-icon">🧂</div>
+    <div class="product-label">Salt<br>(formed)</div>
+  </div>
+  <div class="product-item" id="prod-water">
+    <div class="product-icon">💧</div>
+    <div class="product-label">Water<br>(formed)</div>
+  </div>
+  <div class="product-item" id="prod-heat">
+    <div class="product-icon">🔥</div>
+    <div class="product-label">Heat<br>(released)</div>
   </div>
 </div>
 
-<script>
-const mixBtn = document.getElementById('mixBtn');
-const resetBtn = document.getElementById('resetBtn');
-const baseSlider = document.getElementById('baseSlider');
-const ratioLabel = document.getElementById('ratioLabel');
-const acidLiquid = document.getElementById('acidLiquid');
-const baseLiquid = document.getElementById('baseLiquid');
-const resultLiquid = document.getElementById('resultLiquid');
-const reactionEffects = document.getElementById('reactionEffects');
-const bubbles = document.getElementById('bubbles');
-const phPointer = document.getElementById('phPointer');
-const explanation = document.getElementById('explanation');
+<div class="ph-scale">
+  <div style="font-size:11px;font-weight:600;color:#666;margin-bottom:6px;">pH Scale</div>
+  <div class="ph-bar">
+    <div class="ph-pointer" id="ph-pointer" style="left: calc(50% - 2px);"></div>
+  </div>
+  <div class="ph-labels">
+    <span>0 (Strong Acid)</span>
+    <span>7 (Neutral)</span>
+    <span>14 (Strong Base)</span>
+  </div>
+</div>
 
+<div class="insight-box">
+  <div class="insight-title">🔑 Key Insight:</div>
+  <strong>Acid + Base → Salt + Water + Heat</strong><br>
+  When mixed in the right proportions, acids and bases completely neutralise each other. The resulting solution has pH 7 (neutral)!
+</div>
+
+<div class="real-world">
+  <div class="icon">💊</div>
+  <div class="text">
+    <strong>Real-life example:</strong> <span class="highlight">Antacids</span> work by neutralising excess stomach acid (HCl) with a base like magnesium hydroxide, providing relief from acidity!
+  </div>
+</div>
+
+<div class="takeaway" id="takeaway">
+  <div class="takeaway-title">💡 What you discovered:</div>
+  <span id="takeaway-text">Complete neutralisation produces salt + water + heat. The pH becomes 7 (neutral).</span>
+</div>
+
+</div>
+
+<script>
+const container = document.getElementById('sim');
+
+container.innerHTML = `
+<div class="visual">
+  <div class="static-hint">
+    👆 Adjust base amount & mix!
+  </div>
+  
+  <div class="equation-box">
+    Acid + Base → Salt + Water + Heat
+  </div>
+
+  <svg viewBox="0 0 400 300">
+    <!-- Lab bench -->
+    <rect x="20" y="220" width="360" height="60" rx="4" fill="#607d8b"/>
+    <rect x="20" y="220" width="360" height="8" rx="2" fill="#455a64"/>
+    
+    <!-- Acid beaker -->
+    <g id="acid-beaker" transform="translate(80, 80)">
+      <path d="M-35,20 L-30,100 Q-30,110 -20,110 L20,110 Q30,110 30,100 L35,20 Z" 
+            fill="rgba(255,255,255,0.4)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+      <ellipse cx="0" cy="20" rx="35" ry="8" fill="rgba(255,255,255,0.3)"/>
+      <rect x="-25" y="35" width="50" height="65" rx="2" fill="#ef5350" id="acid-liquid"/>
+      <text x="0" y="-5" text-anchor="middle" font-size="18">🍋</text>
+      <text x="0" y="130" text-anchor="middle" font-size="9" fill="#666">Lemon Juice</text>
+      <text x="0" y="142" text-anchor="middle" font-size="8" fill="#d32f2f" font-weight="600">(ACID)</text>
+    </g>
+    
+    <!-- Plus sign -->
+    <text x="150" y="150" text-anchor="middle" font-size="30" fill="#455a64">+</text>
+    
+    <!-- Base beaker -->
+    <g id="base-beaker" transform="translate(220, 80)">
+      <path d="M-35,20 L-30,100 Q-30,110 -20,110 L20,110 Q30,110 30,100 L35,20 Z" 
+            fill="rgba(255,255,255,0.4)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+      <ellipse cx="0" cy="20" rx="35" ry="8" fill="rgba(255,255,255,0.3)"/>
+      <rect x="-25" y="35" width="50" height="65" rx="2" fill="#42a5f5" id="base-liquid"/>
+      <text x="0" y="-5" text-anchor="middle" font-size="18">💧</text>
+      <text x="0" y="130" text-anchor="middle" font-size="9" fill="#666">Lime Water</text>
+      <text x="0" y="142" text-anchor="middle" font-size="8" fill="#1565c0" font-weight="600">(BASE)</text>
+    </g>
+    
+    <!-- Arrow -->
+    <text x="290" y="150" text-anchor="middle" font-size="30" fill="#455a64">→</text>
+    
+    <!-- Result beaker -->
+    <g id="result-beaker" transform="translate(340, 80)">
+      <path d="M-35,20 L-30,100 Q-30,110 -20,110 L20,110 Q30,110 30,100 L35,20 Z" 
+            fill="rgba(255,255,255,0.4)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+      <ellipse cx="0" cy="20" rx="35" ry="8" fill="rgba(255,255,255,0.3)"/>
+      <rect x="-25" y="35" width="50" height="0" rx="2" fill="#81c784" id="result-liquid"/>
+      <text x="0" y="-5" text-anchor="middle" font-size="18" id="result-icon">❓</text>
+      <text x="0" y="130" text-anchor="middle" font-size="9" fill="#666">Result</text>
+      <text x="0" y="142" text-anchor="middle" font-size="8" fill="#666" id="result-type">(?)</text>
+    </g>
+    
+    <!-- Bubbles (hidden initially) -->
+    <g id="bubbles" opacity="0">
+      <circle cx="340" cy="120" r="4" fill="rgba(255,255,255,0.7)">
+        <animate attributeName="cy" from="150" to="100" dur="1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" from="1" to="0" dur="1s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="330" cy="130" r="3" fill="rgba(255,255,255,0.7)">
+        <animate attributeName="cy" from="160" to="110" dur="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" from="1" to="0" dur="1.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="350" cy="140" r="3" fill="rgba(255,255,255,0.7)">
+        <animate attributeName="cy" from="170" to="120" dur="0.9s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" from="1" to="0" dur="0.9s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Heat indicator -->
+    <g id="heat-indicator" opacity="0" transform="translate(340, 60)">
+      <text x="0" y="0" text-anchor="middle" font-size="24">🔥</text>
+    </g>
+  </svg>
+
+  <button class="test-btn" id="mix-btn">🧪 Mix Solutions</button>
+</div>
+
+<div class="metrics">
+  <div class="metric-item"><span class="metric-label">Acid Amount:</span> <span class="metric-value" id="acid-amount">50%</span></div>
+  <div class="metric-item"><span class="metric-label">Base Amount:</span> <span class="metric-value" id="base-amount">50%</span></div>
+  <div class="metric-item"><span class="metric-label">Result pH:</span> <span class="metric-value" id="result-ph">?</span></div>
+  <div class="metric-item"><span class="metric-label">Classification:</span> <span class="metric-value" id="classification">?</span></div>
+</div>
+
+<div class="control-panel">
+  <div class="control-label">Adjust the ratio of acid to base:</div>
+  <div class="slider-row">
+    <label>Base Amount:</label>
+    <input type="range" id="base-slider" min="0" max="100" value="50">
+    <span class="slider-value" id="base-value">50%</span>
+  </div>
+</div>`;
+
+// State
 let baseAmount = 50;
 let isMixed = false;
 
-baseSlider.addEventListener('input', (e) => {
-  baseAmount = parseInt(e.target.value);
-  if (baseAmount < 40) {
-    ratioLabel.textContent = 'Less base (acidic result)';
-  } else if (baseAmount > 60) {
-    ratioLabel.textContent = 'More base (basic result)';
-  } else {
-    ratioLabel.textContent = 'Equal amounts (neutral)';
-  }
-});
+const acidLiquid = document.getElementById('acid-liquid');
+const baseLiquid = document.getElementById('base-liquid');
+const resultLiquid = document.getElementById('result-liquid');
+const resultIcon = document.getElementById('result-icon');
+const resultType = document.getElementById('result-type');
+const bubbles = document.getElementById('bubbles');
+const heatIndicator = document.getElementById('heat-indicator');
+const baseSlider = document.getElementById('base-slider');
+const baseValueDisplay = document.getElementById('base-value');
+const baseAmountDisplay = document.getElementById('base-amount');
+const acidAmountDisplay = document.getElementById('acid-amount');
+const resultPhDisplay = document.getElementById('result-ph');
+const classificationDisplay = document.getElementById('classification');
+const phPointer = document.getElementById('ph-pointer');
+const mixBtn = document.getElementById('mix-btn');
+const prodSalt = document.getElementById('prod-salt');
+const prodWater = document.getElementById('prod-water');
+const prodHeat = document.getElementById('prod-heat');
+const takeaway = document.getElementById('takeaway');
+const takeawayText = document.getElementById('takeaway-text');
 
-mixBtn.addEventListener('click', () => {
-  if (isMixed) return;
+baseSlider.oninput = function() {
+  baseAmount = parseInt(this.value);
+  baseValueDisplay.textContent = baseAmount + '%';
+  baseAmountDisplay.textContent = baseAmount + '%';
+  acidAmountDisplay.textContent = (100 - baseAmount) + '%';
+  
+  // Update base liquid height
+  baseLiquid.setAttribute('height', 65 * baseAmount / 100);
+  acidLiquid.setAttribute('height', 65 * (100 - baseAmount) / 100);
+};
+
+mixBtn.onclick = function() {
+  if (isMixed) {
+    // Reset
+    isMixed = false;
+    resultLiquid.setAttribute('height', '0');
+    resultIcon.textContent = '❓';
+    resultType.textContent = '(?)';
+    bubbles.style.opacity = '0';
+    heatIndicator.style.opacity = '0';
+    resultPhDisplay.textContent = '?';
+    classificationDisplay.textContent = '?';
+    classificationDisplay.className = 'metric-value';
+    phPointer.style.left = 'calc(50% - 2px)';
+    prodSalt.classList.remove('active');
+    prodWater.classList.remove('active');
+    prodHeat.classList.remove('active');
+    mixBtn.textContent = '🧪 Mix Solutions';
+    return;
+  }
+  
   isMixed = true;
+  mixBtn.textContent = '🔄 Reset';
   
-  // Animate liquids decreasing
-  acidLiquid.style.height = '20px';
-  baseLiquid.style.height = '20px';
-  
-  // Show reaction effects
-  reactionEffects.classList.add('show');
-  bubbles.classList.add('show');
+  // Show bubbles and heat
+  bubbles.style.transition = 'opacity 0.5s';
+  bubbles.style.opacity = '1';
+  heatIndicator.style.transition = 'opacity 0.5s';
+  heatIndicator.style.opacity = '1';
   
   setTimeout(() => {
-    reactionEffects.classList.remove('show');
-  }, 1500);
-  
-  // Fill result beaker
-  setTimeout(() => {
-    resultLiquid.style.height = '80px';
-    
-    // Determine result based on ratio
-    let phPosition;
-    let resultColor;
-    let resultText;
+    // Calculate result
+    let ph, color, icon, typeText, classification;
     
     if (baseAmount < 40) {
-      // Excess acid - still acidic
-      phPosition = 28 + (baseAmount / 40) * 42; // 28-70px range
-      resultColor = 'linear-gradient(180deg, #FFCDD2 0%, #EF5350 100%)';
-      resultText = `<strong>Still Acidic!</strong> You added less base than needed. The excess acid makes the solution acidic. The pH is below 7. Add more base for complete neutralisation!`;
+      // Excess acid
+      ph = 2 + (baseAmount / 40) * 3;
+      color = '#ef5350';
+      icon = '🟠';
+      typeText = '(ACIDIC)';
+      classification = 'Still Acidic';
+      classificationDisplay.className = 'metric-value acidic';
+      takeawayText.textContent = 'Too little base! The solution is still acidic. Add more base for complete neutralisation.';
     } else if (baseAmount > 60) {
-      // Excess base - still basic
-      phPosition = 98 + ((baseAmount - 60) / 40) * 70; // 98-168px range
-      resultColor = 'linear-gradient(180deg, #BBDEFB 0%, #42A5F5 100%)';
-      resultText = `<strong>Still Basic!</strong> You added more base than needed. The excess base makes the solution basic. The pH is above 7. Use less base for complete neutralisation!`;
+      // Excess base
+      ph = 9 + ((baseAmount - 60) / 40) * 3;
+      color = '#42a5f5';
+      icon = '🔵';
+      typeText = '(BASIC)';
+      classification = 'Still Basic';
+      classificationDisplay.className = 'metric-value basic';
+      takeawayText.textContent = 'Too much base! The solution is still basic. Use less base for complete neutralisation.';
     } else {
       // Neutral
-      phPosition = 84; // Center (pH 7)
-      resultColor = 'linear-gradient(180deg, #C8E6C9 0%, #81C784 100%)';
-      resultText = `<strong>Perfect Neutralisation!</strong> The acid and base completely reacted, forming salt and water. The pH is 7 (neutral). Heat was released during the reaction. This is a complete neutralisation!`;
+      ph = 7;
+      color = '#81c784';
+      icon = '✅';
+      typeText = '(NEUTRAL)';
+      classification = 'Perfectly Neutral!';
+      classificationDisplay.className = 'metric-value neutral';
+      takeawayText.textContent = 'Perfect! The acid and base completely neutralised each other, forming salt and water. pH = 7!';
     }
     
-    resultLiquid.style.background = resultColor;
-    phPointer.style.left = phPosition + 'px';
-    explanation.innerHTML = resultText;
-  }, 800);
-  
-  mixBtn.disabled = true;
-});
-
-resetBtn.addEventListener('click', () => {
-  isMixed = false;
-  mixBtn.disabled = false;
-  
-  acidLiquid.style.height = '80px';
-  baseLiquid.style.height = '80px';
-  resultLiquid.style.height = '0';
-  resultLiquid.style.background = 'linear-gradient(180deg, #E8F5E9 0%, #81C784 100%)';
-  
-  bubbles.classList.remove('show');
-  reactionEffects.classList.remove('show');
-  phPointer.style.left = '84px';
-  
-  baseSlider.value = 50;
-  baseAmount = 50;
-  ratioLabel.textContent = 'Equal amounts';
-  
-  explanation.innerHTML = 'When an acid and a base are mixed in the right proportions, they react to form salt, water, and release heat. The resulting solution becomes neutral!';
-});
+    // Update visuals
+    resultLiquid.style.transition = 'height 0.8s ease, fill 0.5s ease';
+    resultLiquid.setAttribute('height', '65');
+    resultLiquid.setAttribute('fill', color);
+    resultIcon.textContent = icon;
+    resultType.textContent = typeText;
+    resultType.style.fill = color === '#81c784' ? '#2e7d32' : (color === '#ef5350' ? '#d32f2f' : '#1565c0');
+    
+    resultPhDisplay.textContent = ph.toFixed(1);
+    classificationDisplay.textContent = classification;
+    
+    // Update pH pointer
+    phPointer.style.left = `calc(${(ph / 14) * 100}% - 2px)`;
+    
+    // Show products
+    prodSalt.classList.add('active');
+    prodWater.classList.add('active');
+    prodHeat.classList.add('active');
+    
+    takeaway.classList.add('show');
+    
+    setTimeout(() => {
+      heatIndicator.style.opacity = '0.3';
+    }, 2000);
+  }, 500);
+};
 </script>
 </body>
 </html>

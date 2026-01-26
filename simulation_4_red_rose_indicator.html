@@ -2,494 +2,544 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Red Rose Indicator - Natural Acid-Base Indicator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#e91e63">
+<title>Red Rose Indicator – Natural Acid-Base Test</title>
 
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
   min-height: 100vh;
-  padding: 20px;
+  min-height: -webkit-fill-available;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  -webkit-font-smoothing: antialiased;
 }
 
 #app {
-  max-width: 500px;
+  max-width: 420px;
   margin: auto;
+  padding: 10px;
+  padding-top: max(10px, env(safe-area-inset-top));
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
 }
 
 .header {
   text-align: center;
-  color: white;
-  margin-bottom: 20px;
+  color: #fff;
+  padding: 12px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-.header h1 {
-  font-size: 24px;
-  margin-bottom: 8px;
-}
+.header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.header p { font-size: 12px; opacity: 0.95; }
 
-.header p {
-  font-size: 14px;
-  opacity: 0.9;
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 8px 4px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .sim-card {
   background: #fff;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-bottom: 12px;
 }
 
-.lab-scene {
+.visual {
   position: relative;
-  height: 380px;
-  background: linear-gradient(180deg, #FFF8E1 0%, #FFE0B2 100%);
-  border-radius: 16px;
+  height: 34vh;
+  min-height: 260px;
+  background: linear-gradient(145deg, #fce4ec 0%, #f8bbd9 100%);
+  border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 20px;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-.bench {
+svg { width: 100%; height: 100%; display: block; }
+
+.static-hint {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
-  background: linear-gradient(180deg, #8D6E63 0%, #5D4037 100%);
-}
-
-.preparation-area {
-  padding: 15px;
-  text-align: center;
-}
-
-.prep-title {
-  font-size: 14px;
-  color: #E65100;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.rose-container {
-  position: relative;
-  display: inline-block;
-}
-
-.rose {
-  font-size: 60px;
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.extract-beaker {
-  width: 80px;
-  height: 100px;
-  background: rgba(255,255,255,0.4);
-  border: 3px solid rgba(255,255,255,0.6);
-  border-radius: 8px 8px 20px 20px;
-  margin: 15px auto;
-  position: relative;
-  overflow: hidden;
-}
-
-.rose-extract {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 70px;
-  background: linear-gradient(180deg, #E91E63 0%, #C2185B 100%);
-  border-radius: 0 0 17px 17px;
-  transition: background 1s ease;
-}
-
-.test-area {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 20px;
-}
-
-.test-tube-container {
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.test-tube-container:hover {
-  transform: scale(1.05);
-}
-
-.test-tube-container.selected {
-  transform: scale(1.1);
-}
-
-.test-tube {
-  width: 35px;
-  height: 100px;
-  background: rgba(255,255,255,0.4);
-  border: 2px solid rgba(255,255,255,0.6);
-  border-radius: 0 0 20px 20px;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-}
-
-.test-solution {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 70px;
-  border-radius: 0 0 18px 18px;
-  transition: background 1s ease;
-}
-
-.lemon-tube .test-solution {
-  background: linear-gradient(180deg, #FFF176 0%, #FFEB3B 100%);
-}
-
-.soap-tube .test-solution {
-  background: linear-gradient(180deg, #E1BEE7 0%, #CE93D8 100%);
-}
-
-.water-tube .test-solution {
-  background: linear-gradient(180deg, #B3E5FC 0%, #81D4FA 100%);
-}
-
-.tube-label {
+  top: 8px;
+  left: 8px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 8px;
+  padding: 6px 8px;
   font-size: 11px;
+  line-height: 1.3;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  z-index: 10;
+}
+
+.metrics {
+  background: #fce4ec;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 11px;
+  line-height: 1.6;
   margin-top: 8px;
-  font-weight: 600;
-  color: #5D4037;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
 }
 
-.result-indicator {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  padding: 12px 25px;
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+.metric-item { display: flex; justify-content: space-between; }
+.metric-label { color: #666; }
+.metric-value { font-weight: 600; color: #007AFF; }
+.metric-value.acidic { color: #d32f2f; }
+.metric-value.basic { color: #2e7d32; }
+.metric-value.neutral { color: #e91e63; }
 
-.result-indicator.show {
-  opacity: 1;
-}
-
-.result-indicator.acidic {
-  color: #C62828;
-  border: 2px solid #C62828;
-}
-
-.result-indicator.basic {
-  color: #2E7D32;
-  border: 2px solid #2E7D32;
-}
-
-.result-indicator.neutral {
-  color: #E91E63;
-  border: 2px solid #E91E63;
-}
-
-.controls {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-
-.add-btn {
-  background: linear-gradient(135deg, #E91E63 0%, #C2185B 100%);
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 25px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
-}
-
-.add-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.5);
-}
-
-.add-btn:disabled {
-  background: #ccc;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-.reset-btn {
-  background: #f5f5f5;
-  color: #666;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 25px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.reset-btn:hover {
-  background: #e0e0e0;
-}
-
-.info-box {
-  padding: 15px;
-  background: #FCE4EC;
-  border-radius: 12px;
-  border-left: 4px solid #E91E63;
-}
-
-.info-box h3 {
-  font-size: 14px;
-  color: #C2185B;
-  margin-bottom: 8px;
-}
-
-.info-box p {
-  font-size: 13px;
-  color: #666;
-  line-height: 1.5;
-}
-
-.color-legend {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 15px;
-  padding: 12px;
-  background: #FAFAFA;
+.control-panel {
+  background: #fce4ec;
   border-radius: 10px;
+  padding: 10px;
+  margin-top: 8px;
 }
 
-.legend-item {
+.control-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.solution-btn {
+  padding: 8px 4px;
+  border-radius: 8px;
+  border: 2px solid #f8bbd9;
+  font-size: 9px;
+  background: #fff;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.3;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: transform 0.1s ease;
+}
+
+.solution-btn:active { transform: scale(0.95); }
+.solution-btn.active { border-color: #e91e63; background: #fce4ec; }
+.solution-btn .icon { font-size: 18px; display: block; margin-bottom: 2px; }
+
+.test-btn {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(233,30,99,0.3);
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.1s ease;
+}
+
+.test-btn:active { transform: scale(0.95); }
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 10px;
+}
+
+.legend-item { display: flex; align-items: center; gap: 4px; }
+.legend-color { width: 20px; height: 12px; border-radius: 3px; }
+.legend-color.original { background: #e91e63; }
+.legend-color.acidic { background: #d32f2f; }
+.legend-color.basic { background: #4caf50; }
+
+.insight-box {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  border-left: 4px solid #e91e63;
+}
+
+.insight-title { font-weight: 600; color: #c2185b; margin-bottom: 4px; }
+
+.real-world {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 11px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 12px;
+  gap: 10px;
 }
 
-.color-swatch {
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-}
+.real-world .icon { font-size: 36px; }
+.real-world .text { flex: 1; line-height: 1.4; }
+.real-world .highlight { color: #c2185b; font-weight: 600; }
 
-.swatch-red { background: linear-gradient(135deg, #F44336 0%, #C62828 100%); }
-.swatch-green { background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%); }
-.swatch-pink { background: linear-gradient(135deg, #E91E63 0%, #C2185B 100%); }
-
-.instruction {
-  text-align: center;
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-.prep-steps {
-  background: #FFF3E0;
+.takeaway {
+  background: linear-gradient(135deg, #f8bbd9 0%, #f48fb1 100%);
   border-radius: 10px;
   padding: 12px;
-  margin: 15px 0;
+  margin-top: 10px;
   font-size: 12px;
-  color: #E65100;
+  line-height: 1.5;
+  display: none;
 }
 
-.prep-steps ol {
-  margin-left: 20px;
+.takeaway.show { display: block; }
+.takeaway-title { font-weight: 600; color: #880e4f; margin-bottom: 4px; }
+
+.prep-info {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 11px;
 }
 
-.prep-steps li {
-  margin-bottom: 4px;
+.prep-title { font-weight: 600; color: #c2185b; margin-bottom: 6px; }
+
+.prep-steps {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.prep-steps::-webkit-scrollbar { display: none; }
+.prep-step { flex-shrink: 0; text-align: center; width: 65px; }
+.prep-step .icon { font-size: 22px; }
+.prep-step .text { font-size: 9px; color: #666; }
+
+@media screen and (max-width: 380px) {
+  .solution-grid { gap: 4px; }
+  .solution-btn { padding: 6px 2px; font-size: 8px; }
+  .solution-btn .icon { font-size: 16px; }
+}
+
+@supports (padding: max(0px)) {
+  #app {
+    padding-left: max(10px, env(safe-area-inset-left));
+    padding-right: max(10px, env(safe-area-inset-right));
+  }
 }
 </style>
 </head>
 
 <body>
 <div id="app">
-  <div class="header">
-    <h1>🌹 Red Rose Indicator</h1>
-    <p>Using flower extract to test acids and bases</p>
-  </div>
 
-  <div class="sim-card">
-    <div class="instruction">👆 Select a solution, then add rose extract to test</div>
-    
-    <div class="lab-scene">
-      <div class="preparation-area">
-        <div class="prep-title">Rose Petal Extract</div>
-        <div class="rose-container">
-          <div class="rose">🌹</div>
-        </div>
-        <div class="extract-beaker">
-          <div class="rose-extract" id="extractColor"></div>
-        </div>
-      </div>
-      
-      <div class="test-area">
-        <div class="test-tube-container lemon-tube" data-type="acidic" data-name="Lemon Juice">
-          <div class="test-tube">
-            <div class="test-solution" id="lemonSolution"></div>
-          </div>
-          <div class="tube-label">🍋 Lemon<br>Juice</div>
-        </div>
-        
-        <div class="test-tube-container soap-tube" data-type="basic" data-name="Soap Solution">
-          <div class="test-tube">
-            <div class="test-solution" id="soapSolution"></div>
-          </div>
-          <div class="tube-label">🧼 Soap<br>Solution</div>
-        </div>
-        
-        <div class="test-tube-container water-tube" data-type="neutral" data-name="Water">
-          <div class="test-tube">
-            <div class="test-solution" id="waterSolution"></div>
-          </div>
-          <div class="tube-label">💧 Pure<br>Water</div>
-        </div>
-      </div>
-      
-      <div class="result-indicator" id="result"></div>
-      <div class="bench"></div>
-    </div>
-    
-    <div class="controls">
-      <button class="add-btn" id="addBtn" disabled>🌹 Add Rose Extract</button>
-      <button class="reset-btn" id="resetBtn">Reset</button>
-    </div>
-    
-    <div class="prep-steps">
-      <strong>How to Prepare Rose Extract:</strong>
-      <ol>
-        <li>Collect fresh red rose petals</li>
-        <li>Crush petals with a little hot water</li>
-        <li>Filter to get the colored extract</li>
-        <li>Use this extract as a natural indicator!</li>
-      </ol>
-    </div>
-    
-    <div class="info-box">
-      <h3>💡 How Rose Extract Works</h3>
-      <p id="explanation">Red rose petal extract contains natural pigments that change color based on pH. It's a wonderful natural indicator that you can make at home!</p>
-    </div>
-    
-    <div class="color-legend">
-      <div class="legend-item">
-        <div class="color-swatch swatch-red"></div>
-        <span>Acidic (Red)</span>
-      </div>
-      <div class="legend-item">
-        <div class="color-swatch swatch-green"></div>
-        <span>Basic (Green)</span>
-      </div>
-      <div class="legend-item">
-        <div class="color-swatch swatch-pink"></div>
-        <span>Neutral (Pink)</span>
-      </div>
-    </div>
+<div class="header">
+  <h1>🌹 Red Rose Indicator</h1>
+  <p>Nature's beautiful acid-base detector!</p>
+</div>
+
+<div class="section-title">Reference (Original rose extract)</div>
+<div class="sim-card" id="ref"></div>
+
+<div class="section-title">Experiment (Test different solutions)</div>
+<div class="sim-card" id="exp"></div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-color original"></div> Original (Pink)</div>
+  <div class="legend-item"><div class="legend-color acidic"></div> Acidic → Red</div>
+  <div class="legend-item"><div class="legend-color basic"></div> Basic → Green</div>
+</div>
+
+<div class="insight-box">
+  <div class="insight-title">🔑 Key Insight:</div>
+  Rose petal extract turns <strong style="color:#d32f2f">RED in acids</strong> and <strong style="color:#2e7d32">GREEN in bases</strong>. It stays <strong style="color:#e91e63">PINK in neutral</strong> solutions. This makes it a complete natural indicator!
+</div>
+
+<div class="real-world">
+  <div class="icon">🌺</div>
+  <div class="text">
+    <strong>Fun fact:</strong> Many flowers contain natural pigments called <span class="highlight">anthocyanins</span> that change color with pH. Red cabbage, hibiscus, and beetroot also work as indicators!
   </div>
 </div>
 
+<div class="prep-info">
+  <div class="prep-title">🧪 How to prepare rose petal extract:</div>
+  <div class="prep-steps">
+    <div class="prep-step"><div class="icon">🌹</div><div class="text">Collect red rose petals</div></div>
+    <div class="prep-step"><div class="icon">✂️</div><div class="text">Crush petals</div></div>
+    <div class="prep-step"><div class="icon">🔥</div><div class="text">Add hot water</div></div>
+    <div class="prep-step"><div class="icon">⏳</div><div class="text">Let it steep</div></div>
+    <div class="prep-step"><div class="icon">🧪</div><div class="text">Filter & use</div></div>
+  </div>
+</div>
+
+<div class="takeaway" id="takeaway">
+  <div class="takeaway-title">💡 What you discovered:</div>
+  Rose extract is a <strong>complete natural indicator</strong>: <span style="color:#d32f2f;font-weight:600">RED = Acidic</span>, <span style="color:#2e7d32;font-weight:600">GREEN = Basic</span>, <span style="color:#e91e63;font-weight:600">PINK = Neutral</span>. It confirms the same results as litmus paper!
+</div>
+
+</div>
+
 <script>
-const tubes = document.querySelectorAll('.test-tube-container');
-const addBtn = document.getElementById('addBtn');
-const resetBtn = document.getElementById('resetBtn');
-const result = document.getElementById('result');
-const explanation = document.getElementById('explanation');
-
-const lemonSolution = document.getElementById('lemonSolution');
-const soapSolution = document.getElementById('soapSolution');
-const waterSolution = document.getElementById('waterSolution');
-
-let selectedTube = null;
-
-const originalColors = {
-  lemon: 'linear-gradient(180deg, #FFF176 0%, #FFEB3B 100%)',
-  soap: 'linear-gradient(180deg, #E1BEE7 0%, #CE93D8 100%)',
-  water: 'linear-gradient(180deg, #B3E5FC 0%, #81D4FA 100%)'
+const SOLUTIONS = {
+  'lemon': { name: 'Lemon Juice', icon: '🍋', type: 'acidic', resultColor: '#d32f2f', colorName: 'Red' },
+  'vinegar': { name: 'Vinegar', icon: '🍶', type: 'acidic', resultColor: '#e53935', colorName: 'Red' },
+  'orange': { name: 'Orange Juice', icon: '🍊', type: 'acidic', resultColor: '#ef5350', colorName: 'Light Red' },
+  'soap': { name: 'Soap Solution', icon: '🧼', type: 'basic', resultColor: '#4caf50', colorName: 'Green' },
+  'baking': { name: 'Baking Soda', icon: '🥄', type: 'basic', resultColor: '#66bb6a', colorName: 'Green' },
+  'lime': { name: 'Lime Water', icon: '💧', type: 'basic', resultColor: '#2e7d32', colorName: 'Dark Green' },
+  'water': { name: 'Tap Water', icon: '🚰', type: 'neutral', resultColor: '#e91e63', colorName: 'Pink (unchanged)' },
+  'milk': { name: 'Milk', icon: '🥛', type: 'neutral', resultColor: '#ec407a', colorName: 'Pink (unchanged)' },
+  'salt': { name: 'Salt Solution', icon: '🧂', type: 'neutral', resultColor: '#f06292', colorName: 'Pink (unchanged)' }
 };
 
-tubes.forEach(tube => {
-  tube.addEventListener('click', () => {
-    tubes.forEach(t => t.classList.remove('selected'));
-    tube.classList.add('selected');
-    selectedTube = {
-      element: tube,
-      type: tube.dataset.type,
-      name: tube.dataset.name
-    };
-    addBtn.disabled = false;
-    result.classList.remove('show');
-  });
-});
+function createSimulation(containerId, isExperiment) {
+  const c = document.getElementById(containerId);
+  const defaultSolution = isExperiment ? 'lemon' : 'water';
+  
+  c.innerHTML = `
+  <div class="visual">
+    <div class="static-hint">
+      ${isExperiment ? '👆 Select solution & tap "Add"' : '🌹 Original pink rose extract'}
+    </div>
 
-addBtn.addEventListener('click', () => {
-  if (!selectedTube) return;
-  
-  const type = selectedTube.type;
-  const name = selectedTube.name;
-  const tubeClass = selectedTube.element.classList;
-  
-  let solutionEl;
-  if (tubeClass.contains('lemon-tube')) {
-    solutionEl = lemonSolution;
-  } else if (tubeClass.contains('soap-tube')) {
-    solutionEl = soapSolution;
-  } else {
-    solutionEl = waterSolution;
+    <svg viewBox="0 0 400 280">
+      <!-- Lab bench -->
+      <rect x="30" y="200" width="340" height="70" rx="4" fill="#8d6e63"/>
+      <rect x="30" y="200" width="340" height="8" rx="2" fill="#6d4c41"/>
+      
+      <!-- Rose and mortar -->
+      <g transform="translate(60, 60)">
+        <text x="0" y="0" font-size="40">🌹</text>
+        <text x="20" y="50" font-size="9" fill="#888">Rose Petals</text>
+      </g>
+      
+      <!-- Extract beaker -->
+      <g id="${containerId}-extract" transform="translate(200, 80)">
+        <path d="M-35,20 L-30,90 Q-30,100 -20,100 L20,100 Q30,100 30,90 L35,20 Z" 
+              fill="rgba(255,255,255,0.4)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+        <ellipse cx="0" cy="20" rx="35" ry="8" fill="rgba(255,255,255,0.3)"/>
+        <rect x="-25" y="35" width="50" height="55" rx="2" fill="#e91e63" id="${containerId}-liquid"/>
+        <text x="0" y="120" text-anchor="middle" font-size="9" fill="#666">Rose Extract</text>
+      </g>
+      
+      <!-- Test tubes -->
+      <g id="${containerId}-tubes">
+        <g id="${containerId}-tube1" transform="translate(300, 70)">
+          <rect x="-15" y="0" width="30" height="80" rx="10" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
+          <rect x="-12" y="20" width="24" height="50" rx="8" fill="#e91e63" id="${containerId}-tube1-liquid"/>
+          <text x="0" y="100" text-anchor="middle" font-size="8" fill="#666" id="${containerId}-tube1-label">Test 1</text>
+        </g>
+        <g id="${containerId}-tube2" transform="translate(340, 70)">
+          <rect x="-15" y="0" width="30" height="80" rx="10" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
+          <rect x="-12" y="20" width="24" height="50" rx="8" fill="#e91e63" id="${containerId}-tube2-liquid"/>
+          <text x="0" y="100" text-anchor="middle" font-size="8" fill="#666" id="${containerId}-tube2-label">Test 2</text>
+        </g>
+      </g>
+      
+      <!-- Dropper -->
+      <g id="${containerId}-dropper" transform="translate(200, 20)" opacity="${isExperiment ? 1 : 0.3}">
+        <rect x="-8" y="0" width="16" height="30" rx="3" fill="#90a4ae"/>
+        <ellipse cx="0" cy="0" rx="12" ry="8" fill="#78909c"/>
+        <rect x="-4" y="30" width="8" height="20" fill="#b0bec5"/>
+        <circle cx="0" cy="55" r="4" fill="#81d4fa" id="${containerId}-drop" opacity="0"/>
+        <text x="0" y="-12" text-anchor="middle" font-size="12" id="${containerId}-dropper-icon">${isExperiment ? SOLUTIONS[defaultSolution].icon : ''}</text>
+      </g>
+      
+      <!-- Result badge -->
+      <g id="${containerId}-result" opacity="0" transform="translate(200, 240)">
+        <rect x="-50" y="-12" width="100" height="24" rx="12" fill="#fff" stroke="#4caf50" stroke-width="2"/>
+        <text x="0" y="4" text-anchor="middle" font-size="10" fill="#4caf50" font-weight="600" id="${containerId}-result-text">Result</text>
+      </g>
+    </svg>
+
+    ${isExperiment ? '<button class="test-btn" id="test-action">💧 Add Solution</button>' : ''}
+  </div>
+
+  <div class="metrics">
+    <div class="metric-item"><span class="metric-label">Solution:</span> <span class="metric-value" id="${containerId}-solution-name">${isExperiment ? SOLUTIONS[defaultSolution].name : 'None'}</span></div>
+    <div class="metric-item"><span class="metric-label">Type:</span> <span class="metric-value" id="${containerId}-type-display">${isExperiment ? '?' : '—'}</span></div>
+    <div class="metric-item"><span class="metric-label">Color Change:</span> <span class="metric-value" id="${containerId}-color-display">Pink</span></div>
+    <div class="metric-item"><span class="metric-label">Conclusion:</span> <span class="metric-value" id="${containerId}-conclusion">${isExperiment ? '?' : '—'}</span></div>
+  </div>
+
+  ${isExperiment ? `
+  <div class="control-panel">
+    <div class="control-label">Select a solution to test:</div>
+    <div class="solution-grid">
+      <button class="solution-btn active" data-solution="lemon"><span class="icon">🍋</span>Lemon</button>
+      <button class="solution-btn" data-solution="vinegar"><span class="icon">🍶</span>Vinegar</button>
+      <button class="solution-btn" data-solution="orange"><span class="icon">🍊</span>Orange</button>
+      <button class="solution-btn" data-solution="soap"><span class="icon">🧼</span>Soap</button>
+      <button class="solution-btn" data-solution="baking"><span class="icon">🥄</span>Baking Soda</button>
+      <button class="solution-btn" data-solution="lime"><span class="icon">💧</span>Lime Water</button>
+      <button class="solution-btn" data-solution="water"><span class="icon">🚰</span>Tap Water</button>
+      <button class="solution-btn" data-solution="milk"><span class="icon">🥛</span>Milk</button>
+      <button class="solution-btn" data-solution="salt"><span class="icon">🧂</span>Salt</button>
+    </div>
+  </div>
+  ` : ''}`;
+
+  if (!isExperiment) return;
+
+  let state = { solution: 'lemon', tested: false, currentTube: 1 };
+
+  const tube1Liquid = c.querySelector(`#${containerId}-tube1-liquid`);
+  const tube2Liquid = c.querySelector(`#${containerId}-tube2-liquid`);
+  const tube1Label = c.querySelector(`#${containerId}-tube1-label`);
+  const tube2Label = c.querySelector(`#${containerId}-tube2-label`);
+  const drop = c.querySelector(`#${containerId}-drop`);
+  const dropper = c.querySelector(`#${containerId}-dropper`);
+  const dropperIcon = c.querySelector(`#${containerId}-dropper-icon`);
+  const solutionName = c.querySelector(`#${containerId}-solution-name`);
+  const typeDisplay = c.querySelector(`#${containerId}-type-display`);
+  const colorDisplay = c.querySelector(`#${containerId}-color-display`);
+  const conclusion = c.querySelector(`#${containerId}-conclusion`);
+  const resultBox = c.querySelector(`#${containerId}-result`);
+  const resultText = c.querySelector(`#${containerId}-result-text`);
+  const testBtn = c.querySelector('#test-action');
+
+  const tubes = [tube1Liquid, tube2Liquid];
+  const labels = [tube1Label, tube2Label];
+  const positions = [300, 340];
+
+  function updateDisplay() {
+    const sol = SOLUTIONS[state.solution];
+    dropperIcon.textContent = sol.icon;
+    solutionName.textContent = sol.name;
   }
-  
-  setTimeout(() => {
-    if (type === 'acidic') {
-      solutionEl.style.background = 'linear-gradient(180deg, #EF5350 0%, #C62828 100%)';
-      result.textContent = `${name} turns extract RED → Acidic!`;
-      result.className = 'result-indicator show acidic';
-      explanation.innerHTML = `<strong>Red Color = Acidic!</strong> When rose extract is added to ${name}, the natural pigments react with the acid and turn <span style="color:#C62828">RED</span>. This confirms that ${name} is acidic, just like litmus paper would show!`;
-    } else if (type === 'basic') {
-      solutionEl.style.background = 'linear-gradient(180deg, #66BB6A 0%, #2E7D32 100%)';
-      result.textContent = `${name} turns extract GREEN → Basic!`;
-      result.className = 'result-indicator show basic';
-      explanation.innerHTML = `<strong>Green Color = Basic!</strong> When rose extract is added to ${name}, the natural pigments react with the base and turn <span style="color:#2E7D32">GREEN</span>. This confirms that ${name} is basic!`;
-    } else {
-      solutionEl.style.background = 'linear-gradient(180deg, #F48FB1 0%, #E91E63 100%)';
-      result.textContent = `${name} keeps extract PINK → Neutral!`;
-      result.className = 'result-indicator show neutral';
-      explanation.innerHTML = `<strong>Pink Color = Neutral!</strong> When rose extract is added to ${name}, the color remains <span style="color:#E91E63">PINK</span> (original color). This shows that ${name} is neutral - neither acidic nor basic!`;
-    }
-  }, 300);
-});
 
-resetBtn.addEventListener('click', () => {
-  tubes.forEach(t => t.classList.remove('selected'));
-  selectedTube = null;
-  addBtn.disabled = true;
-  result.classList.remove('show');
-  
-  lemonSolution.style.background = originalColors.lemon;
-  soapSolution.style.background = originalColors.soap;
-  waterSolution.style.background = originalColors.water;
-  
-  explanation.textContent = "Red rose petal extract contains natural pigments that change color based on pH. It's a wonderful natural indicator that you can make at home!";
-});
+  function animateDrop(callback) {
+    const sol = SOLUTIONS[state.solution];
+    const targetX = positions[state.currentTube - 1];
+    
+    dropper.style.transition = 'transform 0.3s ease';
+    dropper.setAttribute('transform', `translate(${targetX}, 20)`);
+    
+    setTimeout(() => {
+      drop.style.fill = sol.resultColor;
+      drop.style.transition = 'none';
+      drop.setAttribute('opacity', '1');
+      drop.setAttribute('cy', '55');
+      
+      setTimeout(() => {
+        drop.style.transition = 'cy 0.4s ease-in, opacity 0.3s';
+        drop.setAttribute('cy', '100');
+        
+        setTimeout(() => {
+          drop.setAttribute('opacity', '0');
+          callback();
+        }, 400);
+      }, 100);
+    }, 300);
+  }
+
+  function runTest() {
+    const sol = SOLUTIONS[state.solution];
+    state.tested = true;
+
+    animateDrop(() => {
+      const currentTube = tubes[state.currentTube - 1];
+      const currentLabel = labels[state.currentTube - 1];
+      
+      currentTube.style.transition = 'fill 0.5s ease';
+      currentTube.style.fill = sol.resultColor;
+      currentLabel.textContent = sol.name;
+
+      typeDisplay.textContent = sol.type.charAt(0).toUpperCase() + sol.type.slice(1);
+      typeDisplay.className = `metric-value ${sol.type}`;
+      
+      colorDisplay.textContent = sol.colorName;
+      colorDisplay.className = `metric-value ${sol.type}`;
+
+      if (sol.type === 'acidic') {
+        conclusion.textContent = 'ACIDIC';
+        conclusion.className = 'metric-value acidic';
+        resultText.textContent = '🔴 ACIDIC';
+        resultText.style.fill = '#d32f2f';
+      } else if (sol.type === 'basic') {
+        conclusion.textContent = 'BASIC';
+        conclusion.className = 'metric-value basic';
+        resultText.textContent = '🟢 BASIC';
+        resultText.style.fill = '#2e7d32';
+      } else {
+        conclusion.textContent = 'NEUTRAL';
+        conclusion.className = 'metric-value neutral';
+        resultText.textContent = '🩷 NEUTRAL';
+        resultText.style.fill = '#e91e63';
+      }
+
+      resultBox.style.transition = 'opacity 0.3s';
+      resultBox.style.opacity = '1';
+      
+      state.currentTube = (state.currentTube % 2) + 1;
+      document.getElementById('takeaway').classList.add('show');
+    });
+  }
+
+  function resetTest() {
+    state.tested = false;
+    state.currentTube = 1;
+    
+    tubes.forEach((t, i) => {
+      t.style.fill = '#e91e63';
+      labels[i].textContent = `Test ${i + 1}`;
+    });
+    
+    dropper.setAttribute('transform', 'translate(200, 20)');
+    typeDisplay.textContent = '?';
+    typeDisplay.className = 'metric-value';
+    colorDisplay.textContent = 'Pink';
+    colorDisplay.className = 'metric-value';
+    conclusion.textContent = '?';
+    conclusion.className = 'metric-value';
+    resultBox.style.opacity = '0';
+  }
+
+  testBtn.onclick = runTest;
+
+  c.querySelectorAll('.solution-btn').forEach(btn => {
+    btn.onclick = () => {
+      c.querySelectorAll('.solution-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.solution = btn.dataset.solution;
+      resetTest();
+      updateDisplay();
+    };
+  });
+
+  updateDisplay();
+}
+
+createSimulation('ref', false);
+createSimulation('exp', true);
 </script>
 </body>
 </html>

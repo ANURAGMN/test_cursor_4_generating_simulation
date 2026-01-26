@@ -2,523 +2,643 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Turmeric Indicator - Natural Base Detector</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#f9a825">
+<title>Turmeric as an Indicator – Natural Acid-Base Test</title>
 
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #f9a825 0%, #ff8f00 100%);
   min-height: 100vh;
-  padding: 20px;
+  min-height: -webkit-fill-available;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #app {
-  max-width: 500px;
+  max-width: 420px;
   margin: auto;
+  padding: 10px;
+  padding-top: max(10px, env(safe-area-inset-top));
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
 }
 
 .header {
   text-align: center;
-  color: white;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  color: #fff;
+  padding: 12px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 {
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
 }
 
 .header p {
-  font-size: 14px;
+  font-size: 12px;
   opacity: 0.95;
 }
 
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 8px 4px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* ---------- Card ---------- */
 .sim-card {
   background: #fff;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-bottom: 12px;
 }
 
-.lab-scene {
+/* ---------- Visual ---------- */
+.visual {
   position: relative;
-  height: 400px;
-  background: linear-gradient(180deg, #FFF8E1 0%, #FFECB3 100%);
-  border-radius: 16px;
+  height: 34vh;
+  min-height: 250px;
+  background: linear-gradient(145deg, #fffde7 0%, #fff8e1 100%);
+  border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 20px;
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-.bench {
+svg { 
+  width: 100%; 
+  height: 100%; 
+  display: block;
+}
+
+.static-hint {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
-  background: linear-gradient(180deg, #8D6E63 0%, #5D4037 100%);
-}
-
-.turmeric-area {
-  padding: 15px;
-  text-align: center;
-}
-
-.turmeric-title {
-  font-size: 14px;
-  color: #E65100;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.turmeric-display {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.turmeric-root {
-  font-size: 50px;
-}
-
-.arrow {
-  font-size: 24px;
-  color: #FF9800;
-}
-
-.turmeric-papers {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.turmeric-paper-stack {
-  width: 60px;
-  height: 15px;
-  background: #FFD54F;
-  border-radius: 2px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.test-area {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 25px;
-  padding: 0 10px;
-}
-
-.test-container {
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.test-container:hover {
-  transform: scale(1.05);
-}
-
-.test-container.selected {
-  transform: scale(1.1);
-}
-
-.petri-dish {
-  width: 70px;
-  height: 70px;
-  background: rgba(255,255,255,0.5);
-  border: 3px solid rgba(200,200,200,0.5);
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-}
-
-.dish-solution {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-}
-
-.lemon-dish .dish-solution {
-  background: radial-gradient(circle, #FFF9C4 0%, #FFEB3B 100%);
-}
-
-.soap-dish .dish-solution {
-  background: radial-gradient(circle, #F3E5F5 0%, #CE93D8 100%);
-}
-
-.water-dish .dish-solution {
-  background: radial-gradient(circle, #E1F5FE 0%, #81D4FA 100%);
-}
-
-.baking-dish .dish-solution {
-  background: radial-gradient(circle, #FAFAFA 0%, #E0E0E0 100%);
-}
-
-.test-paper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 35px;
-  height: 45px;
-  background: #FFD54F;
-  border-radius: 3px;
-  transition: background-color 1s ease;
-  opacity: 0;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
-.test-paper.show {
-  opacity: 1;
-}
-
-.dish-label {
-  font-size: 10px;
-  margin-top: 8px;
-  font-weight: 600;
-  color: #5D4037;
+  top: 8px;
+  left: 8px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 11px;
   line-height: 1.3;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  z-index: 10;
 }
 
-.result-indicator {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  padding: 10px 20px;
-  border-radius: 12px;
-  font-size: 13px;
-  font-weight: 600;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  white-space: nowrap;
+.metrics {
+  background: #fff8e1;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
 }
 
-.result-indicator.show {
-  opacity: 1;
-}
-
-.result-indicator.basic {
-  color: #C62828;
-  border: 2px solid #C62828;
-}
-
-.result-indicator.not-basic {
-  color: #FF8F00;
-  border: 2px solid #FF8F00;
-}
-
-.controls {
+.metric-item {
   display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 15px;
+  justify-content: space-between;
 }
 
-.dip-btn {
-  background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 25px;
-  font-size: 15px;
+.metric-label {
+  color: #666;
+}
+
+.metric-value {
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+  color: #007AFF;
 }
 
-.dip-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.5);
-}
+.metric-value.basic { color: #d32f2f; }
+.metric-value.acidic-neutral { color: #f9a825; }
 
-.dip-btn:disabled {
-  background: #ccc;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-.reset-btn {
-  background: #f5f5f5;
-  color: #666;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 25px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.reset-btn:hover {
-  background: #e0e0e0;
-}
-
-.info-box {
-  padding: 15px;
-  background: #FFF8E1;
-  border-radius: 12px;
-  border-left: 4px solid #FF9800;
-}
-
-.info-box h3 {
-  font-size: 14px;
-  color: #E65100;
-  margin-bottom: 8px;
-}
-
-.info-box p {
-  font-size: 13px;
-  color: #666;
-  line-height: 1.5;
-}
-
-.limitation-box {
-  margin-top: 15px;
-  padding: 12px;
-  background: #ECEFF1;
+/* ---------- Control Panel ---------- */
+.control-panel {
+  background: #fff8e1;
   border-radius: 10px;
-  border-left: 4px solid #607D8B;
+  padding: 10px;
+  margin-top: 8px;
 }
 
-.limitation-box h4 {
-  font-size: 13px;
-  color: #455A64;
+.control-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
   margin-bottom: 6px;
 }
 
-.limitation-box p {
-  font-size: 12px;
-  color: #666;
-  line-height: 1.4;
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 10px;
 }
 
-.color-legend {
+.solution-btn {
+  padding: 8px 4px;
+  border-radius: 8px;
+  border: 2px solid #fff3e0;
+  font-size: 9px;
+  background: #fff;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.3;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: transform 0.1s ease, border-color 0.2s ease;
+}
+
+.solution-btn:active {
+  transform: scale(0.95);
+}
+
+.solution-btn.active {
+  border-color: #ff8f00;
+  background: #fff3e0;
+}
+
+.solution-btn .icon { font-size: 18px; display: block; margin-bottom: 2px; }
+
+/* ---------- Test Button ---------- */
+.test-btn {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: linear-gradient(135deg, #ff8f00 0%, #ffa726 100%);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255,143,0,0.3);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: transform 0.1s ease;
+}
+
+.test-btn:active {
+  transform: scale(0.95);
+}
+
+/* ---------- Legend ---------- */
+.legend {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  margin-top: 15px;
-  padding: 12px;
-  background: #FAFAFA;
+  gap: 10px;
+  padding: 10px;
+  background: #fff;
   border-radius: 10px;
+  margin-top: 10px;
+  font-size: 10px;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 12px;
+  gap: 4px;
 }
 
-.color-swatch {
-  width: 25px;
-  height: 25px;
-  border-radius: 4px;
+.legend-color {
+  width: 20px;
+  height: 12px;
+  border-radius: 3px;
 }
 
-.swatch-yellow { background: #FFD54F; }
-.swatch-red { background: #D32F2F; }
+.legend-color.original { background: #f9a825; }
+.legend-color.basic { background: #d32f2f; }
+.legend-color.unchanged { background: #fdd835; }
 
-.instruction {
-  text-align: center;
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-.prep-info {
-  background: #FFF3E0;
+/* ---------- Key Insight ---------- */
+.insight-box {
+  background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
   border-radius: 10px;
-  padding: 10px 12px;
-  margin: 15px 0;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  border-left: 4px solid #f9a825;
+}
+
+.insight-title {
+  font-weight: 600;
+  color: #e65100;
+  margin-bottom: 4px;
+}
+
+/* ---------- Real-world example ---------- */
+.real-world {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.real-world .icon { font-size: 36px; }
+.real-world .text { flex: 1; line-height: 1.4; }
+.real-world .highlight { color: #d32f2f; font-weight: 600; }
+
+/* ---------- Takeaway ---------- */
+.takeaway {
+  background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
   font-size: 12px;
-  color: #E65100;
+  line-height: 1.5;
+  display: none;
+}
+
+.takeaway.show {
+  display: block;
+}
+
+.takeaway-title {
+  font-weight: 600;
+  color: #e65100;
+  margin-bottom: 4px;
+}
+
+/* Preparation info */
+.prep-info {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 11px;
+}
+
+.prep-title {
+  font-weight: 600;
+  color: #e65100;
+  margin-bottom: 6px;
+}
+
+.prep-steps {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.prep-steps::-webkit-scrollbar {
+  display: none;
+}
+
+.prep-step {
+  flex-shrink: 0;
+  text-align: center;
+  width: 65px;
+}
+
+.prep-step .icon { font-size: 22px; }
+.prep-step .text { font-size: 9px; color: #666; }
+
+/* OnePlus / Android specific fixes */
+@supports (-webkit-touch-callout: none) {
+  body {
+    min-height: -webkit-fill-available;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .solution-grid {
+    gap: 4px;
+  }
+  .solution-btn {
+    padding: 6px 2px;
+    font-size: 8px;
+  }
+  .solution-btn .icon {
+    font-size: 16px;
+  }
+}
+
+/* Fix for notched displays */
+@supports (padding: max(0px)) {
+  #app {
+    padding-left: max(10px, env(safe-area-inset-left));
+    padding-right: max(10px, env(safe-area-inset-right));
+  }
 }
 </style>
 </head>
 
 <body>
 <div id="app">
-  <div class="header">
-    <h1>🟡 Turmeric Indicator</h1>
-    <p>A natural indicator that detects bases</p>
-  </div>
 
-  <div class="sim-card">
-    <div class="instruction">👆 Select a solution, then dip turmeric paper to test</div>
-    
-    <div class="lab-scene">
-      <div class="turmeric-area">
-        <div class="turmeric-title">Turmeric Paper Strips</div>
-        <div class="turmeric-display">
-          <div class="turmeric-root">🫚</div>
-          <div class="arrow">→</div>
-          <div class="turmeric-papers">
-            <div class="turmeric-paper-stack"></div>
-            <div class="turmeric-paper-stack"></div>
-            <div class="turmeric-paper-stack"></div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="test-area">
-        <div class="test-container lemon-dish" data-type="acidic" data-name="Lemon Juice">
-          <div class="petri-dish">
-            <div class="dish-solution"></div>
-            <div class="test-paper" id="lemonPaper"></div>
-          </div>
-          <div class="dish-label">🍋 Lemon<br>Juice</div>
-        </div>
-        
-        <div class="test-container soap-dish" data-type="basic" data-name="Soap Solution">
-          <div class="petri-dish">
-            <div class="dish-solution"></div>
-            <div class="test-paper" id="soapPaper"></div>
-          </div>
-          <div class="dish-label">🧼 Soap<br>Solution</div>
-        </div>
-        
-        <div class="test-container water-dish" data-type="neutral" data-name="Tap Water">
-          <div class="petri-dish">
-            <div class="dish-solution"></div>
-            <div class="test-paper" id="waterPaper"></div>
-          </div>
-          <div class="dish-label">💧 Tap<br>Water</div>
-        </div>
-        
-        <div class="test-container baking-dish" data-type="basic" data-name="Baking Soda">
-          <div class="petri-dish">
-            <div class="dish-solution"></div>
-            <div class="test-paper" id="bakingPaper"></div>
-          </div>
-          <div class="dish-label">🥄 Baking<br>Soda</div>
-        </div>
-      </div>
-      
-      <div class="result-indicator" id="result"></div>
-      <div class="bench"></div>
-    </div>
-    
-    <div class="controls">
-      <button class="dip-btn" id="dipBtn" disabled>🟡 Dip Turmeric Paper</button>
-      <button class="reset-btn" id="resetBtn">Reset All</button>
-    </div>
-    
-    <div class="prep-info">
-      <strong>📝 Making Turmeric Paper:</strong> Dip filter paper strips in turmeric paste and let them dry. These yellow strips are your natural indicator!
-    </div>
-    
-    <div class="info-box">
-      <h3>💡 How Turmeric Indicator Works</h3>
-      <p id="explanation">Turmeric contains curcumin, a yellow pigment that turns red/brown when it comes in contact with basic substances. It's commonly used in Indian households!</p>
-    </div>
-    
-    <div class="limitation-box">
-      <h4>⚠️ Limitation of Turmeric Indicator</h4>
-      <p>Turmeric paper <strong>cannot distinguish between acids and neutral substances</strong> - it stays yellow in both cases. It only changes color (turns red) when it contacts a BASE.</p>
-    </div>
-    
-    <div class="color-legend">
-      <div class="legend-item">
-        <div class="color-swatch swatch-yellow"></div>
-        <span>Yellow = Acid/Neutral</span>
-      </div>
-      <div class="legend-item">
-        <div class="color-swatch swatch-red"></div>
-        <span>Red = Basic</span>
-      </div>
-    </div>
+<div class="header">
+  <h1>🟡 Turmeric as an Indicator</h1>
+  <p>The golden spice that detects bases!</p>
+</div>
+
+<div class="section-title">Reference (Original turmeric paper)</div>
+<div class="sim-card" id="ref"></div>
+
+<div class="section-title">Experiment (Test different solutions)</div>
+<div class="sim-card" id="exp"></div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-color original"></div> Original (Yellow)</div>
+  <div class="legend-item"><div class="legend-color basic"></div> Basic → Red/Brown</div>
+  <div class="legend-item"><div class="legend-color unchanged"></div> Acidic/Neutral → Yellow (no change)</div>
+</div>
+
+<div class="insight-box">
+  <div class="insight-title">🔑 Key Insight:</div>
+  Turmeric can identify <strong>basic substances</strong> (turns red/brown), but it <strong>cannot differentiate</strong> between acidic and neutral substances (both remain yellow). So it's a partial indicator!
+</div>
+
+<div class="real-world">
+  <div class="icon">👕</div>
+  <div class="text">
+    <strong>Real-life observation:</strong> Ever noticed a <span class="highlight">curry stain turning red</span> when you apply soap? That's because soap is basic and turmeric in the curry changes color!
   </div>
 </div>
 
-<script>
-const containers = document.querySelectorAll('.test-container');
-const dipBtn = document.getElementById('dipBtn');
-const resetBtn = document.getElementById('resetBtn');
-const result = document.getElementById('result');
-const explanation = document.getElementById('explanation');
+<div class="prep-info">
+  <div class="prep-title">🧪 How to prepare turmeric paper:</div>
+  <div class="prep-steps">
+    <div class="prep-step"><div class="icon">🟡</div><div class="text">Take turmeric powder</div></div>
+    <div class="prep-step"><div class="icon">💧</div><div class="text">Add water to make paste</div></div>
+    <div class="prep-step"><div class="icon">📄</div><div class="text">Dip filter paper</div></div>
+    <div class="prep-step"><div class="icon">☀️</div><div class="text">Let it dry</div></div>
+    <div class="prep-step"><div class="icon">✂️</div><div class="text">Cut into strips</div></div>
+  </div>
+</div>
 
-const papers = {
-  lemon: document.getElementById('lemonPaper'),
-  soap: document.getElementById('soapPaper'),
-  water: document.getElementById('waterPaper'),
-  baking: document.getElementById('bakingPaper')
+<div class="takeaway" id="takeaway">
+  <div class="takeaway-title">💡 What you discovered:</div>
+  Turmeric paper turns <span style="color:#c62828;font-weight:600">RED/BROWN</span> in basic solutions but stays <span style="color:#f9a825;font-weight:600">YELLOW</span> in acidic and neutral solutions. Unlike litmus (which tests both), turmeric only detects bases – making it a <strong>partial indicator</strong>!
+</div>
+
+</div>
+
+<script>
+const SOLUTIONS = {
+  'lemon': { name: 'Lemon Juice', icon: '🍋', type: 'acidic', resultColor: '#fdd835', colorName: 'Yellow (unchanged)', changes: false },
+  'vinegar': { name: 'Vinegar', icon: '🍶', type: 'acidic', resultColor: '#f9a825', colorName: 'Yellow (unchanged)', changes: false },
+  'amla': { name: 'Amla Juice', icon: '🫒', type: 'acidic', resultColor: '#fbc02d', colorName: 'Yellow (unchanged)', changes: false },
+  'soap': { name: 'Soap Solution', icon: '🧼', type: 'basic', resultColor: '#c62828', colorName: 'Red/Brown', changes: true },
+  'baking': { name: 'Baking Soda', icon: '🥄', type: 'basic', resultColor: '#d32f2f', colorName: 'Red', changes: true },
+  'lime': { name: 'Lime Water', icon: '💧', type: 'basic', resultColor: '#b71c1c', colorName: 'Dark Red', changes: true },
+  'water': { name: 'Tap Water', icon: '🚰', type: 'neutral', resultColor: '#fdd835', colorName: 'Yellow (unchanged)', changes: false },
+  'sugar': { name: 'Sugar Solution', icon: '🍬', type: 'neutral', resultColor: '#ffeb3b', colorName: 'Yellow (unchanged)', changes: false },
+  'salt': { name: 'Salt Solution', icon: '🧂', type: 'neutral', resultColor: '#fdd835', colorName: 'Yellow (unchanged)', changes: false }
 };
 
-let selectedContainer = null;
+function createSimulation(containerId, isExperiment) {
+  const c = document.getElementById(containerId);
+  const defaultSolution = isExperiment ? 'soap' : 'water';
+  
+  c.innerHTML = `
+  <div class="visual">
+    <div class="static-hint">
+      ${isExperiment ? '👆 Select solution below & tap "Drop"' : '📄 Original yellow turmeric paper'}
+    </div>
 
-containers.forEach(container => {
-  container.addEventListener('click', () => {
-    containers.forEach(c => c.classList.remove('selected'));
-    container.classList.add('selected');
-    selectedContainer = {
-      element: container,
-      type: container.dataset.type,
-      name: container.dataset.name
-    };
-    dipBtn.disabled = false;
-    result.classList.remove('show');
-  });
-});
+    <svg viewBox="0 0 400 280">
+      <!-- Background - White tile -->
+      <rect x="50" y="120" width="300" height="130" rx="6" fill="#eceff1" stroke="#cfd8dc" stroke-width="2"/>
+      <text x="200" y="265" text-anchor="middle" font-size="10" fill="#90a4ae">White Tile</text>
+      
+      <!-- Multiple turmeric paper strips -->
+      <g id="${containerId}-papers">
+        <!-- Paper strip 1 -->
+        <rect x="80" y="140" width="50" height="80" rx="2" fill="#f9a825" id="${containerId}-paper1" stroke="#fbc02d" stroke-width="1"/>
+        <circle cx="105" cy="170" r="8" fill="transparent" stroke="#fff" stroke-width="2" stroke-dasharray="3 2"/>
+        <text x="105" y="235" text-anchor="middle" font-size="8" fill="#666" id="${containerId}-label1">Sample 1</text>
+        
+        <!-- Paper strip 2 -->
+        <rect x="175" y="140" width="50" height="80" rx="2" fill="#f9a825" id="${containerId}-paper2" stroke="#fbc02d" stroke-width="1"/>
+        <circle cx="200" cy="170" r="8" fill="transparent" stroke="#fff" stroke-width="2" stroke-dasharray="3 2"/>
+        <text x="200" y="235" text-anchor="middle" font-size="8" fill="#666" id="${containerId}-label2">Sample 2</text>
+        
+        <!-- Paper strip 3 -->
+        <rect x="270" y="140" width="50" height="80" rx="2" fill="#f9a825" id="${containerId}-paper3" stroke="#fbc02d" stroke-width="1"/>
+        <circle cx="295" cy="170" r="8" fill="transparent" stroke="#fff" stroke-width="2" stroke-dasharray="3 2"/>
+        <text x="295" y="235" text-anchor="middle" font-size="8" fill="#666" id="${containerId}-label3">Sample 3</text>
+      </g>
+      
+      <!-- Dropper -->
+      <g id="${containerId}-dropper" transform="translate(200, 30)" opacity="${isExperiment ? 1 : 0.3}">
+        <rect x="-10" y="0" width="20" height="35" rx="3" fill="#ffb74d"/>
+        <ellipse cx="0" cy="0" rx="14" ry="10" fill="#ef6c00"/>
+        <rect x="-5" y="35" width="10" height="25" fill="#90a4ae"/>
+        <circle cx="0" cy="65" r="5" fill="#64b5f6" id="${containerId}-drop" opacity="0"/>
+        <text x="0" y="-15" text-anchor="middle" font-size="12" id="${containerId}-dropper-icon">${isExperiment ? SOLUTIONS[defaultSolution].icon : ''}</text>
+      </g>
+      
+      <!-- Turmeric powder icon -->
+      <g transform="translate(20, 40)">
+        <text x="0" y="0" font-size="30">🟡</text>
+        <text x="15" y="40" font-size="8" fill="#888">Turmeric</text>
+      </g>
+      
+      <!-- Result indicator arrow -->
+      <g id="${containerId}-result-arrow" opacity="0" transform="translate(200, 100)">
+        <polygon points="0,0 -8,15 8,15" fill="#4caf50"/>
+        <text x="0" y="-5" text-anchor="middle" font-size="10" fill="#4caf50" font-weight="600" id="${containerId}-result-text">✓</text>
+      </g>
+    </svg>
 
-dipBtn.addEventListener('click', () => {
-  if (!selectedContainer) return;
-  
-  const type = selectedContainer.type;
-  const name = selectedContainer.name;
-  const containerClass = selectedContainer.element.classList;
-  
-  let paperEl;
-  if (containerClass.contains('lemon-dish')) paperEl = papers.lemon;
-  else if (containerClass.contains('soap-dish')) paperEl = papers.soap;
-  else if (containerClass.contains('water-dish')) paperEl = papers.water;
-  else paperEl = papers.baking;
-  
-  paperEl.classList.add('show');
-  
-  setTimeout(() => {
-    if (type === 'basic') {
-      paperEl.style.backgroundColor = '#D32F2F';
-      result.textContent = `${name} turns turmeric RED → Basic!`;
-      result.className = 'result-indicator show basic';
-      explanation.innerHTML = `<strong>Red Color = Basic!</strong> The turmeric paper turned <span style="color:#D32F2F">RED</span> in ${name}. This confirms it's a basic substance. The curcumin in turmeric reacts with the hydroxide ions (OH⁻) in bases to produce this color change.`;
-    } else {
-      paperEl.style.backgroundColor = '#FFD54F';
-      result.textContent = `${name} keeps turmeric YELLOW → Not Basic!`;
-      result.className = 'result-indicator show not-basic';
-      if (type === 'acidic') {
-        explanation.innerHTML = `<strong>Yellow = Could be Acidic or Neutral!</strong> The turmeric paper stayed <span style="color:#FF8F00">YELLOW</span> in ${name}. While this IS acidic, turmeric cannot distinguish between acids and neutral substances. You'd need litmus paper to confirm it's acidic!`;
+    ${isExperiment ? '<button class="test-btn" id="test-action">💧 Drop</button>' : ''}
+  </div>
+
+  <div class="metrics">
+    <div class="metric-item"><span class="metric-label">Solution:</span> <span class="metric-value" id="${containerId}-solution-name">${isExperiment ? SOLUTIONS[defaultSolution].name : 'None (original)'}</span></div>
+    <div class="metric-item"><span class="metric-label">Paper Color:</span> <span class="metric-value ${isExperiment ? '' : 'acidic-neutral'}" id="${containerId}-color-status">Yellow</span></div>
+    <div class="metric-item"><span class="metric-label">Changes:</span> <span class="metric-value" id="${containerId}-changes">${isExperiment ? '?' : 'No'}</span></div>
+    <div class="metric-item"><span class="metric-label">Detected:</span> <span class="metric-value" id="${containerId}-detected">${isExperiment ? '?' : '—'}</span></div>
+  </div>
+
+  ${isExperiment ? `
+  <div class="control-panel">
+    <div class="control-label">Select a solution to test:</div>
+    <div class="solution-grid">
+      <button class="solution-btn" data-solution="lemon"><span class="icon">🍋</span>Lemon</button>
+      <button class="solution-btn" data-solution="vinegar"><span class="icon">🍶</span>Vinegar</button>
+      <button class="solution-btn" data-solution="amla"><span class="icon">🫒</span>Amla</button>
+      <button class="solution-btn active" data-solution="soap"><span class="icon">🧼</span>Soap</button>
+      <button class="solution-btn" data-solution="baking"><span class="icon">🥄</span>Baking Soda</button>
+      <button class="solution-btn" data-solution="lime"><span class="icon">💧</span>Lime Water</button>
+      <button class="solution-btn" data-solution="water"><span class="icon">🚰</span>Tap Water</button>
+      <button class="solution-btn" data-solution="sugar"><span class="icon">🍬</span>Sugar</button>
+      <button class="solution-btn" data-solution="salt"><span class="icon">🧂</span>Salt</button>
+    </div>
+  </div>
+  ` : ''}`;
+
+  if (!isExperiment) return;
+
+  // State
+  let state = {
+    solution: 'soap',
+    tested: false,
+    currentPaper: 1
+  };
+
+  const paper1 = c.querySelector(`#${containerId}-paper1`);
+  const paper2 = c.querySelector(`#${containerId}-paper2`);
+  const paper3 = c.querySelector(`#${containerId}-paper3`);
+  const label1 = c.querySelector(`#${containerId}-label1`);
+  const label2 = c.querySelector(`#${containerId}-label2`);
+  const label3 = c.querySelector(`#${containerId}-label3`);
+  const drop = c.querySelector(`#${containerId}-drop`);
+  const dropper = c.querySelector(`#${containerId}-dropper`);
+  const dropperIcon = c.querySelector(`#${containerId}-dropper-icon`);
+  const solutionName = c.querySelector(`#${containerId}-solution-name`);
+  const colorStatus = c.querySelector(`#${containerId}-color-status`);
+  const changesDisplay = c.querySelector(`#${containerId}-changes`);
+  const detectedDisplay = c.querySelector(`#${containerId}-detected`);
+  const resultArrow = c.querySelector(`#${containerId}-result-arrow`);
+  const resultText = c.querySelector(`#${containerId}-result-text`);
+  const testBtn = c.querySelector('#test-action');
+
+  const papers = [paper1, paper2, paper3];
+  const labels = [label1, label2, label3];
+  const positions = [105, 200, 295];
+
+  function updateDisplay() {
+    const sol = SOLUTIONS[state.solution];
+    dropperIcon.textContent = sol.icon;
+    solutionName.textContent = sol.name;
+  }
+
+  function animateDrop(callback) {
+    const sol = SOLUTIONS[state.solution];
+    const targetX = positions[state.currentPaper - 1];
+    
+    // Move dropper to current paper
+    dropper.style.transition = 'transform 0.3s ease';
+    dropper.setAttribute('transform', `translate(${targetX}, 30)`);
+    
+    setTimeout(() => {
+      drop.style.fill = sol.resultColor;
+      drop.style.transition = 'none';
+      drop.setAttribute('opacity', '1');
+      drop.setAttribute('cy', '65');
+      
+      setTimeout(() => {
+        drop.style.transition = 'cy 0.4s ease-in, opacity 0.3s';
+        drop.setAttribute('cy', '110');
+        
+        setTimeout(() => {
+          drop.setAttribute('opacity', '0');
+          callback();
+        }, 400);
+      }, 100);
+    }, 300);
+  }
+
+  function runTest() {
+    const sol = SOLUTIONS[state.solution];
+    state.tested = true;
+
+    animateDrop(() => {
+      const currentPaper = papers[state.currentPaper - 1];
+      const currentLabel = labels[state.currentPaper - 1];
+      
+      // Change paper color
+      currentPaper.style.transition = 'fill 0.5s ease';
+      currentPaper.style.fill = sol.resultColor;
+      
+      // Update label
+      currentLabel.textContent = sol.name;
+
+      // Update metrics
+      colorStatus.textContent = sol.colorName;
+      colorStatus.className = `metric-value ${sol.changes ? 'basic' : 'acidic-neutral'}`;
+      
+      changesDisplay.textContent = sol.changes ? 'Yes ✓' : 'No';
+      changesDisplay.className = `metric-value ${sol.changes ? 'basic' : ''}`;
+      
+      if (sol.changes) {
+        detectedDisplay.textContent = 'Basic ✓';
+        detectedDisplay.className = 'metric-value basic';
       } else {
-        explanation.innerHTML = `<strong>Yellow = Could be Acidic or Neutral!</strong> The turmeric paper stayed <span style="color:#FF8F00">YELLOW</span> in ${name}. This shows it's NOT a base, but turmeric can't tell us if it's acidic or neutral. It's actually neutral!`;
+        detectedDisplay.textContent = 'Acidic or Neutral';
+        detectedDisplay.className = 'metric-value acidic-neutral';
       }
-    }
-  }, 300);
-});
 
-resetBtn.addEventListener('click', () => {
-  containers.forEach(c => c.classList.remove('selected'));
-  selectedContainer = null;
-  dipBtn.disabled = true;
-  result.classList.remove('show');
-  
-  Object.values(papers).forEach(paper => {
-    paper.classList.remove('show');
-    paper.style.backgroundColor = '#FFD54F';
+      // Show result arrow
+      resultArrow.style.transition = 'opacity 0.3s';
+      resultArrow.style.opacity = '1';
+      resultArrow.setAttribute('transform', `translate(${positions[state.currentPaper - 1]}, 100)`);
+      resultText.textContent = sol.changes ? '✓ Basic' : '— No change';
+      resultText.style.fill = sol.changes ? '#4caf50' : '#9e9e9e';
+
+      // Move to next paper for next test
+      state.currentPaper = (state.currentPaper % 3) + 1;
+
+      // Show takeaway
+      document.getElementById('takeaway').classList.add('show');
+    });
+  }
+
+  function resetTest() {
+    state.tested = false;
+    state.currentPaper = 1;
+    
+    papers.forEach((p, i) => {
+      p.style.fill = '#f9a825';
+      labels[i].textContent = `Sample ${i + 1}`;
+    });
+    
+    dropper.setAttribute('transform', 'translate(200, 30)');
+    colorStatus.textContent = 'Yellow';
+    colorStatus.className = 'metric-value';
+    changesDisplay.textContent = '?';
+    changesDisplay.className = 'metric-value';
+    detectedDisplay.textContent = '?';
+    detectedDisplay.className = 'metric-value';
+    resultArrow.style.opacity = '0';
+  }
+
+  // Event Listeners
+  testBtn.onclick = runTest;
+
+  c.querySelectorAll('.solution-btn').forEach(btn => {
+    btn.onclick = () => {
+      c.querySelectorAll('.solution-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.solution = btn.dataset.solution;
+      resetTest();
+      updateDisplay();
+    };
   });
-  
-  explanation.textContent = "Turmeric contains curcumin, a yellow pigment that turns red/brown when it comes in contact with basic substances. It's commonly used in Indian households!";
-});
+
+  updateDisplay();
+}
+
+createSimulation('ref', false);
+createSimulation('exp', true);
 </script>
 </body>
 </html>

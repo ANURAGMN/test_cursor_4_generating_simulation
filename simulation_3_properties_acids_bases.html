@@ -2,467 +2,496 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Properties of Acids and Bases</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#f093fb">
+<title>Properties of Acids and Bases – Compare & Learn</title>
 
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   min-height: 100vh;
-  padding: 20px;
+  min-height: -webkit-fill-available;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  -webkit-font-smoothing: antialiased;
 }
 
 #app {
-  max-width: 500px;
+  max-width: 420px;
   margin: auto;
+  padding: 10px;
+  padding-top: max(10px, env(safe-area-inset-top));
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
 }
 
 .header {
   text-align: center;
-  color: white;
-  margin-bottom: 20px;
+  color: #fff;
+  padding: 12px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-.header h1 {
-  font-size: 24px;
-  margin-bottom: 8px;
-}
+.header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.header p { font-size: 12px; opacity: 0.95; }
 
-.header p {
-  font-size: 14px;
-  opacity: 0.9;
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 8px 4px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .sim-card {
   background: #fff;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-bottom: 12px;
 }
 
 .category-tabs {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 
 .tab {
   flex: 1;
   padding: 12px;
   border: none;
-  border-radius: 12px;
-  font-size: 14px;
+  border-radius: 10px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s ease;
 }
 
-.tab.acids {
-  background: #FFEBEE;
-  color: #C62828;
-}
+.tab:active { transform: scale(0.98); }
 
-.tab.bases {
-  background: #E3F2FD;
-  color: #1565C0;
-}
+.tab.acids { background: #ffebee; color: #c62828; }
+.tab.bases { background: #e3f2fd; color: #1565c0; }
 
 .tab.acids.active {
-  background: linear-gradient(135deg, #F44336 0%, #C62828 100%);
+  background: linear-gradient(135deg, #ef5350 0%, #c62828 100%);
   color: white;
-  box-shadow: 0 4px 15px rgba(244, 67, 54, 0.4);
+  box-shadow: 0 4px 12px rgba(239,83,80,0.4);
 }
 
 .tab.bases.active {
-  background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+  background: linear-gradient(135deg, #42a5f5 0%, #1565c0 100%);
   color: white;
-  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+  box-shadow: 0 4px 12px rgba(66,165,245,0.4);
 }
 
-.properties-panel {
-  display: none;
-}
-
-.properties-panel.active {
-  display: block;
-}
+.properties-panel { display: none; }
+.properties-panel.active { display: block; }
 
 .property-card {
-  background: #F5F5F5;
-  border-radius: 16px;
-  padding: 15px;
-  margin-bottom: 15px;
-  transition: all 0.3s ease;
-}
-
-.property-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
 }
 
 .property-header {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .property-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 18px;
 }
 
-.acids-panel .property-icon {
-  background: #FFCDD2;
-}
+.acids-panel .property-icon { background: #ffcdd2; }
+.bases-panel .property-icon { background: #bbdefb; }
 
-.bases-panel .property-icon {
-  background: #BBDEFB;
-}
-
-.property-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-}
-
-.property-desc {
-  font-size: 13px;
-  color: #666;
-  line-height: 1.5;
-  margin-bottom: 12px;
-}
+.property-title { font-size: 14px; font-weight: 600; color: #333; }
+.property-desc { font-size: 11px; color: #666; line-height: 1.5; margin-bottom: 8px; }
 
 .examples-section {
   background: white;
-  border-radius: 10px;
-  padding: 12px;
+  border-radius: 8px;
+  padding: 8px;
 }
 
-.examples-title {
-  font-size: 12px;
-  font-weight: 600;
-  color: #888;
-  margin-bottom: 8px;
-}
+.examples-title { font-size: 10px; font-weight: 600; color: #888; margin-bottom: 6px; }
 
 .examples-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
-.example-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: #FAFAFA;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 12px;
+.example-tag {
+  background: #f5f5f5;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 10px;
   color: #555;
 }
 
-.interactive-demo {
+.quiz-section {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 16px;
-  padding: 20px;
-  margin-top: 20px;
+  border-radius: 14px;
+  padding: 15px;
   color: white;
 }
 
-.demo-title {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 15px;
-  text-align: center;
-}
+.quiz-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; text-align: center; }
 
-.substance-selector {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 15px;
+.substance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
 }
 
 .substance-btn {
-  padding: 10px 16px;
+  padding: 10px 6px;
+  border-radius: 10px;
   border: 2px solid rgba(255,255,255,0.3);
-  border-radius: 25px;
   background: rgba(255,255,255,0.1);
   color: white;
-  font-size: 13px;
+  font-size: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s ease;
 }
 
-.substance-btn:hover {
-  background: rgba(255,255,255,0.2);
-}
-
+.substance-btn:active { transform: scale(0.95); }
 .substance-btn.selected {
   background: white;
   color: #667eea;
   border-color: white;
 }
 
-.demo-result {
+.substance-btn .icon { font-size: 20px; display: block; margin-bottom: 4px; }
+
+.quiz-result {
   background: rgba(255,255,255,0.15);
-  border-radius: 12px;
-  padding: 15px;
+  border-radius: 10px;
+  padding: 12px;
   text-align: center;
-  min-height: 100px;
+  min-height: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.demo-result h4 {
-  font-size: 18px;
-  margin-bottom: 8px;
-}
-
-.demo-result p {
-  font-size: 13px;
-  opacity: 0.9;
-  line-height: 1.5;
-}
+.quiz-result h4 { font-size: 14px; margin-bottom: 6px; }
+.quiz-result p { font-size: 11px; opacity: 0.9; line-height: 1.4; }
 
 .safety-warning {
-  background: #FFF3E0;
-  border-radius: 12px;
-  padding: 15px;
-  margin-top: 15px;
-  border-left: 4px solid #FF9800;
+  background: #fff3e0;
+  border-radius: 10px;
+  padding: 12px;
+  border-left: 4px solid #ff9800;
+  font-size: 11px;
 }
 
-.safety-warning h3 {
-  font-size: 14px;
-  color: #E65100;
-  margin-bottom: 8px;
+.safety-warning h4 {
+  font-size: 12px;
+  color: #e65100;
+  margin-bottom: 4px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
-.safety-warning p {
-  font-size: 13px;
-  color: #666;
-  line-height: 1.5;
+.safety-warning p { color: #666; line-height: 1.4; }
+
+.comparison-table {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: 10px;
+}
+
+.table-row.header {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+.table-cell {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.table-cell.acid { background: #ffebee; color: #c62828; }
+.table-cell.base { background: #e3f2fd; color: #1565c0; }
+
+@media screen and (max-width: 380px) {
+  .substance-grid { gap: 6px; }
+  .substance-btn { padding: 8px 4px; font-size: 9px; }
+  .substance-btn .icon { font-size: 18px; }
+}
+
+@supports (padding: max(0px)) {
+  #app {
+    padding-left: max(10px, env(safe-area-inset-left));
+    padding-right: max(10px, env(safe-area-inset-right));
+  }
 }
 </style>
 </head>
 
 <body>
 <div id="app">
-  <div class="header">
-    <h1>🔬 Properties of Acids & Bases</h1>
-    <p>Explore the characteristics that define acids and bases</p>
-  </div>
 
-  <div class="sim-card">
-    <div class="category-tabs">
-      <button class="tab acids active" data-panel="acids">🧪 Acids</button>
-      <button class="tab bases" data-panel="bases">🧴 Bases</button>
-    </div>
-    
-    <!-- Acids Panel -->
-    <div class="properties-panel acids-panel active" id="acids-panel">
-      <div class="property-card">
-        <div class="property-header">
-          <div class="property-icon">😋</div>
-          <div class="property-title">Sour Taste</div>
-        </div>
-        <p class="property-desc">Acidic substances typically have a sour or tart taste. This is why lemons, oranges, and vinegar taste sour - they all contain acids!</p>
-        <div class="examples-section">
-          <div class="examples-title">Common Examples</div>
-          <div class="examples-grid">
-            <div class="example-item">🍋 Citric acid (Lemon)</div>
-            <div class="example-item">🍊 Ascorbic acid (Orange)</div>
-            <div class="example-item">🫙 Acetic acid (Vinegar)</div>
-            <div class="example-item">🥛 Lactic acid (Curd)</div>
-          </div>
-        </div>
+<div class="header">
+  <h1>🔬 Properties of Acids & Bases</h1>
+  <p>Learn what makes them different!</p>
+</div>
+
+<div class="sim-card">
+  <div class="category-tabs">
+    <button class="tab acids active" data-panel="acids">🧪 Acids</button>
+    <button class="tab bases" data-panel="bases">🧴 Bases</button>
+  </div>
+  
+  <!-- Acids Panel -->
+  <div class="properties-panel acids-panel active" id="acids-panel">
+    <div class="property-card">
+      <div class="property-header">
+        <div class="property-icon">😋</div>
+        <div class="property-title">Sour Taste</div>
       </div>
-      
-      <div class="property-card">
-        <div class="property-header">
-          <div class="property-icon">📝</div>
-          <div class="property-title">Turns Blue Litmus Red</div>
-        </div>
-        <p class="property-desc">When blue litmus paper comes in contact with an acid, it turns red. This is a key indicator test for identifying acidic substances.</p>
-        <div class="examples-section">
-          <div class="examples-title">Test Results</div>
-          <div class="examples-grid">
-            <div class="example-item">🔵→🔴 Blue litmus turns red</div>
-            <div class="example-item">🔴→🔴 Red litmus stays red</div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="property-card">
-        <div class="property-header">
-          <div class="property-icon">⚗️</div>
-          <div class="property-title">Corrosive Nature</div>
-        </div>
-        <p class="property-desc">Strong acids can corrode metals and damage materials. They react with metals to produce hydrogen gas and can cause burns.</p>
-        <div class="examples-section">
-          <div class="examples-title">Examples</div>
-          <div class="examples-grid">
-            <div class="example-item">🔋 Battery acid (Sulfuric)</div>
-            <div class="example-item">🧹 Cleaning acids</div>
-          </div>
+      <p class="property-desc">Acids taste sour or tart. That's why lemons, oranges, and vinegar have that tangy taste!</p>
+      <div class="examples-section">
+        <div class="examples-title">Common Examples</div>
+        <div class="examples-grid">
+          <span class="example-tag">🍋 Citric acid</span>
+          <span class="example-tag">🍊 Ascorbic acid</span>
+          <span class="example-tag">🫙 Acetic acid</span>
+          <span class="example-tag">🥛 Lactic acid</span>
         </div>
       </div>
     </div>
     
-    <!-- Bases Panel -->
-    <div class="properties-panel bases-panel" id="bases-panel">
-      <div class="property-card">
-        <div class="property-header">
-          <div class="property-icon">😝</div>
-          <div class="property-title">Bitter Taste</div>
-        </div>
-        <p class="property-desc">Basic substances often have a bitter taste. However, not everything bitter is a base - bitter gourd is bitter but not basic!</p>
-        <div class="examples-section">
-          <div class="examples-title">Common Examples</div>
-          <div class="examples-grid">
-            <div class="example-item">🥄 Baking soda</div>
-            <div class="example-item">💊 Antacids</div>
-            <div class="example-item">🧼 Soap (don't taste!)</div>
-          </div>
-        </div>
+    <div class="property-card">
+      <div class="property-header">
+        <div class="property-icon">📝</div>
+        <div class="property-title">Turns Blue Litmus Red</div>
       </div>
-      
-      <div class="property-card">
-        <div class="property-header">
-          <div class="property-icon">🧴</div>
-          <div class="property-title">Soapy/Slippery Feel</div>
-        </div>
-        <p class="property-desc">When you touch a basic solution, it feels slippery or soapy. This is because bases react with oils on your skin to form soap-like substances.</p>
-        <div class="examples-section">
-          <div class="examples-title">Examples</div>
-          <div class="examples-grid">
-            <div class="example-item">🧼 Soap solution</div>
-            <div class="example-item">🧹 Detergent water</div>
-            <div class="example-item">🥄 Baking soda solution</div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="property-card">
-        <div class="property-header">
-          <div class="property-icon">📝</div>
-          <div class="property-title">Turns Red Litmus Blue</div>
-        </div>
-        <p class="property-desc">When red litmus paper comes in contact with a base, it turns blue. This is the opposite reaction to acids and helps identify basic substances.</p>
-        <div class="examples-section">
-          <div class="examples-title">Test Results</div>
-          <div class="examples-grid">
-            <div class="example-item">🔴→🔵 Red litmus turns blue</div>
-            <div class="example-item">🔵→🔵 Blue litmus stays blue</div>
-          </div>
+      <p class="property-desc">When blue litmus paper touches an acid, it turns red. This is the classic test for acids!</p>
+      <div class="examples-section">
+        <div class="examples-title">Result</div>
+        <div class="examples-grid">
+          <span class="example-tag">🔵→🔴 Blue turns Red</span>
+          <span class="example-tag">🔴→🔴 Red stays Red</span>
         </div>
       </div>
     </div>
     
-    <!-- Interactive Demo -->
-    <div class="interactive-demo">
-      <div class="demo-title">🎮 Identify the Substance</div>
-      <div class="substance-selector">
-        <button class="substance-btn" data-substance="lemon">🍋 Lemon</button>
-        <button class="substance-btn" data-substance="soap">🧼 Soap</button>
-        <button class="substance-btn" data-substance="bitter-gourd">🥒 Bitter Gourd</button>
-        <button class="substance-btn" data-substance="baking-soda">🥄 Baking Soda</button>
-        <button class="substance-btn" data-substance="vinegar">🫙 Vinegar</button>
+    <div class="property-card">
+      <div class="property-header">
+        <div class="property-icon">⚗️</div>
+        <div class="property-title">Corrosive Nature</div>
       </div>
-      <div class="demo-result" id="demoResult">
-        <p>👆 Select a substance to learn about its properties</p>
+      <p class="property-desc">Strong acids can corrode metals and cause burns. They react with metals to produce hydrogen gas.</p>
+      <div class="examples-section">
+        <div class="examples-title">Examples</div>
+        <div class="examples-grid">
+          <span class="example-tag">🔋 Battery acid</span>
+          <span class="example-tag">🧹 Cleaning acids</span>
+        </div>
       </div>
-    </div>
-    
-    <div class="safety-warning">
-      <h3>⚠️ Safety First!</h3>
-      <p><strong>Never taste unknown substances!</strong> The taste properties described here are for educational purposes only. Always use proper indicators like litmus paper to test substances safely.</p>
     </div>
   </div>
+  
+  <!-- Bases Panel -->
+  <div class="properties-panel bases-panel" id="bases-panel">
+    <div class="property-card">
+      <div class="property-header">
+        <div class="property-icon">😝</div>
+        <div class="property-title">Bitter Taste</div>
+      </div>
+      <p class="property-desc">Bases often taste bitter. But remember: not everything bitter is a base (like bitter gourd)!</p>
+      <div class="examples-section">
+        <div class="examples-title">Common Examples</div>
+        <div class="examples-grid">
+          <span class="example-tag">🥄 Baking soda</span>
+          <span class="example-tag">💊 Antacids</span>
+          <span class="example-tag">🧼 Soap (don't taste!)</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="property-card">
+      <div class="property-header">
+        <div class="property-icon">🧴</div>
+        <div class="property-title">Soapy/Slippery Feel</div>
+      </div>
+      <p class="property-desc">Bases feel slippery or soapy. This is because they react with oils on your skin.</p>
+      <div class="examples-section">
+        <div class="examples-title">Examples</div>
+        <div class="examples-grid">
+          <span class="example-tag">🧼 Soap solution</span>
+          <span class="example-tag">🧹 Detergent</span>
+          <span class="example-tag">🥄 Baking soda</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="property-card">
+      <div class="property-header">
+        <div class="property-icon">📝</div>
+        <div class="property-title">Turns Red Litmus Blue</div>
+      </div>
+      <p class="property-desc">When red litmus paper touches a base, it turns blue. This is the opposite of acids!</p>
+      <div class="examples-section">
+        <div class="examples-title">Result</div>
+        <div class="examples-grid">
+          <span class="example-tag">🔴→🔵 Red turns Blue</span>
+          <span class="example-tag">🔵→🔵 Blue stays Blue</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="quiz-section">
+  <div class="quiz-title">🎮 Identify the Substance</div>
+  <div class="substance-grid">
+    <button class="substance-btn" data-substance="lemon"><span class="icon">🍋</span>Lemon</button>
+    <button class="substance-btn" data-substance="soap"><span class="icon">🧼</span>Soap</button>
+    <button class="substance-btn" data-substance="bitter-gourd"><span class="icon">🥒</span>Bitter Gourd</button>
+    <button class="substance-btn" data-substance="baking-soda"><span class="icon">🥄</span>Baking Soda</button>
+    <button class="substance-btn" data-substance="vinegar"><span class="icon">🫙</span>Vinegar</button>
+    <button class="substance-btn" data-substance="water"><span class="icon">💧</span>Water</button>
+  </div>
+  <div class="quiz-result" id="quizResult">
+    <p>👆 Tap a substance to learn about its properties!</p>
+  </div>
+</div>
+
+<div class="comparison-table">
+  <div class="table-row header">
+    <div class="table-cell">Property</div>
+    <div class="table-cell acid">Acids</div>
+    <div class="table-cell base">Bases</div>
+  </div>
+  <div class="table-row">
+    <div class="table-cell">Taste</div>
+    <div class="table-cell acid">Sour</div>
+    <div class="table-cell base">Bitter</div>
+  </div>
+  <div class="table-row">
+    <div class="table-cell">Feel</div>
+    <div class="table-cell acid">—</div>
+    <div class="table-cell base">Soapy</div>
+  </div>
+  <div class="table-row">
+    <div class="table-cell">Blue Litmus</div>
+    <div class="table-cell acid">→ Red</div>
+    <div class="table-cell base">No change</div>
+  </div>
+  <div class="table-row">
+    <div class="table-cell">Red Litmus</div>
+    <div class="table-cell acid">No change</div>
+    <div class="table-cell base">→ Blue</div>
+  </div>
+</div>
+
+<div class="safety-warning">
+  <h4>⚠️ Safety First!</h4>
+  <p><strong>Never taste unknown substances!</strong> The taste properties are for educational purposes. Always use proper indicators like litmus paper to test safely.</p>
+</div>
+
 </div>
 
 <script>
 const tabs = document.querySelectorAll('.tab');
 const panels = document.querySelectorAll('.properties-panel');
 const substanceBtns = document.querySelectorAll('.substance-btn');
-const demoResult = document.getElementById('demoResult');
+const quizResult = document.getElementById('quizResult');
 
 const substanceInfo = {
   'lemon': {
     type: 'Acidic',
     emoji: '🍋',
     title: 'Lemon - ACIDIC',
-    desc: 'Lemons contain citric acid, giving them their sour taste. They turn blue litmus red and have a pH around 2-3.'
+    desc: 'Contains citric acid, giving it a sour taste. Turns blue litmus red. pH around 2-3.'
   },
   'soap': {
     type: 'Basic',
     emoji: '🧼',
     title: 'Soap - BASIC',
-    desc: 'Soap is basic with a slippery feel. It turns red litmus blue and helps clean by breaking down oils and grease.'
+    desc: 'Feels slippery and tastes bitter. Turns red litmus blue. Helps clean by breaking down oils.'
   },
   'bitter-gourd': {
     type: 'Neither',
     emoji: '🥒',
     title: 'Bitter Gourd - NOT A BASE!',
-    desc: 'Although bitter, bitter gourd is NOT basic! It\'s a common misconception. Bitterness alone doesn\'t indicate a substance is basic.'
+    desc: 'Although bitter, it\'s NOT basic! Bitterness alone doesn\'t mean something is a base. Common misconception!'
   },
   'baking-soda': {
     type: 'Basic',
     emoji: '🥄',
     title: 'Baking Soda - BASIC',
-    desc: 'Sodium bicarbonate (baking soda) is a mild base. It feels slippery, tastes bitter, and turns red litmus blue.'
+    desc: 'Sodium bicarbonate is a mild base. Feels slippery, tastes bitter, turns red litmus blue.'
   },
   'vinegar': {
     type: 'Acidic',
     emoji: '🫙',
     title: 'Vinegar - ACIDIC',
-    desc: 'Vinegar contains acetic acid (about 5%). It tastes sour and turns blue litmus red. pH is around 2-3.'
+    desc: 'Contains acetic acid (~5%). Tastes sour, turns blue litmus red. pH around 2-3.'
+  },
+  'water': {
+    type: 'Neutral',
+    emoji: '💧',
+    title: 'Water - NEUTRAL',
+    desc: 'Pure water is neutral (pH 7). Neither litmus paper changes color. Balanced H+ and OH- ions.'
   }
 };
 
 tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
+  tab.onclick = () => {
     tabs.forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
-    
     panels.forEach(p => p.classList.remove('active'));
     document.getElementById(`${tab.dataset.panel}-panel`).classList.add('active');
-  });
+  };
 });
 
 substanceBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
+  btn.onclick = () => {
     substanceBtns.forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
     
     const info = substanceInfo[btn.dataset.substance];
-    let bgColor = '#667eea';
-    if (info.type === 'Acidic') bgColor = '#F44336';
-    else if (info.type === 'Basic') bgColor = '#2196F3';
-    else bgColor = '#FF9800';
+    let bgColor = 'rgba(255,255,255,0.15)';
     
-    demoResult.innerHTML = `
+    quizResult.innerHTML = `
       <h4>${info.emoji} ${info.title}</h4>
       <p>${info.desc}</p>
     `;
-    demoResult.style.background = `rgba(255,255,255,0.2)`;
-  });
+  };
 });
 </script>
 </body>
