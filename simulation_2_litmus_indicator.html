@@ -243,6 +243,11 @@ svg { width: 100%; height: 100%; display: block; }
 .prep-step .icon { font-size: 22px; }
 .prep-step .text { font-size: 9px; color: #666; }
 
+/* SVG animation classes */
+.litmus-paper {
+  transition: transform 0.5s ease, fill 0.5s ease;
+}
+
 @media screen and (max-width: 380px) {
   .solution-grid { gap: 4px; }
   .solution-btn { padding: 6px 2px; font-size: 8px; }
@@ -333,37 +338,33 @@ function createSimulation(containerId, isExperiment) {
 
     <svg viewBox="0 0 400 300">
       <!-- Lab bench -->
-      <rect x="30" y="200" width="340" height="80" rx="4" fill="#8d6e63"/>
-      <rect x="30" y="200" width="340" height="10" rx="2" fill="#6d4c41"/>
+      <rect x="30" y="210" width="340" height="70" rx="4" fill="#8d6e63"/>
+      <rect x="30" y="210" width="340" height="8" rx="2" fill="#6d4c41"/>
       
-      <!-- Beaker -->
-      <g id="${containerId}-beaker" transform="translate(200, 100)">
-        <path d="M-50,30 L-45,100 Q-45,110 -35,110 L35,110 Q45,110 45,100 L50,30 Z" 
+      <!-- Beaker in center -->
+      <g id="${containerId}-beaker" transform="translate(200, 90)">
+        <path d="M-45,25 L-40,95 Q-40,105 -30,105 L30,105 Q40,105 40,95 L45,25 Z" 
               fill="rgba(255,255,255,0.4)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
-        <ellipse cx="0" cy="30" rx="50" ry="10" fill="rgba(255,255,255,0.3)"/>
-        <rect x="-40" y="45" width="80" height="60" rx="2" fill="#81d4fa" id="${containerId}-liquid"/>
-        <text x="0" y="130" text-anchor="middle" font-size="10" fill="#666" id="${containerId}-beaker-label">${isExperiment ? SOLUTIONS[defaultSolution].name : 'Empty'}</text>
-        <text x="0" y="20" font-size="16" text-anchor="middle" id="${containerId}-beaker-icon">${isExperiment ? SOLUTIONS[defaultSolution].icon : ''}</text>
+        <ellipse cx="0" cy="25" rx="45" ry="9" fill="rgba(255,255,255,0.3)"/>
+        <rect x="-35" y="38" width="70" height="55" rx="2" fill="#81d4fa" id="${containerId}-liquid"/>
+        <text x="0" y="125" text-anchor="middle" font-size="10" fill="#666" id="${containerId}-beaker-label">${isExperiment ? SOLUTIONS[defaultSolution].name : 'Empty'}</text>
+        <text x="0" y="15" font-size="16" text-anchor="middle" id="${containerId}-beaker-icon">${isExperiment ? SOLUTIONS[defaultSolution].icon : ''}</text>
       </g>
       
       <!-- Blue Litmus Paper -->
-      <g id="${containerId}-blue-group" transform="translate(100, 80)">
-        <rect x="-20" y="0" width="40" height="100" rx="3" fill="#2196f3" id="${containerId}-blue-paper" stroke="#1976d2" stroke-width="1"/>
-        <text x="0" y="120" text-anchor="middle" font-size="9" fill="#1976d2" font-weight="600">Blue Litmus</text>
-        <text x="0" y="135" text-anchor="middle" font-size="8" fill="#666" id="${containerId}-blue-status">Original</text>
-      </g>
+      <rect class="litmus-paper" x="60" y="60" width="35" height="90" rx="3" fill="#2196f3" id="${containerId}-blue-paper" stroke="#1976d2" stroke-width="1"/>
+      <text x="77" y="170" text-anchor="middle" font-size="9" fill="#1976d2" font-weight="600">Blue Litmus</text>
+      <text x="77" y="185" text-anchor="middle" font-size="8" fill="#666" id="${containerId}-blue-status">Original</text>
       
       <!-- Red Litmus Paper -->
-      <g id="${containerId}-red-group" transform="translate(300, 80)">
-        <rect x="-20" y="0" width="40" height="100" rx="3" fill="#f44336" id="${containerId}-red-paper" stroke="#d32f2f" stroke-width="1"/>
-        <text x="0" y="120" text-anchor="middle" font-size="9" fill="#d32f2f" font-weight="600">Red Litmus</text>
-        <text x="0" y="135" text-anchor="middle" font-size="8" fill="#666" id="${containerId}-red-status">Original</text>
-      </g>
+      <rect class="litmus-paper" x="305" y="60" width="35" height="90" rx="3" fill="#f44336" id="${containerId}-red-paper" stroke="#d32f2f" stroke-width="1"/>
+      <text x="322" y="170" text-anchor="middle" font-size="9" fill="#d32f2f" font-weight="600">Red Litmus</text>
+      <text x="322" y="185" text-anchor="middle" font-size="8" fill="#666" id="${containerId}-red-status">Original</text>
       
       <!-- Result indicator -->
-      <g id="${containerId}-result" opacity="0" transform="translate(200, 240)">
-        <rect x="-60" y="-15" width="120" height="30" rx="15" fill="#fff" stroke="#4caf50" stroke-width="2"/>
-        <text x="0" y="5" text-anchor="middle" font-size="11" fill="#4caf50" font-weight="600" id="${containerId}-result-text">Result</text>
+      <g id="${containerId}-result" opacity="0">
+        <rect x="140" y="195" width="120" height="28" rx="14" fill="#fff" stroke="#4caf50" stroke-width="2"/>
+        <text x="200" y="214" text-anchor="middle" font-size="11" fill="#4caf50" font-weight="600" id="${containerId}-result-text">Result</text>
       </g>
     </svg>
 
@@ -396,12 +397,10 @@ function createSimulation(containerId, isExperiment) {
 
   if (!isExperiment) return;
 
-  let state = { solution: 'lemon', tested: false };
+  let state = { solution: 'lemon', tested: false, animating: false };
 
   const bluePaper = c.querySelector(`#${containerId}-blue-paper`);
   const redPaper = c.querySelector(`#${containerId}-red-paper`);
-  const blueGroup = c.querySelector(`#${containerId}-blue-group`);
-  const redGroup = c.querySelector(`#${containerId}-red-group`);
   const blueStatus = c.querySelector(`#${containerId}-blue-status`);
   const redStatus = c.querySelector(`#${containerId}-red-status`);
   const liquid = c.querySelector(`#${containerId}-liquid`);
@@ -415,6 +414,13 @@ function createSimulation(containerId, isExperiment) {
   const resultText = c.querySelector(`#${containerId}-result-text`);
   const testBtn = c.querySelector('#test-action');
 
+  // Original positions
+  const blueOrigX = 60, blueOrigY = 60;
+  const redOrigX = 305, redOrigY = 60;
+  // Dip positions (near beaker)
+  const blueDipX = 130, blueDipY = 100;
+  const redDipX = 235, redDipY = 100;
+
   function updateDisplay() {
     const sol = SOLUTIONS[state.solution];
     beakerLabel.textContent = sol.name;
@@ -422,89 +428,127 @@ function createSimulation(containerId, isExperiment) {
     solutionName.textContent = sol.name;
     
     // Change liquid color based on solution type
-    if (sol.type === 'acidic') liquid.style.fill = '#ffcdd2';
-    else if (sol.type === 'basic') liquid.style.fill = '#bbdefb';
-    else liquid.style.fill = '#b3e5fc';
+    if (sol.type === 'acidic') liquid.setAttribute('fill', '#ffcdd2');
+    else if (sol.type === 'basic') liquid.setAttribute('fill', '#bbdefb');
+    else liquid.setAttribute('fill', '#b3e5fc');
   }
 
-  function animateDip(callback) {
-    // Animate papers dipping into beaker
-    blueGroup.style.transition = 'transform 0.5s ease';
-    redGroup.style.transition = 'transform 0.5s ease';
-    blueGroup.style.transform = 'translate(140, 80)';
-    redGroup.style.transform = 'translate(260, 80)';
-    
-    setTimeout(() => {
-      blueGroup.style.transform = 'translate(140, 120)';
-      redGroup.style.transform = 'translate(260, 120)';
+  function animatePaper(paper, startX, startY, endX, endY, duration) {
+    return new Promise(resolve => {
+      const startTime = performance.now();
       
-      setTimeout(() => {
-        callback();
-        setTimeout(() => {
-          blueGroup.style.transform = 'translate(100, 80)';
-          redGroup.style.transform = 'translate(300, 80)';
-        }, 500);
-      }, 600);
-    }, 300);
-  }
-
-  function runTest() {
-    const sol = SOLUTIONS[state.solution];
-    state.tested = true;
-
-    animateDip(() => {
-      // Change paper colors
-      bluePaper.style.transition = 'fill 0.5s ease';
-      redPaper.style.transition = 'fill 0.5s ease';
-      bluePaper.style.fill = sol.blueResult;
-      redPaper.style.fill = sol.redResult;
-
-      // Update status labels
-      if (sol.type === 'acidic') {
-        blueStatus.textContent = '→ Red!';
-        redStatus.textContent = 'No change';
-        blueResult.textContent = 'Red ⚠️';
-        blueResult.className = 'metric-value acidic';
-        redResult.textContent = 'Red';
-        redResult.className = 'metric-value';
-        conclusion.textContent = 'ACIDIC';
-        conclusion.className = 'metric-value acidic';
-        resultText.textContent = '🔴 ACIDIC';
-        resultText.style.fill = '#d32f2f';
-      } else if (sol.type === 'basic') {
-        blueStatus.textContent = 'No change';
-        redStatus.textContent = '→ Blue!';
-        blueResult.textContent = 'Blue';
-        blueResult.className = 'metric-value';
-        redResult.textContent = 'Blue ⚠️';
-        redResult.className = 'metric-value basic';
-        conclusion.textContent = 'BASIC';
-        conclusion.className = 'metric-value basic';
-        resultText.textContent = '🔵 BASIC';
-        resultText.style.fill = '#1565c0';
-      } else {
-        blueStatus.textContent = 'No change';
-        redStatus.textContent = 'No change';
-        blueResult.textContent = 'Blue';
-        blueResult.className = 'metric-value';
-        redResult.textContent = 'Red';
-        redResult.className = 'metric-value';
-        conclusion.textContent = 'NEUTRAL';
-        conclusion.className = 'metric-value neutral';
-        resultText.textContent = '⚪ NEUTRAL';
-        resultText.style.fill = '#2e7d32';
+      function animate(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Ease in-out
+        const eased = progress < 0.5 
+          ? 2 * progress * progress 
+          : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+        
+        const currentX = startX + (endX - startX) * eased;
+        const currentY = startY + (endY - startY) * eased;
+        
+        paper.setAttribute('x', currentX);
+        paper.setAttribute('y', currentY);
+        
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          resolve();
+        }
       }
-
-      resultBox.style.transition = 'opacity 0.3s';
-      resultBox.style.opacity = '1';
-      document.getElementById('takeaway').classList.add('show');
+      
+      requestAnimationFrame(animate);
     });
   }
 
+  async function runTest() {
+    if (state.animating) return;
+    state.animating = true;
+    state.tested = true;
+    
+    const sol = SOLUTIONS[state.solution];
+    
+    // Move papers to beaker
+    await Promise.all([
+      animatePaper(bluePaper, blueOrigX, blueOrigY, blueDipX, blueDipY, 400),
+      animatePaper(redPaper, redOrigX, redOrigY, redDipX, redDipY, 400)
+    ]);
+    
+    // Wait a moment (dipping)
+    await new Promise(r => setTimeout(r, 500));
+    
+    // Change colors based on solution
+    bluePaper.setAttribute('fill', sol.blueResult);
+    redPaper.setAttribute('fill', sol.redResult);
+    
+    // Wait a moment
+    await new Promise(r => setTimeout(r, 300));
+    
+    // Move papers back
+    await Promise.all([
+      animatePaper(bluePaper, blueDipX, blueDipY, blueOrigX, blueOrigY, 400),
+      animatePaper(redPaper, redDipX, redDipY, redOrigX, redOrigY, 400)
+    ]);
+    
+    // Update status labels and metrics
+    if (sol.type === 'acidic') {
+      blueStatus.textContent = '→ Red!';
+      redStatus.textContent = 'No change';
+      blueResult.textContent = 'Red ⚠️';
+      blueResult.className = 'metric-value acidic';
+      redResult.textContent = 'Red';
+      redResult.className = 'metric-value';
+      conclusion.textContent = 'ACIDIC';
+      conclusion.className = 'metric-value acidic';
+      resultText.textContent = '🔴 ACIDIC';
+      resultText.setAttribute('fill', '#d32f2f');
+      resultBox.querySelector('rect').setAttribute('stroke', '#d32f2f');
+    } else if (sol.type === 'basic') {
+      blueStatus.textContent = 'No change';
+      redStatus.textContent = '→ Blue!';
+      blueResult.textContent = 'Blue';
+      blueResult.className = 'metric-value';
+      redResult.textContent = 'Blue ⚠️';
+      redResult.className = 'metric-value basic';
+      conclusion.textContent = 'BASIC';
+      conclusion.className = 'metric-value basic';
+      resultText.textContent = '🔵 BASIC';
+      resultText.setAttribute('fill', '#1565c0');
+      resultBox.querySelector('rect').setAttribute('stroke', '#1565c0');
+    } else {
+      blueStatus.textContent = 'No change';
+      redStatus.textContent = 'No change';
+      blueResult.textContent = 'Blue';
+      blueResult.className = 'metric-value';
+      redResult.textContent = 'Red';
+      redResult.className = 'metric-value';
+      conclusion.textContent = 'NEUTRAL';
+      conclusion.className = 'metric-value neutral';
+      resultText.textContent = '⚪ NEUTRAL';
+      resultText.setAttribute('fill', '#2e7d32');
+      resultBox.querySelector('rect').setAttribute('stroke', '#2e7d32');
+    }
+
+    resultBox.setAttribute('opacity', '1');
+    document.getElementById('takeaway').classList.add('show');
+    state.animating = false;
+  }
+
   function resetTest() {
+    if (state.animating) return;
     state.tested = false;
-    bluePaper.style.fill = '#2196f3';
-    redPaper.style.fill = '#f44336';
+    
+    // Reset paper positions and colors
+    bluePaper.setAttribute('x', blueOrigX);
+    bluePaper.setAttribute('y', blueOrigY);
+    bluePaper.setAttribute('fill', '#2196f3');
+    
+    redPaper.setAttribute('x', redOrigX);
+    redPaper.setAttribute('y', redOrigY);
+    redPaper.setAttribute('fill', '#f44336');
+    
     blueStatus.textContent = 'Original';
     redStatus.textContent = 'Original';
     blueResult.textContent = 'Blue';
@@ -513,15 +557,14 @@ function createSimulation(containerId, isExperiment) {
     redResult.className = 'metric-value';
     conclusion.textContent = '?';
     conclusion.className = 'metric-value';
-    resultBox.style.opacity = '0';
-    blueGroup.style.transform = 'translate(100, 80)';
-    redGroup.style.transform = 'translate(300, 80)';
+    resultBox.setAttribute('opacity', '0');
   }
 
   testBtn.onclick = runTest;
 
   c.querySelectorAll('.solution-btn').forEach(btn => {
     btn.onclick = () => {
+      if (state.animating) return;
       c.querySelectorAll('.solution-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       state.solution = btn.dataset.solution;
