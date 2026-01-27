@@ -1,0 +1,154 @@
+{
+    "unit_name": "Electricity: Circuits and their Components",
+    "topics": [
+        {
+            "topic_name": "Introduction to Electricity and Its Uses",
+            "concepts": [
+                {
+                    "concept_name": "Uses of Electricity",
+                    "summary": "Electricity is used in many areas of daily life such as cooking, lighting, transportation, heating and cooling, entertainment, communication, and more.",
+                    "details": "Examples include electric kettles, fans, trains, mobile phones, and computers. Electricity can be grouped in different ways based on its application.",
+                    "examples": [
+                        "Electric kettle (cooking)",
+                        "Fan (heating/cooling)",
+                        "Mobile phone (communication)"
+                    ]
+                },
+                {
+                    "concept_name": "Sources of Electricity",
+                    "summary": "Electricity is generated from various sources like windmills, solar panels, falling water (hydroelectric), and fossil fuels like coal and gas.",
+                    "details": "The electricity reaches our homes via wires. For safe learning, only batteries or cells should be used in experiments, not main power supply.",
+                    "examples": [
+                        "Bhakra Nangal Dam (hydroelectric)",
+                        "Solar panels",
+                        "Batteries in torchlights"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "A Torchlight and Its Working",
+            "concepts": [
+                {
+                    "concept_name": "Components of a Torch",
+                    "summary": "A torch contains a lamp, a switch, and electric cells inside. The lamp glows when the switch is in one position and stops when switched off.",
+                    "details": "Opening a torch reveals cells that provide the electrical energy. The switch controls the flow of electricity to the lamp.",
+                    "examples": []
+                }
+            ]
+        },
+        {
+            "topic_name": "A Simple Electrical Circuit",
+            "concepts": [
+                {
+                    "concept_name": "Electric Cell",
+                    "summary": "An electric cell is a portable source of electrical energy with two terminals: positive (+) and negative (-).",
+                    "details": "The metal cap is the positive terminal and the flat metal disc is the negative terminal.",
+                    "examples": []
+                },
+                {
+                    "concept_name": "Battery",
+                    "summary": "A battery is a combination of two or more cells connected together. The positive terminal of one cell connects to the negative terminal of the next.",
+                    "details": "A battery provides more energy or longer duration than a single cell. The term 'battery' is sometimes used for a single cell too.",
+                    "examples": [
+                        "Two cells in a torch",
+                        "Battery in mobile phone"
+                    ]
+                },
+                {
+                    "concept_name": "Electric Lamp (Incandescent)",
+                    "summary": "An incandescent lamp has a thin wire called a filament inside a glass bulb. When current passes, the filament gets hot and glows.",
+                    "details": "The filament is connected to two thicker wires which are the lamp's terminals. They connect to the metal case and the metal tip at the base.",
+                    "examples": [
+                        "Old torch lamps"
+                    ]
+                },
+                {
+                    "concept_name": "LED Lamp",
+                    "summary": "An LED (Light Emitting Diode) lamp does not have a filament. It has two terminals: a longer wire (positive) and a shorter wire (negative).",
+                    "details": "LEDs glow only when current passes in one direction: positive terminal to positive of battery, negative to negative.",
+                    "examples": [
+                        "Modern torch lamps"
+                    ]
+                },
+                {
+                    "concept_name": "Making a Lamp Glow",
+                    "summary": "A lamp glows when its terminals are connected to the corresponding terminals of a cell or battery, forming a complete circuit.",
+                    "details": "The lamp glows only in arrangements where there is a complete path for current. Incandescent lamps work regardless of polarity; LEDs require correct polarity.",
+                    "examples": [
+                        "Connecting lamp to cell with wires"
+                    ]
+                },
+                {
+                    "concept_name": "Electrical Circuit",
+                    "summary": "An electrical circuit is a complete path that allows electric current to flow from the positive terminal to the negative terminal of a cell.",
+                    "details": "Current flows through the filament of an incandescent lamp, making it glow. A broken filament (fused bulb) stops the current.",
+                    "examples": []
+                },
+                {
+                    "concept_name": "Electric Switch",
+                    "summary": "A switch is a device that completes or breaks a circuit, turning a device ON or OFF.",
+                    "details": "In ON position, the switch closes the gap and allows current to flow. In OFF position, the gap is open and current stops.",
+                    "examples": [
+                        "Switch in torch",
+                        "Homemade switch with safety pin"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Circuit Diagrams",
+            "concepts": [
+                {
+                    "concept_name": "Electrical Symbols",
+                    "summary": "Electrical components are represented by standard symbols. A drawing of a circuit using these symbols is called a circuit diagram.",
+                    "details": "Symbols include those for cell, battery, lamp, LED, switch (ON/OFF), and wire. Standard symbols help people worldwide understand circuits.",
+                    "examples": [
+                        "Symbol for cell: long line (+), short line (-)",
+                        "Symbol for LED: triangle with arrows"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Electrical Conductors and Insulators",
+            "concepts": [
+                {
+                    "concept_name": "Conductors",
+                    "summary": "Materials that allow electric current to flow easily are called conductors. Metals like copper, silver, and gold are good conductors.",
+                    "details": "Copper is commonly used for wires due to good conductivity and lower cost. Conductors are used in wires, switches, plugs, and sockets.",
+                    "examples": [
+                        "Metal spoon",
+                        "Copper wire",
+                        "Aluminium foil"
+                    ]
+                },
+                {
+                    "concept_name": "Insulators",
+                    "summary": "Materials that do not allow electric current to pass are called insulators. Examples are plastic, rubber, glass, and wood.",
+                    "details": "Insulators are used to cover wires, plugs, and switches to prevent electric shocks and ensure safety.",
+                    "examples": [
+                        "Plastic scale",
+                        "Rubber eraser",
+                        "Wooden stick"
+                    ]
+                },
+                {
+                    "concept_name": "Safety with Electricity",
+                    "summary": "Our body is a conductor of electricity. Electric current can cause severe injury or death. Always handle electrical devices with care.",
+                    "details": "Never touch switches with wet hands, avoid using devices in wet areas, and do not use damaged equipment. Use only batteries for experiments.",
+                    "examples": []
+                },
+                {
+                    "concept_name": "Types of Current",
+                    "summary": "Batteries provide Direct Current (DC) used for small devices. Power plants provide Alternating Current (AC) used for larger appliances at home.",
+                    "details": "DC flows in one direction; AC changes direction periodically. Wall sockets supply AC.",
+                    "examples": [
+                        "Torch battery (DC)",
+                        "Wall socket (AC)"
+                    ]
+                }
+            ]
+        }
+    ]
+}
