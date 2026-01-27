@@ -189,13 +189,22 @@ svg { width: 100%; height: 100%; }
 .takeaway-title { font-size: 12px; font-weight: 700; color: #1b5e20; margin-bottom: 6px; }
 .takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
 
-@keyframes hammer {
-  0% { transform: rotate(-30deg) translateY(0); }
-  50% { transform: rotate(0deg) translateY(30px); }
-  100% { transform: rotate(-30deg) translateY(0); }
+@keyframes hammerSwing {
+  0% { transform: rotate(-30deg); }
+  40% { transform: rotate(10deg); }
+  60% { transform: rotate(10deg); }
+  100% { transform: rotate(-30deg); }
 }
 
-.hammer-animate { animation: hammer 0.3s ease-out; }
+#hammer {
+  transform: rotate(-30deg);
+  transform-origin: 0 0;
+  transform-box: fill-box;
+}
+
+.hammer-animate { 
+  animation: hammerSwing 0.5s ease-in-out; 
+}
 
 @keyframes flatten {
   0% { transform: scaleY(1); }
@@ -259,11 +268,15 @@ svg { width: 100%; height: 100%; }
         <polygon points="220,180 230,195 210,192" fill="#666"/>
       </g>
       
-      <!-- Hammer -->
-      <g id="hammer" transform="translate(300, 80)">
-        <rect x="-10" y="0" width="20" height="80" rx="3" fill="#8d6e63"/>
-        <rect x="-25" y="-30" width="50" height="35" rx="5" fill="#616161"/>
-        <rect x="-25" y="-30" width="50" height="10" rx="3" fill="#757575"/>
+      <!-- Hammer positioned above anvil -->
+      <g transform="translate(200, 60)">
+        <g id="hammer" style="transform-origin: 0 0;">
+          <!-- Handle -->
+          <rect x="-8" y="0" width="16" height="70" rx="3" fill="#8d6e63"/>
+          <!-- Hammer head -->
+          <rect x="-30" y="65" width="60" height="30" rx="5" fill="#616161"/>
+          <rect x="-30" y="65" width="60" height="8" rx="3" fill="#757575"/>
+        </g>
       </g>
       
       <!-- Instructions -->
