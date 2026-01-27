@@ -1,0 +1,160 @@
+{
+    "unit_name": "The World of Metals and Non-metals",
+    "topics": [
+        {
+            "topic_name": "Introduction and Malleability",
+            "concepts": [
+                {
+                    "concept_name": "Introduction to Metals",
+                    "summary": "Metals like iron are used by ironsmiths to make daily-use items such as pans, tools, and agricultural equipment. Metals can be heated and hammered into shape.",
+                    "details": "The chapter starts with a visit to an ironsmith who uses iron, wood, and coal. Metals are beaten into shape while hot.",
+                    "examples": [
+                        "Flat pans (tawas)",
+                        "Axes (kulhadis)",
+                        "Tongs (chimtas)"
+                    ]
+                },
+                {
+                    "concept_name": "Malleability",
+                    "summary": "Malleability is the property of metals that allows them to be beaten into thin sheets without breaking. Most metals are malleable.",
+                    "details": "Metals like copper, aluminium, and iron flatten when hammered. Non-metals like coal and sulfur break (brittle). Wood is neither malleable nor brittle.",
+                    "examples": [
+                        "Silver foil on sweets",
+                        "Aluminium foil for wrapping"
+                    ]
+                },
+                {
+                    "concept_name": "Appearance and Hardness",
+                    "summary": "Metals are generally lustrous (shiny) and hard, while non-metals are usually non-lustrous and softer. Exceptions exist, like soft metals sodium and liquid mercury.",
+                    "details": "Metals have a metallic lustre. Sodium and potassium are soft metals; mercury is liquid at room temperature.",
+                    "examples": [
+                        "Copper (lustrous, hard)",
+                        "Coal (non-lustrous, brittle)"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Ductility and Sonority",
+            "concepts": [
+                {
+                    "concept_name": "Ductility",
+                    "summary": "Ductility is the property of metals that allows them to be drawn into thin wires. Gold is extremely ductile.",
+                    "details": "Metals like copper and aluminium are used for electrical wires and ornaments due to ductility. Non-metals like coal and sulfur are not ductile.",
+                    "examples": [
+                        "Copper wires in electrical fittings",
+                        "Gold wire for ornaments"
+                    ]
+                },
+                {
+                    "concept_name": "Sonority",
+                    "summary": "Sonority is the property of metals to produce a ringing sound when struck. Metals are sonorous.",
+                    "details": "Metal objects like spoons and coins produce ringing sounds; non-metals like coal and wood produce dull sounds.",
+                    "examples": [
+                        "School bell (metal)",
+                        "Ghungroos (metal bells)"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Conduction of Heat and Electricity",
+            "concepts": [
+                {
+                    "concept_name": "Conduction of Heat",
+                    "summary": "Metals are good conductors of heat, meaning they transfer heat quickly. Non-metals like wood are poor conductors.",
+                    "details": "In an experiment, a metal spoon gets hotter than a wooden spoon when both are placed in hot water. That's why cooking vessels are metal, but handles are wood or plastic.",
+                    "examples": [
+                        "Metal cooking vessels",
+                        "Wooden spoon handles"
+                    ]
+                },
+                {
+                    "concept_name": "Conduction of Electricity",
+                    "summary": "Metals are good conductors of electricity; they allow electric current to pass easily. Non-metals are poor conductors (insulators).",
+                    "details": "Using a circuit tester, metals make the bulb glow; non-metals do not. Insulators like rubber and plastic protect against electric shock.",
+                    "examples": [
+                        "Copper wire (conductor)",
+                        "Rubber gloves (insulator)"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Effect of Air and Water on Metals",
+            "concepts": [
+                {
+                    "concept_name": "Rusting of Iron",
+                    "summary": "Iron develops brown rust when exposed to both air and water (moist air). Dry air or water alone does not cause rusting.",
+                    "details": "Rusting is a type of corrosion. It can be prevented by painting, oiling, greasing, or galvanisation (coating with zinc).",
+                    "examples": [
+                        "Rust on iron nails",
+                        "Iron Pillar of Delhi (rust-resistant)"
+                    ]
+                },
+                {
+                    "concept_name": "Reaction of Metals with Oxygen",
+                    "summary": "Metals react with oxygen to form metal oxides, which are generally basic in nature.",
+                    "details": "Magnesium ribbon burns to form magnesium oxide, a basic oxide that turns red litmus blue. Sodium reacts vigorously with air and water.",
+                    "examples": [
+                        "Burning magnesium ribbon",
+                        "Sodium stored in kerosene"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Non-metals and Their Properties",
+            "concepts": [
+                {
+                    "concept_name": "Properties of Non-metals",
+                    "summary": "Non-metals are usually dull, soft, not malleable or ductile, not sonorous, and poor conductors of heat and electricity.",
+                    "details": "Examples include sulfur, phosphorus, oxygen, hydrogen, nitrogen, carbon. Their oxides are acidic.",
+                    "examples": [
+                        "Sulfur powder",
+                        "Phosphorus stored in water"
+                    ]
+                },
+                {
+                    "concept_name": "Reaction of Non-metals with Oxygen",
+                    "summary": "Non-metals react with oxygen to form oxides that are acidic in nature.",
+                    "details": "Burning sulfur produces sulfur dioxide, which dissolves in water to form sulfurous acid (acidic).",
+                    "examples": [
+                        "Sulfur dioxide gas",
+                        "Sulfurous acid"
+                    ]
+                },
+                {
+                    "concept_name": "Importance of Non-metals",
+                    "summary": "Non-metals are essential for life. Oxygen is needed for respiration, carbon is the building block of life, nitrogen for plants, chlorine for water purification, and iodine as antiseptic.",
+                    "details": "Non-metals play critical roles in biological and industrial processes.",
+                    "examples": [
+                        "Oxygen for breathing",
+                        "Carbon in proteins and fats",
+                        "Chlorine in water purifiers"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Elements and Applications",
+            "concepts": [
+                {
+                    "concept_name": "Metals and Non-metals as Elements",
+                    "summary": "Metals and non-metals are sub-categories of elements. An element is a substance that cannot be broken down into simpler substances.",
+                    "details": "There are 118 known elements, some natural and some artificial. Materials like plastic, glass, wood are not elements.",
+                    "examples": []
+                },
+                {
+                    "concept_name": "Applications in Society",
+                    "summary": "Metals and alloys are crucial for utensils, tools, technology, and industries like aerospace and atomic energy. Recycling metals like iron and aluminium promotes sustainability.",
+                    "details": "Special metals include zirconium (atomic energy) and titanium (aerospace). India has a history of advanced metallurgy.",
+                    "examples": [
+                        "Iron and aluminium recycling",
+                        "Ancient Iron Pillar of Delhi"
+                    ]
+                }
+            ]
+        }
+    ]
+}
