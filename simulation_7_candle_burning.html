@@ -50,10 +50,33 @@ body {
   margin-bottom: 10px;
 }
 
+.mode-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.mode-tab {
+  flex: 1;
+  padding: 12px 6px;
+  border: 3px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  background: #fafafa;
+  transition: all 0.2s ease;
+}
+
+.mode-tab:active { transform: scale(0.95); }
+.mode-tab.physical.active { border-color: #2196f3; background: #e3f2fd; color: #1565c0; }
+.mode-tab.chemical.active { border-color: #e91e63; background: #fce4ec; color: #c2185b; }
+
 .visual {
   position: relative;
-  height: 40vh;
-  min-height: 280px;
+  height: 42vh;
+  min-height: 300px;
   background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
   border-radius: 12px;
   overflow: hidden;
@@ -61,132 +84,132 @@ body {
 
 svg { width: 100%; height: 100%; }
 
-.zone-labels {
+.view-label {
   position: absolute;
   top: 10px;
-  left: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.zone-label {
-  padding: 4px 8px;
-  border-radius: 10px;
-  font-size: 9px;
-  font-weight: 600;
-  opacity: 0.7;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.zone-label:hover, .zone-label.active { opacity: 1; transform: scale(1.05); }
-.zone-label.physical { background: #2196f3; color: white; }
-.zone-label.chemical { background: #e91e63; color: white; }
-
-.highlight-btns {
-  display: flex;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.hl-btn {
-  flex: 1;
-  padding: 12px 8px;
-  border: 2px solid #e0e0e0;
-  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  border-radius: 20px;
   font-size: 11px;
   font-weight: 600;
-  cursor: pointer;
-  background: #fafafa;
-  transition: all 0.2s ease;
+  color: white;
 }
 
-.hl-btn:active { transform: scale(0.95); }
-.hl-btn.physical.active { border-color: #2196f3; background: #e3f2fd; color: #1565c0; }
-.hl-btn.chemical.active { border-color: #e91e63; background: #fce4ec; color: #c2185b; }
-.hl-btn.both.active { border-color: #9c27b0; background: #f3e5f5; color: #7b1fa2; }
+.view-label.physical { background: #2196f3; }
+.view-label.chemical { background: #e91e63; }
 
-.changes-panel {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.change-card {
-  padding: 12px;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-
-.change-card.physical {
-  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-  border: 2px solid #90caf9;
-}
-
-.change-card.chemical {
-  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
-  border: 2px solid #f48fb1;
-}
-
-.change-card .title {
-  font-size: 11px;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.change-card.physical .title { color: #1565c0; }
-.change-card.chemical .title { color: #c2185b; }
-
-.change-card .items {
+.result-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  border-radius: 20px;
   font-size: 10px;
-  color: #37474f;
-  line-height: 1.6;
+  font-weight: 600;
 }
 
-.learning-panel {
-  background: linear-gradient(135deg, #efebe9 0%, #d7ccc8 100%);
+.result-badge.same { background: #4caf50; color: white; }
+.result-badge.new { background: #ff5722; color: white; }
+
+.explanation-box {
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.explanation-box.physical {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-left: 4px solid #2196f3;
+}
+
+.explanation-box.chemical {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+  border-left: 4px solid #e91e63;
+}
+
+.exp-title { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+.exp-title.physical { color: #1565c0; }
+.exp-title.chemical { color: #c2185b; }
+
+.exp-content { font-size: 11px; color: #37474f; line-height: 1.6; }
+
+.compare-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.compare-item {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.compare-item.before { background: #fff3e0; border: 2px solid #ffcc80; }
+.compare-item.after { background: #e8f5e9; border: 2px solid #a5d6a7; }
+.compare-item .label { font-weight: 600; color: #666; margin-bottom: 4px; }
+.compare-item .value { font-size: 20px; }
+.compare-item .text { font-weight: 600; color: #333; }
+
+.key-difference {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
   border-radius: 10px;
   padding: 12px;
   margin-top: 10px;
-  border-left: 3px solid #795548;
+  border-left: 4px solid #ff9800;
 }
 
-.learning-title { font-size: 12px; font-weight: 700; color: #5d4037; margin-bottom: 6px; }
-.learning-text { font-size: 11px; color: #37474f; line-height: 1.6; }
+.key-difference-title { font-size: 12px; font-weight: 700; color: #e65100; margin-bottom: 8px; }
 
-.takeaway {
-  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
-  border-radius: 10px;
-  padding: 12px;
-  margin-top: 10px;
-  border-left: 4px solid #9c27b0;
+.diff-table {
+  width: 100%;
+  font-size: 10px;
 }
 
-.takeaway-title { font-size: 12px; font-weight: 700; color: #7b1fa2; margin-bottom: 6px; }
-.takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
+.diff-table td {
+  padding: 6px;
+  border-bottom: 1px solid #ffcc80;
+}
+
+.diff-table td:first-child { font-weight: 600; width: 35%; }
+.diff-table .physical-col { color: #1565c0; }
+.diff-table .chemical-col { color: #c2185b; }
+
+@keyframes melt {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes drip {
+  0% { cy: 175; opacity: 1; }
+  100% { cy: 195; opacity: 0; }
+}
+
+@keyframes rise {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-60px); opacity: 0; }
+}
 
 @keyframes flame {
   0%, 100% { transform: scaleY(1) scaleX(1); }
   50% { transform: scaleY(1.1) scaleX(0.95); }
 }
 
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.melt-anim { animation: melt 1s ease-in-out infinite; }
+.drip-anim { animation: drip 2s ease-in infinite; }
+.rise-anim { animation: rise 2s ease-out infinite; }
 .flame-anim { animation: flame 0.3s ease-in-out infinite; }
-
-@keyframes drip {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(10px); opacity: 0; }
-}
-
-.drip { animation: drip 2s ease-in infinite; }
-
-@keyframes glow {
-  0%, 100% { filter: drop-shadow(0 0 5px #ff9800); }
-  50% { filter: drop-shadow(0 0 15px #ffeb3b); }
-}
-
-.glow { animation: glow 1s ease-in-out infinite; }
+.pulse-anim { animation: pulse 1s ease-in-out infinite; }
 </style>
 </head>
 
@@ -195,192 +218,338 @@ svg { width: 100%; height: 100%; }
 
 <div class="header">
   <h1>🕯️ The Burning Candle</h1>
-  <p>Both physical AND chemical changes!</p>
+  <p>See the difference between both changes!</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 Key Question</div>
   <div class="concept-text">
-    A burning candle shows <strong>both types of changes</strong>! Wax melting is <strong>physical</strong> (same substance, different state). Wax burning is <strong>chemical</strong> (new substances formed: CO₂, H₂O).
+    A candle shows <strong>both</strong> physical AND chemical changes. But what's the <strong>difference</strong>? Tap each button to see a zoomed view of each process!
   </div>
 </div>
 
 <div class="sim-card">
-  <div class="visual">
-    <div class="zone-labels">
-      <div class="zone-label physical" id="label-melt">💧 Melting Zone</div>
-      <div class="zone-label chemical" id="label-burn">🔥 Burning Zone</div>
-    </div>
-    <svg viewBox="0 0 400 280" id="scene">
-      <!-- Background glow -->
-      <circle cx="200" cy="100" r="80" fill="#ff9800" opacity="0.1" class="glow"/>
-      
-      <!-- Candle holder -->
-      <ellipse cx="200" cy="250" rx="50" ry="10" fill="#8d6e63"/>
-      <rect x="165" y="235" width="70" height="20" rx="3" fill="#a1887f"/>
-      
-      <!-- Candle body -->
-      <rect x="175" y="150" width="50" height="85" rx="3" fill="#fff9c4" id="candle-body"/>
-      <rect x="180" y="155" width="12" height="25" rx="2" fill="#fff" opacity="0.4"/>
-      
-      <!-- Melted wax pool (physical change zone) -->
-      <g id="melt-zone">
-        <ellipse cx="200" cy="152" rx="22" ry="6" fill="#ffecb3" opacity="0.8"/>
-        <!-- Dripping wax -->
-        <ellipse cx="215" cy="155" rx="4" ry="6" fill="#ffecb3" class="drip"/>
-        <ellipse cx="185" cy="157" rx="3" ry="5" fill="#ffecb3" class="drip" style="animation-delay:0.5s"/>
-      </g>
-      
-      <!-- Wick -->
-      <line x1="200" y1="150" x2="200" y2="130" stroke="#3e2723" stroke-width="3"/>
-      
-      <!-- Flame (chemical change zone) -->
-      <g id="burn-zone" class="flame-anim">
-        <!-- Outer flame (yellow) -->
-        <ellipse cx="200" cy="100" rx="15" ry="35" fill="#ff9800"/>
-        <!-- Middle flame -->
-        <ellipse cx="200" cy="105" rx="10" ry="28" fill="#ffeb3b"/>
-        <!-- Inner flame (blue base) -->
-        <ellipse cx="200" cy="125" rx="6" ry="10" fill="#4fc3f7"/>
-        <!-- Core (brightest) -->
-        <ellipse cx="200" cy="110" rx="5" ry="15" fill="#fff"/>
-      </g>
-      
-      <!-- Invisible products rising -->
-      <g id="products">
-        <text x="240" y="80" font-size="10" fill="#90a4ae" opacity="0.6">CO₂↑</text>
-        <text x="150" y="70" font-size="10" fill="#81d4fa" opacity="0.6">H₂O↑</text>
-      </g>
-      
-      <!-- Highlight zones (shown on hover/click) -->
-      <rect id="hl-physical" x="170" y="145" width="60" height="95" rx="5" fill="#2196f3" opacity="0" stroke="#2196f3" stroke-width="3" stroke-dasharray="5,3"/>
-      <rect id="hl-chemical" x="180" y="60" width="40" height="90" rx="20" fill="#e91e63" opacity="0" stroke="#e91e63" stroke-width="3" stroke-dasharray="5,3"/>
-      
-      <!-- Labels -->
-      <text x="280" y="120" font-size="9" fill="#e91e63">Chemical Change</text>
-      <text x="280" y="135" font-size="8" fill="#999">Wax → CO₂ + H₂O</text>
-      
-      <text x="280" y="180" font-size="9" fill="#2196f3">Physical Change</text>
-      <text x="280" y="195" font-size="8" fill="#999">Solid wax → Liquid wax</text>
-    </svg>
+  <div class="mode-tabs">
+    <button class="mode-tab physical active" onclick="showPhysical(this)">
+      💧 PHYSICAL<br><span style="font-size:9px">Wax Melting</span>
+    </button>
+    <button class="mode-tab chemical" onclick="showChemical(this)">
+      🔥 CHEMICAL<br><span style="font-size:9px">Wax Burning</span>
+    </button>
   </div>
   
-  <div class="highlight-btns">
-    <button class="hl-btn physical" id="btn-physical" onclick="highlightZone('physical', this)">
-      💧 Physical<br><span style="font-size:8px">Wax Melting</span>
-    </button>
-    <button class="hl-btn chemical" id="btn-chemical" onclick="highlightZone('chemical', this)">
-      🔥 Chemical<br><span style="font-size:8px">Wax Burning</span>
-    </button>
-    <button class="hl-btn both" id="btn-both" onclick="highlightZone('both', this)">
-      ⚡ Both<br><span style="font-size:8px">Together</span>
-    </button>
+  <div class="visual">
+    <div class="view-label physical" id="view-label">💧 Physical Change Zone</div>
+    <div class="result-badge same" id="result-badge">✓ SAME SUBSTANCE</div>
+    
+    <!-- Physical Change View -->
+    <svg viewBox="0 0 400 300" id="physical-view">
+      <!-- Background -->
+      <rect x="0" y="0" width="400" height="300" fill="#1a1a2e"/>
+      
+      <!-- Zoomed candle top showing melting -->
+      <text x="200" y="25" font-size="11" fill="#90a4ae" text-anchor="middle">🔍 Zoomed: Top of Candle</text>
+      
+      <!-- Heat waves from above -->
+      <g opacity="0.3">
+        <path d="M 150 50 Q 160 60 150 70" stroke="#ff9800" stroke-width="2" fill="none"/>
+        <path d="M 200 45 Q 210 55 200 65" stroke="#ff9800" stroke-width="2" fill="none"/>
+        <path d="M 250 50 Q 260 60 250 70" stroke="#ff9800" stroke-width="2" fill="none"/>
+      </g>
+      <text x="200" y="85" font-size="10" fill="#ff9800" text-anchor="middle">↓ HEAT from flame ↓</text>
+      
+      <!-- BEFORE: Solid wax block -->
+      <g id="solid-wax-group">
+        <text x="100" y="110" font-size="10" fill="#64b5f6" text-anchor="middle" font-weight="bold">BEFORE</text>
+        <rect x="60" y="120" width="80" height="60" rx="5" fill="#fff9c4" stroke="#ffd54f" stroke-width="2"/>
+        <text x="100" y="155" font-size="12" fill="#f57f17" text-anchor="middle" font-weight="bold">SOLID WAX</text>
+        <!-- Molecule arrangement (ordered) -->
+        <g transform="translate(65, 125)">
+          <circle cx="10" cy="10" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
+          <circle cx="25" cy="10" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
+          <circle cx="40" cy="10" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
+          <circle cx="55" cy="10" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
+          <circle cx="10" cy="25" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
+          <circle cx="25" cy="25" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
+          <circle cx="40" cy="25" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
+          <circle cx="55" cy="25" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
+        </g>
+        <text x="100" y="195" font-size="8" fill="#aaa" text-anchor="middle">Molecules packed tightly</text>
+      </g>
+      
+      <!-- Arrow -->
+      <g>
+        <line x1="155" y1="150" x2="235" y2="150" stroke="#4caf50" stroke-width="4" marker-end="url(#arrowhead)"/>
+        <text x="195" y="140" font-size="10" fill="#4caf50" text-anchor="middle" font-weight="bold">+ HEAT</text>
+      </g>
+      
+      <!-- AFTER: Liquid wax pool -->
+      <g id="liquid-wax-group">
+        <text x="300" y="110" font-size="10" fill="#64b5f6" text-anchor="middle" font-weight="bold">AFTER</text>
+        <ellipse cx="300" cy="160" rx="50" ry="25" fill="#fff9c4" stroke="#ffd54f" stroke-width="2" class="melt-anim"/>
+        <text x="300" y="165" font-size="12" fill="#f57f17" text-anchor="middle" font-weight="bold">LIQUID WAX</text>
+        <!-- Molecule arrangement (loose but same color!) -->
+        <g transform="translate(260, 140)" class="melt-anim">
+          <circle cx="8" cy="5" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
+          <circle cx="28" cy="12" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
+          <circle cx="50" cy="8" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
+          <circle cx="70" cy="15" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
+          <circle cx="15" cy="28" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
+          <circle cx="38" cy="32" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
+          <circle cx="60" cy="25" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
+        </g>
+        <text x="300" y="200" font-size="8" fill="#aaa" text-anchor="middle">Same molecules, just moving freely!</text>
+      </g>
+      
+      <!-- Key point box -->
+      <rect x="80" y="220" width="240" height="55" rx="10" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+      <text x="200" y="240" font-size="11" fill="#1565c0" text-anchor="middle" font-weight="bold">✓ SAME YELLOW MOLECULES!</text>
+      <text x="200" y="255" font-size="9" fill="#37474f" text-anchor="middle">Wax is still wax - only the state changed</text>
+      <text x="200" y="268" font-size="9" fill="#4caf50" text-anchor="middle" font-weight="bold">Can be reversed: Cool it → Solid again!</text>
+      
+      <!-- Arrow marker -->
+      <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#4caf50"/>
+        </marker>
+        <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#f44336"/>
+        </marker>
+      </defs>
+    </svg>
+    
+    <!-- Chemical Change View -->
+    <svg viewBox="0 0 400 300" id="chemical-view" style="display:none">
+      <!-- Background -->
+      <rect x="0" y="0" width="400" height="300" fill="#1a1a2e"/>
+      
+      <!-- Zoomed flame showing burning -->
+      <text x="200" y="25" font-size="11" fill="#90a4ae" text-anchor="middle">🔍 Zoomed: Inside the Flame</text>
+      
+      <!-- BEFORE: Wax vapor molecules -->
+      <g id="wax-vapor-group">
+        <text x="100" y="55" font-size="10" fill="#f48fb1" text-anchor="middle" font-weight="bold">BEFORE</text>
+        
+        <!-- Wax molecule (hydrocarbon) -->
+        <g transform="translate(60, 70)">
+          <rect x="0" y="0" width="80" height="50" rx="8" fill="#fff9c4" stroke="#ffd54f" stroke-width="2"/>
+          <circle cx="20" cy="25" r="10" fill="#ffeb3b" stroke="#ffc107" stroke-width="2"/>
+          <circle cx="40" cy="25" r="10" fill="#ffeb3b" stroke="#ffc107" stroke-width="2"/>
+          <circle cx="60" cy="25" r="10" fill="#ffeb3b" stroke="#ffc107" stroke-width="2"/>
+          <text x="40" y="30" font-size="8" fill="#795548" text-anchor="middle">C-C-C</text>
+        </g>
+        <text x="100" y="135" font-size="9" fill="#ffd54f" text-anchor="middle" font-weight="bold">WAX VAPOR</text>
+        <text x="100" y="148" font-size="8" fill="#aaa" text-anchor="middle">(Hydrocarbons)</text>
+        
+        <!-- Plus sign -->
+        <text x="170" y="100" font-size="24" fill="#fff" font-weight="bold">+</text>
+        
+        <!-- Oxygen molecules -->
+        <g transform="translate(190, 70)">
+          <rect x="0" y="0" width="60" height="50" rx="8" fill="#e3f2fd" stroke="#64b5f6" stroke-width="2"/>
+          <circle cx="20" cy="25" r="12" fill="#64b5f6"/>
+          <circle cx="40" cy="25" r="12" fill="#64b5f6"/>
+          <text x="30" y="30" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">O₂</text>
+        </g>
+        <text x="220" y="135" font-size="9" fill="#64b5f6" text-anchor="middle" font-weight="bold">OXYGEN</text>
+        <text x="220" y="148" font-size="8" fill="#aaa" text-anchor="middle">(From air)</text>
+      </g>
+      
+      <!-- Flame/reaction zone -->
+      <g transform="translate(280, 60)">
+        <ellipse cx="40" cy="35" rx="35" ry="45" fill="#ff9800" opacity="0.6" class="flame-anim"/>
+        <ellipse cx="40" cy="40" rx="25" ry="35" fill="#ffeb3b" opacity="0.8" class="flame-anim"/>
+        <text x="40" y="45" font-size="20" text-anchor="middle">🔥</text>
+        <text x="40" y="100" font-size="8" fill="#ff9800" text-anchor="middle">REACTION!</text>
+      </g>
+      
+      <!-- Arrow pointing down -->
+      <line x1="200" y1="160" x2="200" y2="190" stroke="#f44336" stroke-width="4" marker-end="url(#arrowhead-red)"/>
+      <text x="200" y="175" font-size="9" fill="#f44336" text-anchor="middle" font-weight="bold" dx="40">Chemical</text>
+      <text x="200" y="185" font-size="9" fill="#f44336" text-anchor="middle" font-weight="bold" dx="40">Reaction!</text>
+      
+      <!-- AFTER: New products -->
+      <g id="products-group">
+        <text x="200" y="205" font-size="10" fill="#f48fb1" text-anchor="middle" font-weight="bold">AFTER - NEW SUBSTANCES!</text>
+        
+        <!-- CO2 molecule -->
+        <g transform="translate(70, 215)" class="rise-anim">
+          <rect x="0" y="0" width="70" height="40" rx="8" fill="#ffebee" stroke="#ef9a9a" stroke-width="2"/>
+          <circle cx="20" cy="20" r="10" fill="#ef5350"/>
+          <circle cx="35" cy="20" r="8" fill="#424242"/>
+          <circle cx="50" cy="20" r="10" fill="#ef5350"/>
+          <text x="35" y="24" font-size="7" fill="#fff" text-anchor="middle">CO₂</text>
+        </g>
+        <text x="105" y="270" font-size="8" fill="#ef5350" text-anchor="middle" font-weight="bold">Carbon Dioxide</text>
+        
+        <!-- Plus -->
+        <text x="165" y="240" font-size="18" fill="#fff">+</text>
+        
+        <!-- H2O molecule -->
+        <g transform="translate(185, 215)" class="rise-anim" style="animation-delay:0.5s">
+          <rect x="0" y="0" width="60" height="40" rx="8" fill="#e3f2fd" stroke="#90caf9" stroke-width="2"/>
+          <circle cx="15" cy="20" r="8" fill="#2196f3"/>
+          <circle cx="30" cy="15" r="6" fill="#fff"/>
+          <circle cx="45" cy="20" r="6" fill="#fff"/>
+          <text x="30" y="24" font-size="7" fill="#1565c0" text-anchor="middle">H₂O</text>
+        </g>
+        <text x="215" y="270" font-size="8" fill="#2196f3" text-anchor="middle" font-weight="bold">Water Vapor</text>
+        
+        <!-- Plus -->
+        <text x="270" y="240" font-size="18" fill="#fff">+</text>
+        
+        <!-- Energy -->
+        <g transform="translate(290, 215)">
+          <rect x="0" y="0" width="60" height="40" rx="8" fill="#fff3e0" stroke="#ffb74d" stroke-width="2" class="pulse-anim"/>
+          <text x="30" y="20" font-size="16" text-anchor="middle">💡🔥</text>
+        </g>
+        <text x="320" y="270" font-size="8" fill="#ff9800" text-anchor="middle" font-weight="bold">Light + Heat</text>
+      </g>
+      
+      <!-- Key point -->
+      <rect x="60" y="275" width="280" height="20" rx="5" fill="#fce4ec" stroke="#e91e63" stroke-width="2"/>
+      <text x="200" y="289" font-size="9" fill="#c2185b" text-anchor="middle" font-weight="bold">✗ DIFFERENT molecules! Cannot get wax back!</text>
+    </svg>
   </div>
 </div>
 
-<div class="changes-panel">
-  <div class="change-card physical">
-    <div class="title">💧 Physical Changes</div>
-    <div class="items">
-      • Solid wax <strong>melts</strong> to liquid<br>
-      • Liquid wax <strong>evaporates</strong><br>
-      • Same substance (wax)<br>
-      • Reversible
+<div class="explanation-box physical" id="explanation-box">
+  <div class="exp-title physical" id="exp-title">💧 Physical Change: Wax Melting</div>
+  <div class="exp-content" id="exp-content">
+    Heat from the flame <strong>melts solid wax into liquid</strong>. The molecules move faster and spread apart, but they are still <strong>the same wax molecules</strong>!
+  </div>
+  <div class="compare-row">
+    <div class="compare-item before">
+      <div class="label">Before</div>
+      <div class="value">🟨</div>
+      <div class="text">Solid Wax</div>
+    </div>
+    <div class="compare-item after">
+      <div class="label">After</div>
+      <div class="value">🟨</div>
+      <div class="text">Liquid Wax</div>
     </div>
   </div>
-  <div class="change-card chemical">
-    <div class="title">🔥 Chemical Changes</div>
-    <div class="items">
-      • Wax vapor <strong>burns</strong><br>
-      • Produces <strong>CO₂ + H₂O</strong><br>
-      • New substances formed<br>
-      • Irreversible
-    </div>
+  <div style="text-align:center; margin-top:8px; font-size:11px; color:#4caf50; font-weight:600;">
+    ✓ Same color = Same substance! Reversible!
   </div>
 </div>
 
-<div class="learning-panel">
-  <div class="learning-title">🔬 The Journey of Wax</div>
-  <div class="learning-text" id="learning-text">
-    <strong>Step 1 (Physical):</strong> Heat melts solid wax into liquid<br>
-    <strong>Step 2 (Physical):</strong> Liquid wax travels up the wick<br>
-    <strong>Step 3 (Physical):</strong> Wax evaporates into vapor<br>
-    <strong>Step 4 (Chemical):</strong> Wax vapor burns with oxygen, producing light, heat, CO₂, and water vapor!
-  </div>
-</div>
-
-<div class="takeaway">
-  <div class="takeaway-title">🎯 Michael Faraday's Discovery</div>
-  <div class="takeaway-text">
-    The famous scientist <strong>Michael Faraday</strong> gave a series of lectures called "The Chemical History of a Candle" to explain these concepts!<br><br>
-    A simple candle demonstrates both <strong>physical changes</strong> (melting, evaporation) and <strong>chemical changes</strong> (combustion) happening together.
-  </div>
+<div class="key-difference">
+  <div class="key-difference-title">🎯 THE KEY DIFFERENCE</div>
+  <table class="diff-table">
+    <tr>
+      <td></td>
+      <td class="physical-col">💧 Physical</td>
+      <td class="chemical-col">🔥 Chemical</td>
+    </tr>
+    <tr>
+      <td>What changes?</td>
+      <td class="physical-col">Only state/form</td>
+      <td class="chemical-col">The substance itself</td>
+    </tr>
+    <tr>
+      <td>New substance?</td>
+      <td class="physical-col">❌ No</td>
+      <td class="chemical-col">✅ Yes (CO₂, H₂O)</td>
+    </tr>
+    <tr>
+      <td>Reversible?</td>
+      <td class="physical-col">✅ Yes (cool it)</td>
+      <td class="chemical-col">❌ No (wax is gone!)</td>
+    </tr>
+    <tr>
+      <td>Molecules?</td>
+      <td class="physical-col">Same molecules</td>
+      <td class="chemical-col">Different molecules</td>
+    </tr>
+  </table>
 </div>
 
 </div>
 
 <script>
-const hlPhysical = document.getElementById('hl-physical');
-const hlChemical = document.getElementById('hl-chemical');
-const labelMelt = document.getElementById('label-melt');
-const labelBurn = document.getElementById('label-burn');
+const viewLabel = document.getElementById('view-label');
+const resultBadge = document.getElementById('result-badge');
+const physicalView = document.getElementById('physical-view');
+const chemicalView = document.getElementById('chemical-view');
+const explanationBox = document.getElementById('explanation-box');
+const expTitle = document.getElementById('exp-title');
+const expContent = document.getElementById('exp-content');
 
-function highlightZone(zone, btn) {
-  // Reset all buttons
-  document.querySelectorAll('.hl-btn').forEach(b => b.classList.remove('active'));
+function showPhysical(btn) {
+  document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   
-  // Reset highlights
-  hlPhysical.setAttribute('opacity', '0');
-  hlChemical.setAttribute('opacity', '0');
-  labelMelt.classList.remove('active');
-  labelBurn.classList.remove('active');
+  physicalView.style.display = 'block';
+  chemicalView.style.display = 'none';
   
-  if (zone === 'physical' || zone === 'both') {
-    hlPhysical.setAttribute('opacity', '0.2');
-    labelMelt.classList.add('active');
-  }
+  viewLabel.textContent = '💧 Physical Change Zone';
+  viewLabel.className = 'view-label physical';
   
-  if (zone === 'chemical' || zone === 'both') {
-    hlChemical.setAttribute('opacity', '0.2');
-    labelBurn.classList.add('active');
-  }
+  resultBadge.textContent = '✓ SAME SUBSTANCE';
+  resultBadge.className = 'result-badge same';
   
-  // Update learning text
-  const learningText = document.getElementById('learning-text');
+  explanationBox.className = 'explanation-box physical';
+  expTitle.className = 'exp-title physical';
+  expTitle.textContent = '💧 Physical Change: Wax Melting';
+  expContent.innerHTML = `
+    Heat from the flame <strong>melts solid wax into liquid</strong>. The molecules move faster and spread apart, but they are still <strong>the same wax molecules</strong>!
+  `;
   
-  if (zone === 'physical') {
-    learningText.innerHTML = `
-      <strong style="color:#1565c0">💧 Physical Changes in a Candle:</strong><br><br>
-      • <strong>Melting:</strong> Solid wax turns to liquid near the flame (change of state)<br>
-      • <strong>Capillary action:</strong> Liquid wax climbs up the wick<br>
-      • <strong>Evaporation:</strong> Liquid wax turns to vapor<br><br>
-      The wax molecules stay the same - only their arrangement changes. If you cool the liquid wax, it becomes solid again!
-    `;
-  } else if (zone === 'chemical') {
-    learningText.innerHTML = `
-      <strong style="color:#c2185b">🔥 Chemical Change in a Candle:</strong><br><br>
-      • Wax vapor (hydrocarbons) reacts with oxygen<br>
-      • <strong>Products:</strong> Carbon dioxide (CO₂) + Water (H₂O)<br>
-      • <strong>Energy released:</strong> Heat and light<br><br>
-      The wax is converted into completely different substances. You cannot turn CO₂ and water back into candle wax!
-    `;
-  } else {
-    learningText.innerHTML = `
-      <strong style="color:#7b1fa2">⚡ Both Changes Working Together:</strong><br><br>
-      <strong>Physical → Chemical → Energy</strong><br><br>
-      1. Heat melts wax (physical)<br>
-      2. Liquid rises up wick (physical)<br>
-      3. Wax evaporates (physical)<br>
-      4. Vapor burns with O₂ (chemical)<br>
-      5. Produces light & heat (energy)<br><br>
-      This continuous cycle keeps the candle burning!
-    `;
-  }
+  document.querySelector('.compare-row').innerHTML = `
+    <div class="compare-item before">
+      <div class="label">Before</div>
+      <div class="value">🟨</div>
+      <div class="text">Solid Wax</div>
+    </div>
+    <div class="compare-item after">
+      <div class="label">After</div>
+      <div class="value">🟨</div>
+      <div class="text">Liquid Wax</div>
+    </div>
+  `;
+  
+  document.querySelector('.explanation-box div:last-child').innerHTML = '✓ Same color = Same substance! Reversible!';
+  document.querySelector('.explanation-box div:last-child').style.color = '#4caf50';
 }
 
-// Initialize with both highlighted
-highlightZone('both', document.getElementById('btn-both'));
+function showChemical(btn) {
+  document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  
+  physicalView.style.display = 'none';
+  chemicalView.style.display = 'block';
+  
+  viewLabel.textContent = '🔥 Chemical Change Zone';
+  viewLabel.className = 'view-label chemical';
+  
+  resultBadge.textContent = '✗ NEW SUBSTANCES';
+  resultBadge.className = 'result-badge new';
+  
+  explanationBox.className = 'explanation-box chemical';
+  expTitle.className = 'exp-title chemical';
+  expTitle.textContent = '🔥 Chemical Change: Wax Burning';
+  expContent.innerHTML = `
+    Wax vapor reacts with oxygen in a <strong>chemical reaction</strong>. The wax molecules are <strong>completely transformed</strong> into different substances: carbon dioxide and water vapor!
+  `;
+  
+  document.querySelector('.compare-row').innerHTML = `
+    <div class="compare-item before">
+      <div class="label">Before</div>
+      <div class="value">🟨 + 🔵</div>
+      <div class="text">Wax + O₂</div>
+    </div>
+    <div class="compare-item after">
+      <div class="label">After</div>
+      <div class="value">⚪ + 💧</div>
+      <div class="text">CO₂ + H₂O</div>
+    </div>
+  `;
+  
+  document.querySelector('.explanation-box div:last-child').innerHTML = '✗ Different colors = Different substances! Irreversible!';
+  document.querySelector('.explanation-box div:last-child').style.color = '#c62828';
+}
 </script>
 </body>
 </html>
