@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#795548">
+<title>Burning Candle – Physical & Chemical Changes</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #795548 0%, #a1887f 100%);
+  min-height: 100vh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+#app {
+  max-width: 420px;
+  margin: auto;
+  padding: 10px;
+}
+
+.header {
+  text-align: center;
+  color: #fff;
+  padding: 12px;
+}
+
+.header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.header p { font-size: 12px; opacity: 0.95; }
+
+.concept-card {
+  background: linear-gradient(135deg, #efebe9 0%, #d7ccc8 100%);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 4px solid #795548;
+}
+
+.concept-title { font-size: 12px; font-weight: 700; color: #5d4037; margin-bottom: 6px; }
+.concept-text { font-size: 12px; color: #37474f; line-height: 1.5; }
+
+.sim-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-bottom: 10px;
+}
+
+.visual {
+  position: relative;
+  height: 40vh;
+  min-height: 280px;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+svg { width: 100%; height: 100%; }
+
+.zone-labels {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.zone-label {
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 9px;
+  font-weight: 600;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.zone-label:hover, .zone-label.active { opacity: 1; transform: scale(1.05); }
+.zone-label.physical { background: #2196f3; color: white; }
+.zone-label.chemical { background: #e91e63; color: white; }
+
+.highlight-btns {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.hl-btn {
+  flex: 1;
+  padding: 12px 8px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #fafafa;
+  transition: all 0.2s ease;
+}
+
+.hl-btn:active { transform: scale(0.95); }
+.hl-btn.physical.active { border-color: #2196f3; background: #e3f2fd; color: #1565c0; }
+.hl-btn.chemical.active { border-color: #e91e63; background: #fce4ec; color: #c2185b; }
+.hl-btn.both.active { border-color: #9c27b0; background: #f3e5f5; color: #7b1fa2; }
+
+.changes-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.change-card {
+  padding: 12px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.change-card.physical {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border: 2px solid #90caf9;
+}
+
+.change-card.chemical {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+  border: 2px solid #f48fb1;
+}
+
+.change-card .title {
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.change-card.physical .title { color: #1565c0; }
+.change-card.chemical .title { color: #c2185b; }
+
+.change-card .items {
+  font-size: 10px;
+  color: #37474f;
+  line-height: 1.6;
+}
+
+.learning-panel {
+  background: linear-gradient(135deg, #efebe9 0%, #d7ccc8 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 3px solid #795548;
+}
+
+.learning-title { font-size: 12px; font-weight: 700; color: #5d4037; margin-bottom: 6px; }
+.learning-text { font-size: 11px; color: #37474f; line-height: 1.6; }
+
+.takeaway {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #9c27b0;
+}
+
+.takeaway-title { font-size: 12px; font-weight: 700; color: #7b1fa2; margin-bottom: 6px; }
+.takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
+
+@keyframes flame {
+  0%, 100% { transform: scaleY(1) scaleX(1); }
+  50% { transform: scaleY(1.1) scaleX(0.95); }
+}
+
+.flame-anim { animation: flame 0.3s ease-in-out infinite; }
+
+@keyframes drip {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(10px); opacity: 0; }
+}
+
+.drip { animation: drip 2s ease-in infinite; }
+
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 5px #ff9800); }
+  50% { filter: drop-shadow(0 0 15px #ffeb3b); }
+}
+
+.glow { animation: glow 1s ease-in-out infinite; }
+</style>
+</head>
+
+<body>
+<div id="app">
+
+<div class="header">
+  <h1>🕯️ The Burning Candle</h1>
+  <p>Both physical AND chemical changes!</p>
+</div>
+
+<div class="concept-card">
+  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-text">
+    A burning candle shows <strong>both types of changes</strong>! Wax melting is <strong>physical</strong> (same substance, different state). Wax burning is <strong>chemical</strong> (new substances formed: CO₂, H₂O).
+  </div>
+</div>
+
+<div class="sim-card">
+  <div class="visual">
+    <div class="zone-labels">
+      <div class="zone-label physical" id="label-melt">💧 Melting Zone</div>
+      <div class="zone-label chemical" id="label-burn">🔥 Burning Zone</div>
+    </div>
+    <svg viewBox="0 0 400 280" id="scene">
+      <!-- Background glow -->
+      <circle cx="200" cy="100" r="80" fill="#ff9800" opacity="0.1" class="glow"/>
+      
+      <!-- Candle holder -->
+      <ellipse cx="200" cy="250" rx="50" ry="10" fill="#8d6e63"/>
+      <rect x="165" y="235" width="70" height="20" rx="3" fill="#a1887f"/>
+      
+      <!-- Candle body -->
+      <rect x="175" y="150" width="50" height="85" rx="3" fill="#fff9c4" id="candle-body"/>
+      <rect x="180" y="155" width="12" height="25" rx="2" fill="#fff" opacity="0.4"/>
+      
+      <!-- Melted wax pool (physical change zone) -->
+      <g id="melt-zone">
+        <ellipse cx="200" cy="152" rx="22" ry="6" fill="#ffecb3" opacity="0.8"/>
+        <!-- Dripping wax -->
+        <ellipse cx="215" cy="155" rx="4" ry="6" fill="#ffecb3" class="drip"/>
+        <ellipse cx="185" cy="157" rx="3" ry="5" fill="#ffecb3" class="drip" style="animation-delay:0.5s"/>
+      </g>
+      
+      <!-- Wick -->
+      <line x1="200" y1="150" x2="200" y2="130" stroke="#3e2723" stroke-width="3"/>
+      
+      <!-- Flame (chemical change zone) -->
+      <g id="burn-zone" class="flame-anim">
+        <!-- Outer flame (yellow) -->
+        <ellipse cx="200" cy="100" rx="15" ry="35" fill="#ff9800"/>
+        <!-- Middle flame -->
+        <ellipse cx="200" cy="105" rx="10" ry="28" fill="#ffeb3b"/>
+        <!-- Inner flame (blue base) -->
+        <ellipse cx="200" cy="125" rx="6" ry="10" fill="#4fc3f7"/>
+        <!-- Core (brightest) -->
+        <ellipse cx="200" cy="110" rx="5" ry="15" fill="#fff"/>
+      </g>
+      
+      <!-- Invisible products rising -->
+      <g id="products">
+        <text x="240" y="80" font-size="10" fill="#90a4ae" opacity="0.6">CO₂↑</text>
+        <text x="150" y="70" font-size="10" fill="#81d4fa" opacity="0.6">H₂O↑</text>
+      </g>
+      
+      <!-- Highlight zones (shown on hover/click) -->
+      <rect id="hl-physical" x="170" y="145" width="60" height="95" rx="5" fill="#2196f3" opacity="0" stroke="#2196f3" stroke-width="3" stroke-dasharray="5,3"/>
+      <rect id="hl-chemical" x="180" y="60" width="40" height="90" rx="20" fill="#e91e63" opacity="0" stroke="#e91e63" stroke-width="3" stroke-dasharray="5,3"/>
+      
+      <!-- Labels -->
+      <text x="280" y="120" font-size="9" fill="#e91e63">Chemical Change</text>
+      <text x="280" y="135" font-size="8" fill="#999">Wax → CO₂ + H₂O</text>
+      
+      <text x="280" y="180" font-size="9" fill="#2196f3">Physical Change</text>
+      <text x="280" y="195" font-size="8" fill="#999">Solid wax → Liquid wax</text>
+    </svg>
+  </div>
+  
+  <div class="highlight-btns">
+    <button class="hl-btn physical" id="btn-physical" onclick="highlightZone('physical', this)">
+      💧 Physical<br><span style="font-size:8px">Wax Melting</span>
+    </button>
+    <button class="hl-btn chemical" id="btn-chemical" onclick="highlightZone('chemical', this)">
+      🔥 Chemical<br><span style="font-size:8px">Wax Burning</span>
+    </button>
+    <button class="hl-btn both" id="btn-both" onclick="highlightZone('both', this)">
+      ⚡ Both<br><span style="font-size:8px">Together</span>
+    </button>
+  </div>
+</div>
+
+<div class="changes-panel">
+  <div class="change-card physical">
+    <div class="title">💧 Physical Changes</div>
+    <div class="items">
+      • Solid wax <strong>melts</strong> to liquid<br>
+      • Liquid wax <strong>evaporates</strong><br>
+      • Same substance (wax)<br>
+      • Reversible
+    </div>
+  </div>
+  <div class="change-card chemical">
+    <div class="title">🔥 Chemical Changes</div>
+    <div class="items">
+      • Wax vapor <strong>burns</strong><br>
+      • Produces <strong>CO₂ + H₂O</strong><br>
+      • New substances formed<br>
+      • Irreversible
+    </div>
+  </div>
+</div>
+
+<div class="learning-panel">
+  <div class="learning-title">🔬 The Journey of Wax</div>
+  <div class="learning-text" id="learning-text">
+    <strong>Step 1 (Physical):</strong> Heat melts solid wax into liquid<br>
+    <strong>Step 2 (Physical):</strong> Liquid wax travels up the wick<br>
+    <strong>Step 3 (Physical):</strong> Wax evaporates into vapor<br>
+    <strong>Step 4 (Chemical):</strong> Wax vapor burns with oxygen, producing light, heat, CO₂, and water vapor!
+  </div>
+</div>
+
+<div class="takeaway">
+  <div class="takeaway-title">🎯 Michael Faraday's Discovery</div>
+  <div class="takeaway-text">
+    The famous scientist <strong>Michael Faraday</strong> gave a series of lectures called "The Chemical History of a Candle" to explain these concepts!<br><br>
+    A simple candle demonstrates both <strong>physical changes</strong> (melting, evaporation) and <strong>chemical changes</strong> (combustion) happening together.
+  </div>
+</div>
+
+</div>
+
+<script>
+const hlPhysical = document.getElementById('hl-physical');
+const hlChemical = document.getElementById('hl-chemical');
+const labelMelt = document.getElementById('label-melt');
+const labelBurn = document.getElementById('label-burn');
+
+function highlightZone(zone, btn) {
+  // Reset all buttons
+  document.querySelectorAll('.hl-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  
+  // Reset highlights
+  hlPhysical.setAttribute('opacity', '0');
+  hlChemical.setAttribute('opacity', '0');
+  labelMelt.classList.remove('active');
+  labelBurn.classList.remove('active');
+  
+  if (zone === 'physical' || zone === 'both') {
+    hlPhysical.setAttribute('opacity', '0.2');
+    labelMelt.classList.add('active');
+  }
+  
+  if (zone === 'chemical' || zone === 'both') {
+    hlChemical.setAttribute('opacity', '0.2');
+    labelBurn.classList.add('active');
+  }
+  
+  // Update learning text
+  const learningText = document.getElementById('learning-text');
+  
+  if (zone === 'physical') {
+    learningText.innerHTML = `
+      <strong style="color:#1565c0">💧 Physical Changes in a Candle:</strong><br><br>
+      • <strong>Melting:</strong> Solid wax turns to liquid near the flame (change of state)<br>
+      • <strong>Capillary action:</strong> Liquid wax climbs up the wick<br>
+      • <strong>Evaporation:</strong> Liquid wax turns to vapor<br><br>
+      The wax molecules stay the same - only their arrangement changes. If you cool the liquid wax, it becomes solid again!
+    `;
+  } else if (zone === 'chemical') {
+    learningText.innerHTML = `
+      <strong style="color:#c2185b">🔥 Chemical Change in a Candle:</strong><br><br>
+      • Wax vapor (hydrocarbons) reacts with oxygen<br>
+      • <strong>Products:</strong> Carbon dioxide (CO₂) + Water (H₂O)<br>
+      • <strong>Energy released:</strong> Heat and light<br><br>
+      The wax is converted into completely different substances. You cannot turn CO₂ and water back into candle wax!
+    `;
+  } else {
+    learningText.innerHTML = `
+      <strong style="color:#7b1fa2">⚡ Both Changes Working Together:</strong><br><br>
+      <strong>Physical → Chemical → Energy</strong><br><br>
+      1. Heat melts wax (physical)<br>
+      2. Liquid rises up wick (physical)<br>
+      3. Wax evaporates (physical)<br>
+      4. Vapor burns with O₂ (chemical)<br>
+      5. Produces light & heat (energy)<br><br>
+      This continuous cycle keeps the candle burning!
+    `;
+  }
+}
+
+// Initialize with both highlighted
+highlightZone('both', document.getElementById('btn-both'));
+</script>
+</body>
+</html>
