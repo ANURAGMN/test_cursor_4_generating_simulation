@@ -1,0 +1,147 @@
+{
+    "unit_name": "Changes Around Us: Physical and Chemical",
+    "topics": [
+        {
+            "topic_name": "Introduction to Changes",
+            "concepts": [
+                {
+                    "concept_name": "Observing Changes",
+                    "summary": "We see many changes around us, like ice melting, buds blooming, water warming, or bananas ripening. Changes can be in size, shape, smell, or other properties.",
+                    "details": "Changes are observed using our senses. Examples include melting ice, chopping vegetables, boiling water, and burning wood.",
+                    "examples": [
+                        "Melting ice cubes",
+                        "Banana developing brown spots"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Physical Changes",
+            "concepts": [
+                {
+                    "concept_name": "Definition of Physical Change",
+                    "summary": "A physical change is when a substance changes its appearance (like shape, size, or state) but no new substance is formed. The material remains the same.",
+                    "details": "Examples: folding paper, inflating/deflating a balloon, crushing chalk. Water changing states (ice, water, steam) is also a physical change.",
+                    "examples": [
+                        "Folding paper into objects",
+                        "Crushing chalk into powder"
+                    ]
+                },
+                {
+                    "concept_name": "Reversibility of Physical Changes",
+                    "summary": "Many physical changes can be reversed, meaning you can get back the original substance. Melting ice and boiling water are reversible.",
+                    "details": "Reversible changes: ice can refreeze, water vapor can condense. Irreversible physical changes: chopping vegetables (cannot be un-chopped).",
+                    "examples": [
+                        "Melting ice (reversible)",
+                        "Chopping vegetables (irreversible)"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Chemical Changes",
+            "concepts": [
+                {
+                    "concept_name": "Definition of Chemical Change",
+                    "summary": "A chemical change is when one or more new substances are formed. This involves a chemical reaction and often cannot be easily reversed.",
+                    "details": "Formation of a new substance is key. Examples: lime water turning milky due to carbon dioxide, vinegar and baking soda producing bubbles.",
+                    "examples": [
+                        "Lime water turning milky",
+                        "Vinegar + baking soda → carbon dioxide"
+                    ]
+                },
+                {
+                    "concept_name": "Rusting",
+                    "summary": "Rusting is a chemical change where iron reacts with oxygen and water to form iron oxide (rust), a new brown substance.",
+                    "details": "Discussed in the Metals and Non-metals chapter. Rusting damages iron objects and is a type of corrosion.",
+                    "examples": [
+                        "Brown deposits on iron nails"
+                    ]
+                },
+                {
+                    "concept_name": "Combustion",
+                    "summary": "Combustion is a chemical reaction where a substance reacts with oxygen, producing heat and light. It involves the formation of new substances.",
+                    "details": "Example: burning magnesium ribbon produces magnesium oxide, heat, and light. Requires fuel, oxygen, and heat (ignition temperature).",
+                    "examples": [
+                        "Burning magnesium ribbon",
+                        "Candle burning"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Requirements for Combustion",
+            "concepts": [
+                {
+                    "concept_name": "Fire Triangle",
+                    "summary": "Combustion requires three things: a combustible substance (fuel), oxygen, and heat to reach the ignition temperature.",
+                    "details": "Ignition temperature is the lowest temperature at which a substance catches fire. Paper catches fire when heated by sunrays focused through a magnifying glass.",
+                    "examples": [
+                        "Lighted matchstick ignites paper",
+                        "Sunrays focused on paper cause burning"
+                    ]
+                },
+                {
+                    "concept_name": "Role of Oxygen",
+                    "summary": "Oxygen from air is essential for combustion. A candle stops burning when covered because oxygen supply is cut off.",
+                    "details": "The covered candle flame extinguishes due to lack of oxygen. The gas produced (carbon dioxide) can be tested with lime water.",
+                    "examples": [
+                        "Candle under glass tumbler stops burning"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Complex Changes: Physical and Chemical Together",
+            "concepts": [
+                {
+                    "concept_name": "Burning of a Candle",
+                    "summary": "Burning a candle involves both physical and chemical changes. Wax melts and evaporates (physical), and wax vapor burns to produce flame and new substances (chemical).",
+                    "details": "Michael Faraday used the candle to explain scientific processes. Melting, solidification, and evaporation are physical; combustion is chemical.",
+                    "examples": [
+                        "Wax melting (physical)",
+                        "Wax vapor burning (chemical)"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Desirability and Impact of Changes",
+            "concepts": [
+                {
+                    "concept_name": "Desirable and Undesirable Changes",
+                    "summary": "Some changes are useful (desirable), like making curd or cooking food. Others are harmful (undesirable), like rusting or food decay.",
+                    "details": "A change can be desirable in one context (composting food waste) and undesirable in another (food spoilage). Human activities can cause long-term environmental changes.",
+                    "examples": [
+                        "Milk to curd (desirable)",
+                        "Rusting of iron (undesirable)",
+                        "Composting (desirable)"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Slow Natural Changes",
+            "concepts": [
+                {
+                    "concept_name": "Weathering of Rocks",
+                    "summary": "Weathering is the breakdown of rocks into smaller pieces by physical forces (temperature, roots, ice) and chemical reactions (water, air).",
+                    "details": "Physical weathering breaks rocks; chemical weathering changes composition (e.g., iron in basalt forms iron oxide, turning it red). Leads to soil formation.",
+                    "examples": [
+                        "Sediments at cliff base",
+                        "Red layer on basalt rock"
+                    ]
+                },
+                {
+                    "concept_name": "Erosion",
+                    "summary": "Erosion is the movement of rock pieces, soil, and sediments by wind or water. It is a physical change that smoothens rocks and deposits sediments.",
+                    "details": "Erosion transports material; when water/wind slows, sediments settle and harden into new rock over thousands of years. Irreversible.",
+                    "examples": [
+                        "Smooth river pebbles",
+                        "Sand on riverbeds"
+                    ]
+                }
+            ]
+        }
+    ]
+}
