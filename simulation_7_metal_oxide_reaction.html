@@ -229,12 +229,6 @@ svg { width: 100%; height: 100%; }
 
 .flame { animation: flame 0.2s ease-in-out infinite; }
 
-@keyframes dissolve {
-  0% { opacity: 1; transform: scale(1); }
-  100% { opacity: 0; transform: scale(0.5); }
-}
-
-.dissolving { animation: dissolve 1s ease-out forwards; }
 </style>
 </head>
 
@@ -306,13 +300,13 @@ svg { width: 100%; height: 100%; }
       </g>
       
       <!-- Labels -->
-      <text x="150" y="280" font-size="10" fill="#90a4ae" text-anchor="middle">Bunsen Burner</text>
-      
-      <!-- Instructions -->
-      <text x="200" y="30" font-size="11" fill="#fff" text-anchor="middle" id="instruction">Tap "Burn" to ignite the magnesium ribbon</text>
+      <text x="150" y="275" font-size="10" fill="#90a4ae" text-anchor="middle">Bunsen Burner</text>
     </svg>
   </div>
   
+  <div id="instruction" style="text-align: center; font-size: 12px; color: #666; padding: 8px; margin-top: 5px;">
+    Tap "Burn" to ignite the magnesium ribbon
+  </div>
   <div class="controls">
     <button class="ctrl-btn burn" id="burn-btn" onclick="burnMagnesium()">🔥 Burn Mg</button>
     <button class="ctrl-btn dissolve" id="dissolve-btn" onclick="dissolveInWater()" disabled>💧 Dissolve</button>
@@ -383,6 +377,11 @@ const equation = document.getElementById('equation');
 const equationExplain = document.getElementById('equation-explain');
 const learningText = document.getElementById('learning-text');
 
+// Update instruction text (now it's a div, not SVG text)
+function setInstruction(text) {
+  instruction.textContent = text;
+}
+
 function burnMagnesium() {
   burnBtn.disabled = true;
   
@@ -434,31 +433,52 @@ function burnMagnesium() {
 function dissolveInWater() {
   dissolveBtn.disabled = true;
   
-  // Animate MgO moving to beaker
-  mgoAsh.classList.add('dissolving');
-  
   instruction.textContent = 'Dissolving MgO in water...';
   stepIndicator.textContent = 'Dissolving in water...';
   
-  setTimeout(() => {
-    mgoAsh.style.display = 'none';
-    litmusInBeaker.style.display = 'block';
+  // Animate MgO moving to beaker using JavaScript
+  let frame = 0;
+  const totalFrames = 30;
+  const startX = 200, startY = 95;
+  const endX = 320, endY = 180;
+  
+  const animateDissolve = () => {
+    frame++;
+    const progress = frame / totalFrames;
     
-    equation.textContent = 'MgO + H₂O → Mg(OH)₂';
-    equationExplain.textContent = 'Magnesium Oxide + Water → Magnesium Hydroxide (a base)';
+    const currentX = startX + (endX - startX) * progress;
+    const currentY = startY + (endY - startY) * progress;
+    const scale = 1 - (progress * 0.7);
+    const opacity = 1 - progress;
     
-    stepIndicator.textContent = 'Step 3: Test with litmus paper';
-    instruction.textContent = 'Solution ready! Test with litmus papers.';
+    mgoAsh.setAttribute('transform', `translate(${currentX}, ${currentY}) scale(${scale})`);
+    mgoAsh.style.opacity = opacity;
     
-    testBtn.disabled = false;
-    
-    learningText.innerHTML = `
-      <strong style="color:#2196f3">💧 Dissolved in Water!</strong><br><br>
-      MgO dissolves in water to form <strong>Magnesium Hydroxide Mg(OH)₂</strong> - a BASE.<br><br>
-      <strong>Reaction:</strong> MgO + H₂O → Mg(OH)₂<br><br>
-      Now let's test if this solution is acidic or basic using litmus paper!
-    `;
-  }, 1000);
+    if (frame < totalFrames) {
+      requestAnimationFrame(animateDissolve);
+    } else {
+      // Animation complete
+      mgoAsh.style.display = 'none';
+      litmusInBeaker.style.display = 'block';
+      
+      equation.textContent = 'MgO + H₂O → Mg(OH)₂';
+      equationExplain.textContent = 'Magnesium Oxide + Water → Magnesium Hydroxide (a base)';
+      
+      stepIndicator.textContent = 'Step 3: Test with litmus paper';
+      instruction.textContent = 'Solution ready! Test with litmus papers.';
+      
+      testBtn.disabled = false;
+      
+      learningText.innerHTML = `
+        <strong style="color:#2196f3">💧 Dissolved in Water!</strong><br><br>
+        MgO dissolves in water to form <strong>Magnesium Hydroxide Mg(OH)₂</strong> - a BASE.<br><br>
+        <strong>Reaction:</strong> MgO + H₂O → Mg(OH)₂<br><br>
+        Now let's test if this solution is acidic or basic using litmus paper!
+      `;
+    }
+  };
+  
+  requestAnimationFrame(animateDissolve);
 }
 
 function testWithLitmus() {
