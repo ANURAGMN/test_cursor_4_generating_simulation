@@ -316,21 +316,21 @@ svg { width: 100%; height: 100%; }
 </div>
 
 <div class="components-list">
-  <div class="component-item" onclick="showComponent('lamp')">
+  <div class="component-item" onclick="showComponent('lamp', this)">
     <div class="icon">💡</div>
     <div class="info">
       <div class="name">Lamp (Bulb/LED)</div>
       <div class="desc">Produces light when current flows</div>
     </div>
   </div>
-  <div class="component-item" onclick="showComponent('cells')">
+  <div class="component-item" onclick="showComponent('cells', this)">
     <div class="icon">🔋</div>
     <div class="info">
       <div class="name">Electric Cells</div>
       <div class="desc">Provide electrical energy</div>
     </div>
   </div>
-  <div class="component-item" onclick="showComponent('switch')">
+  <div class="component-item" onclick="showComponent('switch', this)">
     <div class="icon">🔘</div>
     <div class="info">
       <div class="name">Switch</div>
@@ -422,7 +422,7 @@ function toggleSwitch() {
   }
 }
 
-function showComponent(type) {
+function showComponent(type, element) {
   const details = componentDetails[type];
   detailTitle.innerHTML = details.title;
   detailText.innerHTML = details.text;
@@ -430,7 +430,7 @@ function showComponent(type) {
   
   // Highlight component item
   document.querySelectorAll('.component-item').forEach(item => item.classList.remove('active'));
-  event.currentTarget.classList.add('active');
+  element.classList.add('active');
   
   // Show exploded view for cells
   if (type === 'cells' && currentMode !== 'exploded') {

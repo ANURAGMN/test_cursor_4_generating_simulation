@@ -303,35 +303,35 @@ svg { width: 100%; height: 100%; }
   </div>
   
   <div class="materials-grid">
-    <div class="material-btn" onclick="testMaterial('spoon', '🥄', true)">
+    <div class="material-btn" onclick="testMaterial('spoon', '🥄', true, this)">
       <div class="icon">🥄</div>
       <div class="name">Metal Spoon</div>
     </div>
-    <div class="material-btn" onclick="testMaterial('key', '🔑', true)">
+    <div class="material-btn" onclick="testMaterial('key', '🔑', true, this)">
       <div class="icon">🔑</div>
       <div class="name">Iron Key</div>
     </div>
-    <div class="material-btn" onclick="testMaterial('coin', '🪙', true)">
+    <div class="material-btn" onclick="testMaterial('coin', '🪙', true, this)">
       <div class="icon">🪙</div>
       <div class="name">Coin</div>
     </div>
-    <div class="material-btn" onclick="testMaterial('foil', '📄', true)">
+    <div class="material-btn" onclick="testMaterial('foil', '📄', true, this)">
       <div class="icon">📄</div>
       <div class="name">Aluminium Foil</div>
     </div>
-    <div class="material-btn" onclick="testMaterial('plastic', '📏', false)">
+    <div class="material-btn" onclick="testMaterial('plastic', '📏', false, this)">
       <div class="icon">📏</div>
       <div class="name">Plastic Scale</div>
     </div>
-    <div class="material-btn" onclick="testMaterial('rubber', '🧽', false)">
+    <div class="material-btn" onclick="testMaterial('rubber', '🧽', false, this)">
       <div class="icon">🧽</div>
       <div class="name">Rubber Eraser</div>
     </div>
-    <div class="material-btn" onclick="testMaterial('wood', '🪵', false)">
+    <div class="material-btn" onclick="testMaterial('wood', '🪵', false, this)">
       <div class="icon">🪵</div>
       <div class="name">Wooden Stick</div>
     </div>
-    <div class="material-btn" onclick="testMaterial('glass', '🥛', false)">
+    <div class="material-btn" onclick="testMaterial('glass', '🥛', false, this)">
       <div class="icon">🥛</div>
       <div class="name">Glass</div>
     </div>
@@ -407,8 +407,7 @@ const materialNames = {
   'glass': 'Glass'
 };
 
-function testMaterial(id, icon, isConductor) {
-  const btn = event.currentTarget;
+function testMaterial(id, icon, isConductor, btn) {
   if (btn.classList.contains('tested')) return;
   
   // Show material in test area
