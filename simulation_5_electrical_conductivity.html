@@ -344,7 +344,7 @@ let materialColor = '#bdbdbd';
 const conductorList = [];
 const insulatorList = [];
 
-const testMaterial = document.getElementById('test-material');
+const testMaterialBox = document.getElementById('test-material');
 const materialIcon = document.getElementById('material-icon');
 const bulbGlass = document.getElementById('bulb-glass');
 const filament = document.getElementById('filament');
@@ -368,7 +368,7 @@ function selectMaterial(name, icon, conductor, color, btn) {
   materialColor = color;
   
   // Reset visual
-  testMaterial.setAttribute('fill', color);
+  testMaterialBox.setAttribute('fill', color);
   materialIcon.textContent = icon;
   bulbGlass.setAttribute('fill', '#9e9e9e');
   filament.setAttribute('stroke', '#666');
