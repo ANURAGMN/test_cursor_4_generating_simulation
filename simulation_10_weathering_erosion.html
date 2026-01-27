@@ -446,8 +446,13 @@ function updateMountain(value) {
   mountain.setAttribute('points', `${baseLeft},200 200,${peakY} ${baseRight},200`);
   
   // Snow cap shrinks
-  const snowSize = Math.max(0, 1 - (value / 80));
-  snowCap.setAttribute('transform', `scale(${snowSize}) translate(${200 * (1 - snowSize) / snowSize}, ${70 * (1 - snowSize) / snowSize})`);
+  const snowSize = Math.max(0.01, 1 - (value / 80));
+  if (snowSize > 0.05) {
+    snowCap.style.display = 'block';
+    snowCap.setAttribute('transform', `scale(${snowSize}) translate(${200 * (1 - snowSize) / snowSize}, ${70 * (1 - snowSize) / snowSize})`);
+  } else {
+    snowCap.style.display = 'none';
+  }
   
   // Cracks appear
   cracks.style.display = value > 20 ? 'block' : 'none';

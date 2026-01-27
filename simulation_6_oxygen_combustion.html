@@ -361,8 +361,14 @@ function coverWithJar() {
         <strong>Almost no oxygen left!</strong><br><br>
         The flame is getting weaker. It's struggling to find oxygen...
       `;
-      // Flame starts flickering/shrinking
-      flameGroup.style.transform = 'scale(0.7)';
+      // Flame starts flickering/shrinking - use SVG scale for mobile compatibility
+      const flames = flameGroup.querySelectorAll('ellipse');
+      flames.forEach(f => {
+        const rx = parseFloat(f.getAttribute('rx')) * 0.7;
+        const ry = parseFloat(f.getAttribute('ry')) * 0.7;
+        f.setAttribute('rx', rx);
+        f.setAttribute('ry', ry);
+      });
     }
     
     if (timer >= 5) {
@@ -409,8 +415,17 @@ function resetExperiment() {
   timer = 0;
   
   flameGroup.style.display = 'none';
-  flameGroup.style.transform = 'scale(1)';
   flameGroup.classList.remove('flame-out');
+  
+  // Reset flame sizes to original
+  const flames = flameGroup.querySelectorAll('ellipse');
+  const originalSizes = [{rx: 8, ry: 20}, {rx: 5, ry: 14}, {rx: 2, ry: 8}];
+  flames.forEach((f, i) => {
+    if (originalSizes[i]) {
+      f.setAttribute('rx', originalSizes[i].rx);
+      f.setAttribute('ry', originalSizes[i].ry);
+    }
+  });
   smokeGroup.style.display = 'none';
   glassJar.style.display = 'none';
   glassJar.classList.remove('jar-down');
