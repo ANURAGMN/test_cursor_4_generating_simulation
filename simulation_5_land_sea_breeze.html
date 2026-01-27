@@ -199,17 +199,35 @@ body {
 
 .wind-arrows {
   position: absolute;
-  top: 100px;
+  top: 95px;
   left: 0;
   right: 0;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
+  gap: 8px;
 }
 
 .wind-arrow {
-  font-size: 30px;
+  width: 50px;
+  height: 24px;
+  position: relative;
   animation: windMove 1s ease-in-out infinite;
+}
+
+.wind-arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.arrow-right {
+  fill: #ff9800;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
+}
+
+.arrow-left {
+  fill: #64b5f6;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
 }
 
 @keyframes windMove {
@@ -333,9 +351,15 @@ body {
     <div class="breeze-name" id="breeze-name">🌬️ Sea Breeze</div>
     
     <div class="wind-arrows" id="wind-arrows">
-      <span class="wind-arrow">➡️</span>
-      <span class="wind-arrow" style="animation-delay: 0.3s;">➡️</span>
-      <span class="wind-arrow" style="animation-delay: 0.6s;">➡️</span>
+      <div class="wind-arrow">
+        <svg viewBox="0 0 50 24"><polygon class="arrow-right" points="0,8 35,8 35,0 50,12 35,24 35,16 0,16"/></svg>
+      </div>
+      <div class="wind-arrow" style="animation-delay: 0.3s;">
+        <svg viewBox="0 0 50 24"><polygon class="arrow-right" points="0,8 35,8 35,0 50,12 35,24 35,16 0,16"/></svg>
+      </div>
+      <div class="wind-arrow" style="animation-delay: 0.6s;">
+        <svg viewBox="0 0 50 24"><polygon class="arrow-right" points="0,8 35,8 35,0 50,12 35,24 35,16 0,16"/></svg>
+      </div>
     </div>
     
     <div class="landscape">
@@ -405,9 +429,15 @@ function setTime(time, btn) {
     
     // Wind from sea to land (left to right)
     windArrows.innerHTML = `
-      <span class="wind-arrow">➡️</span>
-      <span class="wind-arrow" style="animation-delay: 0.3s;">➡️</span>
-      <span class="wind-arrow" style="animation-delay: 0.6s;">➡️</span>
+      <div class="wind-arrow">
+        <svg viewBox="0 0 50 24"><polygon class="arrow-right" points="0,8 35,8 35,0 50,12 35,24 35,16 0,16"/></svg>
+      </div>
+      <div class="wind-arrow" style="animation-delay: 0.3s;">
+        <svg viewBox="0 0 50 24"><polygon class="arrow-right" points="0,8 35,8 35,0 50,12 35,24 35,16 0,16"/></svg>
+      </div>
+      <div class="wind-arrow" style="animation-delay: 0.6s;">
+        <svg viewBox="0 0 50 24"><polygon class="arrow-right" points="0,8 35,8 35,0 50,12 35,24 35,16 0,16"/></svg>
+      </div>
     `;
     
     tempSea.textContent = '🌊';
@@ -430,9 +460,15 @@ function setTime(time, btn) {
     
     // Wind from land to sea (right to left)
     windArrows.innerHTML = `
-      <span class="wind-arrow reverse">⬅️</span>
-      <span class="wind-arrow reverse" style="animation-delay: 0.3s;">⬅️</span>
-      <span class="wind-arrow reverse" style="animation-delay: 0.6s;">⬅️</span>
+      <div class="wind-arrow reverse">
+        <svg viewBox="0 0 50 24"><polygon class="arrow-left" points="50,8 15,8 15,0 0,12 15,24 15,16 50,16"/></svg>
+      </div>
+      <div class="wind-arrow reverse" style="animation-delay: 0.3s;">
+        <svg viewBox="0 0 50 24"><polygon class="arrow-left" points="50,8 15,8 15,0 0,12 15,24 15,16 50,16"/></svg>
+      </div>
+      <div class="wind-arrow reverse" style="animation-delay: 0.6s;">
+        <svg viewBox="0 0 50 24"><polygon class="arrow-left" points="50,8 15,8 15,0 0,12 15,24 15,16 50,16"/></svg>
+      </div>
     `;
     
     tempSea.textContent = '🔥';
