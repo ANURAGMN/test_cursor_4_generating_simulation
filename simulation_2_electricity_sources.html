@@ -367,14 +367,25 @@ const sources = {
     example: '<strong>Example:</strong> Wind farms in Gujarat and Tamil Nadu',
     icon: '🌬️',
     svg: `
-      <rect x="115" y="140" width="10" height="100" fill="#e0e0e0"/>
-      <g id="windmill-blades" transform="translate(120, 140)">
-        <ellipse cx="0" cy="-40" rx="8" ry="40" fill="#fff"/>
-        <ellipse cx="35" cy="20" rx="8" ry="40" fill="#fff" transform="rotate(120)"/>
-        <ellipse cx="-35" cy="20" rx="8" ry="40" fill="#fff" transform="rotate(240)"/>
+      <!-- Wind blowing -->
+      <text x="40" y="130" font-size="28">🌬️</text>
+      
+      <!-- Windmill tower -->
+      <rect x="115" y="145" width="10" height="95" fill="#bdbdbd"/>
+      <rect x="110" y="235" width="20" height="10" fill="#9e9e9e"/>
+      
+      <!-- Windmill blades - centered at top of tower -->
+      <g id="windmill-blades" transform="translate(120, 145)" transform-origin="0 0">
+        <!-- Blade 1 - pointing up -->
+        <ellipse cx="0" cy="-35" rx="6" ry="38" fill="#fff" stroke="#ddd" stroke-width="1"/>
+        <!-- Blade 2 - pointing bottom-right -->
+        <ellipse cx="0" cy="-35" rx="6" ry="38" fill="#fff" stroke="#ddd" stroke-width="1" transform="rotate(120)"/>
+        <!-- Blade 3 - pointing bottom-left -->
+        <ellipse cx="0" cy="-35" rx="6" ry="38" fill="#fff" stroke="#ddd" stroke-width="1" transform="rotate(240)"/>
+        <!-- Hub center -->
         <circle cx="0" cy="0" r="10" fill="#1976d2"/>
+        <circle cx="0" cy="0" r="5" fill="#0d47a1"/>
       </g>
-      <text x="50" y="120" font-size="30">🌬️</text>
     `
   },
   thermal: {
