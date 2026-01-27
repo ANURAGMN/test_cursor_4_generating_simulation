@@ -189,20 +189,12 @@ svg { width: 100%; height: 100%; }
 .takeaway-title { font-size: 12px; font-weight: 700; color: #1b5e20; margin-bottom: 6px; }
 .takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
 
-@keyframes stretch {
-  0% { transform: scaleX(1); }
-  100% { transform: scaleX(3) scaleY(0.3); }
+@keyframes moveRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100px); }
 }
 
-.stretch { animation: stretch 0.8s ease-out forwards; }
-
-@keyframes snap {
-  0% { opacity: 1; }
-  50% { transform: scaleX(1.2); }
-  100% { opacity: 0; transform: translateY(20px); }
-}
-
-.snap { animation: snap 0.4s ease-out forwards; }
+.move-right { animation: moveRight 0.8s ease-out forwards; }
 </style>
 </head>
 
@@ -372,10 +364,12 @@ function selectMaterial(name, icon, ductile, color, btn) {
   isDuctile = ductile;
   materialColor = color;
   
-  // Reset visual
+  // Reset visual - use setAttribute for SVG transform
   materialBlock.style.display = 'block';
-  materialBlock.style.transform = 'translate(80, 115)';
-  blockShape.classList.remove('stretch', 'snap');
+  materialBlock.setAttribute('transform', 'translate(80, 115)');
+  blockShape.setAttribute('width', '80');
+  blockShape.setAttribute('height', '50');
+  blockShape.style.opacity = '1';
   wireResult.style.display = 'none';
   brokenPieces.style.display = 'none';
   pullingHand.style.display = 'none';
@@ -405,63 +399,105 @@ function drawWire() {
   arrow.style.display = 'none';
   pullingHand.style.display = 'block';
   
-  if (isDuctile) {
-    // Metal - stretches into wire
-    blockShape.classList.add('stretch');
+  const saveMaterial = selectedMaterial;
+  const saveBtn = selectedBtn;
+  const saveDuctile = isDuctile;
+  const saveColor = materialColor;
+  
+  if (saveDuctile) {
+    // Metal - stretches into wire with animated transition
+    let frame = 0;
+    const totalFrames = 20;
     
-    setTimeout(() => {
-      materialBlock.style.display = 'none';
-      wireResult.style.display = 'block';
-      wireLine.setAttribute('stroke', materialColor);
+    const animateStretch = () => {
+      frame++;
+      const progress = frame / totalFrames;
       
-      resultBadge.textContent = '✅ DUCTILE - Wire formed!';
-      resultBadge.className = 'result-badge ductile';
-      resultBadge.style.display = 'block';
+      // Move block right and stretch it
+      const newX = 80 + (progress * 80);
+      const newWidth = 80 - (progress * 60);
+      const newHeight = 50 - (progress * 35);
       
-      selectedBtn.classList.add('tested', 'ductile');
-      ductileList.push(selectedMaterial);
+      materialBlock.setAttribute('transform', `translate(${newX}, ${115 + (progress * 15)})`);
+      blockShape.setAttribute('width', Math.max(newWidth, 20));
+      blockShape.setAttribute('height', Math.max(newHeight, 15));
       
-      instruction.textContent = '✅ Metal stretched into a thin wire!';
-      
-      learningText.innerHTML = `
-        <strong style="color:#2e7d32">✅ ${selectedMaterial.toUpperCase()} is DUCTILE!</strong><br><br>
-        When pulled through the die, this metal <strong>stretched into a thin wire</strong> without breaking.<br><br>
-        This is because metal atoms can <strong>slide past each other</strong> while maintaining their bonds.
-      `;
-    }, 800);
+      if (frame < totalFrames) {
+        requestAnimationFrame(animateStretch);
+      } else {
+        // Animation complete - show wire
+        materialBlock.style.display = 'none';
+        wireResult.style.display = 'block';
+        wireLine.setAttribute('stroke', saveColor);
+        
+        resultBadge.textContent = '✅ DUCTILE - Wire formed!';
+        resultBadge.className = 'result-badge ductile';
+        resultBadge.style.display = 'block';
+        
+        saveBtn.classList.add('tested', 'ductile');
+        ductileList.push(saveMaterial);
+        
+        instruction.textContent = '✅ Metal stretched into a thin wire!';
+        
+        learningText.innerHTML = `
+          <strong style="color:#2e7d32">✅ ${saveMaterial.toUpperCase()} is DUCTILE!</strong><br><br>
+          When pulled through the die, this metal <strong>stretched into a thin wire</strong> without breaking.<br><br>
+          This is because metal atoms can <strong>slide past each other</strong> while maintaining their bonds.
+        `;
+        
+        updateResults();
+      }
+    };
+    
+    requestAnimationFrame(animateStretch);
+    
   } else {
-    // Non-metal - breaks
-    blockShape.classList.add('snap');
+    // Non-metal - breaks with shake effect
+    let frame = 0;
+    const totalFrames = 10;
     
-    setTimeout(() => {
-      materialBlock.style.display = 'none';
-      brokenPieces.style.display = 'block';
-      brokenPieces.querySelectorAll('rect').forEach(r => r.setAttribute('fill', materialColor));
+    const animateBreak = () => {
+      frame++;
+      const shake = (frame % 2 === 0) ? 3 : -3;
+      materialBlock.setAttribute('transform', `translate(${80 + shake}, 115)`);
       
-      resultBadge.textContent = '❌ NOT DUCTILE - Broke!';
-      resultBadge.className = 'result-badge not-ductile';
-      resultBadge.style.display = 'block';
-      
-      selectedBtn.classList.add('tested', 'not-ductile');
-      notDuctileList.push(selectedMaterial);
-      
-      instruction.textContent = '❌ Non-metal broke when pulled!';
-      
-      learningText.innerHTML = `
-        <strong style="color:#c62828">❌ ${selectedMaterial.toUpperCase()} is NOT DUCTILE!</strong><br><br>
-        When pulled through the die, this non-metal <strong>broke into pieces</strong> instead of stretching.<br><br>
-        Non-metals have <strong>rigid bonds</strong> that cannot stretch - they snap under tension.
-      `;
-    }, 400);
+      if (frame < totalFrames) {
+        requestAnimationFrame(animateBreak);
+      } else {
+        // Show broken pieces
+        materialBlock.style.display = 'none';
+        brokenPieces.style.display = 'block';
+        brokenPieces.querySelectorAll('rect').forEach(r => r.setAttribute('fill', saveColor));
+        
+        resultBadge.textContent = '❌ NOT DUCTILE - Broke!';
+        resultBadge.className = 'result-badge not-ductile';
+        resultBadge.style.display = 'block';
+        
+        saveBtn.classList.add('tested', 'not-ductile');
+        notDuctileList.push(saveMaterial);
+        
+        instruction.textContent = '❌ Non-metal broke when pulled!';
+        
+        learningText.innerHTML = `
+          <strong style="color:#c62828">❌ ${saveMaterial.toUpperCase()} is NOT DUCTILE!</strong><br><br>
+          When pulled through the die, this non-metal <strong>broke into pieces</strong> instead of stretching.<br><br>
+          Non-metals have <strong>rigid bonds</strong> that cannot stretch - they snap under tension.
+        `;
+        
+        updateResults();
+      }
+    };
+    
+    requestAnimationFrame(animateBreak);
   }
   
-  // Update results
-  setTimeout(() => {
-    document.getElementById('ductile-items').textContent = ductileList.length ? ductileList.join(', ') : '-';
-    document.getElementById('not-ductile-items').textContent = notDuctileList.length ? notDuctileList.join(', ') : '-';
-    pullBtn.textContent = '➡️ Select another material';
-    selectedMaterial = null;
-  }, 500);
+  selectedMaterial = null;
+}
+
+function updateResults() {
+  document.getElementById('ductile-items').textContent = ductileList.length ? ductileList.join(', ') : '-';
+  document.getElementById('not-ductile-items').textContent = notDuctileList.length ? notDuctileList.join(', ') : '-';
+  pullBtn.textContent = '➡️ Select another material';
 }
 </script>
 </body>
