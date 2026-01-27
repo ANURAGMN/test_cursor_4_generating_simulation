@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0288d1">
+<title>The Water Cycle</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #0288d1 0%, #4fc3f7 100%);
+  min-height: 100vh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+#app {
+  max-width: 420px;
+  margin: auto;
+  padding: 10px;
+}
+
+.header {
+  text-align: center;
+  color: #fff;
+  padding: 12px;
+}
+
+.header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.header p { font-size: 12px; opacity: 0.95; }
+
+.concept-card {
+  background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 4px solid #0288d1;
+}
+
+.concept-title { font-size: 12px; font-weight: 700; color: #01579b; margin-bottom: 6px; }
+.concept-text { font-size: 12px; color: #37474f; line-height: 1.5; }
+
+.sim-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-bottom: 10px;
+}
+
+.cycle-visual {
+  position: relative;
+  height: 280px;
+  background: linear-gradient(180deg, #87ceeb 0%, #b3e5fc 40%, #e1f5fe 100%);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Sun */
+.sun {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, #ffeb3b 0%, #ff9800 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 30px #ffeb3b;
+  animation: sunPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes sunPulse {
+  0% { box-shadow: 0 0 20px #ffeb3b; }
+  100% { box-shadow: 0 0 40px #ff9800; }
+}
+
+/* Clouds */
+.cloud {
+  position: absolute;
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.cloud-1 {
+  top: 60px;
+  left: 30px;
+  width: 80px;
+  height: 35px;
+}
+
+.cloud-1::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 15px;
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.cloud-1::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 40px;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.cloud-2 {
+  top: 40px;
+  left: 140px;
+  width: 100px;
+  height: 40px;
+  background: #e0e0e0;
+}
+
+.cloud-2::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  width: 45px;
+  height: 45px;
+  background: #e0e0e0;
+  border-radius: 50%;
+}
+
+.cloud-2::after {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 55px;
+  width: 35px;
+  height: 35px;
+  background: #e0e0e0;
+  border-radius: 50%;
+}
+
+/* Mountain */
+.mountain {
+  position: absolute;
+  bottom: 60px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 100px solid #5d4037;
+}
+
+.snow-cap {
+  position: absolute;
+  bottom: 60px;
+  right: 50px;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 40px solid #fff;
+}
+
+/* Ocean */
+.ocean {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  height: 60px;
+  background: linear-gradient(180deg, #0288d1 0%, #01579b 100%);
+  border-radius: 0 30px 0 0;
+}
+
+.ocean-label {
+  position: absolute;
+  bottom: 20px;
+  left: 30%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Land */
+.land {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 60px;
+  background: linear-gradient(180deg, #8bc34a 0%, #689f38 100%);
+  border-radius: 30px 0 0 0;
+}
+
+.tree {
+  position: absolute;
+  bottom: 60px;
+  font-size: 30px;
+}
+
+/* Evaporation arrows */
+.evaporation {
+  position: absolute;
+  bottom: 80px;
+  left: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.evap-arrow {
+  font-size: 16px;
+  color: #ff9800;
+  animation: evapRise 2s ease-in-out infinite;
+}
+
+@keyframes evapRise {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(-10px); opacity: 1; }
+}
+
+/* Rain drops */
+.rain-container {
+  position: absolute;
+  top: 100px;
+  left: 150px;
+  width: 60px;
+}
+
+.raindrop {
+  position: absolute;
+  width: 6px;
+  height: 12px;
+  background: linear-gradient(180deg, #64b5f6, #1976d2);
+  border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+  animation: rainFall 1.5s linear infinite;
+}
+
+@keyframes rainFall {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(100px); opacity: 0; }
+}
+
+/* Labels */
+.cycle-label {
+  position: absolute;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 8px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.label-evap { bottom: 130px; left: 10px; background: #ff9800; }
+.label-cond { top: 30px; left: 90px; background: #9e9e9e; }
+.label-precip { top: 110px; left: 200px; background: #1976d2; }
+.label-runoff { bottom: 70px; right: 100px; background: #4caf50; }
+
+.stage-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.stage-tab {
+  padding: 8px 2px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+  text-align: center;
+  cursor: pointer;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.stage-tab:active { transform: scale(0.95); }
+.stage-tab.active { border-color: #0288d1; background: #e1f5fe; color: #01579b; }
+
+.stage-tab .emoji { font-size: 18px; display: block; margin-bottom: 2px; }
+
+.stage-info {
+  background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #0288d1;
+}
+
+.stage-title { font-size: 12px; font-weight: 700; color: #01579b; margin-bottom: 8px; }
+.stage-text { font-size: 11px; color: #37474f; line-height: 1.6; }
+
+.takeaway {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #4caf50;
+}
+
+.takeaway-title { font-size: 12px; font-weight: 700; color: #2e7d32; margin-bottom: 6px; }
+.takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
+</style>
+</head>
+
+<body>
+<div id="app">
+
+<div class="header">
+  <h1>💧 The Water Cycle</h1>
+  <p>How water circulates on Earth</p>
+</div>
+
+<div class="concept-card">
+  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-text">
+    The <strong>Sun's heat</strong> drives the water cycle. Water evaporates from oceans and land, rises to form clouds, falls as precipitation, and returns to water bodies - a continuous cycle!
+  </div>
+</div>
+
+<div class="sim-card">
+  <div class="cycle-visual">
+    <div class="sun"></div>
+    
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    
+    <div class="rain-container">
+      <div class="raindrop" style="left: 0; animation-delay: 0s;"></div>
+      <div class="raindrop" style="left: 15px; animation-delay: 0.3s;"></div>
+      <div class="raindrop" style="left: 30px; animation-delay: 0.6s;"></div>
+      <div class="raindrop" style="left: 45px; animation-delay: 0.9s;"></div>
+    </div>
+    
+    <div class="evaporation">
+      <div class="evap-arrow" style="animation-delay: 0s;">⬆️</div>
+      <div class="evap-arrow" style="animation-delay: 0.3s;">⬆️</div>
+      <div class="evap-arrow" style="animation-delay: 0.6s;">⬆️</div>
+    </div>
+    
+    <div class="mountain"></div>
+    <div class="snow-cap"></div>
+    
+    <div class="ocean">
+      <div class="ocean-label">OCEAN</div>
+    </div>
+    
+    <div class="land">
+      <div class="tree" style="right: 80px;">🌳</div>
+      <div class="tree" style="right: 40px;">🌲</div>
+    </div>
+    
+    <div class="cycle-label label-evap">☀️ Evaporation</div>
+    <div class="cycle-label label-cond">☁️ Condensation</div>
+    <div class="cycle-label label-precip">🌧️ Precipitation</div>
+    <div class="cycle-label label-runoff">🏞️ Runoff</div>
+  </div>
+  
+  <div class="stage-tabs">
+    <button class="stage-tab active" onclick="selectStage('evap', this)">
+      <span class="emoji">☀️</span>
+      Evaporation
+    </button>
+    <button class="stage-tab" onclick="selectStage('cond', this)">
+      <span class="emoji">☁️</span>
+      Condensation
+    </button>
+    <button class="stage-tab" onclick="selectStage('precip', this)">
+      <span class="emoji">🌧️</span>
+      Precipitation
+    </button>
+    <button class="stage-tab" onclick="selectStage('collect', this)">
+      <span class="emoji">🏞️</span>
+      Collection
+    </button>
+  </div>
+</div>
+
+<div class="stage-info" id="stage-info">
+  <div class="stage-title" id="stage-title">☀️ Evaporation</div>
+  <div class="stage-text" id="stage-text">
+    The Sun's heat causes water from oceans, rivers, lakes, and even wet soil to <strong>evaporate</strong> (turn into water vapor). Plants also release water vapor through <strong>transpiration</strong>. This invisible water vapor rises into the atmosphere.
+  </div>
+</div>
+
+<div class="takeaway">
+  <div class="takeaway-title">🎯 The Cycle Never Stops!</div>
+  <div class="takeaway-text">
+    • <strong>Evaporation:</strong> Water → Water vapor (heat absorbed)<br>
+    • <strong>Condensation:</strong> Vapor → Clouds (heat released)<br>
+    • <strong>Precipitation:</strong> Rain, snow, hail falls<br>
+    • <strong>Collection:</strong> Water returns to oceans, rivers, groundwater<br>
+    • The same water has been cycling for billions of years!
+  </div>
+</div>
+
+</div>
+
+<script>
+const stages = {
+  evap: {
+    title: '☀️ Evaporation',
+    text: 'The Sun\'s heat causes water from oceans, rivers, lakes, and even wet soil to <strong>evaporate</strong> (turn into water vapor). Plants also release water vapor through <strong>transpiration</strong>. This invisible water vapor rises into the atmosphere.'
+  },
+  cond: {
+    title: '☁️ Condensation',
+    text: 'As water vapor rises, it cools down. Cool air can\'t hold as much water vapor, so it <strong>condenses</strong> into tiny water droplets. Millions of these droplets together form <strong>clouds</strong>. This is the opposite of evaporation!'
+  },
+  precip: {
+    title: '🌧️ Precipitation',
+    text: 'When cloud droplets combine and become heavy enough, they fall as <strong>precipitation</strong>. This can be rain, snow, sleet, or hail depending on temperature. Precipitation returns water to Earth\'s surface.'
+  },
+  collect: {
+    title: '🏞️ Collection & Runoff',
+    text: 'Fallen water collects in oceans, rivers, and lakes. Some water <strong>infiltrates</strong> (seeps) into the ground to become groundwater. Water on the surface flows downhill as <strong>runoff</strong> toward larger water bodies. The cycle continues!'
+  }
+};
+
+const stageTitle = document.getElementById('stage-title');
+const stageText = document.getElementById('stage-text');
+
+function selectStage(stage, btn) {
+  document.querySelectorAll('.stage-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  
+  const data = stages[stage];
+  stageTitle.textContent = data.title;
+  stageText.innerHTML = data.text;
+}
+</script>
+</body>
+</html>

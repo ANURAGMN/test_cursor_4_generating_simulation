@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#795548">
+<title>Conductors and Insulators</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #795548 0%, #a1887f 100%);
+  min-height: 100vh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+#app {
+  max-width: 420px;
+  margin: auto;
+  padding: 10px;
+}
+
+.header {
+  text-align: center;
+  color: #fff;
+  padding: 12px;
+}
+
+.header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.header p { font-size: 12px; opacity: 0.95; }
+
+.concept-card {
+  background: linear-gradient(135deg, #efebe9 0%, #d7ccc8 100%);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 4px solid #795548;
+}
+
+.concept-title { font-size: 12px; font-weight: 700; color: #5d4037; margin-bottom: 6px; }
+.concept-text { font-size: 12px; color: #37474f; line-height: 1.5; }
+
+.sim-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-bottom: 10px;
+}
+
+.test-visual {
+  position: relative;
+  height: 200px;
+  background: linear-gradient(180deg, #fafafa 0%, #e0e0e0 100%);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.heat-source {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.heat-icon {
+  font-size: 40px;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% { filter: drop-shadow(0 0 5px #ff9800); }
+  100% { filter: drop-shadow(0 0 15px #ff9800); }
+}
+
+.heat-label {
+  font-size: 10px;
+  color: #e65100;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.material-rod {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.rod-metal { background: linear-gradient(180deg, #bdbdbd, #9e9e9e, #bdbdbd); }
+.rod-wood { background: linear-gradient(180deg, #a1887f, #8d6e63, #a1887f); }
+.rod-glass { background: linear-gradient(180deg, rgba(200,230,255,0.9), rgba(150,200,255,0.8), rgba(200,230,255,0.9)); }
+.rod-plastic { background: linear-gradient(180deg, #81d4fa, #4fc3f7, #81d4fa); }
+
+.heat-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  transition: all 1s ease;
+}
+
+.heat-indicator.hot { background: #f44336; box-shadow: 0 0 10px #f44336; }
+.heat-indicator.warm { background: #ff9800; }
+.heat-indicator.cool { background: #4caf50; }
+
+.rod-label {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+.material-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.material-btn {
+  padding: 10px 4px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+  text-align: center;
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.material-btn:active { transform: scale(0.95); }
+.material-btn.active { border-color: #795548; background: #efebe9; color: #5d4037; }
+
+.material-btn .emoji { font-size: 20px; display: block; margin-bottom: 2px; }
+
+.result-panel {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.result-panel.conductor {
+  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+  border-left: 4px solid #f44336;
+}
+
+.result-panel.insulator {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-left: 4px solid #4caf50;
+}
+
+.result-title { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+.result-panel.conductor .result-title { color: #c62828; }
+.result-panel.insulator .result-title { color: #2e7d32; }
+
+.result-text { font-size: 11px; color: #37474f; line-height: 1.5; }
+
+.comparison-table {
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.table-title { font-size: 12px; font-weight: 700; color: #333; margin-bottom: 10px; text-align: center; }
+
+.table-row {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.table-header .table-cell { font-weight: 700; background: #e0e0e0; }
+
+.table-cell {
+  flex: 1;
+  padding: 8px;
+  text-align: center;
+  font-size: 10px;
+  background: #fff;
+  border-radius: 4px;
+  margin: 0 2px;
+}
+
+.cell-conductor { background: #ffcdd2; color: #c62828; }
+.cell-insulator { background: #c8e6c9; color: #2e7d32; }
+
+.applications {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #2196f3;
+}
+
+.applications-title { font-size: 12px; font-weight: 700; color: #1565c0; margin-bottom: 8px; }
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.app-item {
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.app-item .emoji { font-size: 24px; margin-bottom: 4px; }
+.app-item .text { font-size: 9px; color: #333; }
+</style>
+</head>
+
+<body>
+<div id="app">
+
+<div class="header">
+  <h1>🔬 Conductors & Insulators</h1>
+  <p>Which materials transfer heat well?</p>
+</div>
+
+<div class="concept-card">
+  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-text">
+    <strong>Conductors</strong> (like metals) allow heat to pass easily. <strong>Insulators</strong> (like wood, plastic, air) resist heat flow. This is why pan handles are often made of plastic!
+  </div>
+</div>
+
+<div class="sim-card">
+  <div class="test-visual">
+    <div class="rod-label" id="rod-label">Aluminium (Metal)</div>
+    
+    <div class="material-rod rod-metal" id="material-rod">
+      <div class="heat-indicator" id="indicator-left">🔥</div>
+      <div class="heat-indicator" id="indicator-right"></div>
+    </div>
+    
+    <div class="heat-source">
+      <div class="heat-icon">🔥</div>
+      <div class="heat-label">Heat Source</div>
+    </div>
+  </div>
+  
+  <div class="material-selector">
+    <button class="material-btn active" onclick="selectMaterial('metal', this)">
+      <span class="emoji">🥄</span>
+      Metal
+    </button>
+    <button class="material-btn" onclick="selectMaterial('wood', this)">
+      <span class="emoji">🪵</span>
+      Wood
+    </button>
+    <button class="material-btn" onclick="selectMaterial('glass', this)">
+      <span class="emoji">🫙</span>
+      Glass
+    </button>
+    <button class="material-btn" onclick="selectMaterial('plastic', this)">
+      <span class="emoji">🥤</span>
+      Plastic
+    </button>
+  </div>
+  
+  <div class="result-panel conductor" id="result-panel">
+    <div class="result-title" id="result-title">⚡ Good Conductor!</div>
+    <div class="result-text" id="result-text">
+      Metal conducts heat quickly. The other end gets hot fast! That's why cooking pans are made of metal - heat reaches the food efficiently.
+    </div>
+  </div>
+</div>
+
+<div class="comparison-table">
+  <div class="table-title">📊 Conductors vs Insulators</div>
+  <div class="table-row table-header">
+    <div class="table-cell">Property</div>
+    <div class="table-cell cell-conductor">Conductors</div>
+    <div class="table-cell cell-insulator">Insulators</div>
+  </div>
+  <div class="table-row">
+    <div class="table-cell">Heat Transfer</div>
+    <div class="table-cell">Fast</div>
+    <div class="table-cell">Slow</div>
+  </div>
+  <div class="table-row">
+    <div class="table-cell">Examples</div>
+    <div class="table-cell">Metals (Al, Cu, Fe)</div>
+    <div class="table-cell">Wood, Plastic, Air</div>
+  </div>
+  <div class="table-row">
+    <div class="table-cell">Use</div>
+    <div class="table-cell">Cooking utensils</div>
+    <div class="table-cell">Handles, cups</div>
+  </div>
+</div>
+
+<div class="applications">
+  <div class="applications-title">🏠 Applications in Daily Life</div>
+  <div class="app-grid">
+    <div class="app-item">
+      <div class="emoji">🍳</div>
+      <div class="text">Metal pans conduct heat to cook food</div>
+    </div>
+    <div class="app-item">
+      <div class="emoji">☕</div>
+      <div class="text">Ceramic cups keep drinks hot longer</div>
+    </div>
+    <div class="app-item">
+      <div class="emoji">🧥</div>
+      <div class="text">Wool traps air (insulator) to keep warm</div>
+    </div>
+    <div class="app-item">
+      <div class="emoji">🏠</div>
+      <div class="text">Hollow bricks trap air for insulation</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+const materials = {
+  metal: {
+    label: 'Aluminium (Metal)',
+    rodClass: 'rod-metal',
+    isCondctor: true,
+    title: '⚡ Good Conductor!',
+    text: 'Metal conducts heat quickly. The other end gets hot fast! That\'s why cooking pans are made of metal - heat reaches the food efficiently.',
+    heatTime: 500
+  },
+  wood: {
+    label: 'Wooden Rod',
+    rodClass: 'rod-wood',
+    isCondctor: false,
+    title: '🛡️ Poor Conductor (Insulator)',
+    text: 'Wood is an insulator - it doesn\'t conduct heat well. The other end stays cool! That\'s why pot handles are often made of wood.',
+    heatTime: 3000
+  },
+  glass: {
+    label: 'Glass Rod',
+    rodClass: 'rod-glass',
+    isCondctor: false,
+    title: '🛡️ Poor Conductor (Insulator)',
+    text: 'Glass is an insulator. Heat transfers slowly through it. That\'s why glass containers keep food hot or cold longer.',
+    heatTime: 2500
+  },
+  plastic: {
+    label: 'Plastic Rod',
+    rodClass: 'rod-plastic',
+    isCondctor: false,
+    title: '🛡️ Poor Conductor (Insulator)',
+    text: 'Plastic is a very good insulator. Heat barely passes through! That\'s why many tool handles and containers are made of plastic.',
+    heatTime: 4000
+  }
+};
+
+const rodLabel = document.getElementById('rod-label');
+const materialRod = document.getElementById('material-rod');
+const indicatorRight = document.getElementById('indicator-right');
+const resultPanel = document.getElementById('result-panel');
+const resultTitle = document.getElementById('result-title');
+const resultText = document.getElementById('result-text');
+
+function selectMaterial(type, btn) {
+  const material = materials[type];
+  
+  // Update buttons
+  document.querySelectorAll('.material-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  
+  // Update visual
+  rodLabel.textContent = material.label;
+  materialRod.className = `material-rod ${material.rodClass}`;
+  
+  // Reset indicator
+  indicatorRight.className = 'heat-indicator';
+  indicatorRight.textContent = '';
+  
+  // Animate heat transfer
+  setTimeout(() => {
+    if (material.isCondctor) {
+      indicatorRight.classList.add('hot');
+      indicatorRight.textContent = '🔥';
+    } else {
+      indicatorRight.classList.add('cool');
+      indicatorRight.textContent = '❄️';
+    }
+  }, material.heatTime);
+  
+  // Update result panel
+  resultPanel.className = `result-panel ${material.isCondctor ? 'conductor' : 'insulator'}`;
+  resultTitle.textContent = material.title;
+  resultText.textContent = material.text;
+}
+</script>
+</body>
+</html>

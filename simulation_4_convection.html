@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#2196f3">
+<title>Convection - Heat in Fluids</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #2196f3 0%, #64b5f6 100%);
+  min-height: 100vh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+#app {
+  max-width: 420px;
+  margin: auto;
+  padding: 10px;
+}
+
+.header {
+  text-align: center;
+  color: #fff;
+  padding: 12px;
+}
+
+.header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.header p { font-size: 12px; opacity: 0.95; }
+
+.concept-card {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 4px solid #2196f3;
+}
+
+.concept-title { font-size: 12px; font-weight: 700; color: #1565c0; margin-bottom: 6px; }
+.concept-text { font-size: 12px; color: #37474f; line-height: 1.5; }
+
+.sim-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-bottom: 10px;
+}
+
+.mode-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.mode-tab {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+
+.mode-tab:active { transform: scale(0.98); }
+.mode-tab.active { border-color: #2196f3; background: #e3f2fd; color: #1565c0; }
+
+.mode-tab .emoji { font-size: 20px; display: block; margin-bottom: 4px; }
+
+.convection-visual {
+  position: relative;
+  height: 250px;
+  background: linear-gradient(180deg, #fafafa 0%, #e0e0e0 100%);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Water beaker visualization */
+.beaker {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 150px;
+  border: 4px solid #90caf9;
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  background: linear-gradient(180deg, rgba(100,181,246,0.3) 0%, rgba(33,150,243,0.5) 100%);
+  overflow: hidden;
+}
+
+.water-particle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #1565c0;
+  opacity: 0.8;
+}
+
+.water-particle.hot {
+  background: #f44336;
+  animation: riseParticle 3s ease-in-out infinite;
+}
+
+.water-particle.cool {
+  background: #2196f3;
+  animation: fallParticle 3s ease-in-out infinite;
+}
+
+@keyframes riseParticle {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-100px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fallParticle {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(100px); }
+  100% { transform: translateY(0); }
+}
+
+.flame-small {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  animation: flicker 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+  0% { transform: translateX(-50%) scale(1); }
+  100% { transform: translateX(-50%) scale(1.1); }
+}
+
+.convection-arrows {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.arrow-up {
+  position: absolute;
+  left: -40px;
+  font-size: 24px;
+  color: #f44336;
+  animation: arrowUp 1s ease-in-out infinite;
+}
+
+.arrow-down {
+  position: absolute;
+  right: -40px;
+  font-size: 24px;
+  color: #2196f3;
+  animation: arrowDown 1s ease-in-out infinite;
+}
+
+@keyframes arrowUp {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(-10px); opacity: 1; }
+}
+
+@keyframes arrowDown {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(10px); opacity: 1; }
+}
+
+/* Air convection visualization */
+.room-box {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 160px;
+  border: 3px solid #795548;
+  background: linear-gradient(180deg, #ffccbc 0%, #ffab91 100%);
+  border-radius: 5px;
+}
+
+.heater {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  font-size: 30px;
+}
+
+.air-particle {
+  position: absolute;
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.air-particle.rising {
+  animation: airRise 4s ease-in-out infinite;
+}
+
+.air-particle.falling {
+  animation: airFall 4s ease-in-out infinite;
+}
+
+@keyframes airRise {
+  0% { transform: translate(0, 0); opacity: 1; }
+  50% { transform: translate(50px, -80px); opacity: 0.5; }
+  100% { transform: translate(100px, 0); opacity: 1; }
+}
+
+@keyframes airFall {
+  0% { transform: translate(0, 0); opacity: 0.5; }
+  50% { transform: translate(-30px, 50px); opacity: 1; }
+  100% { transform: translate(0, 0); opacity: 0.5; }
+}
+
+.info-labels {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-label {
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.label-hot { background: #ffcdd2; color: #c62828; }
+.label-cold { background: #bbdefb; color: #1565c0; }
+
+.explanation {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #ff9800;
+}
+
+.explanation-title { font-size: 12px; font-weight: 700; color: #e65100; margin-bottom: 8px; }
+.explanation-text { font-size: 11px; color: #37474f; line-height: 1.6; }
+
+.cycle-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.cycle-step {
+  text-align: center;
+  font-size: 9px;
+  color: #333;
+}
+
+.cycle-step .icon { font-size: 20px; margin-bottom: 4px; }
+.cycle-arrow { font-size: 16px; color: #666; }
+
+.takeaway {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #4caf50;
+}
+
+.takeaway-title { font-size: 12px; font-weight: 700; color: #2e7d32; margin-bottom: 6px; }
+.takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
+
+.hidden { display: none; }
+</style>
+</head>
+
+<body>
+<div id="app">
+
+<div class="header">
+  <h1>🌊 Convection</h1>
+  <p>How heat moves in liquids and gases</p>
+</div>
+
+<div class="concept-card">
+  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-text">
+    <strong>Convection</strong> is heat transfer by the actual movement of fluid particles. Hot fluid rises (less dense), cool fluid sinks (more dense), creating a circular current!
+  </div>
+</div>
+
+<div class="sim-card">
+  <div class="mode-tabs">
+    <button class="mode-tab active" onclick="selectMode('water', this)">
+      <span class="emoji">💧</span>
+      In Water
+    </button>
+    <button class="mode-tab" onclick="selectMode('air', this)">
+      <span class="emoji">💨</span>
+      In Air
+    </button>
+  </div>
+  
+  <div class="convection-visual" id="visual-container">
+    <!-- Water mode -->
+    <div id="water-mode">
+      <div class="info-labels">
+        <div class="info-label label-hot">🔺 Hot rises</div>
+        <div class="info-label label-cold">🔻 Cold sinks</div>
+      </div>
+      
+      <div class="beaker">
+        <div class="water-particle hot" style="bottom: 10px; left: 30px;"></div>
+        <div class="water-particle hot" style="bottom: 10px; left: 60px; animation-delay: 0.5s;"></div>
+        <div class="water-particle hot" style="bottom: 10px; left: 90px; animation-delay: 1s;"></div>
+        <div class="water-particle cool" style="top: 10px; right: 30px;"></div>
+        <div class="water-particle cool" style="top: 10px; right: 60px; animation-delay: 0.7s;"></div>
+        <div class="water-particle cool" style="top: 10px; right: 90px; animation-delay: 1.2s;"></div>
+        
+        <div class="convection-arrows">
+          <div class="arrow-up" style="top: -30px;">⬆️</div>
+          <div class="arrow-up" style="top: 0px;">⬆️</div>
+          <div class="arrow-up" style="top: 30px;">⬆️</div>
+          <div class="arrow-down" style="top: -30px;">⬇️</div>
+          <div class="arrow-down" style="top: 0px;">⬇️</div>
+          <div class="arrow-down" style="top: 30px;">⬇️</div>
+        </div>
+      </div>
+      
+      <div class="flame-small">🔥</div>
+    </div>
+    
+    <!-- Air mode -->
+    <div id="air-mode" class="hidden">
+      <div class="info-labels">
+        <div class="info-label label-hot">🔺 Warm air rises</div>
+        <div class="info-label label-cold">🔻 Cool air sinks</div>
+      </div>
+      
+      <div class="room-box">
+        <div class="heater">🔥</div>
+        <div class="air-particle rising" style="bottom: 40px; left: 50px;">💨</div>
+        <div class="air-particle rising" style="bottom: 50px; left: 40px; animation-delay: 1s;">💨</div>
+        <div class="air-particle falling" style="top: 20px; right: 30px;">💨</div>
+        <div class="air-particle falling" style="top: 30px; right: 50px; animation-delay: 1.5s;">💨</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="explanation" id="explanation">
+  <div class="explanation-title" id="exp-title">🔬 Convection in Water</div>
+  <div class="explanation-text" id="exp-text">
+    When water at the bottom is heated, it <strong>expands and becomes lighter</strong>. This hot water rises up. Cooler water from the top sinks to take its place. This creates a continuous circular flow called a <strong>convection current</strong>.
+  </div>
+  <div class="cycle-diagram">
+    <div class="cycle-step">
+      <div class="icon">🔥</div>
+      Heat applied
+    </div>
+    <div class="cycle-arrow">→</div>
+    <div class="cycle-step">
+      <div class="icon">⬆️</div>
+      Hot rises
+    </div>
+    <div class="cycle-arrow">→</div>
+    <div class="cycle-step">
+      <div class="icon">⬇️</div>
+      Cold sinks
+    </div>
+    <div class="cycle-arrow">→</div>
+    <div class="cycle-step">
+      <div class="icon">🔄</div>
+      Cycle repeats
+    </div>
+  </div>
+</div>
+
+<div class="takeaway">
+  <div class="takeaway-title">🎯 Remember</div>
+  <div class="takeaway-text">
+    • Convection happens in <strong>fluids</strong> (liquids & gases)<br>
+    • Hot fluid <strong>expands</strong> and becomes less dense<br>
+    • Hot fluid <strong>rises</strong>, cold fluid <strong>sinks</strong><br>
+    • This creates <strong>convection currents</strong><br>
+    • Examples: Room heaters, boiling water, winds!
+  </div>
+</div>
+
+</div>
+
+<script>
+const waterMode = document.getElementById('water-mode');
+const airMode = document.getElementById('air-mode');
+const expTitle = document.getElementById('exp-title');
+const expText = document.getElementById('exp-text');
+
+const explanations = {
+  water: {
+    title: '🔬 Convection in Water',
+    text: 'When water at the bottom is heated, it <strong>expands and becomes lighter</strong>. This hot water rises up. Cooler water from the top sinks to take its place. This creates a continuous circular flow called a <strong>convection current</strong>.'
+  },
+  air: {
+    title: '🔬 Convection in Air',
+    text: 'A room heater warms the air near it. This <strong>warm air expands, becomes lighter, and rises</strong>. Cool air from other parts of the room moves in to replace it. This circulation eventually warms the entire room!'
+  }
+};
+
+function selectMode(mode, btn) {
+  document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  
+  if (mode === 'water') {
+    waterMode.classList.remove('hidden');
+    airMode.classList.add('hidden');
+  } else {
+    waterMode.classList.add('hidden');
+    airMode.classList.remove('hidden');
+  }
+  
+  expTitle.textContent = explanations[mode].title;
+  expText.innerHTML = explanations[mode].text;
+}
+</script>
+</body>
+</html>

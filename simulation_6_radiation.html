@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#ff5722">
+<title>Radiation - Heat Without Medium</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #ff5722 0%, #ff8a65 100%);
+  min-height: 100vh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+#app {
+  max-width: 420px;
+  margin: auto;
+  padding: 10px;
+}
+
+.header {
+  text-align: center;
+  color: #fff;
+  padding: 12px;
+}
+
+.header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.header p { font-size: 12px; opacity: 0.95; }
+
+.concept-card {
+  background: linear-gradient(135deg, #fbe9e7 0%, #ffccbc 100%);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 4px solid #ff5722;
+}
+
+.concept-title { font-size: 12px; font-weight: 700; color: #d84315; margin-bottom: 6px; }
+.concept-text { font-size: 12px; color: #37474f; line-height: 1.5; }
+
+.sim-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-bottom: 10px;
+}
+
+.radiation-visual {
+  position: relative;
+  height: 220px;
+  background: linear-gradient(180deg, #263238 0%, #37474f 100%);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.heat-source-container {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.heat-source-icon {
+  font-size: 50px;
+  filter: drop-shadow(0 0 20px #ff9800);
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% { filter: drop-shadow(0 0 10px #ff9800); }
+  100% { filter: drop-shadow(0 0 30px #ff5722); }
+}
+
+.heat-source-label {
+  font-size: 10px;
+  color: #ffcc80;
+  margin-top: 5px;
+}
+
+.radiation-waves {
+  position: absolute;
+  left: 90px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 15px;
+}
+
+.wave {
+  width: 8px;
+  height: 60px;
+  background: linear-gradient(180deg, transparent, #ff9800, #f44336, #ff9800, transparent);
+  border-radius: 4px;
+  animation: wavePulse 1s ease-in-out infinite;
+}
+
+.wave:nth-child(1) { animation-delay: 0s; height: 40px; }
+.wave:nth-child(2) { animation-delay: 0.2s; height: 50px; }
+.wave:nth-child(3) { animation-delay: 0.4s; height: 60px; }
+.wave:nth-child(4) { animation-delay: 0.6s; height: 50px; }
+.wave:nth-child(5) { animation-delay: 0.8s; height: 40px; }
+
+@keyframes wavePulse {
+  0%, 100% { opacity: 0.5; transform: scaleY(0.8); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+.receiver-container {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.receiver-icon {
+  font-size: 50px;
+  transition: all 0.5s ease;
+}
+
+.receiver-label {
+  font-size: 10px;
+  color: #90caf9;
+  margin-top: 5px;
+}
+
+.temp-display {
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  font-size: 12px;
+  color: #fff;
+  margin-top: 5px;
+  transition: all 0.3s ease;
+}
+
+.temp-display.heating {
+  background: rgba(244,67,54,0.5);
+  animation: tempPulse 0.5s ease-in-out infinite;
+}
+
+@keyframes tempPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.no-medium-label {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 15px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 15px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #d84315;
+}
+
+.demo-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.demo-tab {
+  padding: 10px 4px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+  text-align: center;
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.demo-tab:active { transform: scale(0.95); }
+.demo-tab.active { border-color: #ff5722; background: #fbe9e7; color: #d84315; }
+
+.demo-tab .emoji { font-size: 20px; display: block; margin-bottom: 2px; }
+
+.color-experiment {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #ff9800;
+}
+
+.color-title { font-size: 12px; font-weight: 700; color: #e65100; margin-bottom: 8px; }
+.color-text { font-size: 11px; color: #37474f; line-height: 1.5; margin-bottom: 10px; }
+
+.color-compare {
+  display: flex;
+  gap: 10px;
+}
+
+.color-box {
+  flex: 1;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.color-box.dark { background: #333; color: #fff; }
+.color-box.light { background: #f5f5f5; color: #333; border: 1px solid #e0e0e0; }
+
+.color-box .temp { font-size: 20px; margin-bottom: 4px; }
+.color-box .label { font-size: 10px; }
+.color-box .desc { font-size: 9px; margin-top: 4px; opacity: 0.8; }
+
+.takeaway {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #4caf50;
+}
+
+.takeaway-title { font-size: 12px; font-weight: 700; color: #2e7d32; margin-bottom: 6px; }
+.takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
+</style>
+</head>
+
+<body>
+<div id="app">
+
+<div class="header">
+  <h1>☀️ Radiation</h1>
+  <p>Heat transfer without any medium</p>
+</div>
+
+<div class="concept-card">
+  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-text">
+    <strong>Radiation</strong> is heat transfer that doesn't need any medium - it can travel through empty space! That's how the Sun's heat reaches Earth across millions of kilometers of vacuum.
+  </div>
+</div>
+
+<div class="sim-card">
+  <div class="radiation-visual">
+    <div class="heat-source-container">
+      <div class="heat-source-icon" id="heat-source">🔥</div>
+      <div class="heat-source-label" id="source-label">Fireplace</div>
+    </div>
+    
+    <div class="radiation-waves">
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+    
+    <div class="receiver-container">
+      <div class="receiver-icon" id="receiver">🧍</div>
+      <div class="receiver-label" id="receiver-label">You feel warm!</div>
+      <div class="temp-display heating" id="temp-display">🌡️ Warming up!</div>
+    </div>
+    
+    <div class="no-medium-label">No medium needed! Heat travels as waves</div>
+  </div>
+  
+  <div class="demo-tabs">
+    <button class="demo-tab active" onclick="selectDemo('fire', this)">
+      <span class="emoji">🔥</span>
+      Fireplace
+    </button>
+    <button class="demo-tab" onclick="selectDemo('sun', this)">
+      <span class="emoji">☀️</span>
+      Sun → Earth
+    </button>
+    <button class="demo-tab" onclick="selectDemo('utensil', this)">
+      <span class="emoji">🍳</span>
+      Hot Utensil
+    </button>
+  </div>
+</div>
+
+<div class="color-experiment">
+  <div class="color-title">👕 Dark vs Light Colors</div>
+  <div class="color-text">
+    Dark colors <strong>absorb</strong> more radiated heat, while light colors <strong>reflect</strong> it. That's why we wear light clothes in summer!
+  </div>
+  <div class="color-compare">
+    <div class="color-box dark">
+      <div class="temp">🔥 Hot</div>
+      <div class="label">Black T-shirt</div>
+      <div class="desc">Absorbs heat</div>
+    </div>
+    <div class="color-box light">
+      <div class="temp">❄️ Cool</div>
+      <div class="label">White T-shirt</div>
+      <div class="desc">Reflects heat</div>
+    </div>
+  </div>
+</div>
+
+<div class="takeaway">
+  <div class="takeaway-title">🎯 Remember</div>
+  <div class="takeaway-text">
+    • Radiation <strong>doesn't need a medium</strong><br>
+    • Heat travels as <strong>electromagnetic waves</strong><br>
+    • All hot objects <strong>radiate heat</strong><br>
+    • <strong>Dark colors absorb</strong> more heat<br>
+    • <strong>Light colors reflect</strong> heat<br>
+    • Sun's heat reaches Earth by radiation!
+  </div>
+</div>
+
+</div>
+
+<script>
+const demos = {
+  fire: {
+    source: '🔥',
+    sourceLabel: 'Fireplace',
+    receiver: '🧍',
+    receiverLabel: 'You feel warm!',
+    temp: '🌡️ Warming up!'
+  },
+  sun: {
+    source: '☀️',
+    sourceLabel: 'The Sun',
+    receiver: '🌍',
+    receiverLabel: 'Earth receives heat',
+    temp: '149.6M km away!'
+  },
+  utensil: {
+    source: '🍳',
+    sourceLabel: 'Hot Pan',
+    receiver: '✋',
+    receiverLabel: 'Hand feels heat',
+    temp: '🌡️ Don\'t touch!'
+  }
+};
+
+const heatSource = document.getElementById('heat-source');
+const sourceLabel = document.getElementById('source-label');
+const receiver = document.getElementById('receiver');
+const receiverLabel = document.getElementById('receiver-label');
+const tempDisplay = document.getElementById('temp-display');
+
+function selectDemo(type, btn) {
+  document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  
+  const demo = demos[type];
+  heatSource.textContent = demo.source;
+  sourceLabel.textContent = demo.sourceLabel;
+  receiver.textContent = demo.receiver;
+  receiverLabel.textContent = demo.receiverLabel;
+  tempDisplay.textContent = demo.temp;
+}
+</script>
+</body>
+</html>
