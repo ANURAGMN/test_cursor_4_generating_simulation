@@ -1,0 +1,139 @@
+{
+    "unit_name": "Measurement of Time and Motion",
+    "topics": [
+        {
+            "topic_name": "Introduction to Time Measurement",
+            "concepts": [
+                {
+                    "concept_name": "Historical Timekeeping",
+                    "summary": "Early humans measured time using repeating natural events like sunrise/sunset, Moon phases, and seasons. They invented devices like sundials, water clocks, hourglasses, and candle clocks.",
+                    "details": "Sundials use shadows; water clocks use water flow; hourglasses use sand flow; candle clocks use burning marks. Ancient Indian water clocks (Ghatika-yantra) measured 24-minute intervals (ghati).",
+                    "examples": [
+                        "Sundial",
+                        "Water clock (flowing out or floating bowl type)",
+                        "Hourglass",
+                        "Candle clock"
+                    ]
+                },
+                {
+                    "concept_name": "Modern Time Measurement",
+                    "summary": "Modern clocks use repeating processes like pendulum swings, quartz crystal vibrations, or atomic vibrations. Atomic clocks are extremely precise.",
+                    "details": "Pendulum clocks were invented by Huygens. Quartz clocks use crystal vibrations; atomic clocks use atom vibrations. Accuracy has improved from seconds per day to seconds over millions of years.",
+                    "examples": [
+                        "Pendulum clock",
+                        "Quartz watch",
+                        "Atomic clock"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "The Simple Pendulum",
+            "concepts": [
+                {
+                    "concept_name": "What is a Simple Pendulum?",
+                    "summary": "A simple pendulum has a bob suspended by a thread from a rigid support. It oscillates periodically when displaced and released.",
+                    "details": "One oscillation: bob goes from mean to one extreme, to other extreme, and back to mean. Time period is the time for one oscillation.",
+                    "examples": [
+                        "Bob on a string swinging back and forth"
+                    ]
+                },
+                {
+                    "concept_name": "Time Period of a Pendulum",
+                    "summary": "The time period depends only on the pendulum's length, not on the bob's mass. It is constant for a given length at a location.",
+                    "details": "Measured by timing multiple oscillations. This constant property is used in timekeeping devices like pendulum clocks.",
+                    "examples": [
+                        "Pendulum of 100 cm length has a fixed time period"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Units of Time",
+            "concepts": [
+                {
+                    "concept_name": "SI Unit and Other Units",
+                    "summary": "The SI unit of time is the second (s). Larger units are minute (min) and hour (h). Correct notation is important.",
+                    "details": "1 min = 60 s, 1 h = 60 min. Symbols are lowercase (s, min, h) without a full stop. Avoid 'sec' or 'hrs'.",
+                    "examples": [
+                        "Expressing time: 2 h 30 min",
+                        "Symbol: 60 s"
+                    ]
+                },
+                {
+                    "concept_name": "Measuring Small Time Intervals",
+                    "summary": "Modern life requires measuring tiny time intervals: milliseconds in sports, medicine, music, and microseconds in electronics.",
+                    "details": "Precise time measurement is crucial in races, ECG machines, digital recordings, and computing.",
+                    "examples": [
+                        "Stopwatch measuring hundredths of a second",
+                        "ECG measuring heartbeat intervals"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Speed",
+            "concepts": [
+                {
+                    "concept_name": "What is Speed?",
+                    "summary": "Speed is the distance covered per unit time. It tells how fast an object is moving.",
+                    "details": "Calculated as Speed = Total distance covered / Total time taken. SI unit is m/s; also common is km/h.",
+                    "examples": [
+                        "A runner covering 100 m in 10 s has speed 10 m/s"
+                    ]
+                },
+                {
+                    "concept_name": "Calculating Speed, Distance, and Time",
+                    "summary": "If two of speed, distance, or time are known, the third can be calculated using formulas.",
+                    "details": "Distance = Speed × Time; Time = Distance / Speed. These are used for average speed.",
+                    "examples": [
+                        "Bus moving at 50 km/h for 2 h covers 100 km",
+                        "Train covering 360 km at 90 km/h takes 4 h"
+                    ]
+                },
+                {
+                    "concept_name": "Average Speed",
+                    "summary": "Average speed is the total distance divided by total time, useful when speed varies during motion.",
+                    "details": "In this book, 'speed' means average speed. Real objects rarely move at constant speed for long.",
+                    "examples": [
+                        "Car covering 60 km in 1 h, 70 km in next 1 h: average speed = total distance/total time"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Uniform and Non-uniform Linear Motion",
+            "concepts": [
+                {
+                    "concept_name": "Uniform Linear Motion",
+                    "summary": "An object moving along a straight line at constant speed is in uniform linear motion. It covers equal distances in equal time intervals.",
+                    "details": "Example: a train moving at steady speed on a straight track between two points. It is an idealization.",
+                    "examples": [
+                        "Train moving at constant 80 km/h on straight track"
+                    ]
+                },
+                {
+                    "concept_name": "Non-uniform Linear Motion",
+                    "summary": "An object moving along a straight line with changing speed is in non-uniform linear motion. It covers unequal distances in equal time intervals.",
+                    "details": "Example: a train accelerating or decelerating. Most real-life motions are non-uniform.",
+                    "examples": [
+                        "Car in city traffic speeding up and slowing down"
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_name": "Instruments and Applications",
+            "concepts": [
+                {
+                    "concept_name": "Speedometer and Odometer",
+                    "summary": "Vehicles have a speedometer (shows speed in km/h) and an odometer (measures total distance traveled).",
+                    "details": "These instruments help monitor vehicle speed and distance for safety and maintenance.",
+                    "examples": [
+                        "Car dashboard showing speed and total km"
+                    ]
+                }
+            ]
+        }
+    ]
+}
