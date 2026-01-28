@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#f44336">
-<title>Conduction of Heat</title>
+<title>Conduction of Heat - Interactive</title>
 
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -50,21 +50,91 @@ body {
   margin-bottom: 10px;
 }
 
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.control-btn {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.control-btn:active { transform: scale(0.98); }
+.control-btn.active { border-color: #f44336; background: #ffebee; color: #c62828; }
+.control-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.heat-slider {
+  margin-bottom: 15px;
+}
+
+.heat-slider label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #37474f;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.heat-slider input[type="range"] {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #ffeb3b, #ff9800, #f44336);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.heat-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #f44336;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.heat-value {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #f44336;
+  margin-top: 5px;
+}
+
 .experiment-visual {
   position: relative;
-  height: 200px;
+  height: 220px;
   background: linear-gradient(180deg, #fafafa 0%, #e0e0e0 100%);
   border-radius: 10px;
   overflow: hidden;
   padding: 15px;
 }
 
-.flame {
+.flame-container {
   position: absolute;
-  bottom: 20px;
-  left: 30px;
-  width: 40px;
-  height: 60px;
+  bottom: 15px;
+  left: 25px;
+  text-align: center;
+}
+
+.flame {
+  width: 50px;
+  height: 70px;
+  position: relative;
 }
 
 .flame-inner {
@@ -92,20 +162,33 @@ body {
   animation: flicker 0.5s ease-in-out infinite alternate;
 }
 
+.flame.low .flame-inner { height: 25px; width: 15px; }
+.flame.low .flame-outer { height: 35px; width: 22px; }
+.flame.high .flame-inner { height: 50px; width: 25px; }
+.flame.high .flame-outer { height: 65px; width: 38px; }
+
 @keyframes flicker {
   0% { transform: translateX(-50%) scale(1); }
   100% { transform: translateX(-50%) scale(1.05) translateY(-2px); }
 }
 
+.flame-label {
+  font-size: 10px;
+  color: #e65100;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
 .metal-strip {
   position: absolute;
-  bottom: 70px;
-  left: 45px;
+  bottom: 80px;
+  left: 50px;
   width: 280px;
-  height: 15px;
-  background: linear-gradient(90deg, #9e9e9e, #bdbdbd);
-  border-radius: 3px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  height: 18px;
+  background: linear-gradient(180deg, #bdbdbd, #9e9e9e, #bdbdbd);
+  border-radius: 4px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
 }
 
 .heat-gradient {
@@ -114,81 +197,76 @@ body {
   left: 0;
   height: 100%;
   background: linear-gradient(90deg, #f44336, #ff9800, #ffeb3b);
-  border-radius: 3px;
+  border-radius: 4px;
   width: 0%;
-  transition: width 0.5s linear;
+  transition: width 0.3s linear;
 }
 
 .wax-pin {
   position: absolute;
-  bottom: 85px;
+  bottom: 98px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wax-pin:hover { transform: scale(1.1); }
+
+.pin {
+  width: 5px;
+  height: 22px;
+  background: linear-gradient(180deg, #5d4037, #795548);
+  border-radius: 2px;
   transition: all 0.5s ease;
 }
 
-.pin {
-  width: 4px;
-  height: 20px;
-  background: #795548;
-  border-radius: 2px;
-}
-
 .wax {
-  width: 10px;
-  height: 8px;
-  background: #ffcc80;
+  width: 12px;
+  height: 10px;
+  background: radial-gradient(circle, #ffe082, #ffb74d);
   border-radius: 50%;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
 }
 
 .wax-pin.melted .wax {
   background: transparent;
+  box-shadow: none;
 }
 
 .wax-pin.melted .pin {
-  transform: translateY(30px) rotate(45deg);
-  opacity: 0.5;
+  transform: translateY(35px) rotate(60deg);
+  opacity: 0.6;
 }
 
-.pin-label {
+.pin-number {
   position: absolute;
-  bottom: 110px;
-  font-size: 8px;
-  color: #666;
-}
-
-.controls {
-  display: flex;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.control-btn {
-  flex: 1;
-  padding: 12px;
-  border: none;
+  top: -20px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #333;
+  background: #fff;
+  padding: 2px 6px;
   border-radius: 10px;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-.start-btn { background: linear-gradient(135deg, #4caf50, #66bb6a); color: #fff; }
-.reset-btn { background: linear-gradient(135deg, #9e9e9e, #bdbdbd); color: #fff; }
-
-.status-bar {
-  margin-top: 12px;
-  padding: 10px;
-  background: #f5f5f5;
+.timer-display {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 8px 12px;
   border-radius: 8px;
-  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
 }
 
-.status-text { font-size: 12px; font-weight: 600; color: #333; }
-
-.explanation {
+.particle-view {
   background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
   border-radius: 10px;
   padding: 12px;
@@ -196,43 +274,79 @@ body {
   border-left: 4px solid #ff9800;
 }
 
-.explanation-title { font-size: 12px; font-weight: 700; color: #e65100; margin-bottom: 8px; }
-.explanation-text { font-size: 11px; color: #37474f; line-height: 1.6; }
+.particle-title { font-size: 12px; font-weight: 700; color: #e65100; margin-bottom: 10px; }
 
-.particle-visual {
+.particles-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  margin: 10px 0;
-  padding: 10px;
+  gap: 8px;
+  padding: 15px;
   background: #fff;
   border-radius: 8px;
 }
 
 .particle {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: #bdbdbd;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
-  transition: all 0.3s ease;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  transition: all 0.5s ease;
 }
 
-.particle.hot { background: #f44336; animation: vibrate 0.2s linear infinite; }
+.particle.cold { background: #90a4ae; }
 .particle.warm { background: #ff9800; animation: vibrate 0.3s linear infinite; }
-.particle.cool { background: #bdbdbd; }
+.particle.hot { background: #f44336; animation: vibrate 0.15s linear infinite; }
 
 @keyframes vibrate {
   0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-2px); }
-  75% { transform: translateX(2px); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
 }
 
-.arrow { font-size: 16px; color: #666; }
+.particle-arrow {
+  font-size: 20px;
+  color: #ff9800;
+}
+
+.particle-label {
+  font-size: 9px;
+  text-align: center;
+  margin-top: 8px;
+  color: #666;
+}
+
+.results-panel {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #4caf50;
+}
+
+.results-title { font-size: 12px; font-weight: 700; color: #2e7d32; margin-bottom: 8px; }
+
+.pin-times {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.pin-time {
+  text-align: center;
+  padding: 8px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.pin-time .num { font-size: 14px; font-weight: 700; color: #333; }
+.pin-time .time { font-size: 10px; color: #666; margin-top: 2px; }
+.pin-time.dropped .time { color: #4caf50; font-weight: 600; }
 
 .takeaway {
   background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
@@ -252,175 +366,254 @@ body {
 
 <div class="header">
   <h1>🔥 Conduction of Heat</h1>
-  <p>How heat travels through solids</p>
+  <p>Interactive experiment - control the heat!</p>
 </div>
 
 <div class="concept-card">
   <div class="concept-title">📚 Key Concept</div>
   <div class="concept-text">
-    <strong>Conduction</strong> is the transfer of heat through a solid from the hotter end to the colder end. The particles don't move - they just pass energy to neighboring particles!
+    <strong>Conduction</strong> transfers heat through solids from hot to cold regions. Watch the wax pins drop as heat travels along the metal strip!
   </div>
 </div>
 
 <div class="sim-card">
-  <div class="experiment-visual" id="experiment">
-    <div class="flame">
-      <div class="flame-outer"></div>
-      <div class="flame-inner"></div>
+  <div class="controls">
+    <button class="control-btn" id="start-btn" onclick="startExperiment()">
+      🔥 Start Heating
+    </button>
+    <button class="control-btn" onclick="resetExperiment()">
+      🔄 Reset
+    </button>
+  </div>
+  
+  <div class="heat-slider">
+    <label>🌡️ Adjust Flame Intensity:</label>
+    <input type="range" id="heat-level" min="1" max="3" value="2" oninput="adjustHeat(this.value)">
+    <div class="heat-value" id="heat-value">Medium Heat</div>
+  </div>
+  
+  <div class="experiment-visual">
+    <div class="timer-display" id="timer">⏱️ 0.0s</div>
+    
+    <div class="flame-container">
+      <div class="flame" id="flame">
+        <div class="flame-outer"></div>
+        <div class="flame-inner"></div>
+      </div>
+      <div class="flame-label">Heat Source</div>
     </div>
     
     <div class="metal-strip">
       <div class="heat-gradient" id="heat-gradient"></div>
     </div>
     
-    <div class="wax-pin" id="pin1" style="left: 80px;">
+    <div class="wax-pin" id="pin1" style="left: 90px;" onclick="showPinInfo(1)">
+      <div class="pin-number">1</div>
       <div class="wax"></div>
       <div class="pin"></div>
     </div>
-    <div class="pin-label" style="left: 75px;">Pin 1</div>
     
-    <div class="wax-pin" id="pin2" style="left: 140px;">
+    <div class="wax-pin" id="pin2" style="left: 150px;" onclick="showPinInfo(2)">
+      <div class="pin-number">2</div>
       <div class="wax"></div>
       <div class="pin"></div>
     </div>
-    <div class="pin-label" style="left: 135px;">Pin 2</div>
     
-    <div class="wax-pin" id="pin3" style="left: 200px;">
+    <div class="wax-pin" id="pin3" style="left: 210px;" onclick="showPinInfo(3)">
+      <div class="pin-number">3</div>
       <div class="wax"></div>
       <div class="pin"></div>
     </div>
-    <div class="pin-label" style="left: 195px;">Pin 3</div>
     
-    <div class="wax-pin" id="pin4" style="left: 260px;">
+    <div class="wax-pin" id="pin4" style="left: 270px;" onclick="showPinInfo(4)">
+      <div class="pin-number">4</div>
       <div class="wax"></div>
       <div class="pin"></div>
     </div>
-    <div class="pin-label" style="left: 255px;">Pin 4</div>
-  </div>
-  
-  <div class="controls">
-    <button class="control-btn start-btn" id="start-btn" onclick="startExperiment()">🔥 Start Heating</button>
-    <button class="control-btn reset-btn" onclick="resetExperiment()">🔄 Reset</button>
-  </div>
-  
-  <div class="status-bar">
-    <div class="status-text" id="status-text">Tap "Start Heating" to begin the experiment</div>
   </div>
 </div>
 
-<div class="explanation">
-  <div class="explanation-title">🔬 How Conduction Works</div>
-  <div class="explanation-text">
-    Heat makes particles <strong>vibrate faster</strong>. These vibrating particles bump into their neighbors, passing on the energy. The particles themselves don't move - only the heat energy travels!
+<div class="particle-view">
+  <div class="particle-title">🔬 Particle View - How Conduction Works</div>
+  <div class="particles-container">
+    <div class="particle cold" id="p1">1</div>
+    <div class="particle-arrow">→</div>
+    <div class="particle cold" id="p2">2</div>
+    <div class="particle-arrow">→</div>
+    <div class="particle cold" id="p3">3</div>
+    <div class="particle-arrow">→</div>
+    <div class="particle cold" id="p4">4</div>
   </div>
-  <div class="particle-visual" id="particle-visual">
-    <div class="particle" id="p1">🔴</div>
-    <div class="arrow">→</div>
-    <div class="particle" id="p2">⚪</div>
-    <div class="arrow">→</div>
-    <div class="particle" id="p3">⚪</div>
-    <div class="arrow">→</div>
-    <div class="particle" id="p4">⚪</div>
-  </div>
-  <div class="explanation-text">
-    <em>Hot particles vibrate faster and transfer energy to cooler neighbors</em>
+  <div class="particle-label">Hot particles vibrate faster and transfer energy to neighbors (particles don't move, only energy does!)</div>
+</div>
+
+<div class="results-panel">
+  <div class="results-title">📊 Pin Drop Times</div>
+  <div class="pin-times">
+    <div class="pin-time" id="time1">
+      <div class="num">Pin 1</div>
+      <div class="time">--</div>
+    </div>
+    <div class="pin-time" id="time2">
+      <div class="num">Pin 2</div>
+      <div class="time">--</div>
+    </div>
+    <div class="pin-time" id="time3">
+      <div class="num">Pin 3</div>
+      <div class="time">--</div>
+    </div>
+    <div class="pin-time" id="time4">
+      <div class="num">Pin 4</div>
+      <div class="time">--</div>
+    </div>
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 Remember</div>
+  <div class="takeaway-title">🎯 What This Shows</div>
   <div class="takeaway-text">
-    • Conduction happens in <strong>solids</strong><br>
-    • Heat travels from <strong>hot to cold</strong><br>
-    • Particles <strong>vibrate</strong> but don't move position<br>
-    • <strong>Metals</strong> are good conductors of heat<br>
-    • That's why metal pans get hot quickly!
+    • Heat travels from <strong>hot to cold</strong> end<br>
+    • Pins closer to flame drop <strong>first</strong><br>
+    • Higher heat = <strong>faster</strong> conduction<br>
+    • Particles <strong>vibrate</strong> but don't move position
   </div>
 </div>
 
 </div>
 
 <script>
-let experimentRunning = false;
-let animationStep = 0;
-let animationInterval;
+let isRunning = false;
+let timer = 0;
+let timerInterval;
+let heatLevel = 2;
+let pinDropTimes = [0, 0, 0, 0];
+let droppedPins = [false, false, false, false];
 
 const heatGradient = document.getElementById('heat-gradient');
-const statusText = document.getElementById('status-text');
+const timerDisplay = document.getElementById('timer');
 const startBtn = document.getElementById('start-btn');
-const pins = ['pin1', 'pin2', 'pin3', 'pin4'];
-const particles = ['p1', 'p2', 'p3', 'p4'];
+const flame = document.getElementById('flame');
+const particles = [
+  document.getElementById('p1'),
+  document.getElementById('p2'),
+  document.getElementById('p3'),
+  document.getElementById('p4')
+];
+
+// Drop times based on heat level (seconds)
+const dropSchedule = {
+  1: [4, 6, 8, 10],    // Low heat
+  2: [2, 3.5, 5, 6.5], // Medium heat
+  3: [1, 2, 3, 4]      // High heat
+};
+
+function adjustHeat(value) {
+  heatLevel = parseInt(value);
+  const labels = ['Low Heat 🔥', 'Medium Heat 🔥🔥', 'High Heat 🔥🔥🔥'];
+  document.getElementById('heat-value').textContent = labels[heatLevel - 1];
+  
+  flame.className = 'flame';
+  if (heatLevel === 1) flame.classList.add('low');
+  if (heatLevel === 3) flame.classList.add('high');
+}
 
 function startExperiment() {
-  if (experimentRunning) return;
-  experimentRunning = true;
+  if (isRunning) return;
+  
+  isRunning = true;
+  timer = 0;
   startBtn.textContent = '🔥 Heating...';
   startBtn.disabled = true;
   
-  animationStep = 0;
-  animationInterval = setInterval(updateAnimation, 1000);
+  // Start timer
+  timerInterval = setInterval(() => {
+    timer += 0.1;
+    timerDisplay.textContent = `⏱️ ${timer.toFixed(1)}s`;
+    
+    // Update heat gradient
+    const maxTime = dropSchedule[heatLevel][3];
+    const progress = Math.min((timer / maxTime) * 100, 100);
+    heatGradient.style.width = `${progress}%`;
+    
+    // Check pin drops
+    const schedule = dropSchedule[heatLevel];
+    for (let i = 0; i < 4; i++) {
+      if (!droppedPins[i] && timer >= schedule[i]) {
+        dropPin(i);
+      }
+    }
+    
+    // Update particles
+    updateParticles();
+    
+    // Check if complete
+    if (droppedPins.every(d => d)) {
+      setTimeout(() => {
+        clearInterval(timerInterval);
+        startBtn.textContent = '✓ Complete!';
+      }, 500);
+    }
+  }, 100);
 }
 
-function updateAnimation() {
-  animationStep++;
+function dropPin(index) {
+  droppedPins[index] = true;
+  pinDropTimes[index] = timer;
   
-  // Update heat gradient
-  const gradientWidth = Math.min(animationStep * 20, 100);
-  heatGradient.style.width = `${gradientWidth}%`;
+  document.getElementById(`pin${index + 1}`).classList.add('melted');
   
-  // Update particles
-  particles.forEach((pId, index) => {
-    const p = document.getElementById(pId);
-    if (animationStep > index) {
+  const timeEl = document.getElementById(`time${index + 1}`);
+  timeEl.querySelector('.time').textContent = `${timer.toFixed(1)}s`;
+  timeEl.classList.add('dropped');
+}
+
+function updateParticles() {
+  const schedule = dropSchedule[heatLevel];
+  
+  particles.forEach((p, i) => {
+    p.className = 'particle';
+    
+    if (timer >= schedule[i] * 0.3) {
       p.classList.add('hot');
-      p.classList.remove('warm', 'cool');
-    } else if (animationStep === index) {
+    } else if (timer >= schedule[i] * 0.1) {
       p.classList.add('warm');
-      p.classList.remove('hot', 'cool');
+    } else {
+      p.classList.add('cold');
     }
   });
-  
-  // Melt pins
-  if (animationStep >= 2) {
-    document.getElementById('pin1').classList.add('melted');
-    statusText.textContent = '🔻 Pin 1 drops! Heat reached it first.';
-  }
-  if (animationStep >= 3) {
-    document.getElementById('pin2').classList.add('melted');
-    statusText.textContent = '🔻 Pin 2 drops! Heat is spreading.';
-  }
-  if (animationStep >= 4) {
-    document.getElementById('pin3').classList.add('melted');
-    statusText.textContent = '🔻 Pin 3 drops! Heat continues to travel.';
-  }
-  if (animationStep >= 5) {
-    document.getElementById('pin4').classList.add('melted');
-    statusText.textContent = '✅ All pins dropped! Heat traveled through the entire strip.';
-    clearInterval(animationInterval);
-    startBtn.textContent = '✓ Complete';
-  }
 }
 
 function resetExperiment() {
-  clearInterval(animationInterval);
-  experimentRunning = false;
-  animationStep = 0;
+  clearInterval(timerInterval);
+  isRunning = false;
+  timer = 0;
+  pinDropTimes = [0, 0, 0, 0];
+  droppedPins = [false, false, false, false];
   
+  timerDisplay.textContent = '⏱️ 0.0s';
   heatGradient.style.width = '0%';
   startBtn.textContent = '🔥 Start Heating';
   startBtn.disabled = false;
-  statusText.textContent = 'Tap "Start Heating" to begin the experiment';
   
-  pins.forEach(pinId => {
-    document.getElementById(pinId).classList.remove('melted');
-  });
+  for (let i = 1; i <= 4; i++) {
+    document.getElementById(`pin${i}`).classList.remove('melted');
+    const timeEl = document.getElementById(`time${i}`);
+    timeEl.querySelector('.time').textContent = '--';
+    timeEl.classList.remove('dropped');
+  }
   
-  particles.forEach(pId => {
-    const p = document.getElementById(pId);
-    p.classList.remove('hot', 'warm');
-    p.classList.add('cool');
+  particles.forEach(p => {
+    p.className = 'particle cold';
   });
 }
+
+function showPinInfo(num) {
+  const distances = [3, 6, 9, 12];
+  alert(`Pin ${num}\nDistance from heat: ${distances[num-1]} cm\n${droppedPins[num-1] ? `Dropped at: ${pinDropTimes[num-1].toFixed(1)}s` : 'Not dropped yet'}`);
+}
+
+// Initialize
+adjustHeat(2);
 </script>
 </body>
 </html>

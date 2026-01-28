@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#795548">
-<title>Infiltration and Groundwater</title>
+<title>Infiltration - Interactive Race</title>
 
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -50,166 +50,174 @@ body {
   margin-bottom: 10px;
 }
 
-.soil-selector {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
+.controls {
+  display: flex;
+  gap: 8px;
   margin-bottom: 12px;
 }
 
-.soil-btn {
-  padding: 10px 4px;
+.control-btn {
+  flex: 1;
+  padding: 10px;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   background: #fafafa;
-  text-align: center;
-  cursor: pointer;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
-.soil-btn:active { transform: scale(0.95); }
-.soil-btn.active { border-color: #795548; background: #efebe9; color: #5d4037; }
+.control-btn:active { transform: scale(0.98); }
+.control-btn.active { border-color: #795548; background: #efebe9; color: #5d4037; }
+.control-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-.soil-btn .emoji { font-size: 20px; display: block; margin-bottom: 2px; }
-
-.infiltration-visual {
+.infiltration-race {
   position: relative;
-  height: 260px;
-  background: linear-gradient(180deg, #87ceeb 0%, #e1f5fe 30%, #e1f5fe 30%);
+  height: 320px;
+  background: linear-gradient(180deg, #87ceeb 0%, #b3e5fc 15%, #b3e5fc 15%);
   border-radius: 10px;
   overflow: hidden;
 }
 
-/* Rain cloud */
 .rain-cloud {
   position: absolute;
-  top: 10px;
+  top: 5px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 40px;
 }
 
-/* Rain drops */
-.rain-drop {
+.rain-drops {
   position: absolute;
-  top: 55px;
-  width: 6px;
-  height: 12px;
-  background: linear-gradient(180deg, #64b5f6, #1976d2);
-  border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
-  animation: rainDown 1s linear infinite;
-}
-
-@keyframes rainDown {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(50px); opacity: 0; }
-}
-
-/* Ground surface */
-.ground-surface {
-  position: absolute;
-  top: 100px;
+  top: 50px;
   left: 0;
   right: 0;
-  height: 10px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.rain-drop {
+  font-size: 16px;
+  opacity: 0;
+}
+
+.rain-drop.falling {
+  animation: rainFall 0.8s linear infinite;
+}
+
+@keyframes rainFall {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(40px); opacity: 0; }
+}
+
+.ground-line {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  height: 6px;
   background: #8bc34a;
 }
 
-/* Soil layers */
-.soil-container {
+.soil-columns {
   position: absolute;
-  top: 110px;
+  top: 86px;
   left: 0;
   right: 0;
   bottom: 0;
+  display: flex;
+  gap: 3px;
+  padding: 0 10px;
+}
+
+.soil-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.soil-column:hover { transform: scale(1.02); }
+.soil-column.selected { box-shadow: 0 0 0 3px #ffeb3b; }
+
+.soil-header {
+  padding: 8px 4px;
+  text-align: center;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.gravel-header { background: #6d4c41; }
+.sand-header { background: #d7ccc8; color: #333; }
+.clay-header { background: #8d6e63; }
+
+.soil-body {
+  flex: 1;
+  position: relative;
   overflow: hidden;
 }
 
-.soil-layer {
+.gravel-body { background: linear-gradient(180deg, #8d6e63 0%, #6d4c41 100%); }
+.sand-body { background: linear-gradient(180deg, #d7ccc8 0%, #bcaaa4 100%); }
+.clay-body { background: linear-gradient(180deg, #a1887f 0%, #8d6e63 100%); }
+
+.particles {
   position: absolute;
+  top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
   padding: 5px;
-}
-
-.soil-layer.gravel {
-  top: 0;
-  height: 100%;
-  background: linear-gradient(180deg, #8d6e63 0%, #6d4c41 100%);
-}
-
-.soil-layer.sand {
-  top: 0;
-  height: 100%;
-  background: linear-gradient(180deg, #d7ccc8 0%, #bcaaa4 100%);
-}
-
-.soil-layer.clay {
-  top: 0;
-  height: 100%;
-  background: linear-gradient(180deg, #a1887f 0%, #8d6e63 100%);
+  gap: 3px;
 }
 
 .particle {
   border-radius: 50%;
-  margin: 2px;
 }
 
-.particle.gravel { width: 15px; height: 15px; background: #5d4037; }
-.particle.sand { width: 6px; height: 6px; background: #ffcc80; }
+.particle.gravel { width: 12px; height: 12px; background: #5d4037; }
+.particle.sand { width: 5px; height: 5px; background: #ffcc80; }
 .particle.clay { width: 3px; height: 3px; background: #6d4c41; }
 
-/* Water drops seeping */
-.seep-drop {
+.water-drop {
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   background: radial-gradient(circle, #64b5f6, #1976d2);
   border-radius: 50%;
-  opacity: 0.8;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  opacity: 0;
+  z-index: 10;
 }
 
-.seep-fast {
-  animation: seepFast 2s linear infinite;
+.water-drop.seeping {
+  opacity: 1;
 }
 
-.seep-medium {
-  animation: seepMedium 4s linear infinite;
-}
-
-.seep-slow {
-  animation: seepSlow 8s linear infinite;
-}
-
-@keyframes seepFast {
-  0% { top: 110px; opacity: 1; }
-  100% { top: 250px; opacity: 0.3; }
-}
-
-@keyframes seepMedium {
-  0% { top: 110px; opacity: 1; }
-  100% { top: 220px; opacity: 0.3; }
-}
-
-@keyframes seepSlow {
-  0% { top: 110px; opacity: 1; }
-  50% { top: 140px; opacity: 0.8; }
-  100% { top: 150px; opacity: 0.3; }
-}
-
-/* Aquifer */
-.aquifer {
+.aquifer-level {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 30px;
-  background: linear-gradient(180deg, rgba(33,150,243,0.5) 0%, rgba(25,118,210,0.7) 100%);
+  background: linear-gradient(180deg, rgba(33,150,243,0.3) 0%, rgba(25,118,210,0.6) 100%);
 }
 
 .aquifer-label {
@@ -217,40 +225,70 @@ body {
   bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 10px;
+  font-size: 8px;
   color: #fff;
-  font-weight: 600;
-  background: rgba(0,0,0,0.3);
-  padding: 2px 10px;
-  border-radius: 10px;
+  background: rgba(0,0,0,0.4);
+  padding: 2px 6px;
+  border-radius: 8px;
 }
 
-/* Speed indicator */
-.speed-indicator {
+.speed-badge {
   position: absolute;
-  top: 115px;
-  right: 10px;
-  padding: 6px 10px;
-  border-radius: 10px;
-  font-size: 10px;
-  font-weight: 600;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 9px;
+  font-weight: 700;
   color: #fff;
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 
+.speed-badge.show { opacity: 1; }
 .speed-fast { background: #4caf50; }
 .speed-medium { background: #ff9800; }
 .speed-slow { background: #f44336; }
 
-.soil-info {
-  background: linear-gradient(135deg, #efebe9 0%, #d7ccc8 100%);
+.timer-display {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  margin-top: 10px;
+}
+
+.results-panel {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
   border-radius: 10px;
   padding: 12px;
   margin-top: 10px;
-  border-left: 4px solid #795548;
+  border-left: 4px solid #4caf50;
 }
 
-.soil-title { font-size: 12px; font-weight: 700; color: #5d4037; margin-bottom: 8px; }
-.soil-text { font-size: 11px; color: #37474f; line-height: 1.6; }
+.results-title { font-size: 12px; font-weight: 700; color: #2e7d32; margin-bottom: 8px; }
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.result-item {
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.result-item .name { font-size: 11px; font-weight: 600; color: #333; }
+.result-item .time { font-size: 16px; font-weight: 700; margin-top: 4px; }
+.result-item .rank { font-size: 10px; margin-top: 2px; }
+
+.result-item.first .time { color: #4caf50; }
+.result-item.second .time { color: #ff9800; }
+.result-item.third .time { color: #f44336; }
 
 .comparison-table {
   background: #f5f5f5;
@@ -295,160 +333,277 @@ body {
 <div id="app">
 
 <div class="header">
-  <h1>🌍 Infiltration & Groundwater</h1>
-  <p>How water seeps into the ground</p>
+  <h1>🌍 Infiltration Race</h1>
+  <p>Which soil lets water through fastest?</p>
 </div>
 
 <div class="concept-card">
   <div class="concept-title">📚 Key Concept</div>
   <div class="concept-text">
-    <strong>Infiltration</strong> is water seeping into the ground through soil and rocks. The speed depends on <strong>particle size</strong> - water flows fast through gravel (large gaps) but slowly through clay (tiny gaps).
+    <strong>Infiltration</strong> is water seeping into ground. Speed depends on <strong>particle size</strong> - larger particles = bigger gaps = faster water flow!
   </div>
 </div>
 
 <div class="sim-card">
-  <div class="soil-selector">
-    <button class="soil-btn active" onclick="selectSoil('gravel', this)">
-      <span class="emoji">🪨</span>
-      Gravel
+  <div class="controls">
+    <button class="control-btn" id="rain-btn" onclick="makeItRain()">
+      🌧️ Make It Rain!
     </button>
-    <button class="soil-btn" onclick="selectSoil('sand', this)">
-      <span class="emoji">🏖️</span>
-      Sand
-    </button>
-    <button class="soil-btn" onclick="selectSoil('clay', this)">
-      <span class="emoji">🧱</span>
-      Clay
+    <button class="control-btn" onclick="resetRace()">
+      🔄 Reset
     </button>
   </div>
   
-  <div class="infiltration-visual" id="visual">
-    <div class="rain-cloud">🌧️</div>
+  <div class="infiltration-race">
+    <div class="rain-cloud" id="rain-cloud">🌧️</div>
     
-    <div class="rain-drop" style="left: 40%; animation-delay: 0s;"></div>
-    <div class="rain-drop" style="left: 50%; animation-delay: 0.3s;"></div>
-    <div class="rain-drop" style="left: 60%; animation-delay: 0.6s;"></div>
-    
-    <div class="ground-surface"></div>
-    
-    <div class="soil-container" id="soil-container">
-      <div class="soil-layer gravel" id="soil-layer"></div>
+    <div class="rain-drops" id="rain-drops">
+      <span class="rain-drop">💧</span>
+      <span class="rain-drop">💧</span>
+      <span class="rain-drop">💧</span>
     </div>
     
-    <div class="seep-drop seep-fast" id="seep1" style="left: 35%;"></div>
-    <div class="seep-drop seep-fast" id="seep2" style="left: 50%; animation-delay: 0.5s;"></div>
-    <div class="seep-drop seep-fast" id="seep3" style="left: 65%; animation-delay: 1s;"></div>
+    <div class="ground-line"></div>
     
-    <div class="aquifer">
-      <div class="aquifer-label">💧 Aquifer (Groundwater)</div>
+    <div class="soil-columns">
+      <!-- Gravel Column -->
+      <div class="soil-column" onclick="showSoilInfo('gravel')">
+        <div class="soil-header gravel-header">🪨 GRAVEL</div>
+        <div class="soil-body gravel-body">
+          <div class="particles" id="gravel-particles"></div>
+          <div class="water-drop" id="water-gravel"></div>
+          <div class="speed-badge speed-fast" id="badge-gravel">⚡ FAST!</div>
+          <div class="aquifer-level">
+            <div class="aquifer-label">Aquifer</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sand Column -->
+      <div class="soil-column" onclick="showSoilInfo('sand')">
+        <div class="soil-header sand-header">🏖️ SAND</div>
+        <div class="soil-body sand-body">
+          <div class="particles" id="sand-particles"></div>
+          <div class="water-drop" id="water-sand"></div>
+          <div class="speed-badge speed-medium" id="badge-sand">💧 Medium</div>
+          <div class="aquifer-level">
+            <div class="aquifer-label">Aquifer</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Clay Column -->
+      <div class="soil-column" onclick="showSoilInfo('clay')">
+        <div class="soil-header clay-header">🧱 CLAY</div>
+        <div class="soil-body clay-body">
+          <div class="particles" id="clay-particles"></div>
+          <div class="water-drop" id="water-clay"></div>
+          <div class="speed-badge speed-slow" id="badge-clay">🐢 Slow</div>
+          <div class="aquifer-level">
+            <div class="aquifer-label">Aquifer</div>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    <div class="speed-indicator speed-fast" id="speed-indicator">⚡ FAST</div>
   </div>
+  
+  <div class="timer-display" id="timer">⏱️ Tap "Make It Rain" to start!</div>
 </div>
 
-<div class="soil-info" id="soil-info">
-  <div class="soil-title" id="soil-title">🪨 Gravel - Large Particles</div>
-  <div class="soil-text" id="soil-text">
-    Gravel has <strong>large particles</strong> with big spaces (pores) between them. Water flows through these gaps very quickly. Gravel beds are often used in drainage systems because of this fast infiltration rate.
+<div class="results-panel" id="results" style="display: none;">
+  <div class="results-title">🏆 Infiltration Race Results</div>
+  <div class="results-grid">
+    <div class="result-item first">
+      <div class="name">🪨 Gravel</div>
+      <div class="time" id="time-gravel">--</div>
+      <div class="rank">🥇 1st Place</div>
+    </div>
+    <div class="result-item second">
+      <div class="name">🏖️ Sand</div>
+      <div class="time" id="time-sand">--</div>
+      <div class="rank">🥈 2nd Place</div>
+    </div>
+    <div class="result-item third">
+      <div class="name">🧱 Clay</div>
+      <div class="time" id="time-clay">--</div>
+      <div class="rank">🥉 3rd Place</div>
+    </div>
   </div>
 </div>
 
 <div class="comparison-table">
-  <div class="table-title">📊 Infiltration Rate Comparison</div>
+  <div class="table-title">📊 Why the Difference?</div>
   <div class="table-row">
-    <div class="table-cell cell-header">Soil Type</div>
+    <div class="table-cell cell-header">Soil</div>
     <div class="table-cell cell-header">Particle Size</div>
-    <div class="table-cell cell-header">Pore Size</div>
+    <div class="table-cell cell-header">Gap Size</div>
     <div class="table-cell cell-header">Water Speed</div>
   </div>
   <div class="table-row">
     <div class="table-cell">🪨 Gravel</div>
     <div class="table-cell">Large</div>
-    <div class="table-cell">Large</div>
-    <div class="table-cell" style="background:#c8e6c9;">Fast ⚡</div>
+    <div class="table-cell">Big gaps</div>
+    <div class="table-cell" style="background:#c8e6c9;">⚡ Fast</div>
   </div>
   <div class="table-row">
     <div class="table-cell">🏖️ Sand</div>
     <div class="table-cell">Medium</div>
-    <div class="table-cell">Medium</div>
-    <div class="table-cell" style="background:#fff3e0;">Medium 💧</div>
+    <div class="table-cell">Medium gaps</div>
+    <div class="table-cell" style="background:#fff3e0;">💧 Medium</div>
   </div>
   <div class="table-row">
     <div class="table-cell">🧱 Clay</div>
     <div class="table-cell">Tiny</div>
-    <div class="table-cell">Very small</div>
-    <div class="table-cell" style="background:#ffcdd2;">Slow 🐢</div>
+    <div class="table-cell">Almost none</div>
+    <div class="table-cell" style="background:#ffcdd2;">🐢 Very Slow</div>
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 Remember</div>
+  <div class="takeaway-title">🎯 Real World Impact</div>
   <div class="takeaway-text">
-    • <strong>Infiltration</strong> = water seeping into ground<br>
-    • Larger particles = faster infiltration<br>
-    • <strong>Aquifers</strong> store groundwater underground<br>
-    • We extract groundwater through <strong>wells</strong><br>
-    • Concrete surfaces prevent infiltration (a problem!)
+    • <strong>Gravel beds</strong> are used for drainage<br>
+    • <strong>Clay soil</strong> can cause flooding (water can't seep in)<br>
+    • <strong>Concrete cities</strong> prevent infiltration → groundwater depletion!
   </div>
 </div>
 
 </div>
 
 <script>
-const soils = {
-  gravel: {
-    title: '🪨 Gravel - Large Particles',
-    text: 'Gravel has <strong>large particles</strong> with big spaces (pores) between them. Water flows through these gaps very quickly. Gravel beds are often used in drainage systems because of this fast infiltration rate.',
-    layerClass: 'gravel',
-    speedClass: 'speed-fast',
-    speedText: '⚡ FAST',
-    seepClass: 'seep-fast'
-  },
-  sand: {
-    title: '🏖️ Sand - Medium Particles',
-    text: 'Sand has <strong>medium-sized particles</strong> with moderate spaces between them. Water seeps through at a moderate rate - not as fast as gravel, but much faster than clay. Sandy soils are common near beaches and rivers.',
-    layerClass: 'sand',
-    speedClass: 'speed-medium',
-    speedText: '💧 MEDIUM',
-    seepClass: 'seep-medium'
-  },
-  clay: {
-    title: '🧱 Clay - Tiny Particles',
-    text: 'Clay has <strong>very tiny particles</strong> packed closely together with minimal gaps. Water has a hard time passing through! Clay is nearly waterproof, which is why clay pots can hold water. This slow infiltration can cause flooding.',
-    layerClass: 'clay',
-    speedClass: 'speed-slow',
-    speedText: '🐢 SLOW',
-    seepClass: 'seep-slow'
+let isRaining = false;
+let timer = 0;
+let timerInterval;
+let finishTimes = { gravel: 0, sand: 0, clay: 0 };
+let waterPositions = { gravel: 0, sand: 0, clay: 0 };
+
+// Speed factors
+const speeds = { gravel: 8, sand: 3, clay: 0.8 };
+
+// Generate soil particles
+function generateParticles() {
+  const gravelEl = document.getElementById('gravel-particles');
+  const sandEl = document.getElementById('sand-particles');
+  const clayEl = document.getElementById('clay-particles');
+  
+  // Gravel - few large particles
+  for (let i = 0; i < 30; i++) {
+    gravelEl.innerHTML += '<div class="particle gravel"></div>';
   }
-};
-
-const soilTitle = document.getElementById('soil-title');
-const soilText = document.getElementById('soil-text');
-const soilLayer = document.getElementById('soil-layer');
-const speedIndicator = document.getElementById('speed-indicator');
-const seep1 = document.getElementById('seep1');
-const seep2 = document.getElementById('seep2');
-const seep3 = document.getElementById('seep3');
-
-function selectSoil(type, btn) {
-  document.querySelectorAll('.soil-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
   
-  const soil = soils[type];
+  // Sand - many medium particles
+  for (let i = 0; i < 100; i++) {
+    sandEl.innerHTML += '<div class="particle sand"></div>';
+  }
   
-  soilTitle.textContent = soil.title;
-  soilText.innerHTML = soil.text;
-  
-  soilLayer.className = `soil-layer ${soil.layerClass}`;
-  speedIndicator.className = `speed-indicator ${soil.speedClass}`;
-  speedIndicator.textContent = soil.speedText;
-  
-  // Update seep animation
-  [seep1, seep2, seep3].forEach(seep => {
-    seep.className = `seep-drop ${soil.seepClass}`;
-  });
+  // Clay - lots of tiny particles
+  for (let i = 0; i < 200; i++) {
+    clayEl.innerHTML += '<div class="particle clay"></div>';
+  }
 }
+
+function makeItRain() {
+  if (isRaining) return;
+  
+  isRaining = true;
+  timer = 0;
+  finishTimes = { gravel: 0, sand: 0, clay: 0 };
+  waterPositions = { gravel: 0, sand: 0, clay: 0 };
+  
+  document.getElementById('rain-btn').disabled = true;
+  document.getElementById('results').style.display = 'none';
+  
+  // Start rain animation
+  document.querySelectorAll('.rain-drop').forEach(drop => {
+    drop.classList.add('falling');
+  });
+  
+  // Show water drops
+  ['gravel', 'sand', 'clay'].forEach(soil => {
+    const drop = document.getElementById(`water-${soil}`);
+    drop.classList.add('seeping');
+    drop.style.top = '0px';
+  });
+  
+  // Start timer
+  timerInterval = setInterval(() => {
+    timer += 0.1;
+    document.getElementById('timer').textContent = `⏱️ ${timer.toFixed(1)} seconds`;
+    
+    // Update water positions
+    ['gravel', 'sand', 'clay'].forEach(soil => {
+      if (waterPositions[soil] < 100) {
+        waterPositions[soil] += speeds[soil] * (0.8 + Math.random() * 0.4);
+        
+        const drop = document.getElementById(`water-${soil}`);
+        const maxHeight = 150; // pixels
+        const newTop = Math.min(waterPositions[soil], 100) * maxHeight / 100;
+        drop.style.top = `${newTop}px`;
+        
+        if (waterPositions[soil] >= 100 && !finishTimes[soil]) {
+          finishTimes[soil] = timer;
+          document.getElementById(`badge-${soil}`).classList.add('show');
+        }
+      }
+    });
+    
+    // Check if all finished
+    if (Object.values(waterPositions).every(p => p >= 100)) {
+      endRace();
+    }
+  }, 100);
+}
+
+function endRace() {
+  clearInterval(timerInterval);
+  isRaining = false;
+  
+  document.querySelectorAll('.rain-drop').forEach(drop => {
+    drop.classList.remove('falling');
+  });
+  
+  document.getElementById('rain-btn').disabled = false;
+  document.getElementById('results').style.display = 'block';
+  
+  // Update results
+  document.getElementById('time-gravel').textContent = `${finishTimes.gravel.toFixed(1)}s`;
+  document.getElementById('time-sand').textContent = `${finishTimes.sand.toFixed(1)}s`;
+  document.getElementById('time-clay').textContent = `${finishTimes.clay.toFixed(1)}s`;
+}
+
+function resetRace() {
+  clearInterval(timerInterval);
+  isRaining = false;
+  timer = 0;
+  
+  document.querySelectorAll('.rain-drop').forEach(drop => {
+    drop.classList.remove('falling');
+  });
+  
+  ['gravel', 'sand', 'clay'].forEach(soil => {
+    waterPositions[soil] = 0;
+    const drop = document.getElementById(`water-${soil}`);
+    drop.classList.remove('seeping');
+    drop.style.top = '0px';
+    document.getElementById(`badge-${soil}`).classList.remove('show');
+  });
+  
+  document.getElementById('timer').textContent = '⏱️ Tap "Make It Rain" to start!';
+  document.getElementById('rain-btn').disabled = false;
+  document.getElementById('results').style.display = 'none';
+}
+
+function showSoilInfo(soil) {
+  const info = {
+    gravel: 'GRAVEL: Large particles with big gaps between them. Water flows through easily like going through a wide tunnel!',
+    sand: 'SAND: Medium particles with moderate gaps. Water can pass through, but slower than gravel.',
+    clay: 'CLAY: Tiny particles packed tightly together. Almost no gaps! Water has a very hard time getting through.'
+  };
+  alert(info[soil]);
+}
+
+// Initialize
+generateParticles();
 </script>
 </body>
 </html>

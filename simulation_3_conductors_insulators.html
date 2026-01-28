@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#795548">
-<title>Conductors and Insulators</title>
+<title>Conductors vs Insulators - Race!</title>
 
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -50,158 +50,211 @@ body {
   margin-bottom: 10px;
 }
 
-.test-visual {
+.mode-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.mode-btn {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+
+.mode-btn:active { transform: scale(0.98); }
+.mode-btn.active { border-color: #795548; background: #efebe9; color: #5d4037; }
+
+.race-visual {
   position: relative;
-  height: 200px;
+  height: 300px;
   background: linear-gradient(180deg, #fafafa 0%, #e0e0e0 100%);
   border-radius: 10px;
   overflow: hidden;
   padding: 15px;
 }
 
-.heat-source {
+.race-title {
   position: absolute;
-  bottom: 20px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  text-align: center;
-}
-
-.heat-icon {
-  font-size: 40px;
-  animation: glow 1s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-  0% { filter: drop-shadow(0 0 5px #ff9800); }
-  100% { filter: drop-shadow(0 0 15px #ff9800); }
-}
-
-.heat-label {
-  font-size: 10px;
-  color: #e65100;
-  font-weight: 600;
-  margin-top: 4px;
-}
-
-.material-rod {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  height: 30px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-}
-
-.rod-metal { background: linear-gradient(180deg, #bdbdbd, #9e9e9e, #bdbdbd); }
-.rod-wood { background: linear-gradient(180deg, #a1887f, #8d6e63, #a1887f); }
-.rod-glass { background: linear-gradient(180deg, rgba(200,230,255,0.9), rgba(150,200,255,0.8), rgba(200,230,255,0.9)); }
-.rod-plastic { background: linear-gradient(180deg, #81d4fa, #4fc3f7, #81d4fa); }
-
-.heat-indicator {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #e0e0e0;
-  transition: all 1s ease;
-}
-
-.heat-indicator.hot { background: #f44336; box-shadow: 0 0 10px #f44336; }
-.heat-indicator.warm { background: #ff9800; }
-.heat-indicator.cool { background: #4caf50; }
-
-.rod-label {
-  position: absolute;
-  top: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   color: #333;
 }
 
-.material-selector {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
-  margin-top: 12px;
+.heat-source {
+  position: absolute;
+  left: 15px;
+  font-size: 30px;
+  text-align: center;
 }
 
-.material-btn {
-  padding: 10px 4px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  background: #fafafa;
-  text-align: center;
-  cursor: pointer;
+.heat-source .label {
   font-size: 9px;
+  color: #e65100;
   font-weight: 600;
 }
 
-.material-btn:active { transform: scale(0.95); }
-.material-btn.active { border-color: #795548; background: #efebe9; color: #5d4037; }
+.race-track {
+  position: absolute;
+  left: 60px;
+  right: 60px;
+  height: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-.material-btn .emoji { font-size: 20px; display: block; margin-bottom: 2px; }
+.race-track:hover { transform: scale(1.02); }
+.race-track.selected { box-shadow: 0 0 0 3px #ffeb3b; }
 
-.result-panel {
+.track-bg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.track-metal { background: linear-gradient(180deg, #bdbdbd, #9e9e9e, #bdbdbd); }
+.track-wood { background: linear-gradient(180deg, #a1887f, #8d6e63, #a1887f); }
+.track-glass { background: linear-gradient(180deg, rgba(200,230,255,0.9), rgba(150,200,255,0.8), rgba(200,230,255,0.9)); }
+.track-plastic { background: linear-gradient(180deg, #81d4fa, #4fc3f7, #81d4fa); }
+
+.heat-progress {
+  height: 100%;
+  width: 0%;
+  border-radius: 8px 0 0 8px;
+  transition: width 0.1s linear;
+}
+
+.progress-metal { background: linear-gradient(90deg, #f44336, #ff9800, #ffeb3b); }
+.progress-wood { background: linear-gradient(90deg, #f44336 0%, #ff9800 100%); }
+.progress-glass { background: linear-gradient(90deg, #f44336 0%, #ff9800 100%); }
+.progress-plastic { background: linear-gradient(90deg, #f44336 0%, #ff9800 100%); }
+
+.track-label {
+  position: absolute;
+  left: -50px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #333;
+  width: 45px;
+  text-align: right;
+}
+
+.track-icon {
+  position: absolute;
+  right: -45px;
+  font-size: 24px;
+}
+
+.finish-line {
+  position: absolute;
+  right: 55px;
+  top: 40px;
+  bottom: 20px;
+  width: 3px;
+  background: repeating-linear-gradient(180deg, #333 0px, #333 5px, #fff 5px, #fff 10px);
+}
+
+.finish-label {
+  position: absolute;
+  right: 10px;
+  top: 45px;
+  font-size: 9px;
+  color: #333;
+  font-weight: 600;
+  writing-mode: vertical-lr;
+}
+
+.winner-badge {
+  position: absolute;
+  right: 70px;
+  padding: 3px 8px;
+  background: #4caf50;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  border-radius: 10px;
+  display: none;
+}
+
+.winner-badge.show { display: block; animation: pop 0.3s ease; }
+
+@keyframes pop {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
   margin-top: 12px;
+}
+
+.control-btn {
+  flex: 1;
   padding: 12px;
+  border: none;
   border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.start-btn { background: linear-gradient(135deg, #4caf50, #66bb6a); color: #fff; }
+.start-btn:disabled { background: #e0e0e0; color: #999; }
+.reset-btn { background: linear-gradient(135deg, #9e9e9e, #bdbdbd); color: #fff; }
+
+.timer-display {
   text-align: center;
-}
-
-.result-panel.conductor {
-  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
-  border-left: 4px solid #f44336;
-}
-
-.result-panel.insulator {
-  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-  border-left: 4px solid #4caf50;
-}
-
-.result-title { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
-.result-panel.conductor .result-title { color: #c62828; }
-.result-panel.insulator .result-title { color: #2e7d32; }
-
-.result-text { font-size: 11px; color: #37474f; line-height: 1.5; }
-
-.comparison-table {
-  background: #f5f5f5;
-  border-radius: 10px;
-  padding: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
   margin-top: 10px;
 }
 
-.table-title { font-size: 12px; font-weight: 700; color: #333; margin-bottom: 10px; text-align: center; }
-
-.table-row {
-  display: flex;
-  margin-bottom: 8px;
+.results-panel {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #4caf50;
 }
 
-.table-header .table-cell { font-weight: 700; background: #e0e0e0; }
+.results-title { font-size: 12px; font-weight: 700; color: #2e7d32; margin-bottom: 8px; }
 
-.table-cell {
-  flex: 1;
-  padding: 8px;
-  text-align: center;
-  font-size: 10px;
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.result-item {
+  padding: 10px;
   background: #fff;
-  border-radius: 4px;
-  margin: 0 2px;
+  border-radius: 8px;
+  text-align: center;
 }
 
-.cell-conductor { background: #ffcdd2; color: #c62828; }
-.cell-insulator { background: #c8e6c9; color: #2e7d32; }
+.result-item .name { font-size: 11px; font-weight: 600; color: #333; }
+.result-item .time { font-size: 14px; font-weight: 700; margin-top: 4px; }
+.result-item .type { font-size: 9px; color: #666; margin-top: 2px; }
 
-.applications {
+.result-item.conductor .time { color: #4caf50; }
+.result-item.insulator .time { color: #f44336; }
+
+.takeaway {
   background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
   border-radius: 10px;
   padding: 12px;
@@ -209,23 +262,8 @@ body {
   border-left: 4px solid #2196f3;
 }
 
-.applications-title { font-size: 12px; font-weight: 700; color: #1565c0; margin-bottom: 8px; }
-
-.app-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-}
-
-.app-item {
-  padding: 10px;
-  background: #fff;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.app-item .emoji { font-size: 24px; margin-bottom: 4px; }
-.app-item .text { font-size: 9px; color: #333; }
+.takeaway-title { font-size: 12px; font-weight: 700; color: #1565c0; margin-bottom: 6px; }
+.takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
 </style>
 </head>
 
@@ -233,180 +271,236 @@ body {
 <div id="app">
 
 <div class="header">
-  <h1>🔬 Conductors & Insulators</h1>
-  <p>Which materials transfer heat well?</p>
+  <h1>🏁 Heat Race: Conductors vs Insulators</h1>
+  <p>Which material transfers heat fastest?</p>
 </div>
 
 <div class="concept-card">
   <div class="concept-title">📚 Key Concept</div>
   <div class="concept-text">
-    <strong>Conductors</strong> (like metals) allow heat to pass easily. <strong>Insulators</strong> (like wood, plastic, air) resist heat flow. This is why pan handles are often made of plastic!
+    <strong>Conductors</strong> (metals) transfer heat quickly. <strong>Insulators</strong> (wood, plastic, glass) transfer heat slowly. Race them to see the difference!
   </div>
 </div>
 
 <div class="sim-card">
-  <div class="test-visual">
-    <div class="rod-label" id="rod-label">Aluminium (Metal)</div>
+  <div class="mode-selector">
+    <button class="mode-btn active" onclick="selectMode('race', this)">🏁 Race Mode</button>
+    <button class="mode-btn" onclick="selectMode('compare', this)">📊 Compare Mode</button>
+  </div>
+  
+  <div class="race-visual">
+    <div class="race-title">🔥 Heat Transfer Race 🏁</div>
     
-    <div class="material-rod rod-metal" id="material-rod">
-      <div class="heat-indicator" id="indicator-left">🔥</div>
-      <div class="heat-indicator" id="indicator-right"></div>
+    <div class="finish-line"></div>
+    <div class="finish-label">FINISH</div>
+    
+    <!-- Metal Track -->
+    <div class="heat-source" style="top: 60px;">🔥</div>
+    <div class="race-track" style="top: 55px;" onclick="selectTrack('metal')">
+      <div class="track-label">Metal</div>
+      <div class="track-bg track-metal">
+        <div class="heat-progress progress-metal" id="progress-metal"></div>
+      </div>
+      <div class="track-icon">🥄</div>
+      <div class="winner-badge" id="badge-metal">🥇 1st</div>
     </div>
     
-    <div class="heat-source">
-      <div class="heat-icon">🔥</div>
-      <div class="heat-label">Heat Source</div>
+    <!-- Wood Track -->
+    <div class="heat-source" style="top: 115px;">🔥</div>
+    <div class="race-track" style="top: 110px;" onclick="selectTrack('wood')">
+      <div class="track-label">Wood</div>
+      <div class="track-bg track-wood">
+        <div class="heat-progress progress-wood" id="progress-wood"></div>
+      </div>
+      <div class="track-icon">🪵</div>
+      <div class="winner-badge" id="badge-wood">🥈 2nd</div>
+    </div>
+    
+    <!-- Glass Track -->
+    <div class="heat-source" style="top: 170px;">🔥</div>
+    <div class="race-track" style="top: 165px;" onclick="selectTrack('glass')">
+      <div class="track-label">Glass</div>
+      <div class="track-bg track-glass">
+        <div class="heat-progress progress-glass" id="progress-glass"></div>
+      </div>
+      <div class="track-icon">🫙</div>
+      <div class="winner-badge" id="badge-glass">🥉 3rd</div>
+    </div>
+    
+    <!-- Plastic Track -->
+    <div class="heat-source" style="top: 225px;">🔥</div>
+    <div class="race-track" style="top: 220px;" onclick="selectTrack('plastic')">
+      <div class="track-label">Plastic</div>
+      <div class="track-bg track-plastic">
+        <div class="heat-progress progress-plastic" id="progress-plastic"></div>
+      </div>
+      <div class="track-icon">🥤</div>
+      <div class="winner-badge" id="badge-plastic">4th</div>
     </div>
   </div>
   
-  <div class="material-selector">
-    <button class="material-btn active" onclick="selectMaterial('metal', this)">
-      <span class="emoji">🥄</span>
-      Metal
-    </button>
-    <button class="material-btn" onclick="selectMaterial('wood', this)">
-      <span class="emoji">🪵</span>
-      Wood
-    </button>
-    <button class="material-btn" onclick="selectMaterial('glass', this)">
-      <span class="emoji">🫙</span>
-      Glass
-    </button>
-    <button class="material-btn" onclick="selectMaterial('plastic', this)">
-      <span class="emoji">🥤</span>
-      Plastic
-    </button>
+  <div class="controls">
+    <button class="control-btn start-btn" id="start-btn" onclick="startRace()">🏁 Start Race!</button>
+    <button class="control-btn reset-btn" onclick="resetRace()">🔄 Reset</button>
   </div>
   
-  <div class="result-panel conductor" id="result-panel">
-    <div class="result-title" id="result-title">⚡ Good Conductor!</div>
-    <div class="result-text" id="result-text">
-      Metal conducts heat quickly. The other end gets hot fast! That's why cooking pans are made of metal - heat reaches the food efficiently.
+  <div class="timer-display" id="timer">⏱️ 0.0 seconds</div>
+</div>
+
+<div class="results-panel" id="results-panel" style="display: none;">
+  <div class="results-title">📊 Race Results</div>
+  <div class="results-grid">
+    <div class="result-item conductor">
+      <div class="name">🥄 Metal</div>
+      <div class="time" id="result-metal">--</div>
+      <div class="type">⚡ CONDUCTOR</div>
+    </div>
+    <div class="result-item insulator">
+      <div class="name">🪵 Wood</div>
+      <div class="time" id="result-wood">--</div>
+      <div class="type">🛡️ INSULATOR</div>
+    </div>
+    <div class="result-item insulator">
+      <div class="name">🫙 Glass</div>
+      <div class="time" id="result-glass">--</div>
+      <div class="type">🛡️ INSULATOR</div>
+    </div>
+    <div class="result-item insulator">
+      <div class="name">🥤 Plastic</div>
+      <div class="time" id="result-plastic">--</div>
+      <div class="type">🛡️ INSULATOR</div>
     </div>
   </div>
 </div>
 
-<div class="comparison-table">
-  <div class="table-title">📊 Conductors vs Insulators</div>
-  <div class="table-row table-header">
-    <div class="table-cell">Property</div>
-    <div class="table-cell cell-conductor">Conductors</div>
-    <div class="table-cell cell-insulator">Insulators</div>
-  </div>
-  <div class="table-row">
-    <div class="table-cell">Heat Transfer</div>
-    <div class="table-cell">Fast</div>
-    <div class="table-cell">Slow</div>
-  </div>
-  <div class="table-row">
-    <div class="table-cell">Examples</div>
-    <div class="table-cell">Metals (Al, Cu, Fe)</div>
-    <div class="table-cell">Wood, Plastic, Air</div>
-  </div>
-  <div class="table-row">
-    <div class="table-cell">Use</div>
-    <div class="table-cell">Cooking utensils</div>
-    <div class="table-cell">Handles, cups</div>
-  </div>
-</div>
-
-<div class="applications">
-  <div class="applications-title">🏠 Applications in Daily Life</div>
-  <div class="app-grid">
-    <div class="app-item">
-      <div class="emoji">🍳</div>
-      <div class="text">Metal pans conduct heat to cook food</div>
-    </div>
-    <div class="app-item">
-      <div class="emoji">☕</div>
-      <div class="text">Ceramic cups keep drinks hot longer</div>
-    </div>
-    <div class="app-item">
-      <div class="emoji">🧥</div>
-      <div class="text">Wool traps air (insulator) to keep warm</div>
-    </div>
-    <div class="app-item">
-      <div class="emoji">🏠</div>
-      <div class="text">Hollow bricks trap air for insulation</div>
-    </div>
+<div class="takeaway">
+  <div class="takeaway-title">🎯 What This Shows</div>
+  <div class="takeaway-text">
+    • <strong>Metal wins</strong> - it's a great conductor!<br>
+    • <strong>Insulators are slow</strong> - they resist heat flow<br>
+    • That's why pan bodies are metal but handles are plastic/wood!
   </div>
 </div>
 
 </div>
 
 <script>
-const materials = {
-  metal: {
-    label: 'Aluminium (Metal)',
-    rodClass: 'rod-metal',
-    isCondctor: true,
-    title: '⚡ Good Conductor!',
-    text: 'Metal conducts heat quickly. The other end gets hot fast! That\'s why cooking pans are made of metal - heat reaches the food efficiently.',
-    heatTime: 500
-  },
-  wood: {
-    label: 'Wooden Rod',
-    rodClass: 'rod-wood',
-    isCondctor: false,
-    title: '🛡️ Poor Conductor (Insulator)',
-    text: 'Wood is an insulator - it doesn\'t conduct heat well. The other end stays cool! That\'s why pot handles are often made of wood.',
-    heatTime: 3000
-  },
-  glass: {
-    label: 'Glass Rod',
-    rodClass: 'rod-glass',
-    isCondctor: false,
-    title: '🛡️ Poor Conductor (Insulator)',
-    text: 'Glass is an insulator. Heat transfers slowly through it. That\'s why glass containers keep food hot or cold longer.',
-    heatTime: 2500
-  },
-  plastic: {
-    label: 'Plastic Rod',
-    rodClass: 'rod-plastic',
-    isCondctor: false,
-    title: '🛡️ Poor Conductor (Insulator)',
-    text: 'Plastic is a very good insulator. Heat barely passes through! That\'s why many tool handles and containers are made of plastic.',
-    heatTime: 4000
-  }
+let isRacing = false;
+let timer = 0;
+let timerInterval;
+let finishTimes = { metal: 0, wood: 0, glass: 0, plastic: 0 };
+let finishOrder = [];
+
+// Speed factors (higher = faster)
+const speeds = {
+  metal: 5,    // Very fast
+  wood: 0.8,   // Slow
+  glass: 1.0,  // Slow
+  plastic: 0.6 // Very slow
 };
 
-const rodLabel = document.getElementById('rod-label');
-const materialRod = document.getElementById('material-rod');
-const indicatorRight = document.getElementById('indicator-right');
-const resultPanel = document.getElementById('result-panel');
-const resultTitle = document.getElementById('result-title');
-const resultText = document.getElementById('result-text');
+const progress = {
+  metal: 0,
+  wood: 0,
+  glass: 0,
+  plastic: 0
+};
 
-function selectMaterial(type, btn) {
-  const material = materials[type];
-  
-  // Update buttons
-  document.querySelectorAll('.material-btn').forEach(b => b.classList.remove('active'));
+function selectMode(mode, btn) {
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  resetRace();
+}
+
+function selectTrack(material) {
+  // Show info about the material
+  const info = {
+    metal: 'Metal is an excellent conductor! Heat transfers very quickly through it.',
+    wood: 'Wood is an insulator. It has air pockets that slow down heat transfer.',
+    glass: 'Glass is a poor conductor. It transfers heat slowly.',
+    plastic: 'Plastic is a great insulator. Heat barely passes through!'
+  };
+  alert(info[material]);
+}
+
+function startRace() {
+  if (isRacing) return;
   
-  // Update visual
-  rodLabel.textContent = material.label;
-  materialRod.className = `material-rod ${material.rodClass}`;
+  isRacing = true;
+  timer = 0;
+  finishTimes = { metal: 0, wood: 0, glass: 0, plastic: 0 };
+  finishOrder = [];
   
-  // Reset indicator
-  indicatorRight.className = 'heat-indicator';
-  indicatorRight.textContent = '';
+  document.getElementById('start-btn').disabled = true;
+  document.getElementById('results-panel').style.display = 'none';
   
-  // Animate heat transfer
-  setTimeout(() => {
-    if (material.isCondctor) {
-      indicatorRight.classList.add('hot');
-      indicatorRight.textContent = '🔥';
-    } else {
-      indicatorRight.classList.add('cool');
-      indicatorRight.textContent = '❄️';
+  // Hide all badges
+  document.querySelectorAll('.winner-badge').forEach(b => b.classList.remove('show'));
+  
+  timerInterval = setInterval(() => {
+    timer += 0.1;
+    document.getElementById('timer').textContent = `⏱️ ${timer.toFixed(1)} seconds`;
+    
+    // Update each track
+    Object.keys(progress).forEach(material => {
+      if (progress[material] < 100) {
+        progress[material] += speeds[material] * (0.8 + Math.random() * 0.4);
+        
+        if (progress[material] >= 100) {
+          progress[material] = 100;
+          if (!finishTimes[material]) {
+            finishTimes[material] = timer;
+            finishOrder.push(material);
+            showBadge(material, finishOrder.length);
+          }
+        }
+        
+        document.getElementById(`progress-${material}`).style.width = `${progress[material]}%`;
+      }
+    });
+    
+    // Check if race is complete
+    if (Object.values(progress).every(p => p >= 100)) {
+      endRace();
     }
-  }, material.heatTime);
+  }, 100);
+}
+
+function showBadge(material, position) {
+  const badges = ['🥇 1st', '🥈 2nd', '🥉 3rd', '4th'];
+  const badge = document.getElementById(`badge-${material}`);
+  badge.textContent = badges[position - 1];
+  badge.classList.add('show');
+}
+
+function endRace() {
+  clearInterval(timerInterval);
+  isRacing = false;
+  document.getElementById('start-btn').disabled = false;
   
-  // Update result panel
-  resultPanel.className = `result-panel ${material.isCondctor ? 'conductor' : 'insulator'}`;
-  resultTitle.textContent = material.title;
-  resultText.textContent = material.text;
+  // Show results
+  document.getElementById('results-panel').style.display = 'block';
+  
+  Object.keys(finishTimes).forEach(material => {
+    document.getElementById(`result-${material}`).textContent = `${finishTimes[material].toFixed(1)}s`;
+  });
+}
+
+function resetRace() {
+  clearInterval(timerInterval);
+  isRacing = false;
+  timer = 0;
+  
+  Object.keys(progress).forEach(material => {
+    progress[material] = 0;
+    document.getElementById(`progress-${material}`).style.width = '0%';
+  });
+  
+  document.getElementById('timer').textContent = '⏱️ 0.0 seconds';
+  document.getElementById('start-btn').disabled = false;
+  document.getElementById('results-panel').style.display = 'none';
+  
+  document.querySelectorAll('.winner-badge').forEach(b => b.classList.remove('show'));
 }
 </script>
 </body>
