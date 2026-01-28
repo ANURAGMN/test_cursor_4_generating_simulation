@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#0288d1">
-<title>The Water Cycle</title>
+<title>The Water Cycle - Interactive</title>
 
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -50,12 +50,73 @@ body {
   margin-bottom: 10px;
 }
 
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.control-btn {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.control-btn:active { transform: scale(0.98); }
+.control-btn.active { border-color: #0288d1; background: #e1f5fe; color: #01579b; }
+.control-btn .icon { font-size: 16px; }
+
 .cycle-visual {
   position: relative;
-  height: 280px;
+  height: 320px;
   background: linear-gradient(180deg, #87ceeb 0%, #b3e5fc 40%, #e1f5fe 100%);
   border-radius: 10px;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.instruction-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 12px;
+  text-align: center;
+  z-index: 100;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.instruction-overlay.hidden { opacity: 0; }
+
+/* Interactive elements */
+.clickable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clickable:hover { transform: scale(1.1); }
+.clickable.highlighted { 
+  filter: drop-shadow(0 0 10px #ffeb3b) drop-shadow(0 0 20px #ff9800);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
 }
 
 /* Sun */
@@ -63,17 +124,20 @@ body {
   position: absolute;
   top: 15px;
   right: 20px;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   background: radial-gradient(circle, #ffeb3b 0%, #ff9800 100%);
   border-radius: 50%;
   box-shadow: 0 0 30px #ffeb3b;
-  animation: sunPulse 2s ease-in-out infinite alternate;
+}
+
+.sun.active {
+  animation: sunPulse 1.5s ease-in-out infinite;
 }
 
 @keyframes sunPulse {
-  0% { box-shadow: 0 0 20px #ffeb3b; }
-  100% { box-shadow: 0 0 40px #ff9800; }
+  0%, 100% { box-shadow: 0 0 30px #ffeb3b; }
+  50% { box-shadow: 0 0 50px #ff9800, 0 0 80px #ffeb3b; }
 }
 
 /* Clouds */
@@ -85,19 +149,19 @@ body {
 }
 
 .cloud-1 {
-  top: 60px;
-  left: 30px;
-  width: 80px;
-  height: 35px;
+  top: 50px;
+  left: 20px;
+  width: 70px;
+  height: 30px;
 }
 
 .cloud-1::before {
   content: '';
   position: absolute;
-  top: -15px;
-  left: 15px;
-  width: 35px;
-  height: 35px;
+  top: -12px;
+  left: 12px;
+  width: 30px;
+  height: 30px;
   background: #fff;
   border-radius: 50%;
 }
@@ -105,29 +169,29 @@ body {
 .cloud-1::after {
   content: '';
   position: absolute;
-  top: -10px;
-  left: 40px;
-  width: 25px;
-  height: 25px;
+  top: -8px;
+  left: 35px;
+  width: 22px;
+  height: 22px;
   background: #fff;
   border-radius: 50%;
 }
 
 .cloud-2 {
-  top: 40px;
-  left: 140px;
-  width: 100px;
-  height: 40px;
+  top: 35px;
+  left: 120px;
+  width: 90px;
+  height: 35px;
   background: #e0e0e0;
 }
 
 .cloud-2::before {
   content: '';
   position: absolute;
-  top: -20px;
-  left: 20px;
-  width: 45px;
-  height: 45px;
+  top: -18px;
+  left: 18px;
+  width: 40px;
+  height: 40px;
   background: #e0e0e0;
   border-radius: 50%;
 }
@@ -135,35 +199,43 @@ body {
 .cloud-2::after {
   content: '';
   position: absolute;
-  top: -15px;
-  left: 55px;
-  width: 35px;
-  height: 35px;
+  top: -12px;
+  left: 50px;
+  width: 30px;
+  height: 30px;
   background: #e0e0e0;
   border-radius: 50%;
+}
+
+.cloud-2.raining {
+  background: #9e9e9e;
+}
+
+.cloud-2.raining::before, .cloud-2.raining::after {
+  background: #9e9e9e;
 }
 
 /* Mountain */
 .mountain {
   position: absolute;
-  bottom: 60px;
-  right: 20px;
+  bottom: 70px;
+  right: 30px;
   width: 0;
   height: 0;
-  border-left: 60px solid transparent;
-  border-right: 60px solid transparent;
-  border-bottom: 100px solid #5d4037;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 90px solid #5d4037;
 }
 
 .snow-cap {
   position: absolute;
-  bottom: 60px;
-  right: 50px;
+  bottom: 70px;
+  right: 55px;
   width: 0;
   height: 0;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-  border-bottom: 40px solid #fff;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 35px solid #fff;
 }
 
 /* Ocean */
@@ -171,20 +243,42 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 60%;
-  height: 60px;
+  width: 55%;
+  height: 70px;
   background: linear-gradient(180deg, #0288d1 0%, #01579b 100%);
-  border-radius: 0 30px 0 0;
+  border-radius: 0 40px 0 0;
+}
+
+.ocean-waves {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 20px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath fill='rgba(255,255,255,0.3)' d='M0,60 C150,120 350,0 600,60 C850,120 1050,0 1200,60 L1200,120 L0,120 Z'/%3E%3C/svg%3E");
+  animation: waveMove 3s linear infinite;
+}
+
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .ocean-label {
   position: absolute;
-  bottom: 20px;
-  left: 30%;
+  bottom: 15px;
+  left: 25%;
   transform: translateX(-50%);
-  font-size: 10px;
+  font-size: 11px;
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* Land */
@@ -192,109 +286,225 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 50%;
-  height: 60px;
+  width: 55%;
+  height: 70px;
   background: linear-gradient(180deg, #8bc34a 0%, #689f38 100%);
-  border-radius: 30px 0 0 0;
+  border-radius: 40px 0 0 0;
 }
 
 .tree {
   position: absolute;
-  bottom: 60px;
-  font-size: 30px;
+  bottom: 70px;
+  font-size: 35px;
 }
 
 /* Evaporation arrows */
-.evaporation {
+.evap-container {
   position: absolute;
-  bottom: 80px;
-  left: 20%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  bottom: 90px;
+  left: 15%;
 }
 
 .evap-arrow {
-  font-size: 16px;
-  color: #ff9800;
-  animation: evapRise 2s ease-in-out infinite;
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  opacity: 0;
 }
 
+.evap-arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.evap-arrow polygon { fill: #ff9800; }
+
+.evap-container.active .evap-arrow {
+  animation: evapRise 2.5s ease-out infinite;
+}
+
+.evap-container.active .evap-arrow:nth-child(1) { animation-delay: 0s; }
+.evap-container.active .evap-arrow:nth-child(2) { left: 25px; animation-delay: 0.5s; }
+.evap-container.active .evap-arrow:nth-child(3) { left: 50px; animation-delay: 1s; }
+
 @keyframes evapRise {
-  0%, 100% { transform: translateY(0); opacity: 0.5; }
-  50% { transform: translateY(-10px); opacity: 1; }
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(-80px); opacity: 0; }
 }
 
 /* Rain drops */
 .rain-container {
   position: absolute;
-  top: 100px;
-  left: 150px;
-  width: 60px;
+  top: 80px;
+  left: 140px;
+  width: 70px;
+  height: 100px;
 }
 
 .raindrop {
   position: absolute;
-  width: 6px;
-  height: 12px;
+  width: 8px;
+  height: 16px;
   background: linear-gradient(180deg, #64b5f6, #1976d2);
   border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
-  animation: rainFall 1.5s linear infinite;
+  opacity: 0;
 }
+
+.rain-container.active .raindrop {
+  animation: rainFall 1.2s linear infinite;
+}
+
+.rain-container.active .raindrop:nth-child(1) { left: 5px; animation-delay: 0s; }
+.rain-container.active .raindrop:nth-child(2) { left: 20px; animation-delay: 0.2s; }
+.rain-container.active .raindrop:nth-child(3) { left: 35px; animation-delay: 0.4s; }
+.rain-container.active .raindrop:nth-child(4) { left: 50px; animation-delay: 0.6s; }
+.rain-container.active .raindrop:nth-child(5) { left: 15px; animation-delay: 0.8s; }
+.rain-container.active .raindrop:nth-child(6) { left: 40px; animation-delay: 1s; }
 
 @keyframes rainFall {
   0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(100px); opacity: 0; }
+  100% { transform: translateY(120px); opacity: 0; }
 }
 
-/* Labels */
-.cycle-label {
+/* Runoff arrow */
+.runoff-container {
   position: absolute;
-  padding: 4px 8px;
-  border-radius: 10px;
-  font-size: 8px;
-  font-weight: 600;
-  color: #fff;
+  bottom: 85px;
+  right: 100px;
 }
 
-.label-evap { bottom: 130px; left: 10px; background: #ff9800; }
-.label-cond { top: 30px; left: 90px; background: #9e9e9e; }
-.label-precip { top: 110px; left: 200px; background: #1976d2; }
-.label-runoff { bottom: 70px; right: 100px; background: #4caf50; }
+.runoff-arrow {
+  width: 60px;
+  height: 25px;
+  opacity: 0;
+}
 
-.stage-tabs {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
+.runoff-arrow svg { width: 100%; height: 100%; }
+.runoff-arrow polygon { fill: #4caf50; }
+
+.runoff-container.active .runoff-arrow {
+  animation: runoffFlow 2s ease-in-out infinite;
+}
+
+@keyframes runoffFlow {
+  0%, 100% { opacity: 0; transform: translateX(0); }
+  50% { opacity: 1; transform: translateX(-20px); }
+}
+
+/* Stage labels */
+.stage-label {
+  position: absolute;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.stage-label:hover { transform: scale(1.1); }
+.stage-label.active { animation: labelPulse 1s ease-in-out infinite; }
+
+@keyframes labelPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.label-evap { bottom: 150px; left: 10px; background: #ff9800; }
+.label-cond { top: 25px; left: 80px; background: #9e9e9e; }
+.label-precip { top: 90px; left: 180px; background: #1976d2; }
+.label-runoff { bottom: 100px; right: 60px; background: #4caf50; }
+.label-collect { bottom: 25px; left: 50%; transform: translateX(-50%); background: #01579b; }
+
+/* Info popup */
+.info-popup {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 50;
+}
+
+.info-popup.show { transform: translateY(0); }
+
+.info-popup-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #01579b;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-popup-text {
+  font-size: 11px;
+  color: #37474f;
+  line-height: 1.5;
+}
+
+.close-popup {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #999;
+}
+
+/* Step indicator */
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
   margin-top: 12px;
 }
 
-.stage-tab {
-  padding: 8px 2px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  background: #fafafa;
-  text-align: center;
+.step-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e0e0e0;
   cursor: pointer;
-  font-size: 8px;
-  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-.stage-tab:active { transform: scale(0.95); }
-.stage-tab.active { border-color: #0288d1; background: #e1f5fe; color: #01579b; }
+.step-dot.active { background: #0288d1; transform: scale(1.2); }
+.step-dot.completed { background: #4caf50; }
 
-.stage-tab .emoji { font-size: 18px; display: block; margin-bottom: 2px; }
+.step-dot:hover { transform: scale(1.3); }
 
-.stage-info {
-  background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
-  border-radius: 10px;
-  padding: 12px;
+.nav-buttons {
+  display: flex;
+  gap: 10px;
   margin-top: 10px;
-  border-left: 4px solid #0288d1;
 }
 
-.stage-title { font-size: 12px; font-weight: 700; color: #01579b; margin-bottom: 8px; }
-.stage-text { font-size: 11px; color: #37474f; line-height: 1.6; }
+.nav-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-btn.prev { background: #e0e0e0; color: #333; }
+.nav-btn.next { background: linear-gradient(135deg, #0288d1, #4fc3f7); color: #fff; }
+.nav-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
 .takeaway {
   background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
@@ -314,125 +524,338 @@ body {
 
 <div class="header">
   <h1>💧 The Water Cycle</h1>
-  <p>How water circulates on Earth</p>
+  <p>Interactive simulation - tap elements to explore!</p>
 </div>
 
 <div class="concept-card">
   <div class="concept-title">📚 Key Concept</div>
   <div class="concept-text">
-    The <strong>Sun's heat</strong> drives the water cycle. Water evaporates from oceans and land, rises to form clouds, falls as precipitation, and returns to water bodies - a continuous cycle!
+    The <strong>Sun's heat</strong> drives the water cycle. Tap on the sun, clouds, rain, or labels to learn about each stage!
   </div>
 </div>
 
 <div class="sim-card">
-  <div class="cycle-visual">
-    <div class="sun"></div>
+  <div class="controls">
+    <button class="control-btn" id="play-btn" onclick="toggleAnimation()">
+      <span class="icon" id="play-icon">▶️</span>
+      <span id="play-text">Play All</span>
+    </button>
+    <button class="control-btn" id="guided-btn" onclick="startGuidedMode()">
+      <span class="icon">📖</span>
+      Step-by-Step
+    </button>
+    <button class="control-btn" onclick="resetSimulation()">
+      <span class="icon">🔄</span>
+      Reset
+    </button>
+  </div>
+  
+  <div class="cycle-visual" id="cycle-visual">
+    <div class="instruction-overlay" id="instruction">👆 Tap elements or use controls above</div>
     
-    <div class="cloud cloud-1"></div>
-    <div class="cloud cloud-2"></div>
+    <!-- Sun -->
+    <div class="sun clickable" id="sun" onclick="showInfo('sun')"></div>
     
-    <div class="rain-container">
-      <div class="raindrop" style="left: 0; animation-delay: 0s;"></div>
-      <div class="raindrop" style="left: 15px; animation-delay: 0.3s;"></div>
-      <div class="raindrop" style="left: 30px; animation-delay: 0.6s;"></div>
-      <div class="raindrop" style="left: 45px; animation-delay: 0.9s;"></div>
+    <!-- Clouds -->
+    <div class="cloud cloud-1 clickable" onclick="showInfo('condensation')"></div>
+    <div class="cloud cloud-2 clickable" id="rain-cloud" onclick="showInfo('condensation')"></div>
+    
+    <!-- Evaporation arrows -->
+    <div class="evap-container" id="evap-container">
+      <div class="evap-arrow">
+        <svg viewBox="0 0 20 30"><polygon points="10,0 20,15 15,15 15,30 5,30 5,15 0,15"/></svg>
+      </div>
+      <div class="evap-arrow">
+        <svg viewBox="0 0 20 30"><polygon points="10,0 20,15 15,15 15,30 5,30 5,15 0,15"/></svg>
+      </div>
+      <div class="evap-arrow">
+        <svg viewBox="0 0 20 30"><polygon points="10,0 20,15 15,15 15,30 5,30 5,15 0,15"/></svg>
+      </div>
     </div>
     
-    <div class="evaporation">
-      <div class="evap-arrow" style="animation-delay: 0s;">⬆️</div>
-      <div class="evap-arrow" style="animation-delay: 0.3s;">⬆️</div>
-      <div class="evap-arrow" style="animation-delay: 0.6s;">⬆️</div>
+    <!-- Rain -->
+    <div class="rain-container" id="rain-container">
+      <div class="raindrop"></div>
+      <div class="raindrop"></div>
+      <div class="raindrop"></div>
+      <div class="raindrop"></div>
+      <div class="raindrop"></div>
+      <div class="raindrop"></div>
     </div>
     
+    <!-- Mountain -->
     <div class="mountain"></div>
     <div class="snow-cap"></div>
     
-    <div class="ocean">
+    <!-- Runoff -->
+    <div class="runoff-container" id="runoff-container">
+      <div class="runoff-arrow">
+        <svg viewBox="0 0 60 25"><polygon points="0,8 40,8 40,0 60,12.5 40,25 40,17 0,17"/></svg>
+      </div>
+    </div>
+    
+    <!-- Ocean -->
+    <div class="ocean clickable" onclick="showInfo('collection')">
+      <div class="ocean-waves"><div class="wave"></div></div>
       <div class="ocean-label">OCEAN</div>
     </div>
     
-    <div class="land">
-      <div class="tree" style="right: 80px;">🌳</div>
-      <div class="tree" style="right: 40px;">🌲</div>
+    <!-- Land -->
+    <div class="land clickable" onclick="showInfo('runoff')">
+      <div class="tree" style="right: 90px;">🌳</div>
+      <div class="tree" style="right: 50px;">🌲</div>
     </div>
     
-    <div class="cycle-label label-evap">☀️ Evaporation</div>
-    <div class="cycle-label label-cond">☁️ Condensation</div>
-    <div class="cycle-label label-precip">🌧️ Precipitation</div>
-    <div class="cycle-label label-runoff">🏞️ Runoff</div>
+    <!-- Stage Labels -->
+    <div class="stage-label label-evap" onclick="showInfo('evaporation')">☀️ Evaporation</div>
+    <div class="stage-label label-cond" onclick="showInfo('condensation')">☁️ Condensation</div>
+    <div class="stage-label label-precip" onclick="showInfo('precipitation')">🌧️ Precipitation</div>
+    <div class="stage-label label-runoff" onclick="showInfo('runoff')">🏞️ Runoff</div>
+    <div class="stage-label label-collect" onclick="showInfo('collection')">💧 Collection</div>
+    
+    <!-- Info Popup -->
+    <div class="info-popup" id="info-popup">
+      <button class="close-popup" onclick="hideInfo()">✕</button>
+      <div class="info-popup-title" id="popup-title">☀️ Evaporation</div>
+      <div class="info-popup-text" id="popup-text">
+        The Sun's heat causes water from oceans, rivers, and lakes to evaporate into water vapor.
+      </div>
+    </div>
   </div>
   
-  <div class="stage-tabs">
-    <button class="stage-tab active" onclick="selectStage('evap', this)">
-      <span class="emoji">☀️</span>
-      Evaporation
-    </button>
-    <button class="stage-tab" onclick="selectStage('cond', this)">
-      <span class="emoji">☁️</span>
-      Condensation
-    </button>
-    <button class="stage-tab" onclick="selectStage('precip', this)">
-      <span class="emoji">🌧️</span>
-      Precipitation
-    </button>
-    <button class="stage-tab" onclick="selectStage('collect', this)">
-      <span class="emoji">🏞️</span>
-      Collection
-    </button>
+  <!-- Guided mode elements -->
+  <div class="step-indicator" id="step-indicator" style="display: none;">
+    <div class="step-dot" data-step="0" onclick="goToStep(0)"></div>
+    <div class="step-dot" data-step="1" onclick="goToStep(1)"></div>
+    <div class="step-dot" data-step="2" onclick="goToStep(2)"></div>
+    <div class="step-dot" data-step="3" onclick="goToStep(3)"></div>
+    <div class="step-dot" data-step="4" onclick="goToStep(4)"></div>
   </div>
-</div>
-
-<div class="stage-info" id="stage-info">
-  <div class="stage-title" id="stage-title">☀️ Evaporation</div>
-  <div class="stage-text" id="stage-text">
-    The Sun's heat causes water from oceans, rivers, lakes, and even wet soil to <strong>evaporate</strong> (turn into water vapor). Plants also release water vapor through <strong>transpiration</strong>. This invisible water vapor rises into the atmosphere.
+  
+  <div class="nav-buttons" id="nav-buttons" style="display: none;">
+    <button class="nav-btn prev" id="prev-btn" onclick="prevStep()">← Previous</button>
+    <button class="nav-btn next" id="next-btn" onclick="nextStep()">Next →</button>
   </div>
 </div>
 
 <div class="takeaway">
   <div class="takeaway-title">🎯 The Cycle Never Stops!</div>
   <div class="takeaway-text">
-    • <strong>Evaporation:</strong> Water → Water vapor (heat absorbed)<br>
-    • <strong>Condensation:</strong> Vapor → Clouds (heat released)<br>
+    • <strong>Evaporation:</strong> Water → Water vapor (Sun heats)<br>
+    • <strong>Condensation:</strong> Vapor → Clouds (cooling)<br>
     • <strong>Precipitation:</strong> Rain, snow, hail falls<br>
-    • <strong>Collection:</strong> Water returns to oceans, rivers, groundwater<br>
-    • The same water has been cycling for billions of years!
+    • <strong>Collection:</strong> Water returns to oceans & ground
   </div>
 </div>
 
 </div>
 
 <script>
-const stages = {
-  evap: {
+const stageInfo = {
+  sun: {
+    title: '☀️ The Sun - Energy Source',
+    text: 'The Sun provides the <strong>heat energy</strong> that powers the entire water cycle. Without the Sun, water wouldn\'t evaporate and the cycle would stop!'
+  },
+  evaporation: {
     title: '☀️ Evaporation',
-    text: 'The Sun\'s heat causes water from oceans, rivers, lakes, and even wet soil to <strong>evaporate</strong> (turn into water vapor). Plants also release water vapor through <strong>transpiration</strong>. This invisible water vapor rises into the atmosphere.'
+    text: 'The Sun\'s heat causes water from oceans, rivers, lakes, and wet soil to <strong>evaporate</strong> (turn into invisible water vapor). Plants also release water vapor through <strong>transpiration</strong>.'
   },
-  cond: {
+  condensation: {
     title: '☁️ Condensation',
-    text: 'As water vapor rises, it cools down. Cool air can\'t hold as much water vapor, so it <strong>condenses</strong> into tiny water droplets. Millions of these droplets together form <strong>clouds</strong>. This is the opposite of evaporation!'
+    text: 'As water vapor rises, it <strong>cools down</strong>. Cool air can\'t hold as much moisture, so vapor <strong>condenses</strong> into tiny water droplets that form clouds.'
   },
-  precip: {
+  precipitation: {
     title: '🌧️ Precipitation',
-    text: 'When cloud droplets combine and become heavy enough, they fall as <strong>precipitation</strong>. This can be rain, snow, sleet, or hail depending on temperature. Precipitation returns water to Earth\'s surface.'
+    text: 'When water droplets in clouds become heavy enough, they fall as <strong>precipitation</strong> - rain, snow, sleet, or hail depending on temperature.'
   },
-  collect: {
-    title: '🏞️ Collection & Runoff',
-    text: 'Fallen water collects in oceans, rivers, and lakes. Some water <strong>infiltrates</strong> (seeps) into the ground to become groundwater. Water on the surface flows downhill as <strong>runoff</strong> toward larger water bodies. The cycle continues!'
+  runoff: {
+    title: '🏞️ Runoff & Infiltration',
+    text: 'Water that falls on land either <strong>runs off</strong> into streams and rivers, or <strong>infiltrates</strong> (seeps) into the ground to become groundwater.'
+  },
+  collection: {
+    title: '💧 Collection',
+    text: 'Water collects in <strong>oceans, lakes, and rivers</strong>, or is stored underground as groundwater. From here, the cycle begins again!'
   }
 };
 
-const stageTitle = document.getElementById('stage-title');
-const stageText = document.getElementById('stage-text');
+const steps = ['evaporation', 'condensation', 'precipitation', 'runoff', 'collection'];
 
-function selectStage(stage, btn) {
-  document.querySelectorAll('.stage-tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
+let isPlaying = false;
+let isGuidedMode = false;
+let currentStep = 0;
+
+const instruction = document.getElementById('instruction');
+const infoPopup = document.getElementById('info-popup');
+const popupTitle = document.getElementById('popup-title');
+const popupText = document.getElementById('popup-text');
+const sun = document.getElementById('sun');
+const evapContainer = document.getElementById('evap-container');
+const rainContainer = document.getElementById('rain-container');
+const rainCloud = document.getElementById('rain-cloud');
+const runoffContainer = document.getElementById('runoff-container');
+const stepIndicator = document.getElementById('step-indicator');
+const navButtons = document.getElementById('nav-buttons');
+const playBtn = document.getElementById('play-btn');
+const guidedBtn = document.getElementById('guided-btn');
+
+function showInfo(stage) {
+  instruction.classList.add('hidden');
   
-  const data = stages[stage];
-  stageTitle.textContent = data.title;
-  stageText.innerHTML = data.text;
+  const info = stageInfo[stage];
+  popupTitle.innerHTML = info.title;
+  popupText.innerHTML = info.text;
+  infoPopup.classList.add('show');
+  
+  // Highlight relevant elements
+  clearHighlights();
+  
+  if (stage === 'sun' || stage === 'evaporation') {
+    sun.classList.add('active');
+    evapContainer.classList.add('active');
+    document.querySelector('.label-evap').classList.add('active');
+  } else if (stage === 'condensation') {
+    document.querySelector('.label-cond').classList.add('active');
+  } else if (stage === 'precipitation') {
+    rainCloud.classList.add('raining');
+    rainContainer.classList.add('active');
+    document.querySelector('.label-precip').classList.add('active');
+  } else if (stage === 'runoff') {
+    runoffContainer.classList.add('active');
+    document.querySelector('.label-runoff').classList.add('active');
+  } else if (stage === 'collection') {
+    document.querySelector('.label-collect').classList.add('active');
+  }
 }
+
+function hideInfo() {
+  infoPopup.classList.remove('show');
+  if (!isPlaying && !isGuidedMode) {
+    clearHighlights();
+  }
+}
+
+function clearHighlights() {
+  sun.classList.remove('active');
+  evapContainer.classList.remove('active');
+  rainCloud.classList.remove('raining');
+  rainContainer.classList.remove('active');
+  runoffContainer.classList.remove('active');
+  document.querySelectorAll('.stage-label').forEach(l => l.classList.remove('active'));
+}
+
+function toggleAnimation() {
+  isPlaying = !isPlaying;
+  
+  if (isPlaying) {
+    instruction.classList.add('hidden');
+    playBtn.classList.add('active');
+    document.getElementById('play-icon').textContent = '⏸️';
+    document.getElementById('play-text').textContent = 'Pause';
+    
+    // Activate all animations
+    sun.classList.add('active');
+    evapContainer.classList.add('active');
+    rainCloud.classList.add('raining');
+    rainContainer.classList.add('active');
+    runoffContainer.classList.add('active');
+  } else {
+    playBtn.classList.remove('active');
+    document.getElementById('play-icon').textContent = '▶️';
+    document.getElementById('play-text').textContent = 'Play All';
+    
+    clearHighlights();
+  }
+}
+
+function startGuidedMode() {
+  isGuidedMode = true;
+  isPlaying = false;
+  currentStep = 0;
+  
+  instruction.classList.add('hidden');
+  guidedBtn.classList.add('active');
+  playBtn.classList.remove('active');
+  document.getElementById('play-icon').textContent = '▶️';
+  document.getElementById('play-text').textContent = 'Play All';
+  
+  stepIndicator.style.display = 'flex';
+  navButtons.style.display = 'flex';
+  
+  updateGuidedStep();
+}
+
+function exitGuidedMode() {
+  isGuidedMode = false;
+  guidedBtn.classList.remove('active');
+  stepIndicator.style.display = 'none';
+  navButtons.style.display = 'none';
+  hideInfo();
+  clearHighlights();
+}
+
+function updateGuidedStep() {
+  clearHighlights();
+  
+  // Update step dots
+  document.querySelectorAll('.step-dot').forEach((dot, i) => {
+    dot.classList.remove('active', 'completed');
+    if (i < currentStep) dot.classList.add('completed');
+    if (i === currentStep) dot.classList.add('active');
+  });
+  
+  // Update navigation buttons
+  document.getElementById('prev-btn').disabled = currentStep === 0;
+  document.getElementById('next-btn').textContent = currentStep === steps.length - 1 ? 'Finish ✓' : 'Next →';
+  
+  // Show info for current step
+  showInfo(steps[currentStep]);
+}
+
+function nextStep() {
+  if (currentStep < steps.length - 1) {
+    currentStep++;
+    updateGuidedStep();
+  } else {
+    exitGuidedMode();
+  }
+}
+
+function prevStep() {
+  if (currentStep > 0) {
+    currentStep--;
+    updateGuidedStep();
+  }
+}
+
+function goToStep(step) {
+  currentStep = step;
+  updateGuidedStep();
+}
+
+function resetSimulation() {
+  isPlaying = false;
+  isGuidedMode = false;
+  currentStep = 0;
+  
+  playBtn.classList.remove('active');
+  guidedBtn.classList.remove('active');
+  document.getElementById('play-icon').textContent = '▶️';
+  document.getElementById('play-text').textContent = 'Play All';
+  
+  stepIndicator.style.display = 'none';
+  navButtons.style.display = 'none';
+  
+  instruction.classList.remove('hidden');
+  hideInfo();
+  clearHighlights();
+}
+
+// Hide instruction after first interaction
+document.getElementById('cycle-visual').addEventListener('click', function(e) {
+  if (e.target.classList.contains('cycle-visual')) {
+    instruction.classList.add('hidden');
+  }
+}, { once: true });
 </script>
 </body>
 </html>
