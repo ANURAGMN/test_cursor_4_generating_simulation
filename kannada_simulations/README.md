@@ -13,14 +13,16 @@ Example: `science_chapter1_simulation1_light_and_shadows_kn.html`, `science_chap
 - **Logic fixes:** In the Light & Shadows simulation, the drag hint was clarified (horizontal = light distance, vertical = object size). Material label in metrics shows Kannada text (ಅಪಾರದರ್ಶಕ, ಅರೆಪಾರದರ್ಶಕ, ಪಾರದರ್ಶಕ) via script.
 - **Naming:** All files follow `science_chapterN_simulationM_conceptname_kn.html`.
 
-## Files created (so far)
+## Files (all 71 simulations)
 
-| File | Source branch | Concept |
-|------|----------------|--------|
-| science_chapter1_simulation1_light_and_shadows_kn.html | main / any (lightsShadows4.html) | Light & Shadows |
-| science_chapter2_simulation1_hidden_message_kn.html | cursor/unit2-html-simulations-af5f | Hidden message (acid-base intro) |
-| science_chapter2_simulation2_litmus_indicator_kn.html | cursor/unit2-html-simulations-af5f | Litmus paper test |
-| science_chapter2_simulation3_properties_acids_bases_kn.html | cursor/unit2-html-simulations-af5f | Properties of acids & bases |
+- **Chapter 1:** `science_chapter1_simulation1_light_and_shadows_kn.html` (from lightsShadows4.html on any branch)
+- **Chapter 2:** 10 simulations (unit2 → cursor/unit2-html-simulations-af5f): hidden_message, litmus_indicator, properties_acids_bases, red_rose_indicator, turmeric_indicator, olfactory_indicator, neutralisation_reaction, ant_bite_treatment, soil_treatment, industrial_waste_treatment
+- **Chapter 3:** 10 simulations (unit3-html-simulations): electricity_uses, electricity_sources, torch_components, electric_cell, battery_connection, lamp_types, simple_circuit, electric_switch, circuit_symbols, conductors_insulators
+- **Chapter 4:** 10 simulations (unit4): malleability, ductility, sonority, heat_conduction, electrical_conductivity, rusting_experiment, metal_oxide_reaction, nonmetal_oxide_reaction, metals_nonmetals_compare, applications
+- **Chapter 5:** 10 simulations (unit5): physical_changes, chemical_changes, reversible_irreversible, states_of_matter, fire_triangle, oxygen_combustion, candle_burning, combustion_examples, desirable_undesirable, weathering_erosion
+- **Chapter 6:** 10 simulations (unit6): life_stages, growth_chart, physical_changes, voice_changes, menstrual_cycle, emotional_changes, nutrition, hygiene, healthy_habits, say_no
+- **Chapter 7:** 10 simulations (unit7): heat_sources, conduction, conductors_insulators, convection, land_sea_breeze, radiation, combined_heat_transfer, water_cycle, infiltration, water_conservation
+- **Chapter 8:** 10 simulations (unit8): historical_clocks, sundial, pendulum, pendulum_timing, time_units, speed_calculator, speed_race, uniform_motion, nonuniform_motion, speedometer
 
 ## How to add more Kannada simulations from other branches
 
