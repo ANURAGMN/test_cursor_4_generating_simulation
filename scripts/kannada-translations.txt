@@ -1,0 +1,178 @@
+Reference (baseline)|ಉಲ್ಲೇಖ (ಆಧಾರ)
+Experiment (change & observe)|ಪ್ರಯೋಗ (ಬದಲಾಯಿಸಿ ಮತ್ತು ಗಮನಿಸಿ)
+Select a solution to test:|ಪರೀಕ್ಷಿಸಲು ದ್ರಾವಣ ಆಯ್ಕೆಮಾಡಿ:
+What you discovered:|ನೀವು ಕಂಡುಕೊಂಡದ್ದು:
+Key Insight:|ಮುಖ್ಯ ಅಂತರ್ದೃಷ್ಟಿ:
+Blue Litmus|ನೀಲಿ ಲಿಟ್ಮಸ್
+Red Litmus|ಕೆಂಪು ಲಿಟ್ಮಸ್
+Soap Solution|ಸಾಬೂನು ದ್ರಾವಣ
+Baking Soda|ಬೇಕಿಂಗ್ ಸೋಡಾ
+Lime Water|ಸುಣ್ಣದ ನೀರು
+Tap Water|ನಳ ನೀರು
+Sugar Solution|ಸಕ್ಕರೆ ದ್ರಾವಣ
+Salt Solution|ಉಪ್ಪು ದ್ರಾವಣ
+Lemon Juice|ನಿಂಬೆ ರಸ
+Orange Juice|ಕಿತ್ತಳೆ ರಸ
+Curd/Yogurt|ಮೊಸರು
+Solution:|ದ್ರಾವಣ:
+Conclusion:|ತೀರ್ಮಾನ:
+Submit|ಸಲ್ಲಿಸಿ
+Adjust|ಸರಿಹೊಂದಿಸಿ
+Distance|ದೂರ
+Size|ಗಾತ್ರ
+Material|ಪದಾರ್ಥ
+Opaque|ಅಪಾರದರ್ಶಕ
+Translucent|ಅರೆಪಾರದರ್ಶಕ
+Transparent|ಪಾರದರ್ಶಕ
+Dip Papers|ಕಾಗದಗಳನ್ನು ಮುಳುಗಿಸಿ
+Original (Pink)|ಮೂಲ (ಗುಲಾಬಿ)
+Acidic → Red|ಆಮ್ಲೀಯ → ಕೆಂಪು
+Basic → Green|ಕ್ಷಾರೀಯ → ಹಸಿರು
+No change|ಬದಲಾವಣೆ ಇಲ್ಲ
+Lemon|ನಿಂಬೆ
+Vinegar|ವಿನಿಗರ್
+Orange|ಕಿತ್ತಳೆ
+Curd|ಮೊಸರು
+Soapy|ಸಾಬೂನು ತರಹ
+Soap|ಸಾಬೂನು
+Sugar|ಸಕ್ಕರೆ
+Salt|ಉಪ್ಪು
+Milk|ಹಾಲು
+
+# Titles and headers (longer first)
+Uses of Electricity – Interactive Classification|ವಿದ್ಯುತ್ ಬಳಕೆಗಳು – ಸಂವಾದಾತ್ಮಕ ವರ್ಗೀಕರಣ
+Sources of Electricity – Power Generation|ವಿದ್ಯುತ್ ಮೂಲಗಳು – ವಿದ್ಯುತ್ ಉತ್ಪಾದನೆ
+Inside a Torch – Components Exploration|ಟಾರ್ಚ್ ಒಳಭಾಗ – ಭಾಗಗಳ ಅನ್ವೇಷಣೆ
+Electric Cell – Structure & Terminals|ವಿದ್ಯುತ್ ಕೋಶ – ರಚನೆ ಮತ್ತು ಟರ್ಮಿನಲ್‌ಗಳು
+Battery – Connecting Cells Together|ಬ್ಯಾಟರಿ – ಕೋಶಗಳನ್ನು ಜೋಡಿಸುವುದು
+Lamp Types – Incandescent vs LED|ದೀಪ ಪ್ರಕಾರಗಳು – ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ vs LED
+Simple Electrical Circuit – Build & Learn|ಸರಳ ವಿದ್ಯುತ್ ಸರ್ಕ್ಯೂಟ್ – ನಿರ್ಮಿಸಿ ಮತ್ತು ಕಲಿಯಿರಿ
+Electric Switch – Circuit Controller|ವಿದ್ಯುತ್ ಸ್ವಿಚ್ – ಸರ್ಕ್ಯೂಟ್ ನಿಯಂತ್ರಕ
+Circuit Symbols – Reading Circuit Diagrams|ಸರ್ಕ್ಯೂಟ್ ಚಿಹ್ನೆಗಳು – ಸರ್ಕ್ಯೂಟ್ ರೇಖಾಚಿತ್ರಗಳು
+Conductors & Insulators – ಪದಾರ್ಥ Testing|ವಾಹಕಗಳು ಮತ್ತು ಅವಾಹಕಗಳು – ಪದಾರ್ಥ ಪರೀಕ್ಷೆ
+Real-World Applications – Metals & Non-metals|ನೈಜ ಜಗತ್ತಿನ ಅನ್ವಯಗಳು – ಲೋಹಗಳು ಮತ್ತು ಅಲೋಹಗಳು
+Metals vs Non-metals – Comparison|ಲೋಹಗಳು ಮತ್ತು ಅಲೋಹಗಳು – ಹೋಲಿಕೆ
+Non-metal + Oxygen – Acidic Oxide|ಅಲೋಹ + ಆಮ್ಲಜನಕ – ಆಮ್ಲೀಯ ಆಕ್ಸೈಡ್
+Metal + Oxygen – Basic Oxide|ಲೋಹ + ಆಮ್ಲಜನಕ – ಕ್ಷಾರೀಯ ಆಕ್ಸೈಡ್
+Rusting of Iron – Conditions|ಕಬ್ಬಿಣದ ತುಕ್ಕು – ಪರಿಸ್ಥಿತಿಗಳು
+Electrical Conductivity – Circuit Tester|ವಿದ್ಯುತ್ ವಾಹಕತೆ – ಸರ್ಕ್ಯೂಟ್ ಪರೀಕ್ಷಕ
+Heat Conduction – Metals vs Non-metals|ಉಷ್ಣ ವಾಹಕತೆ – ಲೋಹಗಳು ಮತ್ತು ಅಲೋಹಗಳು
+Sonority – Sound Test|ಧ್ವನಿಮುದ್ರಣ – ಧ್ವನಿ ಪರೀಕ್ಷೆ
+Ductility – Drawing Wires|ಸೆಳೆತ – ತಂತಿಗಳನ್ನು ಎಳೆಯುವುದು
+Malleability – Metals vs Non-metals|ನಮ್ಯತೆ – ಲೋಹಗಳು ಮತ್ತು ಅಲೋಹಗಳು
+Physical Changes – No New Substance|ಭೌತಿಕ ಬದಲಾವಣೆಗಳು – ಹೊಸ ಪದಾರ್ಥ ಇಲ್ಲ
+Chemical Changes – New Substances Formed|ರಾಸಾಯನಿಕ ಬದಲಾವಣೆಗಳು – ಹೊಸ ಪದಾರ್ಥಗಳು
+Reversible vs Irreversible Changes|ಹಿಮ್ಮುಖ ಮತ್ತು ಅಹಿಮ್ಮುಖ ಬದಲಾವಣೆಗಳು
+States of Matter – Water Transitions|ದ್ರವ್ಯದ ಸ್ಥಿತಿಗಳು – ನೀರಿನ ಪರಿವರ್ತನೆಗಳು
+Fire Triangle – Requirements for Combustion|ಅಗ್ನಿ ತ್ರಿಕೋಣ – ದಹನಕ್ಕೆ ಅಗತ್ಯಗಳು
+Oxygen & Combustion – Candle Experiment|ಆಮ್ಲಜನಕ ಮತ್ತು ದಹನ – ಮೇಣದ ಪ್ರಯೋಗ
+Burning Candle – Physical & Chemical Changes|ಉರಿಯುವ ಮೇಣ – ಭೌತಿಕ ಮತ್ತು ರಾಸಾಯನಿಕ ಬದಲಾವಣೆಗಳು
+Combustion Examples – Burning ಪದಾರ್ಥs|ದಹನ ಉದಾಹರಣೆಗಳು – ಉರಿಯುವ ಪದಾರ್ಥಗಳು
+Desirable vs Undesirable Changes|ಅಪೇಕ್ಷಣೀಯ ಮತ್ತು ಅನಪೇಕ್ಷಿತ ಬದಲಾವಣೆಗಳು
+Weathering & Erosion – Slow Natural Changes|ವಾತಾವರಣ ಮತ್ತು ಕೊರೆತ – ನಿಧಾನ ನೈಸರ್ಗಿಕ ಬದಲಾವಣೆಗಳು
+Stages of Human Life|ಮಾನವ ಜೀವನದ ಹಂತಗಳು
+Growth During Adolescence|ಕೌಮಾರದಲ್ಲಿ ಬೆಳವಣಿಗೆ
+Physical Changes During Puberty|ಯೌವನದಲ್ಲಿ ಭೌತಿಕ ಬದಲಾವಣೆಗಳು
+Voice Changes During Puberty|ಯೌವನದಲ್ಲಿ ಧ್ವನಿ ಬದಲಾವಣೆಗಳು
+Understanding Menstruation|ಋತುಚಕ್ರ ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು
+Emotional Changes During Adolescence|ಕೌಮಾರದಲ್ಲಿ ಭಾವನಾತ್ಮಕ ಬದಲಾವಣೆಗಳು
+Nutrition for Adolescents|ಕೌಮಾರ ವಯಸ್ಕರಿಗೆ ಪೋಷಣೆ
+Personal Hygiene During Adolescence|ಕೌಮಾರದಲ್ಲಿ ವೈಯಕ್ತಿಕ ಶುಚಿತ್ವ
+Healthy Habits for Adolescents|ಕೌಮಾರ ವಯಸ್ಕರಿಗೆ ಆರೋಗ್ಯಕರ ಅಭ್ಯಾಸಗಳು
+Say No to Harmful Substances|ಹಾನಿಕಾರಕ ಪದಾರ್ಥಗಳಿಗೆ ಒಪ್ಪಿಗೆ ನೀಡಬೇಡಿ
+History of Timekeeping|ಸಮಯ ಮಾಪನದ ಇತಿಹಾಸ
+Interactive Sundial|ಸಂವಾದಾತ್ಮಕ ಸೂರ್ಯ ಘಡಿಯಾರ
+Simple Pendulum - Interactive|ಸರಳ ಲೋಲಕ - ಸಂವಾದಾತ್ಮಕ
+Pendulum Time Period Experiment|ಲೋಲಕ ಕಾಲಾವಧಿ ಪ್ರಯೋಗ
+Time Units Converter|ಸಮಯ ಘಟಕ ಪರಿವರ್ತಕ
+Speed Calculator|ವೇಗ ಕ್ಯಾಲ್ಕುಲೇಟರ್
+Speed Race|ವೇಗ ಓಟ
+Uniform Linear Motion|ಏಕರೂಪ ರೇಖೀಯ ಚಲನೆ
+Non-Uniform Motion|ಅಸಮ ಚಲನೆ
+Speedometer & Odometer|ಸ್ಪೀಡೋಮೀಟರ್ ಮತ್ತು ಓಡೋಮೀಟರ್
+Sources of Heat - Regional Differences|ಉಷ್ಣದ ಮೂಲಗಳು - ಪ್ರಾದೇಶಿಕ ವ್ಯತ್ಯಾಸಗಳು
+Conduction of Heat - Interactive|ಉಷ್ಣ ವಾಹಕತೆ - ಸಂವಾದಾತ್ಮಕ
+Convection - Interactive|ಸಂವಹನ - ಸಂವಾದಾತ್ಮಕ
+Land and Sea Breeze|ಭೂ ಮತ್ತು ಸಮುದ್ರ ಗಾಳಿ
+Radiation - Interactive|ವಿಕಿರಣ - ಸಂವಾದಾತ್ಮಕ
+Combined Heat Transfer|ಸಂಯೋಜಿತ ಉಷ್ಣ ವರ್ಗಾವಣೆ
+The Water Cycle - Interactive|ಜಲ ಚಕ್ರ - ಸಂವಾದಾತ್ಮಕ
+Infiltration - Interactive Race|ಅಂತರ್ಸೇಚನ - ಸಂವಾದಾತ್ಮಕ ಓಟ
+Water Conservation|ಜಲ ಸಂರಕ್ಷಣೆ
+Litmus Paper Test – Acid-Base Indicator|ಲಿಟ್ಮಸ್ ಪೇಪರ್ ಪರೀಕ್ಷೆ – ಆಮ್ಲ-ಕ್ಷಾರ ಸೂಚಕ
+Hidden Message Revealed – Science Fair Introduction|ಗುಪ್ತ ಸಂದೇಶ ಬಹಿರಂಗ – ವಿಜ್ಞಾನ ಮೇಳ ಪರಿಚಯ
+Properties of Acids and Bases – Compare & Learn|ಆಮ್ಲಗಳು ಮತ್ತು ಕ್ಷಾರಗಳ ಗುಣಗಳು – ಹೋಲಿಸಿ ಮತ್ತು ಕಲಿಯಿರಿ
+Turmeric as an Indicator – Natural Acid-Base Test|ಸೂಚಕವಾಗಿ ಹಲ್ದಿ – ನೈಸರ್ಗಿಕ ಆಮ್ಲ-ಕ್ಷಾರ ಪರೀಕ್ಷೆ
+Olfactory Indicators – Smell-Based Testing|ಘ್ರಾಣ ಸೂಚಕಗಳು – ವಾಸನಾ ಆಧಾರಿತ ಪರೀಕ್ಷೆ
+Neutralisation Reaction – Acid + Base = ಉಪ್ಪು + Water|ತಟಸ್ಥೀಕರಣ ಪ್ರತಿಕ್ರಿಯೆ – ಆಮ್ಲ + ಕ್ಷಾರ = ಉಪ್ಪು + ನೀರು
+Treating Ant Bites – Neutralisation in Daily Life|ಇರುವೆ ಕಚ್ಚುವಿಕೆ ಚಿಕಿತ್ಸೆ – ದೈನಂದಿನ ಜೀವನದಲ್ಲಿ ತಟಸ್ಥೀಕರಣ
+Soil Treatment – Neutralisation in Agriculture|ಮಣ್ಣಿನ ಚಿಕಿತ್ಸೆ – ಕೃಷಿಯಲ್ಲಿ ತಟಸ್ಥೀಕರಣ
+Industrial Waste Treatment – Protecting Our Waters|ಕೈಗಾರಿಕಾ ತ್ಯಾಜ್ಯ ಚಿಕಿತ್ಸೆ – ನಮ್ಮ ನೀರನ್ನು ರಕ್ಷಿಸುವುದು
+Conductors vs Insulators - Race!|ವಾಹಕಗಳು ಮತ್ತು ಅವಾಹಕಗಳು - ಓಟ!
+No change|ಬದಲಾವಣೆ ಇಲ್ಲ
+No Change|ಬದಲಾವಣೆ ಇಲ್ಲ
+# Common UI (headers, labels)
+Stages of Human Life|ಮಾನವ ಜೀವನದ ಹಂತಗಳು
+Healthy Habits|ಆರೋಗ್ಯಕರ ಅಭ್ಯಾಸಗಳು
+Personal Hygiene|ವೈಯಕ್ತಿಕ ಶುಚಿತ್ವ
+Emotional Changes|ಭಾವನಾತ್ಮಕ ಬದಲಾವಣೆಗಳು
+Understanding Menstruation|ಋತುಚಕ್ರ ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು
+Voice Changes During Puberty|ಯೌವನದಲ್ಲಿ ಧ್ವನಿ ಬದಲಾವಣೆಗಳು
+Physical Changes During Puberty|ಯೌವನದಲ್ಲಿ ಭೌತಿಕ ಬದಲಾವಣೆಗಳು
+Growth During Adolescence|ಕೌಮಾರದಲ್ಲಿ ಬೆಳವಣಿಗೆ
+Say No to Harmful Substances|ಹಾನಿಕಾರಕ ಪದಾರ್ಥಗಳಿಗೆ ಒಪ್ಪಿಗೆ ನೀಡಬೇಡಿ
+Build a strong body and mind!|ಶಕ್ತ ದೇಹ ಮತ್ತು ಮನಸ್ಸನ್ನು ನಿರ್ಮಿಸಿ!
+Stay clean, stay healthy!|ಶುಚಿಯಾಗಿ ಇರಿ, ಆರೋಗ್ಯವಾಗಿ ಇರಿ!
+Fuel your growing body right!|ನಿಮ್ಮ ಬೆಳೆಯುತ್ತಿರುವ ದೇಹಕ್ಕೆ ಸರಿಯಾದ ಇಂಧನ!
+Understanding your feelings during adolescence|ಕೌಮಾರದಲ್ಲಿ ನಿಮ್ಮ ಭಾವನೆಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು
+A natural part of growing up|ಬೆಳವಣಿಗೆಯ ನೈಸರ್ಗಿಕ ಭಾಗ
+Why does your voice change?|ನಿಮ್ಮ ಧ್ವನಿ ಏಕೆ ಬದಲಾಗುತ್ತದೆ?
+Understanding the changes in your body|ನಿಮ್ಮ ದೇಹದ ಬದಲಾವಣೆಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು
+Watch how height and weight change over time|ಕಾಲಾನುಕ್ರಮದಲ್ಲಿ ಎತ್ತರ ಮತ್ತು ತೂಕ ಹೇಗೆ ಬದಲಾಗುತ್ತದೆ ನೋಡಿ
+From birth to old age - a journey of growth|ಜನನದಿಂದ ವೃದ್ಧಾಪ್ಯದವರೆಗೆ - ಬೆಳವಣಿಗೆಯ ಪ್ರಯಾಣ
+Protect your health and future|ನಿಮ್ಮ ಆರೋಗ್ಯ ಮತ್ತು ಭವಿಷ್ಯವನ್ನು ರಕ್ಷಿಸಿ
+Metals vs Non-metals|ಲೋಹಗಳು ಮತ್ತು ಅಲೋಹಗಳು
+Compare properties side by side|ಗುಣಗಳನ್ನು ಪಕ್ಕಪಕ್ಕದಲ್ಲಿ ಹೋಲಿಸಿ
+Burning sulfur to form an acidic oxide|ಆಮ್ಲೀಯ ಆಕ್ಸೈಡ್ ರೂಪಿಸಲು ಸಲ್ಫರ್ ಸುಡುವುದು
+Burning magnesium to form a basic oxide|ಕ್ಷಾರೀಯ ಆಕ್ಸೈಡ್ ರೂಪಿಸಲು ಮೆಗ್ನೀಶಿಯಂ ಸುಡುವುದು
+Rusting of Iron|ಕಬ್ಬಿಣದ ತುಕ್ಕು
+What conditions cause iron to rust?|ಕಬ್ಬಿಣ ತುಕ್ಕು ಹಿಡಿಯಲು ಯಾವ ಪರಿಸ್ಥಿತಿಗಳು ಕಾರಣ?
+Electrical Conductivity|ವಿದ್ಯುತ್ ವಾಹಕತೆ
+Test which materials conduct electricity|ಯಾವ ಪದಾರ್ಥಗಳು ವಿದ್ಯುತ್ ಹರಿಸುತ್ತವೆ ಪರೀಕ್ಷಿಸಿ
+Heat Conduction|ಉಷ್ಣ ವಾಹಕತೆ
+Which material conducts heat better?|ಯಾವ ಪದಾರ್ಥ ಉಷ್ಣವನ್ನು ಉತ್ತಮವಾಗಿ ಹರಿಸುತ್ತದೆ?
+Sonority|ಧ್ವನಿಮುದ್ರಣ
+Does this object produce a ringing sound?|ಈ ವಸ್ತು ಟಳ್ಳು ಧ್ವನಿ ಉತ್ಪಾದಿಸುತ್ತದೆಯೇ?
+Ductility|ಸೆಳೆತ
+Can this material be drawn into wires?|ಈ ಪದಾರ್ಥವನ್ನು ತಂತಿಗಳಾಗಿ ಎಳೆಯಬಹುದೇ?
+Malleability|ನಮ್ಯತೆ
+Can this material be hammered into sheets?|ಈ ಪದಾರ್ಥವನ್ನು ಹಾಳೆಗಳಾಗಿ ಬಡಿಯಬಹುದೇ?
+Real-World Applications|ನೈಜ ಜಗತ್ತಿನ ಅನ್ವಯಗಳು
+Why do we use specific metals & non-metals?|ನಿರ್ದಿಷ್ಟ ಲೋಹಗಳು ಮತ್ತು ಅಲೋಹಗಳನ್ನು ಏಕೆ ಬಳಸುತ್ತೇವೆ?
+Non-metal + Oxygen Reaction|ಅಲೋಹ + ಆಮ್ಲಜನಕ ಪ್ರತಿಕ್ರಿಯೆ
+Metal + Oxygen Reaction|ಲೋಹ + ಆಮ್ಲಜನಕ ಪ್ರತಿಕ್ರಿಯೆ
+Infiltration Race|ಅಂತರ್ಸೇಚನ ಓಟ
+Which soil lets water through fastest?|ಯಾವ ಮಣ್ಣು ನೀರನ್ನು ಅತ್ಯಂತ ವೇಗವಾಗಿ ಹಾಯಿಸುತ್ತದೆ?
+The Water Cycle|ಜಲ ಚಕ್ರ
+Interactive simulation - tap elements to explore!|ಸಂವಾದಾತ್ಮಕ ಅನುಕರಣೆ - ಅನ್ವೇಷಿಸಲು ಅಂಶಗಳನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ!
+Combined Heat Transfer|ಸಂಯೋಜಿತ ಉಷ್ಣ ವರ್ಗಾವಣೆ
+All three methods working together!|ಮೂರು ವಿಧಾನಗಳು ಒಟ್ಟಿಗೆ ಕೆಲಸ ಮಾಡುತ್ತವೆ!
+Radiation|ವಿಕಿರಣ
+Interactive - control the heat source!|ಸಂವಾದಾತ್ಮಕ - ಉಷ್ಣ ಮೂಲವನ್ನು ನಿಯಂತ್ರಿಸಿ!
+Land and Sea Breeze|ಭೂ ಮತ್ತು ಸಮುದ್ರ ಗಾಳಿ
+Nature's air conditioning near coasts!|ಕರಾವಳಿ ಬಳಿ ಪ್ರಕೃತಿಯ ಏರ್ ಕಂಡಿಷನಿಂಗ್!
+Convection Currents|ಸಂವಹನ ಪ್ರವಾಹಗಳು
+Interactive - control the heat and watch particles move!|ಸಂವಾದಾತ್ಮಕ - ಉಷ್ಣವನ್ನು ನಿಯಂತ್ರಿಸಿ ಮತ್ತು ಕಣಗಳು ಚಲಿಸುವುದನ್ನು ನೋಡಿ!
+Heat Race: Conductors vs Insulators|ಉಷ್ಣ ಓಟ: ವಾಹಕಗಳು ಮತ್ತು ಅವಾಹಕಗಳು
+Select Stage:|ಹಂತ ಆಯ್ಕೆಮಾಡಿ:
+Select Age to See Growth:|ಬೆಳವಣಿಗೆ ನೋಡಲು ವಯಸ್ಸು ಆಯ್ಕೆಮಾಡಿ:
+Tap on any change to learn more|ಇನ್ನಷ್ಟು ತಿಳಿಯಲು ಯಾವುದೇ ಬದಲಾವಣೆಯನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ
+Select a physical change from the list above to understand what causes it and why it's completely normal.|ಮೇಲಿನ ಪಟ್ಟಿಯಿಂದ ಭೌತಿಕ ಬದಲಾವಣೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ ಅದು ಏನು ಉಂಟುಮಾಡುತ್ತದೆ ಮತ್ತು ಅದು ಸಂಪೂರ್ಣವಾಗಿ ಸಾಮಾನ್ಯ ಏಕೆ ಎಂದು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು.
+Next Scenario →|ಮುಂದಿನ ಸನ್ನಿವೇಶ →
+Result:|ಫಲಿತಾಂಶ:
+Conclusion:|ತೀರ್ಮಾನ:
+Experiment Complete!|ಪ್ರಯೋಗ ಪೂರ್ಣ!
+Original|ಮೂಲ
+Result|ಫಲಿತಾಂಶ
+Blue|ನೀಲಿ
+Red|ಕೆಂಪು

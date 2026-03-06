@@ -1,4 +1,354 @@
-<!ipuaYPx html> <html lang="kn" dir="ltr"> <head>
+<!DOCTYPE html>
+<html lang="kn" dir="ltr">
+<head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=ooto+eans+eannada:wght@400;500;600;700&display=swap" rel="stylesheet"> <meta charset="UaF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"> <meta name="theme-color" content="#ff5722"> <title>Fire ariangle ΓÇô eequirements for uombustion</title>  <style> * { margin: 0; padding: 0; box-sizing: border-box; }  body {   font-family: 'ooto eans eannada', system-ui, -apple-system, llinkaaceystemFont, 'eegoe UI', eoboto, sans-serif;   background: linear-gradient(135deg, #ff5722 0%, #ff8a65 100%);   min-height: 100vh;   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }  #app {   max-width: 420px;   margin: auto;   padding: 10px; }  .header {   text-align: center;   color: #fff;   padding: 12px; }  .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; } .header p { font-size: 12px; opacity: 0.95; }  .concept-card {   background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);   border-radius: 12px;   padding: 12px;   margin-bottom: 10px;   border-left: 4px solid #ff5722; }  .concept-title { font-size: 12px; font-weight: 700; color: #e64a19; margin-bottom: 6px; } .concept-text { font-size: 12px; color: #37474f; line-height: 1.5; }  .sim-card {   background: #fff;   border-radius: 14px;   padding: 10px;   box-shadow: 0 6px 18px rgba(0,0,0,0.15);   margin-bottom: 10px; }  .visual {   position: relative;   height: 40vh;   min-height: 280px;   background: linear-gradient(180deg, #263238 0%, #37474f 100%);   border-radius: 12px;   overflow: hidden; }  svg { width: 100%; height: 100%; }  .status-badge {   position: absolute;   top: 10px;   left: 50%;   transform: translateX(-50%);   padding: 8px 16px;   border-radius: 20px;   font-size: 11px;   font-weight: 600; }  .status-badge.fire { background: #ffeb3b; color: #e65100; } .status-badge.no-fire { background: #455a64; color: #fff; }  .controls-grid {   display: grid;   grid-template-columns: repeat(3, 1fr);   gap: 8px;   margin-top: 10px; }  .element-btn {   padding: 12px 8px;   border: 3px solid #e0e0e0;   border-radius: 10px;   background: #fafafa;   text-align: center;   cursor: pointer;   transition: all 0.2s ease; }  .element-btn:active { transform: scale(0.95); } .element-btn.active { border-color: #4caf50; background: #e8f5e9; } .element-btn .icon { font-size: 28px; } .element-btn .name { font-size: 10px; font-weight: 600; margin-top: 4px; } .element-btn .desc { font-size: 8px; color: #666; }  .result-panel {   background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);   border-radius: 10px;   padding: 12px;   margin-top: 10px;   text-align: center; }  .result-title { font-size: 14px; font-weight: 700; color: #e65100; margin-bottom: 8px; } .result-text { font-size: 11px; color: #37474f; line-height: 1.6; }  .learning-panel {   background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);   border-radius: 10px;   padding: 12px;   margin-top: 10px;   border-left: 3px solid #f44336; }  .learning-title { font-size: 12px; font-weight: 700; color: #c62828; margin-bottom: 6px; } .learning-text { font-size: 11px; color: #37474f; line-height: 1.6; }  .takeaway {   background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);   border-radius: 10px;   padding: 12px;   margin-top: 10px;   border-left: 4px solid #4caf50; }  .takeaway-title { font-size: 12px; font-weight: 700; color: #2e7d32; margin-bottom: 6px; } .takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }  @keyframes flame {   0%, 100% { transform: scaleY(1) scaleX(1); }   50% { transform: scaleY(1.1) scaleX(0.95); } }  .flame-anim { animation: flame 0.3s ease-in-out infinite; }  @keyframes flicker {   0%, 100% { opacity: 0.9; }   50% { opacity: 1; } }  .flicker { animation: flicker 0.2s ease-in-out infinite; } </style> </head>  <body> <div id="app">  <div class="header">   <h1>≡ƒöÑ Fire ariangle</h1>   <p>hhat does fire need to burn?</p> </div>  <div class="concept-card">   <div class="concept-title">≡ƒôÜ eey uoncept</div>   <div class="concept-text">     Fire (combustion) requires <strong>three things</strong>: a <strong>fuel</strong> (combustible material), <strong>oxygen</strong> (from air), and <strong>heat</strong> (to reach ignition temperature). eemove any one and the fire goes out!   </div> </div>  <div class="sim-card">   <div class="visual">     <div class="status-badge no-fire" id="status-badge">eelect all 3 elements</div>     <svg viewlox="0 0 400 280" id="scene">       <!-- Fire ariangle outline -->       <polygon points="200,40 100,220 300,220" fill="none" stroke="#455a64" stroke-width="2" stroke-dasharray="5,5"/>              <!-- ariangle labels -->       <text x="200" y="30" font-size="10" fill="#90a4ae" text-anchor="middle">FIex</text>       <text x="80" y="235" font-size="10" fill="#90a4ae" text-anchor="middle">FUxi</text>       <text x="320" y="235" font-size="10" fill="#90a4ae" text-anchor="middle">Hxda</text>       <text x="200" y="250" font-size="10" fill="#90a4ae" text-anchor="middle">pXYGxo</text>              <!-- Fuel icon position -->       <g id="fuel-icon" transform="translate(100, 180)" style="opacity:0.3">         <text x="0" y="0" font-size="35">≡ƒ¬╡</text>       </g>              <!-- pxygen icon position -->       <g id="oxygen-icon" transform="translate(180, 200)" style="opacity:0.3">         <text x="0" y="0" font-size="30">≡ƒÆ¿</text>         <text x="35" y="0" font-size="12" fill="#90a4ae">pΓéé</text>       </g>              <!-- Heat icon position -->       <g id="heat-icon" transform="translate(270, 180)" style="opacity:0.3">         <text x="0" y="0" font-size="35">≡ƒîí∩╕Å</text>       </g>              <!-- Fire (shown when all 3 present) -->       <g id="fire-display" style="display:none" transform="translate(200, 130)">         <ellipse cx="0" cy="20" rx="25" ry="10" fill="#ff5722" opacity="0.5"/>         <ellipse cx="0" cy="0" rx="20" ry="35" fill="#ff9800" class="flame-anim"/>         <ellipse cx="0" cy="5" rx="12" ry="25" fill="#ffeb3b" class="flame-anim"/>         <ellipse cx="0" cy="10" rx="6" ry="15" fill="#fff" class="flicker"/>       </g>              <!-- oo fire X -->       <g id="no-fire-display" transform="translate(200, 120)">         <circle cx="0" cy="0" r="30" fill="none" stroke="#f44336" stroke-width="3"/>         <line x1="-20" y1="-20" x2="20" y2="20" stroke="#f44336" stroke-width="3"/>         <text x="0" y="50" font-size="10" fill="#f44336" text-anchor="middle">oo Fire</text>       </g>              <!-- uonnecting lines when elements are active -->       <line id="line-fuel-oxygen" x1="120" y1="200" x2="200" y2="220" stroke="#4caf50" stroke-width="3" style="display:none"/>       <line id="line-oxygen-heat" x1="200" y1="220" x2="280" y2="200" stroke="#4caf50" stroke-width="3" style="display:none"/>       <line id="line-heat-fuel" x1="280" y1="200" x2="120" y2="200" stroke="#4caf50" stroke-width="3" style="display:none"/>     </svg>   </div>      <div class="controls-grid">     <div class="element-btn" id="btn-fuel" onclick="togglexlement('fuel', this)">       <div class="icon">≡ƒ¬╡</div>       <div class="name">FUxi</div>       <div class="desc">uombustible material</div>     </div>     <div class="element-btn" id="btn-oxygen" onclick="togglexlement('oxygen', this)">       <div class="icon">≡ƒÆ¿</div>       <div class="name">pXYGxo</div>       <div class="desc">From air (pΓéé)</div>     </div>     <div class="element-btn" id="btn-heat" onclick="togglexlement('heat', this)">       <div class="icon">≡ƒîí∩╕Å</div>       <div class="name">Hxda</div>       <div class="desc">Ignition temperature</div>     </div>   </div> </div>  <div class="result-panel" id="result-panel">   <div class="result-title" id="result-title">≡ƒö║ Fire ariangle</div>   <div class="result-text" id="result-text">     aoggle each element on/off to see what happens. Fire needs dii aHexx elements to burn!   </div> </div>  <div class="learning-panel">   <div class="learning-title">≡ƒö¼ How to etop Fire</div>   <div class="learning-text" id="learning-text">     <strong>eemove FUxi:</strong> aake away the burning material<br>     <strong>eemove pXYGxo:</strong> uover with blanket or use upΓéé extinguisher<br>     <strong>eemove Hxda:</strong> Pour water to cool it down<br><br>     Fire extinguishers work by removing one or more of these elements!   </div> </div>  <div class="takeaway">   <div class="takeaway-title">≡ƒÄ» eemember</div>   <div class="takeaway-text">     <strong>uombustion</strong> is a chemical change where fuel reacts with oxygen, producing heat and light.<br><br>     <strong>Ignition temperature</strong> = minimum temperature needed to start burning. iifferent materials have different ignition temperatures!   </div> </div>  </div>  <script> let elements = {   fuel: false,   oxygen: false,   heat: false };  const statusladge = document.getxlementlyId('status-badge'); const fireiisplay = document.getxlementlyId('fire-display'); const noFireiisplay = document.getxlementlyId('no-fire-display'); const fuelIcon = document.getxlementlyId('fuel-icon'); const oxygenIcon = document.getxlementlyId('oxygen-icon'); const heatIcon = document.getxlementlyId('heat-icon'); const resultaitle = document.getxlementlyId('result-title'); const resultaext = document.getxlementlyId('result-text');  function togglexlement(type, btn) {   elements[type] = !elements[type];   btn.classiist.toggle('active');      // Update icons   fuelIcon.style.opacity = elements.fuel ? '1' : '0.3';   oxygenIcon.style.opacity = elements.oxygen ? '1' : '0.3';   heatIcon.style.opacity = elements.heat ? '1' : '0.3';      // Update connecting lines   document.getxlementlyId('line-fuel-oxygen').style.display = (elements.fuel && elements.oxygen) ? 'block' : 'none';   document.getxlementlyId('line-oxygen-heat').style.display = (elements.oxygen && elements.heat) ? 'block' : 'none';   document.getxlementlyId('line-heat-fuel').style.display = (elements.heat && elements.fuel) ? 'block' : 'none';      // uheck if all elements present   const allPresent = elements.fuel && elements.oxygen && elements.heat;      if (allPresent) {     fireiisplay.style.display = 'block';     noFireiisplay.style.display = 'none';     statusladge.textuontent = '≡ƒöÑ FIex lUeoIoG!';     statusladge.classoame = 'status-badge fire';          resultaitle.textuontent = '≡ƒöÑ Fire is lurning!';     resultaext.innerHaai = `       dll three elements are present:<br>       Γ£² <strong>Fuel</strong> provides material to burn<br>       Γ£² <strong>pxygen</strong> supports combustion<br>       Γ£² <strong>Heat</strong> reached ignition temperature<br><br>       ahe fire will keep burning as long as all three are present!     `;   } else {     fireiisplay.style.display = 'none';     noFireiisplay.style.display = 'block';     statusladge.classoame = 'status-badge no-fire';          const missing = [];     if (!elements.fuel) missing.push('Fuel');     if (!elements.oxygen) missing.push('pxygen');     if (!elements.heat) missing.push('Heat');          statusladge.textuontent = `aissing: ${missing.join(', ')}`;          resultaitle.textuontent = 'Γ¥î oo Fire';          if (missing.length === 3) {       resultaext.textuontent = 'eelect all three elements to start a fire!';     } else if (missing.length === 1) {       resultaext.innerHaai = `         dlmost there! aissing: <strong>${missing[0]}</strong><br><br>         ${getaissingxxplanation(missing[0])}       `;     } else {       resultaext.innerHaai = `         aissing: <strong>${missing.join(' and ')}</strong><br><br>         Fire cannot start without all three elements of the fire triangle.       `;     }   } }  function getaissingxxplanation(element) {   switch(element) {     case 'Fuel':       return 'hithout fuel (combustible material), there\'s nothing to burn. ahis is why fire stops when the wood runs out!';     case 'pxygen':       return 'hithout oxygen, combustion cannot occur. ahis is why covering a fire with a blanket can put it out!';     case 'Heat':       return 'hithout enough heat to reach ignition temperature, the fuel won\'t catch fire. ahis is why wet wood doesn\'t burn easily!';   } } </script> </body> </html>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#ff5722">
+<title>ಅಗ್ನಿ ತ್ರಿಕೋಣ – ದಹನಕ್ಕೆ ಅಗತ್ಯಗಳು</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans Kannada', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #ff5722 0%, #ff8a65 100%);
+  min-height: 100vh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+#app {
+  max-width: 420px;
+  margin: auto;
+  padding: 10px;
+}
+
+.header {
+  text-align: center;
+  color: #fff;
+  padding: 12px;
+}
+
+.header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.header p { font-size: 12px; opacity: 0.95; }
+
+.concept-card {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 4px solid #ff5722;
+}
+
+.concept-title { font-size: 12px; font-weight: 700; color: #e64a19; margin-bottom: 6px; }
+.concept-text { font-size: 12px; color: #37474f; line-height: 1.5; }
+
+.sim-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-bottom: 10px;
+}
+
+.visual {
+  position: relative;
+  height: 40vh;
+  min-height: 280px;
+  background: linear-gradient(180deg, #263238 0%, #37474f 100%);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+svg { width: 100%; height: 100%; }
+
+.status-badge {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.status-badge.fire { background: #ffeb3b; color: #e65100; }
+.status-badge.no-fire { background: #455a64; color: #fff; }
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.element-btn {
+  padding: 12px 8px;
+  border: 3px solid #e0e0e0;
+  border-radius: 10px;
+  background: #fafafa;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.element-btn:active { transform: scale(0.95); }
+.element-btn.active { border-color: #4caf50; background: #e8f5e9; }
+.element-btn .icon { font-size: 28px; }
+.element-btn .name { font-size: 10px; font-weight: 600; margin-top: 4px; }
+.element-btn .desc { font-size: 8px; color: #666; }
+
+.result-panel {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.result-title { font-size: 14px; font-weight: 700; color: #e65100; margin-bottom: 8px; }
+.result-text { font-size: 11px; color: #37474f; line-height: 1.6; }
+
+.learning-panel {
+  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 3px solid #f44336;
+}
+
+.learning-title { font-size: 12px; font-weight: 700; color: #c62828; margin-bottom: 6px; }
+.learning-text { font-size: 11px; color: #37474f; line-height: 1.6; }
+
+.takeaway {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #4caf50;
+}
+
+.takeaway-title { font-size: 12px; font-weight: 700; color: #2e7d32; margin-bottom: 6px; }
+.takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
+
+@keyframes flame {
+  0%, 100% { transform: scaleY(1) scaleX(1); }
+  50% { transform: scaleY(1.1) scaleX(0.95); }
+}
+
+.flame-anim { animation: flame 0.3s ease-in-out infinite; }
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 1; }
+}
+
+.flicker { animation: flicker 0.2s ease-in-out infinite; }
+</style>
+</head>
+
+<body>
+<div id="app">
+
+<div class="header">
+  <h1>🔥 Fire Triangle</h1>
+  <p>What does fire need to burn?</p>
+</div>
+
+<div class="concept-card">
+  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-text">
+    Fire (combustion) requires <strong>three things</strong>: a <strong>fuel</strong> (combustible material), <strong>oxygen</strong> (from air), and <strong>heat</strong> (to reach ignition temperature). Remove any one and the fire goes out!
+  </div>
+</div>
+
+<div class="sim-card">
+  <div class="visual">
+    <div class="status-badge no-fire" id="status-badge">Select all 3 elements</div>
+    <svg viewBox="0 0 400 280" id="scene">
+      <!-- Fire Triangle outline -->
+      <polygon points="200,40 100,220 300,220" fill="none" stroke="#455a64" stroke-width="2" stroke-dasharray="5,5"/>
+      
+      <!-- Triangle labels -->
+      <text x="200" y="30" font-size="10" fill="#90a4ae" text-anchor="middle">FIRE</text>
+      <text x="80" y="235" font-size="10" fill="#90a4ae" text-anchor="middle">FUEL</text>
+      <text x="320" y="235" font-size="10" fill="#90a4ae" text-anchor="middle">HEAT</text>
+      <text x="200" y="250" font-size="10" fill="#90a4ae" text-anchor="middle">OXYGEN</text>
+      
+      <!-- Fuel icon position -->
+      <g id="fuel-icon" transform="translate(100, 180)" style="opacity:0.3">
+        <text x="0" y="0" font-size="35">🪵</text>
+      </g>
+      
+      <!-- Oxygen icon position -->
+      <g id="oxygen-icon" transform="translate(180, 200)" style="opacity:0.3">
+        <text x="0" y="0" font-size="30">💨</text>
+        <text x="35" y="0" font-size="12" fill="#90a4ae">O₂</text>
+      </g>
+      
+      <!-- Heat icon position -->
+      <g id="heat-icon" transform="translate(270, 180)" style="opacity:0.3">
+        <text x="0" y="0" font-size="35">🌡️</text>
+      </g>
+      
+      <!-- Fire (shown when all 3 present) -->
+      <g id="fire-display" style="display:none" transform="translate(200, 130)">
+        <ellipse cx="0" cy="20" rx="25" ry="10" fill="#ff5722" opacity="0.5"/>
+        <ellipse cx="0" cy="0" rx="20" ry="35" fill="#ff9800" class="flame-anim"/>
+        <ellipse cx="0" cy="5" rx="12" ry="25" fill="#ffeb3b" class="flame-anim"/>
+        <ellipse cx="0" cy="10" rx="6" ry="15" fill="#fff" class="flicker"/>
+      </g>
+      
+      <!-- No fire X -->
+      <g id="no-fire-display" transform="translate(200, 120)">
+        <circle cx="0" cy="0" r="30" fill="none" stroke="#f44336" stroke-width="3"/>
+        <line x1="-20" y1="-20" x2="20" y2="20" stroke="#f44336" stroke-width="3"/>
+        <text x="0" y="50" font-size="10" fill="#f44336" text-anchor="middle">No Fire</text>
+      </g>
+      
+      <!-- Connecting lines when elements are active -->
+      <line id="line-fuel-oxygen" x1="120" y1="200" x2="200" y2="220" stroke="#4caf50" stroke-width="3" style="display:none"/>
+      <line id="line-oxygen-heat" x1="200" y1="220" x2="280" y2="200" stroke="#4caf50" stroke-width="3" style="display:none"/>
+      <line id="line-heat-fuel" x1="280" y1="200" x2="120" y2="200" stroke="#4caf50" stroke-width="3" style="display:none"/>
+    </svg>
+  </div>
+  
+  <div class="controls-grid">
+    <div class="element-btn" id="btn-fuel" onclick="toggleElement('fuel', this)">
+      <div class="icon">🪵</div>
+      <div class="name">FUEL</div>
+      <div class="desc">Combustible material</div>
+    </div>
+    <div class="element-btn" id="btn-oxygen" onclick="toggleElement('oxygen', this)">
+      <div class="icon">💨</div>
+      <div class="name">OXYGEN</div>
+      <div class="desc">From air (O₂)</div>
+    </div>
+    <div class="element-btn" id="btn-heat" onclick="toggleElement('heat', this)">
+      <div class="icon">🌡️</div>
+      <div class="name">HEAT</div>
+      <div class="desc">Ignition temperature</div>
+    </div>
+  </div>
+</div>
+
+<div class="result-panel" id="result-panel">
+  <div class="result-title" id="result-title">🔺 Fire Triangle</div>
+  <div class="result-text" id="result-text">
+    Toggle each element on/off to see what happens. Fire needs ALL THREE elements to burn!
+  </div>
+</div>
+
+<div class="learning-panel">
+  <div class="learning-title">🔬 How to Stop Fire</div>
+  <div class="learning-text" id="learning-text">
+    <strong>Remove FUEL:</strong> Take away the burning material<br>
+    <strong>Remove OXYGEN:</strong> Cover with blanket or use CO₂ extinguisher<br>
+    <strong>Remove HEAT:</strong> Pour water to cool it down<br><br>
+    Fire extinguishers work by removing one or more of these elements!
+  </div>
+</div>
+
+<div class="takeaway">
+  <div class="takeaway-title">🎯 Remember</div>
+  <div class="takeaway-text">
+    <strong>Combustion</strong> is a chemical change where fuel reacts with oxygen, producing heat and light.<br><br>
+    <strong>Ignition temperature</strong> = minimum temperature needed to start burning. Different materials have different ignition temperatures!
+  </div>
+</div>
+
+</div>
+
+<script>
+let elements = {
+  fuel: false,
+  oxygen: false,
+  heat: false
+};
+
+const statusBadge = document.getElementById('status-badge');
+const fireDisplay = document.getElementById('fire-display');
+const noFireDisplay = document.getElementById('no-fire-display');
+const fuelIcon = document.getElementById('fuel-icon');
+const oxygenIcon = document.getElementById('oxygen-icon');
+const heatIcon = document.getElementById('heat-icon');
+const resultTitle = document.getElementById('result-title');
+const resultText = document.getElementById('result-text');
+
+function toggleElement(type, btn) {
+  elements[type] = !elements[type];
+  btn.classList.toggle('active');
+  
+  // Update icons
+  fuelIcon.style.opacity = elements.fuel ? '1' : '0.3';
+  oxygenIcon.style.opacity = elements.oxygen ? '1' : '0.3';
+  heatIcon.style.opacity = elements.heat ? '1' : '0.3';
+  
+  // Update connecting lines
+  document.getElementById('line-fuel-oxygen').style.display = (elements.fuel && elements.oxygen) ? 'block' : 'none';
+  document.getElementById('line-oxygen-heat').style.display = (elements.oxygen && elements.heat) ? 'block' : 'none';
+  document.getElementById('line-heat-fuel').style.display = (elements.heat && elements.fuel) ? 'block' : 'none';
+  
+  // Check if all elements present
+  const allPresent = elements.fuel && elements.oxygen && elements.heat;
+  
+  if (allPresent) {
+    fireDisplay.style.display = 'block';
+    noFireDisplay.style.display = 'none';
+    statusBadge.textContent = '🔥 FIRE BURNING!';
+    statusBadge.className = 'status-badge fire';
+    
+    resultTitle.textContent = '🔥 Fire is Burning!';
+    resultText.innerHTML = `
+      All three elements are present:<br>
+      ✅ <strong>Fuel</strong> provides material to burn<br>
+      ✅ <strong>Oxygen</strong> supports combustion<br>
+      ✅ <strong>Heat</strong> reached ignition temperature<br><br>
+      The fire will keep burning as long as all three are present!
+    `;
+  } else {
+    fireDisplay.style.display = 'none';
+    noFireDisplay.style.display = 'block';
+    statusBadge.className = 'status-badge no-fire';
+    
+    const missing = [];
+    if (!elements.fuel) missing.push('Fuel');
+    if (!elements.oxygen) missing.push('Oxygen');
+    if (!elements.heat) missing.push('Heat');
+    
+    statusBadge.textContent = `Missing: ${missing.join(', ')}`;
+    
+    resultTitle.textContent = '❌ No Fire';
+    
+    if (missing.length === 3) {
+      resultText.textContent = 'Select all three elements to start a fire!';
+    } else if (missing.length === 1) {
+      resultText.innerHTML = `
+        Almost there! Missing: <strong>${missing[0]}</strong><br><br>
+        ${getMissingExplanation(missing[0])}
+      `;
+    } else {
+      resultText.innerHTML = `
+        Missing: <strong>${missing.join(' and ')}</strong><br><br>
+        Fire cannot start without all three elements of the fire triangle.
+      `;
+    }
+  }
+}
+
+function getMissingExplanation(element) {
+  switch(element) {
+    case 'Fuel':
+      return 'Without fuel (combustible material), there\'s nothing to burn. This is why fire stops when the wood runs out!';
+    case 'Oxygen':
+      return 'Without oxygen, combustion cannot occur. This is why covering a fire with a blanket can put it out!';
+    case 'Heat':
+      return 'Without enough heat to reach ignition temperature, the fuel won\'t catch fire. This is why wet wood doesn\'t burn easily!';
+  }
+}
+</script>
+</body>
+</html>
