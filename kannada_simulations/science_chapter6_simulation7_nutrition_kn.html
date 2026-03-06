@@ -1,4 +1,330 @@
-<!ipuaYPx html> <html lang="kn" dir="ltr"> <head>
+<!DOCTYPE html>
+<html lang="kn" dir="ltr">
+<head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=ooto+eans+eannada:wght@400;500;600;700&display=swap" rel="stylesheet"> <meta charset="UaF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"> <meta name="theme-color" content="#43a047"> <title>outrition for ddolescents</title>  <style> * { margin: 0; padding: 0; box-sizing: border-box; }  body {   font-family: 'ooto eans eannada', system-ui, -apple-system, llinkaaceystemFont, 'eegoe UI', eoboto, sans-serif;   background: linear-gradient(135deg, #43a047 0%, #81c784 100%);   min-height: 100vh;   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }  #app {   max-width: 420px;   margin: auto;   padding: 10px; }  .header {   text-align: center;   color: #fff;   padding: 12px; }  .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; } .header p { font-size: 12px; opacity: 0.95; }  .concept-card {   background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);   border-radius: 12px;   padding: 12px;   margin-bottom: 10px;   border-left: 4px solid #43a047; }  .concept-title { font-size: 12px; font-weight: 700; color: #2e7d32; margin-bottom: 6px; } .concept-text { font-size: 12px; color: #37474f; line-height: 1.5; }  .sim-card {   background: #fff;   border-radius: 14px;   padding: 12px;   box-shadow: 0 6px 18px rgba(0,0,0,0.15);   margin-bottom: 10px; }  .plate-visual {   position: relative;   height: 220px;   display: flex;   align-items: center;   justify-content: center;   background: #f5f5f5;   border-radius: 10px; }  .plate {   width: 180px;   height: 180px;   border-radius: 50%;   background: #fff;   border: 8px solid #e0e0e0;   position: relative;   overflow: hidden; }  .plate-section {   position: absolute;   width: 50%;   height: 50%;   display: flex;   align-items: center;   justify-content: center;   font-size: 24px;   cursor: pointer;   transition: all 0.3s ease; }  .plate-section:hover { transform: scale(1.1); } .plate-section.active { transform: scale(1.15); }  .plate-section.carbs { top: 0; left: 0; background: #fff3e0; border-radius: 100% 0 0 0; } .plate-section.protein { top: 0; right: 0; background: #ffebee; border-radius: 0 100% 0 0; } .plate-section.veggies { bottom: 0; left: 0; background: #e8f5e9; border-radius: 0 0 0 100%; } .plate-section.fats { bottom: 0; right: 0; background: #fff8e1; border-radius: 0 0 100% 0; }  .plate-center {   position: absolute;   top: 50%;   left: 50%;   transform: translate(-50%, -50%);   width: 60px;   height: 60px;   border-radius: 50%;   background: #fff;   border: 3px solid #43a047;   display: flex;   flex-direction: column;   align-items: center;   justify-content: center;   z-index: 5; }  .plate-center .emoji { font-size: 20px; } .plate-center .text { font-size: 7px; color: #43a047; font-weight: 600; }  .nutrient-tabs {   display: grid;   grid-template-columns: repeat(4, 1fr);   gap: 6px;   margin-top: 12px; }  .nutrient-tab {   padding: 8px 4px;   border: 2px solid #e0e0e0;   border-radius: 8px;   background: #fafafa;   text-align: center;   cursor: pointer;   font-size: 9px;   font-weight: 600; }  .nutrient-tab:active { transform: scale(0.95); } .nutrient-tab.active { border-color: #43a047; background: #e8f5e9; color: #2e7d32; }  .nutrient-tab .emoji { font-size: 18px; display: block; margin-bottom: 2px; }  .nutrient-info {   background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);   border-radius: 10px;   padding: 12px;   margin-top: 10px;   border-left: 4px solid #43a047; }  .nutrient-title { font-size: 12px; font-weight: 700; color: #2e7d32; margin-bottom: 8px; } .nutrient-text { font-size: 11px; color: #37474f; line-height: 1.6; }  .food-examples {   display: flex;   flex-wrap: wrap;   gap: 6px;   margin-top: 8px; }  .food-tag {   padding: 4px 10px;   background: #fff;   border-radius: 15px;   font-size: 10px;   color: #333; }  .special-needs {   background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);   border-radius: 10px;   padding: 12px;   margin-top: 10px;   border-left: 4px solid #e91e63; }  .special-title { font-size: 12px; font-weight: 700; color: #c2185b; margin-bottom: 6px; } .special-text { font-size: 11px; color: #37474f; line-height: 1.5; }  .takeaway {   background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);   border-radius: 10px;   padding: 12px;   margin-top: 10px;   border-left: 4px solid #ff9800; }  .takeaway-title { font-size: 12px; font-weight: 700; color: #e65100; margin-bottom: 6px; } .takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; } </style> </head>  <body> <div id="app">  <div class="header">   <h1>≡ƒÑù outrition for ddolescents</h1>   <p>Fuel your growing body right!</p> </div>  <div class="concept-card">   <div class="concept-title">≡ƒôÜ eey uoncept</div>   <div class="concept-text">     d <strong>balanced diet</strong> with proteins, carbohydrates, fats, vitamins, and minerals is essential during adolescence. Your body needs extra nutrients for rapid growth!   </div> </div>  <div class="sim-card">   <div class="plate-visual">     <div class="plate">       <div class="plate-section carbs" onclick="selectoutrient('carbs', this)">≡ƒìÜ</div>       <div class="plate-section protein" onclick="selectoutrient('protein', this)">≡ƒìù</div>       <div class="plate-section veggies" onclick="selectoutrient('veggies', this)">≡ƒÑª</div>       <div class="plate-section fats" onclick="selectoutrient('fats', this)">≡ƒÑ£</div>       <div class="plate-center">         <div class="emoji">≡ƒÆ¬</div>         <div class="text">ldidouxi</div>       </div>     </div>   </div>      <div class="nutrient-tabs">     <div class="nutrient-tab active" onclick="selectoutrient('carbs', this)">       <span class="emoji">≡ƒìÜ</span>       uarbs     </div>     <div class="nutrient-tab" onclick="selectoutrient('protein', this)">       <span class="emoji">≡ƒìù</span>       Protein     </div>     <div class="nutrient-tab" onclick="selectoutrient('veggies', this)">       <span class="emoji">≡ƒÑª</span>       iitamins     </div>     <div class="nutrient-tab" onclick="selectoutrient('fats', this)">       <span class="emoji">≡ƒÑ£</span>       Fats     </div>   </div> </div>  <div class="nutrient-info" id="nutrient-info">   <div class="nutrient-title" id="nutrient-title">≡ƒìÜ uarbohydrates - xnergy eource</div>   <div class="nutrient-text" id="nutrient-text">     uarbohydrates are your body's main source of <strong>energy</strong>. iuring adolescence, you need more energy for growth, studies, and physical activities.   </div>   <div class="food-examples" id="food-examples">     <span class="food-tag">≡ƒìÜ eice</span>     <span class="food-tag">≡ƒì₧ lread</span>     <span class="food-tag">≡ƒÑö Potatoes</span>     <span class="food-tag">≡ƒî╛ aillets</span>     <span class="food-tag">≡ƒì¥ Pasta</span>   </div> </div>  <div class="special-needs">   <div class="special-title">≡ƒæº epecial outritional oeeds for Girls</div>   <div class="special-text">     <strong>Iron:</strong> Important for blood formation, especially after menstruation begins. Found in spinach, dates, jaggery.<br><br>     <strong>iitamin l12:</strong> xssential for healthy blood cells. Found in milk, eggs, fortified foods.<br><br>     <strong>ualcium:</strong> For strong bones. Found in milk, curd, cheese, green leafy vegetables.   </div> </div>  <div class="takeaway">   <div class="takeaway-title">≡ƒÄ» Healthy xating aips</div>   <div class="takeaway-text">     ΓÇó xat a <strong>variety of foods</strong> from all groups<br>     ΓÇó ion't skip <strong>breakfast</strong> - it fuels your morning<br>     ΓÇó irink plenty of <strong>water</strong><br>     ΓÇó iimit junk food, sugary drinks, and processed foods<br>     ΓÇó xat fruits and vegetables daily<br>     ΓÇó Include <strong>milk</strong> for calcium and strong bones   </div> </div>  </div>  <script> const nutrients = {   carbs: {     title: '≡ƒìÜ uarbohydrates - xnergy eource',     text: 'uarbohydrates are your body\'s main source of <strong>energy</strong>. iuring adolescence, you need more energy for growth, studies, and physical activities. uhoose complex carbs (whole grains) over simple sugars.',     foods: ['≡ƒìÜ eice', '≡ƒì₧ hhole wheat bread', '≡ƒÑö Potatoes', '≡ƒî╛ aillets (ragi, jowar)', '≡ƒî╜ uorn', '≡ƒìî lananas']   },   protein: {     title: '≡ƒìù Proteins - lody luilding',     text: 'Proteins are essential for <strong>building and repairing muscles</strong>, tissues, and organs. iuring the growth spurt, your protein needs increase significantly. ahey also help make hormones and enzymes.',     foods: ['≡ƒìù uhicken/Fish', '≡ƒÑÜ xggs', '≡ƒÑ¢ ailk & Paneer', '≡ƒ½ÿ ial & iegumes', '≡ƒÑ£ outs', '≡ƒ½¢ eoybeans']   },   veggies: {     title: '≡ƒÑª iitamins & ainerals - lody Protectors',     text: 'iitamins and minerals help your body <strong>function properly</strong>, fight diseases, and support growth. Fruits and vegetables are the best sources. xach color provides different nutrients!',     foods: ['≡ƒÑª lroccoli (iit u)', '≡ƒÑò uarrots (iit d)', '≡ƒìè pranges (iit u)', '≡ƒÑ¼ epinach (Iron)', '≡ƒì² aomatoes', '≡ƒ½æ lell Peppers']   },   fats: {     title: '≡ƒÑ£ Healthy Fats - lrain & xnergy',     text: 'Fats are needed for <strong>brain development</strong>, absorbing vitamins, and providing long-lasting energy. uhoose healthy fats from nuts, seeds, and oils. dvoid trans fats and excessive fried foods.',     foods: ['≡ƒÑ£ dlmonds & halnuts', '≡ƒÑæ dvocado', '≡ƒ½Æ plive oil', '≡ƒÉƒ Fish (pmega-3)', '≡ƒî╗ eeeds', '≡ƒÑÑ uoconut']   } };  const nutrientaitle = document.getxlementlyId('nutrient-title'); const nutrientaext = document.getxlementlyId('nutrient-text'); const foodxxamples = document.getxlementlyId('food-examples');  function selectoutrient(type, element) {   // Update tabs   document.queryeelectordll('.nutrient-tab').forxach(t => t.classiist.remove('active'));   document.queryeelectordll('.plate-section').forxach(s => s.classiist.remove('active'));      if (element.classiist.contains('nutrient-tab')) {     element.classiist.add('active');     document.queryeelector(`.plate-section.${type}`).classiist.add('active');   } else {     element.classiist.add('active');     document.queryeelectordll('.nutrient-tab').forxach((tab, i) => {       const types = ['carbs', 'protein', 'veggies', 'fats'];       if (types[i] === type) tab.classiist.add('active');     });   }      // Update info   const nutrient = nutrients[type];   nutrientaitle.textuontent = nutrient.title;   nutrientaext.innerHaai = nutrient.text;   foodxxamples.innerHaai = nutrient.foods.map(f => `<span class="food-tag">${f}</span>`).join(''); }  // Initialize document.queryeelector('.plate-section.carbs').classiist.add('active'); </script> </body> </html>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#43a047">
+<title>ಕೌಮಾರ ವಯಸ್ಕರಿಗೆ ಪೋಷಣೆ</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans Kannada', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #43a047 0%, #81c784 100%);
+  min-height: 100vh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+#app {
+  max-width: 420px;
+  margin: auto;
+  padding: 10px;
+}
+
+.header {
+  text-align: center;
+  color: #fff;
+  padding: 12px;
+}
+
+.header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.header p { font-size: 12px; opacity: 0.95; }
+
+.concept-card {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 4px solid #43a047;
+}
+
+.concept-title { font-size: 12px; font-weight: 700; color: #2e7d32; margin-bottom: 6px; }
+.concept-text { font-size: 12px; color: #37474f; line-height: 1.5; }
+
+.sim-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-bottom: 10px;
+}
+
+.plate-visual {
+  position: relative;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.plate {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #fff;
+  border: 8px solid #e0e0e0;
+  position: relative;
+  overflow: hidden;
+}
+
+.plate-section {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.plate-section:hover { transform: scale(1.1); }
+.plate-section.active { transform: scale(1.15); }
+
+.plate-section.carbs { top: 0; left: 0; background: #fff3e0; border-radius: 100% 0 0 0; }
+.plate-section.protein { top: 0; right: 0; background: #ffebee; border-radius: 0 100% 0 0; }
+.plate-section.veggies { bottom: 0; left: 0; background: #e8f5e9; border-radius: 0 0 0 100%; }
+.plate-section.fats { bottom: 0; right: 0; background: #fff8e1; border-radius: 0 0 100% 0; }
+
+.plate-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #43a047;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.plate-center .emoji { font-size: 20px; }
+.plate-center .text { font-size: 7px; color: #43a047; font-weight: 600; }
+
+.nutrient-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.nutrient-tab {
+  padding: 8px 4px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+  text-align: center;
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.nutrient-tab:active { transform: scale(0.95); }
+.nutrient-tab.active { border-color: #43a047; background: #e8f5e9; color: #2e7d32; }
+
+.nutrient-tab .emoji { font-size: 18px; display: block; margin-bottom: 2px; }
+
+.nutrient-info {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #43a047;
+}
+
+.nutrient-title { font-size: 12px; font-weight: 700; color: #2e7d32; margin-bottom: 8px; }
+.nutrient-text { font-size: 11px; color: #37474f; line-height: 1.6; }
+
+.food-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.food-tag {
+  padding: 4px 10px;
+  background: #fff;
+  border-radius: 15px;
+  font-size: 10px;
+  color: #333;
+}
+
+.special-needs {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #e91e63;
+}
+
+.special-title { font-size: 12px; font-weight: 700; color: #c2185b; margin-bottom: 6px; }
+.special-text { font-size: 11px; color: #37474f; line-height: 1.5; }
+
+.takeaway {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #ff9800;
+}
+
+.takeaway-title { font-size: 12px; font-weight: 700; color: #e65100; margin-bottom: 6px; }
+.takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
+</style>
+</head>
+
+<body>
+<div id="app">
+
+<div class="header">
+  <h1>🥗 ಕೌಮಾರ ವಯಸ್ಕರಿಗೆ ಪೋಷಣೆ</h1>
+  <p>ನಿಮ್ಮ ಬೆಳೆಯುತ್ತಿರುವ ದೇಹಕ್ಕೆ ಸರಿಯಾದ ಇಂಧನ!</p>
+</div>
+
+<div class="concept-card">
+  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-text">
+    A <strong>balanced diet</strong> with proteins, carbohydrates, fats, vitamins, and minerals is essential during adolescence. Your body needs extra nutrients for rapid growth!
+  </div>
+</div>
+
+<div class="sim-card">
+  <div class="plate-visual">
+    <div class="plate">
+      <div class="plate-section carbs" onclick="selectNutrient('carbs', this)">🍚</div>
+      <div class="plate-section protein" onclick="selectNutrient('protein', this)">🍗</div>
+      <div class="plate-section veggies" onclick="selectNutrient('veggies', this)">🥦</div>
+      <div class="plate-section fats" onclick="selectNutrient('fats', this)">🥜</div>
+      <div class="plate-center">
+        <div class="emoji">💪</div>
+        <div class="text">BALANCED</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="nutrient-tabs">
+    <div class="nutrient-tab active" onclick="selectNutrient('carbs', this)">
+      <span class="emoji">🍚</span>
+      Carbs
+    </div>
+    <div class="nutrient-tab" onclick="selectNutrient('protein', this)">
+      <span class="emoji">🍗</span>
+      Protein
+    </div>
+    <div class="nutrient-tab" onclick="selectNutrient('veggies', this)">
+      <span class="emoji">🥦</span>
+      Vitamins
+    </div>
+    <div class="nutrient-tab" onclick="selectNutrient('fats', this)">
+      <span class="emoji">🥜</span>
+      Fats
+    </div>
+  </div>
+</div>
+
+<div class="nutrient-info" id="nutrient-info">
+  <div class="nutrient-title" id="nutrient-title">🍚 Carbohydrates - Energy Source</div>
+  <div class="nutrient-text" id="nutrient-text">
+    Carbohydrates are your body's main source of <strong>energy</strong>. During adolescence, you need more energy for growth, studies, and physical activities.
+  </div>
+  <div class="food-examples" id="food-examples">
+    <span class="food-tag">🍚 Rice</span>
+    <span class="food-tag">🍞 Bread</span>
+    <span class="food-tag">🥔 Potatoes</span>
+    <span class="food-tag">🌾 Millets</span>
+    <span class="food-tag">🍝 Pasta</span>
+  </div>
+</div>
+
+<div class="special-needs">
+  <div class="special-title">👧 Special Nutritional Needs for Girls</div>
+  <div class="special-text">
+    <strong>Iron:</strong> Important for blood formation, especially after menstruation begins. Found in spinach, dates, jaggery.<br><br>
+    <strong>Vitamin B12:</strong> Essential for healthy blood cells. Found in milk, eggs, fortified foods.<br><br>
+    <strong>Calcium:</strong> For strong bones. Found in milk, curd, cheese, green leafy vegetables.
+  </div>
+</div>
+
+<div class="takeaway">
+  <div class="takeaway-title">🎯 Healthy Eating Tips</div>
+  <div class="takeaway-text">
+    • Eat a <strong>variety of foods</strong> from all groups<br>
+    • Don't skip <strong>breakfast</strong> - it fuels your morning<br>
+    • Drink plenty of <strong>water</strong><br>
+    • Limit junk food, sugary drinks, and processed foods<br>
+    • Eat fruits and vegetables daily<br>
+    • Include <strong>milk</strong> for calcium and strong bones
+  </div>
+</div>
+
+</div>
+
+<script>
+const nutrients = {
+  carbs: {
+    title: '🍚 Carbohydrates - Energy Source',
+    text: 'Carbohydrates are your body\'s main source of <strong>energy</strong>. During adolescence, you need more energy for growth, studies, and physical activities. Choose complex carbs (whole grains) over simple sugars.',
+    foods: ['🍚 Rice', '🍞 Whole wheat bread', '🥔 Potatoes', '🌾 Millets (ragi, jowar)', '🌽 Corn', '🍌 Bananas']
+  },
+  protein: {
+    title: '🍗 Proteins - Body Building',
+    text: 'Proteins are essential for <strong>building and repairing muscles</strong>, tissues, and organs. During the growth spurt, your protein needs increase significantly. They also help make hormones and enzymes.',
+    foods: ['🍗 Chicken/Fish', '🥚 Eggs', '🥛 Milk & Paneer', '🫘 Dal & Legumes', '🥜 Nuts', '🫛 Soybeans']
+  },
+  veggies: {
+    title: '🥦 Vitamins & Minerals - Body Protectors',
+    text: 'Vitamins and minerals help your body <strong>function properly</strong>, fight diseases, and support growth. Fruits and vegetables are the best sources. Each color provides different nutrients!',
+    foods: ['🥦 Broccoli (Vit C)', '🥕 Carrots (Vit A)', '🍊 Oranges (Vit C)', '🥬 Spinach (Iron)', '🍅 Tomatoes', '🫑 Bell Peppers']
+  },
+  fats: {
+    title: '🥜 Healthy Fats - Brain & Energy',
+    text: 'Fats are needed for <strong>brain development</strong>, absorbing vitamins, and providing long-lasting energy. Choose healthy fats from nuts, seeds, and oils. Avoid trans fats and excessive fried foods.',
+    foods: ['🥜 Almonds & Walnuts', '🥑 Avocado', '🫒 Olive oil', '🐟 Fish (Omega-3)', '🌻 Seeds', '🥥 Coconut']
+  }
+};
+
+const nutrientTitle = document.getElementById('nutrient-title');
+const nutrientText = document.getElementById('nutrient-text');
+const foodExamples = document.getElementById('food-examples');
+
+function selectNutrient(type, element) {
+  // Update tabs
+  document.querySelectorAll('.nutrient-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.plate-section').forEach(s => s.classList.remove('active'));
+  
+  if (element.classList.contains('nutrient-tab')) {
+    element.classList.add('active');
+    document.querySelector(`.plate-section.${type}`).classList.add('active');
+  } else {
+    element.classList.add('active');
+    document.querySelectorAll('.nutrient-tab').forEach((tab, i) => {
+      const types = ['carbs', 'protein', 'veggies', 'fats'];
+      if (types[i] === type) tab.classList.add('active');
+    });
+  }
+  
+  // Update info
+  const nutrient = nutrients[type];
+  nutrientTitle.textContent = nutrient.title;
+  nutrientText.innerHTML = nutrient.text;
+  foodExamples.innerHTML = nutrient.foods.map(f => `<span class="food-tag">${f}</span>`).join('');
+}
+
+// Initialize
+document.querySelector('.plate-section.carbs').classList.add('active');
+</script>
+</body>
+</html>

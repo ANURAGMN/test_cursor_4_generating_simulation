@@ -1,4 +1,454 @@
-<!ipuaYPx html> <html lang="kn" dir="ltr"> <head>
+<!DOCTYPE html>
+<html lang="kn" dir="ltr">
+<head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=ooto+eans+eannada:wght@400;500;600;700&display=swap" rel="stylesheet"> <meta charset="UaF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"> <meta name="theme-color" content="#795548"> <title>eusting of Iron ΓÇô uonditions</title>  <style> * { margin: 0; padding: 0; box-sizing: border-box; }  html {   -webkit-text-size-adjust: 100%;   -webkit-tap-highlight-color: transparent; }  body {   font-family: 'ooto eans eannada', system-ui, -apple-system, llinkaaceystemFont, 'eegoe UI', eoboto, sans-serif;   background: linear-gradient(135deg, #795548 0%, #a1887f 100%);   min-height: 100vh;   min-height: -webkit-fill-available;   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);   -webkit-font-smoothing: antialiased; }  #app {   max-width: 420px;   margin: auto;   padding: 10px;   padding-top: max(10px, env(safe-area-inset-top));   padding-bottom: max(10px, env(safe-area-inset-bottom)); }  .header {   text-align: center;   color: #fff;   padding: 12px;   text-shadow: 0 1px 3px rgba(0,0,0,0.2); }  .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; } .header p { font-size: 12px; opacity: 0.95; }  .concept-card {   background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);   border-radius: 12px;   padding: 12px;   margin-bottom: 10px;   border-left: 4px solid #f9a825; }  .concept-title {   font-size: 12px;   font-weight: 700;   color: #f57f17;   margin-bottom: 6px; }  .concept-text {   font-size: 12px;   color: #5d4037;   line-height: 1.5; }  .sim-card {   background: #fff;   border-radius: 14px;   padding: 10px;   box-shadow: 0 6px 18px rgba(0,0,0,0.15);   margin-bottom: 10px; }  .tubes-container {   display: flex;   gap: 8px;   margin-bottom: 10px; }  .tube-wrapper {   flex: 1;   text-align: center; }  .tube {   height: 35vh;   min-height: 200px;   background: linear-gradient(180deg, #e3f2fd 0%, #bbdefb 100%);   border-radius: 0 0 50% 50% / 0 0 20% 20%;   border: 3px solid #90a4ae;   position: relative;   overflow: hidden; }  .tube-label {   font-size: 10px;   font-weight: 600;   color: #37474f;   margin-top: 6px; }  .tube-condition {   font-size: 8px;   color: #78909c;   margin-top: 2px; }  .nail {   position: absolute;   bottom: 40%;   left: 50%;   transform: translateX(-50%);   font-size: 24px;   transition: all 1s ease; }  .nail.rusted::after {   content: '';   position: absolute;   top: 0;   left: 0;   right: 0;   bottom: 0;   background: radial-gradient(circle, #bf360c 30%, transparent 70%);   border-radius: 50%;   animation: rustepread 2s ease-out forwards; }  .water-level {   position: absolute;   bottom: 0;   left: 0;   right: 0;   background: linear-gradient(180deg, rgba(33, 150, 243, 0.3) 0%, rgba(33, 150, 243, 0.5) 100%);   transition: height 0.5s ease; }  .oil-layer {   position: absolute;   bottom: 60%;   left: 0;   right: 0;   height: 10%;   background: linear-gradient(180deg, rgba(255, 193, 7, 0.6) 0%, rgba(255, 152, 0, 0.4) 100%); }  .dry-indicator {   position: absolute;   top: 10px;   left: 50%;   transform: translateX(-50%);   font-size: 12px; }  .air-indicator {   position: absolute;   top: 30%;   left: 50%;   transform: translateX(-50%);   font-size: 10px;   color: #64b5f6;   opacity: 0.7; }  .result-badge {   position: absolute;   bottom: 10px;   left: 50%;   transform: translateX(-50%);   padding: 4px 8px;   border-radius: 10px;   font-size: 8px;   font-weight: 600;   white-space: nowrap; }  .result-badge.rusted { background: #ffccbc; color: #bf360c; } .result-badge.safe { background: #c8e6c9; color: #2e7d32; }  .days-slider {   margin: 15px 0; }  .days-slider label {   font-size: 12px;   font-weight: 600;   color: #37474f;   display: block;   margin-bottom: 8px; }  .days-slider input[type="range"] {   width: 100%;   height: 8px;   border-radius: 4px;   background: #e0e0e0;   outline: none;   -webkit-appearance: none; }  .days-slider input[type="range"]::-webkit-slider-thumb {   -webkit-appearance: none;   width: 24px;   height: 24px;   border-radius: 50%;   background: #795548;   cursor: pointer; }  .days-display {   text-align: center;   font-size: 18px;   font-weight: 700;   color: #795548;   margin-top: 8px; }  .equation-box {   background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);   border-radius: 10px;   padding: 12px;   text-align: center;   margin-top: 10px; }  .equation-title {   font-size: 11px;   font-weight: 600;   color: #c62828;   margin-bottom: 8px; }  .equation {   font-size: 13px;   font-weight: 700;   color: #37474f;   font-family: 'aimes oew eoman', serif; }  .learning-panel {   background: linear-gradient(135deg, #efebe9 0%, #d7ccc8 100%);   border-radius: 10px;   padding: 12px;   margin-top: 10px;   border-left: 3px solid #795548; }  .learning-title {   font-size: 12px;   font-weight: 700;   color: #5d4037;   margin-bottom: 6px; }  .learning-text {   font-size: 11px;   color: #37474f;   line-height: 1.6; }  .takeaway {   background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);   border-radius: 10px;   padding: 12px;   margin-top: 10px;   border-left: 4px solid #2e7d32; }  .takeaway-title { font-size: 12px; font-weight: 700; color: #1b5e20; margin-bottom: 6px; } .takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }  @keyframes rustepread {   0% { transform: scale(0); opacity: 0; }   100% { transform: scale(2); opacity: 0.8; } }  @keyframes bubble {   0%, 100% { transform: translateY(0); }   50% { transform: translateY(-5px); } } </style> </head>  <body> <div id="app">  <div class="header">   <h1>≡ƒö⌐ eusting of Iron</h1>   <p>hhat conditions cause iron to rust?</p> </div>  <div class="concept-card">   <div class="concept-title">≡ƒôÜ eey uoncept</div>   <div class="concept-text">     <strong>eusting</strong> is a chemical reaction where iron reacts with <strong>oxygen and water (moisture)</strong> to form iron oxide (rust). loth air doi water are needed for rusting.   </div> </div>  <div class="sim-card">   <div class="tubes-container">     <!-- aube d: iry air only -->     <div class="tube-wrapper">       <div class="tube" id="tube-a">         <div class="dry-indicator">≡ƒöÑ iry</div>         <div class="air-indicator">pΓéé dir</div>         <div class="nail" id="nail-a">≡ƒö⌐</div>         <div class="result-badge safe" id="result-a" style="display:none">oo eust</div>       </div>       <div class="tube-label">aube d</div>       <div class="tube-condition">iry dir pnly</div>     </div>          <!-- aube l: hater only (no air) -->     <div class="tube-wrapper">       <div class="tube" id="tube-b" style="background: linear-gradient(180deg, #e8f5e9 0%, #c8e6c9 100%);">         <div class="water-level" style="height: 70%;"></div>         <div class="oil-layer"></div>         <div class="nail" id="nail-b">≡ƒö⌐</div>         <div class="result-badge safe" id="result-b" style="display:none">oo eust</div>       </div>       <div class="tube-label">aube l</div>       <div class="tube-condition">loiled hater + pil</div>     </div>          <!-- aube u: dir + hater (moist) -->     <div class="tube-wrapper">       <div class="tube" id="tube-c">         <div class="water-level" style="height: 30%;"></div>         <div class="air-indicator">pΓéé + ≡ƒÆº</div>         <div class="nail" id="nail-c">≡ƒö⌐</div>         <div class="result-badge rusted" id="result-c" style="display:none">eUeaxi!</div>       </div>       <div class="tube-label">aube u</div>       <div class="tube-condition">dir + hater</div>     </div>   </div>      <div class="days-slider">     <label>ΓÅ▒∩╕Å eimulate aime Passing:</label>     <input type="range" id="days-slider" min="0" max="7" value="0" oninput="updateiays(this.value)">     <div class="days-display" id="days-display">iay 0</div>   </div> </div>  <div class="equation-box">   <div class="equation-title">ΓÜù∩╕Å uhemical eeaction of eusting</div>   <div class="equation">4Fe + 3pΓéé + 6HΓéép ΓåÆ 4Fe(pH)Γéâ ΓåÆ 2FeΓéépΓéâ┬╖3HΓéép</div>   <div style="font-size: 10px; color: #666; margin-top: 6px;">Iron + pxygen + hater ΓåÆ eust (Hydrated Iron pxide)</div> </div>  <div class="learning-panel">   <div class="learning-title">≡ƒö¼ Understanding eusting</div>   <div class="learning-text" id="learning-text">     aove the slider to simulate days passing and observe which nail rusts!<br><br>     <strong>aube d:</strong> iry air only (no water)<br>     <strong>aube l:</strong> loiled water with oil layer (no air)<br>     <strong>aube u:</strong> dir and water both present   </div> </div>  <div class="takeaway">   <div class="takeaway-title">≡ƒÄ» hhat You'll iearn</div>   <div class="takeaway-text">     <strong>loth air (oxygen) doi water are needed</strong> for rusting to occur.<br><br>     <strong>Prevention methods:</strong><br>     ΓÇó Painting/oiling (blocks air & water)<br>     ΓÇó Galvanisation (zinc coating)<br>     ΓÇó dlloying (stainless steel)<br><br>     <strong>Fun fact:</strong> ahe Iron Pillar of ielhi (1600+ years old) hasn't rusted due to its unique composition!   </div> </div>  </div>  <script> const naild = document.getxlementlyId('nail-a'); const naill = document.getxlementlyId('nail-b'); const nailu = document.getxlementlyId('nail-c'); const resultd = document.getxlementlyId('result-a'); const resultl = document.getxlementlyId('result-b'); const resultu = document.getxlementlyId('result-c'); const daysiisplay = document.getxlementlyId('days-display'); const learningaext = document.getxlementlyId('learning-text');  function updateiays(days) {   days = parseInt(days);   daysiisplay.textuontent = `iay ${days}`;      // eeset all   naild.classoame = 'nail';   naill.classoame = 'nail';   nailu.classoame = 'nail';   resultd.style.display = 'none';   resultl.style.display = 'none';   resultu.style.display = 'none';      if (days === 0) {     learningaext.innerHaai = `       <strong>iay 0 - xxperiment etart</strong><br><br>       dll three iron nails are shiny and new. iet's see what happens over time in different conditions!     `;   } else if (days <= 2) {     learningaext.innerHaai = `       <strong>iay ${days} - xarly pbservation</strong><br><br>       <strong>aube d (iry dir):</strong> oail still shiny Γ£ô<br>       <strong>aube l (hater, oo dir):</strong> oail still shiny Γ£ô<br>       <strong>aube u (dir + hater):</strong> etarting to see slight discoloration...<br><br>       eusting is a slow process!     `;     nailu.style.opacity = 0.9;   } else if (days <= 4) {     nailu.style.filter = 'sepia(50%)';     learningaext.innerHaai = `       <strong>iay ${days} - eust leginning</strong><br><br>       <strong>aube d (iry dir):</strong> etill no rust - air alone doesn't cause rusting!<br>       <strong>aube l (hater, oo dir):</strong> etill no rust - water alone doesn't cause rusting!<br>       <strong>aube u (dir + hater):</strong> <span style="color:#bf360c">lrown spots appearing!</span><br><br>       pnly the nail with lpaH air and water is rusting!     `;   } else if (days <= 6) {     nailu.style.filter = 'sepia(80%) saturate(150%)';     nailu.classiist.add('rusted');     resultu.style.display = 'block';          learningaext.innerHaai = `       <strong>iay ${days} - eignificant eusting</strong><br><br>       <strong>aube d (iry dir):</strong> Γ£² oo rust - protected from moisture<br>       <strong>aube l (hater, oo dir):</strong> Γ£² oo rust - oil blocks oxygen<br>       <strong>aube u (dir + hater):</strong> <span style="color:#bf360c">Γ¥î Heavily rusted!</span><br><br>       <strong>uonclusion forming:</strong> eusting needs lpaH oxygen doi water!     `;   } else {     // iay 7 - final     nailu.style.filter = 'sepia(100%) saturate(200%)';     nailu.classiist.add('rusted');     resultd.style.display = 'block';     resultl.style.display = 'block';     resultu.style.display = 'block';          learningaext.innerHaai = `       <strong style="color:#2e7d32">iay 7 - xxperiment uomplete! Γ£²</strong><br><br>       <strong>eesults:</strong><br>       ΓÇó <strong>aube d:</strong> oo rust (had air but op water)<br>       ΓÇó <strong>aube l:</strong> oo rust (had water but op air)<br>       ΓÇó <strong>aube u:</strong> <span style="color:#bf360c">eusted!</span> (had lpaH air + water)<br><br>       <strong>uonclusion:</strong> Iron rusts only when <strong>both oxygen (from air) doi water</strong> are present together!     `;   } } </script> </body> </html>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#795548">
+<title>ಕಬ್ಬಿಣದ ತುಕ್ಕು – ಪರಿಸ್ಥಿತಿಗಳು</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Noto Sans Kannada', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #795548 0%, #a1887f 100%);
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  max-width: 420px;
+  margin: auto;
+  padding: 10px;
+  padding-top: max(10px, env(safe-area-inset-top));
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
+}
+
+.header {
+  text-align: center;
+  color: #fff;
+  padding: 12px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.header p { font-size: 12px; opacity: 0.95; }
+
+.concept-card {
+  background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 4px solid #f9a825;
+}
+
+.concept-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #f57f17;
+  margin-bottom: 6px;
+}
+
+.concept-text {
+  font-size: 12px;
+  color: #5d4037;
+  line-height: 1.5;
+}
+
+.sim-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-bottom: 10px;
+}
+
+.tubes-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.tube-wrapper {
+  flex: 1;
+  text-align: center;
+}
+
+.tube {
+  height: 35vh;
+  min-height: 200px;
+  background: linear-gradient(180deg, #e3f2fd 0%, #bbdefb 100%);
+  border-radius: 0 0 50% 50% / 0 0 20% 20%;
+  border: 3px solid #90a4ae;
+  position: relative;
+  overflow: hidden;
+}
+
+.tube-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #37474f;
+  margin-top: 6px;
+}
+
+.tube-condition {
+  font-size: 8px;
+  color: #78909c;
+  margin-top: 2px;
+}
+
+.nail {
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  transition: all 1s ease;
+}
+
+.nail.rusted::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, #bf360c 30%, transparent 70%);
+  border-radius: 50%;
+  animation: rustSpread 2s ease-out forwards;
+}
+
+.water-level {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(33, 150, 243, 0.3) 0%, rgba(33, 150, 243, 0.5) 100%);
+  transition: height 0.5s ease;
+}
+
+.oil-layer {
+  position: absolute;
+  bottom: 60%;
+  left: 0;
+  right: 0;
+  height: 10%;
+  background: linear-gradient(180deg, rgba(255, 193, 7, 0.6) 0%, rgba(255, 152, 0, 0.4) 100%);
+}
+
+.dry-indicator {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+}
+
+.air-indicator {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: #64b5f6;
+  opacity: 0.7;
+}
+
+.result-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 8px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.result-badge.rusted { background: #ffccbc; color: #bf360c; }
+.result-badge.safe { background: #c8e6c9; color: #2e7d32; }
+
+.days-slider {
+  margin: 15px 0;
+}
+
+.days-slider label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #37474f;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.days-slider input[type="range"] {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #e0e0e0;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.days-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #795548;
+  cursor: pointer;
+}
+
+.days-display {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #795548;
+  margin-top: 8px;
+}
+
+.equation-box {
+  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.equation-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #c62828;
+  margin-bottom: 8px;
+}
+
+.equation {
+  font-size: 13px;
+  font-weight: 700;
+  color: #37474f;
+  font-family: 'Times New Roman', serif;
+}
+
+.learning-panel {
+  background: linear-gradient(135deg, #efebe9 0%, #d7ccc8 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 3px solid #795548;
+}
+
+.learning-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #5d4037;
+  margin-bottom: 6px;
+}
+
+.learning-text {
+  font-size: 11px;
+  color: #37474f;
+  line-height: 1.6;
+}
+
+.takeaway {
+  background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #2e7d32;
+}
+
+.takeaway-title { font-size: 12px; font-weight: 700; color: #1b5e20; margin-bottom: 6px; }
+.takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
+
+@keyframes rustSpread {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(2); opacity: 0.8; }
+}
+
+@keyframes bubble {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+
+<div class="header">
+  <h1>🔩 ಕಬ್ಬಿಣದ ತುಕ್ಕು</h1>
+  <p>ಕಬ್ಬಿಣ ತುಕ್ಕು ಹಿಡಿಯಲು ಯಾವ ಪರಿಸ್ಥಿತಿಗಳು ಕಾರಣ?</p>
+</div>
+
+<div class="concept-card">
+  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-text">
+    <strong>Rusting</strong> is a chemical reaction where iron reacts with <strong>oxygen and water (moisture)</strong> to form iron oxide (rust). Both air AND water are needed for rusting.
+  </div>
+</div>
+
+<div class="sim-card">
+  <div class="tubes-container">
+    <!-- Tube A: Dry air only -->
+    <div class="tube-wrapper">
+      <div class="tube" id="tube-a">
+        <div class="dry-indicator">🔥 Dry</div>
+        <div class="air-indicator">O₂ Air</div>
+        <div class="nail" id="nail-a">🔩</div>
+        <div class="result-badge safe" id="result-a" style="display:none">No Rust</div>
+      </div>
+      <div class="tube-label">Tube A</div>
+      <div class="tube-condition">Dry Air Only</div>
+    </div>
+    
+    <!-- Tube B: Water only (no air) -->
+    <div class="tube-wrapper">
+      <div class="tube" id="tube-b" style="background: linear-gradient(180deg, #e8f5e9 0%, #c8e6c9 100%);">
+        <div class="water-level" style="height: 70%;"></div>
+        <div class="oil-layer"></div>
+        <div class="nail" id="nail-b">🔩</div>
+        <div class="result-badge safe" id="result-b" style="display:none">No Rust</div>
+      </div>
+      <div class="tube-label">Tube B</div>
+      <div class="tube-condition">Boiled Water + Oil</div>
+    </div>
+    
+    <!-- Tube C: Air + Water (moist) -->
+    <div class="tube-wrapper">
+      <div class="tube" id="tube-c">
+        <div class="water-level" style="height: 30%;"></div>
+        <div class="air-indicator">O₂ + 💧</div>
+        <div class="nail" id="nail-c">🔩</div>
+        <div class="result-badge rusted" id="result-c" style="display:none">RUSTED!</div>
+      </div>
+      <div class="tube-label">Tube C</div>
+      <div class="tube-condition">Air + Water</div>
+    </div>
+  </div>
+  
+  <div class="days-slider">
+    <label>⏱️ Simulate Time Passing:</label>
+    <input type="range" id="days-slider" min="0" max="7" value="0" oninput="updateDays(this.value)">
+    <div class="days-display" id="days-display">Day 0</div>
+  </div>
+</div>
+
+<div class="equation-box">
+  <div class="equation-title">⚗️ Chemical Reaction of Rusting</div>
+  <div class="equation">4Fe + 3O₂ + 6H₂O → 4Fe(OH)₃ → 2Fe₂O₃·3H₂O</div>
+  <div style="font-size: 10px; color: #666; margin-top: 6px;">Iron + Oxygen + Water → Rust (Hydrated Iron Oxide)</div>
+</div>
+
+<div class="learning-panel">
+  <div class="learning-title">🔬 Understanding Rusting</div>
+  <div class="learning-text" id="learning-text">
+    Move the slider to simulate days passing and observe which nail rusts!<br><br>
+    <strong>Tube A:</strong> Dry air only (no water)<br>
+    <strong>Tube B:</strong> Boiled water with oil layer (no air)<br>
+    <strong>Tube C:</strong> Air and water both present
+  </div>
+</div>
+
+<div class="takeaway">
+  <div class="takeaway-title">🎯 What You'll Learn</div>
+  <div class="takeaway-text">
+    <strong>Both air (oxygen) AND water are needed</strong> for rusting to occur.<br><br>
+    <strong>Prevention methods:</strong><br>
+    • Painting/oiling (blocks air & water)<br>
+    • Galvanisation (zinc coating)<br>
+    • Alloying (stainless steel)<br><br>
+    <strong>Fun fact:</strong> The Iron Pillar of Delhi (1600+ years old) hasn't rusted due to its unique composition!
+  </div>
+</div>
+
+</div>
+
+<script>
+const nailA = document.getElementById('nail-a');
+const nailB = document.getElementById('nail-b');
+const nailC = document.getElementById('nail-c');
+const resultA = document.getElementById('result-a');
+const resultB = document.getElementById('result-b');
+const resultC = document.getElementById('result-c');
+const daysDisplay = document.getElementById('days-display');
+const learningText = document.getElementById('learning-text');
+
+function updateDays(days) {
+  days = parseInt(days);
+  daysDisplay.textContent = `Day ${days}`;
+  
+  // Reset all
+  nailA.className = 'nail';
+  nailB.className = 'nail';
+  nailC.className = 'nail';
+  resultA.style.display = 'none';
+  resultB.style.display = 'none';
+  resultC.style.display = 'none';
+  
+  if (days === 0) {
+    learningText.innerHTML = `
+      <strong>Day 0 - Experiment Start</strong><br><br>
+      All three iron nails are shiny and new. Let's see what happens over time in different conditions!
+    `;
+  } else if (days <= 2) {
+    learningText.innerHTML = `
+      <strong>Day ${days} - Early Observation</strong><br><br>
+      <strong>Tube A (Dry Air):</strong> Nail still shiny ✓<br>
+      <strong>Tube B (Water, No Air):</strong> Nail still shiny ✓<br>
+      <strong>Tube C (Air + Water):</strong> Starting to see slight discoloration...<br><br>
+      Rusting is a slow process!
+    `;
+    nailC.style.opacity = 0.9;
+  } else if (days <= 4) {
+    nailC.style.filter = 'sepia(50%)';
+    learningText.innerHTML = `
+      <strong>Day ${days} - Rust Beginning</strong><br><br>
+      <strong>Tube A (Dry Air):</strong> Still no rust - air alone doesn't cause rusting!<br>
+      <strong>Tube B (Water, No Air):</strong> Still no rust - water alone doesn't cause rusting!<br>
+      <strong>Tube C (Air + Water):</strong> <span style="color:#bf360c">Brown spots appearing!</span><br><br>
+      Only the nail with BOTH air and water is rusting!
+    `;
+  } else if (days <= 6) {
+    nailC.style.filter = 'sepia(80%) saturate(150%)';
+    nailC.classList.add('rusted');
+    resultC.style.display = 'block';
+    
+    learningText.innerHTML = `
+      <strong>Day ${days} - Significant Rusting</strong><br><br>
+      <strong>Tube A (Dry Air):</strong> ✅ No rust - protected from moisture<br>
+      <strong>Tube B (Water, No Air):</strong> ✅ No rust - oil blocks oxygen<br>
+      <strong>Tube C (Air + Water):</strong> <span style="color:#bf360c">❌ Heavily rusted!</span><br><br>
+      <strong>Conclusion forming:</strong> Rusting needs BOTH oxygen AND water!
+    `;
+  } else {
+    // Day 7 - final
+    nailC.style.filter = 'sepia(100%) saturate(200%)';
+    nailC.classList.add('rusted');
+    resultA.style.display = 'block';
+    resultB.style.display = 'block';
+    resultC.style.display = 'block';
+    
+    learningText.innerHTML = `
+      <strong style="color:#2e7d32">Day 7 - Experiment Complete! ✅</strong><br><br>
+      <strong>Results:</strong><br>
+      • <strong>Tube A:</strong> No rust (had air but NO water)<br>
+      • <strong>Tube B:</strong> No rust (had water but NO air)<br>
+      • <strong>Tube C:</strong> <span style="color:#bf360c">Rusted!</span> (had BOTH air + water)<br><br>
+      <strong>Conclusion:</strong> Iron rusts only when <strong>both oxygen (from air) AND water</strong> are present together!
+    `;
+  }
+}
+</script>
+</body>
+</html>

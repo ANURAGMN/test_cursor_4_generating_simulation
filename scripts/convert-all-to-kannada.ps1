@@ -1,10 +1,15 @@
-# Convert all simulation HTMLs from unit2-unit8 branches to Kannada and save to kannada_simulations/
-# Run from repo root. Requires: current branch can be kannada (files written to kannada_simulations/)
+# Convert all simulation HTMLs from unit2-unit8 branches to Kannada.
+# CRITICAL: Apply translations ONLY outside <script>...</script> so JS code stays intact.
+# Read/write UTF-8 to avoid mojibake.
 
 $ErrorActionPreference = "Stop"
 $repoRoot = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
+# Prefer UTF-8 for git output (run in PowerShell 7 or set chcp 65001 first if needed)
+try { $OutputEncoding = [System.Text.Encoding]::UTF8 } catch { }
 $outDir = Join-Path $repoRoot "kannada_simulations"
 if (-not (Test-Path $outDir)) { New-Item -ItemType Directory -Path $outDir -Force | Out-Null }
+
+$utf8NoBom = [System.Text.UTF8Encoding]::new($false)
 
 $fontLink = @"
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +17,6 @@ $fontLink = @"
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700&display=swap" rel="stylesheet">
 "@
 
-# Branch ref -> chapter number. Unit2 uses cursor/unit2-html-simulations-af5f
 $branchChapterMap = @{
     "origin/cursor/unit2-html-simulations-af5f" = 2
     "origin/unit3-html-simulations" = 3
@@ -23,70 +27,76 @@ $branchChapterMap = @{
     "origin/unit8-html-simulations" = 8
 }
 
-# Common English -> Kannada (order: longer phrases first to avoid partial replace)
-$translations = @(
-    @("Reference (baseline)", "ಉಲ್ಲೇಖ (ಆಧಾರ)")
-    @("Experiment (change & observe)", "ಪ್ರಯೋಗ (ಬದಲಾಯಿಸಿ ಮತ್ತು ಗಮನಿಸಿ)")
-    @("Select a solution to test:", "ಪರೀಕ್ಷಿಸಲು ದ್ರಾವಣ ಆಯ್ಕೆಮಾಡಿ:")
-    @("What you discovered:", "ನೀವು ಕಂಡುಕೊಂಡದ್ದು:")
-    @("Key Insight:", "ಮುಖ್ಯ ಅಂತರ್ದೃಷ್ಟಿ:")
-    @("Blue Litmus", "ನೀಲಿ ಲಿಟ್ಮಸ್")
-    @("Red Litmus", "ಕೆಂಪು ಲಿಟ್ಮಸ್")
-    @("Soap Solution", "ಸಾಬೂನು ದ್ರಾವಣ")
-    @("Baking Soda", "ಬೇಕಿಂಗ್ ಸೋಡಾ")
-    @("Lime Water", "ಸುಣ್ಣದ ನೀರು")
-    @("Tap Water", "ನಳ ನೀರು")
-    @("Sugar Solution", "ಸಕ್ಕರೆ ದ್ರಾವಣ")
-    @("Salt Solution", "ಉಪ್ಪು ದ್ರಾವಣ")
-    @("Lemon Juice", "ನಿಂಬೆ ರಸ")
-    @("Curd/Yogurt", "ಮೊಸರು")
-    @("Solution:", "ದ್ರಾವಣ:")
-    @("Conclusion:", "ತೀರ್ಮಾನ:")
-    @("Submit", "ಸಲ್ಲಿಸಿ")
-    @("Adjust", "ಸರಿಹೊಂದಿಸಿ")
-    @("Distance", "ದೂರ")
-    @("Size", "ಗಾತ್ರ")
-    @("Material", "ಪದಾರ್ಥ")
-    @("Opaque", "ಅಪಾರದರ್ಶಕ")
-    @("Translucent", "ಅರೆಪಾರದರ್ಶಕ")
-    @("Transparent", "ಪಾರದರ್ಶಕ")
-    @("Select", "ಆಯ್ಕೆಮಾಡಿ")
-    @("Test", "ಪರೀಕ್ಷೆ")
-    @("Result", "ಫಲಿತಾಂಶ")
-    @("Conclusion", "ತೀರ್ಮಾನ")
-    @("Solution", "ದ್ರಾವಣ")
-    @("Original", "ಮೂಲ")
-    @("No change", "ಬದಲಾವಣೆ ಇಲ್ಲ")
-    @("Dip Papers", "ಕಾಗದಗಳನ್ನು ಮುಳುಗಿಸಿ")
-    @("ACIDIC", "ಆಮ್ಲೀಯ")
-    @("BASIC", "ಕ್ಷಾರೀಯ")
-    @("NEUTRAL", "ತಟಸ್ಥ")
-    @("Acidic", "ಆಮ್ಲೀಯ")
-    @("Basic", "ಕ್ಷಾರೀಯ")
-    @("Neutral", "ತಟಸ್ಥ")
-    @("Blue", "ನೀಲಿ")
-    @("Red", "ಕೆಂಪು")
-    @("Lemon", "ನಿಂಬೆ")
-    @("Vinegar", "ವಿನಿಗರ್")
-    @("Curd", "ಮೊಸರು")
-    @("Soap", "ಸಾಬೂನು")
-    @("Sugar", "ಸಕ್ಕರೆ")
-    @("Salt", "ಉಪ್ಪು")
-    @("Water", "ನೀರು")
-)
+# Load translations from UTF-8 file to avoid script encoding issues (longer phrases first in file)
+$translationsFile = Join-Path (Split-Path -Parent $MyInvocation.MyCommand.Path) "kannada-translations.txt"
+$translations = @()
+if (Test-Path $translationsFile) {
+    $lines = [System.IO.File]::ReadAllText($translationsFile, [System.Text.Encoding]::UTF8) -split "`n"
+    foreach ($line in $lines) {
+        $line = $line.Trim()
+        if ($line -and $line -match '^([^|]+)\|(.+)$') { $translations += ,@($Matches[1], $Matches[2]) }
+    }
+}
 
-function Convert-ToKannada {
-    param([string]$html)
-    $out = $html
-    $out = $out -replace '<html lang="en">', '<html lang="kn" dir="ltr">'
-    if ($out -notmatch 'Noto Sans Kannada') {
-        $out = $out -replace '(<head[^>]*>)', "`$1`n$fontLink"
-        $out = $out -replace 'font-family:\s*system-ui', "font-family: 'Noto Sans Kannada', system-ui"
-    }
+function Apply-TranslationsToSegment {
+    param([string]$segment)
+    $s = $segment
     foreach ($pair in $translations) {
-        $out = $out.Replace($pair[0], $pair[1])
+        $s = $s.Replace($pair[0], $pair[1])
     }
-    return $out
+    return $s
+}
+
+function Convert-ToKannadaSafe {
+    param([string]$html)
+    # 1) Split: only translate parts OUTSIDE <script>...</script>
+    $scriptStart = $html.IndexOf('<script')
+    $scriptEnd = $html.IndexOf('</script>')
+    if ($scriptStart -lt 0 -or $scriptEnd -lt 0) {
+        # No script block: translate whole (avoid replacing in style/script anyway)
+        $beforeScript = $html
+        $scriptBlock = $null
+        $afterScript = $null
+    } else {
+        $scriptEnd += '</script>'.Length
+        $beforeScript = $html.Substring(0, $scriptStart)
+        $scriptBlock = $html.Substring($scriptStart, $scriptEnd - $scriptStart)
+        $afterScript = $html.Substring($scriptEnd)
+    }
+
+    # 2) Head/body: lang, font, and translations (no replace inside script)
+    $beforeScript = $beforeScript -replace '<html lang="en">', '<html lang="kn" dir="ltr">'
+    if ($beforeScript -notmatch 'Noto Sans Kannada') {
+        $beforeScript = $beforeScript -replace '(<head[^>]*>)', "`$1`n$fontLink"
+        $beforeScript = $beforeScript -replace 'font-family:\s*system-ui', "font-family: 'Noto Sans Kannada', system-ui"
+    }
+    $beforeScript = Apply-TranslationsToSegment $beforeScript
+
+    $afterScript = Apply-TranslationsToSegment $afterScript
+
+    # 3) Reassemble (script block unchanged)
+    if ($scriptBlock -ne $null) {
+        return $beforeScript + $scriptBlock + $afterScript
+    }
+    return $beforeScript
+}
+
+# Read from git (call operator). For correct UTF-8 run in PowerShell 7 or: chcp 65001 then run script.
+function Get-GitFileUtf8 {
+    param([string]$branch, [string]$path)
+    $tmp = Join-Path $outDir ".tmp_git_$([Guid]::NewGuid().ToString('n').Substring(0,8)).html"
+    try {
+        $ref = "`"${branch}:${path}`""
+        $cmd = "chcp 65001 >nul & git show $ref > `"$tmp`""
+        $null = cmd /c $cmd
+        if (-not (Test-Path $tmp) -or (Get-Item $tmp).Length -eq 0) { return $null }
+        $text = [System.IO.File]::ReadAllText($tmp, [System.Text.Encoding]::UTF8)
+        return [string]$text
+    } catch {
+        return $null
+    } finally {
+        if (Test-Path $tmp) { Remove-Item $tmp -Force -ErrorAction SilentlyContinue }
+    }
 }
 
 $count = 0
@@ -99,13 +109,13 @@ foreach ($branch in $branchChapterMap.Keys) {
         $concept = $Matches[2]
         $outName = "science_chapter${chapter}_simulation${num}_${concept}_kn.html"
         $outPath = Join-Path $outDir $outName
-        $content = git show "${branch}:${f}" 2>$null
-        if (-not $content) { Write-Warning "Could not get ${branch}:${f}"; continue }
-        $kannada = Convert-ToKannada $content
-        [System.IO.File]::WriteAllText($outPath, $kannada, [System.Text.UTF8Encoding]::new($false))
+        if ($outName -eq "science_chapter2_simulation4_red_rose_indicator_kn.html") { $count++; Write-Host "  $outName (skip - already corrected)"; continue }
+        $content = Get-GitFileUtf8 -branch $branch -path $f
+        if (-not $content -or $content -isnot [string]) { Write-Warning "Could not get ${branch}:${f}"; continue }
+        $kannada = Convert-ToKannadaSafe $content
+        [System.IO.File]::WriteAllText($outPath, $kannada, $utf8NoBom)
         $count++
         Write-Host "  $outName"
     }
 }
 Write-Host "Done. Created $count Kannada simulation files."
-# lightsShadows4 -> chapter 1 is already in kannada_simulations (science_chapter1_simulation1_light_and_shadows_kn.html)

@@ -1,4 +1,349 @@
-<!ipuaYPx html> <html lang="kn" dir="ltr"> <head>
+<!DOCTYPE html>
+<html lang="kn" dir="ltr">
+<head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=ooto+eans+eannada:wght@400;500;600;700&display=swap" rel="stylesheet"> <meta charset="UaF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"> <meta name="theme-color" content="#00acc1"> <title>Personal Hygiene iuring ddolescence</title>  <style> * { margin: 0; padding: 0; box-sizing: border-box; }  body {   font-family: 'ooto eans eannada', system-ui, -apple-system, llinkaaceystemFont, 'eegoe UI', eoboto, sans-serif;   background: linear-gradient(135deg, #00acc1 0%, #4dd0e1 100%);   min-height: 100vh;   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }  #app {   max-width: 420px;   margin: auto;   padding: 10px; }  .header {   text-align: center;   color: #fff;   padding: 12px; }  .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; } .header p { font-size: 12px; opacity: 0.95; }  .concept-card {   background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);   border-radius: 12px;   padding: 12px;   margin-bottom: 10px;   border-left: 4px solid #00acc1; }  .concept-title { font-size: 12px; font-weight: 700; color: #00838f; margin-bottom: 6px; } .concept-text { font-size: 12px; color: #37474f; line-height: 1.5; }  .sim-card {   background: #fff;   border-radius: 14px;   padding: 12px;   box-shadow: 0 6px 18px rgba(0,0,0,0.15);   margin-bottom: 10px; }  .checklist-header {   display: flex;   justify-content: space-between;   align-items: center;   margin-bottom: 12px; }  .checklist-title {   font-size: 13px;   font-weight: 700;   color: #00838f; }  .progress-badge {   padding: 6px 12px;   background: #e0f7fa;   border-radius: 15px;   font-size: 11px;   font-weight: 600;   color: #00838f; }  .hygiene-list {   display: flex;   flex-direction: column;   gap: 8px; }  .hygiene-item {   display: flex;   align-items: center;   padding: 12px;   background: #f5f5f5;   border-radius: 10px;   cursor: pointer;   transition: all 0.3s ease;   border: 2px solid transparent; }  .hygiene-item:active { transform: scale(0.98); } .hygiene-item.checked { background: #e0f7fa; border-color: #4dd0e1; }  .hygiene-checkbox {   width: 24px;   height: 24px;   border-radius: 50%;   border: 2px solid #ccc;   margin-right: 12px;   display: flex;   align-items: center;   justify-content: center;   transition: all 0.3s ease; }  .hygiene-item.checked .hygiene-checkbox {   background: #00acc1;   border-color: #00acc1;   color: white; }  .hygiene-icon { font-size: 22px; margin-right: 10px; } .hygiene-content { flex: 1; } .hygiene-title { font-size: 12px; font-weight: 600; color: #333; } .hygiene-desc { font-size: 10px; color: #666; margin-top: 2px; }  .tip-panel {   background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);   border-radius: 10px;   padding: 12px;   margin-top: 10px;   border-left: 4px solid #4caf50; }  .tip-title { font-size: 12px; font-weight: 700; color: #2e7d32; margin-bottom: 8px; } .tip-text { font-size: 11px; color: #37474f; line-height: 1.6; }  .menstrual-hygiene {   background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);   border-radius: 10px;   padding: 12px;   margin-top: 10px;   border-left: 4px solid #e91e63; }  .menstrual-title { font-size: 12px; font-weight: 700; color: #c2185b; margin-bottom: 8px; } .menstrual-text { font-size: 11px; color: #37474f; line-height: 1.5; }  .product-options {   display: flex;   gap: 8px;   margin-top: 10px; }  .product-card {   flex: 1;   padding: 10px;   background: #fff;   border-radius: 8px;   text-align: center; }  .product-card .emoji { font-size: 24px; margin-bottom: 4px; } .product-card .name { font-size: 10px; font-weight: 600; color: #333; } .product-card .desc { font-size: 8px; color: #666; margin-top: 2px; }  .takeaway {   background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);   border-radius: 10px;   padding: 12px;   margin-top: 10px;   border-left: 4px solid #ff9800; }  .takeaway-title { font-size: 12px; font-weight: 700; color: #e65100; margin-bottom: 6px; } .takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; } </style> </head>  <body> <div id="app">  <div class="header">   <h1>≡ƒº╝ Personal Hygiene</h1>   <p>etay clean, stay healthy!</p> </div>  <div class="concept-card">   <div class="concept-title">≡ƒôÜ eey uoncept</div>   <div class="concept-text">     iuring adolescence, your body produces more <strong>sweat and oils</strong>. aaintaining cleanliness prevents body odor, skin problems, and infections. Good hygiene habits formed now will last a lifetime!   </div> </div>  <div class="sim-card">   <div class="checklist-header">     <div class="checklist-title">≡ƒôï iaily Hygiene uhecklist</div>     <div class="progress-badge" id="progress-badge">0/7 ione</div>   </div>      <div class="hygiene-list" id="hygiene-list">     <div class="hygiene-item" onclick="toggleItem(0, this)">       <div class="hygiene-checkbox">Γ£ô</div>       <div class="hygiene-icon">≡ƒÜ┐</div>       <div class="hygiene-content">         <div class="hygiene-title">iaily lath/ehower</div>         <div class="hygiene-desc">ulean your body thoroughly, especially armpits and private areas</div>       </div>     </div>          <div class="hygiene-item" onclick="toggleItem(1, this)">       <div class="hygiene-checkbox">Γ£ô</div>       <div class="hygiene-icon">≡ƒª╖</div>       <div class="hygiene-content">         <div class="hygiene-title">lrush aeeth awice</div>         <div class="hygiene-desc">aorning and before bed to prevent cavities and bad breath</div>       </div>     </div>          <div class="hygiene-item" onclick="toggleItem(2, this)">       <div class="hygiene-checkbox">Γ£ô</div>       <div class="hygiene-icon">≡ƒæò</div>       <div class="hygiene-content">         <div class="hygiene-title">ulean ulothes iaily</div>         <div class="hygiene-desc">hear fresh underwear and clothes, especially after sweating</div>       </div>     </div>          <div class="hygiene-item" onclick="toggleItem(3, this)">       <div class="hygiene-checkbox">Γ£ô</div>       <div class="hygiene-icon">≡ƒº┤</div>       <div class="hygiene-content">         <div class="hygiene-title">Use ieodorant</div>         <div class="hygiene-desc">dpply after bathing to prevent body odor throughout the day</div>       </div>     </div>          <div class="hygiene-item" onclick="toggleItem(4, this)">       <div class="hygiene-checkbox">Γ£ô</div>       <div class="hygiene-icon">≡ƒº┤</div>       <div class="hygiene-content">         <div class="hygiene-title">hash Face</div>         <div class="hygiene-desc">ulean face 2-3 times daily to prevent acne and pimples</div>       </div>     </div>          <div class="hygiene-item" onclick="toggleItem(5, this)">       <div class="hygiene-checkbox">Γ£ô</div>       <div class="hygiene-icon">Γ£ï</div>       <div class="hygiene-content">         <div class="hygiene-title">hash Hands Frequently</div>         <div class="hygiene-desc">lefore eating, after using toilet, after touching dirty surfaces</div>       </div>     </div>          <div class="hygiene-item" onclick="toggleItem(6, this)">       <div class="hygiene-checkbox">Γ£ô</div>       <div class="hygiene-icon">≡ƒÆ²</div>       <div class="hygiene-content">         <div class="hygiene-title">arim oails heekly</div>         <div class="hygiene-desc">ehort, clean nails prevent dirt buildup and infections</div>       </div>     </div>   </div> </div>  <div class="tip-panel" id="tip-panel">   <div class="tip-title">≡ƒÆí Hygiene aip</div>   <div class="tip-text" id="tip-text">     aap on items to check them off! Good hygiene becomes easier when it's a habit. ary to do these same things at the same time every day.   </div> </div>  <div class="menstrual-hygiene">   <div class="menstrual-title">≡ƒæº aenstrual Hygiene (For Girls)</div>   <div class="menstrual-text">     iuring periods, extra hygiene is important:<br>     ΓÇó uhange sanitary products every 4-6 hours<br>     ΓÇó hash the area with water during each change<br>     ΓÇó iispose of used products properly (wrapped in paper)<br>     ΓÇó uarry extra supplies when going out   </div>   <div class="product-options">     <div class="product-card">       <div class="emoji">≡ƒ⌐╣</div>       <div class="name">eanitary Pads</div>       <div class="desc">aost common, easy to use</div>     </div>     <div class="product-card">       <div class="emoji">ΓÖ╗∩╕Å</div>       <div class="name">eeusable Pads</div>       <div class="desc">xco-friendly, washable</div>     </div>     <div class="product-card">       <div class="emoji">≡ƒî┐</div>       <div class="name">liodegradable</div>       <div class="desc">xnvironment-safe disposal</div>     </div>   </div> </div>  <div class="takeaway">   <div class="takeaway-title">≡ƒÄ» eemember</div>   <div class="takeaway-text">     ΓÇó Good hygiene prevents infections and illness<br>     ΓÇó It helps you feel confident and comfortable<br>     ΓÇó ahese habits will benefit you throughout life<br>     ΓÇó If you have skin problems, consult a doctor<br>     ΓÇó Government schemes provide free sanitary products in schools   </div> </div>  </div>  <script> const tips = [   "lathing daily removes sweat, bacteria, and dead skin cells. Pay special attention to areas that sweat more!",   "lrushing for 2 minutes, twice a day, keeps teeth healthy. ion't forget to brush your tongue too!",   "lacteria love dirty clothes, especially underwear. Fresh clothes help you smell good and feel confident.",   "ieodorant or antiperspirant helps control sweat and odor. dpply to clean, dry underarms.",   "hashing your face removes excess oil and dirt that cause pimples. Use a gentle cleanser suitable for your skin type.",   "Handwashing is your best defense against germs! hash for at least 20 seconds with soap.",   "iong nails collect dirt and bacteria. eeep them short and clean to stay hygienic." ];  let checkedItems = new drray(7).fill(false);  const progressladge = document.getxlementlyId('progress-badge'); const tipaext = document.getxlementlyId('tip-text');  function toggleItem(index, element) {   checkedItems[index] = !checkedItems[index];   element.classiist.toggle('checked');      // Update progress   const checkeduount = checkedItems.filter(loolean).length;   progressladge.textuontent = `${checkeduount}/7 ione`;      if (checkeduount === 7) {     progressladge.style.background = '#c8e6c9';     progressladge.style.color = '#2e7d32';     progressladge.textuontent = '≡ƒÄë dll ione!';   } else {     progressladge.style.background = '#e0f7fa';     progressladge.style.color = '#00838f';   }      // ehow tip for checked item   if (checkedItems[index]) {     tipaext.textuontent = tips[index];   } } </script> </body> </html>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#00acc1">
+<title>ಕೌಮಾರದಲ್ಲಿ ವೈಯಕ್ತಿಕ ಶುಚಿತ್ವ</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans Kannada', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #00acc1 0%, #4dd0e1 100%);
+  min-height: 100vh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+#app {
+  max-width: 420px;
+  margin: auto;
+  padding: 10px;
+}
+
+.header {
+  text-align: center;
+  color: #fff;
+  padding: 12px;
+}
+
+.header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.header p { font-size: 12px; opacity: 0.95; }
+
+.concept-card {
+  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 4px solid #00acc1;
+}
+
+.concept-title { font-size: 12px; font-weight: 700; color: #00838f; margin-bottom: 6px; }
+.concept-text { font-size: 12px; color: #37474f; line-height: 1.5; }
+
+.sim-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-bottom: 10px;
+}
+
+.checklist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.checklist-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #00838f;
+}
+
+.progress-badge {
+  padding: 6px 12px;
+  background: #e0f7fa;
+  border-radius: 15px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #00838f;
+}
+
+.hygiene-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hygiene-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.hygiene-item:active { transform: scale(0.98); }
+.hygiene-item.checked { background: #e0f7fa; border-color: #4dd0e1; }
+
+.hygiene-checkbox {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.hygiene-item.checked .hygiene-checkbox {
+  background: #00acc1;
+  border-color: #00acc1;
+  color: white;
+}
+
+.hygiene-icon { font-size: 22px; margin-right: 10px; }
+.hygiene-content { flex: 1; }
+.hygiene-title { font-size: 12px; font-weight: 600; color: #333; }
+.hygiene-desc { font-size: 10px; color: #666; margin-top: 2px; }
+
+.tip-panel {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #4caf50;
+}
+
+.tip-title { font-size: 12px; font-weight: 700; color: #2e7d32; margin-bottom: 8px; }
+.tip-text { font-size: 11px; color: #37474f; line-height: 1.6; }
+
+.menstrual-hygiene {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #e91e63;
+}
+
+.menstrual-title { font-size: 12px; font-weight: 700; color: #c2185b; margin-bottom: 8px; }
+.menstrual-text { font-size: 11px; color: #37474f; line-height: 1.5; }
+
+.product-options {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.product-card {
+  flex: 1;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.product-card .emoji { font-size: 24px; margin-bottom: 4px; }
+.product-card .name { font-size: 10px; font-weight: 600; color: #333; }
+.product-card .desc { font-size: 8px; color: #666; margin-top: 2px; }
+
+.takeaway {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  border-left: 4px solid #ff9800;
+}
+
+.takeaway-title { font-size: 12px; font-weight: 700; color: #e65100; margin-bottom: 6px; }
+.takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
+</style>
+</head>
+
+<body>
+<div id="app">
+
+<div class="header">
+  <h1>🧼 ವೈಯಕ್ತಿಕ ಶುಚಿತ್ವ</h1>
+  <p>ಶುಚಿಯಾಗಿ ಇರಿ, ಆರೋಗ್ಯವಾಗಿ ಇರಿ!</p>
+</div>
+
+<div class="concept-card">
+  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-text">
+    During adolescence, your body produces more <strong>sweat and oils</strong>. Maintaining cleanliness prevents body odor, skin problems, and infections. Good hygiene habits formed now will last a lifetime!
+  </div>
+</div>
+
+<div class="sim-card">
+  <div class="checklist-header">
+    <div class="checklist-title">📋 Daily Hygiene Checklist</div>
+    <div class="progress-badge" id="progress-badge">0/7 Done</div>
+  </div>
+  
+  <div class="hygiene-list" id="hygiene-list">
+    <div class="hygiene-item" onclick="toggleItem(0, this)">
+      <div class="hygiene-checkbox">✓</div>
+      <div class="hygiene-icon">🚿</div>
+      <div class="hygiene-content">
+        <div class="hygiene-title">Daily Bath/Shower</div>
+        <div class="hygiene-desc">Clean your body thoroughly, especially armpits and private areas</div>
+      </div>
+    </div>
+    
+    <div class="hygiene-item" onclick="toggleItem(1, this)">
+      <div class="hygiene-checkbox">✓</div>
+      <div class="hygiene-icon">🦷</div>
+      <div class="hygiene-content">
+        <div class="hygiene-title">Brush Teeth Twice</div>
+        <div class="hygiene-desc">Morning and before bed to prevent cavities and bad breath</div>
+      </div>
+    </div>
+    
+    <div class="hygiene-item" onclick="toggleItem(2, this)">
+      <div class="hygiene-checkbox">✓</div>
+      <div class="hygiene-icon">👕</div>
+      <div class="hygiene-content">
+        <div class="hygiene-title">Clean Clothes Daily</div>
+        <div class="hygiene-desc">Wear fresh underwear and clothes, especially after sweating</div>
+      </div>
+    </div>
+    
+    <div class="hygiene-item" onclick="toggleItem(3, this)">
+      <div class="hygiene-checkbox">✓</div>
+      <div class="hygiene-icon">🧴</div>
+      <div class="hygiene-content">
+        <div class="hygiene-title">Use Deodorant</div>
+        <div class="hygiene-desc">Apply after bathing to prevent body odor throughout the day</div>
+      </div>
+    </div>
+    
+    <div class="hygiene-item" onclick="toggleItem(4, this)">
+      <div class="hygiene-checkbox">✓</div>
+      <div class="hygiene-icon">🧴</div>
+      <div class="hygiene-content">
+        <div class="hygiene-title">Wash Face</div>
+        <div class="hygiene-desc">Clean face 2-3 times daily to prevent acne and pimples</div>
+      </div>
+    </div>
+    
+    <div class="hygiene-item" onclick="toggleItem(5, this)">
+      <div class="hygiene-checkbox">✓</div>
+      <div class="hygiene-icon">✋</div>
+      <div class="hygiene-content">
+        <div class="hygiene-title">Wash Hands Frequently</div>
+        <div class="hygiene-desc">Before eating, after using toilet, after touching dirty surfaces</div>
+      </div>
+    </div>
+    
+    <div class="hygiene-item" onclick="toggleItem(6, this)">
+      <div class="hygiene-checkbox">✓</div>
+      <div class="hygiene-icon">💅</div>
+      <div class="hygiene-content">
+        <div class="hygiene-title">Trim Nails Weekly</div>
+        <div class="hygiene-desc">Short, clean nails prevent dirt buildup and infections</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tip-panel" id="tip-panel">
+  <div class="tip-title">💡 Hygiene Tip</div>
+  <div class="tip-text" id="tip-text">
+    Tap on items to check them off! Good hygiene becomes easier when it's a habit. Try to do these same things at the same time every day.
+  </div>
+</div>
+
+<div class="menstrual-hygiene">
+  <div class="menstrual-title">👧 Menstrual Hygiene (For Girls)</div>
+  <div class="menstrual-text">
+    During periods, extra hygiene is important:<br>
+    • Change sanitary products every 4-6 hours<br>
+    • Wash the area with water during each change<br>
+    • Dispose of used products properly (wrapped in paper)<br>
+    • Carry extra supplies when going out
+  </div>
+  <div class="product-options">
+    <div class="product-card">
+      <div class="emoji">🩹</div>
+      <div class="name">Sanitary Pads</div>
+      <div class="desc">Most common, easy to use</div>
+    </div>
+    <div class="product-card">
+      <div class="emoji">♻️</div>
+      <div class="name">Reusable Pads</div>
+      <div class="desc">Eco-friendly, washable</div>
+    </div>
+    <div class="product-card">
+      <div class="emoji">🌿</div>
+      <div class="name">Biodegradable</div>
+      <div class="desc">Environment-safe disposal</div>
+    </div>
+  </div>
+</div>
+
+<div class="takeaway">
+  <div class="takeaway-title">🎯 Remember</div>
+  <div class="takeaway-text">
+    • Good hygiene prevents infections and illness<br>
+    • It helps you feel confident and comfortable<br>
+    • These habits will benefit you throughout life<br>
+    • If you have skin problems, consult a doctor<br>
+    • Government schemes provide free sanitary products in schools
+  </div>
+</div>
+
+</div>
+
+<script>
+const tips = [
+  "Bathing daily removes sweat, bacteria, and dead skin cells. Pay special attention to areas that sweat more!",
+  "Brushing for 2 minutes, twice a day, keeps teeth healthy. Don't forget to brush your tongue too!",
+  "Bacteria love dirty clothes, especially underwear. Fresh clothes help you smell good and feel confident.",
+  "Deodorant or antiperspirant helps control sweat and odor. Apply to clean, dry underarms.",
+  "Washing your face removes excess oil and dirt that cause pimples. Use a gentle cleanser suitable for your skin type.",
+  "Handwashing is your best defense against germs! Wash for at least 20 seconds with soap.",
+  "Long nails collect dirt and bacteria. Keep them short and clean to stay hygienic."
+];
+
+let checkedItems = new Array(7).fill(false);
+
+const progressBadge = document.getElementById('progress-badge');
+const tipText = document.getElementById('tip-text');
+
+function toggleItem(index, element) {
+  checkedItems[index] = !checkedItems[index];
+  element.classList.toggle('checked');
+  
+  // Update progress
+  const checkedCount = checkedItems.filter(Boolean).length;
+  progressBadge.textContent = `${checkedCount}/7 Done`;
+  
+  if (checkedCount === 7) {
+    progressBadge.style.background = '#c8e6c9';
+    progressBadge.style.color = '#2e7d32';
+    progressBadge.textContent = '🎉 All Done!';
+  } else {
+    progressBadge.style.background = '#e0f7fa';
+    progressBadge.style.color = '#00838f';
+  }
+  
+  // Show tip for checked item
+  if (checkedItems[index]) {
+    tipText.textContent = tips[index];
+  }
+}
+</script>
+</body>
+</html>
