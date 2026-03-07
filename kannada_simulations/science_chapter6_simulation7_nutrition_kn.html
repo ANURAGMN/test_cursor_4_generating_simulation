@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -218,15 +218,15 @@ body {
   <div class="nutrient-tabs">
     <div class="nutrient-tab active" onclick="selectNutrient('carbs', this)">
       <span class="emoji">🍚</span>
-      à²•à²¾à²°à³à²¬à³‹à²¹à³ˆà²¡à³à²°à³‡à²Ÿà³
+      ಕಾರ್ಬೋಹೈಡ್ರೇಟ್
     </div>
     <div class="nutrient-tab" onclick="selectNutrient('protein', this)">
       <span class="emoji">🍗</span>
-      à²ªà³à²°à³‹à²Ÿà³€à²¨à³
+      ಪ್ರೋಟೀನ್
     </div>
     <div class="nutrient-tab" onclick="selectNutrient('veggies', this)">
       <span class="emoji">🥦</span>
-      à²œà³€à²µà²¸à²¤à³à²µà²—à²³à³
+      ಜೀವಸತ್ವಗಳು
     </div>
     <div class="nutrient-tab" onclick="selectNutrient('fats', this)">
       <span class="emoji">🥜</span>
@@ -238,7 +238,7 @@ body {
 <div class="nutrient-info" id="nutrient-info">
   <div class="nutrient-title" id="nutrient-title">🍚 Carbohydrates - Energy ಮೂಲ</div>
   <div class="nutrient-text" id="nutrient-text">
-    ಕಾರ್ಬೋಹೈಡ್ರೇಟ್‌ಗಳು ನಿಮ್ಮ ದೇಹ's main ಮೂಲ of <strong>à²¶à²•à³à²¤à²¿</strong>. ಕೌಮಾರದಲ್ಲಿ, you need more à²¶à²•à³à²¤à²¿ for growth, studies, ಮತ್ತು physical activities.
+    ಕಾರ್ಬೋಹೈಡ್ರೇಟ್‌ಗಳು ನಿಮ್ಮ ದೇಹ's main ಮೂಲ of <strong>ಶಕ್ತಿ</strong>. ಕೌಮಾರದಲ್ಲಿ, you need more ಶಕ್ತಿ for growth, studies, ಮತ್ತು physical activities.
   </div>
   <div class="food-examples" id="food-examples">
     <span class="food-tag">🍚 Rice</span>
@@ -252,21 +252,21 @@ body {
 <div class="special-needs">
   <div class="special-title">👧 Special Nutritional Needs for ಹುಡುಗಿಯರು</div>
   <div class="special-text">
-    <strong>Iron:</strong> à²°à²•à³à²¤ à²°à²šà²¨à³†à²—à³† à²®à³à²–à³à²¯, à²‹à²¤à³ à²ªà³à²°à²¾à²°à²‚à²­ à²¨à²‚à²¤à²°. à²ªà²¾à²²à²•à³, à²–à²°à³à²œà³‚à²°, à²¬à³†à²²à³à²².<br><br>
-    <strong>à²œà³€à²µà²¸à²¤à³à²µ B12:</strong> à²†à²°à³‹à²—à³à²¯à²•à²° à²°à²•à³à²¤ à²•à³‹à²¶à²•à³à²•à³† à²…à²—à²¤à³à²¯. à²¹à²¾à²²à³, à²®à³Šà²Ÿà³à²Ÿà³†, à²«à³‹à²°à³à²Ÿà²¿à²«à³ˆà²¡à³ à²†à²¹à²¾à²°.<br><br>
-    <strong>à²•à³à²¯à²¾à²²à³à²¸à²¿à²¯à²‚:</strong> à²¬à²²à²µà²¾à²¦ à²®à³‚à²³à³†. à²¹à²¾à²²à³, à²®à³Šà²¸à²°à³, à²šà³€à²¸à³, à²¹à²¸à²¿à²°à³ à²Žà²²à³† à²¤à²°à²•à²¾à²°à²¿.
+    <strong>Iron:</strong> ರಕ್ತ ರಚನೆಗೆ ಮುಖ್ಯ, ಋತು ಪ್ರಾರಂಭ ನಂತರ. ಪಾಲಕ್, ಖರ್ಜೂರ, ಬೆಲ್ಲ.<br><br>
+    <strong>ಜೀವಸತ್ವ B12:</strong> ಆರೋಗ್ಯಕರ ರಕ್ತ ಕೋಶಕ್ಕೆ ಅಗತ್ಯ. ಹಾಲು, ಮೊಟ್ಟೆ, ಫೋರ್ಟಿಫೈಡ್ ಆಹಾರ.<br><br>
+    <strong>ಕ್ಯಾಲ್ಸಿಯಂ:</strong> ಬಲವಾದ ಮೂಳೆ. ಹಾಲು, ಮೊಸರು, ಚೀಸ್, ಹಸಿರು ಎಲೆ ತರಕಾರಿ.
   </div>
 </div>
 
 <div class="takeaway">
   <div class="takeaway-title">🎯 ಆರೋಗ್ಯಕರ ಆಹಾರ ಸಲಹೆಗಳು</div>
   <div class="takeaway-text">
-    • Eat a <strong>à²µà²¿à²µà²¿à²§ à²†à²¹à²¾à²°</strong> à²Žà²²à³à²² à²—à³à²‚à²ªà³à²—à²³à²¿à²‚à²¦<br>
-    • Don't skip <strong>à²‰à²ªà²¾à²¹à²¾à²°</strong> - à²…à²¦à³ à²¨à²¿à²®à³à²® à²¬à³†à²³à²¿à²—à³à²—à³†à²¯à²¨à³à²¨à³ à²¶à²•à³à²¤à³€à²•à²°à²¿à²¸à³à²¤à³à²¤à²¦à³†<br>
+    • Eat a <strong>ವಿವಿಧ ಆಹಾರ</strong> ಎಲ್ಲ ಗುಂಪುಗಳಿಂದ<br>
+    • Don't skip <strong>ಉಪಾಹಾರ</strong> - ಅದು ನಿಮ್ಮ ಬೆಳಿಗ್ಗೆಯನ್ನು ಶಕ್ತೀಕರಿಸುತ್ತದೆ<br>
     • ಸಾಕಷ್ಟು ಕುಡಿಯಿರಿ <strong>ನೀರು</strong><br>
     • ಜಂಕ್ ಫುಡ್, ಸಕ್ಕರೆ ಪಾನೀಯ, ಪ್ರಾಸೆಸ್ಡ್ ಆಹಾರ ಕಡಿಮೆ<br>
     • ದೈನಂದಿನ ಹಣ್ಣು ತರಕಾರಿ ತಿನ್ನಿರಿ<br>
-    • ಒಳಗೊಳ್ಳಿ <strong>milk</strong> à²•à³à²¯à²¾à²²à³à²¸à²¿à²¯à²‚ à²®à²¤à³à²¤à³ à²¬à²²à²µà²¾à²¦ à²®à³‚à²³à³†à²—à³†
+    • ಒಳಗೊಳ್ಳಿ <strong>milk</strong> ಕ್ಯಾಲ್ಸಿಯಂ ಮತ್ತು ಬಲವಾದ ಮೂಳೆಗೆ
   </div>
 </div>
 
@@ -276,7 +276,7 @@ body {
 const nutrients = {
   carbs: {
     title: '🍚 Carbohydrates - Energy ಮೂಲ',
-    text: 'ಕಾರ್ಬೋಹೈಡ್ರೇಟ್‌ಗಳು ನಿಮ್ಮ ದೇಹ\'s main ಮೂಲ of <strong>à²¶à²•à³à²¤à²¿</strong>. ಕೌಮಾರದಲ್ಲಿ, you need more à²¶à²•à³à²¤à²¿ for growth, studies, ಮತ್ತು physical activities. Choose complex carbs (whole grains) over simple sugars.',
+    text: 'ಕಾರ್ಬೋಹೈಡ್ರೇಟ್‌ಗಳು ನಿಮ್ಮ ದೇಹ\'s main ಮೂಲ of <strong>ಶಕ್ತಿ</strong>. ಕೌಮಾರದಲ್ಲಿ, you need more ಶಕ್ತಿ for growth, studies, ಮತ್ತು physical activities. Choose complex carbs (whole grains) over simple sugars.',
     foods: ['🍚 Rice', '🍞 Whole wheat bread', '🥔 ಆಲೂಗಡ್ಡೆ', '🌾 ಜೋಳ (ragi, jowar)', '🌽 Corn', '🍌 Bananas']
   },
   protein: {
@@ -285,20 +285,20 @@ const nutrients = {
     foods: ['🍗 Chicken/Fish', '🥚 Eggs', '🥛 ಹಾಲು & Paneer', '🫘 Dal & Legumes', '🥜 Nuts', '🫛 Soybeans']
   },
   veggies: {
-    title: '🥦 à²œà³€à²µà²¸à²¤à³à²µà²—à²³à³ & Minerals - Body Protectors',
-    text: 'à²œà³€à²µà²¸à²¤à³à²µ à²®à²¤à³à²¤à³ à²–à²¨à²¿à²œ à²¶à²°à³€à²° <strong>à²¸à²°à²¿à²¯à²¾à²—à²¿ à²•à³†à²²à²¸</strong>, à²°à³‹à²—à²¦à²¿à²‚à²¦ à²¹à³‹à²°à²¾à²Ÿ à²®à²¤à³à²¤à³ à²¬à³†à²³à²µà²£à²¿à²—à³†. à²¹à²£à³à²£à³ à²¤à²°à²•à²¾à²°à²¿ à²‰à²¤à³à²¤à²® à²®à³‚à²². à²ªà³à²°à²¤à²¿ à²¬à²£à³à²£ à²µà²¿à²­à²¿à²¨à³à²¨ à²ªà³‹à²·à²•!',
+    title: '🥦 ಜೀವಸತ್ವಗಳು & Minerals - Body Protectors',
+    text: 'ಜೀವಸತ್ವ ಮತ್ತು ಖನಿಜ ಶರೀರ <strong>ಸರಿಯಾಗಿ ಕೆಲಸ</strong>, ರೋಗದಿಂದ ಹೋರಾಟ ಮತ್ತು ಬೆಳವಣಿಗೆ. ಹಣ್ಣು ತರಕಾರಿ ಉತ್ತಮ ಮೂಲ. ಪ್ರತಿ ಬಣ್ಣ ವಿಭಿನ್ನ ಪೋಷಕ!',
     foods: ['🥦 Broccoli (Vit C)', '🥕 Carrots (Vit A)', '🍊 ಕಿತ್ತಳೆs (Vit C)', '🥬 Spinach (Iron)', '🍅 Tomatoes', '🫑 Bell Peppers']
   },
   fats: {
     title: '🥜 ಆರೋಗ್ಯಕರ ಕೊಬ್ಬು - ಮೆದುಳು ಮತ್ತು ಶಕ್ತಿ',
-    text: '<strong>à²®à³†à²¦à³à²³à³ à²µà²¿à²•à²¾à²¸</strong>, à²œà³€à²µà²¸à²¤à³à²µ à²¹à³€à²°à²¿à²•à³† à²®à²¤à³à²¤à³ à²¦à³€à²°à³à²˜ à²¶à²•à³à²¤à²¿à²—à³† à²•à³Šà²¬à³à²¬à³. à²¬à³€à²œ, à²Žà²£à³à²£à³† à²‰à²¤à³à²¤à²® à²•à³Šà²¬à³à²¬à³. à²Ÿà³à²°à²¾à²¨à³à²¸à³ à²«à³à²¯à²¾à²Ÿà³ à²®à²¤à³à²¤à³ à²…à²§à²¿à²• à²«à³à²°à³ˆà²¡à³ à²¤à²ªà³à²ªà²¿à²¸à²¿.',
+    text: '<strong>ಮೆದುಳು ವಿಕಾಸ</strong>, ಜೀವಸತ್ವ ಹೀರಿಕೆ ಮತ್ತು ದೀರ್ಘ ಶಕ್ತಿಗೆ ಕೊಬ್ಬು. ಬೀಜ, ಎಣ್ಣೆ ಉತ್ತಮ ಕೊಬ್ಬು. ಟ್ರಾನ್ಸ್ ಫ್ಯಾಟ್ ಮತ್ತು ಅಧಿಕ ಫ್ರೈಡ್ ತಪ್ಪಿಸಿ.',
     foods: ['🥜 Almonds & Walnuts', '🥑 Avocado', '🫒 Olive oil', '🐟 Fish (Omega-3)', '🌻 Seeds', '🥥 Coconut']
   }
 };
 
 const nutrientTitle = document.getElementById('nutrient-title');
 const nutrientText = document.getElementById('nutrient-text');
-const foodಉದಾಹರಣೆಗಳು = document.getElementById('food-examples');
+const foodExamples = document.getElementById('food-examples');
 
 function selectNutrient(type, element) {
   // Update tabs
@@ -320,7 +320,7 @@ function selectNutrient(type, element) {
   const nutrient = nutrients[type];
   nutrientTitle.textContent = nutrient.title;
   nutrientText.innerHTML = nutrient.text;
-  foodಉದಾಹರಣೆಗಳು.innerHTML = nutrient.foods.map(f => `<span class="food-tag">${f}</span>`).join('');
+  foodExamples.innerHTML = nutrient.foods.map(f => `<span class="food-tag">${f}</span>`).join('');
 }
 
 // Initialize
