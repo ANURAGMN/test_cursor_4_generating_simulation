@@ -283,7 +283,7 @@ svg { width: 100%; height: 100%; }
         <circle cx="30" cy="35" r="28" fill="#e0e0e0" id="bulb-glass"/>
         <circle cx="30" cy="35" r="15" fill="#bdbdbd" id="bulb-filament"/>
         <rect x="20" y="60" width="20" height="15" rx="2" fill="#666"/>
-        <text x="30" y="95" font-size="9" fill="#fff" text-anchor="middle">Bulb</text>
+        <text x="30" y="95" font-size="9" fill="#fff" text-anchor="middle">ಬಲ್ಬ್</text>
       </g>
       
       <!-- Current flow ಸೂಚಕs -->
@@ -295,14 +295,14 @@ svg { width: 100%; height: 100%; }
       
       <!-- State label -->
       <rect x="140" y="220" width="120" height="35" rx="8" fill="#fff" id="state-bg"/>
-      <text x="200" y="243" font-size="14" text-anchor="middle" font-weight="700" id="state-text">OFF</text>
+      <text x="200" y="243" font-size="14" text-anchor="middle" font-weight="700" id="state-text">ಆಫ್</text>
     </svg>
   </div>
   
   <div class="switch-types">
     <button class="switch-type-btn active" id="btn-lever" onclick="setSwitchType('lever', this)">
       <div class="icon">🔘</div>
-      <div class="name">Lever ಸ್ವಿಚ್</div>
+      <div class="name">ಲಿವರ್ ಸ್ವಿಚ್</div>
     </button>
     <button class="switch-type-btn" id="btn-push" onclick="setSwitchType('push', this)">
       <div class="icon">🔴</div>
@@ -310,7 +310,7 @@ svg { width: 100%; height: 100%; }
     </button>
     <button class="switch-type-btn" id="btn-toggle" onclick="setSwitchType('toggle', this)">
       <div class="icon">📍</div>
-      <div class="name">Toggle ಸ್ವಿಚ್</div>
+      <div class="name">ಟಾಗಲ್ ಸ್ವಿಚ್</div>
     </button>
   </div>
 </div>
@@ -318,41 +318,41 @@ svg { width: 100%; height: 100%; }
 <div class="state-display">
   <div class="state-card off active" id="state-off">
     <div class="icon">🔓</div>
-    <div class="label">OFF (Open)</div>
-    <div class="desc">ಸರ್ಕ್ಯೂಟ್â€Œನಲ್ಲಿ ಅಂತರ<br>ಪ್ರವಾಹ ಹರಿಯುವುದಿಲ್ಲ</div>
+    <div class="label">ಆಫ್ (ತೆರೆದಿದೆ)</div>
+    <div class="desc">ಸರ್ಕ್ಯೂಟ್‌ನಲ್ಲಿ ಅಂತರ<br>ಪ್ರವಾಹ ಹರಿಯುವುದಿಲ್ಲ</div>
   </div>
   <div class="state-card on" id="state-on">
     <div class="icon">🔒</div>
-    <div class="label">ON (ಮುಚ್ಚಿd)</div>
+    <div class="label">ಆನ್ (ಮುಚ್ಚಿದೆ)</div>
     <div class="desc">ಸರ್ಕ್ಯೂಟ್ ಪೂರ್ಣ<br>ಪ್ರವಾಹ ಹರಿಯುತ್ತದೆ</div>
   </div>
 </div>
 
 <div class="learning-panel">
-  <div class="learning-title">🔬 How a ಸ್ವಿಚ್ Works</div>
+  <div class="learning-title">🔬 ಸ್ವಿಚ್ ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ</div>
   <div class="learning-text" id="learning-text">
-    ಸ್ವಿಚ್ ಒಂದು ರೀತಿ ಕೆಲಸ <strong>gate</strong> ವಿದ್ಯುತ್ಗೆ:<br><br>
-    • <strong>OFF (Open)</strong>: ಲಿವರ್ ಎರಡು ಸಂಪರ್ಕ ಸ್ಪರ್ಶಿಸುವುದಿಲ್ಲ, ಅಂತರ. ಪ್ರವಾಹ ಅಂತರ ದಾಟಲು ಸಾಧ್ಯವಿಲ್ಲ, ನಿಲುಗಡೆ.<br><br>
-    • <strong>ON (ಮುಚ್ಚಿd)</strong>: ಲಿವರ್ ಎರಡು ಸಂಪರ್ಕ ಸೇರಿಸಿ ಮಾರ್ಗ ಪೂರ್ಣ. ಪ್ರವಾಹ ಸರ್ಕ್ಯೂಟ್ ಮೂಲಕ ಹರಿಯುತ್ತದೆ.<br><br>
-    <em>ಇದನ್ನು ನೋಡಲು ಮೇಲಿನ ಸರ್ಕ್ಯೂಟ್â€Œನ ಸ್ವಿಚ್ ಟ್ಯಾಪ್ ಮಾಡಿ!</em>
+    ಸ್ವಿಚ್ ವಿದ್ಯುತ್ಗೆ <strong>ದ್ವಾರ</strong>ದಂತೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ:<br><br>
+    • <strong>ಆಫ್ (ತೆರೆದಿದೆ)</strong>: ಲಿವರ್ ಎರಡು ಸಂಪರ್ಕ ಸ್ಪರ್ಶಿಸುವುದಿಲ್ಲ, ಅಂತರ. ಪ್ರವಾಹ ಅಂತರ ದಾಟಲು ಸಾಧ್ಯವಿಲ್ಲ, ನಿಲುಗಡೆ.<br><br>
+    • <strong>ಆನ್ (ಮುಚ್ಚಿದೆ)</strong>: ಲಿವರ್ ಎರಡು ಸಂಪರ್ಕ ಸೇರಿಸಿ ಮಾರ್ಗ ಪೂರ್ಣ. ಪ್ರವಾಹ ಸರ್ಕ್ಯೂಟ್ ಮೂಲಕ ಹರಿಯುತ್ತದೆ.<br><br>
+    <em>ಇದನ್ನು ನೋಡಲು ಮೇಲಿನ ಸರ್ಕ್ಯೂಟ್‌ನ ಸ್ವಿಚ್ ಟ್ಯಾಪ್ ಮಾಡಿ!</em>
   </div>
 </div>
 
 <div class="diy-section">
-  <div class="diy-title">🔧 Make Your Own ಸ್ವಿಚ್!</div>
+  <div class="diy-title">🔧 ನಿಮ್ಮದೇ ಸ್ವಿಚ್ ಮಾಡಿ!</div>
   <div class="diy-text">
     ನೀವು ಸರಳ ಸ್ವಿಚ್ ಮಾಡಬಹುದು:<br>
-    • A safety pin attached to a cardboard base<br>
+    • ಕಾರ್ಡ್‌ಬೋರ್ಡ್ ತಳದಲ್ಲಿ ಭದ್ರತಾ ಪಿನ್ ಜೋಡಿಸಿ<br>
     • ಎರಡು ಡ್ರಾಯಿಂಗ್ ಪಿನ್ ಸಂಪರ್ಕ ಬಿಂದು<br>
-    • ಸೇಫ್ಟಿ ಪಿನ್ ಎರಡು ಡ್ರಾಯಿಂಗ್ ಪಿನ್ ಸ್ಪರ್ಶಿಸಿದರೆ ಸರ್ಕ್ಯೂಟ್ ಮುಚ್ಚುತ್ತದೆ!<br><br>
-    <strong>ಭದ್ರತೆ:</strong> Only use with ಬ್ಯಾಟರಿ circuits, never with mains electricity!
+    • ಭದ್ರತಾ ಪಿನ್ ಎರಡು ಡ್ರಾಯಿಂಗ್ ಪಿನ್ ಸ್ಪರ್ಶಿಸಿದರೆ ಸರ್ಕ್ಯೂಟ್ ಮುಚ್ಚುತ್ತದೆ!<br><br>
+    <strong>ಭದ್ರತೆ:</strong> ಬ್ಯಾಟರಿ ಸರ್ಕ್ಯೂಟ್‌ಗಳೊಂದಿಗೆ ಮಾತ್ರ ಬಳಸಿ; ಮುಖ್ಯ ವಿದ್ಯುತ್ ಎಂದಿಗೂ ಬಳಸಬೇಡಿ!
   </div>
 </div>
 
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೀವು ಕಲಿತದ್ದು</div>
   <div class="takeaway-text">
-    ಸ್ವಿಚ್ ಮುಚ್ಚಿ (ON) ಅಥವಾ ಮುರಿದು (OFF) ಪ್ರವಾಹ ನಿಯಂತ್ರಣ. ON ಆದಾಗ ಅಂತರ ಮುಚ್ಚಿ ಪ್ರವಾಹ; OFF ಆದಾಗ ಅಂತರ ಪ್ರವಾಹ ನಿಲುಗಡೆ. ಈ ತತ್ತ್ವ ಎಲ್ಲ ವಿದ್ಯುತ್ ಸಾಧನದಲ್ಲಿ!
+    ಸ್ವಿಚ್ ಮುಚ್ಚಿ (ಆನ್) ಅಥವಾ ಮುರಿದು (ಆಫ್) ಪ್ರವಾಹ ನಿಯಂತ್ರಣ. ಆನ್ ಆದಾಗ ಅಂತರ ಮುಚ್ಚಿ ಪ್ರವಾಹ ಹರಿಯುತ್ತದೆ; ಆಫ್ ಆದಾಗ ಅಂತರದಿಂದ ಪ್ರವಾಹ ನಿಲುಗಡೆ. ಈ ತತ್ತ್ವ ಎಲ್ಲ ವಿದ್ಯುತ್ ಸಾಧನದಲ್ಲಿ!
   </div>
 </div>
 
@@ -401,7 +401,7 @@ function toggleSwitch() {
     bulbGlass.classList.add('bulb-glow');
     
     // Update state
-    stateText.textContent = 'ON';
+    stateText.textContent = 'ಆನ್';
     stateText.setAttribute('fill', '#2e7d32');
     stateBg.setAttribute('fill', '#e8f5e9');
     stateOff.classList.remove('active');
@@ -411,7 +411,7 @@ function toggleSwitch() {
     currentIndicators.style.display = 'block';
     
     learningText.innerHTML = `
-      <strong style="color:#2e7d32">✅ ಸ್ವಿಚ್ is CLOSED (ON)</strong><br><br>
+      <strong style="color:#2e7d32">✅ ಸ್ವಿಚ್ ಮುಚ್ಚಿದೆ (ಆನ್)</strong><br><br>
       The ಸ್ವಿಚ್ now connects both contact points, completing the circuit path.<br><br>
       ಪ್ರವಾಹ ಹರಿಯುತ್ತದೆ: <strong>Cell (+) → Wire → ಸ್ವಿಚ್ (closed) → Bulb → Wire → Cell (−)</strong><br><br>
       The bulb glows because there's no gap - electricity can flow in a ಪೂರ್ಣ loop!
@@ -429,7 +429,7 @@ function toggleSwitch() {
     bulbGlass.classList.remove('bulb-glow');
     
     // Update state
-    stateText.textContent = 'OFF';
+    stateText.textContent = 'ಆಫ್';
     stateText.setAttribute('fill', '#c62828');
     stateBg.setAttribute('fill', '#ffebee');
     stateOn.classList.remove('active');
@@ -439,7 +439,7 @@ function toggleSwitch() {
     currentIndicators.style.display = 'none';
     
     learningText.innerHTML = `
-      <strong style="color:#c62828">❌ ಸ್ವಿಚ್ is OPEN (OFF)</strong><br><br>
+      <strong style="color:#c62828">❌ ಸ್ವಿಚ್ ತೆರೆದಿದೆ (ಆಫ್)</strong><br><br>
       The ಸ್ವಿಚ್ is open, creating a <strong>gap</strong> in the circuit.<br><br>
       Current cannot jump across the gap - it stops at the ಸ್ವಿಚ್.<br><br>
       No ಪೂರ್ಣ path = No current flow = Bulb stays off!<br><br>
@@ -478,7 +478,7 @@ function setSwitchType(type, btn) {
     ಸ್ವಿಚ್Group.innerHTML = `
       <rect x="25" y="5" width="50" height="20" rx="10" fill="#455a64"/>
       <circle cx="${isOn ? '65' : '35'}" cy="15" r="10" fill="${isOn ? '#4caf50' : '#9e9e9e'}" id="toggle-knob"/>
-      <text x="50" y="45" font-size="10" fill="#fff" text-anchor="middle" id="switch-label">${isOn ? 'ON' : 'OFF'}</text>
+      <text x="50" y="45" font-size="10" fill="#fff" text-anchor="middle" id="switch-label">${isOn ? 'ಆನ್' : 'ಆಫ್'}</text>
     `;
   }
   

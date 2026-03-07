@@ -243,16 +243,16 @@ svg { width: 100%; height: 100%; }
 <div class="concept-card">
   <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    A <strong>ಬ್ಯಾಟರಿ</strong> ಎರಡು ಅಥವಾ ಹೆಚ್ಚು ಕೋಶಗಳನ್ನು ಜೋಡಿಸಿದಾಗ ರೂಪುಗೊಳ್ಳುತ್ತದೆ. <strong>ಧನ (+)</strong> ಒಂದು ಕೋಶದ ಟರ್ಮಿನಲ್ ಸಂಪರ್ಕವಾಗುತ್ತದೆ <strong>ಋಣ (−)</strong> ಮುಂದಿನ ಕೋಶದ ಟರ್ಮಿನಲ್‌ಗೆ.
+    <strong>ಬ್ಯಾಟರಿ</strong> ಎರಡು ಅಥವಾ ಹೆಚ್ಚು ಕೋಶಗಳನ್ನು ಜೋಡಿಸಿದಾಗ ರೂಪುಗೊಳ್ಳುತ್ತದೆ. ಒಂದು ಕೋಶದ <strong>ಧನ (+)</strong> ಟರ್ಮಿನಲ್ ಮುಂದಿನ ಕೋಶದ <strong>ಋಣ (−)</strong> ಟರ್ಮಿನಲ್‌ಗೆ ಸಂಪರ್ಕವಾಗುತ್ತದೆ.
   </div>
   <div class="concept-equation">
-    ಬ್ಯಾಟರಿ ವೋಲ್ಟೇಜ್ = ಸೆಲ್ 1 + ಸೆಲ್ 2 + ಸೆಲ್ 3 ...
+    ಬ್ಯಾಟರಿ ವೋಲ್ಟೇಜ್ = ಕೋಶ 1 + ಕೋಶ 2 + ಕೋಶ 3 ...
   </div>
 </div>
 
 <div class="sim-card">
   <div class="visual">
-    <div class="instruction" id="instruction">ಕೋಶಗಳನ್ನು ಸರಿಸಲು ಟ್ಯಾಪ್ ಬಟನ್</div>
+    <div class="instruction" id="instruction">ಕೋಶಗಳ ಸಂಖ್ಯೆ ಆಯ್ಕೆಮಾಡಲು ಟ್ಯಾಪ್ ಮಾಡಿ</div>
     <svg viewBox="0 0 400 240" id="battery-svg">
       <!-- Cells container -->
       <g id="cells-group"></g>
@@ -268,14 +268,14 @@ svg { width: 100%; height: 100%; }
       </g>
       
       <!-- Labels -->
-      <text x="340" y="130" font-size="10" fill="#666" text-anchor="middle">Bulb</text>
+      <text x="340" y="130" font-size="10" fill="#666" text-anchor="middle">ಬಲ್ಬ್</text>
     </svg>
   </div>
   
   <div class="controls">
     <button class="control-btn active" id="btn-1cell" onclick="setCells(1)">
       <span class="icon">🔋</span>
-      1 Cell
+      1 ಕೋಶ
     </button>
     <button class="control-btn" id="btn-2cells" onclick="setCells(2)">
       <span class="icon">🔋🔋</span>
@@ -291,29 +291,29 @@ svg { width: 100%; height: 100%; }
 <div class="voltage-display">
   <div class="voltage-label">ಒಟ್ಟು ವೋಲ್ಟೇಜ್ (ಬ್ಯಾಟರಿ)</div>
   <div class="voltage-value" id="voltage-value">1.5V</div>
-  <div class="voltage-calc" id="voltage-calc">1 cell × 1.5V = 1.5V</div>
+  <div class="voltage-calc" id="voltage-calc">1 ಕೋಶ × 1.5V = 1.5V</div>
 </div>
 
 <div class="connection-status" id="connection-status">
   <div class="status-title">ಸಂಪರ್ಕ ಸ್ಥಿತಿ:</div>
   <div class="status-item">
     <span class="status-icon">✅</span>
-    <span class="status-text correct">ಸರಿ! (+) of cell connects to (−) of next cell</span>
+    <span class="status-text correct">ಸರಿ! ಒಂದು ಕೋಶದ (+) ಮುಂದಿನ ಕೋಶದ (−) ಗೆ ಸಂಪರ್ಕ</span>
   </div>
 </div>
 
 <div class="learning-box">
   <div class="learning-title">🔬 ಬ್ಯಾಟರಿ ಸಂಪರ್ಕ ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು</div>
   <div class="learning-text" id="learning-text">
-    When we connect ಘಟಕಗಳು correctly (+ to − of next cell), their voltages <strong>add up</strong>. This is called connecting ಘಟಕಗಳು in <strong>ಸರಣಿ</strong>.<br><br>
-    More ಘಟಕಗಳು = More voltage = Brighter bulb! 💡
+    ಕೋಶಗಳನ್ನು ಸರಿಯಾಗಿ ಜೋಡಿಸಿದಾಗ (ಒಂದರ + ಮುಂದಿನ ಕೋಶದ − ಗೆ), ಅವುಗಳ ವೋಲ್ಟೇಜ್ <strong>ಕೂಡಿಕೆಯಾಗುತ್ತದೆ</strong>. ಇದನ್ನು ಕೋಶಗಳನ್ನು <strong>ಸರಣಿ</strong>ಯಲ್ಲಿ ಜೋಡಿಸುವುದು ಎನ್ನುತ್ತಾರೆ.<br><br>
+    ಹೆಚ್ಚು ಕೋಶಗಳು = ಹೆಚ್ಚು ವೋಲ್ಟೇಜ್ = ಹೆಚ್ಚು ಹೊಳೆಯುವ ಬಲ್ಬ್! 💡
   </div>
 </div>
 
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೀವು ಕಲಿತದ್ದು</div>
   <div class="takeaway-text">
-    A ಬ್ಯಾಟರಿ is made by connecting ಘಟಕಗಳು in ಸರಣಿ: <strong>ಧನ (+) terminal of one cell to ಋಣ (−) terminal of the next</strong>. ಒಟ್ಟು ವೋಲ್ಟೇಜ್ ಎಲ್ಲ ಸೆಲ್ ವೋಲ್ಟೇಜ್ ಮಾತು. ಹೆಚ್ಚು ಘಟಕಗಳು ಹೆಚ್ಚು ಶಕ್ತಿ!
+    ಬ್ಯಾಟರಿ ಕೋಶಗಳನ್ನು ಸರಣಿಯಲ್ಲಿ ಜೋಡಿಸಿ ಮಾಡಲಾಗುತ್ತದೆ: <strong>ಒಂದು ಕೋಶದ ಧನ (+) ಟರ್ಮಿನಲ್ ಮುಂದಿನ ಕೋಶದ ಋಣ (−) ಟರ್ಮಿನಲ್‌ಗೆ</strong>. ಒಟ್ಟು ವೋಲ್ಟೇಜ್ ಎಲ್ಲ ಕೋಶ ವೋಲ್ಟೇಜ್‌ಗಳ ಮೊತ್ತ. ಹೆಚ್ಚು ಕೋಶಗಳು = ಹೆಚ್ಚು ಶಕ್ತಿ!
   </div>
 </div>
 
@@ -347,7 +347,7 @@ function createCell(x, y, index) {
       
       <!-- Label -->
       <text x="35" y="28" font-size="9" fill="#fff" text-anchor="middle">1.5V</text>
-      <text x="35" y="38" font-size="7" fill="#bbdefb" text-anchor="middle">Cell ${index}</text>
+      <text x="35" y="38" font-size="7" fill="#bbdefb" text-anchor="middle">ಕೋಶ ${index}</text>
     </g>
   `;
 }
@@ -397,7 +397,7 @@ function setCells(num) {
   // Update voltage
   const voltage = (num * 1.5).toFixed(1);
   voltageValue.textContent = `${voltage}V`;
-  voltageCalc.textContent = `${num} cell${num > 1 ? 's' : ''} × 1.5V = ${voltage}V`;
+  voltageCalc.textContent = `${num} ಕೋಶ × 1.5V = ${voltage}V`;
   
   // Update bulb brightness
   const brightness = num === 1 ? '#fff59d' : (num === 2 ? '#ffeb3b' : '#ffff00');
@@ -407,23 +407,23 @@ function setCells(num) {
   bulbGlass.classList.add('bulb-glow');
   
   // Update instruction
-  instruction.textContent = num === 1 ? 'Single cell = 1.5V' : `${num} ಘಟಕಗಳು connected = ${voltage}V ಬ್ಯಾಟರಿ`;
+  instruction.textContent = num === 1 ? 'ಒಂದು ಕೋಶ = 1.5V' : `${num} ಕೋಶಗಳು ಜೋಡಿಸಿದೆ = ${voltage}V ಬ್ಯಾಟರಿ`;
   
   // Update learning text
   if (num === 1) {
     learningText.innerHTML = `
-      A single cell provides <strong>1.5V</strong> of electrical ಶಕ್ತಿ.<br><br>
-      To get more power, we can connect multiple ಘಟಕಗಳು together to form a <strong>ಬ್ಯಾಟರಿ</strong>.
+      ಒಂದು ಕೋಶ <strong>1.5V</strong> ವಿದ್ಯುತ್ ಶಕ್ತಿ ನೀಡುತ್ತದೆ.<br><br>
+      ಹೆಚ್ಚು ಶಕ್ತಿಗಾಗಿ ಹಲವು ಕೋಶಗಳನ್ನು ಜೋಡಿಸಿ <strong>ಬ್ಯಾಟರಿ</strong> ರೂಪಿಸಬಹುದು.
     `;
   } else if (num === 2) {
     learningText.innerHTML = `
-      Two ಘಟಕಗಳು connected in ಸರಣಿ: <strong>1.5V + 1.5V = 3V</strong><br><br>
-      ಗಮನಿಸಿ ಹೇಗೆ the <span style="color:#e65100;font-weight:600">+ terminal</span> of Cell 1 connects to the <span style="color:#1565c0;font-weight:600">− terminal</span> of Cell 2. The bulb glows brighter! 💡
+      ಸರಣಿಯಲ್ಲಿ ಜೋಡಿಸಿದ ಎರಡು ಕೋಶಗಳು: <strong>1.5V + 1.5V = 3V</strong><br><br>
+      ಕೋಶ 1 ರ <span style="color:#e65100;font-weight:600">+ ಟರ್ಮಿನಲ್</span> ಕೋಶ 2 ರ <span style="color:#1565c0;font-weight:600">− ಟರ್ಮಿನಲ್</span>‌ಗೆ ಸಂಪರ್ಕವಾಗುವುದು ಗಮನಿಸಿ. ಬಲ್ಬ್ ಹೆಚ್ಚು ಹೊಳೆಯುತ್ತದೆ! 💡
     `;
   } else {
     learningText.innerHTML = `
-      Three ಘಟಕಗಳು in ಸರಣಿ: <strong>1.5V + 1.5V + 1.5V = 4.5V</strong><br><br>
-      Each cell's <span style="color:#e65100;font-weight:600">(+)</span> connects to next cell's <span style="color:#1565c0;font-weight:600">(−)</span>. More voltage = brightest bulb! 💡💡💡
+      ಸರಣಿಯಲ್ಲಿ ಮೂರು ಕೋಶಗಳು: <strong>1.5V + 1.5V + 1.5V = 4.5V</strong><br><br>
+      ಪ್ರತಿ ಕೋಶದ <span style="color:#e65100;font-weight:600">(+)</span> ಮುಂದಿನ ಕೋಶದ <span style="color:#1565c0;font-weight:600">(−)</span> ಗೆ ಸಂಪರ್ಕ. ಹೆಚ್ಚು ವೋಲ್ಟೇಜ್ = ಅತ್ಯಂತ ಹೊಳೆಯುವ ಬಲ್ಬ್! 💡💡💡
     `;
   }
 }

@@ -316,7 +316,7 @@ svg { width: 100%; height: 100%; }
     </div>
     <div class="material-btn" onclick="testMaterial('coin', '🪙', true, this)">
       <div class="icon">🪙</div>
-      <div class="name">Coin</div>
+      <div class="name">ನಾಣ್ಯ</div>
     </div>
     <div class="material-btn" onclick="testMaterial('foil', '📄', true, this)">
       <div class="icon">📄</div>
@@ -357,10 +357,10 @@ svg { width: 100%; height: 100%; }
 </div>
 
 <div class="explanation-panel">
-  <div class="explanation-title">🔬 Why Some ಪದಾರ್ಥs Conduct?</div>
+  <div class="explanation-title">🔬 ಕೆಲವು ಪದಾರ್ಥಗಳು ಏಕೆ ವಾಹಕ?</div>
   <div class="explanation-text" id="explanation-text">
-    ವಾಹಕಗಳು have <strong>ಮುಕ್ತ ಇಲೆಕ್ಟ್ರಾನ್â€Œಗಳು</strong> that can move easily, carrying electric current. ಲೋಹಗಳು are excellent conductors because their atoms release electrons that flow freely.<br><br>
-    ಅವಾಹಕಗಳು hold their electrons tightly - they cannot move to carry current. That's why we use plastic to cover wires for safety!
+    ವಾಹಕಗಳಲ್ಲಿ <strong>ಮುಕ್ತ ಇಲೆಕ್ಟ್ರಾನ್‌ಗಳು</strong> ಸುಲಭವಾಗಿ ಚಲಿಸಬಲ್ಲವು, ವಿದ್ಯುತ್ ಪ್ರವಾಹವನ್ನು ಸಾಗಿಸುತ್ತವೆ. ಲೋಹಗಳು ಉತ್ತಮ ವಾಹಕಗಳು – ಅವುಗಳ ಅಣುಗಳು ಸ್ವತಂತ್ರವಾಗಿ ಹರಿಯುವ ಇಲೆಕ್ಟ್ರಾನ್‌ಗಳನ್ನು ಬಿಡುಗಡೆ ಮಾಡುತ್ತವೆ.<br><br>
+    ಅವಾಹಕಗಳು ತಮ್ಮ ಇಲೆಕ್ಟ್ರಾನ್‌ಗಳನ್ನು ಬಿಗಿಯಾಗಿ ಹಿಡಿದಿಟ್ಟುಕೊಳ್ಳುತ್ತವೆ – ಪ್ರವಾಹ ಸಾಗಿಸಲು ಅವು ಚಲಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ಅದಕ್ಕೇ ಭದ್ರತೆಗಾಗಿ ತಂತಿಗಳನ್ನು ಪ್ಲಾಸ್ಟಿಕ್‌ನಿಂದ ಆವರಿಸುತ್ತೇವೆ!
   </div>
 </div>
 
@@ -370,7 +370,7 @@ svg { width: 100%; height: 100%; }
     <strong>ನಮ್ಮ ಶರೀರ ವಾಹಕ!</strong> ವಿದ್ಯುತ್ ಪ್ರವಾಹ ನಮ್ಮ ಮೂಲಕ ಹರಿಯಬಹುದು, ಅಪಾಯಕಾರಿ.<br><br>
     ಭದ್ರತಾ ನಿಯಮಗಳು:<br>
     • ಒದ್ದೆ ಕೈಯಿಂದ ಸ್ವಿಚ್ ಸ್ಪರ್ಶಿಸಬೇಡಿ<br>
-    • Don't use electrical devices near ನೀರು<br>
+    • ನೀರಿನ ಹತ್ತಿರ ವಿದ್ಯುತ್ ಸಾಧನಗಳನ್ನು ಬಳಸಬೇಡಿ<br>
     • ಸಾಕೆಟ್‌ಗೆ ವಸ್ತು ಸೇರಿಸಬೇಡಿ<br>
     • ಪ್ರಯೋಗಗಳಿಗೆ ಬ್ಯಾಟರಿ ಮಾತ್ರ
   </div>
@@ -400,9 +400,9 @@ const testLabel = document.getElementById('test-label');
 const explanationText = document.getElementById('explanation-text');
 
 const materialNames = {
-  'spoon': 'ಲೋಹ Spoon',
-  'key': 'Iron Key',
-  'coin': 'Coin',
+  'spoon': 'ಲೋಹದ ಚಮಚ',
+  'key': 'ಕಬ್ಬಿಣದ ಕೀಲಿ',
+  'coin': 'ನಾಣ್ಯ',
   'foil': 'ಅಲ್ಯೂಮಿನಿಯಂ ಫಾಯಿಲ್',
   'plastic': 'ಪ್ಲಾಸ್ಟಿಕ್ ಸ್ಕೇಲ್',
   'rubber': 'ರಬ್ಬರ್ ಈರೇಸರ್',
@@ -436,9 +436,9 @@ function testMaterial(id, icon, isConductor, btn) {
       conductors.push(materialNames[id]);
       
       explanationText.innerHTML = `
-        <strong style="color:#2e7d32">${materialNames[id]} is a CONDUCTOR!</strong><br><br>
-        It allows electric current to pass through. The bulb glows because the circuit is ಪೂರ್ಣ.<br><br>
-        ಲೋಹಗಳು like iron, copper, ಮತ್ತು aluminium have <strong>ಮುಕ್ತ ಇಲೆಕ್ಟ್ರಾನ್â€Œಗಳು</strong> that can move ಮತ್ತು carry current.
+        <strong style="color:#2e7d32">${materialNames[id]} ವಾಹಕ!</strong><br><br>
+        ವಿದ್ಯುತ್ ಪ್ರವಾಹ ಹಾಯಲು ಅನುಮತಿಸುತ್ತದೆ. ಸರ್ಕ್ಯೂಟ್ ಪೂರ್ಣವಾಗಿರುವುದರಿಂದ ಬಲ್ಬ್ ಬೆಳಗುತ್ತದೆ.<br><br>
+        ಕಬ್ಬಿಣ, ತಾಮ್ರ ಮತ್ತು ಅಲ್ಯೂಮಿನಿಯಂ ನಂತಹ ಲೋಹಗಳಲ್ಲಿ <strong>ಮುಕ್ತ ಇಲೆಕ್ಟ್ರಾನ್‌ಗಳು</strong> ಇವೆ – ಚಲಿಸಿ ಪ್ರವಾಹ ಸಾಗಿಸಬಲ್ಲವು.
       `;
     } else {
       // ವಾಹಕವಲ್ಲದ - bulb stays off
@@ -458,9 +458,9 @@ function testMaterial(id, icon, isConductor, btn) {
       insulators.push(materialNames[id]);
       
       explanationText.innerHTML = `
-        <strong style="color:#c62828">${materialNames[id]} is an INSULATOR!</strong><br><br>
-        It does NOT allow current to pass. The bulb stays off because the circuit is broken.<br><br>
-        ಪದಾರ್ಥs like plastic, rubber, ಮತ್ತು wood hold their electrons tightly - they cannot move to carry current.
+        <strong style="color:#c62828">${materialNames[id]} ಅವಾಹಕ!</strong><br><br>
+        ಪ್ರವಾಹ ಹಾಯಲು ಅನುಮತಿಸುವುದಿಲ್ಲ. ಸರ್ಕ್ಯೂಟ್ ಮುರಿದಿರುವುದರಿಂದ ಬಲ್ಬ್ ಆಫ್‌ನಲ್ಲೇ ಇರುತ್ತದೆ.<br><br>
+        ಪ್ಲಾಸ್ಟಿಕ್, ರಬ್ಬರ್ ಮತ್ತು ಮರದಂಥ ಪದಾರ್ಥಗಳು ತಮ್ಮ ಇಲೆಕ್ಟ್ರಾನ್‌ಗಳನ್ನು ಬಿಗಿಯಾಗಿ ಹಿಡಿದಿಟ್ಟುಕೊಳ್ಳುತ್ತವೆ – ಪ್ರವಾಹ ಸಾಗಿಸಲು ಚಲಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ.
       `;
     }
     

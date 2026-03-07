@@ -272,7 +272,7 @@ body {
 <div class="concept-card">
   <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    ದೀಪಗಳ ಎರಡು ಮುಖ್ಯ ಪ್ರಕಾರಗಳಿವೆ: <strong>ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್</strong> (ಬಿಸಿ ಮಾಡಿದಾಗ ಜ್ವಲಿಸುವ ಫಿಲಾಮೆಂಟ್ ಇದೆ) ಮತ್ತು <strong>LED</strong> (LED - no filament, more efficient). LEDs need correct polarity to work!
+    ದೀಪಗಳ ಎರಡು ಮುಖ್ಯ ಪ್ರಕಾರಗಳಿವೆ: <strong>ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್</strong> (ಬಿಸಿ ಮಾಡಿದಾಗ ಜ್ವಲಿಸುವ ಫಿಲಾಮೆಂಟ್ ಇದೆ) ಮತ್ತು <strong>LED</strong> (ಫಿಲಾಮೆಂಟ್ ಇಲ್ಲ, ಹೆಚ್ಚು ಕಾರ್ಯಕ್ಷಮ). LED ಗಳಿಗೆ ಸರಿ ಧ್ರುವತೆ ಅಗತ್ಯ!
   </div>
 </div>
 
@@ -312,7 +312,7 @@ body {
           <rect x="35" y="90" width="4" height="25" fill="#9e9e9e"/>
           <rect x="61" y="90" width="4" height="20" fill="#9e9e9e"/>
           <!-- Labels -->
-          <text x="37" y="120" font-size="8" fill="#4caf50">+ (long)</text>
+          <text x="37" y="120" font-size="8" fill="#4caf50">+ (ಉದ್ದ)</text>
           <text x="58" y="115" font-size="8" fill="#f44336">−</text>
         </svg>
       </div>
@@ -322,11 +322,11 @@ body {
   </div>
   
   <div class="ಸ್ವಿಚ್-row">
-    <span class="ಸ್ವಿಚ್-label">OFF</span>
+    <span class="ಸ್ವಿಚ್-label">ಆಫ್</span>
     <div class="switch-toggle" id="switch-toggle" onclick="toggleSwitch()">
       <div class="switch-knob"></div>
     </div>
-    <span class="ಸ್ವಿಚ್-label on">ON</span>
+    <span class="ಸ್ವಿಚ್-label on">ಆನ್</span>
   </div>
 </div>
 
@@ -338,13 +338,13 @@ body {
   </div>
   <div class="table-row">
     <div>ಅದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ</div>
-    <div>filament ಬಿಸಿಯಾಗಿ ಉಜ್ಜ್ವಲ</div>
+    <div>ಫಿಲಾಮೆಂಟ್ ಬಿಸಿಯಾಗಿ ಉಜ್ಜ್ವಲ</div>
     <div>ಸೆಮಿಕಂಡಕ್ಟರ್ ಬೆಳಕು ಹೊರಸೂಸುತ್ತದೆ</div>
   </div>
   <div class="table-row">
     <div>ಕಾರ್ಯಕ್ಷಮತೆ</div>
     <div>ಕಡಿಮೆ (ಉಷ್ಣ ವ್ಯರ್ಥ)</div>
-    <div>High (less heat)</div>
+    <div>ಅಧಿಕ (ಕಡಿಮೆ ಉಷ್ಣ)</div>
   </div>
   <div class="table-row">
     <div>ಧ್ರುವತೆ</div>
@@ -362,24 +362,24 @@ body {
   <div class="detail-title" id="detail-title">💡 ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ ಬಲ್ಬ್</div>
   <div class="detail-text" id="detail-text">
     ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ ಬಲ್ಬ್‌ನಲ್ಲಿ ತೆಳುವಾದ ತಂತಿ ಇದೆ, ಅದನ್ನು <strong>ಫಿಲಾಮೆಂಟ್</strong> ಎಂದು ಕರೆಯಲಾಗುತ್ತದೆ. ವಿದ್ಯುತ್ ಪ್ರವಾಹ ಫಿಲಾಮೆಂಟ್ ಮೂಲಕ ಹರಿಯುವಾಗ, ಅದು ಬಹಳ ಬಿಸಿಯಾಗುತ್ತದೆ (ಸುಮಾರು 2500°C) ಮತ್ತು ಬೆಳಗುತ್ತದೆ, ಬೆಳಕನ್ನು ಉತ್ಪಾದಿಸುತ್ತದೆ.<br><br>
-    The filament is connected to two terminals at the base. It works regardless of which way you connect it (no polarity needed).
+    ಫಿಲಾಮೆಂಟ್ ತಳದ ಎರಡು ಟರ್ಮಿನಲ್‌ಗಳಿಗೆ ಸಂಪರ್ಕವಾಗಿದೆ. ಯಾವ ದಿಕ್ಕಿನಲ್ಲಿ ಸಂಪರ್ಕಿಸಿದರೂ ಕೆಲಸ ಮಾಡುತ್ತದೆ (ಧ್ರುವತೆ ಅಗತ್ಯವಿಲ್ಲ).
   </div>
 </div>
 
 <div class="polarity-note">
-  <div class="title">⚠️ Important: LED ಧ್ರುವತೆ</div>
+  <div class="title">⚠️ ಮುಖ್ಯ: LED ಧ್ರುವತೆ</div>
   <div class="text">
-    LEDs have two legs of <strong>ವಿಭಿನ್ನ ಉದ್ದ</strong>:<br>
-    • <strong>ಉದ್ದ ಲೆಗ್ = ಧನ (+)</strong> - connect to + of ಬ್ಯಾಟರಿ<br>
-    • <strong>ಕಿರಿದಾದer leg = ಋಣ (−)</strong> - connect to − of ಬ್ಯಾಟರಿ<br><br>
-    If connected wrong way, LED won't glow!
+    LED ಗಳಿಗೆ <strong>ವಿಭಿನ್ನ ಉದ್ದ</strong>ದ ಎರಡು ಕಾಲುಗಳಿವೆ:<br>
+    • <strong>ಉದ್ದ ಕಾಲು = ಧನ (+)</strong> — ಬ್ಯಾಟರಿಯ + ಗೆ ಸಂಪರ್ಕ<br>
+    • <strong>ಕಿರಿದಾದ ಕಾಲು = ಋಣ (−)</strong> — ಬ್ಯಾಟರಿಯ − ಗೆ ಸಂಪರ್ಕ<br><br>
+    ತಪ್ಪು ದಿಕ್ಕಿನಲ್ಲಿ ಸಂಪರ್ಕಿಸಿದರೆ LED ಹೊಳೆಯುವುದಿಲ್ಲ!
   </div>
 </div>
 
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೀವು ಕಲಿತದ್ದು</div>
   <div class="takeaway-text">
-    <strong>ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ bulbs</strong> ಬಿಸಿ filament ಬೆಳಕು ಉತ್ಪಾದಿಸಿ ಎರಡೂ ರೀತಿ ಕೆಲಸ. <strong>LEDs</strong> ಹೆಚ್ಚು ಕಾರ್ಯಕ್ಷಮ, ಹೆಚ್ಚು ಕಾಲ, ಆದರೆ ಸರಿ ಧ್ರುವತೆ (+ to +, − to −) ಅಗತ್ಯ.
+    <strong>ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ ಬಲ್ಬ್‌ಗಳು</strong> ಬಿಸಿ ಫಿಲಾಮೆಂಟ್ ಬೆಳಕು ಉತ್ಪಾದಿಸಿ ಎರಡೂ ರೀತಿ ಕೆಲಸ ಮಾಡುತ್ತವೆ. <strong>LED</strong> ಗಳು ಹೆಚ್ಚು ಕಾರ್ಯಕ್ಷಮ, ಹೆಚ್ಚು ಕಾಲ ಬಾಳಿಕೆ, ಆದರೆ ಸರಿ ಧ್ರುವತೆ (+ to +, − to −) ಅಗತ್ಯ.
   </div>
 </div>
 
@@ -408,7 +408,7 @@ function selectLamp(type) {
     detailTitle.textContent = '💡 ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ ಬಲ್ಬ್';
     detailText.innerHTML = `
       ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ ಬಲ್ಬ್‌ನಲ್ಲಿ ತೆಳುವಾದ ತಂತಿ ಇದೆ, ಅದನ್ನು <strong>ಫಿಲಾಮೆಂಟ್</strong> ಎಂದು ಕರೆಯಲಾಗುತ್ತದೆ. ವಿದ್ಯುತ್ ಪ್ರವಾಹ ಫಿಲಾಮೆಂಟ್ ಮೂಲಕ ಹರಿಯುವಾಗ, ಅದು ಬಹಳ ಬಿಸಿಯಾಗುತ್ತದೆ (ಸುಮಾರು 2500°C) ಮತ್ತು ಬೆಳಗುತ್ತದೆ, ಬೆಳಕನ್ನು ಉತ್ಪಾದಿಸುತ್ತದೆ.<br><br>
-      The filament is connected to two terminals at the base. It works regardless of which way you connect it (no polarity needed).
+      ಫಿಲಾಮೆಂಟ್ ತಳದ ಎರಡು ಟರ್ಮಿನಲ್‌ಗಳಿಗೆ ಸಂಪರ್ಕವಾಗಿದೆ. ಯಾವ ದಿಕ್ಕಿನಲ್ಲಿ ಸಂಪರ್ಕಿಸಿದರೂ ಕೆಲಸ ಮಾಡುತ್ತದೆ (ಧ್ರುವತೆ ಅಗತ್ಯವಿಲ್ಲ).
     `;
   } else {
     detailTitle.textContent = '🔆 LED (LED)';
