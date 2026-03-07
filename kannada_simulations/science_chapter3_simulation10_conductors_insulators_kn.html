@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -69,7 +69,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -217,8 +217,8 @@ svg { width: 100%; height: 100%; }
 .takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
 
 @keyframes glow {
-  0%, 100% { filter: drop-shadow(0 0 5px rgba(255,235,59,0.8)); }
-  50% { filter: drop-shadow(0 0 15px rgba(255,235,59,1)); }
+  0%, 100% { filter: drop-ನೆರಳು(0 0 5px rgba(255,235,59,0.8)); }
+  50% { filter: drop-ನೆರಳು(0 0 15px rgba(255,235,59,1)); }
 }
 
 .bulb-glow { animation: glow 1s ease-in-out infinite; }
@@ -244,20 +244,20 @@ svg { width: 100%; height: 100%; }
 <div id="app">
 
 <div class="header">
-  <h1>⚡ Conductors & Insulators</h1>
-  <p>Test materials to see if they conduct electricity</p>
+  <h1>⚡ ವಾಹಕಗಳು ಮತ್ತು ಅವಾಹಕಗಳು</h1>
+  <p>ಪದಾರ್ಥಗಳು ವಿದ್ಯುತ್ ಹರಿಸುತ್ತವೆಯೇ ಪರೀಕ್ಷಿಸಿ</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    <strong>Conductors</strong> allow electric current to flow through them (metals like copper, iron). <strong>Insulators</strong> block the flow of current (plastic, rubber, wood). This is why wires have metal inside and plastic outside!
+    <strong>ವಾಹಕಗಳು</strong> ವಿದ್ಯುತ್ ಹರಿಯಲು ಅನುಮತಿಸುತ್ತವೆ (ಲೋಹಗಳು copper, iron). <strong>ಅವಾಹಕಗಳು</strong> ವಿದ್ಯುತ್ ಹರಿವನ್ನು ತಡೆಯುತ್ತವೆ (ಪ್ಲಾಸ್ಟಿಕ್, ರಬ್ಬರ್, ಮರ).s why wires have metal inside ಮತ್ತು plastic outside!
   </div>
 </div>
 
 <div class="sim-card">
   <div class="visual">
-    <div class="result-badge" id="result-badge">Select a material</div>
+    <div class="result-badge" id="result-badge">ಒಂದು ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ</div>
     <svg viewBox="0 0 400 240" id="circuit-svg">
       <!-- Background -->
       <rect x="0" y="0" width="400" height="240" fill="#eceff1"/>
@@ -271,7 +271,7 @@ svg { width: 100%; height: 100%; }
         <text x="25" y="25" font-size="8" fill="#fff" text-anchor="middle">CELL</text>
       </g>
       
-      <!-- Wires -->
+      <!-- à²¤à²‚à²¤à²¿à²—à²³à³ -->
       <path id="wire-left" d="M 60 100 L 60 60 L 150 60" stroke="#4caf50" stroke-width="3"/>
       <path id="wire-right" d="M 250 60 L 340 60 L 340 100" stroke="#e0e0e0" stroke-width="3"/>
       <path id="wire-bottom" d="M 340 160 L 340 180 L 60 180 L 60 140" stroke="#4caf50" stroke-width="3"/>
@@ -279,7 +279,7 @@ svg { width: 100%; height: 100%; }
       <!-- Test gap with probes -->
       <g id="test-area" transform="translate(150, 40)">
         <rect x="0" y="0" width="100" height="40" rx="5" fill="#fff" stroke="#bdbdbd" stroke-width="2"/>
-        <text x="50" y="25" font-size="10" fill="#999" text-anchor="middle" id="test-label">Drag material here</text>
+        <text x="50" y="25" font-size="10" fill="#999" text-anchor="middle" id="test-label">ಪದಾರ್ಥವನ್ನು ಇಲ್ಲಿ ಎಳೆಯಿರಿ</text>
         
         <!-- Probe tips -->
         <circle cx="10" cy="20" r="5" fill="#f44336"/>
@@ -301,14 +301,14 @@ svg { width: 100%; height: 100%; }
       </g>
       
       <!-- Instructions -->
-      <text x="200" y="220" font-size="10" fill="#666" text-anchor="middle">👆 Select a material below to test</text>
+      <text x="200" y="220" font-size="10" fill="#666" text-anchor="middle">👆 ಒಂದು ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ below to test</text>
     </svg>
   </div>
   
   <div class="materials-grid">
     <div class="material-btn" onclick="testಪದಾರ್ಥ('spoon', '🥄', true, this)">
       <div class="icon">🥄</div>
-      <div class="name">Metal Spoon</div>
+      <div class="name">ಲೋಹ Spoon</div>
     </div>
     <div class="material-btn" onclick="testಪದಾರ್ಥ('key', '🔑', true, this)">
       <div class="icon">🔑</div>
@@ -320,23 +320,23 @@ svg { width: 100%; height: 100%; }
     </div>
     <div class="material-btn" onclick="testಪದಾರ್ಥ('foil', '📄', true, this)">
       <div class="icon">📄</div>
-      <div class="name">Aluminium Foil</div>
+      <div class="name">à²…à²²à³à²¯à³‚à²®à²¿à²¨à²¿à²¯à²‚ à²«à²¾à²¯à²¿à²²à³</div>
     </div>
     <div class="material-btn" onclick="testಪದಾರ್ಥ('plastic', '📏', false, this)">
       <div class="icon">📏</div>
-      <div class="name">Plastic Scale</div>
+      <div class="name">à²ªà³à²²à²¾à²¸à³à²Ÿà²¿à²•à³ à²¸à³à²•à³‡à²²à³</div>
     </div>
     <div class="material-btn" onclick="testಪದಾರ್ಥ('rubber', '🧽', false, this)">
       <div class="icon">🧽</div>
-      <div class="name">Rubber Eraser</div>
+      <div class="name">à²°à²¬à³à²¬à²°à³ à²ˆà²°à³‡à²¸à²°à³</div>
     </div>
     <div class="material-btn" onclick="testಪದಾರ್ಥ('wood', '🪵', false, this)">
       <div class="icon">🪵</div>
-      <div class="name">Wooden Stick</div>
+      <div class="name">à²®à²°à²¦ à²•à²¡à³à²¡à²¿</div>
     </div>
     <div class="material-btn" onclick="testಪದಾರ್ಥ('glass', '🥛', false, this)">
       <div class="icon">🥛</div>
-      <div class="name">Glass</div>
+      <div class="name">à²—à²¾à²œà³</div>
     </div>
   </div>
 </div>
@@ -344,13 +344,13 @@ svg { width: 100%; height: 100%; }
 <div class="score-panel">
   <div class="score-card conductors">
     <div class="icon">✅</div>
-    <div class="label">CONDUCTORS</div>
+    <div class="label">ವಾಹಕಗಳು</div>
     <div class="count" id="conductor-count">0</div>
     <div class="items" id="conductor-items">-</div>
   </div>
   <div class="score-card insulators">
     <div class="icon">❌</div>
-    <div class="label">INSULATORS</div>
+    <div class="label">ವಿದ್ಯುತ್ ನಿರೋಧಕಗಳು</div>
     <div class="count" id="insulator-count">0</div>
     <div class="items" id="insulator-items">-</div>
   </div>
@@ -359,27 +359,27 @@ svg { width: 100%; height: 100%; }
 <div class="explanation-panel">
   <div class="explanation-title">🔬 Why Some ಪದಾರ್ಥs Conduct?</div>
   <div class="explanation-text" id="explanation-text">
-    Conductors have <strong>free electrons</strong> that can move easily, carrying electric current. Metals are excellent conductors because their atoms release electrons that flow freely.<br><br>
-    Insulators hold their electrons tightly - they cannot move to carry current. That's why we use plastic to cover wires for safety!
+    ವಾಹಕಗಳು have <strong>à²®à³à²•à³à²¤ à²‡à²²à³†à²•à³à²Ÿà³à²°à²¾à²¨à³â€Œà²—à²³à³</strong> that can move easily, carrying electric current. ಲೋಹಗಳು are excellent conductors because their atoms release electrons that flow freely.<br><br>
+    ಅವಾಹಕಗಳು hold their electrons tightly - they cannot move to carry current. That's why we use plastic to cover wires for safety!
   </div>
 </div>
 
 <div class="safety-panel">
-  <div class="safety-title">⚠️ Safety with Electricity</div>
+  <div class="safety-title">⚠️ Safety with ವಿದ್ಯುತ್</div>
   <div class="safety-text">
-    <strong>Our body is a conductor!</strong> Electric current can pass through us, which is very dangerous.<br><br>
-    Safety rules:<br>
-    • Never touch switches with wet hands<br>
-    • Don't use electrical devices near water<br>
-    • Never insert objects into sockets<br>
-    • Use only batteries for experiments
+    <strong>à²¨à²®à³à²® à²¶à²°à³€à²° à²µà²¾à²¹à²•!</strong> à²µà²¿à²¦à³à²¯à³à²¤à³ à²ªà³à²°à²µà²¾à²¹ à²¨à²®à³à²® à²®à³‚à²²à²• à²¹à²°à²¿à²¯à²¬à²¹à³à²¦à³, à²…à²ªà²¾à²¯à²•à²¾à²°à²¿.<br><br>
+    à²­à²¦à³à²°à²¤à²¾ à²¨à²¿à²¯à²®à²—à²³à³:<br>
+    • ಒದ್ದೆ ಕೈಯಿಂದ ಸ್ವಿಚ್ ಸ್ಪರ್ಶಿಸಬೇಡಿ<br>
+    • Don't use electrical devices near ನೀರು<br>
+    • ಸಾಕೆಟ್‌ಗೆ ವಸ್ತು ಸೇರಿಸಬೇಡಿ<br>
+    • ಪ್ರಯೋಗಗಳಿಗೆ ಬ್ಯಾಟರಿ ಮಾತ್ರ
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 What You Learned</div>
+  <div class="takeaway-title">🎯 ನೀವು ಕಲಿತದ್ದು</div>
   <div class="takeaway-text">
-    <strong>Conductors</strong> (metals) allow current to flow - used for wires. <strong>Insulators</strong> (plastic, rubber, wood) block current - used for safety covers. This is why electrical wires have copper inside and plastic outside!
+    <strong>ವಾಹಕಗಳು</strong> (à²²à³‹à²¹à²—à²³à³) à²ªà³à²°à²µà²¾à²¹ à²¹à²°à²¿à²¯à²²à³ à²…à²¨à³à²®à²¤à²¿ - à²¤à²‚à²¤à²¿à²—à²³à²¿à²—à³†. <strong>ಅವಾಹಕಗಳು</strong> (à²ªà³à²²à²¾à²¸à³à²Ÿà²¿à²•à³, à²°à²¬à³à²¬à²°à³, à²®à²°) à²ªà³à²°à²µà²¾à²¹ à²¨à²¿à²°à³à²¬à²‚à²§ - à²­à²¦à³à²°à²¤à²¾ à²†à²µà²°à²£. à²µà²¿à²¦à³à²¯à³à²¤à³ à²¤à²‚à²¤à²¿à²—à²³à²²à³à²²à²¿ à²’à²³à²—à³† à²¤à²¾à²®à³à²° à²¹à³Šà²°à²—à³† à²ªà³à²²à²¾à²¸à³à²Ÿà²¿à²•à³!
   </div>
 </div>
 
@@ -389,47 +389,47 @@ svg { width: 100%; height: 100%; }
 const conductors = [];
 const insulators = [];
 
-const bulbGlass = document.getElementById('bulb-glass');
+const bulbà²—à²¾à²œà³ = document.getElementById('bulb-glass');
 const bulbFilament = document.getElementById('bulb-filament');
 const wireRight = document.getElementById('wire-right');
 const resultBadge = document.getElementById('result-badge');
-const testMaterialEl = document.getElementById('test-material');
+const testಪದಾರ್ಥEl = document.getElementById('test-material');
 const materialIcon = document.getElementById('material-icon');
 const materialRect = document.getElementById('material-rect');
 const testLabel = document.getElementById('test-label');
 const explanationText = document.getElementById('explanation-text');
 
 const materialNames = {
-  'spoon': 'Metal Spoon',
+  'spoon': 'ಲೋಹ Spoon',
   'key': 'Iron Key',
   'coin': 'Coin',
-  'foil': 'Aluminium Foil',
-  'plastic': 'Plastic Scale',
-  'rubber': 'Rubber Eraser',
-  'wood': 'Wooden Stick',
-  'glass': 'Glass'
+  'foil': 'à²…à²²à³à²¯à³‚à²®à²¿à²¨à²¿à²¯à²‚ à²«à²¾à²¯à²¿à²²à³',
+  'plastic': 'à²ªà³à²²à²¾à²¸à³à²Ÿà²¿à²•à³ à²¸à³à²•à³‡à²²à³',
+  'rubber': 'à²°à²¬à³à²¬à²°à³ à²ˆà²°à³‡à²¸à²°à³',
+  'wood': 'à²®à²°à²¦ à²•à²¡à³à²¡à²¿',
+  'glass': 'à²—à²¾à²œà³'
 };
 
-function testMaterial(id, icon, isConductor, btn) {
+function testಪದಾರ್ಥ(id, icon, isà²µà²¾à²¹à²•, btn) {
   if (btn.classList.contains('tested')) return;
   
   // Show material in test area
-  testMaterialEl.style.display = 'block';
+  testಪದಾರ್ಥEl.style.display = 'block';
   materialIcon.textContent = icon;
   testLabel.style.display = 'none';
   
-  // Animate test
+  // ಅನಿಮೇಟ್ test
   setTimeout(() => {
-    if (isConductor) {
-      // Conductor - bulb lights up!
+    if (isà²µà²¾à²¹à²•) {
+      // à²µà²¾à²¹à²• - bulb lights up!
       wireRight.setAttribute('stroke', '#4caf50');
       wireRight.classList.add('current-flow');
-      bulbGlass.setAttribute('fill', '#ffeb3b');
+      bulbà²—à²¾à²œà³.setAttribute('fill', '#ffeb3b');
       bulbFilament.setAttribute('fill', '#fff');
-      bulbGlass.classList.add('bulb-glow');
+      bulbà²—à²¾à²œà³.classList.add('bulb-glow');
       
       materialRect.setAttribute('fill', '#a5d6a7');
-      resultBadge.textContent = '✅ CONDUCTOR - Bulb glows!';
+      resultBadge.textContent = '✅ ವಾಹಕ - ಬಲ್ಬ್ ಬೆಳಗುತ್ತದೆ!';
       resultBadge.className = 'result-badge conductor';
       
       btn.classList.add('tested', 'conductor');
@@ -437,19 +437,19 @@ function testMaterial(id, icon, isConductor, btn) {
       
       explanationText.innerHTML = `
         <strong style="color:#2e7d32">${materialNames[id]} is a CONDUCTOR!</strong><br><br>
-        It allows electric current to pass through. The bulb glows because the circuit is complete.<br><br>
-        Metals like iron, copper, and aluminium have <strong>free electrons</strong> that can move and carry current.
+        It allows electric current to pass through. The bulb glows because the circuit is à²ªà³‚à²°à³à²£.<br><br>
+        ಲೋಹಗಳು like iron, copper, ಮತ್ತು aluminium have <strong>à²®à³à²•à³à²¤ à²‡à²²à³†à²•à³à²Ÿà³à²°à²¾à²¨à³â€Œà²—à²³à³</strong> that can move ಮತ್ತು carry current.
       `;
     } else {
-      // Insulator - bulb stays off
+      // à²µà²¾à²¹à²•à²µà²²à³à²²à²¦ - bulb stays off
       wireRight.setAttribute('stroke', '#e0e0e0');
       wireRight.classList.remove('current-flow');
-      bulbGlass.setAttribute('fill', '#e0e0e0');
+      bulbà²—à²¾à²œà³.setAttribute('fill', '#e0e0e0');
       bulbFilament.setAttribute('fill', '#bdbdbd');
-      bulbGlass.classList.remove('bulb-glow');
+      bulbà²—à²¾à²œà³.classList.remove('bulb-glow');
       
       materialRect.setAttribute('fill', '#ef9a9a');
-      resultBadge.textContent = '❌ INSULATOR - No current!';
+      resultBadge.textContent = '❌ ಅವಾಹಕ - ವಿದ್ಯುತ್ ಇಲ್ಲ!';
       resultBadge.className = 'result-badge insulator';
       
       btn.classList.add('tested', 'insulator');
@@ -460,7 +460,7 @@ function testMaterial(id, icon, isConductor, btn) {
       explanationText.innerHTML = `
         <strong style="color:#c62828">${materialNames[id]} is an INSULATOR!</strong><br><br>
         It does NOT allow current to pass. The bulb stays off because the circuit is broken.<br><br>
-        Materials like plastic, rubber, and wood hold their electrons tightly - they cannot move to carry current.
+        ಪದಾರ್ಥs like plastic, rubber, ಮತ್ತು wood hold their electrons tightly - they cannot move to carry current.
       `;
     }
     

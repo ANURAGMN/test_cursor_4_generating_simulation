@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -60,14 +60,14 @@ body {
   margin-bottom: 15px;
 }
 
-.speedometer {
+.ವೇಗometer {
   width: 200px;
   height: 110px;
   margin: 0 auto;
   position: relative;
 }
 
-.speed-dial {
+.ವೇಗ-dial {
   width: 200px;
   height: 100px;
   border: 4px solid #444;
@@ -77,13 +77,13 @@ body {
   overflow: hidden;
 }
 
-.speed-marks {
+.ವೇಗ-marks {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.speed-mark {
+.ವೇಗ-mark {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -93,13 +93,13 @@ body {
   transform-origin: bottom center;
 }
 
-.speed-mark.major {
+.ವೇಗ-mark.major {
   height: 20px;
   width: 3px;
   background: #4caf50;
 }
 
-.speed-label {
+.ವೇಗ-label {
   position: absolute;
   font-size: 10px;
   color: #fff;
@@ -117,7 +117,7 @@ body {
   transform: translateX(-50%) rotate(-90deg);
   transition: transform 0.3s ease-out;
   border-radius: 2px;
-  box-shadow: 0 0 10px rgba(244, 67, 54, 0.5);
+  box-ನೆರಳು: 0 0 10px rgba(244, 67, 54, 0.5);
 }
 
 .needle-cap {
@@ -132,20 +132,20 @@ body {
   border: 3px solid #555;
 }
 
-.speed-display {
+.ವೇಗ-display {
   text-align: center;
   margin-top: 15px;
 }
 
-.speed-value {
+.ವೇಗ-value {
   font-size: 40px;
   font-weight: 700;
   color: #4caf50;
   font-family: 'Courier New', monospace;
-  text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+  text-ನೆರಳು: 0 0 10px rgba(76, 175, 80, 0.5);
 }
 
-.speed-unit {
+.ವೇಗ-unit {
   font-size: 14px;
   color: #888;
   margin-top: -5px;
@@ -267,77 +267,77 @@ body {
 
 <div class="header">
   <h1>🚗 ಸ್ಪೀಡೋಮೀಟರ್ ಮತ್ತು ಓಡೋಮೀಟರ್</h1>
-  <p>Interactive vehicle dashboard</p>
+  <p>ಸಂವಾದಾತ್ಮಕ ವಾಹನ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Dashboard Instruments</div>
+  <div class="concept-title">📚 ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಉಪಕರಣಗಳು</div>
   <div class="concept-text">
-    • <strong>Speedometer:</strong> Shows current speed in km/h<br>
-    • <strong>Odometer:</strong> Shows total distance traveled (km)
+    • <strong>ಸ್ಪೀಡೋಮೀಟರ್:</strong> ಕಿಮೀ/ಗಂ ನಲ್ಲಿ ಪ್ರಸ್ತುತ ವೇಗ ತೋರಿಸುತ್ತದೆ<br>
+    • <strong>ಓಡೋಮೀಟರ್:</strong> à²¤à³‹à²°à²¿à²¸à³à²¤à³à²¤à²¦à³† à²’à²Ÿà³à²Ÿà³ à²¦à³‚à²° traveled (km)
   </div>
 </div>
 
 <div class="sim-card">
   <div class="dashboard">
-    <div class="speedometer">
-      <div class="speed-dial">
-        <div class="speed-marks">
-          <!-- Speed marks will be added by JS -->
+    <div class="ವೇಗometer">
+      <div class="ವೇಗ-dial">
+        <div class="ವೇಗ-marks">
+          <!-- ವೇಗ marks will be added by JS -->
         </div>
         <div class="needle" id="needle"></div>
         <div class="needle-cap"></div>
         
-        <div class="speed-label" style="left: 15px; bottom: 10px;">0</div>
-        <div class="speed-label" style="left: 25px; top: 35px;">40</div>
-        <div class="speed-label" style="left: 55px; top: 10px;">80</div>
-        <div class="speed-label" style="left: 95px; top: 0px;">120</div>
-        <div class="speed-label" style="right: 55px; top: 10px;">160</div>
-        <div class="speed-label" style="right: 25px; top: 35px;">200</div>
-        <div class="speed-label" style="right: 10px; bottom: 10px;">240</div>
+        <div class="ವೇಗ-label" style="left: 15px; bottom: 10px;">0</div>
+        <div class="ವೇಗ-label" style="left: 25px; top: 35px;">40</div>
+        <div class="ವೇಗ-label" style="left: 55px; top: 10px;">80</div>
+        <div class="ವೇಗ-label" style="left: 95px; top: 0px;">120</div>
+        <div class="ವೇಗ-label" style="right: 55px; top: 10px;">160</div>
+        <div class="ವೇಗ-label" style="right: 25px; top: 35px;">200</div>
+        <div class="ವೇಗ-label" style="right: 10px; bottom: 10px;">240</div>
       </div>
     </div>
     
-    <div class="speed-display">
-      <div class="speed-value" id="speed-value">0</div>
-      <div class="speed-unit">km/h</div>
+    <div class="ವೇಗ-display">
+      <div class="ವೇಗ-value" id="ವೇಗ-value">0</div>
+      <div class="ವೇಗ-unit">km/h</div>
     </div>
     
     <div class="odometer">
       <div>
-        <div class="odometer-label">ODOMETER</div>
+        <div class="odometer-label">ಓಡೋಮೀಟರ್</div>
         <div class="trip-display" id="trip-display">Trip: 0.00 km</div>
       </div>
       <div class="odometer-display" id="odometer-display">000000</div>
     </div>
   </div>
   
-  <div class="instruction">Press and hold the pedals to control speed</div>
+  <div class="instruction">ವೇಗ ನಿಯಂತ್ರಿಸಲು ಪೆಡಲ್‌ಗಳನ್ನು ಒತ್ತಿ ಹಿಡಿದಿರಿ</div>
   
   <div class="controls">
     <button class="pedal gas-pedal" id="gas-btn">
       ⬆️ GAS<br>
-      <span style="font-size: 10px;">Accelerate</span>
+      <span style="font-size: 10px;">à²¤à³à²µà²°à²£</span>
     </button>
     <button class="pedal brake-pedal" id="brake-btn">
-      ⬇️ BRAKE<br>
+      ⬇️ ಬ್ರೇಕ್<br>
       <span style="font-size: 10px;">Slow Down</span>
     </button>
-    <button class="reset-btn" onclick="resetTrip()">🔄 Reset Trip Meter</button>
+    <button class="reset-btn" onclick="resetTrip()">🔄 ಟ್ರಿಪ್ ಮೀಟರ್ ಮರುಹೊಂದಿಸಿ</button>
   </div>
 </div>
 
 <div class="info-grid">
   <div class="info-card">
-    <div class="info-title">📊 Speedometer</div>
+    <div class="info-title">📊 ಸ್ಪೀಡೋಮೀಟರ್</div>
     <div class="info-text">
-      Shows <strong>instantaneous speed</strong> - how fast you're going right now. Important for safety and following speed limits.
+      à²¤à³‹à²°à²¿à²¸à³à²¤à³à²¤à²¦à³† <strong>à²¤à²¤à³à²•à³à²·à²£ à²µà³‡à²—</strong> - à²ˆà²— à²Žà²·à³à²Ÿà³ à²µà³‡à²—à²µà²¾à²—à²¿ à²¹à³‹à²—à³à²¤à³à²¤à²¿à²¦à³à²¦à³€à²°à²¿. à²­à²¦à³à²°à²¤à³† à²®à²¤à³à²¤à³ à²µà³‡à²— à²®à²¿à²¤à²¿à²—à²³à²¿à²—à³† à²®à³à²–à³à²¯.
     </div>
   </div>
   <div class="info-card">
-    <div class="info-title">📏 Odometer</div>
+    <div class="info-title">📏 ಓಡೋಮೀಟರ್</div>
     <div class="info-text">
-      Records <strong>total distance</strong> traveled. Used for maintenance schedules and tracking vehicle usage.
+      à²°à³†à²•à²¾à²°à³à²¡à³â€Œà²—à²³à³ <strong>à²’à²Ÿà³à²Ÿà³ à²¦à³‚à²°</strong> traveled. Used for maintenance schedules ಮತ್ತು tracking vehicle usage.
     </div>
   </div>
 </div>
@@ -345,22 +345,22 @@ body {
 <div class="fun-fact">
   <div class="fun-title">🌟 Did You Know?</div>
   <div class="fun-text">
-    The word "speedometer" comes from "speed" + "meter" (measuring device). Modern cars also have digital speedometers that use GPS satellites for accurate readings!
+    "à²¸à³à²ªà³€à²¡à³‹à²®à³€à²Ÿà²°à³" "à²µà³‡à²—" + "à²®à³€à²Ÿà²°à³". à²†à²§à³à²¨à²¿à²• à²•à²¾à²°à³à²—à²³à²²à³à²²à²¿ à²œà²¿à²ªà²¿à²Žà²¸à³ à²¨à²¿à²–à²° à²µà²¾à²šà²¨à²•à³à²•à³† à²¡à²¿à²œà²¿à²Ÿà²²à³ à²¸à³à²ªà³€à²¡à³‹à²®à³€à²Ÿà²°à³!
   </div>
 </div>
 
 </div>
 
 <script>
-let speed = 0;
-let totalDistance = 0;
-let tripDistance = 0;
+let ವೇಗ = 0;
+let totalದೂರ = 0;
+let tripದೂರ = 0;
 let isGasPressed = false;
 let isBrakePressed = false;
 let lastTime = Date.now();
 
 const needle = document.getElementById('needle');
-const speedValue = document.getElementById('speed-value');
+const ವೇಗValue = document.getElementById('speed-value');
 const odometerDisplay = document.getElementById('odometer-display');
 const tripDisplay = document.getElementById('trip-display');
 
@@ -382,65 +382,65 @@ brakeBtn.addEventListener('touchend', () => isBrakePressed = false);
 
 function updateDashboard() {
   const currentTime = Date.now();
-  const deltaTime = (currentTime - lastTime) / 1000; // seconds
+  const deltaTime = (currentTime - lastTime) / 1000; // à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³
   lastTime = currentTime;
   
-  // Update speed based on pedals
+  // Update ವೇಗ based on pedals
   if (isGasPressed) {
-    speed = Math.min(speed + 50 * deltaTime, 240); // Accelerate
+    ವೇಗ = Math.min(ವೇಗ + 50 * deltaTime, 240); // à²¤à³à²µà²°à²£
   } else if (isBrakePressed) {
-    speed = Math.max(speed - 100 * deltaTime, 0); // Brake
+    ವೇಗ = Math.max(ವೇಗ - 100 * deltaTime, 0); // Brake
   } else {
     // Natural deceleration
-    speed = Math.max(speed - 10 * deltaTime, 0);
+    ವೇಗ = Math.max(ವೇಗ - 10 * deltaTime, 0);
   }
   
-  // Update distance (speed in km/h, convert to km/s)
-  const distanceDelta = (speed / 3600) * deltaTime;
-  totalDistance += distanceDelta;
-  tripDistance += distanceDelta;
+  // Update distance (ವೇಗ in km/h, convert to km/s)
+  const distanceDelta = (ವೇಗ / 3600) * deltaTime;
+  totalದೂರ += distanceDelta;
+  tripದೂರ += distanceDelta;
   
   // Update needle rotation (-90deg = 0, +90deg = 240)
-  const needleAngle = -90 + (speed / 240) * 180;
+  const needleAngle = -90 + (ವೇಗ / 240) * 180;
   needle.style.transform = `translateX(-50%) rotate(${needleAngle}deg)`;
   
-  // Update speed display
-  speedValue.textContent = Math.round(speed);
+  // Update ವೇಗ display
+  ವೇಗValue.textContent = Math.round(ವೇಗ);
   
-  // Update color based on speed
-  if (speed < 60) {
-    speedValue.style.color = '#4caf50';
-  } else if (speed < 120) {
-    speedValue.style.color = '#ffeb3b';
+  // Update color based on ವೇಗ
+  if (ವೇಗ < 60) {
+    ವೇಗValue.style.color = '#4caf50';
+  } else if (ವೇಗ < 120) {
+    ವೇಗValue.style.color = '#ffeb3b';
   } else {
-    speedValue.style.color = '#f44336';
+    ವೇಗValue.style.color = '#f44336';
   }
   
   // Update odometer (6 digits)
-  const odometerValue = Math.floor(totalDistance).toString().padStart(6, '0');
+  const odometerValue = Math.floor(totalದೂರ).toದಾರದ ಉದ್ದ().padಪ್ರಾರಂಭ(6, '0');
   odometerDisplay.textContent = odometerValue;
   
   // Update trip meter
-  tripDisplay.textContent = `Trip: ${tripDistance.toFixed(2)} km`;
+  tripDisplay.textContent = `Trip: ${tripದೂರ.toFixed(2)} km`;
   
   requestAnimationFrame(updateDashboard);
 }
 
 function resetTrip() {
-  tripDistance = 0;
+  tripದೂರ = 0;
   tripDisplay.textContent = 'Trip: 0.00 km';
 }
 
-// Add speed marks to dial
-const marksContainer = document.querySelector('.speed-marks');
+// Add ವೇಗ marks to dial
+const marksContainer = document.querySelector('.ವೇಗ-marks');
 for (let i = 0; i <= 12; i++) {
   const mark = document.createElement('div');
-  mark.className = 'speed-mark' + (i % 2 === 0 ? ' major' : '');
+  mark.className = 'ವೇಗ-mark' + (i % 2 === 0 ? ' major' : '');
   mark.style.transform = `rotate(${-90 + i * 15}deg)`;
   marksContainer.appendChild(mark);
 }
 
-// Start dashboard update loop
+// ಪ್ರಾರಂಭ dashboard update loop
 updateDashboard();
 </script>
 </body>

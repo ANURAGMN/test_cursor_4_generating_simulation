@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -80,7 +80,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -236,28 +236,28 @@ svg { width: 100%; height: 100%; }
 <div id="app">
 
 <div class="header">
-  <h1>🔋 Battery – Connecting Cells</h1>
-  <p>Learn how cells combine to form a battery</p>
+  <h1>🔋 ಬ್ಯಾಟರಿ – ಕೋಶಗಳನ್ನು ಜೋಡಿಸುವುದು</h1>
+  <p>ಕೋಶಗಳು ಬ್ಯಾಟರಿ ರೂಪಿಸಲು ಹೇಗೆ ಜೋಡಾಗುತ್ತವೆ</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    A <strong>battery</strong> is formed when two or more cells are connected together. The <strong>positive (+)</strong> terminal of one cell connects to the <strong>negative (−)</strong> terminal of the next cell.
+    A <strong>ಬ್ಯಾಟರಿ</strong> ಎರಡು ಅಥವಾ ಹೆಚ್ಚು ಕೋಶಗಳನ್ನು ಜೋಡಿಸಿದಾಗ ರೂಪುಗೊಳ್ಳುತ್ತದೆ. <strong>ಧನ (+)</strong> ಒಂದು ಕೋಶದ ಟರ್ಮಿನಲ್ ಸಂಪರ್ಕವಾಗುತ್ತದೆ <strong>ಋಣ (−)</strong> ಮುಂದಿನ ಕೋಶದ ಟರ್ಮಿನಲ್‌ಗೆ.
   </div>
   <div class="concept-equation">
-    Battery Voltage = Cell 1 + Cell 2 + Cell 3 ...
+    à²¬à³à²¯à²¾à²Ÿà²°à²¿ à²µà³‹à²²à³à²Ÿà³‡à²œà³ = à²¸à³†à²²à³ 1 + à²¸à³†à²²à³ 2 + à²¸à³†à²²à³ 3 ...
   </div>
 </div>
 
 <div class="sim-card">
   <div class="visual">
-    <div class="instruction" id="instruction">Tap buttons to add/arrange cells</div>
+    <div class="instruction" id="instruction">à²¸à³†à²²à³â€Œà²—à²³à²¨à³à²¨à³ à²¸à³‡à²°à²¿à²¸à²²à³/à²µà³à²¯à²µà²¸à³à²¥à³† à²Ÿà³à²¯à²¾à²ªà³ à²¬à²Ÿà²¨à³</div>
     <svg viewBox="0 0 400 240" id="battery-svg">
       <!-- Cells container -->
       <g id="cells-group"></g>
       
-      <!-- Connection wires -->
+      <!-- à²¸à²‚à²ªà²°à³à²•à²¿à²¸à²¿ion wires -->
       <g id="wires-group"></g>
       
       <!-- Bulb -->
@@ -279,50 +279,50 @@ svg { width: 100%; height: 100%; }
     </button>
     <button class="control-btn" id="btn-2cells" onclick="setCells(2)">
       <span class="icon">🔋🔋</span>
-      2 Cells
+      2 ಘಟಕಗಳು
     </button>
     <button class="control-btn" id="btn-3cells" onclick="setCells(3)">
       <span class="icon">🔋🔋🔋</span>
-      3 Cells
+      3 ಘಟಕಗಳು
     </button>
   </div>
 </div>
 
 <div class="voltage-display">
-  <div class="voltage-label">Total Voltage (Battery)</div>
+  <div class="voltage-label">à²’à²Ÿà³à²Ÿà³ à²µà³‹à²²à³à²Ÿà³‡à²œà³ (à²¬à³à²¯à²¾à²Ÿà²°à²¿)</div>
   <div class="voltage-value" id="voltage-value">1.5V</div>
   <div class="voltage-calc" id="voltage-calc">1 cell × 1.5V = 1.5V</div>
 </div>
 
 <div class="connection-status" id="connection-status">
-  <div class="status-title">Connection Status:</div>
+  <div class="status-title">à²¸à²‚à²ªà²°à³à²• à²¸à³à²¥à²¿à²¤à²¿:</div>
   <div class="status-item">
     <span class="status-icon">✅</span>
-    <span class="status-text correct">Correct! (+) of cell connects to (−) of next cell</span>
+    <span class="status-text correct">ಸರಿ! (+) of cell connects to (−) of next cell</span>
   </div>
 </div>
 
 <div class="learning-box">
-  <div class="learning-title">🔬 Understanding Battery Connection</div>
+  <div class="learning-title">🔬 Understಮತ್ತುing ಬ್ಯಾಟರಿ à²¸à²‚à²ªà²°à³à²•à²¿à²¸à²¿ion</div>
   <div class="learning-text" id="learning-text">
-    When we connect cells correctly (+ to − of next cell), their voltages <strong>add up</strong>. This is called connecting cells in <strong>series</strong>.<br><br>
-    More cells = More voltage = Brighter bulb! 💡
+    When we connect ಘಟಕಗಳು correctly (+ to − of next cell), their voltages <strong>add up</strong>. This is called connecting ಘಟಕಗಳು in <strong>à²¸à²°à²£à²¿</strong>.<br><br>
+    More ಘಟಕಗಳು = More voltage = Brighter bulb! 💡
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 What You Learned</div>
+  <div class="takeaway-title">🎯 ನೀವು ಕಲಿತದ್ದು</div>
   <div class="takeaway-text">
-    A battery is made by connecting cells in series: <strong>positive (+) terminal of one cell to negative (−) terminal of the next</strong>. The total voltage equals the sum of all cell voltages. More cells provide more energy!
+    A ಬ್ಯಾಟರಿ is made by connecting ಘಟಕಗಳು in à²¸à²°à²£à²¿: <strong>ಧನ (+) terminal of one cell to ಋಣ (−) terminal of the next</strong>. à²’à²Ÿà³à²Ÿà³ à²µà³‹à²²à³à²Ÿà³‡à²œà³ à²Žà²²à³à²² à²¸à³†à²²à³ à²µà³‹à²²à³à²Ÿà³‡à²œà³ à²®à³Šà²¤à³à²¤. à²¹à³†à²šà³à²šà³ ಘಟಕಗಳು à²¹à³†à²šà³à²šà³ à²¶à²•à³à²¤à²¿!
   </div>
 </div>
 
 </div>
 
 <script>
-const cellsGroup = document.getElementById('cells-group');
+const ಘಟಕಗಳುGroup = document.getElementById('cells-group');
 const wiresGroup = document.getElementById('wires-group');
-const bulbGlass = document.getElementById('bulb-glass');
+const bulbà²—à²¾à²œà³ = document.getElementById('bulb-glass');
 const bulbFilament = document.getElementById('bulb-filament');
 const voltageValue = document.getElementById('voltage-value');
 const voltageCalc = document.getElementById('voltage-calc');
@@ -352,8 +352,8 @@ function createCell(x, y, index) {
   `;
 }
 
-function createWire(x1, y1, x2, y2, isAnimated = true) {
-  const animClass = isAnimated ? 'wire-animate' : '';
+function createWire(x1, y1, x2, y2, isಅನಿಮೇಟ್d = true) {
+  const animClass = isಅನಿಮೇಟ್d ? 'wire-animate' : '';
   return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#4caf50" stroke-width="3" class="${animClass}"/>`;
 }
 
@@ -365,19 +365,19 @@ function setCells(num) {
   document.getElementById(`btn-${num}cell${num > 1 ? 's' : ''}`).classList.add('active');
   
   // Clear previous
-  cellsGroup.innerHTML = '';
+  ಘಟಕಗಳುGroup.innerHTML = '';
   wiresGroup.innerHTML = '';
   
-  // Calculate positions
+  // ಲೆಕ್ಕ ಹಾಕಿ positions
   const startX = num === 1 ? 120 : (num === 2 ? 80 : 40);
   const cellWidth = 85;
   
-  // Create cells
+  // Create ಘಟಕಗಳು
   for (let i = 0; i < num; i++) {
-    cellsGroup.innerHTML += createCell(startX + i * cellWidth, 100, i + 1);
+    ಘಟಕಗಳುGroup.innerHTML += createCell(startX + i * cellWidth, 100, i + 1);
   }
   
-  // Create connection wires between cells
+  // Create connection wires between ಘಟಕಗಳು
   for (let i = 0; i < num - 1; i++) {
     const x1 = startX + i * cellWidth + 81; // + terminal
     const x2 = startX + (i + 1) * cellWidth - 8; // - terminal of next
@@ -388,7 +388,7 @@ function setCells(num) {
   const lastCellX = startX + (num - 1) * cellWidth + 81;
   wiresGroup.innerHTML += createWire(lastCellX, 122, 315, 80);
   
-  // Wire from bulb back to first cell
+  // Wire from bulb back to à²®à³Šà²¦à²² cell
   wiresGroup.innerHTML += `
     <path d="M 315 80 Q 315 180 200 180 Q ${startX - 30} 180 ${startX - 8} 122" 
           stroke="#4caf50" stroke-width="3" fill="none" class="wire-animate"/>
@@ -401,28 +401,28 @@ function setCells(num) {
   
   // Update bulb brightness
   const brightness = num === 1 ? '#fff59d' : (num === 2 ? '#ffeb3b' : '#ffff00');
-  const filamentColor = num === 1 ? '#ffe082' : (num === 2 ? '#ffd54f' : '#ffffff');
-  bulbGlass.setAttribute('fill', brightness);
-  bulbFilament.setAttribute('fill', filamentColor);
-  bulbGlass.classList.add('bulb-glow');
+  const à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³Color = num === 1 ? '#ffe082' : (num === 2 ? '#ffd54f' : '#ffffff');
+  bulbà²—à²¾à²œà³.setAttribute('fill', brightness);
+  bulbFilament.setAttribute('fill', à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³Color);
+  bulbà²—à²¾à²œà³.classList.add('bulb-glow');
   
   // Update instruction
-  instruction.textContent = num === 1 ? 'Single cell = 1.5V' : `${num} cells connected = ${voltage}V battery`;
+  instruction.textContent = num === 1 ? 'Single cell = 1.5V' : `${num} ಘಟಕಗಳು connected = ${voltage}V ಬ್ಯಾಟರಿ`;
   
   // Update learning text
   if (num === 1) {
     learningText.innerHTML = `
-      A single cell provides <strong>1.5V</strong> of electrical energy.<br><br>
-      To get more power, we can connect multiple cells together to form a <strong>battery</strong>.
+      A single cell provides <strong>1.5V</strong> of electrical à²¶à²•à³à²¤à²¿.<br><br>
+      To get more power, we can connect multiple ಘಟಕಗಳು together to form a <strong>ಬ್ಯಾಟರಿ</strong>.
     `;
   } else if (num === 2) {
     learningText.innerHTML = `
-      Two cells connected in series: <strong>1.5V + 1.5V = 3V</strong><br><br>
-      Notice how the <span style="color:#e65100;font-weight:600">+ terminal</span> of Cell 1 connects to the <span style="color:#1565c0;font-weight:600">− terminal</span> of Cell 2. The bulb glows brighter! 💡
+      Two ಘಟಕಗಳು connected in à²¸à²°à²£à²¿: <strong>1.5V + 1.5V = 3V</strong><br><br>
+      ಗಮನಿಸಿ ಹೇಗೆ the <span style="color:#e65100;font-weight:600">+ terminal</span> of Cell 1 connects to the <span style="color:#1565c0;font-weight:600">− terminal</span> of Cell 2. The bulb glows brighter! 💡
     `;
   } else {
     learningText.innerHTML = `
-      Three cells in series: <strong>1.5V + 1.5V + 1.5V = 4.5V</strong><br><br>
+      Three ಘಟಕಗಳು in à²¸à²°à²£à²¿: <strong>1.5V + 1.5V + 1.5V = 4.5V</strong><br><br>
       Each cell's <span style="color:#e65100;font-weight:600">(+)</span> connects to next cell's <span style="color:#1565c0;font-weight:600">(−)</span>. More voltage = brightest bulb! 💡💡💡
     `;
   }

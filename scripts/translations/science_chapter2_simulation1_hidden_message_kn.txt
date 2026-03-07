@@ -1,0 +1,3 @@
+# science_chapter2_simulation1_hidden_message_kn - English|Kannada (one per line). File-specific; applied after common.
+# Add or override translations used only in this HTML. Example:
+# Spray the indicator to reveal the message|ಸೂಚಕ ಸಿಂಪಡಿಸಿ ಸಂದೇಶ ಬಹಿರಂಗಗೊಳಿಸಿ

@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -69,7 +69,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -112,7 +112,7 @@ body {
   margin-top: 4px;
 }
 
-.switch-row {
+.ಸ್ವಿಚ್-row {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,10 +123,10 @@ body {
   border-radius: 10px;
 }
 
-.switch-label { font-size: 12px; color: #666; }
-.switch-label.on { color: #4caf50; font-weight: 600; }
+.ಸ್ವಿಚ್-label { font-size: 12px; color: #666; }
+.ಸ್ವಿಚ್-label.on { color: #4caf50; font-weight: 600; }
 
-.switch-toggle {
+.ಸ್ವಿಚ್-toggle {
   width: 60px;
   height: 32px;
   background: #e0e0e0;
@@ -136,9 +136,9 @@ body {
   transition: background 0.3s ease;
 }
 
-.switch-toggle.on { background: #4caf50; }
+.ಸ್ವಿಚ್-toggle.on { background: #4caf50; }
 
-.switch-knob {
+.ಸ್ವಿಚ್-knob {
   position: absolute;
   top: 4px;
   left: 4px;
@@ -147,10 +147,10 @@ body {
   background: #fff;
   border-radius: 50%;
   transition: left 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-ನೆರಳು: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-.switch-toggle.on .switch-knob { left: 32px; }
+.ಸ್ವಿಚ್-toggle.on .ಸ್ವಿಚ್-knob { left: 32px; }
 
 .comparison-table {
   margin-top: 12px;
@@ -186,7 +186,7 @@ body {
   color: #666;
 }
 
-.table-row div:first-child {
+.table-row div:à²®à³Šà²¦à²²-child {
   background: #fafafa;
   font-weight: 600;
   color: #333;
@@ -246,8 +246,8 @@ body {
 .takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
 
 @keyframes glow {
-  0%, 100% { filter: drop-shadow(0 0 10px rgba(255,235,59,0.8)); }
-  50% { filter: drop-shadow(0 0 20px rgba(255,235,59,1)); }
+  0%, 100% { filter: drop-ನೆರಳು(0 0 10px rgba(255,235,59,0.8)); }
+  50% { filter: drop-ನೆರಳು(0 0 20px rgba(255,235,59,1)); }
 }
 
 .bulb-on { animation: glow 1s ease-in-out infinite; }
@@ -257,7 +257,7 @@ body {
   50% { stroke: #ffeb3b; }
 }
 
-.filament-heat { animation: heat 0.5s ease-in-out infinite; }
+.à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³-heat { animation: heat 0.5s ease-in-out infinite; }
 </style>
 </head>
 
@@ -265,20 +265,20 @@ body {
 <div id="app">
 
 <div class="header">
-  <h1>💡 Lamp Types</h1>
-  <p>Comparing Incandescent Bulb vs LED</p>
+  <h1>💡 ದೀಪ ಪ್ರಕಾರಗಳು</h1>
+  <p>ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ ಬಲ್ಬ್ ಮತ್ತು LED ಹೋಲಿಕೆ</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    There are two main types of lamps: <strong>Incandescent</strong> (has a filament that glows when heated) and <strong>LED</strong> (Light Emitting Diode - no filament, more efficient). LEDs need correct polarity to work!
+    ದೀಪಗಳ ಎರಡು ಮುಖ್ಯ ಪ್ರಕಾರಗಳಿವೆ: <strong>ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್</strong> (ಬಿಸಿ ಮಾಡಿದಾಗ ಜ್ವಲಿಸುವ ಫಿಲಾಮೆಂಟ್ ಇದೆ) ಮತ್ತು <strong>LED</strong> (à²²à³ˆà²Ÿà³ à²Žà²®à²¿à²Ÿà²¿à²‚à²—à³ à²¡à²¯à³‹à²¡à³ - no à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³, more efficient). LEDs need correct polarity to work!
   </div>
 </div>
 
 <div class="sim-card">
   <div class="lamp-compare">
-    <div class="lamp-box active" id="incandescent-box" onclick="selectLamp('incandescent')">
+    <div class="lamp-box active" id="incಮತ್ತುescent-box" onclick="selectLamp('incಮತ್ತುescent')">
       <div class="lamp-visual">
         <svg viewBox="0 0 100 120" width="80" height="100">
           <!-- Bulb glass -->
@@ -295,8 +295,8 @@ body {
           <circle cx="60" cy="110" r="4" fill="#9e9e9e"/>
         </svg>
       </div>
-      <div class="lamp-name">Incandescent Bulb</div>
-      <div class="lamp-status" id="inc-status">Tap switch to test</div>
+      <div class="lamp-name">ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ ಬಲ್ಬ್</div>
+      <div class="lamp-status" id="inc-status">ಪರೀಕ್ಷಿಸಲು ಸ್ವಿಚ್ ಟ್ಯಾಪ್ ಮಾಡಿ</div>
     </div>
     
     <div class="lamp-box" id="led-box" onclick="selectLamp('led')">
@@ -317,119 +317,119 @@ body {
         </svg>
       </div>
       <div class="lamp-name">LED</div>
-      <div class="lamp-status" id="led-status">Tap switch to test</div>
+      <div class="lamp-status" id="led-status">ಪರೀಕ್ಷಿಸಲು ಸ್ವಿಚ್ ಟ್ಯಾಪ್ ಮಾಡಿ</div>
     </div>
   </div>
   
-  <div class="switch-row">
-    <span class="switch-label">OFF</span>
-    <div class="switch-toggle" id="switch-toggle" onclick="toggleSwitch()">
-      <div class="switch-knob"></div>
+  <div class="ಸ್ವಿಚ್-row">
+    <span class="ಸ್ವಿಚ್-label">OFF</span>
+    <div class="ಸ್ವಿಚ್-toggle" id="ಸ್ವಿಚ್-toggle" onclick="toggleಸ್ವಿಚ್()">
+      <div class="ಸ್ವಿಚ್-knob"></div>
     </div>
-    <span class="switch-label on">ON</span>
+    <span class="ಸ್ವಿಚ್-label on">ON</span>
   </div>
 </div>
 
 <div class="comparison-table">
   <div class="table-header">
-    <div>Feature</div>
-    <div>💡 Incandescent</div>
+    <div>ವೈಶಿಷ್ಟ್ಯ</div>
+    <div>💡 ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್</div>
     <div>🔆 LED</div>
   </div>
   <div class="table-row">
-    <div>How it works</div>
-    <div>Filament heats & glows</div>
-    <div>Semiconductor emits light</div>
+    <div>à²…à²¦à³ à²¹à³‡à²—à³† à²•à³†à²²à²¸ à²®à²¾à²¡à³à²¤à³à²¤à²¦à³†</div>
+    <div>à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³ à²¬à²¿à²¸à²¿à²¯à²¾à²—à²¿ à²‰à²œà³à²œà³à²µà²²</div>
+    <div>à²¸à³†à²®à²¿à²•à²‚à²¡à²•à³à²Ÿà²°à³ à²¬à³†à²³à²•à³ à²¹à³Šà²°à²¸à³‚à²¸à³à²¤à³à²¤à²¦à³†</div>
   </div>
   <div class="table-row">
-    <div>Efficiency</div>
-    <div>Low (wastes heat)</div>
+    <div>à²•à²¾à²°à³à²¯à²•à³à²·à²®à²¤à³†</div>
+    <div>à²•à²¡à²¿à²®à³† (à²‰à²·à³à²£ à²µà³à²¯à²°à³à²¥)</div>
     <div>High (less heat)</div>
   </div>
   <div class="table-row">
-    <div>Polarity</div>
-    <div>Works either way</div>
-    <div>Needs correct (+/−)</div>
+    <div>à²§à³à²°à³à²µà²¤à³†</div>
+    <div>à²Žà²°à²¡à³‚ à²°à³€à²¤à²¿ à²•à³†à²²à²¸</div>
+    <div>ಸರಿ (+/−) ಅಗತ್ಯ</div>
   </div>
   <div class="table-row">
-    <div>Lifespan</div>
-    <div>~1000 hours</div>
-    <div>~50,000 hours</div>
+    <div>à²†à²¯à³à²·à³à²¯</div>
+    <div>~1000 à²—à²‚à²Ÿà³†à²—à²³à³</div>
+    <div>~50,000 à²—à²‚à²Ÿà³†à²—à²³à³</div>
   </div>
 </div>
 
 <div class="detail-panel" id="detail-panel">
-  <div class="detail-title" id="detail-title">💡 Incandescent Bulb</div>
+  <div class="detail-title" id="detail-title">💡 ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ ಬಲ್ಬ್</div>
   <div class="detail-text" id="detail-text">
-    An incandescent bulb has a thin wire called a <strong>filament</strong> inside a glass bulb. When electric current passes through the filament, it gets very hot (about 2500°C) and glows, producing light.<br><br>
-    The filament is connected to two terminals at the base. It works regardless of which way you connect it (no polarity needed).
+    ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ ಬಲ್ಬ್‌ನಲ್ಲಿ ತೆಳುವಾದ ತಂತಿ ಇದೆ, ಅದನ್ನು <strong>ಫಿಲಾಮೆಂಟ್</strong> ಎಂದು ಕರೆಯಲಾಗುತ್ತದೆ. ವಿದ್ಯುತ್ ಪ್ರವಾಹ ಫಿಲಾಮೆಂಟ್ ಮೂಲಕ ಹರಿಯುವಾಗ, ಅದು ಬಹಳ ಬಿಸಿಯಾಗುತ್ತದೆ (ಸುಮಾರು 2500°C) ಮತ್ತು ಬೆಳಗುತ್ತದೆ, ಬೆಳಕನ್ನು ಉತ್ಪಾದಿಸುತ್ತದೆ.<br><br>
+    The à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³ is connected to two terminals at the base. It works regardless of which way you connect it (no polarity needed).
   </div>
 </div>
 
 <div class="polarity-note">
-  <div class="title">⚠️ Important: LED Polarity</div>
+  <div class="title">⚠️ Important: LED à²§à³à²°à³à²µà²¤à³†</div>
   <div class="text">
-    LEDs have two legs of <strong>different lengths</strong>:<br>
-    • <strong>Longer leg = Positive (+)</strong> - connect to + of battery<br>
-    • <strong>Shorter leg = Negative (−)</strong> - connect to − of battery<br><br>
+    LEDs have two legs of <strong>à²µà²¿à²­à²¿à²¨à³à²¨ à²‰à²¦à³à²¦</strong>:<br>
+    • <strong>à²‰à²¦à³à²¦ à²²à³†à²—à³ = à²§à²¨ (+)</strong> - connect to + of ಬ್ಯಾಟರಿ<br>
+    • <strong>à²•à²¿à²°à²¿à²¦à²¾à²¦er leg = ಋಣ (−)</strong> - connect to − of ಬ್ಯಾಟರಿ<br><br>
     If connected wrong way, LED won't glow!
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 What You Learned</div>
+  <div class="takeaway-title">🎯 ನೀವು ಕಲಿತದ್ದು</div>
   <div class="takeaway-text">
-    <strong>Incandescent bulbs</strong> use a heated filament to produce light and work either way. <strong>LEDs</strong> are more efficient, last longer, but need correct polarity (+ to +, − to −) to work.
+    <strong>ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ bulbs</strong> à²¬à²¿à²¸à²¿ à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³ à²¬à³†à²³à²•à³ à²‰à²¤à³à²ªà²¾à²¦à²¿à²¸à²¿ à²Žà²°à²¡à³‚ à²°à³€à²¤à²¿ à²•à³†à²²à²¸. <strong>LEDs</strong> ಹೆಚ್ಚು ಕಾರ್ಯಕ್ಷಮ, ಹೆಚ್ಚು ಕಾಲ, ಆದರೆ ಸರಿ ಧ್ರುವತೆ (+ to +, − to −) ಅಗತ್ಯ.
   </div>
 </div>
 
 </div>
 
 <script>
-let selectedLamp = 'incandescent';
+let selectedLamp = 'incಮತ್ತುescent';
 let isOn = false;
 
-const incGlass = document.getElementById('inc-glass');
+const incà²—à²¾à²œà³ = document.getElementById('inc-glass');
 const incFilament = document.getElementById('inc-filament');
 const ledDome = document.getElementById('led-dome');
 const ledChip = document.getElementById('led-chip');
 const incStatus = document.getElementById('inc-status');
 const ledStatus = document.getElementById('led-status');
-const switchToggle = document.getElementById('switch-toggle');
+const ಸ್ವಿಚ್Toggle = document.getElementById('switch-toggle');
 const detailTitle = document.getElementById('detail-title');
 const detailText = document.getElementById('detail-text');
 
 function selectLamp(type) {
   selectedLamp = type;
-  document.getElementById('incandescent-box').classList.toggle('active', type === 'incandescent');
+  document.getElementById('incandescent-box').classList.toggle('active', type === 'incಮತ್ತುescent');
   document.getElementById('led-box').classList.toggle('active', type === 'led');
   
-  if (type === 'incandescent') {
-    detailTitle.textContent = '💡 Incandescent Bulb';
+  if (type === 'incಮತ್ತುescent') {
+    detailTitle.textContent = '💡 ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ ಬಲ್ಬ್';
     detailText.innerHTML = `
-      An incandescent bulb has a thin wire called a <strong>filament</strong> inside a glass bulb. When electric current passes through the filament, it gets very hot (about 2500°C) and glows, producing light.<br><br>
-      The filament is connected to two terminals at the base. It works regardless of which way you connect it (no polarity needed).
+      ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ ಬಲ್ಬ್‌ನಲ್ಲಿ ತೆಳುವಾದ ತಂತಿ ಇದೆ, ಅದನ್ನು <strong>ಫಿಲಾಮೆಂಟ್</strong> ಎಂದು ಕರೆಯಲಾಗುತ್ತದೆ. ವಿದ್ಯುತ್ ಪ್ರವಾಹ ಫಿಲಾಮೆಂಟ್ ಮೂಲಕ ಹರಿಯುವಾಗ, ಅದು ಬಹಳ ಬಿಸಿಯಾಗುತ್ತದೆ (ಸುಮಾರು 2500°C) ಮತ್ತು ಬೆಳಗುತ್ತದೆ, ಬೆಳಕನ್ನು ಉತ್ಪಾದಿಸುತ್ತದೆ.<br><br>
+      The à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³ is connected to two terminals at the base. It works regardless of which way you connect it (no polarity needed).
     `;
   } else {
-    detailTitle.textContent = '🔆 LED (Light Emitting Diode)';
+    detailTitle.textContent = '🔆 LED (à²²à³ˆà²Ÿà³ à²Žà²®à²¿à²Ÿà²¿à²‚à²—à³ à²¡à²¯à³‹à²¡à³)';
     detailText.innerHTML = `
-      An LED has no filament. Instead, it has a <strong>semiconductor chip</strong> that emits light when current flows through it in the correct direction.<br><br>
-      LEDs have two legs: the <strong>longer leg is positive (+)</strong> and the <strong>shorter leg is negative (−)</strong>. They only work when connected with correct polarity!
+      An LED has no à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³. Instead, it has a <strong>semiconductor chip</strong> that emits light when current flows through it in the correct direction.<br><br>
+      LEDs have two legs: the <strong>longer leg is ಧನ (+)</strong> ಮತ್ತು the <strong>shorter leg is ಋಣ (−)</strong>. They only work when connected with correct polarity!
     `;
   }
 }
 
-function toggleSwitch() {
+function toggleಸ್ವಿಚ್() {
   isOn = !isOn;
-  switchToggle.classList.toggle('on', isOn);
+  ಸ್ವಿಚ್Toggle.classList.toggle('on', isOn);
   
   if (isOn) {
-    // Turn on incandescent
-    incGlass.setAttribute('fill', '#ffeb3b');
+    // Turn on incಮತ್ತುescent
+    incà²—à²¾à²œà³.setAttribute('fill', '#ffeb3b');
     incFilament.setAttribute('stroke', '#ff5722');
-    incFilament.classList.add('filament-heat');
-    incGlass.classList.add('bulb-on');
-    incStatus.textContent = 'ON - Filament glowing!';
+    incFilament.classList.add('à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³-heat');
+    incà²—à²¾à²œà³.classList.add('bulb-on');
+    incStatus.textContent = 'ಆನ್ - ಫಿಲಾಮೆಂಟ್ ಜ್ವಲಿಸುತ್ತಿದೆ!';
     
     // Turn on LED
     ledDome.setAttribute('fill', '#4caf50');
@@ -437,11 +437,11 @@ function toggleSwitch() {
     ledDome.classList.add('bulb-on');
     ledStatus.textContent = 'ON - LED emitting light!';
   } else {
-    // Turn off incandescent
-    incGlass.setAttribute('fill', '#e0e0e0');
+    // Turn off incಮತ್ತುescent
+    incà²—à²¾à²œà³.setAttribute('fill', '#e0e0e0');
     incFilament.setAttribute('stroke', '#9e9e9e');
-    incFilament.classList.remove('filament-heat');
-    incGlass.classList.remove('bulb-on');
+    incFilament.classList.remove('à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³-heat');
+    incà²—à²¾à²œà³.classList.remove('bulb-on');
     incStatus.textContent = 'OFF';
     
     // Turn off LED

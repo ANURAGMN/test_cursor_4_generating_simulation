@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -84,7 +84,7 @@ body {
   transition: background 0.5s ease;
 }
 
-/* Rainwater Harvesting View */
+/* ವರ್ಷಾಧಾರ ಸಂಗ್ರಹಣೆ View */
 .rwh-view {
   position: relative;
   width: 100%;
@@ -153,7 +153,7 @@ body {
   border-radius: 5px;
 }
 
-.tank-water {
+.tank-ನೀರು {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -173,7 +173,7 @@ body {
   white-space: nowrap;
 }
 
-.water-drop-rwh {
+.ನೀರು-drop-rwh {
   position: absolute;
   font-size: 12px;
   animation: dropFall 1.5s linear infinite;
@@ -184,7 +184,7 @@ body {
   100% { transform: translateY(60px); opacity: 0; }
 }
 
-/* Recharge Pit View */
+/* ರಿಚಾರ್ಜ್ ಗುಂಡಿ View */
 .pit-view {
   position: relative;
   width: 100%;
@@ -222,7 +222,7 @@ body {
   background: linear-gradient(180deg, #8d6e63, #6d4c41);
 }
 
-.pit-sand {
+.pit-sಮತ್ತು {
   position: absolute;
   bottom: 40px;
   left: 0;
@@ -231,17 +231,17 @@ body {
   background: linear-gradient(180deg, #d7ccc8, #bcaaa4);
 }
 
-.pit-water {
+.pit-ನೀರು {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 30px;
   background: linear-gradient(180deg, rgba(79,195,247,0.7), rgba(2,136,209,0.7));
-  animation: pitWaterMove 2s ease-in-out infinite;
+  animation: pitನೀರುMove 2s ease-in-out infinite;
 }
 
-@keyframes pitWaterMove {
+@keyframes pitನೀರುMove {
   0%, 100% { height: 30px; }
   50% { height: 20px; }
 }
@@ -271,7 +271,7 @@ body {
   white-space: nowrap;
 }
 
-/* Ice Stupa View */
+/* à²à²¸à³ à²¸à³à²¤à³‚à²ª View */
 .stupa-view {
   position: relative;
   width: 100%;
@@ -297,19 +297,19 @@ body {
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
   border-bottom: 100px solid #e3f2fd;
-  filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+  filter: drop-ನೆರಳು(0 0 10px rgba(255,255,255,0.5));
 }
 
-.stupa-water {
+.stupa-ನೀರು {
   position: absolute;
   bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 20px;
-  animation: waterSpray 1s ease-in-out infinite;
+  animation: ನೀರುSpray 1s ease-in-out infinite;
 }
 
-@keyframes waterSpray {
+@keyframes ನೀರುSpray {
   0%, 100% { transform: translateX(-50%) scale(1); }
   50% { transform: translateX(-50%) scale(1.2); }
 }
@@ -378,38 +378,38 @@ body {
 
 <div class="header">
   <h1>💧 ಜಲ ಸಂರಕ್ಷಣೆ</h1>
-  <p>Protecting our precious water resources</p>
+  <p>ನಮ್ಮ ಅಮೂಲ್ಯ ಜಲ ಸಂಪನ್ಮೂಲಗಳನ್ನು ರಕ್ಷಿಸುವುದು</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    Groundwater is being <strong>depleted</strong> due to overuse and reduced infiltration (from concrete, less vegetation). <strong>Rainwater harvesting</strong> and <strong>recharge pits</strong> help replenish groundwater for future generations.
+    ಭೂಜಲ <strong>ಖಾಲಿಯಾಗುತ್ತಿದೆ</strong> ಅತಿಯಾದ ಬಳಕೆ ಮತ್ತು ಕಡಿಮೆ ಅಂತರ್ಸೇಚನ (ಕಾಂಕ್ರೀಟ್ess vegetation). <strong>Rainನೀರು harvesting</strong> ಮತ್ತು <strong>à²°à²¿à²šà²¾à²°à³à²œà³ à²—à³à²‚à²¡à²¿à²—à²³à³</strong> à²­à²µà²¿à²·à³à²¯à²¦ à²ªà³€à²³à²¿à²—à³†à²—à³† à²­à³‚à²œà²² à²ªà³à²¨à²ƒà²ªà³‚à²°à²£à³†.
   </div>
 </div>
 
 <div class="sim-card">
   <div class="method-tabs">
-    <button class="method-tab active" onclick="selectMethod('rwh', this)">
+    <button class="method-tab active" onclick="selectವಿಧಾನ('rwh', this)">
       <span class="emoji">🏠</span>
-      Rainwater Harvesting
+      ವರ್ಷಾಧಾರ ಸಂಗ್ರಹಣೆ
     </button>
-    <button class="method-tab" onclick="selectMethod('pit', this)">
+    <button class="method-tab" onclick="selectವಿಧಾನ('pit', this)">
       <span class="emoji">🕳️</span>
-      Recharge Pit
+      ರಿಚಾರ್ಜ್ ಗುಂಡಿ
     </button>
-    <button class="method-tab" onclick="selectMethod('stupa', this)">
+    <button class="method-tab" onclick="selectವಿಧಾನ('stupa', this)">
       <span class="emoji">🏔️</span>
-      Ice Stupa
+      à²à²¸à³ à²¸à³à²¤à³‚à²ª
     </button>
   </div>
   
   <div class="conservation-visual">
-    <!-- Rainwater Harvesting View -->
+    <!-- ವರ್ಷಾಧಾರ ಸಂಗ್ರಹಣೆ View -->
     <div class="rwh-view" id="rwh-view">
       <div class="rwh-cloud">🌧️</div>
-      <div class="water-drop-rwh" style="left: 45%; top: 50px; animation-delay: 0s;">💧</div>
-      <div class="water-drop-rwh" style="left: 55%; top: 50px; animation-delay: 0.5s;">💧</div>
+      <div class="ನೀರು-drop-rwh" style="left: 45%; top: 50px; animation-delay: 0s;">💧</div>
+      <div class="ನೀರು-drop-rwh" style="left: 55%; top: 50px; animation-delay: 0.5s;">💧</div>
       
       <div class="rwh-house">
         <div class="house-roof"></div>
@@ -418,60 +418,60 @@ body {
       <div class="gutter"></div>
       <div class="pipe"></div>
       <div class="tank">
-        <div class="tank-water" style="height: 70%;"></div>
-        <div class="tank-label">Storage Tank</div>
+        <div class="tank-ನೀರು" style="height: 70%;"></div>
+        <div class="tank-label">à²­à²‚à²¡à²¾à²° à²Ÿà³à²¯à²¾à²‚à²•à³</div>
       </div>
     </div>
     
-    <!-- Recharge Pit View -->
+    <!-- ರಿಚಾರ್ಜ್ ಗುಂಡಿ View -->
     <div class="pit-view" id="pit-view">
       <div class="pit-cloud">🌧️</div>
       <div class="recharge-pit">
-        <div class="pit-water"></div>
-        <div class="pit-sand"></div>
+        <div class="pit-ನೀರು"></div>
+        <div class="pit-sಮತ್ತು"></div>
         <div class="pit-gravel"></div>
         <div class="pit-arrow" style="top: 50px; left: 35%;">⬇️</div>
         <div class="pit-arrow" style="top: 60px; left: 55%; animation-delay: 0.5s;">⬇️</div>
       </div>
-      <div class="pit-label">Water seeps to groundwater</div>
+      <div class="pit-label">ನೀರು à²­à³‚à²œà²²à²•à³à²•à³† à²’à²³à²¸à³‡à²°à³à²¤à³à²¤à²¦à³†</div>
     </div>
     
-    <!-- Ice Stupa View -->
+    <!-- à²à²¸à³ à²¸à³à²¤à³‚à²ª View -->
     <div class="stupa-view" id="stupa-view">
       <div class="stupa-moon">🌙</div>
       <div class="mountain-bg"></div>
       <div class="ice-stupa"></div>
-      <div class="stupa-water">💦</div>
-      <div class="stupa-label">❄️ Ice Stupa - Ladakh</div>
+      <div class="stupa-ನೀರು">💦</div>
+      <div class="stupa-label">❄️ à²à²¸à³ à²¸à³à²¤à³‚à²ª - Ladakh</div>
     </div>
   </div>
 </div>
 
 <div class="info-panel" id="info-panel">
-  <div class="info-title" id="info-title">🏠 Rainwater Harvesting</div>
+  <div class="info-title" id="info-title">🏠 ವರ್ಷಾಧಾರ ಸಂಗ್ರಹಣೆ</div>
   <div class="info-text" id="info-text">
-    Rainwater falling on rooftops is collected through gutters and pipes into storage tanks. This water can be used for <strong>gardening, washing, or even drinking</strong> (after treatment). It reduces dependence on groundwater!
+    ಛಾವಣಿಯ ಮೇಲೆ ಬೀಳುವ ಮಳೆನೀರು ಗಟರ್ಸ್ ಮೂಲಕ ಸಂಗ್ರಹs ಮತ್ತು pipes into storage tanks. This ನೀರು can be used for <strong>à²‰à²¦à³à²¯à²¾à²¨, à²¤à³Šà²³à³†à²¯à³à²µà³à²¦à³ à²…à²¥à²µà²¾ à²•à³à²¡à²¿à²¯à³à²µà³à²¦à³</strong> (à²šà²¿à²•à²¿à²¤à³à²¸à³†à²¯ à²¨à²‚à²¤à²°). à²­à³‚à²œà²² à²…à²µà²²à²‚à²¬à²¨à³† à²•à²¡à²¿à²®à³†!
   </div>
 </div>
 
 <div class="problem-box">
-  <div class="problem-title">⚠️ The Problem: Groundwater Depletion</div>
+  <div class="problem-title">⚠️ The Problem: Groundನೀರು Depletion</div>
   <div class="problem-text">
-    • <strong>Concrete surfaces</strong> prevent water from seeping into ground<br>
-    • <strong>Deforestation</strong> reduces water retention<br>
-    • <strong>Over-extraction</strong> for agriculture and cities<br>
-    • Water tables are falling in many areas of India
+    • <strong>à²•à²¾à²‚à²•à³à²°à³€à²Ÿà³ à²®à³‡à²²à³à²®à³ˆ</strong> ನೀರು à²­à³‚à²®à²¿à²—à³† à²’à²³à²¸à³‡à²°à³à²µà³à²¦à³ à²¤à²¡à³†<br>
+    • <strong>à²µà²¨à²¨à²¾à²¶</strong> ನೀರು à²§à²¾à²°à²£ à²•à²¡à²¿à²®à³†<br>
+    • <strong>à²…à²¤à²¿ à²¹à³Šà²°à²¤à³†à²—à³†à²¯à³à²µà²¿à²•à³†</strong> à²•à³ƒà²·à²¿ à²®à²¤à³à²¤à³ à²¨à²—à²°à²—à²³à²¿à²—à³†<br>
+    • ಭಾರತದ ಅನೇಕ ಪ್ರದೇಶದಲ್ಲಿ ಭೂಜಲ ಇಳಿಯುತ್ತಿದೆ
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 What Can We Do?</div>
+  <div class="takeaway-title">🎯 ನಾವು ಏನು ಮಾಡಬಹುದು?</div>
   <div class="takeaway-text">
-    • Install <strong>rainwater harvesting</strong> at home<br>
-    • Create <strong>recharge pits</strong> in gardens<br>
-    • <strong>Plant trees</strong> - roots help infiltration<br>
-    • <strong>Use water wisely</strong> - fix leaks, shorter showers<br>
-    • Support community water conservation projects
+    • ಸ್ಥಾಪಿಸಿ <strong>rainನೀರು harvesting</strong> at home<br>
+    • ರಚಿಸಿ <strong>à²°à²¿à²šà²¾à²°à³à²œà³ à²—à³à²‚à²¡à²¿à²—à²³à³</strong> à²‰à²¦à³à²¯à²¾à²¨à²—à²³à²²à³à²²à²¿<br>
+    • <strong>à²®à²° à²¨à³†à²¡à²¿</strong> - à²¬à³‡à²°à³à²—à²³à³ à²’à²³à²¸à³‡à²°à³à²µà²¿à²•à³†à²—à³† à²¸à²¹à²¾à²¯<br>
+    • <strong>à²¨à³€à²°à²¨à³à²¨à³ à²¬à³à²¦à³à²§à²¿à²µà²‚à²¤à²¿à²•à³†à²¯à²¿à²‚à²¦ à²¬à²³à²¸à²¿</strong> - à²¸à³‹à²°à²¿à²•à³† à²¸à²°à²¿à²ªà²¡à²¿à²¸à²¿, à²šà²¿à²•à³à²• à²¸à³à²¨à²¾à²¨<br>
+    • Support community ನೀರು conservation projects
   </div>
 </div>
 
@@ -480,16 +480,16 @@ body {
 <script>
 const methods = {
   rwh: {
-    title: '🏠 Rainwater Harvesting',
-    text: 'Rainwater falling on rooftops is collected through gutters and pipes into storage tanks. This water can be used for <strong>gardening, washing, or even drinking</strong> (after treatment). It reduces dependence on groundwater!'
+    title: '🏠 ವರ್ಷಾಧಾರ ಸಂಗ್ರಹಣೆ',
+    text: 'ಛಾವಣಿಯ ಮೇಲೆ ಬೀಳುವ ಮಳೆನೀರು ಗಟರ್ಸ್ ಮೂಲಕ ಸಂಗ್ರಹs ಮತ್ತು pipes into storage tanks. This ನೀರು can be used for <strong>à²‰à²¦à³à²¯à²¾à²¨, à²¤à³Šà²³à³†à²¯à³à²µà³à²¦à³ à²…à²¥à²µà²¾ à²•à³à²¡à²¿à²¯à³à²µà³à²¦à³</strong> (à²šà²¿à²•à²¿à²¤à³à²¸à³†à²¯ à²¨à²‚à²¤à²°). à²­à³‚à²œà²² à²…à²µà²²à²‚à²¬à²¨à³† à²•à²¡à²¿à²®à³†!'
   },
   pit: {
-    title: '🕳️ Recharge Pit',
-    text: 'A recharge pit is a hole filled with gravel and sand that allows rainwater to <strong>seep directly into the ground</strong>. The layers filter the water as it passes through. This helps replenish the aquifer (underground water storage).'
+    title: '🕳️ ರಿಚಾರ್ಜ್ ಗುಂಡಿ',
+    text: 'A recharge pit is a hole filled with gravel ಮತ್ತು sಮತ್ತು that allows rainನೀರು to <strong>seep directly into the ground</strong>. The layers filter the ನೀರು as it passes through. This helps replenish the aquifer (underground ನೀರು storage).'
   },
   stupa: {
-    title: '🏔️ Ice Stupa (Ladakh)',
-    text: 'In cold Ladakh, water is sprayed at night in winter to form <strong>artificial glaciers</strong> called Ice Stupas. These cone-shaped ice structures slowly melt in summer, providing water for farming when it\'s needed most - an ingenious traditional solution!'
+    title: '🏔️ ಐಸ್ ಸ್ಟೂಪಾ (ಲಡಾಕ್)',
+    text: 'In cold Ladakh, ನೀರು is sprayed at à²°à²¾à²¤à³à²°à²¿ in winter to form <strong>artificial glaciers</strong> called à²à²¸à³ à²¸à³à²¤à³‚à²ªs. These cone-shaped ice structures slowly melt in summer, providing ನೀರು for farming when it\'s needed most - an ingenious traditional solution!'
   }
 };
 
@@ -499,7 +499,7 @@ const stupaView = document.getElementById('stupa-view');
 const infoTitle = document.getElementById('info-title');
 const infoText = document.getElementById('info-text');
 
-function selectMethod(method, btn) {
+function selectವಿಧಾನ(method, btn) {
   document.querySelectorAll('.method-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   

@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -105,7 +105,7 @@ body {
   background: #fff;
   border: 3px solid #ff5722;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-ನೆರಳು: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .distance-value {
@@ -124,7 +124,7 @@ body {
   overflow: hidden;
 }
 
-.heat-source {
+.heat-ಮೂಲ {
   position: absolute;
   left: 30px;
   top: 50%;
@@ -133,24 +133,24 @@ body {
   transition: all 0.3s ease;
 }
 
-.source-icon {
+.ಮೂಲ-icon {
   font-size: 50px;
-  filter: drop-shadow(0 0 20px #ff9800);
+  filter: drop-ನೆರಳು(0 0 20px #ff9800);
   animation: glow 1.5s ease-in-out infinite alternate;
 }
 
-.source-icon.off {
+.ಮೂಲ-icon.off {
   filter: none;
   animation: none;
   opacity: 0.5;
 }
 
 @keyframes glow {
-  0% { filter: drop-shadow(0 0 10px #ff9800); }
-  100% { filter: drop-shadow(0 0 30px #ff5722); }
+  0% { filter: drop-ನೆರಳು(0 0 10px #ff9800); }
+  100% { filter: drop-ನೆರಳು(0 0 30px #ff5722); }
 }
 
-.source-label {
+.ಮೂಲ-label {
   font-size: 10px;
   color: #ffcc80;
   margin-top: 5px;
@@ -210,7 +210,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.temp-indicator {
+.temp-ಸೂಚಕ {
   padding: 6px 12px;
   border-radius: 15px;
   font-size: 12px;
@@ -263,7 +263,7 @@ body {
 }
 
 .color-box:hover { transform: scale(1.05); }
-.color-box.selected { box-shadow: 0 0 0 3px #ffeb3b; }
+.color-box.selected { box-ನೆರಳು: 0 0 0 3px #ffeb3b; }
 
 .color-box.dark { background: #333; color: #fff; }
 .color-box.light { background: #f5f5f5; color: #333; border: 2px solid #e0e0e0; }
@@ -302,41 +302,41 @@ body {
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    <strong>ವಿಕಿರಣ</strong> transfers heat without any medium - through empty space! Move the slider to see how distance affects heat intensity.
+    <strong>ವಿಕಿರಣ</strong> ಯಾವುದೇ ಮಾಧ್ಯಮವಿಲ್ಲದೆ - ಖಾಲಿ ಜಾಗದ ಮೂಲಕ ಉಷ್ಣ ವರ್ಗಾವಣೆ! Move the slider to see how distance affects heat intensity.
   </div>
 </div>
 
 <div class="sim-card">
   <div class="controls">
-    <button class="control-btn active" onclick="setSource('fire', this)">
+    <button class="control-btn active" onclick="setಮೂಲ('fire', this)">
       <span class="emoji">🔥</span>
-      Fireplace
+      ಅಗ್ನಿಕುಂಡ
     </button>
-    <button class="control-btn" onclick="setSource('sun', this)">
+    <button class="control-btn" onclick="setಮೂಲ('sun', this)">
       <span class="emoji">☀️</span>
       Sun
     </button>
-    <button class="control-btn" onclick="setSource('pan', this)">
+    <button class="control-btn" onclick="setಮೂಲ('pan', this)">
       <span class="emoji">🍳</span>
       Hot Pan
     </button>
   </div>
   
   <div class="distance-control">
-    <label>📏 ಸರಿಹೊಂದಿಸಿ ದೂರ from Heat Source:</label>
+    <label>📏 ಸರಿಹೊಂದಿಸಿ ದೂರ from Heat ಮೂಲ:</label>
     <input type="range" id="distance-slider" min="1" max="10" value="5" oninput="updateದೂರ(this.value)">
     <div class="distance-value">
-      <span>🔥 Close</span>
+      <span>🔥 ಮುಚ್ಚಿ</span>
       <span>Far 🧊</span>
     </div>
   </div>
   
   <div class="radiation-visual" id="visual">
-    <div class="heat-source">
-      <div class="source-icon" id="source-icon">🔥</div>
-      <div class="source-label" id="source-label">Fireplace</div>
+    <div class="heat-ಮೂಲ">
+      <div class="ಮೂಲ-icon" id="ಮೂಲ-icon">🔥</div>
+      <div class="ಮೂಲ-label" id="ಮೂಲ-label">ಅಗ್ನಿಕುಂಡ</div>
     </div>
     
     <div class="radiation-waves">
@@ -350,81 +350,81 @@ body {
     <div class="receiver" id="receiver">
       <div class="receiver-icon" id="receiver-icon">🧍</div>
       <div class="receiver-label" id="receiver-label">You</div>
-      <div class="temp-indicator temp-warm" id="temp-indicator">🌡️ Warm</div>
+      <div class="temp-ಸೂಚಕ temp-warm" id="temp-indicator">🌡️ Warm</div>
     </div>
     
-    <div class="intensity-meter" id="intensity-meter">Intensity: 50%</div>
+    <div class="intensity-meter" id="intensity-meter">à²¤à³€à²µà³à²°à²¤à³†: 50%</div>
   </div>
 </div>
 
 <div class="color-experiment">
-  <div class="color-title">👕 Experiment: Dark vs Light Colors</div>
+  <div class="color-title">👕 ಪ್ರಯೋಗ: ಗಾಢ ವಿರುದ್ಧ ಒಳ ಬಣ್ಣ</div>
   <div class="color-test">
     <div class="color-box dark selected" onclick="selectColor('dark', this)">
       <div class="temp" id="dark-temp">🔥</div>
-      <div class="label">Black Shirt</div>
+      <div class="label">à²•à²ªà³à²ªà³ à²¶à²°à³à²Ÿà³</div>
     </div>
     <div class="color-box light" onclick="selectColor('light', this)">
       <div class="temp" id="light-temp">❄️</div>
-      <div class="label">White Shirt</div>
+      <div class="label">à²¬à²¿à²³à²¿ à²¶à²°à³à²Ÿà³</div>
     </div>
   </div>
   <div class="color-result" id="color-result">
-    <strong>Dark colors ABSORB</strong> more radiated heat → Feel hotter!<br>
-    <strong>Light colors REFLECT</strong> radiated heat → Stay cooler!
+    <strong>ಗಾಢ ಬಣ್ಣಗಳು ಹೀರಿಕೊಳ್ಳುತ್ತವೆ</strong> ಹೆಚ್ಚು ವಿಕಿರಣ ಉಷ್ಣ → ಹೆಚ್ಚು ಬಿಸಿ!<br>
+    <strong>ಥಳಥಳ ಬಣ್ಣಗಳು ಪ್ರತಿಫಲಿಸುತ್ತವೆ</strong> ವಿಕಿರಣ ಉಷ್ಣ → ತಂಪಾಗಿ ಉಳಿಯಿರಿ!
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 Remember</div>
+  <div class="takeaway-title">🎯 ನೆನಪಿಡಿ</div>
   <div class="takeaway-text">
-    • ವಿಕಿರಣ needs <strong>NO medium</strong><br>
-    • Heat intensity <strong>decreases with distance</strong><br>
-    • <strong>Dark colors absorb</strong> more heat<br>
-    • <strong>Light colors reflect</strong> heat<br>
-    • Wear white in summer, dark in winter!
+    • ವಿಕಿರಣ needs <strong>à²®à²¾à²§à³à²¯à²® à²‡à²²à³à²²</strong><br>
+    • ಉಷ್ಣ ತೀವ್ರತೆ <strong>à²¦à³‚à²°à²¦à³Šà²‚à²¦à²¿à²—à³† à²•à²¡à²¿à²®à³†</strong><br>
+    • <strong>ಗಾಢ ಬಣ್ಣಗಳು ಹೀರಿಕೊಳ್ಳುತ್ತವೆ</strong> more heat<br>
+    • <strong>ಒಳ್ಳೆ ಬಣ್ಣಗಳು ಪ್ರತಿಫಲಿಸುತ್ತವೆ</strong> heat<br>
+    • ಬೇಸಿಗೆಯಲ್ಲಿ ಬಿಳಿ, ಚಳಿಯಲ್ಲಿ ಗಾಢ ಧರಿಸಿ!
   </div>
 </div>
 
 </div>
 
 <script>
-let currentSource = 'fire';
+let currentಮೂಲ = 'fire';
 let distance = 5;
 
-const sources = {
-  fire: { icon: '🔥', label: 'Fireplace', receiver: '🧍', receiverLabel: 'You' },
+const ಮೂಲs = {
+  fire: { icon: '🔥', label: 'ಅಗ್ನಿಕುಂಡ', receiver: '🧍', receiverLabel: 'You' },
   sun: { icon: '☀️', label: 'The Sun', receiver: '🌍', receiverLabel: 'Earth' },
-  pan: { icon: '🍳', label: 'Hot Pan', receiver: '✋', receiverLabel: 'Your Hand' }
+  pan: { icon: '🍳', label: 'Hot Pan', receiver: '✋', receiverLabel: 'Your Hಮತ್ತು' }
 };
 
-const sourceIcon = document.getElementById('source-icon');
-const sourceLabel = document.getElementById('source-label');
+const ಮೂಲIcon = document.getElementById('source-icon');
+const ಮೂಲLabel = document.getElementById('source-label');
 const receiverIcon = document.getElementById('receiver-icon');
 const receiverLabel = document.getElementById('receiver-label');
 const tempIndicator = document.getElementById('temp-indicator');
 const intensityMeter = document.getElementById('intensity-meter');
 const receiver = document.getElementById('receiver');
 
-function setSource(type, btn) {
-  currentSource = type;
+function setಮೂಲ(type, btn) {
+  currentಮೂಲ = type;
   
   document.querySelectorAll('.control-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   
-  const source = sources[type];
-  sourceIcon.textContent = source.icon;
-  sourceLabel.textContent = source.label;
-  receiverIcon.textContent = source.receiver;
-  receiverLabel.textContent = source.receiverLabel;
+  const ಮೂಲ = ಮೂಲs[type];
+  ಮೂಲIcon.textContent = ಮೂಲ.icon;
+  ಮೂಲLabel.textContent = ಮೂಲ.label;
+  receiverIcon.textContent = ಮೂಲ.receiver;
+  receiverLabel.textContent = ಮೂಲ.receiverLabel;
   
-  updateDistance(distance);
+  updateದೂರ(distance);
 }
 
-function updateDistance(value) {
+function updateದೂರ(value) {
   distance = parseInt(value);
   
-  // Calculate intensity (inverse square law simplified)
+  // ಲೆಕ್ಕ ಹಾಕಿ intensity (inverse square law simplified)
   const intensity = Math.max(10, 100 - (distance - 1) * 10);
   intensityMeter.textContent = `Intensity: ${intensity}%`;
   
@@ -432,8 +432,8 @@ function updateDistance(value) {
   const rightPos = 20 + (distance - 1) * 5;
   receiver.style.right = `${rightPos}px`;
   
-  // Update temperature indicator
-  tempIndicator.className = 'temp-indicator';
+  // Update temperature ಸೂಚಕ
+  tempIndicator.className = 'temp-ಸೂಚಕ';
   
   if (intensity >= 70) {
     tempIndicator.classList.add('temp-hot');
@@ -464,14 +464,14 @@ function selectColor(color, el) {
   const result = document.getElementById('color-result');
   
   if (color === 'dark') {
-    result.innerHTML = '<strong>Dark colors ABSORB</strong> more radiated heat → Feel hotter!<br>That\'s why black shirts feel warm in sunlight.';
+    result.innerHTML = '<strong>ಗಾಢ ಬಣ್ಣಗಳು ಹೀರಿಕೊಳ್ಳುತ್ತವೆ</strong> ಹೆಚ್ಚು ವಿಕಿರಣ ಉಷ್ಣ → ಹೆಚ್ಚು ಬಿಸಿ!<br>That\'s why black shirts feel warm in sunlight.';
   } else {
-    result.innerHTML = '<strong>Light colors REFLECT</strong> radiated heat → Stay cooler!<br>That\'s why white clothes are preferred in summer.';
+    result.innerHTML = '<strong>ಥಳಥಳ ಬಣ್ಣಗಳು ಪ್ರತಿಫಲಿಸುತ್ತವೆ</strong> ವಿಕಿರಣ ಉಷ್ಣ → ತಂಪಾಗಿ ಉಳಿಯಿರಿ!<br>That\'s why white clothes are preferred in summer.';
   }
 }
 
 // Initialize
-updateDistance(5);
+updateದೂರ(5);
 </script>
 </body>
 </html>

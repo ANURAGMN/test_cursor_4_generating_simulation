@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -93,14 +93,14 @@ body {
   color: #333;
 }
 
-.heat-source {
+.heat-ಮೂಲ {
   position: absolute;
   left: 15px;
   font-size: 30px;
   text-align: center;
 }
 
-.heat-source .label {
+.heat-ಮೂಲ .label {
   font-size: 9px;
   color: #e65100;
   font-weight: 600;
@@ -118,7 +118,7 @@ body {
 }
 
 .race-track:hover { transform: scale(1.02); }
-.race-track.selected { box-shadow: 0 0 0 3px #ffeb3b; }
+.race-track.selected { box-ನೆರಳು: 0 0 0 3px #ffeb3b; }
 
 .track-bg {
   width: 100%;
@@ -275,32 +275,32 @@ body {
 
 <div class="header">
   <h1>🏁 ಉಷ್ಣ ಓಟ: ವಾಹಕಗಳು ಮತ್ತು ಅವಾಹಕಗಳು</h1>
-  <p>Which material transfers heat fastest?</p>
+  <p>ಯಾವ ಪದಾರ್ಥ ಉಷ್ಣವನ್ನು ಅತ್ಯಂತ ವೇಗವಾಗಿ ವರ್ಗಾವಣೆ ಮಾಡುತ್ತದೆ?</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    <strong>Conductors</strong> (metals) transfer heat quickly. <strong>Insulators</strong> (wood, plastic, glass) transfer heat slowly. Race them to see the difference!
+    <strong>ವಾಹಕಗಳು</strong> (ಲೋಹಗಳು) ಉಷ್ಣವನ್ನು ವೇಗವಾಗಿ ವರ್ಗಾವಣೆ ಮಾಡುತ್ತವೆ. <strong>ಅವಾಹಕಗಳು</strong> (wood, plastic, glass) transfer heat slowly. Race them to see the ವ್ಯತ್ಯಾಸ!
   </div>
 </div>
 
 <div class="sim-card">
   <div class="mode-selector">
-    <button class="mode-btn active" onclick="selectMode('race', this)">🏁 Race Mode</button>
-    <button class="mode-btn" onclick="selectMode('compare', this)">📊 Compare Mode</button>
+    <button class="mode-btn active" onclick="selectMode('race', this)">🏁 ಓಟ ಮೋಡ್</button>
+    <button class="mode-btn" onclick="selectMode('compare', this)">📊 ಹೋಲಿಕೆ ಮೋಡ್</button>
   </div>
   
   <div class="race-visual">
-    <div class="race-title">🔥 Heat Transfer Race 🏁</div>
+    <div class="race-title">🔥 ಉಷ್ಣ ವರ್ಗಾವಣೆ ಓಟ 🏁</div>
     
     <div class="finish-line"></div>
-    <div class="finish-label">FINISH</div>
+    <div class="finish-label">à²®à³à²—à²¿à²¦à²¿à²¦à³†</div>
     
-    <!-- Metal Track -->
-    <div class="heat-source" style="top: 60px;">🔥</div>
+    <!-- ಲೋಹ Track -->
+    <div class="heat-ಮೂಲ" style="top: 60px;">🔥</div>
     <div class="race-track" style="top: 55px;" onclick="selectTrack('metal')">
-      <div class="track-label">Metal</div>
+      <div class="track-label">ಲೋಹ</div>
       <div class="track-bg track-metal">
         <div class="heat-progress progress-metal" id="progress-metal"></div>
       </div>
@@ -309,7 +309,7 @@ body {
     </div>
     
     <!-- Wood Track -->
-    <div class="heat-source" style="top: 115px;">🔥</div>
+    <div class="heat-ಮೂಲ" style="top: 115px;">🔥</div>
     <div class="race-track" style="top: 110px;" onclick="selectTrack('wood')">
       <div class="track-label">Wood</div>
       <div class="track-bg track-wood">
@@ -319,10 +319,10 @@ body {
       <div class="winner-badge" id="badge-wood">🥈 2nd</div>
     </div>
     
-    <!-- Glass Track -->
-    <div class="heat-source" style="top: 170px;">🔥</div>
+    <!-- à²—à²¾à²œà³ Track -->
+    <div class="heat-ಮೂಲ" style="top: 170px;">🔥</div>
     <div class="race-track" style="top: 165px;" onclick="selectTrack('glass')">
-      <div class="track-label">Glass</div>
+      <div class="track-label">à²—à²¾à²œà³</div>
       <div class="track-bg track-glass">
         <div class="heat-progress progress-glass" id="progress-glass"></div>
       </div>
@@ -330,10 +330,10 @@ body {
       <div class="winner-badge" id="badge-glass">🥉 3rd</div>
     </div>
     
-    <!-- Plastic Track -->
-    <div class="heat-source" style="top: 225px;">🔥</div>
+    <!-- à²ªà³à²²à²¾à²¸à³à²Ÿà²¿à²•à³ Track -->
+    <div class="heat-ಮೂಲ" style="top: 225px;">🔥</div>
     <div class="race-track" style="top: 220px;" onclick="selectTrack('plastic')">
-      <div class="track-label">Plastic</div>
+      <div class="track-label">à²ªà³à²²à²¾à²¸à³à²Ÿà²¿à²•à³</div>
       <div class="track-bg track-plastic">
         <div class="heat-progress progress-plastic" id="progress-plastic"></div>
       </div>
@@ -343,45 +343,45 @@ body {
   </div>
   
   <div class="controls">
-    <button class="control-btn start-btn" id="start-btn" onclick="startRace()">🏁 Start Race!</button>
-    <button class="control-btn reset-btn" onclick="resetRace()">🔄 Reset</button>
+    <button class="control-btn start-btn" id="start-btn" onclick="startRace()">🏁 ಓಟ ಪ್ರಾರಂಭಿಸಿ!</button>
+    <button class="control-btn reset-btn" onclick="resetRace()">🔄 ಮರುಹೊಂದಿಸಿ</button>
   </div>
   
-  <div class="timer-display" id="timer">⏱️ 0.0 seconds</div>
+  <div class="timer-display" id="timer">⏱️ 0.0 ಸೆಕೆಂಡ್</div>
 </div>
 
 <div class="results-panel" id="results-panel" style="display: none;">
   <div class="results-title">📊 Race ಫಲಿತಾಂಶs</div>
   <div class="results-grid">
     <div class="result-item conductor">
-      <div class="name">🥄 Metal</div>
+      <div class="name">🥄 ಲೋಹ</div>
       <div class="time" id="result-metal">--</div>
-      <div class="type">⚡ CONDUCTOR</div>
+      <div class="type">⚡ ವಾಹಕ</div>
     </div>
     <div class="result-item insulator">
       <div class="name">🪵 Wood</div>
       <div class="time" id="result-wood">--</div>
-      <div class="type">🛡️ INSULATOR</div>
+      <div class="type">🛡️ ವಾಹಕವಲ್ಲದ</div>
     </div>
     <div class="result-item insulator">
-      <div class="name">🫙 Glass</div>
+      <div class="name">🫙 à²—à²¾à²œà³</div>
       <div class="time" id="result-glass">--</div>
-      <div class="type">🛡️ INSULATOR</div>
+      <div class="type">🛡️ ವಾಹಕವಲ್ಲದ</div>
     </div>
     <div class="result-item insulator">
-      <div class="name">🥤 Plastic</div>
+      <div class="name">🥤 à²ªà³à²²à²¾à²¸à³à²Ÿà²¿à²•à³</div>
       <div class="time" id="result-plastic">--</div>
-      <div class="type">🛡️ INSULATOR</div>
+      <div class="type">🛡️ ವಾಹಕವಲ್ಲದ</div>
     </div>
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 What This Shows</div>
+  <div class="takeaway-title">🎯 ಇದು ಏನನ್ನು ತೋರಿಸುತ್ತದೆ</div>
   <div class="takeaway-text">
-    • <strong>Metal wins</strong> - it's a great conductor!<br>
-    • <strong>Insulators are slow</strong> - they resist heat flow<br>
-    • That's why pan bodies are metal but handles are plastic/wood!
+    • <strong>ಲೋಹ wins</strong> - à²…à²¦à³ à²‰à²¤à³à²¤à²® à²µà²¾à²¹à²•!<br>
+    • <strong>ಅವಾಹಕಗಳು are slow</strong> - à²…à²µà³ à²‰à²·à³à²£ à²¹à²°à²¿à²µà²¨à³à²¨à³ à²¤à²¡à³†à²¯à³à²¤à³à²¤à²µà³†<br>
+    • ಅದಕ್ಕೇ ಪಾತ್ರೆ ಲೋಹ ಹಿಡಿಕೆ ಪ್ಲಾಸ್ಟಿಕ್/ಮರ!
   </div>
 </div>
 
@@ -390,12 +390,12 @@ body {
 <script>
 let isRacing = false;
 let timer = 0;
-let timerInterval;
+let timerà²®à²§à³à²¯à²‚à²¤à²°;
 let finishTimes = { metal: 0, wood: 0, glass: 0, plastic: 0 };
 let finishOrder = [];
 
-// Speed factors (higher = faster)
-const speeds = {
+// ವೇಗ factors (higher = à²µà³‡à²—à²µà²¾à²—à²¿)
+const ವೇಗs = {
   metal: 5,    // Very fast
   wood: 0.8,   // Slow
   glass: 1.0,  // Slow
@@ -418,10 +418,10 @@ function selectMode(mode, btn) {
 function selectTrack(material) {
   // Show info about the material
   const info = {
-    metal: 'Metal is an excellent conductor! Heat transfers very quickly through it.',
+    metal: 'ಲೋಹ is an excellent conductor! Heat transfers very quickly through it.',
     wood: 'Wood is an insulator. It has air pockets that slow down heat transfer.',
-    glass: 'Glass is a poor conductor. It transfers heat slowly.',
-    plastic: 'Plastic is a great insulator. Heat barely passes through!'
+    glass: 'à²—à²¾à²œà³ is a poor conductor. It transfers heat slowly.',
+    plastic: 'à²ªà³à²²à²¾à²¸à³à²Ÿà²¿à²•à³ is a great insulator. Heat barely passes through!'
   };
   alert(info[material]);
 }
@@ -440,14 +440,14 @@ function startRace() {
   // Hide all badges
   document.querySelectorAll('.winner-badge').forEach(b => b.classList.remove('show'));
   
-  timerInterval = setInterval(() => {
+  timerà²®à²§à³à²¯à²‚à²¤à²° = setà²®à²§à³à²¯à²‚à²¤à²°(() => {
     timer += 0.1;
-    document.getElementById('timer').textContent = `⏱️ ${timer.toFixed(1)} seconds`;
+    document.getElementById('timer').textContent = `⏱️ ${timer.toFixed(1)} à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³`;
     
     // Update each track
     Object.keys(progress).forEach(material => {
       if (progress[material] < 100) {
-        progress[material] += speeds[material] * (0.8 + Math.random() * 0.4);
+        progress[material] += ವೇಗs[material] * (0.8 + Math.rಮತ್ತುom() * 0.4);
         
         if (progress[material] >= 100) {
           progress[material] = 100;
@@ -462,7 +462,7 @@ function startRace() {
       }
     });
     
-    // Check if race is complete
+    // Check if race is à²ªà³‚à²°à³à²£
     if (Object.values(progress).every(p => p >= 100)) {
       endRace();
     }
@@ -477,7 +477,7 @@ function showBadge(material, position) {
 }
 
 function endRace() {
-  clearInterval(timerInterval);
+  clearà²®à²§à³à²¯à²‚à²¤à²°(timerà²®à²§à³à²¯à²‚à²¤à²°);
   isRacing = false;
   document.getElementById('start-btn').disabled = false;
   
@@ -490,7 +490,7 @@ function endRace() {
 }
 
 function resetRace() {
-  clearInterval(timerInterval);
+  clearà²®à²§à³à²¯à²‚à²¤à²°(timerà²®à²§à³à²¯à²‚à²¤à²°);
   isRacing = false;
   timer = 0;
   
@@ -499,7 +499,7 @@ function resetRace() {
     document.getElementById(`progress-${material}`).style.width = '0%';
   });
   
-  document.getElementById('timer').textContent = '⏱️ 0.0 seconds';
+  document.getElementById('timer').textContent = '⏱️ 0.0 ಸೆಕೆಂಡ್';
   document.getElementById('start-btn').disabled = false;
   document.getElementById('results-panel').style.display = 'none';
   

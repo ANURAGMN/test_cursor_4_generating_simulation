@@ -1,0 +1,106 @@
+# Force-replace these first (same format as kannada-translations.txt). UTF-8.
+baking soda|ಬೇಕಿಂಗ್ ಸೋಡಾ
+Positive (+)|ಧನ (+)
+POSITIVE (+)|ಧನ (+)
+ELECTRIC CELL|ವಿದ್ಯುತ್ ಘಟಕ
+CONDUCTORS|ವಾಹಕಗಳು
+INSULATORS|ವಿದ್ಯುತ್ ನಿರೋಧಕಗಳು
+switch|ಸ್ವಿಚ್
+Switch|ಸ್ವಿಚ್
+Battery|ಬ್ಯಾಟರಿ
+negative (-)|ಋಣ (-)
+negative (−)|ಋಣ (−)
+source|ಮೂಲ
+non-metals|ಅಲೋಹಗಳು
+Electrical conductivity|ವಿದ್ಯುತ್ ವಾಹಕತೆ
+basic|ಮೂಲ
+Basic|ಮೂಲ
+liquid|ದ್ರವ
+conduction|ವಾಹಕತೆ
+convection currents|ಸಂವಹನ ಪ್ರವಾಹಗಳು
+Dark colors absorb|ಗಾಢ ಬಣ್ಣಗಳು ಹೀರಿಕೊಳ್ಳುತ್ತವೆ
+Light colors reflect|ಒಳ್ಳೆ ಬಣ್ಣಗಳು ಪ್ರತಿಫಲಿಸುತ್ತವೆ
+ODOMETER|ಓಡೋಮೀಟರ್
+speed|ವೇಗ
+uniform linear motion|ಸಮ ರೇಖೀಯ ಚಲನೆ
+non-uniform motion|ಅಸಮ ಚಲನೆ
+healthy habits|ಆರೋಗ್ಯಕರ ಅಭ್ಯಾಸಗಳು
+Growth Spurt|ವೃದ್ಧಿ ಚಿಗಿತ
+equator|ವಿಷುವದ್ರೇಖೆ
+reactions|ಪ್ರತಿಕ್ರಿಯೆಗಳು
+• Chemical reactions|• ರಾಸಾಯನಿಕ ಪ್ರತಿಕ್ರಿಯೆಗಳು
+NaHCO3 + CH3COOH → CO2 + H2O + CH3COONa|ಸೋಡಿಯಂ ಬೈಕಾರ್ಬನೇಟ್ + ಅಸಿಟಿಕ್ ಆಮ್ಲ → CO2 + ನೀರು + ಸೋಡಿಯಂ ಅಸಿಟೇಟ್
+NaHCO₃ + CH₃COOH → CO₂ + H₂O + CH₃COONa|ಸೋಡಿಯಂ ಬೈಕಾರ್ಬನೇಟ್ + ಅಸಿಟಿಕ್ ಆಮ್ಲ → CO₂ + ನೀರು + ಸೋಡಿಯಂ ಅಸಿಟೇಟ್
+inside a glass bulb. When electric current passes through the filament, it gets very hot (about 2500°C) and glows, producing light.|ಗಾಜಿನ ಬಲ್ಬ್ ಒಳಗೆ. ವಿದ್ಯುತ್ ಪ್ರವಾಹ ಫಿಲಾಮೆಂಟ್ ಮೂಲಕ ಹರಿಯುವಾಗ, ಅದು ಬಹಳ ಬಿಸಿಯಾಗುತ್ತದೆ (ಸುಮಾರು 2500°C) ಮತ್ತು ಬೆಳಗುತ್ತದೆ, ಬೆಳಕನ್ನು ಉತ್ಪಾದಿಸುತ್ತದೆ.
+inside a glass bulb. When electric current passes through the à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³‚, it gets very hot (about 2500°C) and glows, producing light.|ಗಾಜಿನ ಬಲ್ಬ್ ಒಳಗೆ. ವಿದ್ಯುತ್ ಪ್ರವಾಹ ಫಿಲಾಮೆಂಟ್ ಮೂಲಕ ಹರಿಯುವಾಗ, ಅದು ಬಹಳ ಬಿಸಿಯಾಗುತ್ತದೆ (ಸುಮಾರು 2500°C) ಮತ್ತು ಬೆಳಗುತ್ತದೆ, ಬೆಳಕನ್ನು ಉತ್ಪಾದಿಸುತ್ತದೆ.
+Oxygen|ಆಮ್ಲಜನಕ
+Oxide (white ash)|ಆಕ್ಸೈಡ್ (ಬಿಳಿ ಬೂದಿ)
+Dioxide (pungent gas)|ಡೈಆಕ್ಸೈಡ್ (ಕಟುವಾದ ಅನಿಲ)
+consumed|ಬಳಸಲಾಗಿದೆ
+ and | ಮತ್ತು 
+An incandescent bulb has a thin wire called a <strong>à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³‚</strong> inside a glass bulb. When electric current passes through the <strong>à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³‚</strong>, it gets very hot (about 2500°C) and glows, producing light.<br><br>|ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ ಬಲ್ಬ್‌ನಲ್ಲಿ ತೆಳುವಾದ ತಂತಿ ಇದೆ, ಅದನ್ನು <strong>ಫಿಲಾಮೆಂಟ್</strong> ಎಂದು ಕರೆಯಲಾಗುತ್ತದೆ. ವಿದ್ಯುತ್ ಪ್ರವಾಹ ಫಿಲಾಮೆಂಟ್ ಮೂಲಕ ಹರಿಯುವಾಗ, ಅದು ಬಹಳ ಬಿಸಿಯಾಗುತ್ತದೆ (ಸುಮಾರು 2500°C) ಮತ್ತು ಬೆಳಗುತ್ತದೆ, ಬೆಳಕನ್ನು ಉತ್ಪಾದಿಸುತ್ತದೆ.<br><br>
+Understanding Battery connection|ಬ್ಯಾಟರಿ ಸಂಪರ್ಕ ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು
+String length|ದಾರದ ಉದ್ದ
+All Three Methods in One Scene|ಎಲ್ಲ ಮೂರು ವಿಧಾನಗಳು ಒಂದು ದೃಶ್ಯದಲ್ಲಿ
+Quality sleep|ಗುಣಮಟ್ಟದ ನಿದ್ರೆ
+Vitamins & Minerals - Body Protectors|ಜೀವಸತ್ವ ಮತ್ತು ಖನಿಜ - ಶರೀರ ರಕ್ಷಕಗಳು
+Mental Wellness|ಮಾನಸಿಕ ಯೋಗಕ್ಷೇಮ
+Healthy Social Life|ಆರೋಗ್ಯಕರ ಸಾಮಾಜಿಕ ಜೀವನ
+Cold Mountain Climate|ಶೀತ ಪರ್ವತ ವಾತಾವರಣ
+Play the Application!|ಅಪ್ಲಿಕೇಶನ್ ನಿಲುಕಿಸಿ!
+Land Breeze|ಭೂ ಬೀಸಣಿಕೆ
+Sea Breeze|ಸಮುದ್ರ ಬೀಸಣಿಕೆ
+GRAVEL|ಜಲ್ಲಿ
+from + terminal through circuit to − terminal|ಧನ ಟರ್ಮಿನಲ್‌ನಿಂದ ಸರ್ಕ್ಯೂಟ್ ಮೂಲಕ ಋಣ ಟರ್ಮಿನಲ್‌ಕ್ಕೆ
+External Circuit|ಬಾಹ್ಯ ಸರ್ಕ್ಯೂಟ್
+Change sanitary products every 4-6 |4-6 ನಲ್ಲಿ ಸ್ಯಾನಿಟರಿ ಉತ್ಪನ್ನಗಳನ್ನು ಬದಲಾಯಿಸಿ 
+These habits will benefit you |ಈ ಅಭ್ಯಾಸಗಳು ನಿಮಗೆ ಲಾಭ ನೀಡುತ್ತವೆ 
+ life| ಜೀವನ
+Mood swings are |ಮನಸ್ಥಿತಿ ಬದಲಾವಣೆಗಳು 
+ during adolescence| ಕೌಮಾರ್ಯದಲ್ಲಿ
+Cycle length varies (21-35 days is |ಚಕ್ರ ಉದ್ದ ಬದಲಾಗುತ್ತದೆ (21-35 ದಿನಗಳು 
+Limitations of |ಮಿತಿಗಳು 
+Accuracy limited to ~15-30 |ನಿಖರತೆ ~15-30 ವರೆಗೆ 
+Which pendulum |ಎಂಬ ಲೋಲಕ 
+s 10 swings fastest?| 10 ಆಂದೋಲನಗಳನ್ನು ವೇಗವಾಗಿ ಪೂರ್ಣಗೊಳಿಸುತ್ತದೆ?
+= 1000 micro|= 1000 ಮೈಕ್ರೋ
+Recycling aluminium uses 95% less |ಅಲ್ಯೂಮಿನಿಯಂ ಮರುಬಳಕೆ 95% ಕಡಿಮೆ 
+ than making new aluminium| ಹೊಸ ಅಲ್ಯೂಮಿನಿಯಂ ತಯಾರಿಸುವುದಕ್ಕಿಂತ
+Day: Land hot → Air |ದಿನ: ಭೂಮಿ ಬಿಸಿ → ಗಾಳಿ 
+ → Sea breeze blows in| → ಸಮುದ್ರ ಬೀಸಣಿಕೆ ಒಳನುಗ್ಗುತ್ತದೆ
+Night: Sea warm → Air |ರಾತ್ರಿ: ಸಮುದ್ರ ಬೆಚ್ಚನೆ → ಗಾಳಿ 
+ → Land breeze blows out| → ಭೂ ಬೀಸಣಿಕೆ ಹೊರಹಾಕುತ್ತದೆ
+CO2 and H2O are produced (|CO2 ಮತ್ತು H2O ಉತ್ಪಾದಿಸಲಾಗುತ್ತದೆ (
+Fuel + O2 → |ಇಂಧನ + O2 → 
+ + Heat + Light| + ಉಷ್ಣ + ಬೆಳಕು
+This period is why pendulums are used in clocks!|ಈ ಕಾಲವೇ ಘಡಿಯಾರಗಳಲ್ಲಿ ಲೋಲಕಗಳನ್ನು ಬಳಸಲು ಕಾರಣ!
+This ಸ್ಥಿರ period is why pendulums are used in clocks!|ಈ ಸ್ಥಿರ ಕಾಲವೇ ಘಡಿಯಾರಗಳಲ್ಲಿ ಲೋಲಕಗಳನ್ನು ಬಳಸಲು ಕಾರಣ!
+String |ದಾರದ ಉದ್ದ 
+Quality |ಗುಣಮಟ್ಟದ 
+ inside a glass bulb. When electric current passes through the à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³‚, it gets very hot (about 2500°C) and glows, producing light.| ಗಾಜಿನ ಬಲ್ಬ್ ಒಳಗೆ. ವಿದ್ಯುತ್ ಪ್ರವಾಹ ಫಿಲಾಮೆಂಟ್ ಮೂಲಕ ಹರಿಯುವಾಗ, ಅದು ಬಹಳ ಬಿಸಿಯಾಗುತ್ತದೆ (ಸುಮಾರು 2500°C) ಮತ್ತು ಬೆಳಗುತ್ತದೆ, ಬೆಳಕನ್ನು ಉತ್ಪಾದಿಸುತ್ತದೆ.
+Time period Formula|ಕಾಲಾವಧಿ ಸೂತ್ರ
+
+# Mojibake fixes (apply after English phrases so mixed segments become Kannada)
+à²ªà³‚à²°à²µà²¾à²¹ à²¹à²°à²¿à²¯à³‚à²¤à³‚à²¤à²¦à³†|ಪ್ರವಾಹ ಹರಿಯುತ್ತದೆ
+à²¸à³‚à²°à³‚à²¯ à²˜à²¡à²¿à²¯à²¾à²°|ಸೂರ್ಯ ಘಡಿಯಾರ
+à²¨à²¿à²®à²¿à²·à²—à²³à³‚|ನಿಮಿಷಗಳು
+à²—à²‚à²Ÿà³†à²—à²³à³‚|ತಿಂಗಳುಗಳು
+à²¸à²¾à²®à²¾à²¨à³‚à²¯|ಸಾಮಾನ್ಯ
+à²‰à²¦à³‚à²¦à²•à³‚à²•à³‚|ಉದ್ದಕ್ಕೂ
+à²ªà³‚à²°à³‚à²£|ಪೂರ್ಣ
+à²¶à²•à³‚à²¤à²¿|ಶಕ್ತಿ
+à²¸à³‚à²¥à²¿à²°|ಸ್ಥಿರ
+à²‰à²¦à²¦à³‚|ಉದ್ದ
+à²•à²¾à²²à²¾à²µà²§à²¿|ಕಾಲಾವಧಿ
+à²¨à²¿à²¦à³‚à²°à³†|ನಿದ್ರೆ
+à²µà²¿à²§à²¾à²¨|ವಿಧಾನ
+à²œà³€à²µà²¸à²¤à³‚à²µà²—à²³à³‚|ಜೀವಸತ್ವಗಳು
+à²®à²¾à²¨à²¸à²¿à²•|ಮಾನಸಿಕ
+à²¸à²¾à²®à²¾à²œà²¿à²•|ಸಾಮಾಜಿಕ
+à²¹à³Šà²‚à²¦à²¿à²¸à²¿|ಆಡಿಸಿ
+à²‰à²¤à³‚à²ªà²¨à³‚à²¨à²—à²³à³‚|ಉತ್ಪನ್ನಗಳು
+à²à²°à³‚à²¤à³‚à²¤à²¦à³†|ಉಷ್ಣತೆ
+à²¸à³†à²•à³†à²‚à²¡à³‚â€Œà²—à²³à³‚|ಸೆಕೆಂಡ್‌ಗಳು
+à²®à³†à²—à³‚à²¨à³€à²¸à²¿à²¯à²‚|ಮೆಗ್ನೀಸಿಯಂ
+à²¸à²²à³‚à²«à²°à³‚|ಸಲ್ಫರ್
+à²°à²¾à²¸à²¾à²¯à²¨à²¿à²• à²¬à²¦à²²à²¾à²µà²£à³†|ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ

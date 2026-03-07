@@ -38,13 +38,13 @@ body {
   text-align: center;
   color: #fff;
   padding: 10px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
 .header p { font-size: 12px; opacity: 0.95; }
 
-/* Key Concept Card - Most Important */
+/* ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ Card - Most Important */
 .concept-card {
   background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
   border-radius: 12px;
@@ -85,7 +85,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 8px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -103,7 +103,7 @@ body {
 
 svg { width: 100%; height: 100%; display: block; }
 
-.soil-indicator {
+.soil-ಸೂಚಕ {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -112,15 +112,15 @@ svg { width: 100%; height: 100%; display: block; }
   padding: 6px 10px;
   font-size: 10px;
   font-weight: 600;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  box-ನೆರಳು: 0 3px 8px rgba(0,0,0,0.12);
   transition: all 0.3s ease;
 }
 
-.soil-indicator.acidic { background: #fff3e0; color: #e65100; }
-.soil-indicator.basic { background: #e3f2fd; color: #1565c0; }
-.soil-indicator.neutral { background: #e8f5e9; color: #2e7d32; }
+.soil-ಸೂಚಕ.acidic { background: #fff3e0; color: #e65100; }
+.soil-ಸೂಚಕ.ಮೂಲ { background: #e3f2fd; color: #1565c0; }
+.soil-ಸೂಚಕ.neutral { background: #e8f5e9; color: #2e7d32; }
 
-/* Learning Box - Shows what's happening */
+/* Learning Box - à²¤à³‹à²°à²¿à²¸à³à²¤à³à²¤à²¦à³† what's happening */
 .learning-box {
   background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
   border-radius: 10px;
@@ -223,7 +223,7 @@ svg { width: 100%; height: 100%; display: block; }
 
 .soil-btn:active { transform: scale(0.95); }
 .soil-btn.acidic.active { border-color: #ff9800; background: #fff3e0; }
-.soil-btn.basic.active { border-color: #2196f3; background: #e3f2fd; }
+.soil-btn.ಮೂಲ.active { border-color: #2196f3; background: #e3f2fd; }
 .soil-btn .icon { font-size: 18px; display: block; margin-bottom: 4px; }
 .soil-btn .ph-info { font-size: 9px; color: #888; margin-top: 2px; }
 
@@ -277,7 +277,7 @@ svg { width: 100%; height: 100%; display: block; }
   background: #333;
   border-radius: 3px;
   transition: left 0.8s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  box-ನೆರಳು: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .ph-labels {
@@ -294,7 +294,7 @@ svg { width: 100%; height: 100%; display: block; }
 
 .ph-labels .acidic-label { color: #e65100; font-weight: 600; }
 .ph-labels .neutral-label { color: #2e7d32; font-weight: 600; }
-.ph-labels .basic-label { color: #1565c0; font-weight: 600; }
+.ph-labels .ಮೂಲ-label { color: #1565c0; font-weight: 600; }
 
 /* Key Takeaway */
 .takeaway {
@@ -311,7 +311,7 @@ svg { width: 100%; height: 100%; display: block; }
 .takeaway.show { display: block; }
 .takeaway-title { font-weight: 700; color: #1b5e20; margin-bottom: 6px; }
 
-@media screen and (max-width: 380px) {
+@media screen ಮತ್ತು (max-width: 380px) {
   .soil-btn { padding: 8px 4px; font-size: 9px; }
   .concept-text { font-size: 11px; }
 }
@@ -329,18 +329,18 @@ svg { width: 100%; height: 100%; display: block; }
 <div id="app">
 
 <div class="header">
-  <h1>🌱 Neutralisation in Agriculture</h1>
-  <p>How farmers use chemistry to grow healthy crops</p>
+  <h1>🌱 ಕೃಷಿಯಲ್ಲಿ ತಟಸ್ಥೀಕರಣ</h1>
+  <p>ರೈತರು ಆರೋಗ್ಯಕರ ಬೆಳೆ ಬೆಳೆಯಲು ರಸಾಯನಶಾಸ್ತ್ರವನ್ನು ಹೇಗೆ ಬಳಸುತ್ತಾರೆ</p>
 </div>
 
-<!-- Key Concept - Always Visible -->
+<!-- ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ - Always Visible -->
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept to Learn</div>
+  <div class="concept-title">📚 ಕಲಿಯಲು ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    <strong>Neutralisation</strong> is when an <span style="color:#e65100;font-weight:600;">ACID</span> and a <span style="color:#1565c0;font-weight:600;">BASE</span> react to cancel each other out, producing a neutral solution.
+    <strong>Neutralisation</strong> is when an <span style="color:#e65100;font-weight:600;">ACID</span> ಮತ್ತು a <span style="color:#1565c0;font-weight:600;">BASE</span> react to cancel each other out, producing a neutral solution.
   </div>
   <div class="concept-equation">
-    ACID + BASE → ಉಪ್ಪು + Water (Neutral pH)
+    ACID + BASE → ಉಪ್ಪು + ನೀರು (Neutral pH)
   </div>
 </div>
 
@@ -348,20 +348,20 @@ svg { width: 100%; height: 100%; display: block; }
 
 <!-- pH Scale -->
 <div class="ph-scale">
-  <div class="ph-title">pH Scale - Measuring Acidity & Basicity</div>
+  <div class="ph-title">pH Scale - Measuring Acidity & ಮೂಲity</div>
   <div class="ph-bar">
     <div class="ph-pointer" id="ph-pointer" style="left: calc(50% - 3px);"></div>
   </div>
   <div class="ph-labels">
-    <span class="acidic-label">0-6<br>ACIDIC</span>
+    <span class="acidic-label">0-6<br>ಆಮ್ಲೀಯ</span>
     <span class="neutral-label">7<br>NEUTRAL</span>
-    <span class="basic-label">8-14<br>BASIC</span>
+    <span class="ಮೂಲ-label">8-14<br>ಕ್ಷಾರೀಯ</span>
   </div>
 </div>
 
 <!-- Key Takeaway -->
 <div class="takeaway" id="takeaway">
-  <div class="takeaway-title">🎯 What You Learned:</div>
+  <div class="takeaway-title">🎯 ನೀವು ಕಲಿತದ್ದು:</div>
   <span id="takeaway-text"></span>
 </div>
 
@@ -372,7 +372,7 @@ const container = document.getElementById('sim');
 
 container.innerHTML = `
 <div class="visual">
-  <div class="soil-indicator" id="soil-display">Select soil type</div>
+  <div class="soil-ಸೂಚಕ" id="soil-display">Select soil type</div>
 
   <svg viewBox="0 0 400 240">
     <!-- Sun -->
@@ -394,7 +394,7 @@ container.innerHTML = `
     <g id="lime-bag" transform="translate(70, 155)" opacity="0.3">
       <rect x="-28" y="0" width="56" height="55" rx="5" fill="#eceff1" stroke="#b0bec5" stroke-width="2"/>
       <text x="0" y="18" text-anchor="middle" font-size="9" fill="#455a64" font-weight="700">LIME</text>
-      <text x="0" y="32" text-anchor="middle" font-size="7" fill="#666">(BASE)</text>
+      <text x="0" y="32" text-anchor="middle" font-size="7" fill="#666">(ಕ್ಷಾರ)</text>
       <circle cx="0" cy="44" r="8" fill="#e0e0e0" stroke="#bdbdbd"/>
     </g>
     
@@ -409,9 +409,9 @@ container.innerHTML = `
 
 <!-- Learning Box - Dynamic content -->
 <div class="learning-box" id="learning-box">
-  <div class="learning-title">🔬 Understanding the Problem</div>
+  <div class="learning-title">🔬 Understಮತ್ತುing the Problem</div>
   <div class="learning-text" id="learning-text">
-    Plants grow best in <span class="neutral">neutral soil (pH 7)</span>. When soil becomes too acidic or too basic, plants cannot absorb nutrients and they become unhealthy.
+    Plants grow best in <span class="neutral">neutral soil (pH 7)</span>. When soil becomes too acidic or too ಮೂಲ, plants cannot absorb nutrients ಮತ್ತು they become unhealthy.
   </div>
 </div>
 
@@ -429,9 +429,9 @@ container.innerHTML = `
       Acidic Soil
       <div class="ph-info">pH 4-5 (too much acid)</div>
     </button>
-    <button class="soil-btn basic" data-type="basic">
+    <button class="soil-btn ಮೂಲ" data-type="ಮೂಲ">
       <span class="icon">🔵</span>
-      Basic Soil
+      ಮೂಲ Soil
       <div class="ph-info">pH 9-10 (too much base)</div>
     </button>
   </div>
@@ -456,7 +456,7 @@ const learningTitle = learningBox.querySelector('.learning-title');
 const learningText = document.getElementById('learning-text');
 const reactionDisplay = document.getElementById('reaction-display');
 const reactionEquation = document.getElementById('reaction-equation');
-const reactionResult = document.getElementById('reaction-result');
+const reactionಫಲಿತಾಂಶ = document.getElementById('reaction-result');
 
 container.querySelectorAll('.soil-btn').forEach(btn => {
   btn.onclick = () => {
@@ -473,7 +473,7 @@ container.querySelectorAll('.soil-btn').forEach(btn => {
       soilLayer.style.fill = '#8d6e63';
       plantIcon.textContent = '🥀';
       soilDisplay.textContent = '🟠 Acidic (pH 4-5)';
-      soilDisplay.className = 'soil-indicator acidic';
+      soilDisplay.className = 'soil-ಸೂಚಕ acidic';
       phPointer.style.left = '12%';
       limeBag.style.opacity = '1';
       compostBag.style.opacity = '0.3';
@@ -481,30 +481,30 @@ container.querySelectorAll('.soil-btn').forEach(btn => {
       learningTitle.textContent = '🔬 The Problem: Acidic Soil';
       learningText.innerHTML = `
         This soil has <span class="acid">too much ACID (low pH)</span>. The excess acid prevents the plant from absorbing nutrients.<br><br>
-        <strong>Solution:</strong> Add <span class="base">LIME (a BASE)</span> to neutralise the acid!<br>
-        <em>Remember: Base + Acid → Neutral</em>
+        <strong>ದ್ರಾವಣ:</strong> Add <span class="base">LIME (a BASE)</span> to neutralise the acid!<br>
+        <em>ನೆನಪಿಡಿ: Base + Acid → Neutral</em>
       `;
       
-      treatBtn.textContent = 'Step 2: Add LIME (Base) to Neutralise';
+      treatBtn.textContent = 'Step 2: Add LIME (ಕ್ಷಾರ) to Neutralise';
       treatBtn.style.background = 'linear-gradient(135deg, #78909c 0%, #546e7a 100%)';
       
     } else {
       soilLayer.style.fill = '#78909c';
       plantIcon.textContent = '🥀';
-      soilDisplay.textContent = '🔵 Basic (pH 9-10)';
-      soilDisplay.className = 'soil-indicator basic';
+      soilDisplay.textContent = '🔵 ಮೂಲ (pH 9-10)';
+      soilDisplay.className = 'soil-ಸೂಚಕ ಮೂಲ';
       phPointer.style.left = '85%';
       compostBag.style.opacity = '1';
       limeBag.style.opacity = '0.3';
       
-      learningTitle.textContent = '🔬 The Problem: Basic Soil';
+      learningTitle.textContent = '🔬 ಸಮಸ್ಯೆ: ಕ್ಷಾರ ಮಣ್ಣು';
       learningText.innerHTML = `
         This soil has <span class="base">too much BASE (high pH)</span>. The excess base prevents the plant from absorbing iron.<br><br>
-        <strong>Solution:</strong> Add <span class="acid">COMPOST (releases ACIDS)</span> to neutralise the base!<br>
-        <em>Remember: Acid + Base → Neutral</em>
+        <strong>ದ್ರಾವಣ:</strong> Add <span class="acid">COMPOST (releases ACIDS)</span> to neutralise the base!<br>
+        <em>ನೆನಪಿಡಿ: Acid + Base → Neutral</em>
       `;
       
-      treatBtn.textContent = 'Step 2: Add COMPOST (Acid) to Neutralise';
+      treatBtn.textContent = 'Step 2: Add COMPOST (ಆಮ್ಲ) to Neutralise';
       treatBtn.style.background = 'linear-gradient(135deg, #8d6e63 0%, #6d4c41 100%)';
     }
     
@@ -523,10 +523,10 @@ treatBtn.onclick = function() {
     soilLayer.style.fill = '#5d4037';
     plantIcon.textContent = '🌿';
     soilDisplay.textContent = '🟢 Neutral (pH 7)';
-    soilDisplay.className = 'soil-indicator neutral';
+    soilDisplay.className = 'soil-ಸೂಚಕ neutral';
     phPointer.style.left = 'calc(50% - 3px)';
     
-    learningTitle.textContent = '✅ Neutralisation Complete!';
+    learningTitle.textContent = '✅ Neutralisation ಪೂರ್ಣ!';
     
     if (selectedSoil === 'acidic') {
       learningText.innerHTML = `
@@ -535,12 +535,12 @@ treatBtn.onclick = function() {
         The plant can now absorb nutrients properly.
       `;
       
-      reactionEquation.textContent = 'Soil Acid + Lime (Base) → Salt + Water';
-      reactionResult.textContent = '🌿 Result: Neutral soil (pH 7) - Plant is healthy!';
+      reactionEquation.textContent = 'Soil Acid + Lime (ಕ್ಷಾರ) → ಉಪ್ಪು + ನೀರು';
+      reactionಫಲಿತಾಂಶ.textContent = '🌿 ಫಲಿತಾಂಶ: Neutral soil (pH 7) - Plant is healthy!';
       
       takeawayText.innerHTML = `
-        <strong>Neutralisation in action:</strong> When soil is too ACIDIC, farmers add LIME (a base). The base neutralises the acid, bringing soil to neutral pH 7.<br><br>
-        <strong>The reaction:</strong> Acid + Base → Salt + Water<br><br>
+        <strong>Neutralisation in action:</strong> When soil is too ಆಮ್ಲೀಯ, farmers add LIME (a base). The base neutralises the acid, bringing soil to neutral pH 7.<br><br>
+        <strong>The reaction:</strong> Acid + Base → ಉಪ್ಪು + ನೀರು<br><br>
         This is the same neutralisation reaction you learn in chemistry - just applied to farming! 🧪🌾
       `;
     } else {
@@ -550,12 +550,12 @@ treatBtn.onclick = function() {
         The plant can now absorb iron properly.
       `;
       
-      reactionEquation.textContent = 'Compost Acids + Soil Base → Salt + Water';
-      reactionResult.textContent = '🌿 Result: Neutral soil (pH 7) - Plant is healthy!';
+      reactionEquation.textContent = 'Compost Acids + Soil Base → ಉಪ್ಪು + ನೀರು';
+      reactionಫಲಿತಾಂಶ.textContent = '🌿 ಫಲಿತಾಂಶ: Neutral soil (pH 7) - Plant is healthy!';
       
       takeawayText.innerHTML = `
-        <strong>Neutralisation in action:</strong> When soil is too BASIC, farmers add organic COMPOST. As compost decomposes, it releases acids that neutralise the base.<br><br>
-        <strong>The reaction:</strong> Acid + Base → Salt + Water<br><br>
+        <strong>Neutralisation in action:</strong> When soil is too ಕ್ಷಾರೀಯ, farmers add organic COMPOST. As compost decomposes, it releases acids that neutralise the base.<br><br>
+        <strong>The reaction:</strong> Acid + Base → ಉಪ್ಪು + ನೀರು<br><br>
         This is the same neutralisation reaction you learn in chemistry - just applied to farming! 🧪🌾
       `;
     }
@@ -563,7 +563,7 @@ treatBtn.onclick = function() {
     reactionDisplay.classList.add('show');
     takeaway.classList.add('show');
     
-    treatBtn.textContent = '✅ Neutralisation Successful!';
+    treatBtn.textContent = '✅ Neutralisation ಯಶಸ್ಸುful!';
     treatBtn.style.background = 'linear-gradient(135deg, #4caf50 0%, #2e7d32 100%)';
   }, 800);
 };
