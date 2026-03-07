@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -69,7 +69,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -139,7 +139,7 @@ svg { width: 100%; height: 100%; }
 
 .info-example strong { color: #1976d2; }
 
-.à²¶à²•à³à²¤à²¿-flow {
+.energy-flow {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -254,19 +254,19 @@ svg { width: 100%; height: 100%; }
   </div>
   
   <div class="ಮೂಲ-btns">
-    <button class="ಮೂಲ-btn" data-ಮೂಲ="hydro" onclick="showà²®à³‚à²²('hydro')">
+    <button class="ಮೂಲ-btn" data-ಮೂಲ="hydro" onclick="showSource('hydro')">
       <div class="icon">💧</div>
       <div class="name">ಜಲವಿದ್ಯುತ್</div>
     </button>
-    <button class="ಮೂಲ-btn" data-ಮೂಲ="solar" onclick="showà²®à³‚à²²('solar')">
+    <button class="ಮೂಲ-btn" data-ಮೂಲ="solar" onclick="showSource('solar')">
       <div class="icon">☀️</div>
       <div class="name">ಸೌರ</div>
     </button>
-    <button class="ಮೂಲ-btn" data-ಮೂಲ="wind" onclick="showà²®à³‚à²²('wind')">
+    <button class="ಮೂಲ-btn" data-ಮೂಲ="wind" onclick="showSource('wind')">
       <div class="icon">🌬️</div>
       <div class="name">ಗಾಳಿ</div>
     </button>
-    <button class="ಮೂಲ-btn" data-ಮೂಲ="thermal" onclick="showà²®à³‚à²²('thermal')">
+    <button class="ಮೂಲ-btn" data-ಮೂಲ="thermal" onclick="showSource('thermal')">
       <div class="icon">🏭</div>
       <div class="name">ಉಷ್ಣ</div>
     </button>
@@ -281,7 +281,7 @@ svg { width: 100%; height: 100%; }
   <div class="info-example" id="info-example" style="display:none;"></div>
 </div>
 
-<div class="à²¶à²•à³à²¤à²¿-flow" id="energy-flow" style="display:none;">
+<div class="energy-flow" id="energy-flow" style="display:none;">
   <div class="flow-item">
     <div class="icon" id="flow-source">💧</div>
     <div>ಮೂಲ</div>
@@ -320,15 +320,15 @@ svg { width: 100%; height: 100%; }
 </div>
 
 <script>
-const powerಮೂಲ = document.getElementById('power-source');
+const powerSource = document.getElementById('power-source');
 const infoTitle = document.getElementById('info-title');
 const infoText = document.getElementById('info-text');
 const infoExample = document.getElementById('info-example');
 const ಮೂಲLabel = document.getElementById('source-label');
-const à²¶à²•à³à²¤à²¿Flow = document.getElementById('energy-flow');
-const flowಮೂಲ = document.getElementById('flow-source');
+const energyFlow = document.getElementById('energy-flow');
+const flowSource = document.getElementById('flow-source');
 const powerLineGlow = document.getElementById('power-line-glow');
-const houseಗಾಳಿow = document.getElementById('house-window');
+const houseWindow = document.getElementById('house-window');
 
 const ಮೂಲs = {
   hydro: {
@@ -408,7 +408,7 @@ const ಮೂಲs = {
   }
 };
 
-function showà²®à³‚à²²(type) {
+function showSource(type) {
   const ಮೂಲ = ಮೂಲs[type];
   
   // Update buttons
@@ -417,7 +417,7 @@ function showà²®à³‚à²²(type) {
   });
   
   // Update SVG
-  powerಮೂಲ.innerHTML = ಮೂಲ.svg;
+  powerSource.innerHTML = ಮೂಲ.svg;
   
   // ಅನಿಮೇಟ್ windmill if selected
   if (type === 'wind') {
@@ -434,13 +434,13 @@ function showà²®à³‚à²²(type) {
   // Update label
   ಮೂಲLabel.textContent = ಮೂಲ.title.replace(/[^\w\s]/g, '').trim();
   
-  // Show à²¶à²•à³à²¤à²¿ flow
-  à²¶à²•à³à²¤à²¿Flow.style.display = 'flex';
-  flowಮೂಲ.textContent = ಮೂಲ.icon;
+  // Show energy flow
+  energyFlow.style.display = 'flex';
+  flowSource.textContent = ಮೂಲ.icon;
   
   // ಅನಿಮೇಟ್ power flow
   powerLineGlow.style.opacity = '1';
-  houseಗಾಳಿow.style.fill = '#ffeb3b';
+  houseWindow.style.fill = '#ffeb3b';
 }
 </script>
 </body>

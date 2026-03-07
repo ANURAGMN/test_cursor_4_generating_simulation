@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -72,7 +72,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -214,7 +214,7 @@ body {
 .takeaway-title { font-size: 12px; font-weight: 700; color: #1a237e; margin-bottom: 6px; }
 .takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
 
-@media screen ಮತ್ತು (max-width: 360px) {
+@media screen and (max-width: 360px) {
   .categories { grid-template-columns: repeat(2, 1fr); }
   .appliances { grid-template-columns: repeat(3, 1fr); }
 }
@@ -259,7 +259,7 @@ body {
 <div class="takeaway" id="takeaway">
   <div class="takeaway-title">🎯 ನೀವು ಕಲಿತದ್ದು</div>
   <div class="takeaway-text">
-    ವಿದ್ಯುತ್ powers many different types of devices in our daily ಜೀವನ. By understಮತ್ತುing the <strong>à²‰à²¦à³à²¦à³‡à²¶</strong> à²ªà³à²°à²¤à²¿ à²‰à²ªà²•à²°à²£à²¦à²¿à²‚à²¦ à²µà²¿à²¦à³à²¯à³à²¤à³ à²…à²¡à³à²—à³†, à²¬à³†à²³à²•à³, à²¤à²‚à²ªà³, à²¸à²‚à²µà²¹à²¨, à²®à²¨à²°à²‚à²œà²¨à³† à²®à²¤à³à²¤à³ à²¸à²¾à²°à²¿à²—à³†à²¯à²²à³à²²à²¿ à²œà³€à²µà²¨ à²¸à³à²²à²­!
+    ವಿದ್ಯುತ್ powers many different types of devices in our daily ಜೀವನ. By understಮತ್ತುing the <strong>ಉದ್ದೇಶ</strong> ಪ್ರತಿ ಉಪಕರಣದಿಂದ ವಿದ್ಯುತ್ ಅಡುಗೆ, ಬೆಳಕು, ತಂಪು, ಸಂವಹನ, ಮನರಂಜನೆ ಮತ್ತು ಸಾರಿಗೆಯಲ್ಲಿ ಜೀವನ ಸುಲಭ!
   </div>
 </div>
 
@@ -286,7 +286,7 @@ const appliances = [
   { name: 'Telephone', icon: '☎️', category: 'communication' },
   { name: 'Television', icon: '📺', category: 'entertainment' },
   { name: 'Computer', icon: '💻', category: 'entertainment' },
-  { name: 'Electric à²°à³ˆà²²à³', icon: '🚃', category: 'transport' },
+  { name: 'Electric ರೈಲು', icon: '🚃', category: 'transport' },
   { name: 'Electric Car', icon: '🚗', category: 'transport' }
 ];
 
@@ -316,7 +316,7 @@ categoriesData.forEach(cat => {
 });
 
 // Shuffle ಮತ್ತು render appliances
-const shuffled = [...appliances].sort(() => Math.rಮತ್ತುom() - 0.5);
+const shuffled = [...appliances].sort(() => Math.random() - 0.5);
 shuffled.forEach((app, idx) => {
   const div = document.createElement('div');
   div.className = 'appliance';
@@ -359,11 +359,11 @@ function updateScore() {
   scoreText.textContent = `${sortedCount} / ${appliances.length} appliances sorted`;
   
   if (sortedCount === appliances.length) {
-    showà²®à³‚à²²s();
+    showSources();
   }
 }
 
-function showà²®à³‚à²²s() {
+function showSources() {
   resultGrid.innerHTML = '';
   categoriesData.forEach(cat => {
     const div = document.createElement('div');
@@ -379,7 +379,7 @@ function showà²®à³‚à²²s() {
   takeaway.classList.add('show');
 }
 
-// Auto-select à²®à³Šà²¦à²² category
+// Auto-select ಮೊದಲ category
 selectCategory('cooking');
 </script>
 </body>

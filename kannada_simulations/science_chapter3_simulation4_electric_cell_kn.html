@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -69,7 +69,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -335,7 +335,7 @@ svg { width: 100%; height: 100%; }
         <path d="M 320 140 Q 350 140 350 200 Q 350 250 200 250 Q 50 250 50 200 Q 50 140 80 140" 
               stroke="#4caf50" stroke-width="3" fill="none" stroke-dasharray="10 5"/>
         <polygon points="75,135 85,140 75,145" fill="#4caf50"/>
-        <text x="200" y="240" font-size="10" fill="#2e7d32" text-anchor="middle" font-weight="600">à²ªà³à²°à²µà²¾à²¹ à²¹à²°à²¿à²¯à³à²¤à³à²¤à²¦à³†: + → ಬಾಹ್ಯ ಸರ್ಕ್ಯೂಟ್ → −</text>
+        <text x="200" y="240" font-size="10" fill="#2e7d32" text-anchor="middle" font-weight="600">ಪ್ರವಾಹ ಹರಿಯುತ್ತದೆ: + → ಬಾಹ್ಯ ಸರ್ಕ್ಯೂಟ್ → −</text>
       </g>
     </svg>
     <div class="tap-hint">👆 ಹೆಚ್ಚು ಕಲಿಯಲು ಟರ್ಮಿನಲ್‌ಗಳನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ</div>
@@ -344,13 +344,13 @@ svg { width: 100%; height: 100%; }
   <div class="terminal-info">
     <div class="terminal-card positive" id="card-positive" onclick="highlightTerminal('positive')">
       <div class="symbol">+</div>
-      <div class="name">à²§à²¨ à²Ÿà²°à³à²®à²¿à²¨à²²à³</div>
+      <div class="name">ಧನ ಟರ್ಮಿನಲ್</div>
       <div class="desc">ಲೋಹ cap (bump)</div>
     </div>
     <div class="terminal-card negative" id="card-negative" onclick="highlightTerminal('negative')">
       <div class="symbol">−</div>
-      <div class="name">à²‹à²£ à²Ÿà²°à³à²®à²¿à²¨à²²à³</div>
-      <div class="desc">à²«à³à²²à²¾à²Ÿà³ à²²à³‹à²¹ à²¡à²¿à²¸à³à²•à³</div>
+      <div class="name">ಋಣ ಟರ್ಮಿನಲ್</div>
+      <div class="desc">ಫ್ಲಾಟ್ ಲೋಹ ಡಿಸ್ಕ್</div>
     </div>
   </div>
 </div>
@@ -358,19 +358,19 @@ svg { width: 100%; height: 100%; }
 <div class="detail-panel" id="detail-panel">
   <div class="detail-title" id="detail-title">🔋 ಟರ್ಮಿನಲ್‌ಗಳನ್ನು ಹೇಗೆ ಗುರುತಿಸುವುದು</div>
   <div class="detail-text" id="detail-text">
-    à²¯à²¾à²µà³à²¦à³‡ à²¸à³†à²²à³ à²œà²¾à²—à³à²°à²¤à³† à²¨à³‹à²¡à²¿:<br><br>
-    • The <strong style="color:#e65100">ಧನ (+)</strong> à²Ÿà²°à³à²®à²¿à²¨à²²à³ à²’à²‚à²¦à³ à²¤à³à²¦à²¿à²¯ à²šà²¿à²•à³à²• à²²à³‹à²¹ à²•à³à²¯à²¾à²ªà³ à²…à²¥à²µà²¾ à²¬à²‚à²ªà³<br>
-    • The <strong style="color:#1565c0">ಋಣ (−)</strong> à²Ÿà²°à³à²®à²¿à²¨à²²à³ à²‡à²¨à³à²¨à³Šà²‚à²¦à³ à²¤à³à²¦à²¿à²¯ à²«à³à²²à²¾à²Ÿà³ à²²à³‹à²¹ à²¡à²¿à²¸à³à²•à³<br><br>
-    à²ªà³à²°à²µà²¾à²¹ à²¨à³‹à²¡à²²à³ à²®à³‡à²²à²¿à²¨ à²Ÿà²°à³à²®à²¿à²¨à²²à³â€Œà²—à²³à²¨à³à²¨à³ à²Ÿà³à²¯à²¾à²ªà³ à²®à²¾à²¡à²¿!
+    ಯಾವುದೇ ಸೆಲ್ ಜಾಗ್ರತೆ ನೋಡಿ:<br><br>
+    • The <strong style="color:#e65100">ಧನ (+)</strong> ಟರ್ಮಿನಲ್ ಒಂದು ತುದಿಯ ಚಿಕ್ಕ ಲೋಹ ಕ್ಯಾಪ್ ಅಥವಾ ಬಂಪ್<br>
+    • The <strong style="color:#1565c0">ಋಣ (−)</strong> ಟರ್ಮಿನಲ್ ಇನ್ನೊಂದು ತುದಿಯ ಫ್ಲಾಟ್ ಲೋಹ ಡಿಸ್ಕ್<br><br>
+    ಪ್ರವಾಹ ನೋಡಲು ಮೇಲಿನ ಟರ್ಮಿನಲ್â€Œಗಳನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ!
   </div>
 </div>
 
 <div class="symbol-card">
-  <div class="symbol-title">à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³ à²šà²¿à²¹à³à²¨à³† for ವಿದ್ಯುತ್ ಕೋಶ</div>
+  <div class="symbol-title">ಸರ್ಕ್ಯೂಟ್ ಚಿಹ್ನೆ for ವಿದ್ಯುತ್ ಕೋಶ</div>
   <div class="cell-symbol">
     <div>
       <div class="symbol-line long"></div>
-      <div class="symbol-label symbol-plus">+ (à²‰à²¦à³à²¦à²¦ à²°à³‡à²–à³†)</div>
+      <div class="symbol-label symbol-plus">+ (ಉದ್ದದ ರೇಖೆ)</div>
     </div>
     <div style="width:20px"></div>
     <div>
@@ -379,12 +379,12 @@ svg { width: 100%; height: 100%; }
     </div>
   </div>
   <div style="font-size:10px;color:#666;margin-top:10px;">
-    à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³ à²šà²¿à²¤à³à²°à²¦à²²à³à²²à²¿ à²‰à²¦à³à²¦ à²°à³‡à²–à³† à²§à²¨ à²Ÿà²°à³à²®à²¿à²¨à²²à³
+    ಸರ್ಕ್ಯೂಟ್ ಚಿತ್ರದಲ್ಲಿ ಉದ್ದ ರೇಖೆ ಧನ ಟರ್ಮಿನಲ್
   </div>
 </div>
 
 <div class="quiz-section">
-  <div class="quiz-question">à²¤à³à²µà²°à²¿à²¤ à²ªà²°à²¿à²¶à³€à²²à²¨à³†: à²¯à²¾à²µ à²Ÿà²°à³à²®à²¿à²¨à²²à³â€Œà²—à³† à²²à³‹à²¹ à²•à³à²¯à²¾à²ªà³ (à²¬à²‚à²ªà³)?</div>
+  <div class="quiz-question">ತ್ವರಿತ ಪರಿಶೀಲನೆ: ಯಾವ ಟರ್ಮಿನಲ್â€Œಗೆ ಲೋಹ ಕ್ಯಾಪ್ (ಬಂಪ್)?</div>
   <div class="quiz-options">
     <button class="quiz-btn" onclick="checkAnswer(this, true)">ಧನ (+)</button>
     <button class="quiz-btn" onclick="checkAnswer(this, false)">ಋಣ (−)</button>
@@ -395,7 +395,7 @@ svg { width: 100%; height: 100%; }
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೀವು ಕಲಿತದ್ದು</div>
   <div class="takeaway-text">
-    à²µà²¿à²¦à³à²¯à³à²¤à³ à²¸à³†à²²à³â€Œà²—à³† à²Žà²°à²¡à³ à²Ÿà²°à³à²®à²¿à²¨à²²à³: <strong>ಧನ (+)</strong> à²²à³‹à²¹ à²•à³à²¯à²¾à²ªà³â€Œà²¨à³Šà²‚à²¦à²¿à²—à³† à²®à²¤à³à²¤à³ <strong>ಋಣ (−)</strong> à²«à³à²²à²¾à²Ÿà³ à²¡à²¿à²¸à³à²•à³â€Œà²¨à³Šà²‚à²¦à²¿à²—à³†. à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³ à²šà²¿à²¹à³à²¨à³†à²¯à²²à³à²²à²¿ à²‰à²¦à³à²¦ à²°à³‡à²–à³† à²§à²¨. à²ªà³à²°à²µà²¾à²¹ à²§à²¨à²¦à²¿à²‚à²¦ à²¬à²¾à²¹à³à²¯ à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³ à²®à³‚à²²à²• à²‹à²£.
+    ವಿದ್ಯುತ್ ಸೆಲ್â€Œಗೆ ಎರಡು ಟರ್ಮಿನಲ್: <strong>ಧನ (+)</strong> ಲೋಹ ಕ್ಯಾಪ್â€Œನೊಂದಿಗೆ ಮತ್ತು <strong>ಋಣ (−)</strong> ಫ್ಲಾಟ್ ಡಿಸ್ಕ್â€Œನೊಂದಿಗೆ. ಸರ್ಕ್ಯೂಟ್ ಚಿಹ್ನೆಯಲ್ಲಿ ಉದ್ದ ರೇಖೆ ಧನ. ಪ್ರವಾಹ ಧನದಿಂದ ಬಾಹ್ಯ ಸರ್ಕ್ಯೂಟ್ ಮೂಲಕ ಋಣ.
   </div>
 </div>
 
@@ -441,7 +441,7 @@ function highlightTerminal(type) {
     negativeTerminal.classList.add('highlight-pulse');
     setTimeout(() => negativeTerminal.classList.remove('highlight-pulse'), 500);
     
-    detailTitle.innerHTML = '🔵 à²‹à²£ à²Ÿà²°à³à²®à²¿à²¨à²²à³ (−)';
+    detailTitle.innerHTML = '🔵 ಋಣ ಟರ್ಮಿನಲ್ (−)';
     detailText.innerHTML = `
       The <strong style="color:#1565c0">negative terminal</strong> is identified by:<br><br>
       • A <strong>flat metal disc</strong> at the base<br>
@@ -471,7 +471,7 @@ function checkAnswer(btn, isCorrect) {
     feedback.textContent = '✅ ಸರಿ! ಧನ ಟರ್ಮಿನಲ್‌ಗೆ ಲೋಹ ಟೋಪಿ (ಬಂಪ್) ಇದೆ that sticks out.';
   } else {
     btn.classList.add('wrong');
-    document.querySelector('.quiz-btn:à²®à³Šà²¦à²²-child').classList.add('correct');
+    document.querySelector('.quiz-btn:first-child').classList.add('correct');
     feedback.className = 'quiz-feedback show wrong';
     feedback.textContent = '❌ ಸಂಪೂರ್ಣವಲ್ಲ. ಲೋಹ ಟೋಪಿ (ಬಂಪ್) ಧನ ಟರ್ಮಿನಲ್l. The flat disc is negative.';
   }

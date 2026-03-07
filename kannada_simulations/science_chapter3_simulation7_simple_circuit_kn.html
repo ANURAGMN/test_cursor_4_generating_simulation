@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -69,7 +69,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -303,10 +303,10 @@ svg { width: 100%; height: 100%; }
         <line id="switch-lever" x1="15" y1="15" x2="35" y2="5" stroke="#78909c" stroke-width="4" stroke-linecap="round"/>
       </g>
       
-      <!-- Current direction arrow (shown when à²ªà³‚à²°à³à²£) -->
+      <!-- Current direction arrow (shown when ಪೂರ್ಣ) -->
       <g id="current-arrow" style="display:none">
         <text x="200" y="75" font-size="24" text-anchor="middle">⚡</text>
-        <text x="200" y="90" font-size="9" fill="#4caf50" text-anchor="middle" font-weight="600">à²ªà³à²°à²µà²¾à²¹ à²¹à²°à²¿à²¯à³à²¤à³à²¤à²¿à²¦à³†!</text>
+        <text x="200" y="90" font-size="9" fill="#4caf50" text-anchor="middle" font-weight="600">ಪ್ರವಾಹ ಹರಿಯುತ್ತಿದೆ!</text>
       </g>
     </svg>
     <div class="status-bar" id="status-bar">ಸರ್ಕ್ಯೂಟ್ ಪೂರ್ಣಗೊಳಿಸಲು ಎಲ್ಲಾ ಭಾಗಗಳನ್ನು ಇರಿಸಿ</div>
@@ -327,7 +327,7 @@ svg { width: 100%; height: 100%; }
     </div>
     <div class="component-btn" id="btn-wire" onclick="placeComponent('wire')">
       <div class="icon">〰️</div>
-      <div class="name">à²¤à²‚à²¤à²¿à²—à²³à³</div>
+      <div class="name">ತಂತಿಗಳು</div>
     </div>
   </div>
   
@@ -344,12 +344,12 @@ svg { width: 100%; height: 100%; }
 <div class="learning-panel" id="learning-panel">
   <div class="learning-title">🔬 ನಿಮ್ಮ ಸರ್ಕ್ಯೂಟ್ ನಿರ್ಮಿಸಿ</div>
   <div class="learning-text" id="learning-text">
-    à²ªà³‚à²°à³à²£ à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³ à²…à²—à²¤à³à²¯:<br>
-    1. <strong>Cell</strong> - à²µà²¿à²¦à³à²¯à³à²¤à³ à²¶à²•à³à²¤à²¿ à²’à²¦à²—à²¿à²¸à³à²¤à³à²¤à²¦à³†<br>
-    2. <strong>Bulb</strong> - à²¶à²•à³à²¤à²¿à²¯à²¨à³à²¨à³ à²¬à²³à²¸à³à²¤à³à²¤à²¦à³† (à²²à³‹à²¡à³)<br>
-    3. <strong>ಸ್ವಿಚ್</strong> - à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³ à²¨à²¿à²¯à²‚à²¤à³à²°à²¿à²¸à³à²¤à³à²¤à²¦à³†<br>
-    4. <strong>à²¤à²‚à²¤à²¿à²—à²³à³</strong> - à²Žà²²à³à²²à²µà²¨à³à²¨à³‚ à²®à³à²šà³à²šà²¿à²¦ à²²à³‚à²ªà³â€Œà²¨à²²à³à²²à²¿ à²¸à²‚à²ªà²°à³à²•à²¿à²¸à²¿<br><br>
-    à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³â€Œà²¨à²²à³à²²à²¿ à²‡à²¡à²²à³ à²®à³‡à²²à²¿à²¨ à²ªà³à²°à²¤à²¿ à²˜à²Ÿà²• à²Ÿà³à²¯à²¾à²ªà³ à²®à²¾à²¡à²¿!
+    ಪೂರ್ಣ ಸರ್ಕ್ಯೂಟ್ ಅಗತ್ಯ:<br>
+    1. <strong>Cell</strong> - ವಿದ್ಯುತ್ ಶಕ್ತಿ ಒದಗಿಸುತ್ತದೆ<br>
+    2. <strong>Bulb</strong> - ಶಕ್ತಿಯನ್ನು ಬಳಸುತ್ತದೆ (ಲೋಡ್)<br>
+    3. <strong>ಸ್ವಿಚ್</strong> - ಸರ್ಕ್ಯೂಟ್ ನಿಯಂತ್ರಿಸುತ್ತದೆ<br>
+    4. <strong>ತಂತಿಗಳು</strong> - ಎಲ್ಲವನ್ನೂ ಮುಚ್ಚಿದ ಲೂಪ್‌ನಲ್ಲಿ ಸಂಪರ್ಕಿಸಿ<br><br>
+    ಸರ್ಕ್ಯೂಟ್â€Œನಲ್ಲಿ ಇಡಲು ಮೇಲಿನ ಪ್ರತಿ ಘಟಕ ಟ್ಯಾಪ್ ಮಾಡಿ!
   </div>
 </div>
 
@@ -357,22 +357,22 @@ svg { width: 100%; height: 100%; }
   <div class="rules-title">📋 ಸರ್ಕ್ಯೂಟ್ ನಿಯಮಗಳು</div>
   <div class="rule-item">
     <span class="rule-icon">✅</span>
-    <span>à²ªà³à²°à²µà²¾à²¹ à²¹à²°à²¿à²¯à³à²µà³à²¦à³ à²®à²¾à²¤à³à²° <strong>ಸಂಪೂರ್ಣ ಮುಚ್ಚಿದ ಮಾರ್ಗ</strong></span>
+    <span>ಪ್ರವಾಹ ಹರಿಯುವುದು ಮಾತ್ರ <strong>ಸಂಪೂರ್ಣ ಮುಚ್ಚಿದ ಮಾರ್ಗ</strong></span>
   </div>
   <div class="rule-item">
     <span class="rule-icon">✅</span>
-    <span>à²ªà³à²°à²µà²¾à²¹ à²¹à²°à²¿à²¯à³à²¤à³à²¤à²¦à³† ಧನ ಟರ್ಮಿನಲ್‌ನಿಂದ ಸರ್ಕ್ಯೂಟ್ ಮೂಲಕ ಋಣ ಟರ್ಮಿನಲ್‌ಕ್ಕೆ</span>
+    <span>ಪ್ರವಾಹ ಹರಿಯುತ್ತದೆ ಧನ ಟರ್ಮಿನಲ್‌ನಿಂದ ಸರ್ಕ್ಯೂಟ್ ಮೂಲಕ ಋಣ ಟರ್ಮಿನಲ್‌ಕ್ಕೆ</span>
   </div>
   <div class="rule-item">
     <span class="rule-icon">❌</span>
-    <span>à²Žà²²à³à²²à²¿à²¯à²¾à²¦à²°à³‚ à²…à²‚à²¤à²° à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³ à²®à³à²°à²¿à²¯à³à²¤à³à²¤à²¦à³† - à²ªà³à²°à²µà²¾à²¹ à²‡à²²à³à²²</span>
+    <span>ಎಲ್ಲಿಯಾದರೂ ಅಂತರ ಸರ್ಕ್ಯೂಟ್ ಮುರಿಯುತ್ತದೆ - ಪ್ರವಾಹ ಇಲ್ಲ</span>
   </div>
 </div>
 
 <div class="takeaway" id="takeaway">
   <div class="takeaway-title">🎯 ನೀವು ಕಲಿತದ್ದು</div>
   <div class="takeaway-text">
-    ವಿದ್ಯುತ್ ಸರ್ಕ್ಯೂಟ್ ಒಂದು <strong>ಸಂಪೂರ್ಣ ಮುಚ್ಚಿದ ಮಾರ್ಗ</strong> for current to flow. It needs a ಮೂಲ (cell), a load (bulb), ಮತ್ತು ಸಂಪರ್ಕ ತಂತಿಗಳು. The ಸ್ವಿಚ್ controls whether the path is à²ªà³‚à²°à³à²£ (ON) or broken (OFF).
+    ವಿದ್ಯುತ್ ಸರ್ಕ್ಯೂಟ್ ಒಂದು <strong>ಸಂಪೂರ್ಣ ಮುಚ್ಚಿದ ಮಾರ್ಗ</strong> for current to flow. It needs a ಮೂಲ (cell), a load (bulb), ಮತ್ತು ಸಂಪರ್ಕ ತಂತಿಗಳು. The ಸ್ವಿಚ್ controls whether the path is ಪೂರ್ಣ (ON) or broken (OFF).
   </div>
 </div>
 
@@ -411,7 +411,7 @@ function placeComponent(type) {
     document.getElementById('placed-switch').style.display = 'block';
     document.getElementById('switch-slot').style.display = 'none';
   } else if (type === 'wire') {
-    // à²¸à²‚à²ªà²°à³à²•à²¿à²¸à²¿ all wires
+    // Connect all wires
     ['wire1', 'wire2', 'wire3', 'wire4'].forEach(id => {
       const wire = document.getElementById(id);
       wire.setAttribute('stroke', '#4caf50');
@@ -441,10 +441,10 @@ function checkCircuit() {
 
 function updateLearning(type) {
   const messages = {
-    cell: `<strong>✅ Cell placed!</strong><br>The cell is the à²¶à²•à³à²¤à²¿ ಮೂಲ. It has + ಮತ್ತು − terminals. Current will flow from + terminal.<br><br>Now add the remaining components!`,
-    bulb: `<strong>✅ Bulb placed!</strong><br>The bulb is the "load" - it uses electrical à²¶à²•à³à²¤à²¿ to produce light.<br><br>Keep adding components!`,
+    cell: `<strong>✅ Cell placed!</strong><br>The cell is the ಶಕ್ತಿ ಮೂಲ. It has + ಮತ್ತು − terminals. Current will flow from + terminal.<br><br>Now add the remaining components!`,
+    bulb: `<strong>✅ Bulb placed!</strong><br>The bulb is the "load" - it uses electrical ಶಕ್ತಿ to produce light.<br><br>Keep adding components!`,
     ಸ್ವಿಚ್: `<strong>✅ ಸ್ವಿಚ್ placed!</strong><br>The ಸ್ವಿಚ್ controls the circuit. When closed (ON), current can flow. When open (OFF), the circuit is broken.<br><br>Almost there!`,
-    wire: `<strong>✅ à²¤à²‚à²¤à²¿à²—à²³à³ connected!</strong><br>The wires à²ªà³‚à²°à³à²£ the path, connecting all components in a closed loop.<br><br>Your circuit is ready to test!`
+    wire: `<strong>✅ ತಂತಿಗಳು connected!</strong><br>The wires ಪೂರ್ಣ the path, connecting all components in a closed loop.<br><br>Your circuit is ready to test!`
   };
   
   learningText.innerHTML = messages[type];
@@ -455,7 +455,7 @@ function testCircuit() {
   
   ಸ್ವಿಚ್On = !ಸ್ವಿಚ್On;
   const ಸ್ವಿಚ್Lever = document.getElementById('switch-lever');
-  const bulbà²—à²¾à²œà³ = document.getElementById('bulb-glass');
+  const bulbGlass = document.getElementById('bulb-glass');
   const bulbFilament = document.getElementById('bulb-filament');
   const currentArrow = document.getElementById('current-arrow');
   
@@ -465,9 +465,9 @@ function testCircuit() {
     ಸ್ವಿಚ್Lever.setAttribute('y2', '15');
     
     // Light bulb
-    bulbà²—à²¾à²œà³.setAttribute('fill', '#ffeb3b');
+    bulbGlass.setAttribute('fill', '#ffeb3b');
     bulbFilament.setAttribute('fill', '#fff');
-    bulbà²—à²¾à²œà³.classList.add('bulb-glow');
+    bulbGlass.classList.add('bulb-glow');
     
     // Show current flow
     ['wire1', 'wire2', 'wire3', 'wire4'].forEach(id => {
@@ -481,9 +481,9 @@ function testCircuit() {
     
     learningText.innerHTML = `
       <strong>🎉 Circuit ಪೂರ್ಣ!</strong><br><br>
-      The ಸ್ವಿಚ್ is <span style="color:#4caf50;font-weight:600">CLOSED (ON)</span> - the circuit path is à²ªà³‚à²°à³à²£!<br><br>
-      à²ªà³à²°à²µà²¾à²¹ à²¹à²°à²¿à²¯à³à²¤à³à²¤à²¦à³†: <strong>Cell (+) → Wire → Bulb → Wire → ಸ್ವಿಚ್ → Wire → Cell (−)</strong><br><br>
-      The bulb glows because current passes through its à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³!
+      The ಸ್ವಿಚ್ is <span style="color:#4caf50;font-weight:600">CLOSED (ON)</span> - the circuit path is ಪೂರ್ಣ!<br><br>
+      ಪ್ರವಾಹ ಹರಿಯುತ್ತದೆ: <strong>Cell (+) → Wire → Bulb → Wire → ಸ್ವಿಚ್ → Wire → Cell (−)</strong><br><br>
+      The bulb glows because current passes through its filament!
     `;
     
     takeaway.classList.add('show');
@@ -493,9 +493,9 @@ function testCircuit() {
     ಸ್ವಿಚ್Lever.setAttribute('y2', '5');
     
     // Turn off bulb
-    bulbà²—à²¾à²œà³.setAttribute('fill', '#e0e0e0');
+    bulbGlass.setAttribute('fill', '#e0e0e0');
     bulbFilament.setAttribute('fill', '#bdbdbd');
-    bulbà²—à²¾à²œà³.classList.remove('bulb-glow');
+    bulbGlass.classList.remove('bulb-glow');
     
     // ನಿಲ್ಲಿಸಿ current flow
     ['wire1', 'wire2', 'wire3', 'wire4'].forEach(id => {
@@ -511,7 +511,7 @@ function testCircuit() {
       <strong>Circuit Open</strong><br><br>
       The ಸ್ವಿಚ್ is <span style="color:#c62828;font-weight:600">OPEN (OFF)</span> - there's a gap in the circuit!<br><br>
       Current cannot flow because the path is broken. The bulb doesn't glow.<br><br>
-      Tap "Turn ON" to close the ಸ್ವಿಚ್ ಮತ್ತು à²ªà³‚à²°à³à²£ the circuit again.
+      Tap "Turn ON" to close the ಸ್ವಿಚ್ ಮತ್ತು ಪೂರ್ಣ the circuit again.
     `;
   }
 }
@@ -562,12 +562,12 @@ function resetCircuit() {
   statusBar.className = 'status-bar';
   
   learningText.innerHTML = `
-    à²ªà³‚à²°à³à²£ à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³ à²…à²—à²¤à³à²¯:<br>
-    1. <strong>Cell</strong> - à²µà²¿à²¦à³à²¯à³à²¤à³ à²¶à²•à³à²¤à²¿ à²’à²¦à²—à²¿à²¸à³à²¤à³à²¤à²¦à³†<br>
-    2. <strong>Bulb</strong> - à²¶à²•à³à²¤à²¿à²¯à²¨à³à²¨à³ à²¬à²³à²¸à³à²¤à³à²¤à²¦à³† (à²²à³‹à²¡à³)<br>
-    3. <strong>ಸ್ವಿಚ್</strong> - à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³ à²¨à²¿à²¯à²‚à²¤à³à²°à²¿à²¸à³à²¤à³à²¤à²¦à³†<br>
-    4. <strong>à²¤à²‚à²¤à²¿à²—à²³à³</strong> - à²Žà²²à³à²²à²µà²¨à³à²¨à³‚ à²®à³à²šà³à²šà²¿à²¦ à²²à³‚à²ªà³â€Œà²¨à²²à³à²²à²¿ à²¸à²‚à²ªà²°à³à²•à²¿à²¸à²¿<br><br>
-    à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³â€Œà²¨à²²à³à²²à²¿ à²‡à²¡à²²à³ à²®à³‡à²²à²¿à²¨ à²ªà³à²°à²¤à²¿ à²˜à²Ÿà²• à²Ÿà³à²¯à²¾à²ªà³ à²®à²¾à²¡à²¿!
+    ಪೂರ್ಣ ಸರ್ಕ್ಯೂಟ್ ಅಗತ್ಯ:<br>
+    1. <strong>Cell</strong> - ವಿದ್ಯುತ್ ಶಕ್ತಿ ಒದಗಿಸುತ್ತದೆ<br>
+    2. <strong>Bulb</strong> - ಶಕ್ತಿಯನ್ನು ಬಳಸುತ್ತದೆ (ಲೋಡ್)<br>
+    3. <strong>ಸ್ವಿಚ್</strong> - ಸರ್ಕ್ಯೂಟ್ ನಿಯಂತ್ರಿಸುತ್ತದೆ<br>
+    4. <strong>ತಂತಿಗಳು</strong> - ಎಲ್ಲವನ್ನೂ ಮುಚ್ಚಿದ ಲೂಪ್‌ನಲ್ಲಿ ಸಂಪರ್ಕಿಸಿ<br><br>
+    ಸರ್ಕ್ಯೂಟ್â€Œನಲ್ಲಿ ಇಡಲು ಮೇಲಿನ ಪ್ರತಿ ಘಟಕ ಟ್ಯಾಪ್ ಮಾಡಿ!
   `;
   
   takeaway.classList.remove('show');

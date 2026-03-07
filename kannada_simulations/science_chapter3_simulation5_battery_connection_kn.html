@@ -352,8 +352,8 @@ function createCell(x, y, index) {
   `;
 }
 
-function createWire(x1, y1, x2, y2, isಅನಿಮೇಟ್d = true) {
-  const animClass = isಅನಿಮೇಟ್d ? 'wire-animate' : '';
+function createWire(x1, y1, x2, y2, isAnimated = true) {
+  const animClass = isAnimated ? 'wire-animate' : '';
   return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#4caf50" stroke-width="3" class="${animClass}"/>`;
 }
 

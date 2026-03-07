@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -69,7 +69,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -158,7 +158,7 @@ svg { width: 100%; height: 100%; }
 .ಸ್ವಿಚ್-label { font-size: 12px; font-weight: 600; color: #666; }
 .ಸ್ವಿಚ್-label.on { color: #4caf50; }
 
-.ಸ್ವಿಚ್-toggle {
+.switch-toggle {
   width: 60px;
   height: 32px;
   background: #e0e0e0;
@@ -168,9 +168,9 @@ svg { width: 100%; height: 100%; }
   transition: background 0.3s ease;
 }
 
-.ಸ್ವಿಚ್-toggle.on { background: #4caf50; }
+.switch-toggle.on { background: #4caf50; }
 
-.ಸ್ವಿಚ್-knob {
+.switch-knob {
   position: absolute;
   top: 4px;
   left: 4px;
@@ -179,10 +179,10 @@ svg { width: 100%; height: 100%; }
   background: #fff;
   border-radius: 50%;
   transition: left 0.3s ease;
-  box-ನೆರಳು: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-.ಸ್ವಿಚ್-toggle.on .ಸ್ವಿಚ್-knob { left: 32px; }
+.switch-toggle.on .switch-knob { left: 32px; }
 
 .takeaway {
   background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
@@ -290,11 +290,11 @@ svg { width: 100%; height: 100%; }
         <text x="200" y="45" font-size="10" fill="#fff" text-anchor="middle">ಸ್ವಿಚ್</text>
         
         <line x1="200" y1="165" x2="200" y2="190" stroke="#fff" stroke-width="1"/>
-        <text x="200" y="205" font-size="10" fill="#fff" text-anchor="middle">ಘಟಕಗಳು (à²’à²³à²—à³†)</text>
+        <text x="200" y="205" font-size="10" fill="#fff" text-anchor="middle">ಘಟಕಗಳು (ಒಳಗೆ)</text>
       </g>
       
       <!-- Status text -->
-      <text x="200" y="225" font-size="12" fill="#fff" text-anchor="middle" font-weight="600" id="status-text">à²•à²²à²¿à²¯à²²à³ à²•à³†à²³à²—à²¿à²¨ à²˜à²Ÿà²•à²—à²³à²¨à³à²¨à³ à²Ÿà³à²¯à²¾à²ªà³ à²®à²¾à²¡à²¿</text>
+      <text x="200" y="225" font-size="12" fill="#fff" text-anchor="middle" font-weight="600" id="status-text">ಕಳಿಯಲು ಕೆಳಗಿನ ಘಟಕಗಳನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ</text>
     </svg>
   </div>
   
@@ -305,14 +305,14 @@ svg { width: 100%; height: 100%; }
     </button>
     <button class="mode-btn" id="btn-exploded" onclick="setMode('exploded')">
       <div class="icon">🔧</div>
-      <div class="name">à²’à²³à²—à³† à²¨à³‹à²¡à²¿</div>
+      <div class="name">ಒಳಗೆ ನೋಡಿ</div>
     </button>
   </div>
   
   <div class="ಸ್ವಿಚ್-control">
     <span class="ಸ್ವಿಚ್-label">OFF</span>
-    <div class="ಸ್ವಿಚ್-toggle" id="switch-toggle" onclick="toggleಸ್ವಿಚ್()">
-      <div class="ಸ್ವಿಚ್-knob"></div>
+    <div class="switch-toggle" id="switch-toggle" onclick="toggleSwitch()">
+      <div class="switch-knob"></div>
     </div>
     <span class="ಸ್ವಿಚ್-label on">ON</span>
   </div>
@@ -323,34 +323,34 @@ svg { width: 100%; height: 100%; }
     <div class="icon">💡</div>
     <div class="info">
       <div class="name">Lamp (Bulb/LED)</div>
-      <div class="desc">à²ªà³à²°à²µà²¾à²¹ à²¹à²°à²¿à²¦à²¾à²— à²¬à³†à²³à²•à³ à²‰à²¤à³à²ªà²¾à²¦à²¿à²¸à³à²¤à³à²¤à²¦à³†</div>
+      <div class="desc">ಪ್ರವಾಹ ಹರಿದಾಗ ಬೆಳಕು ಉತ್ಪಾದಿಸುತ್ತದೆ</div>
     </div>
   </div>
   <div class="component-item" onclick="showComponent('ಘಟಕಗಳು', this)">
     <div class="icon">🔋</div>
     <div class="info">
       <div class="name">ವಿದ್ಯುತ್ ಕೋಶs</div>
-      <div class="desc">à²µà²¿à²¦à³à²¯à³à²¤à³ à²¶à²•à³à²¤à²¿ à²’à²¦à²—à²¿à²¸à³à²¤à³à²¤à²¦à³†</div>
+      <div class="desc">ವಿದ್ಯುತ್ ಶಕ್ತಿ ಒದಗಿಸುತ್ತದೆ</div>
     </div>
   </div>
   <div class="component-item" onclick="showComponent('ಸ್ವಿಚ್', this)">
     <div class="icon">🔘</div>
     <div class="info">
       <div class="name">ಸ್ವಿಚ್</div>
-      <div class="desc">à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³ à²†à²¨à³/à²†à²«à³ à²¨à²¿à²¯à²‚à²¤à³à²°à²£</div>
+      <div class="desc">ಸರ್ಕ್ಯೂಟ್ ಆನ್/ಆಫ್ ನಿಯಂತ್ರಣ</div>
     </div>
   </div>
 </div>
 
 <div class="detail-panel" id="detail-panel">
-  <div class="detail-title" id="detail-title">à²˜à²Ÿà²• à²µà²¿à²µà²°</div>
+  <div class="detail-title" id="detail-title">ಘಟಕ ವಿವರ</div>
   <div class="detail-text" id="detail-text"></div>
 </div>
 
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೀವು ಕಲಿತದ್ದು</div>
   <div class="takeaway-text">
-    à²Ÿà²¾à²°à³à²šà³ à²’à²‚à²¦à³ à²¸à²°à²³ à²µà²¿à²¦à³à²¯à³à²¤à³ à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³! à²…à²¦à³ <strong>ಘಟಕಗಳು</strong> à²¶à²•à³à²¤à²¿ à²’à²¦à²—à²¿à²¸à³à²¤à³à²¤à²¦à³†, à²…à²¦à³ <strong>ಸ್ವಿಚ್</strong> à²ªà³à²°à²µà²¾à²¹ à²¹à²°à²¿à²µà³ à²¨à²¿à²¯à²‚à²¤à³à²°à²£, à²®à²¤à³à²¤à³ <strong>lamp</strong> à²µà²¿à²¦à³à²¯à³à²¤à³ à²¶à²•à³à²¤à²¿à²¯à²¨à³à²¨à³ à²¬à³†à²³à²•à²¾à²—à²¿. à²¸à³à²µà²¿à²šà³ à²†à²¨à³ à²†à²¦à²¾à²— à²ªà³à²°à²µà²¾à²¹ à²ªà³‚à²°à³à²£ à²®à²¾à²°à³à²— (à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³) à²®à²¤à³à²¤à³ à²¦à³€à²ª à²‰à²œà³à²œà³à²µà²².
+    ಟಾರ್ಚ್ ಒಂದು ಸರಳ ವಿದ್ಯುತ್ ಸರ್ಕ್ಯೂಟ್! ಅದು <strong>ಘಟಕಗಳು</strong> ಶಕ್ತಿ ಒದಗಿಸುತ್ತದೆ, ಅದು <strong>ಸ್ವಿಚ್</strong> ಪ್ರವಾಹ ಹರಿವು ನಿಯಂತ್ರಣ, ಮತ್ತು <strong>lamp</strong> ವಿದ್ಯುತ್ ಶಕ್ತಿಯನ್ನು ಬೆಳಕಾಗಿ. ಸ್ವಿಚ್ ಆನ್ ಆದಾಗ ಪ್ರವಾಹ ಪೂರ್ಣ ಮಾರ್ಗ (ಸರ್ಕ್ಯೂಟ್) ಮತ್ತು ದೀಪ ಉಜ್ಜ್ವಲ.
   </div>
 </div>
 
@@ -375,11 +375,11 @@ const detailText = document.getElementById('detail-text');
 const componentDetails = {
   lamp: {
     title: '💡 Lamp (Light ಮೂಲ)',
-    text: 'The lamp is the component that produces light. It can be an <strong>incಮತ್ತುescent bulb</strong> (with a thin wire à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³ that glows when heated) or an <strong>LED</strong> (à²²à³ˆà²Ÿà³ à²Žà²®à²¿à²Ÿà²¿à²‚à²—à³ à²¡à²¯à³‹à²¡à³ - more efficient, no à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³). When electric current flows through it, electrical à²¶à²•à³à²¤à²¿ is converted to light à²¶à²•à³à²¤à²¿.'
+    text: 'The lamp is the component that produces light. It can be an <strong>incಮತ್ತುescent bulb</strong> (with a thin wire filament that glows when heated) or an <strong>LED</strong> (LED - more efficient, no filament). When electric current flows through it, electrical ಶಕ್ತಿ is converted to light ಶಕ್ತಿ.'
   },
   ಘಟಕಗಳು: {
     title: '🔋 ವಿದ್ಯುತ್ ಕೋಶs (Power ಮೂಲ)',
-    text: 'Electric ಘಟಕಗಳು are the ಮೂಲ of electrical à²¶à²•à³à²¤à²¿ in a torch. Each cell has two terminals: <strong>ಧನ (+)</strong> shown by a metal cap, ಮತ್ತು <strong>ಋಣ (-)</strong> shown by a flat metal disc. When two or more ಘಟಕಗಳು are connected together (+ of one to - of next), they form a <strong>ಬ್ಯಾಟರಿ</strong> that provides more power.'
+    text: 'Electric ಘಟಕಗಳು are the ಮೂಲ of electrical ಶಕ್ತಿ in a torch. Each cell has two terminals: <strong>ಧನ (+)</strong> shown by a metal cap, ಮತ್ತು <strong>ಋಣ (-)</strong> shown by a flat metal disc. When two or more ಘಟಕಗಳು are connected together (+ of one to - of next), they form a <strong>ಬ್ಯಾಟರಿ</strong> that provides more power.'
   },
   ಸ್ವಿಚ್: {
     title: '🔘 ಸ್ವಿಚ್ (ಸರ್ಕ್ಯೂಟ್ ನಿಯಂತ್ರಕ)',
@@ -399,11 +399,11 @@ function setMode(mode) {
   } else {
     ಘಟಕಗಳುInternal.style.display = 'none';
     labels.style.display = 'none';
-    statusText.textContent = isOn ? 'ಸ್ವಿಚ್ is ON - à²ªà³à²°à²µà²¾à²¹ à²¹à²°à²¿à²¯à³à²¤à³à²¤à²¿à²¦à³†!' : 'Try the ಸ್ವಿಚ್ below';
+    statusText.textContent = isOn ? 'ಸ್ವಿಚ್ is ON - ಪ್ರವಾಹ ಹರಿಯುತ್ತಿದೆ!' : 'Try the ಸ್ವಿಚ್ below';
   }
 }
 
-function toggleಸ್ವಿಚ್() {
+function toggleSwitch() {
   isOn = !isOn;
   ಸ್ವಿಚ್Toggle.classList.toggle('on', isOn);
   
