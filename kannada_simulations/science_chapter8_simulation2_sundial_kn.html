@@ -276,19 +276,19 @@ body {
 
 <div class="sim-card">
   <div class="time-control">
-    <label>☀️ ಸೂರ್ಯನನ್ನು ಆಕಾಶದಾದ್ಯಂತ ಸರಿಸಿ (6 AM - 6 PM):</label>
+    <label>☀️ ಸೂರ್ಯನನ್ನು ಆಕಾಶದಾದ್ಯಂತ ಸರಿಸಿ (6 ಪೂರ್ವಾಹ್ನ - 6 ಅಪರಾಹ್ನ):</label>
     <input type="range" id="time-slider" min="6" max="18" value="12" step="0.5" oninput="updateSundial(this.value)">
     <div class="time-display">
-      <span>🌅 6 AM</span>
-      <span>☀️ 12 PM</span>
-      <span>🌇 6 PM</span>
+      <span>🌅 6 ಪೂರ್ವಾಹ್ನ</span>
+      <span>☀️ 12 ಮಧ್ಯಾಹ್ನ</span>
+      <span>🌇 6 ಅಪರಾಹ್ನ</span>
     </div>
   </div>
   
-  <div class="current-time" id="current-time">12:00 PM</div>
+  <div class="current-time" id="current-time">12:00 ಅಪರಾಹ್ನ</div>
   
   <div class="sundial-visual">
-    <div class="time-period" id="time-period">☀️ Noon</div>
+    <div class="time-period" id="time-period">☀️ ಮಧ್ಯಾಹ್ನ</div>
     
     <div class="sun" id="sun">
       <div class="sun-rays">
@@ -381,7 +381,7 @@ function updateSundial(hours) {
   // Update time display
   const hour = Math.floor(hours);
   const minutes = (hours % 1) * 60;
-  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const ampm = hours >= 12 ? 'ಅಪರಾಹ್ನ' : 'ಪೂರ್ವಾಹ್ನ';
   const displayHour = hour > 12 ? hour - 12 : (hour === 0 ? 12 : hour);
   currentTime.textContent = `${displayHour}:${minutes.toString().padStart(2, '0')} ${ampm}`;
   
@@ -391,7 +391,7 @@ function updateSundial(hours) {
   } else if (hours < 12) {
     timePeriod.textContent = '☀️ ನಂತರದ ಬೆಳಿಗ್ಗೆ';
   } else if (hours < 14) {
-    timePeriod.textContent = '☀️ Noon';
+    timePeriod.textContent = '☀️ ಮಧ್ಯಾಹ್ನ';
   } else if (hours < 17) {
     timePeriod.textContent = '🌤️ ಮಧ್ಯಾಹ್ನ';
   } else {

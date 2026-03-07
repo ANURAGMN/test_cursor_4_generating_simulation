@@ -218,7 +218,7 @@ body {
       <div class="stage-content">
         <div class="stage-name">ಶಿಶು ಅವಧಿ</div>
         <div class="stage-age">0-2 ವರ್ಷ</div>
-        <div class="stage-desc">Rapid physical growth, learning to walk ಮತ್ತು talk</div>
+        <div class="stage-desc">ವೇಗವಾದ ಭೌತಿಕ ಬೆಳವಣಿಗೆ, ನಡೆಯಲು ಮತ್ತು ಮಾತನಾಡಲು ಕಲಿಕೆ</div>
       </div>
     </div>
     
@@ -236,7 +236,7 @@ body {
       <div class="stage-content">
         <div class="stage-name">⭐ ಕೌಮಾರ</div>
         <div class="stage-age">10-19 ವರ್ಷ</div>
-        <div class="stage-desc">ಯೌವನ, rapid ಬದಲಾಗುತ್ತದೆ, preparation for adulthood</div>
+        <div class="stage-desc">ಯೌವನ, ವೇಗವಾದ ಬದಲಾವಣೆಗಳು, ಪ್ರೌಢಾವಸ್ಥೆಗೆ ತಯಾರಿ</div>
       </div>
     </div>
     
@@ -252,7 +252,7 @@ body {
     <div class="stage-item" onclick="selectStage(4, this)">
       <div class="stage-dot">👴</div>
       <div class="stage-content">
-        <div class="stage-name">Old Age</div>
+        <div class="stage-name">ವೃದ್ಧಾವಸ್ಥೆ</div>
         <div class="stage-age">60+ ವರ್ಷ</div>
         <div class="stage-desc">ಜ್ಞಾನ, ನಿಧಾನ, ಜೀವನ ಅನುಭವ ಆನಂದ</div>
       </div>
@@ -265,11 +265,11 @@ body {
   <div class="detail-text" id="detail-text">
     <strong>ಕೌಮಾರ (10-19 ವರ್ಷ)</strong> ಬಾಲ್ಯ ಮತ್ತು ಪ್ರೌಢಾವಸ್ಥೆಯ ನಡುವಿನ ಪರಿವರ್ತನಾ ಅವಧಿ.<br><br>
     <strong>ಮುಖ್ಯ ಲಕ್ಷಣಗಳು:</strong><br>
-    • Rapid physical growth (height, weight)<br>
+    • ವೇಗವಾದ ಭೌತಿಕ ಬೆಳವಣಿಗೆ (ಎತ್ತರ, ತೂಕ)<br>
     • ಪ್ರಜನನ ಸಾಮರ್ಥ್ಯ ವಿಕಾಸ<br>
-    • Emotional ಮತ್ತು psychological ಬದಲಾಗುತ್ತದೆ<br>
+    • ಭಾವನಾತ್ಮಕ ಮತ್ತು ಮಾನಸಿಕ ಬದಲಾವಣೆಗಳು<br>
     • ಗುರುತು ಮತ್ತು ಸ್ವಾತಂತ್ರ್ಯ ವಿಕಾಸ<br><br>
-    This is the stage YOU are in right now! It's a time of exciting ಬದಲಾಗುತ್ತದೆ ಮತ್ತು growth.
+    ಇದು ನೀವು ಇರುವ ಹಂತ! ಉತ್ತೇಜಕ ಬದಲಾವಣೆ ಮತ್ತು ಬೆಳವಣಿಗೆಯ ಕಾಲ.
   </div>
 </div>
 
@@ -313,48 +313,48 @@ body {
 const stages = [
   {
     title: '👶 ಶಿಶು ಅವಧಿ (0-2 ವರ್ಷ)',
-    text: `<strong>The beginning of ಜೀವನ!</strong><br><br>
-      <strong>Physical:</strong> Fastest growth period, tripling birth weight<br>
-      <strong>Motor skills:</strong> Learning to crawl, walk, grasp objects<br>
-      <strong>Communication:</strong> First words, babbling, crying<br>
-      <strong>Dependence:</strong> Completely dependent on caregivers<br><br>
-      Babies learn about the world through their senses!`
+    text: `<strong>ಜೀವನದ ಆರಂಭ!</strong><br><br>
+      <strong>ಭೌತಿಕ:</strong> ಅತಿ ವೇಗದ ಬೆಳವಣಿಗೆ, ಜನನ ತೂಕ ಮೂರರಷ್ಟು<br>
+      <strong>ಚಲನಾ ಕೌಶಲ:</strong> ಊರಿ ನಡೆಯಲು, ನಡೆಯಲು, ವಸ್ತುಗಳನ್ನು ಹಿಡಿಯಲು ಕಲಿಕೆ<br>
+      <strong>ಸಂವಹನ:</strong> ಮೊದಲ ಪದಗಳು, ಕೂಗು, ಅಳುವು<br>
+      <strong>ಅವಲಂಬನೆ:</strong> ಪೋಷಕರ ಮೇಲೆ ಸಂಪೂರ್ಣ ಅವಲಂಬನೆ<br><br>
+      ಶಿಶುಗಳು ಇಂದ್ರಿಯಗಳ ಮೂಲಕ ಜಗತ್ತನ್ನು ಕಲಿಯುತ್ತವೆ!`
   },
   {
     title: '🧒 ಬಾಲ್ಯ (3-9 ವರ್ಷ)',
-    text: `<strong>Learning ಮತ್ತು exploring!</strong><br><br>
-      <strong>Physical:</strong> Steady growth, developing coordination<br>
-      <strong>ಮಾನಸಿಕ:</strong> Learning to read, write, ಮತ್ತು solve problems<br>
-      <strong>ಸಾಮಾಜಿಕ:</strong> Making friends, learning to share<br>
-      <strong>Emotional:</strong> Developing empathy ಮತ್ತು understಮತ್ತುing<br><br>
-      Children are curious ಮತ್ತು absorb knowledge like sponges!`
+    text: `<strong>ಕಲಿಕೆ ಮತ್ತು ಅನ್ವೇಷಣೆ!</strong><br><br>
+      <strong>ಭೌತಿಕ:</strong> ಸ್ಥಿರ ಬೆಳವಣಿಗೆ, ಸಂಯೋಜನೆ ವಿಕಾಸ<br>
+      <strong>ಮಾನಸಿಕ:</strong> ಓದಲು, ಬರೆಯಲು ಮತ್ತು ಸಮಸ್ಯೆಗಳನ್ನು ಪರಿಹರಿಸಲು ಕಲಿಕೆ<br>
+      <strong>ಸಾಮಾಜಿಕ:</strong> ಸ್ನೇಹಿತರನ್ನು ಮಾಡಿಕೊಳ್ಳುವುದು, ಹಂಚಿಕೊಳ್ಳಲು ಕಲಿಕೆ<br>
+      <strong>ಭಾವನಾತ್ಮಕ:</strong> ಸಹಾನುಭೂತಿ ಮತ್ತು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವಿಕೆ ವಿಕಾಸ<br><br>
+      ಮಕ್ಕಳು ಜಿಜ್ಞಾಸು ಮತ್ತು ಸ್ಪಂಜ್‌ನಂತೆ ಜ್ಞಾನ ಹೀರಿಕೊಳ್ಳುತ್ತವೆ!`
   },
   {
     title: '⭐ ಕೌಮಾರ (10-19 ವರ್ಷ)',
-    text: `<strong>The transformation stage - YOU are here!</strong><br><br>
-      <strong>Physical:</strong> Rapid growth, puberty ಬದಲಾಗುತ್ತದೆ<br>
-      <strong>Emotional:</strong> Mood swings, stronger feelings<br>
-      <strong>ಸಾಮಾಜಿಕ:</strong> Identity formation, peer relationships<br>
-      <strong>Cognitive:</strong> Abstract thinking develops<br><br>
-      This is a special time of growth - embrace the ಬದಲಾಗುತ್ತದೆ!`
+    text: `<strong>ಪರಿವರ್ತನಾ ಹಂತ - ನೀವು ಇಲ್ಲಿದ್ದೀರಿ!</strong><br><br>
+      <strong>ಭೌತಿಕ:</strong> ವೇಗವಾದ ಬೆಳವಣಿಗೆ, ಯೌವನಾರಂಭ ಬದಲಾವಣೆಗಳು<br>
+      <strong>ಭಾವನಾತ್ಮಕ:</strong> ಮನೋಭಾವ ಏರಿಳಿತ, ಬಲವಾದ ಭಾವನೆಗಳು<br>
+      <strong>ಸಾಮಾಜಿಕ:</strong> ಗುರುತು ರೂಪಣೆ, ಸಮವಯಸ್ಕ ಸಂಬಂಧಗಳು<br>
+      <strong>ಜ್ಞಾನಾತ್ಮಕ:</strong> ಅಮೂರ್ತ ಚಿಂತನೆ ವಿಕಾಸ<br><br>
+      ಇದು ಬೆಳವಣಿಗೆಯ ವಿಶೇಷ ಕಾಲ - ಬದಲಾವಣೆಯನ್ನು ಸ್ವೀಕರಿಸಿ!`
   },
   {
     title: '👨 ಪ್ರೌಢಾವಸ್ಥೆ (20-60 ವರ್ಷ)',
-    text: `<strong>Independence ಮತ್ತು responsibility!</strong><br><br>
-      <strong>Physical:</strong> Body fully developed, peak fitness<br>
-      <strong>Career:</strong> Working, contributing to society<br>
-      <strong>Family:</strong> May have children, responsibilities<br>
-      <strong>Growth:</strong> Continued learning ಮತ್ತು development<br><br>
-      Adults use skills learned in earlier stages!`
+    text: `<strong>ಸ್ವಾತಂತ್ರ್ಯ ಮತ್ತು ಜವಾಬ್ದಾರಿ!</strong><br><br>
+      <strong>ಭೌತಿಕ:</strong> ಶರೀರ ಪೂರ್ಣ ವಿಕಾಸ, ಉಚ್ಚ ಫಿಟ್ನೆಸ್<br>
+      <strong>ವೃತ್ತಿ:</strong> ಕೆಲಸ, ಸಮಾಜಕ್ಕೆ ಕೊಡುಗೆ<br>
+      <strong>ಕುಟುಂಬ:</strong> ಮಕ್ಕಳು, ಜವಾಬ್ದಾರಿಗಳು<br>
+      <strong>ಬೆಳವಣಿಗೆ:</strong> ನಿರಂತರ ಕಲಿಕೆ ಮತ್ತು ವಿಕಾಸ<br><br>
+      ಪ್ರೌಢರು ಹಿಂದಿನ ಹಂತಗಳಲ್ಲಿ ಕಲಿತ ಕೌಶಲಗಳನ್ನು ಬಳಸುತ್ತಾರೆ!`
   },
   {
-    title: '👴 Old Age (60+ ವರ್ಷ)',
-    text: `<strong>Wisdom ಮತ್ತು reflection!</strong><br><br>
-      <strong>Physical:</strong> Gradual slowing, may need support<br>
-      <strong>ಮಾನಸಿಕ:</strong> Wisdom from ಜೀವನ experiences<br>
-      <strong>ಸಾಮಾಜಿಕ:</strong> Grಮತ್ತುparents, mentors to younger generations<br>
-      <strong>Legacy:</strong> Sharing knowledge ಮತ್ತು stories<br><br>
-      Elders are treasures of experience ಮತ್ತು wisdom!`
+    title: '👴 ವೃದ್ಧಾವಸ್ಥೆ (60+ ವರ್ಷ)',
+    text: `<strong>ಜ್ಞಾನ ಮತ್ತು ಪ್ರತಿಫಲನ!</strong><br><br>
+      <strong>ಭೌತಿಕ:</strong> ಕ್ರಮೇಣ ನಿಧಾನ, ಬೆಂಬಲ ಅಗತ್ಯವಿರಬಹುದು<br>
+      <strong>ಮಾನಸಿಕ:</strong> ಜೀವನ ಅನುಭವದಿಂದ ಜ್ಞಾನ<br>
+      <strong>ಸಾಮಾಜಿಕ:</strong> ತಾತ/ಅಜ್ಜ, ಕಿರಿಯ ಪೀಳಿಗೆಗೆ ಮಾರ್ಗದರ್ಶಿಗಳು<br>
+      <strong>ವಾರ್ಸಾ:</strong> ಜ್ಞಾನ ಮತ್ತು ಕಥೆಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳುವುದು<br><br>
+      ಹಿರಿಯರು ಅನುಭವ ಮತ್ತು ಜ್ಞಾನದ ನಿಧಿ!`
   }
 ];
 

@@ -221,7 +221,7 @@ body {
     <strong>ವೇಗ</strong> ವಸ್ತು ಎಷ್ಟು ವೇಗವಾಗಿ ಚಲಿಸುತ್ತಿದೆ ತಿಳಿಸುತ್ತದೆ. ಅದು ದೂರ covered per unit time.
   </div>
   <div class="formula-display">
-    <div class="formula-big">ವೇಗ = ದೂರ ÷ Time</div>
+    <div class="formula-big">ವೇಗ = ದೂರ ÷ ಸಮಯ</div>
   </div>
 </div>
 
@@ -237,7 +237,7 @@ body {
     </button>
     <button class="mode-tab" onclick="setMode('time', this)">
       <span class="emoji">⏱️</span>
-      Find Time
+      ಸಮಯ ಕಂಡುಹಿಡಿ
     </button>
   </div>
   
@@ -250,7 +250,7 @@ body {
   </div>
   
   <div class="input-group" id="time-group">
-    <div class="input-label">⏱️ Time</div>
+    <div class="input-label">⏱️ ಸಮಯ</div>
     <div class="input-row">
       <input type="number" class="input-field" id="time-input" value="2" min="0" step="0.1">
       <div class="unit-label">h</div>
@@ -276,7 +276,7 @@ body {
   <div class="working-panel" id="working-panel">
     <div class="working-title">📝 ಕೆಲಸ:</div>
     <div class="working-text" id="working-text">
-      ವೇಗ = ದೂರ ÷ Time<br>
+      ವೇಗ = ದೂರ ÷ ಸಮಯ<br>
       ವೇಗ = 100 km ÷ 2 h<br>
       ವೇಗ = 50 km/h
     </div>
@@ -365,7 +365,7 @@ function calculate() {
         working = 'Cannot divide by zero!';
       } else {
         result = distance / time;
-        working = `ವೇಗ = ದೂರ ÷ Time\nವೇಗ = ${distance} km ÷ ${time} h\nವೇಗ = ${result.toFixed(2)} km/h`;
+        working = `ವೇಗ = ದೂರ ÷ ಸಮಯ\nವೇಗ = ${distance} km ÷ ${time} h\nವೇಗ = ${result.toFixed(2)} km/h`;
       }
       label = 'ವೇಗ';
       unit = 'km/h';
@@ -375,7 +375,7 @@ function calculate() {
       result = ವೇಗ * time;
       label = 'ದೂರ';
       unit = 'km';
-      working = `ದೂರ = ವೇಗ × Time\nದೂರ = ${ವೇಗ} km/h × ${time} h\nದೂರ = ${result.toFixed(2)} km`;
+      working = `ದೂರ = ವೇಗ × ಸಮಯ\nದೂರ = ${ವೇಗ} km/h × ${time} h\nದೂರ = ${result.toFixed(2)} km`;
       break;
       
     case 'time':
@@ -384,7 +384,7 @@ function calculate() {
         working = 'Cannot divide by zero!';
       } else {
         result = distance / ವೇಗ;
-        working = `Time = ದೂರ ÷ ವೇಗ\nTime = ${distance} km ÷ ${ವೇಗ} km/h\nTime = ${result.toFixed(2)} h`;
+        working = `ಸಮಯ = ದೂರ ÷ ವೇಗ\nಸಮಯ = ${distance} km ÷ ${ವೇಗ} km/h\nಸಮಯ = ${result.toFixed(2)} h`;
       }
       label = 'Time';
       unit = 'ಗಂಟೆಗಳು';
