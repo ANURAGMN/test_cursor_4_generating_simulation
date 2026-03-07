@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 10px;
-  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -85,7 +85,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 8px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -112,7 +112,7 @@ svg { width: 100%; height: 100%; display: block; }
   padding: 6px 10px;
   font-size: 10px;
   font-weight: 600;
-  box-ನೆರಳು: 0 3px 8px rgba(0,0,0,0.12);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
   transition: all 0.3s ease;
 }
 
@@ -120,7 +120,7 @@ svg { width: 100%; height: 100%; display: block; }
 .soil-ಸೂಚಕ.ಮೂಲ { background: #e3f2fd; color: #1565c0; }
 .soil-ಸೂಚಕ.neutral { background: #e8f5e9; color: #2e7d32; }
 
-/* Learning Box - à²¤à³‹à²°à²¿à²¸à³à²¤à³à²¤à²¦à³† what's happening */
+/* Learning Box - ತೋರಿಸುತ್ತದೆ what's happening */
 .learning-box {
   background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
   border-radius: 10px;
@@ -277,7 +277,7 @@ svg { width: 100%; height: 100%; display: block; }
   background: #333;
   border-radius: 3px;
   transition: left 0.8s ease;
-  box-ನೆರಳು: 0 2px 4px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .ph-labels {
@@ -311,7 +311,7 @@ svg { width: 100%; height: 100%; display: block; }
 .takeaway.show { display: block; }
 .takeaway-title { font-weight: 700; color: #1b5e20; margin-bottom: 6px; }
 
-@media screen ಮತ್ತು (max-width: 380px) {
+@media screen and (max-width: 380px) {
   .soil-btn { padding: 8px 4px; font-size: 9px; }
   .concept-text { font-size: 11px; }
 }
@@ -409,7 +409,7 @@ container.innerHTML = `
 
 <!-- Learning Box - Dynamic content -->
 <div class="learning-box" id="learning-box">
-  <div class="learning-title">🔬 Understಮತ್ತುing the Problem</div>
+  <div class="learning-title">🔬 ಸಮಸ್ಯೆಯನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು</div>
   <div class="learning-text" id="learning-text">
     Plants grow best in <span class="neutral">neutral soil (pH 7)</span>. When soil becomes too acidic or too ಮೂಲ, plants cannot absorb nutrients ಮತ್ತು they become unhealthy.
   </div>
@@ -456,7 +456,7 @@ const learningTitle = learningBox.querySelector('.learning-title');
 const learningText = document.getElementById('learning-text');
 const reactionDisplay = document.getElementById('reaction-display');
 const reactionEquation = document.getElementById('reaction-equation');
-const reactionಫಲಿತಾಂಶ = document.getElementById('reaction-result');
+const reactionResult = document.getElementById('reaction-result');
 
 container.querySelectorAll('.soil-btn').forEach(btn => {
   btn.onclick = () => {
@@ -536,7 +536,7 @@ treatBtn.onclick = function() {
       `;
       
       reactionEquation.textContent = 'Soil Acid + Lime (ಕ್ಷಾರ) → ಉಪ್ಪು + ನೀರು';
-      reactionಫಲಿತಾಂಶ.textContent = '🌿 ಫಲಿತಾಂಶ: Neutral soil (pH 7) - Plant is healthy!';
+      reactionResult.textContent = '🌿 ಫಲಿತಾಂಶ: Neutral soil (pH 7) - Plant is healthy!';
       
       takeawayText.innerHTML = `
         <strong>Neutralisation in action:</strong> When soil is too ಆಮ್ಲೀಯ, farmers add LIME (a base). The base neutralises the acid, bringing soil to neutral pH 7.<br><br>
@@ -551,7 +551,7 @@ treatBtn.onclick = function() {
       `;
       
       reactionEquation.textContent = 'Compost Acids + Soil Base → ಉಪ್ಪು + ನೀರು';
-      reactionಫಲಿತಾಂಶ.textContent = '🌿 ಫಲಿತಾಂಶ: Neutral soil (pH 7) - Plant is healthy!';
+      reactionResult.textContent = '🌿 ಫಲಿತಾಂಶ: Neutral soil (pH 7) - Plant is healthy!';
       
       takeawayText.innerHTML = `
         <strong>Neutralisation in action:</strong> When soil is too ಕ್ಷಾರೀಯ, farmers add organic COMPOST. As compost decomposes, it releases acids that neutralise the base.<br><br>

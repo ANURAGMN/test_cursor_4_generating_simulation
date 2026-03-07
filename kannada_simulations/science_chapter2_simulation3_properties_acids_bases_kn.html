@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -49,14 +49,14 @@ body {
   font-weight: 600;
   margin: 8px 4px;
   color: #fff;
-  text-ನೆರಳು: 0 1px 2px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .sim-card {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 12px;
 }
 
@@ -86,13 +86,13 @@ body {
 .tab.acids.active {
   background: linear-gradient(135deg, #ef5350 0%, #c62828 100%);
   color: white;
-  box-ನೆರಳು: 0 4px 12px rgba(239,83,80,0.4);
+  box-shadow: 0 4px 12px rgba(239,83,80,0.4);
 }
 
 .tab.bases.active {
   background: linear-gradient(135deg, #42a5f5 0%, #1565c0 100%);
   color: white;
-  box-ನೆರಳು: 0 4px 12px rgba(66,165,245,0.4);
+  box-shadow: 0 4px 12px rgba(66,165,245,0.4);
 }
 
 .ಗುಣಗಳು-panel { display: none; }
@@ -248,7 +248,7 @@ body {
 .table-cell.acid { background: #ffebee; color: #c62828; }
 .table-cell.base { background: #e3f2fd; color: #1565c0; }
 
-@media screen ಮತ್ತು (max-width: 380px) {
+@media screen and (max-width: 380px) {
   .substance-grid { gap: 6px; }
   .substance-btn { padding: 8px 4px; font-size: 9px; }
   .substance-btn .icon { font-size: 18px; }
@@ -388,7 +388,7 @@ body {
   <div class="substance-grid">
     <button class="substance-btn" data-substance="lemon"><span class="icon">🍋</span>ನಿಂಬೆ</button>
     <button class="substance-btn" data-substance="soap"><span class="icon">🧼</span>ಸಾಬೂನು</button>
-    <button class="substance-btn" data-substance="bitter-gourd"><span class="icon">🥒</span>à²¹à²¾à²—à²²à²•à²¾à²¯à²¿</button>
+    <button class="substance-btn" data-substance="bitter-gourd"><span class="icon">🥒</span>ಹಾಗಲಕಾಯಿ</button>
     <button class="substance-btn" data-substance="baking-soda"><span class="icon">🥄</span>ಬೇಕಿಂಗ್ ಸೋಡಾ</button>
     <button class="substance-btn" data-substance="vinegar"><span class="icon">🫙</span>ವಿನಿಗರ್</button>
     <button class="substance-btn" data-substance="ನೀರು"><span class="icon">💧</span>ನೀರು</button>
@@ -400,14 +400,14 @@ body {
 
 <div class="comparison-table">
   <div class="table-row header">
-    <div class="table-cell">à²—à³à²£à²§à²°à³à²®</div>
+    <div class="table-cell">ಗುಣಧರ್ಮ</div>
     <div class="table-cell acid">Acids</div>
     <div class="table-cell base">Bases</div>
   </div>
   <div class="table-row">
-    <div class="table-cell">à²°à³à²šà²¿</div>
+    <div class="table-cell">ರುಚಿ</div>
     <div class="table-cell acid">Sour</div>
-    <div class="table-cell base">à²•à²¹à²¿</div>
+    <div class="table-cell base">ಕಹಿ</div>
   </div>
   <div class="table-row">
     <div class="table-cell">Feel</div>
@@ -428,7 +428,7 @@ body {
 
 <div class="safety-warning">
   <h4>⚠️ ಮೊದಲು ಸುರಕ್ಷತೆ!</h4>
-  <p><strong>à²…à²œà³à²žà²¾à²¤ à²ªà²¦à²¾à²°à³à²¥ à²°à³à²šà²¿ à²¨à³‹à²¡à²¬à³‡à²¡à²¿!</strong> The taste ಗುಣಗಳು are for educational à²‰à²¦à³à²¦à³‡à²¶s. Always use proper ಸೂಚಕs like litmus paper to test safely.</p>
+  <p><strong>ಅಜ್ಞಾತ ಪದಾರ್ಥ ರುಚಿ ನೋಡಬೇಡಿ!</strong> The taste ಗುಣಗಳು are for educational ಉದ್ದೇಶಗಳು. Always use proper ಸೂಚಕs like litmus paper to test safely.</p>
 </div>
 
 </div>
@@ -437,7 +437,7 @@ body {
 const tabs = document.querySelectorAll('.tab');
 const panels = document.querySelectorAll('.ಗುಣಗಳು-panel');
 const substanceBtns = document.querySelectorAll('.substance-btn');
-const quizಫಲಿತಾಂಶ = document.getElementById('quizResult');
+const quizResult = document.getElementById('quizResult');
 
 const substanceInfo = {
   'lemon': {
@@ -455,8 +455,8 @@ const substanceInfo = {
   'bitter-gourd': {
     type: 'Neither',
     emoji: '🥒',
-    title: 'à²¹à²¾à²—à²²à²•à²¾à²¯à²¿ - NOT A BASE!',
-    desc: 'Although bitter, it\'s NOT ಮೂಲ! à²•à²¹à²¿ness alone doesn\'t mean something is a base. Common misconception!'
+    title: 'ಹಾಗಲಕಾಯಿ - NOT A BASE!',
+    desc: 'Although bitter, it\'s NOT ಮೂಲ! ಕಹಿness alone doesn\'t mean something is a base. Common misconception!'
   },
   'baking-soda': {
     type: 'ಮೂಲ',
@@ -468,13 +468,13 @@ const substanceInfo = {
     type: 'Acidic',
     emoji: '🫙',
     title: 'ವಿನಿಗರ್ - ಆಮ್ಲೀಯ',
-    desc: 'Contains acetic acid (~5%). à²°à³à²šà²¿s sour, turns blue litmus red. pH around 2-3.'
+    desc: 'Contains acetic acid (~5%). ರುಚಿs sour, turns blue litmus red. pH around 2-3.'
   },
   'ನೀರು': {
     type: 'Neutral',
     emoji: '💧',
     title: 'ನೀರು - NEUTRAL',
-    desc: 'Pure ನೀರು is neutral (pH 7). Neither litmus paper ಬದಲಾಗುತ್ತದೆ color. à²¸à²®à²¤à³‹à²²à²¨d H+ ಮತ್ತು OH- ions.'
+    desc: 'Pure ನೀರು is neutral (pH 7). Neither litmus paper ಬದಲಾಗುತ್ತದೆ color. ಸಮತೋಲನ of H+ ಮತ್ತು OH- ions.'
   }
 };
 
@@ -495,7 +495,7 @@ substanceBtns.forEach(btn => {
     const info = substanceInfo[btn.dataset.substance];
     let bgColor = 'rgba(255,255,255,0.15)';
     
-    quizಫಲಿತಾಂಶ.innerHTML = `
+    quizResult.innerHTML = `
       <h4>${info.emoji} ${info.title}</h4>
       <p>${info.desc}</p>
     `;

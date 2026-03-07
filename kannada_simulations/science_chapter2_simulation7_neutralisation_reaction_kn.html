@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -49,14 +49,14 @@ body {
   font-weight: 600;
   margin: 8px 4px;
   color: #fff;
-  text-ನೆರಳು: 0 1px 2px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .sim-card {
   background: #fff;
   border-radius: 14px;
   padding: 8px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 12px;
 }
 
@@ -95,7 +95,7 @@ svg { width: 100%; height: 100%; display: block; }
   padding: 6px 10px;
   font-size: 10px;
   line-height: 1.3;
-  box-ನೆರಳು: 0 3px 8px rgba(0,0,0,0.12);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
   z-index: 10;
 }
 
@@ -162,7 +162,7 @@ svg { width: 100%; height: 100%; display: block; }
   border: 3px solid #1565c0;
   border-radius: 50%;
   cursor: pointer;
-  box-ನೆರಳು: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .slider-value {
@@ -186,7 +186,7 @@ svg { width: 100%; height: 100%; display: block; }
   border-radius: 18px;
   border: none;
   cursor: pointer;
-  box-ನೆರಳು: 0 4px 12px rgba(76,175,80,0.3);
+  box-shadow: 0 4px 12px rgba(76,175,80,0.3);
   -webkit-tap-highlight-color: transparent;
   transition: transform 0.1s ease;
 }
@@ -292,7 +292,7 @@ svg { width: 100%; height: 100%; display: block; }
   color: #666;
 }
 
-@media screen ಮತ್ತು (max-width: 380px) {
+@media screen and (max-width: 380px) {
   .slider-row label { width: 45px; font-size: 9px; }
   .products-box { gap: 15px; padding: 10px; }
   .product-icon { font-size: 22px; }
@@ -349,7 +349,7 @@ svg { width: 100%; height: 100%; display: block; }
 <div class="insight-box">
   <div class="insight-title">🔑 ಮುಖ್ಯ ಅಂತರ್ದೃಷ್ಟಿ:</div>
   <strong>Acid + Base → ಉಪ್ಪು + ನೀರು + Heat</strong><br>
-  When mixed in the right proportions, acids ಮತ್ತು bases à²ªà³‚à²°à³à²£ly neutralise each other. The resulting solution has pH 7 (neutral)!
+  When mixed in the right proportions, acids ಮತ್ತು bases completely neutralise each other. The resulting solution has pH 7 (neutral)!
 </div>
 
 <div class="real-world">
@@ -482,8 +482,8 @@ const resultPhDisplay = document.getElementById('result-ph');
 const classificationDisplay = document.getElementById('classification');
 const phPointer = document.getElementById('ph-pointer');
 const mixBtn = document.getElementById('mix-btn');
-const prodಉಪ್ಪು = document.getElementById('prod-salt');
-const prodನೀರು = document.getElementById('prod-water');
+const prodSalt = document.getElementById('prod-salt');
+const prodWater = document.getElementById('prod-water');
 const prodHeat = document.getElementById('prod-heat');
 const takeaway = document.getElementById('takeaway');
 const takeawayText = document.getElementById('takeaway-text');
@@ -513,8 +513,8 @@ mixBtn.onclick = function() {
     classificationDisplay.textContent = '?';
     classificationDisplay.className = 'metric-value';
     phPointer.style.left = 'calc(50% - 2px)';
-    prodಉಪ್ಪು.classList.remove('active');
-    prodನೀರು.classList.remove('active');
+    prodSalt.classList.remove('active');
+    prodWater.classList.remove('active');
     prodHeat.classList.remove('active');
     mixBtn.textContent = '🧪 Mix';
     return;
@@ -541,7 +541,7 @@ mixBtn.onclick = function() {
       typeText = '(ಆಮ್ಲೀಯ)';
       classification = 'Still Acidic';
       classificationDisplay.className = 'metric-value acidic';
-      takeawayText.textContent = 'Too little base! The solution is still acidic. Add more base for à²ªà³‚à²°à³à²£ neutralisation.';
+      takeawayText.textContent = 'Too little base! The solution is still acidic. Add more base for ಪೂರ್ಣ neutralisation.';
     } else if (baseAmount > 60) {
       // Excess base
       ph = 9 + ((baseAmount - 60) / 40) * 3;
@@ -550,7 +550,7 @@ mixBtn.onclick = function() {
       typeText = '(ಕ್ಷಾರೀಯ)';
       classification = 'Still ಮೂಲ';
       classificationDisplay.className = 'metric-value ಮೂಲ';
-      takeawayText.textContent = 'Too much base! The solution is still ಮೂಲ. Use less base for à²ªà³‚à²°à³à²£ neutralisation.';
+      takeawayText.textContent = 'Too much base! The solution is still ಮೂಲ. Use less base for ಪೂರ್ಣ neutralisation.';
     } else {
       // Neutral
       ph = 7;
@@ -559,7 +559,7 @@ mixBtn.onclick = function() {
       typeText = '(NEUTRAL)';
       classification = 'Perfectly Neutral!';
       classificationDisplay.className = 'metric-value neutral';
-      takeawayText.textContent = 'Perfect! The acid ಮತ್ತು base à²ªà³‚à²°à³à²£ly neutralised each other, à²°à³‚à²ªà²¿à²¸à³à²µà³à²¦à³ salt ಮತ್ತು ನೀರು. pH = 7!';
+      takeawayText.textContent = 'Perfect! The acid ಮತ್ತು base completely neutralised each other, forming salt ಮತ್ತು ನೀರು. pH = 7!';
     }
     
     // Update visuals
@@ -577,8 +577,8 @@ mixBtn.onclick = function() {
     phPointer.style.left = `calc(${(ph / 14) * 100}% - 2px)`;
     
     // Show products
-    prodಉಪ್ಪು.classList.add('active');
-    prodನೀರು.classList.add('active');
+    prodSalt.classList.add('active');
+    prodWater.classList.add('active');
     prodHeat.classList.add('active');
     
     takeaway.classList.add('show');

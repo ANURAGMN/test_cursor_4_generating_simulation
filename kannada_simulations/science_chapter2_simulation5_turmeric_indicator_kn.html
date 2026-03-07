@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
@@ -49,14 +49,14 @@ body {
   font-weight: 600;
   margin: 8px 4px;
   color: #fff;
-  text-ನೆರಳು: 0 1px 2px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .sim-card {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 12px;
 }
 
@@ -83,7 +83,7 @@ svg { width: 100%; height: 100%; display: block; }
   padding: 6px 10px;
   font-size: 11px;
   line-height: 1.3;
-  box-ನೆರಳು: 0 3px 8px rgba(0,0,0,0.12);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
   z-index: 10;
 }
 
@@ -155,7 +155,7 @@ svg { width: 100%; height: 100%; display: block; }
   border-radius: 25px;
   border: none;
   cursor: pointer;
-  box-ನೆರಳು: 0 4px 12px rgba(255,143,0,0.3);
+  box-shadow: 0 4px 12px rgba(255,143,0,0.3);
   -webkit-tap-highlight-color: transparent;
   transition: transform 0.1s ease;
 }
@@ -256,7 +256,7 @@ svg { width: 100%; height: 100%; display: block; }
 .prep-step .icon { font-size: 24px; }
 .prep-step .text { font-size: 9px; color: #666; margin-top: 4px; }
 
-@media screen ಮತ್ತು (max-width: 380px) {
+@media screen and (max-width: 380px) {
   .solution-grid { gap: 6px; }
   .solution-btn { padding: 8px 4px; font-size: 9px; }
   .solution-btn .icon { font-size: 18px; }
@@ -308,11 +308,11 @@ svg { width: 100%; height: 100%; display: block; }
 <div class="prep-info">
   <div class="prep-title">🧪 ಅರಿಸಿನ ಕಾಗದ ತಯಾರಿ:</div>
   <div class="prep-steps">
-    <div class="prep-step"><div class="icon">🟡</div><div class="text">à²…à²°à²¿à²¸à²¿à²¨ à²ªà³à²¡à²¿</div></div>
-    <div class="prep-step"><div class="icon">💧</div><div class="text">à²ªà³‡à²¸à³à²Ÿà³ à²®à²¾à²¡à²¿</div></div>
-    <div class="prep-step"><div class="icon">📄</div><div class="text">à²«à²¿à²²à³à²Ÿà²°à³ à²•à²¾à²—à²¦ à²®à³à²³à³à²—à²¿à²¸à²¿</div></div>
+    <div class="prep-step"><div class="icon">🟡</div><div class="text">ಅರಿಸಿನ ಪುಡಿ</div></div>
+    <div class="prep-step"><div class="icon">💧</div><div class="text">ಪೇಸ್ಟ್ ಮಾಡಿ</div></div>
+    <div class="prep-step"><div class="icon">📄</div><div class="text">ಫಿಲ್ಟರ್ ಕಾಗದ ಮುಳ್ಳುಗಿಸಿ</div></div>
     <div class="prep-step"><div class="icon">☀️</div><div class="text">Let it dry</div></div>
-    <div class="prep-step"><div class="icon">✂️</div><div class="text">à²ªà²Ÿà³à²Ÿà²¿à²—à²³à²¾à²—à²¿ à²•à²¤à³à²¤à²°à²¿à²¸à²¿</div></div>
+    <div class="prep-step"><div class="icon">✂️</div><div class="text">ಪಟ್ಟಿಗಳಾಗಿ ಕತ್ತರಿಸಿ</div></div>
   </div>
 </div>
 
@@ -367,7 +367,7 @@ container.innerHTML = `
       <text x="0" y="-18" text-anchor="middle" font-size="14" id="dropper-icon">${SOLUTIONS[defaultSolution].icon}</text>
     </g>
     
-    <!-- à²…à²°à²¿à²¸à²¿à²¨ à²ªà³à²¡à²¿ icon -->
+    <!-- ಅರಿಸಿನ ಪುಡಿ icon -->
     <g transform="translate(25, 40)">
       <text x="0" y="0" font-size="35">🟡</text>
       <text x="17" y="45" font-size="9" fill="#888">Turmeric</text>
@@ -385,7 +385,7 @@ container.innerHTML = `
 
 <div class="metrics">
   <div class="metric-item"><span class="metric-label">ದ್ರಾವಣ:</span> <span class="metric-value" id="solution-name">${SOLUTIONS[defaultSolution].name}</span></div>
-  <div class="metric-item"><span class="metric-label">à²•à²¾à²—à²¦ Color:</span> <span class="metric-value" id="color-status">Yellow</span></div>
+  <div class="metric-item"><span class="metric-label">ಕಾಗದ Color:</span> <span class="metric-value" id="color-status">Yellow</span></div>
   <div class="metric-item"><span class="metric-label">Changes:</span> <span class="metric-value" id="changes-display">?</span></div>
   <div class="metric-item"><span class="metric-label">Detected:</span> <span class="metric-value" id="detected-display">?</span></div>
 </div>
@@ -405,7 +405,7 @@ container.innerHTML = `
   </div>
 </div>`;
 
-let state = { solution: 'soap', currentà²•à²¾à²—à²¦: 1, animating: false };
+let state = { solution: 'soap', currentPaper: 1, animating: false };
 
 const papers = [document.getElementById('paper1'), document.getElementById('paper2'), document.getElementById('paper3')];
 const labels = [document.getElementById('label1'), document.getElementById('label2'), document.getElementById('label3')];
@@ -424,14 +424,14 @@ const takeaway = document.getElementById('takeaway');
 const takeawayText = document.getElementById('takeaway-text');
 
 function updateDisplay() {
-  const sol = SOLUTIONS[à²¸à³à²¥à²¿à²¤à²¿.solution];
+  const sol = SOLUTIONS[state.solution];
   dropperIcon.textContent = sol.icon;
   solutionName.textContent = sol.name;
 }
 
 function animateDrop(callback) {
-  const sol = SOLUTIONS[à²¸à³à²¥à²¿à²¤à²¿.solution];
-  const targetX = positions[à²¸à³à²¥à²¿à²¤à²¿.currentà²•à²¾à²—à²¦ - 1];
+  const sol = SOLUTIONS[state.solution];
+  const targetX = positions[state.currentPaper - 1];
   
   dropper.style.transition = 'transform 0.4s ease';
   dropper.setAttribute('transform', `translate(${targetX}, 30)`);
@@ -442,11 +442,11 @@ function animateDrop(callback) {
     drop.setAttribute('cy', '75');
     
     let cy = 75;
-    const dropà²®à²§à³à²¯à²‚à²¤à²° = setà²®à²§à³à²¯à²‚à²¤à²°(() => {
+    const dropInterval = setInterval(() => {
       cy += 6;
       drop.setAttribute('cy', cy);
       if (cy > 120) {
-        clearà²®à²§à³à²¯à²‚à²¤à²°(dropà²®à²§à³à²¯à²‚à²¤à²°);
+        clearInterval(dropInterval);
         drop.setAttribute('opacity', '0');
         callback();
       }
@@ -455,17 +455,17 @@ function animateDrop(callback) {
 }
 
 function runTest() {
-  if (à²¸à³à²¥à²¿à²¤à²¿.animating) return;
-  à²¸à³à²¥à²¿à²¤à²¿.animating = true;
+  if (state.animating) return;
+  state.animating = true;
   
-  const sol = SOLUTIONS[à²¸à³à²¥à²¿à²¤à²¿.solution];
+  const sol = SOLUTIONS[state.solution];
 
   animateDrop(() => {
-    const currentà²•à²¾à²—à²¦ = papers[à²¸à³à²¥à²¿à²¤à²¿.currentà²•à²¾à²—à²¦ - 1];
-    const currentLabel = labels[à²¸à³à²¥à²¿à²¤à²¿.currentà²•à²¾à²—à²¦ - 1];
+    const currentPaper = papers[state.currentPaper - 1];
+    const currentLabel = labels[state.currentPaper - 1];
     
-    currentà²•à²¾à²—à²¦.style.transition = 'fill 0.6s ease';
-    currentà²•à²¾à²—à²¦.setAttribute('fill', sol.resultColor);
+    currentPaper.style.transition = 'fill 0.6s ease';
+    currentPaper.setAttribute('fill', sol.resultColor);
     currentLabel.textContent = sol.name;
 
     colorStatus.textContent = sol.colorName;
@@ -486,19 +486,19 @@ function runTest() {
 
     resultArrow.style.transition = 'opacity 0.3s';
     resultArrow.setAttribute('opacity', '1');
-    resultArrow.setAttribute('transform', `translate(${positions[à²¸à³à²¥à²¿à²¤à²¿.currentà²•à²¾à²—à²¦ - 1]}, 115)`);
+    resultArrow.setAttribute('transform', `translate(${positions[state.currentPaper - 1]}, 115)`);
     resultText.textContent = sol.ಬದಲಾಗುತ್ತದೆ ? '✓ ಮೂಲ' : '— ಬದಲಾವಣೆ ಇಲ್ಲ';
     resultText.setAttribute('fill', sol.ಬದಲಾಗುತ್ತದೆ ? '#4caf50' : '#9e9e9e');
 
-    à²¸à³à²¥à²¿à²¤à²¿.currentà²•à²¾à²—à²¦ = (à²¸à³à²¥à²¿à²¤à²¿.currentà²•à²¾à²—à²¦ % 3) + 1;
+    state.currentPaper = (state.currentPaper % 3) + 1;
     takeaway.classList.add('show');
-    à²¸à³à²¥à²¿à²¤à²¿.animating = false;
+    state.animating = false;
   });
 }
 
 function resetTest() {
-  if (à²¸à³à²¥à²¿à²¤à²¿.animating) return;
-  à²¸à³à²¥à²¿à²¤à²¿.currentà²•à²¾à²—à²¦ = 1;
+  if (state.animating) return;
+  state.currentPaper = 1;
   
   papers.forEach((p, i) => {
     p.setAttribute('fill', '#f9a825');
@@ -519,10 +519,10 @@ testBtn.onclick = runTest;
 
 container.querySelectorAll('.solution-btn').forEach(btn => {
   btn.onclick = () => {
-    if (à²¸à³à²¥à²¿à²¤à²¿.animating) return;
+    if (state.animating) return;
     container.querySelectorAll('.solution-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    à²¸à³à²¥à²¿à²¤à²¿.solution = btn.dataset.solution;
+    state.solution = btn.dataset.solution;
     resetTest();
     updateDisplay();
   };
