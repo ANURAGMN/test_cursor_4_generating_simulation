@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -178,7 +178,7 @@ svg { width: 100%; height: 100%; }
   border-bottom: 1px solid #ffcc80;
 }
 
-.diff-table td:à²®à³Šà²¦à²²-child { font-weight: 600; width: 35%; }
+.diff-table td:ಮೊದಲ-child { font-weight: 600; width: 35%; }
 .diff-table .physical-col { color: #1565c0; }
 .diff-table .chemical-col { color: #c2185b; }
 
@@ -234,9 +234,9 @@ svg { width: 100%; height: 100%; }
 <div class="sim-card">
   <div class="mode-tabs">
     <button class="mode-tab physical active" onclick="showPhysical(this)">
-      💧 PHYSICAL<br><span style="font-size:9px">à²®à³‡à²£ à²•à²°à²—à³à²µà²¿à²•à³†</span>
+      💧 PHYSICAL<br><span style="font-size:9px">ಮೇಣ ಕರಗುವಿಕೆ</span>
     </button>
-    <button class="mode-tab chemical" onclick="showà²°à²¾à²¸à²¾à²¯à²¨à²¿à²•(this)">
+    <button class="mode-tab chemical" onclick="showChemical(this)">
       🔥 ರಾಸಾಯನಿಕ<br><span style="font-size:9px">Wax ಉರಿಯುತ್ತಿದೆ</span>
     </button>
   </div>
@@ -261,9 +261,9 @@ svg { width: 100%; height: 100%; }
       </g>
       <text x="200" y="85" font-size="10" fill="#ff9800" text-anchor="middle">↓ ಜ್ವಾಲೆಯಿಂದ ಉಷ್ಣ ↓</text>
       
-      <!-- à²®à³Šà²¦à²²à³: Solid wax block -->
+      <!-- ಮೊದಲು: Solid wax block -->
       <g id="solid-wax-group">
-        <text x="100" y="110" font-size="10" fill="#64b5f6" text-anchor="middle" font-weight="bold">à²®à³Šà²¦à²²à³</text>
+        <text x="100" y="110" font-size="10" fill="#64b5f6" text-anchor="middle" font-weight="bold">ಮೊದಲು</text>
         <rect x="60" y="120" width="80" height="60" rx="5" fill="#fff9c4" stroke="#ffd54f" stroke-width="2"/>
         <text x="100" y="155" font-size="12" fill="#f57f17" text-anchor="middle" font-weight="bold">ಘನ WAX</text>
         <!-- Molecule arrangement (ordered) -->
@@ -277,7 +277,7 @@ svg { width: 100%; height: 100%; }
           <circle cx="40" cy="25" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
           <circle cx="55" cy="25" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
         </g>
-        <text x="100" y="195" font-size="8" fill="#aaa" text-anchor="middle">à²…à²£à³à²—à²³à³ à²¬à²¿à²—à²¿à²¯à²¾à²—à²¿ à²œà³‹à²¡à²£à³†</text>
+        <text x="100" y="195" font-size="8" fill="#aaa" text-anchor="middle">ಅಣುಗಳು ಬಿಗಿಯಾಗಿ ಜೋಡಣೆ</text>
       </g>
       
       <!-- Arrow -->
@@ -301,13 +301,13 @@ svg { width: 100%; height: 100%; }
           <circle cx="38" cy="32" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
           <circle cx="60" cy="25" r="6" fill="#ffeb3b" stroke="#ffc107" stroke-width="1"/>
         </g>
-        <text x="300" y="200" font-size="8" fill="#aaa" text-anchor="middle">à²…à²¦à³‡ à²…à²£à³à²—à²³à³, à²®à³à²•à³à²¤à²µà²¾à²—à²¿ à²šà²²à²¿à²¸à³à²¤à³à²¤à²¿à²µà³†!</text>
+        <text x="300" y="200" font-size="8" fill="#aaa" text-anchor="middle">ಅದೇ ಅಣುಗಳು, ಮುಕ್ತವಾಗಿ ಚಲಿಸುತ್ತಿವೆ!</text>
       </g>
       
       <!-- Key point box -->
       <rect x="80" y="220" width="240" height="55" rx="10" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
       <text x="200" y="240" font-size="11" fill="#1565c0" text-anchor="middle" font-weight="bold">✓ ಅದೇ ಹಳದಿ ಅಣುಗಳು!</text>
-      <text x="200" y="255" font-size="9" fill="#37474f" text-anchor="middle">à²®à³‡à²£ à²‡à²¨à³à²¨à³‚ à²®à³‡à²£ - à²•à³‡à²µà²² à²¸à³à²¥à²¿à²¤à²¿ à²¬à²¦à²²à²¾à²¯à²¿à²¤à³</text>
+      <text x="200" y="255" font-size="9" fill="#37474f" text-anchor="middle">ಮೇಣ ಇನ್ನೂ ಮೇಣ - ಕೇವಲ ಸ್ಥಿತಿ ಬದಲಾಯಿತು</text>
       <text x="200" y="268" font-size="9" fill="#4caf50" text-anchor="middle" font-weight="bold">ಹಿಮ್ಮುಖ: ತಂಪು → ಮತ್ತೆ ಘನ!</text>
       
       <!-- Arrow marker -->
@@ -321,7 +321,7 @@ svg { width: 100%; height: 100%; }
       </defs>
     </svg>
     
-    <!-- à²°à²¾à²¸à²¾à²¯à²¨à²¿à²• Change View -->
+    <!-- ರಾಸಾಯನಿಕ Change View -->
     <svg viewBox="0 0 400 300" id="chemical-view" style="display:none">
       <!-- Background -->
       <rect x="0" y="0" width="400" height="300" fill="#1a1a2e"/>
@@ -329,9 +329,9 @@ svg { width: 100%; height: 100%; }
       <!-- Zoomed flame showing burning -->
       <text x="200" y="25" font-size="11" fill="#90a4ae" text-anchor="middle">🔍 ಜೂಮ್: ಜ್ವಾಲೆಯ ಒಳಗೆ</text>
       
-      <!-- à²®à³Šà²¦à²²à³: Wax vapor molecules -->
+      <!-- ಮೊದಲು: Wax vapor molecules -->
       <g id="wax-vapor-group">
-        <text x="100" y="55" font-size="10" fill="#f48fb1" text-anchor="middle" font-weight="bold">à²®à³Šà²¦à²²à³</text>
+        <text x="100" y="55" font-size="10" fill="#f48fb1" text-anchor="middle" font-weight="bold">ಮೊದಲು</text>
         
         <!-- Wax molecule (hydrocarbon) -->
         <g transform="translate(60, 70)">
@@ -341,7 +341,7 @@ svg { width: 100%; height: 100%; }
           <circle cx="60" cy="25" r="10" fill="#ffeb3b" stroke="#ffc107" stroke-width="2"/>
           <text x="40" y="30" font-size="8" fill="#795548" text-anchor="middle">C-C-C</text>
         </g>
-        <text x="100" y="135" font-size="9" fill="#ffd54f" text-anchor="middle" font-weight="bold">à²®à³‡à²£ à²†à²µà²¿</text>
+        <text x="100" y="135" font-size="9" fill="#ffd54f" text-anchor="middle" font-weight="bold">ಮೇಣ ಆವಿ</text>
         <text x="100" y="148" font-size="8" fill="#aaa" text-anchor="middle">(ಜಲವಿದ್ಯುತ್carbons)</text>
         
         <!-- Plus sign -->
@@ -354,7 +354,7 @@ svg { width: 100%; height: 100%; }
           <circle cx="40" cy="25" r="12" fill="#64b5f6"/>
           <text x="30" y="30" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">O₂</text>
         </g>
-        <text x="220" y="135" font-size="9" fill="#64b5f6" text-anchor="middle" font-weight="bold">à²†à²®à³à²²à²œà²¨à²•</text>
+        <text x="220" y="135" font-size="9" fill="#64b5f6" text-anchor="middle" font-weight="bold">ಆಮ್ಲಜನಕ</text>
         <text x="220" y="148" font-size="8" fill="#aaa" text-anchor="middle">(From air)</text>
       </g>
       
@@ -368,12 +368,12 @@ svg { width: 100%; height: 100%; }
       
       <!-- Arrow pointing down -->
       <line x1="200" y1="160" x2="200" y2="190" stroke="#f44336" stroke-width="4" marker-end="url(#arrowhead-red)"/>
-      <text x="200" y="175" font-size="9" fill="#f44336" text-anchor="middle" font-weight="bold" dx="40">à²°à²¾à²¸à²¾à²¯à²¨à²¿à²•</text>
-      <text x="200" y="185" font-size="9" fill="#f44336" text-anchor="middle" font-weight="bold" dx="40">à²ªà³à²°à²¤à²¿à²•à³à²°à²¿à²¯à³†!</text>
+      <text x="200" y="175" font-size="9" fill="#f44336" text-anchor="middle" font-weight="bold" dx="40">ರಾಸಾಯನಿಕ</text>
+      <text x="200" y="185" font-size="9" fill="#f44336" text-anchor="middle" font-weight="bold" dx="40">ಪ್ರತಿಕ್ರಿಯೆ!</text>
       
       <!-- ನಂತರ: New products -->
       <g id="products-group">
-        <text x="200" y="205" font-size="10" fill="#f48fb1" text-anchor="middle" font-weight="bold">à²¨à²‚à²¤à²° - à²¹à³Šà²¸ à²ªà²¦à²¾à²°à³à²¥à²—à²³à³!</text>
+        <text x="200" y="205" font-size="10" fill="#f48fb1" text-anchor="middle" font-weight="bold">ನಂತರ - ಹೊಸ ಪದಾರ್ಥಗಳು!</text>
         
         <!-- CO2 molecule -->
         <g transform="translate(70, 215)" class="rise-anim">
@@ -383,7 +383,7 @@ svg { width: 100%; height: 100%; }
           <circle cx="50" cy="20" r="10" fill="#ef5350"/>
           <text x="35" y="24" font-size="7" fill="#fff" text-anchor="middle">CO₂</text>
         </g>
-        <text x="105" y="270" font-size="8" fill="#ef5350" text-anchor="middle" font-weight="bold">à²•à²¾à²°à³à²¬à²¨à³ à²¡à³ˆà²†à²•à³à²¸à³ˆà²¡à³</text>
+        <text x="105" y="270" font-size="8" fill="#ef5350" text-anchor="middle" font-weight="bold">ಕಾರ್ಬನ್ ಡೈಆಕ್ಸೈಡ್</text>
         
         <!-- Plus -->
         <text x="165" y="240" font-size="18" fill="#fff">+</text>
@@ -406,7 +406,7 @@ svg { width: 100%; height: 100%; }
           <rect x="0" y="0" width="60" height="40" rx="8" fill="#fff3e0" stroke="#ffb74d" stroke-width="2" class="pulse-anim"/>
           <text x="30" y="20" font-size="16" text-anchor="middle">💡🔥</text>
         </g>
-        <text x="320" y="270" font-size="8" fill="#ff9800" text-anchor="middle" font-weight="bold">à²¬à³†à²³à²•à³ + à²‰à²·à³à²£</text>
+        <text x="320" y="270" font-size="8" fill="#ff9800" text-anchor="middle" font-weight="bold">ಬೆಳಕು + ಉಷ್ಣ</text>
       </g>
       
       <!-- Key point -->
@@ -417,20 +417,20 @@ svg { width: 100%; height: 100%; }
 </div>
 
 <div class="explanation-box physical" id="explanation-box">
-  <div class="exp-title physical" id="exp-title">💧 Physical Change: à²®à³‡à²£ à²•à²°à²—à³à²µà²¿à²•à³†</div>
+  <div class="exp-title physical" id="exp-title">💧 Physical Change: ಮೇಣ ಕರಗುವಿಕೆ</div>
   <div class="exp-content" id="exp-content">
-    à²œà³à²µà²¾à²²à³†à²¯à²¿à²‚à²¦ à²‰à²·à³à²£ <strong>à²˜à²¨ à²®à³‡à²£ à²¦à³à²°à²µà²µà²¾à²—à²¿ à²•à²°à²—à³à²¤à³à²¤à²¦à³†</strong>. à²…à²£à³à²—à²³à³ à²µà³‡à²—à²µà²¾à²—à²¿ à²¹à²°à²¡à³à²¤à³à²¤à²µà³†, à²†à²¦à²°à³† à²‡à²¨à³à²¨à³‚ <strong>à²…à²¦à³‡ à²®à³‡à²£ à²…à²£à³à²—à²³à³</strong>!
+    ಜ್ವಾಲೆಯಿಂದ ಉಷ್ಣ <strong>ಘನ ಮೇಣ ದ್ರವವಾಗಿ ಕರಗುತ್ತದೆ</strong>. ಅಣುಗಳು ವೇಗವಾಗಿ ಹರಡುತ್ತವೆ, ಆದರೆ ಇನ್ನೂ <strong>ಅದೇ ಮೇಣ ಅಣುಗಳು</strong>!
   </div>
   <div class="compare-row">
     <div class="compare-item before">
       <div class="label">ಮೊದಲು</div>
       <div class="value">🟨</div>
-      <div class="text">à²˜à²¨ à²®à³‡à²£</div>
+      <div class="text">ಘನ ಮೇಣ</div>
     </div>
     <div class="compare-item after">
-      <div class="label">à²¨à²‚à²¤à²°</div>
+      <div class="label">ನಂತರ</div>
       <div class="value">🟨</div>
-      <div class="text">à²¦à³à²°à²µ à²®à³‡à²£</div>
+      <div class="text">ದ್ರವ ಮೇಣ</div>
     </div>
   </div>
   <div style="text-align:center; margin-top:8px; font-size:11px; color:#4caf50; font-weight:600;">
@@ -444,27 +444,27 @@ svg { width: 100%; height: 100%; }
     <tr>
       <td></td>
       <td class="physical-col">💧 Physical</td>
-      <td class="chemical-col">🔥 à²°à²¾à²¸à²¾à²¯à²¨à²¿à²•</td>
+      <td class="chemical-col">🔥 ರಾಸಾಯನಿಕ</td>
     </tr>
     <tr>
       <td>What ಬದಲಾಗುತ್ತದೆ?</td>
-      <td class="physical-col">à²•à³‡à²µà²² à²¸à³à²¥à²¿à²¤à²¿/à²°à³‚à²ª</td>
-      <td class="chemical-col">à²ªà²¦à²¾à²°à³à²¥ à²¸à³à²µà²¤à²ƒ</td>
+      <td class="physical-col">ಕೇವಲ ಸ್ಥಿತಿ/ರೂಪ</td>
+      <td class="chemical-col">ಪದಾರ್ಥ ಸ್ವತಃ</td>
     </tr>
     <tr>
-      <td>à²¹à³Šà²¸ à²ªà²¦à²¾à²°à³à²¥?</td>
+      <td>ಹೊಸ ಪದಾರ್ಥ?</td>
       <td class="physical-col">❌ No</td>
       <td class="chemical-col">✅ Yes (CO₂, H₂O)</td>
     </tr>
     <tr>
-      <td>à²¹à²¿à²®à³à²®à³à²–?</td>
+      <td>ಹಿಮ್ಮುಖ?</td>
       <td class="physical-col">✅ Yes (cool it)</td>
       <td class="chemical-col">❌ No (wax is gone!)</td>
     </tr>
     <tr>
-      <td>à²…à²£à³à²—à²³à³?</td>
-      <td class="physical-col">à²…à²¦à³‡ à²…à²£à³à²—à²³à³</td>
-      <td class="chemical-col">à²µà²¿à²­à²¿à²¨à³à²¨ à²…à²£à³à²—à²³à³</td>
+      <td>ಅಣುಗಳು?</td>
+      <td class="physical-col">ಅದೇ ಅಣುಗಳು</td>
+      <td class="chemical-col">ವಿಭಿನ್ನ ಅಣುಗಳು</td>
     </tr>
   </table>
 </div>
@@ -495,21 +495,21 @@ function showPhysical(btn) {
   
   explanationBox.className = 'explanation-box physical';
   expTitle.className = 'exp-title physical';
-  expTitle.textContent = '💧 Physical Change: à²®à³‡à²£ à²•à²°à²—à³à²µà²¿à²•à³†';
+  expTitle.textContent = '💧 Physical Change: ಮೇಣ ಕರಗುವಿಕೆ';
   expContent.innerHTML = `
-    à²œà³à²µà²¾à²²à³†à²¯à²¿à²‚à²¦ à²‰à²·à³à²£ <strong>à²˜à²¨ à²®à³‡à²£ à²¦à³à²°à²µà²µà²¾à²—à²¿ à²•à²°à²—à³à²¤à³à²¤à²¦à³†</strong>. à²…à²£à³à²—à²³à³ à²µà³‡à²—à²µà²¾à²—à²¿ à²¹à²°à²¡à³à²¤à³à²¤à²µà³†, à²†à²¦à²°à³† à²‡à²¨à³à²¨à³‚ <strong>à²…à²¦à³‡ à²®à³‡à²£ à²…à²£à³à²—à²³à³</strong>!
+    ಜ್ವಾಲೆಯಿಂದ ಉಷ್ಣ <strong>ಘನ ಮೇಣ ದ್ರವವಾಗಿ ಕರಗುತ್ತದೆ</strong>. ಅಣುಗಳು ವೇಗವಾಗಿ ಹರಡುತ್ತವೆ, ಆದರೆ ಇನ್ನೂ <strong>ಅದೇ ಮೇಣ ಅಣುಗಳು</strong>!
   `;
   
   document.querySelector('.compare-row').innerHTML = `
     <div class="compare-item before">
       <div class="label">ಮೊದಲು</div>
       <div class="value">🟨</div>
-      <div class="text">à²˜à²¨ à²®à³‡à²£</div>
+      <div class="text">ಘನ ಮೇಣ</div>
     </div>
     <div class="compare-item after">
-      <div class="label">à²¨à²‚à²¤à²°</div>
+      <div class="label">ನಂತರ</div>
       <div class="value">🟨</div>
-      <div class="text">à²¦à³à²°à²µ à²®à³‡à²£</div>
+      <div class="text">ದ್ರವ ಮೇಣ</div>
     </div>
   `;
   
@@ -517,7 +517,7 @@ function showPhysical(btn) {
   document.querySelector('.explanation-box div:last-child').style.color = '#4caf50';
 }
 
-function showà²°à²¾à²¸à²¾à²¯à²¨à²¿à²•(btn) {
+function showChemical(btn) {
   document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   
@@ -532,19 +532,19 @@ function showà²°à²¾à²¸à²¾à²¯à²¨à²¿à²•(btn) {
   
   explanationBox.className = 'explanation-box chemical';
   expTitle.className = 'exp-title chemical';
-  expTitle.textContent = '🔥 à²°à²¾à²¸à²¾à²¯à²¨à²¿à²• Change: Wax ಉರಿಯುತ್ತಿದೆ';
+  expTitle.textContent = '🔥 ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ: ಮೇಣ ಉರಿಯುತ್ತಿದೆ';
   expContent.innerHTML = `
-    Wax vapor reacts with ಆಮ್ಲಜನಕ in a <strong>chemical reaction</strong>. The wax molecules are <strong>à²ªà³‚à²°à³à²£ly transformed</strong> into different substances: carbon dioxide ಮತ್ತು à²¨à³€à²°à²¿à²¨ à²†à²µà²¿!
+    ಮೇಣದ ಆವಿ ಆಮ್ಲಜನಕದೊಂದಿಗೆ <strong>ರಾಸಾಯನಿಕ ಪ್ರತಿಕ್ರಿಯೆ</strong>ಯಲ್ಲಿ ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತದೆ. ಮೇಣದ ಅಣುಗಳು <strong>ಸಂಪೂರ್ಣವಾಗಿ ರೂಪಾಂತರ</strong>ಗೊಂಡು ವಿಭಿನ್ನ ಪದಾರ್ಥಗಳಾಗುತ್ತವೆ: ಕಾರ್ಬನ್ ಡೈಆಕ್ಸೈಡ್ ಮತ್ತು ನೀರಿನ ಆವಿ!
   `;
   
   document.querySelector('.compare-row').innerHTML = `
     <div class="compare-item before">
       <div class="label">ಮೊದಲು</div>
       <div class="value">🟨 + 🔵</div>
-      <div class="text">Wax + O₂</div>
+      <div class="text">ಮೇಣ + O₂</div>
     </div>
     <div class="compare-item after">
-      <div class="label">à²¨à²‚à²¤à²°</div>
+      <div class="label">ನಂತರ</div>
       <div class="value">⚪ + 💧</div>
       <div class="text">CO₂ + H₂O</div>
     </div>

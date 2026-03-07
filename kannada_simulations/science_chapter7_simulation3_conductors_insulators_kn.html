@@ -311,7 +311,7 @@ body {
     <!-- Wood Track -->
     <div class="heat-ಮೂಲ" style="top: 115px;">🔥</div>
     <div class="race-track" style="top: 110px;" onclick="selectTrack('wood')">
-      <div class="track-label">Wood</div>
+      <div class="track-label">ಮರ</div>
       <div class="track-bg track-wood">
         <div class="heat-progress progress-wood" id="progress-wood"></div>
       </div>
@@ -351,7 +351,7 @@ body {
 </div>
 
 <div class="results-panel" id="results-panel" style="display: none;">
-  <div class="results-title">📊 Race ಫಲಿತಾಂಶs</div>
+  <div class="results-title">📊 ಓಟ ಫಲಿತಾಂಶ</div>
   <div class="results-grid">
     <div class="result-item conductor">
       <div class="name">🥄 ಲೋಹ</div>
@@ -359,7 +359,7 @@ body {
       <div class="type">⚡ ವಾಹಕ</div>
     </div>
     <div class="result-item insulator">
-      <div class="name">🪵 Wood</div>
+      <div class="name">🪵 ಮರ</div>
       <div class="time" id="result-wood">--</div>
       <div class="type">🛡️ ವಾಹಕವಲ್ಲದ</div>
     </div>
@@ -379,8 +379,8 @@ body {
 <div class="takeaway">
   <div class="takeaway-title">🎯 ಇದು ಏನನ್ನು ತೋರಿಸುತ್ತದೆ</div>
   <div class="takeaway-text">
-    • <strong>ಲೋಹ wins</strong> - ಅದು ಉತ್ತಮ ವಾಹಕ!<br>
-    • <strong>ಅವಾಹಕಗಳು are slow</strong> - ಅವು ಉಷ್ಣ ಹರಿವನ್ನು ತಡೆಯುತ್ತವೆ<br>
+    • <strong>ಲೋಹ ಗೆಲ್ಲುತ್ತದೆ</strong> – ಅದು ಉತ್ತಮ ವಾಹಕ!<br>
+    • <strong>ಅವಾಹಕಗಳು ನಿಧಾನ</strong> – ಅವು ಉಷ್ಣ ಹರಿವನ್ನು ತಡೆಯುತ್ತವೆ<br>
     • ಅದಕ್ಕೇ ಪಾತ್ರೆ ಲೋಹ ಹಿಡಿಕೆ ಪ್ಲಾಸ್ಟಿಕ್/ಮರ!
   </div>
 </div>
@@ -418,10 +418,10 @@ function selectMode(mode, btn) {
 function selectTrack(material) {
   // Show info about the material
   const info = {
-    metal: 'ಲೋಹ is an excellent conductor! Heat transfers very quickly through it.',
-    wood: 'Wood is an insulator. It has air pockets that slow down heat transfer.',
-    glass: 'ಗಾಜು is a poor conductor. It transfers heat slowly.',
-    plastic: 'ಪ್ಲಾಸ್ಟಿಕ್ is a great insulator. Heat barely passes through!'
+    metal: 'ಲೋಹ ಉತ್ತಮ ವಾಹಕ! ಉಷ್ಣ ಅದರ ಮೂಲಕ ಬಹು ವೇಗವಾಗಿ ಹರಿಯುತ್ತದೆ.',
+    wood: 'ಮರ ಅವಾಹಕ. ಗಾಳಿ ಜಾಗಗಳು ಉಷ್ಣ ವರ್ಗಾವಣೆ ನಿಧಾನಗೊಳಿಸುತ್ತವೆ.',
+    glass: 'ಗಾಜು ಕಳಪೆ ವಾಹಕ. ಉಷ್ಣ ನಿಧಾನವಾಗಿ ಹರಿಯುತ್ತದೆ.',
+    plastic: 'ಪ್ಲಾಸ್ಟಿಕ್ ಉತ್ತಮ ಅವಾಹಕ. ಉಷ್ಣ ಬಹುತೇಕ ಹಾದುಹೋಗುವುದಿಲ್ಲ!'
   };
   alert(info[material]);
 }
@@ -442,7 +442,7 @@ function startRace() {
   
   timerInterval = setInterval(() => {
     timer += 0.1;
-    document.getElementById('timer').textContent = `⏱️ ${timer.toFixed(1)} ಸೆಕೆಂಡ್â€Œಗಳು`;
+    document.getElementById('timer').textContent = `⏱️ ${timer.toFixed(1)} ಸೆಕೆಂಡ್ಗಳು`;
     
     // Update each track
     Object.keys(progress).forEach(material => {

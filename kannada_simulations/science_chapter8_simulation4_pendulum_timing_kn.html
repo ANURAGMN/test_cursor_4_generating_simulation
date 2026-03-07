@@ -295,7 +295,7 @@ body {
         <div class="mini-ದಾರ" style="height: 140px;"></div>
         <div class="mini-bob bob-long"></div>
       </div>
-      <div class="pendulum-label">Long (150cm)</div>
+      <div class="pendulum-label">ಉದ್ದ (150ಸೆಂ)</div>
     </div>
   </div>
   
@@ -306,7 +306,7 @@ body {
   
   <div class="stopwatch">
     <div class="stopwatch-time" id="stopwatch">00.00</div>
-    <div class="stopwatch-label" id="stopwatch-label">Select a pendulum ಮತ್ತು press ಪ್ರಾರಂಭ</div>
+    <div class="stopwatch-label" id="stopwatch-label">ಊಸರವಳಿ ಆಯ್ಕೆಮಾಡಿ ಮತ್ತು ಪ್ರಾರಂಭ ಒತ್ತಿರಿ</div>
   </div>
 </div>
 
@@ -314,7 +314,7 @@ body {
   <div class="table-row table-header">
     <div class="table-cell">ಊಸರವಳಿ</div>
     <div class="table-cell">ಉದ್ದ</div>
-    <div class="table-cell">Time for 10</div>
+    <div class="table-cell">10ಕ್ಕೆ ಸಮಯ</div>
     <div class="table-cell">ಅವಧಿ (T)</div>
   </div>
   <div class="table-row">
@@ -330,7 +330,7 @@ body {
     <div class="table-cell highlight" id="period-medium">--</div>
   </div>
   <div class="table-row">
-    <div class="table-cell">🔵 Long</div>
+    <div class="table-cell">🔵 ಉದ್ದ</div>
     <div class="table-cell">150 cm</div>
     <div class="table-cell" id="time-long">--</div>
     <div class="table-cell highlight" id="period-long">--</div>
@@ -345,7 +345,7 @@ body {
 <div class="takeaway">
   <div class="takeaway-title">🎯 ಏನನ್ನು ನೋಡಬೇಕು</div>
   <div class="takeaway-text">
-    • ಎಂಬ ಲೋಲಕ ಪೂರ್ಣ10 ಆಂದೋಲನಗಳನ್ನು ವೇಗವಾಗಿ ಪೂರ್ಣಗೊಳಿಸುತ್ತದೆ?<br>
+    • ಯಾವ ಲೋಲಕ 10 ಆಂದೋಲನಗಳನ್ನು ವೇಗವಾಗಿ ಪೂರ್ಣಗೊಳಿಸುತ್ತದೆ?<br>
     • ಉದ್ದ ಕಾಲಾವಧಿಯನ್ನು ಹೇಗೆ ಪರಿಣಾಮ?<br>
     • <strong>ಉದ್ದ ಊಸರವಳಿ = ಉದ್ದ ಕಾಲಾವಧಿ</strong><br>
     • ಅದಕ್ಕೇ ದಾದಾ ಗಡಿಯಾರ ಉದ್ದ ಊಸರವಳಿ!
@@ -376,7 +376,7 @@ function selectPendulum(type, element) {
   document.querySelectorAll('.pendulum-setup').forEach(el => el.classList.remove('active'));
   element.classList.add('active');
   
-  document.getElementById('stopwatch-label').textContent = `ಸಿದ್ಧ to time ${type} pendulum (10 ಆಂದೋಲನs)`;
+  document.getElementById('stopwatch-label').textContent = `${type} ಊಸರವಳಿಗೆ ಸಮಯ ಮಾಪನ ಸಿದ್ಧ (10 ಆಂದೋಲನಗಳು)`;
 }
 
 function startExperiment() {
@@ -387,7 +387,7 @@ function startExperiment() {
   ಆಂದೋಲನCount = 0;
   
   document.getElementById('start-btn').disabled = true;
-  document.getElementById('stopwatch-label').textContent = `Counting ಆಂದೋಲನs for ${currentPendulum} pendulum...`;
+  document.getElementById('stopwatch-label').textContent = `${currentPendulum} ಊಸರವಳಿಗೆ ಆಂದೋಲನಗಳು ಎಣಿಸಲಾಗುತ್ತಿದೆ...`;
   
   // ಪ್ರಾರಂಭ all pendulums swinging
   animatePendulums();
@@ -398,7 +398,7 @@ function startExperiment() {
   // Auto-ಪೂರ್ಣ after calculated time
   const timeFor10 = periods[currentPendulum] * 10;
   setTimeout(() => {
-    ಪೂರ್ಣExperiment(timeFor10);
+    completeExperiment(timeFor10);
   }, timeFor10 * 1000);
 }
 
@@ -431,7 +431,7 @@ function updateTimer() {
   document.getElementById('stopwatch').textContent = elapsed.toFixed(2);
 }
 
-function ಪೂರ್ಣExperiment(timeFor10) {
+function completeExperiment(timeFor10) {
   clearInterval(timerInterval);
   isRunning = false;
   
@@ -446,7 +446,7 @@ function ಪೂರ್ಣExperiment(timeFor10) {
   document.getElementById(`period-${currentPendulum}`).textContent = period.toFixed(2) + 's';
   
   document.getElementById('stopwatch').textContent = actualTime.toFixed(2);
-  document.getElementById('stopwatch-label').textContent = `${currentPendulum} pendulum: ${actualTime.toFixed(2)}s for 10 ಆಂದೋಲನs`;
+  document.getElementById('stopwatch-label').textContent = `${currentPendulum} ಊಸರವಳಿ: 10 ಆಂದೋಲನಗಳಿಗೆ ${actualTime.toFixed(2)}s`;
   
   document.getElementById('start-btn').disabled = false;
   
@@ -458,12 +458,12 @@ function checkAllDone() {
   if (results.short && results.medium && results.long) {
     document.getElementById('observation').style.display = 'block';
     document.getElementById('observation-text').innerHTML = `
-      <strong>ಫಲಿತಾಂಶs Analysis:</strong><br>
-      • ಕಿರಿದಾದ (50ಸೆಂ): Period = ${results.short.period.toFixed(2)}s<br>
-      • ಮಧ್ಯಮ (100ಸೆಂ): Period = ${results.medium.period.toFixed(2)}s<br>
-      • Long (150cm): Period = ${results.long.period.toFixed(2)}s<br><br>
+      <strong>ಫಲಿತಾಂಶ ವಿಶ್ಲೇಷಣೆ:</strong><br>
+      • ಕಿರಿದಾದ (50ಸೆಂ): ಕಾಲಾವಧಿ = ${results.short.period.toFixed(2)}s<br>
+      • ಮಧ್ಯಮ (100ಸೆಂ): ಕಾಲಾವಧಿ = ${results.medium.period.toFixed(2)}s<br>
+      • ಉದ್ದ (150ಸೆಂ): ಕಾಲಾವಧಿ = ${results.long.period.toFixed(2)}s<br><br>
       <strong>ತೀರ್ಮಾನ:</strong> ಉದ್ದ ಊಸರವಳಿ = ಉದ್ದ ಕಾಲಾವಧಿ!<br>
-      When length doubled (50→100cm), period increased by ~${((results.medium.period / results.short.period - 1) * 100).toFixed(0)}%
+      ಉದ್ದ ದ್ವಿಗುಣವಾದಾಗ (50→100ಸೆಂ), ಕಾಲಾವಧಿ ~${((results.medium.period / results.short.period - 1) * 100).toFixed(0)}% ಏರಿಕೆ
     `;
   }
 }
@@ -474,7 +474,7 @@ function resetExperiment() {
   results = { short: null, medium: null, long: null };
   
   document.getElementById('stopwatch').textContent = '00.00';
-  document.getElementById('stopwatch-label').textContent = 'Select a pendulum ಮತ್ತು press ಪ್ರಾರಂಭ';
+  document.getElementById('stopwatch-label').textContent = 'ಊಸರವಳಿ ಆಯ್ಕೆಮಾಡಿ ಮತ್ತು ಪ್ರಾರಂಭ ಒತ್ತಿರಿ';
   document.getElementById('start-btn').disabled = false;
   
   ['short', 'medium', 'long'].forEach(type => {

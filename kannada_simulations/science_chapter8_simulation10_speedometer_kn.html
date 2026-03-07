@@ -337,7 +337,7 @@ body {
   <div class="info-card">
     <div class="info-title">📏 ಓಡೋಮೀಟರ್</div>
     <div class="info-text">
-      ರೆಕಾರ್ಡ್â€Œಗಳು <strong>ಒಟ್ಟು ದೂರ</strong> traveled. Used for maintenance schedules ಮತ್ತು tracking vehicle usage.
+      <strong>ಒಟ್ಟು ದೂರ</strong> ಚಲಿಸಿದ್ದನ್ನು ರೆಕಾರ್ಡ್ ಮಾಡುತ್ತದೆ. ನಿರ್ವಹಣೆ ಷೆಡ್ಯೂಲ್ ಮತ್ತು ವಾಹನ ಬಳಕೆ ಟ್ರ್ಯಾಕಿಂಗ್‌ಗೆ ಉಪಯೋಗ.
     </div>
   </div>
 </div>
@@ -382,7 +382,7 @@ brakeBtn.addEventListener('touchend', () => isBrakePressed = false);
 
 function updateDashboard() {
   const currentTime = Date.now();
-  const deltaTime = (currentTime - lastTime) / 1000; // ಸೆಕೆಂಡ್â€Œಗಳು
+  const deltaTime = (currentTime - lastTime) / 1000; // seconds
   lastTime = currentTime;
   
   // Update ವೇಗ based on pedals

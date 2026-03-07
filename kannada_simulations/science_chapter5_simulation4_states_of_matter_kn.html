@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -123,7 +123,7 @@ svg { width: 100%; height: 100%; }
   background: #fff;
   border: 3px solid #0288d1;
   cursor: pointer;
-  box-ನೆರಳು: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .temp-markers {
@@ -314,7 +314,7 @@ svg { width: 100%; height: 100%; }
 <div class="learning-panel">
   <div class="learning-title">🔬 ಏನಾಗುತ್ತಿದೆ?</div>
   <div class="learning-text" id="learning-text">
-    At <strong>25°C</strong>, ನೀರು à²‡à²¦à³† <strong>ದ್ರವ</strong> à²¸à³à²¥à²¿à²¤à²¿.<br><br>
+    At <strong>25°C</strong>, ನೀರು ಇದೆ <strong>ದ್ರವ</strong> ಸ್ಥಿತಿ.<br><br>
     Move the slider to see how temperature affects the state of ನೀರು. The substance (H₂O) stays the same - only its form ಬದಲಾಗುತ್ತದೆ!
   </div>
 </div>
@@ -323,7 +323,7 @@ svg { width: 100%; height: 100%; }
   <div class="takeaway-title">🎯 ಮುಖ್ಯ ಅಂಶಗಳು</div>
   <div class="takeaway-text">
     <strong>ಮೂರು ಸ್ಥಿತಿಗಳೂ H₂O!</strong><br><br>
-    • <strong>0°C</strong> = à²•à²°à²—à³à²µ/à²˜à²¨à³€à²•à²°à²£ à²¬à²¿à²‚à²¦à³<br>
+    • <strong>0°C</strong> = ಕರಗುವ/ಘನೀಕರಣ ಬಿಂದು<br>
     • <strong>100°C</strong> = Boiling/ಘನೀಕರಣ point<br><br>
     ಸ್ಥಿತಿ ಬದಲಾವಣೆಗಳು <strong>ಭೌತಿಕ ಬದಲಾವಣೆಗಳು</strong> ಮತ್ತು <strong>ಹಿಮ್ಮುಖವಾಗುವಂಥವು</strong>. ಬರ್ಫ → ನೀರು → ಆವಿ ಬಿಸಿ ಮಾಡಿ, ನಂತರ ಆವಿ → ನೀರು → ಬರ್ಫ ತಂಪು ಮಾಡಿ!
   </div>
@@ -377,7 +377,7 @@ function updateTemperature(temp) {
     boxSolid.classList.add('active');
     
     learningText.innerHTML = `
-      At <strong>${temp}°C</strong>, ನೀರು à²‡à²¦à³† <strong>solid (ice)</strong> à²¸à³à²¥à²¿à²¤à²¿.<br><br>
+      At <strong>${temp}°C</strong>, ನೀರು ಇದೆ <strong>solid (ice)</strong> ಸ್ಥಿತಿ.<br><br>
       Below 0°C, ನೀರು molecules slow down ಮತ್ತು lock into a fixed structure. The ice is still H₂O - just in solid form!<br><br>
       <strong>Process:</strong> Freezing (ದ್ರವ → solid)
     `;
@@ -391,8 +391,8 @@ function updateTemperature(temp) {
     boxGas.classList.add('active');
     
     learningText.innerHTML = `
-      At <strong>${temp}°C</strong>, ನೀರು à²‡à²¦à³† <strong>gas (steam)</strong> à²¸à³à²¥à²¿à²¤à²¿.<br><br>
-      Above 100°C, ನೀರು molecules have so much à²¶à²•à³à²¤à²¿ they escape as gas. Steam is still H₂O - just spread out ಮತ್ತು invisible!<br><br>
+      At <strong>${temp}°C</strong>, ನೀರು ಇದೆ <strong>gas (steam)</strong> ಸ್ಥಿತಿ.<br><br>
+      Above 100°C, ನೀರು molecules have so much ಶಕ್ತಿ they escape as gas. Steam is still H₂O - just spread out ಮತ್ತು invisible!<br><br>
       <strong>Process:</strong> Boiling/ಆವಿಯಾಗುವಿಕೆ (ದ್ರವ → gas)
     `;
   } else {
@@ -405,9 +405,9 @@ function updateTemperature(temp) {
     boxLiquid.classList.add('active');
     
     learningText.innerHTML = `
-      At <strong>${temp}°C</strong>, ನೀರು à²‡à²¦à³† <strong>ದ್ರವ</strong> à²¸à³à²¥à²¿à²¤à²¿.<br><br>
+      At <strong>${temp}°C</strong>, ನೀರು ಇದೆ <strong>ದ್ರವ</strong> ಸ್ಥಿತಿ.<br><br>
       Between 0°C ಮತ್ತು 100°C, ನೀರು molecules move freely but stay together. This is the form we drink ಮತ್ತು use daily!<br><br>
-      <strong>Key:</strong> Same H₂O, different à²¶à²•à³à²¤à²¿ levels = different states
+      <strong>Key:</strong> Same H₂O, different ಶಕ್ತಿ levels = different states
     `;
   }
 }

@@ -385,7 +385,7 @@ body {
 <div class="concept-card">
   <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    <strong>ಸಂವಹನ</strong> ದ್ರವ ಚಲನೆಯಿಂದ ಉಷ್ಣ ವರ್ಗಾವಣೆ. ಬಿಸಿ ದ್ರವ ಏರುತ್ತದೆense), cold fluid ಇಳಿಯುತ್ತದೆ (ಹೆಚ್ಚು ಸಾಂದ್ರತೆ). Tap particles to track them!
+    <strong>ಸಂವಹನ</strong> ದ್ರವ ಚಲನೆಯಿಂದ ಉಷ್ಣ ವರ್ಗಾವಣೆ. ಬಿಸಿ ದ್ರವ ಏರುತ್ತದೆ (ಕಡಿಮೆ ಸಾಂದ್ರತೆ), ತಂಪು ದ್ರವ ಇಳಿಯುತ್ತದೆ (ಹೆಚ್ಚು ಸಾಂದ್ರತೆ). ಕಣಗಳನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ ಅನುಸರಿಸಿ!
   </div>
 </div>
 
@@ -397,14 +397,14 @@ body {
     </button>
     <button class="mode-tab" onclick="selectMode('air', this)">
       <span class="emoji">💨</span>
-      Air
+      ಗಾಳಿ
     </button>
   </div>
   
   <div class="controls">
     <button class="control-btn" id="heat-btn" onclick="toggleHeat()">
       <span id="heat-icon">🔥</span>
-      <span id="heat-text">Turn On Heat</span>
+      <span id="heat-text">ಉಷ್ಣ ಆನ್ ಮಾಡಿ</span>
     </button>
     <button class="control-btn" onclick="toggleArrows()">
       <span>🔄</span>
@@ -415,7 +415,7 @@ body {
   <div class="temp-control" id="temp-control">
     <label>🌡️ ಉಷ್ಣತೆ ನಿಯಂತ್ರಣ:</label>
     <input type="range" id="temp-slider" min="0" max="100" value="0" oninput="adjustTemp(this.value)">
-    <div class="temp-value" id="temp-value">Cold (0°C)</div>
+    <div class="temp-value" id="temp-value">ತಂಪು (0°C)</div>
   </div>
   
   <div class="convection-visual" id="convection-visual">
@@ -444,7 +444,7 @@ body {
       
       <div class="flame-container">
         <div class="flame off" id="water-flame">🔥</div>
-        <div class="flame-label">Heat ಮೂಲ</div>
+        <div class="flame-label">ಉಷ್ಣ ಮೂಲ</div>
       </div>
     </div>
     
@@ -464,14 +464,14 @@ body {
 <div class="explanation" id="explanation">
   <div class="explanation-title" id="exp-title">🔬 ಅದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ</div>
   <div class="explanation-text" id="exp-text">
-    ಉಷ್ಣ ಆನ್ ಮಾಡಿ ಸಂವಹನ ನೋಡಿ! ಕೆಳಗಿನ ಬಿಸಿ ನೀರುt the bottom <strong>ವಿಸ್ತರಿಸಿ ಹಗುರವಾಗುತ್ತದೆ</strong>, ಅದು ಏರುತ್ತದೆ. ಮೇಲಿನ ತಂಪು ನೀರು <strong>ಅದನ್ನು ಬದಲಿಸಲು ಇಳಿಯುತ್ತದೆ</strong>, ನಿರಂತರ ವೃತ್ತಾಕಾರ ಹರಿವು.
+    ಉಷ್ಣ ಆನ್ ಮಾಡಿ ಸಂವಹನ ನೋಡಿ! ಕೆಳಗಿನ ಬಿಸಿ ನೀರು <strong>ವಿಸ್ತರಿಸಿ ಹಗುರವಾಗುತ್ತದೆ</strong>, ಅದು ಏರುತ್ತದೆ. ಮೇಲಿನ ತಂಪು ನೀರು <strong>ಅದನ್ನು ಬದಲಿಸಲು ಇಳಿಯುತ್ತದೆ</strong>, ನಿರಂತರ ವೃತ್ತಾಕಾರ ಹರಿವು.
   </div>
 </div>
 
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೆನಪಿಡಿ</div>
   <div class="takeaway-text">
-    • ಸಂವಹನ happens in <strong>ದ್ರವಗಳು</strong> (ದ್ರವಗಳು ಮತ್ತು ಅನಿಲಗಳು)<br>
+    • ಸಂವಹನ <strong>ದ್ರವಗಳಲ್ಲಿ</strong> ಸಂಭವಿಸುತ್ತದೆ (ದ್ರವಗಳು ಮತ್ತು ಅನಿಲಗಳು)<br>
     • ಬಿಸಿ ದ್ರವ <strong>ಏರುತ್ತದೆ</strong> (ಕಡಿಮೆ ಸಾಂದ್ರತೆ)<br>
     • ತಂಪು ದ್ರವ <strong>ಇಳಿಯುತ್ತದೆ</strong> (ಹೆಚ್ಚು ಸಾಂದ್ರತೆ)<br>
     • ರಚಿಸುತ್ತದೆ <strong>ಸಂವಹನ ಪ್ರವಾಹಗಳು</strong>
@@ -509,11 +509,11 @@ function selectMode(mode, btn) {
   if (mode === 'ನೀರು') {
     ನೀರುMode.classList.remove('hidden');
     airMode.classList.add('hidden');
-    expText.innerHTML = 'ಉಷ್ಣ ಆನ್ ಮಾಡಿ ಸಂವಹನ ನೋಡಿ! ಕೆಳಗಿನ ಬಿಸಿ ನೀರುt the bottom <strong>ವಿಸ್ತರಿಸಿ ಹಗುರವಾಗುತ್ತದೆ</strong>, ಅದು ಏರುತ್ತದೆ. ಮೇಲಿನ ತಂಪು ನೀರು <strong>ಅದನ್ನು ಬದಲಿಸಲು ಇಳಿಯುತ್ತದೆ</strong>, ನಿರಂತರ ವೃತ್ತಾಕಾರ ಹರಿವು.';
+    expText.innerHTML = 'ಉಷ್ಣ ಆನ್ ಮಾಡಿ ಸಂವಹನ ನೋಡಿ! ಕೆಳಗಿನ ಬಿಸಿ ನೀರು <strong>ವಿಸ್ತರಿಸಿ ಹಗುರವಾಗುತ್ತದೆ</strong>, ಅದು ಏರುತ್ತದೆ. ಮೇಲಿನ ತಂಪು ನೀರು <strong>ಅದನ್ನು ಬದಲಿಸಲು ಇಳಿಯುತ್ತದೆ</strong>, ನಿರಂತರ ವೃತ್ತಾಕಾರ ಹರಿವು.';
   } else {
     ನೀರುMode.classList.add('hidden');
     airMode.classList.remove('hidden');
-    expText.innerHTML = 'ಕೋಣೆಯ ಹೀಟರ್ ಹತ್ತಿರದ ಗಾಳಿಯನ್ನು ಬಿಸಿ ಮಾಡುತ್ತದೆ. <strong>ಬಿಸಿ ಗಾಳಿ ಏರುತ್ತದೆs</strong> toward the ceiling. Cooler air moves in to replace it. This circulation eventually <strong>warms the entire room</strong>!';
+    expText.innerHTML = 'ಕೋಣೆಯ ಹೀಟರ್ ಹತ್ತಿರದ ಗಾಳಿಯನ್ನು ಬಿಸಿ ಮಾಡುತ್ತದೆ. <strong>ಬಿಸಿ ಗಾಳಿ</strong> ಮೇಲಕ್ಕೆ ಏರುತ್ತದೆ. ತಂಪು ಗಾಳಿ ಅದರ ಸ್ಥಾನ ತುಂಬಲು ಒಳಗೆ ಚಲಿಸುತ್ತದೆ. ಈ ಪ್ರವಾಹ ಅಂತಿಮವಾಗಿ <strong>ಇಡೀ ಕೋಣೆಯನ್ನು ಬಿಸಿ ಮಾಡುತ್ತದೆ</strong>!';
   }
   
   resetAnimation();
@@ -539,7 +539,7 @@ function toggleHeat() {
   } else {
     heatBtn.classList.remove('active');
     document.getElementById('heat-icon').textContent = '🔥';
-    document.getElementById('heat-text').textContent = 'Turn On Heat';
+    document.getElementById('heat-text').textContent = 'ಉಷ್ಣ ಆನ್ ಮಾಡಿ';
     
     ನೀರುFlame.classList.add('off');
     roomHeater.classList.add('off');
@@ -640,7 +640,7 @@ function resetAnimation() {
   
   heatBtn.classList.remove('active');
   document.getElementById('heat-icon').textContent = '🔥';
-  document.getElementById('heat-text').textContent = 'Turn On Heat';
+  document.getElementById('heat-text').textContent = 'ಉಷ್ಣ ಆನ್ ಮಾಡಿ';
   
   ನೀರುFlame.classList.add('off');
   roomHeater.classList.add('off');

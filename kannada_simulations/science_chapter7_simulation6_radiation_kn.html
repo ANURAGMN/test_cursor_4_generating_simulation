@@ -316,20 +316,20 @@ body {
     </button>
     <button class="control-btn" onclick="setSource('sun', this)">
       <span class="emoji">☀️</span>
-      Sun
+      ಸೂರ್ಯ
     </button>
     <button class="control-btn" onclick="setSource('pan', this)">
       <span class="emoji">🍳</span>
-      Hot Pan
+      ಬಿಸಿ ಪಾತ್ರೆ
     </button>
   </div>
   
   <div class="distance-control">
-    <label>📏 ಸರಿಹೊಂದಿಸಿ ದೂರ from Heat ಮೂಲ:</label>
+    <label>📏 ಉಷ್ಣ ಮೂಲದಿಂದ ದೂರ ಸರಿಹೊಂದಿಸಿ:</label>
     <input type="range" id="distance-slider" min="1" max="10" value="5" oninput="updateDistance(this.value)">
     <div class="distance-value">
       <span>🔥 ಮುಚ್ಚಿ</span>
-      <span>Far 🧊</span>
+      <span>ದೂರ 🧊</span>
     </div>
   </div>
   
@@ -349,8 +349,8 @@ body {
     
     <div class="receiver" id="receiver">
       <div class="receiver-icon" id="receiver-icon">🧍</div>
-      <div class="receiver-label" id="receiver-label">You</div>
-      <div class="temp-ಸೂಚಕ temp-warm" id="temp-indicator">🌡️ Warm</div>
+      <div class="receiver-label" id="receiver-label">ನೀವು</div>
+      <div class="temp-ಸೂಚಕ temp-warm" id="temp-indicator">🌡️ ಬೆಚ್ಚನೆ</div>
     </div>
     
     <div class="intensity-meter" id="intensity-meter">ತೀವ್ರತೆ: 50%</div>
@@ -378,10 +378,10 @@ body {
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೆನಪಿಡಿ</div>
   <div class="takeaway-text">
-    • ವಿಕಿರಣ needs <strong>ಮಾಧ್ಯಮ ಇಲ್ಲ</strong><br>
+    • ವಿಕಿರಣಕ್ಕೆ <strong>ಮಾಧ್ಯಮ ಬೇಕಿಲ್ಲ</strong><br>
     • ಉಷ್ಣ ತೀವ್ರತೆ <strong>ದೂರದೊಂದಿಗೆ ಕಡಿಮೆ</strong><br>
-    • <strong>ಗಾಢ ಬಣ್ಣಗಳು ಹೀರಿಕೊಳ್ಳುತ್ತವೆ</strong> more heat<br>
-    • <strong>ಒಳ್ಳೆ ಬಣ್ಣಗಳು ಪ್ರತಿಫಲಿಸುತ್ತವೆ</strong> heat<br>
+    • <strong>ಗಾಢ ಬಣ್ಣಗಳು ಹೆಚ್ಚು ಉಷ್ಣ ಹೀರಿಕೊಳ್ಳುತ್ತವೆ</strong><br>
+    • <strong>ಒಳ್ಳೆ ಬಣ್ಣಗಳು ಉಷ್ಣ ಪ್ರತಿಫಲಿಸುತ್ತವೆ</strong><br>
     • ಬೇಸಿಗೆಯಲ್ಲಿ ಬಿಳಿ, ಚಳಿಯಲ್ಲಿ ಗಾಢ ಧರಿಸಿ!
   </div>
 </div>
@@ -393,9 +393,9 @@ let currentSource = 'fire';
 let distance = 5;
 
 const ಮೂಲs = {
-  fire: { icon: '🔥', label: 'ಅಗ್ನಿಕುಂಡ', receiver: '🧍', receiverLabel: 'You' },
-  sun: { icon: '☀️', label: 'The Sun', receiver: '🌍', receiverLabel: 'Earth' },
-  pan: { icon: '🍳', label: 'Hot Pan', receiver: '✋', receiverLabel: 'Your Hಮತ್ತು' }
+  fire: { icon: '🔥', label: 'ಅಗ್ನಿಕುಂಡ', receiver: '🧍', receiverLabel: 'ನೀವು' },
+  sun: { icon: '☀️', label: 'ಸೂರ್ಯ', receiver: '🌍', receiverLabel: 'ಭೂಮಿ' },
+  pan: { icon: '🍳', label: 'ಬಿಸಿ ಪಾತ್ರೆ', receiver: '✋', receiverLabel: 'ನಿಮ್ಮ ಕೈ' }
 };
 
 const ಮೂಲIcon = document.getElementById('source-icon');

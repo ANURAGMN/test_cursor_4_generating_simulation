@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -164,7 +164,7 @@ body {
 <div class="concept-card">
   <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    ಬದಲಾವಣೆಗಳು <strong>ಅಪೇಕ್ಷಣೀಯ</strong> (ಉಪಯುಕ್ತ, ಲಾಭಕರ) ಅಥವಾ <strong>unಅಪೇಕ್ಷಣೀಯ</strong> (harmful, unwanted). The same change can be ಅಪೇಕ್ಷಣೀಯ in one situation ಮತ್ತು unಅಪೇಕ್ಷಣೀಯ in another!
+    ಬದಲಾವಣೆಗಳು <strong>ಅಪೇಕ್ಷಣೀಯ</strong> (ಉಪಯುಕ್ತ, ಲಾಭಕರ) ಅಥವಾ <strong>ಅನಪೇಕ್ಷಿತ</strong> (ಹಾನಿಕಾರಕ, ಅನಪೇಕ್ಷಿತ). ಒಂದೇ ಬದಲಾವಣೆ ಒಂದು ಸಂದರ್ಭದಲ್ಲಿ ಅಪೇಕ್ಷಣೀಯ ಮತ್ತು ಇನ್ನೊಂದರಲ್ಲಿ ಅನಪೇಕ್ಷಿತವಾಗಿರಬಹುದು!
   </div>
 </div>
 
@@ -173,16 +173,16 @@ body {
     <div class="question-icon" id="q-icon">🥛</div>
     <div class="question-info">
       <div class="question-title" id="q-title">ಹಾಲು turning into ಮೊಸರು</div>
-      <div class="question-desc" id="q-desc">à²¬à³à²¯à²¾à²•à³à²Ÿà³€à²°à²¿à²¯à²¾ à²°à²¾à²¤à³à²°à²¿à²¯à²²à³à²²à²¿ à²¹à²¾à²²à²¨à³à²¨à³ à²®à³Šà²¸à²°à³</div>
+      <div class="question-desc" id="q-desc">ಬ್ಯಾಕ್ಟೀರಿಯಾ ರಾತ್ರಿಯಲ್ಲಿ ಹಾಲನ್ನು ಮೊಸರು</div>
     </div>
   </div>
   
   <div class="choice-btns">
     <button class="choice-btn" id="btn-desirable" onclick="checkAnswer(true)">
-      ✅ ಅಪೇಕ್ಷಣೀಯ<br><span style="font-size:9px">à²‰à²ªà²¯à³à²•à³à²¤/à²²à²¾à²­à²•à²°</span>
+      ✅ ಅಪೇಕ್ಷಣೀಯ<br><span style="font-size:9px">ಉಪಯುಕ್ತ/ಲಾಭಕರ</span>
     </button>
     <button class="choice-btn" id="btn-undesirable" onclick="checkAnswer(false)">
-      ❌ Unಅಪೇಕ್ಷಣೀಯ<br><span style="font-size:9px">à²¹à²¾à²¨à²¿à²•à²¾à²°à²•/à²…à²¨à²ªà³‡à²•à³à²·à²¿à²¤</span>
+      ❌ ಅನಪೇಕ್ಷಿತ<br><span style="font-size:9px">ಹಾನಿಕಾರಕ/ಅನಪೇಕ್ಷಿತ</span>
     </button>
   </div>
   
@@ -192,25 +192,25 @@ body {
   </div>
   
   <div class="score-bar" id="score-bar"></div>
-  <div class="progress-text" id="progress-text">10 à²°à²²à³à²²à²¿ à²ªà³à²°à²¶à³à²¨à³† 1</div>
+  <div class="progress-text" id="progress-text">10 ರಲ್ಲಿ ಪ್ರಶ್ನೆ 1</div>
 </div>
 
 <div class="context-panel">
   <div class="context-title">🤔 ಸಂದರ್ಭ ಮುಖ್ಯ!</div>
   <div class="context-text" id="context-text">
-    The same change can be viewed differently based on the situation:<br><br>
-    • <strong>Fire:</strong> Desirable for cooking, unಅಪೇಕ್ಷಣೀಯ in a forest<br>
-    • <strong>à²µà²¿à²˜à²Ÿà²¨à³†:</strong> Desirable in composting, unಅಪೇಕ್ಷಣೀಯ for food<br>
-    • <strong>Rain:</strong> Desirable for crops, unಅಪೇಕ್ಷಣೀಯ during floods
+    ಒಂದೇ ಬದಲಾವಣೆಯನ್ನು ಸಂದರ್ಭಾನುಸಾರ ವಿಭಿನ್ನವಾಗಿ ನೋಡಬಹುದು:<br><br>
+    • <strong>ಅಗ್ನಿ:</strong> ಅಡುಗೆಗೆ ಅಪೇಕ್ಷಣೀಯ, ಕಾಡಿನಲ್ಲಿ ಅನಪೇಕ್ಷಿತ<br>
+    • <strong>ವಿಘಟನೆ:</strong> ಕಂಪೋಸ್ಟ್‌ಗೆ ಅಪೇಕ್ಷಣೀಯ, ಆಹಾರಕ್ಕೆ ಅನಪೇಕ್ಷಿತ<br>
+    • <strong>ಮಳೆ:</strong> ಬೆಳೆಗಳಿಗೆ ಅಪೇಕ್ಷಣೀಯ, ಪ್ರವಾಹದಲ್ಲಿ ಅನಪೇಕ್ಷಿತ
   </div>
 </div>
 
 <div class="takeaway">
   <div class="takeaway-title">🎯 ಮುಖ್ಯ ತಿಳುವಳಿಕೆ</div>
   <div class="takeaway-text">
-    <strong>Desirable ಬದಲಾಗುತ್ತದೆ</strong> à²¨à²®à²—à³† à²…à²¥à²µà²¾ à²ªà³à²°à²•à³ƒà²¤à²¿à²—à³† à²¯à²¾à²µà³à²¦à³‡ à²°à³€à²¤à²¿à²¯à²²à³à²²à²¿ à²¸à²¹à²¾à²¯.<br>
-    <strong>Unಅಪೇಕ್ಷಣೀಯ ಬದಲಾಗುತ್ತದೆ</strong> à²¹à²¾à²¨à²¿ à²…à²¥à²µà²¾ à²¨à²·à³à²Ÿ.<br><br>
-    Many ಬದಲಾಗುತ್ತದೆ that seem unಅಪೇಕ್ಷಣೀಯ (like decay) are actually essential for nature's balance!
+    <strong>ಅಪೇಕ್ಷಣೀಯ ಬದಲಾವಣೆಗಳು</strong> ನಮಗೆ ಅಥವಾ ಪ್ರಕೃತಿಗೆ ಯಾವುದೇ ರೀತಿಯಲ್ಲಿ ಸಹಾಯ.<br>
+    <strong>ಅನಪೇಕ್ಷಿತ ಬದಲಾವಣೆಗಳು</strong> ಹಾನಿ ಅಥವಾ ನಷ್ಟ.<br><br>
+    ಅನಪೇಕ್ಷಿತವೆನಿಸುವ ಅನೇಕ ಬದಲಾವಣೆಗಳು (ವಿಘಟನೆ ಹಾಗೆ) ಪ್ರಕೃತಿಯ ಸಮತೋಲನಕ್ಕೆ ಅಗತ್ಯ!
   </div>
 </div>
 
@@ -221,72 +221,72 @@ const questions = [
   { 
     icon: '🥛', 
     title: 'ಹಾಲು turning into ಮೊಸರು', 
-    desc: 'à²¬à³à²¯à²¾à²•à³à²Ÿà³€à²°à²¿à²¯à²¾ à²°à²¾à²¤à³à²°à²¿à²¯à²²à³à²²à²¿ à²¹à²¾à²²à²¨à³à²¨à³ à²®à³Šà²¸à²°à³',
+    desc: 'ಬ್ಯಾಕ್ಟೀರಿಯಾ ರಾತ್ರಿಯಲ್ಲಿ ಹಾಲನ್ನು ಮೊಸರು',
     ಅಪೇಕ್ಷಣೀಯ: true,
-    feedback: 'ಮೊಸರು is nutritious ಮತ್ತು delicious! Making curd from milk is a beneficial ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ that gives us yogurt, lassi, ಮತ್ತು other dairy products.'
+    feedback: 'ಮೊಸರು ಪೋಷಕ ಮತ್ತು ರುಚಿಕರ! ಹಾಲಿನಿಂದ ಮೊಸರು ಮಾಡುವುದು ಲಾಭಕರ ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ – ಯೋಗರ್ಟ್, ಲಸ್ಸಿ ಮತ್ತು ಇತರ ಡೈರಿ ಉತ್ಪನ್ನಗಳನ್ನು ನೀಡುತ್ತದೆ.'
   },
   { 
     icon: '🔩', 
     title: 'ಕಬ್ಬಿಣದ ತುಕ್ಕು', 
-    desc: 'Iron objects develop brown rust over time',
+    desc: 'ಕಬ್ಬಿಣದ ವಸ್ತುಗಳು ಕಾಲಕ್ರಮೇಣ ಕಂದು ತುಕ್ಕು ಬೆಳೆಸುತ್ತವೆ',
     ಅಪೇಕ್ಷಣೀಯ: false,
-    feedback: 'ತುಕ್ಕು weakens iron structures, damages tools, ಮತ್ತು costs billions in repairs. It\'s an unಅಪೇಕ್ಷಣೀಯ ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ we try to prevent.'
+    feedback: 'ತುಕ್ಕು ಕಬ್ಬಿಣದ ರಚನೆಗಳನ್ನು ದುರ್ಬಲಗೊಳಿಸುತ್ತದೆ, ಉಪಕರಣಗಳನ್ನು ಹಾಳು ಮಾಡುತ್ತದೆ. ಇದು ನಾವು ತಡೆಯಲು ಯತ್ನಿಸುವ ಅನಪೇಕ್ಷಿತ ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ.'
   },
   { 
     icon: '🍳', 
     title: 'ಆಹಾರ ಬೇಯಿಸುವುದು', 
-    desc: 'Raw ingredients become cooked meals',
+    desc: 'ಕಚ್ಚಾ ಪದಾರ್ಥಗಳು ಬೇಯಿಸಿದ ಊಟವಾಗುತ್ತವೆ',
     ಅಪೇಕ್ಷಣೀಯ: true,
-    feedback: 'Cooking makes food safer, tastier, ಮತ್ತು easier to digest. It\'s a ಅಪೇಕ್ಷಣೀಯ change that humans have used for thousಮತ್ತುs of years!'
+    feedback: 'ಅಡುಗೆ ಆಹಾರವನ್ನು ಸುರಕ್ಷಿತ, ರುಚಿಕರ ಮತ್ತು ಜೀರ್ಣಿಸಲು ಸುಲಭವಾಗಿ ಮಾಡುತ್ತದೆ. ಮಾನವರು ಸಾವಿರಾರು ವರ್ಷಗಳಿಂದ ಬಳಸುವ ಅಪೇಕ್ಷಣೀಯ ಬದಲಾವಣೆ!'
   },
   { 
     icon: '🍌', 
-    title: 'à²¹à²£à³à²£à³ à²•à³Šà²³à³†à²¤', 
-    desc: 'Fresh fruits become spoiled ಮತ್ತು inedible',
+    title: 'ಹಣ್ಣು ಕೊಳೆತ', 
+    desc: 'ತಾಜಾ ಹಣ್ಣುಗಳು ಕೆಟ್ಟು ಉಣ್ಣಲಾಗದಂತಾಗುತ್ತವೆ',
     ಅಪೇಕ್ಷಣೀಯ: false,
-    feedback: 'Rotting fruit wastes food ಮತ್ತು can cause illness. However, in nature, this decomposition returns nutrients to soil!'
+    feedback: 'ಕೊಳೆತ ಹಣ್ಣು ಆಹಾರ ವ್ಯರ್ಥ ಮಾಡುತ್ತದೆ ಮತ್ತು ಅನಾರೋಗ್ಯ ಉಂಟುಮಾಡಬಹುದು. ಆದರೆ ಪ್ರಕೃತಿಯಲ್ಲಿ ಈ ವಿಘಟನೆ ಪೋಷಕಾಂಶಗಳನ್ನು ಮಣ್ಣಿಗೆ ಮರಳಿಸುತ್ತದೆ!'
   },
   { 
     icon: '🌱', 
-    title: 'à²¬à³€à²œ à²®à³Šà²³à²•à³†', 
-    desc: 'Seeds sprout into young plants',
+    title: 'ಬೀಜ ಮೊಳಕೆ', 
+    desc: 'ಬೀಜಗಳು ಚಿಕ್ಕ ಸಸ್ಯಗಳಾಗಿ ಮೊಳಕೆಯೊಡೆಯುತ್ತವೆ',
     ಅಪೇಕ್ಷಣೀಯ: true,
-    feedback: 'Germination is how plants reproduce! This ಅಪೇಕ್ಷಣೀಯ change is essential for agriculture ಮತ್ತು maintaining ecosystems.'
+    feedback: 'ಮೊಳಕೆಯೊಡೆಯುವುದು ಸಸ್ಯಗಳು ಸಂತಾನೋತ್ಪತ್ತಿ ಮಾಡುವ ವಿಧಾನ! ಕೃಷಿ ಮತ್ತು ಪರಿಸರ ಸಮತೋಲನಕ್ಕೆ ಈ ಅಪೇಕ್ಷಣೀಯ ಬದಲಾವಣೆ ಅಗತ್ಯ.'
   },
   { 
     icon: '🏭', 
-    title: 'à²µà²¾à²¯à³ à²®à²¾à²²à²¿à²¨à³à²¯', 
-    desc: 'Factories release smoke into the air',
+    title: 'ವಾಯು ಮಾಲಿನ್ಯ', 
+    desc: 'ಕಾರ್ಖಾನೆಗಳು ಗಾಳಿಗೆ ಹೊಗೆ ಬಿಡುಗಡೆ ಮಾಡುತ್ತವೆ',
     ಅಪೇಕ್ಷಣೀಯ: false,
-    feedback: 'Air pollution causes health problems ಮತ್ತು climate change. It\'s an unಅಪೇಕ್ಷಣೀಯ byproduct we must reduce.'
+    feedback: 'ವಾಯು ಮಾಲಿನ್ಯ ಆರೋಗ್ಯ ಸಮಸ್ಯೆ ಮತ್ತು ಹವಾಮಾನ ಬದಲಾವಣೆ ಉಂಟುಮಾಡುತ್ತದೆ. ಕಡಿಮೆ ಮಾಡಬೇಕಾದ ಅನಪೇಕ್ಷಿತ ಉಪಉತ್ಪನ್ನ.'
   },
   { 
     icon: '🥬', 
-    title: 'à²•à²‚à²ªà³‹à²¸à³à²Ÿà²¿à²‚à²—à³', 
-    desc: 'Kitchen waste turns into fertilizer',
+    title: 'ಕಂಪೋಸ್ಟಿಂಗ್', 
+    desc: 'ಅಡುಗೆ ಮನೆ ಕಸ ಗೊಬ್ಬರವಾಗಿ ಮಾರ್ಪಡುತ್ತದೆ',
     ಅಪೇಕ್ಷಣೀಯ: true,
-    feedback: 'à²•à²‚à²ªà³‹à²¸à³à²Ÿà²¿à²‚à²—à³ converts waste into valuable fertilizer! It\'s a ಅಪೇಕ್ಷಣೀಯ way to recycle organic matter.'
+    feedback: 'ಕಂಪೋಸ್ಟಿಂಗ್ ಕಸವನ್ನು ಬೆಲೆಬಾಳುವ ಗೊಬ್ಬರವಾಗಿ ಪರಿವರ್ತಿಸುತ್ತದೆ! ಸಾವಯವ ಪದಾರ್ಥ ಮರುಬಳಕೆ ಮಾಡಲು ಅಪೇಕ್ಷಣೀಯ ಮಾರ್ಗ.'
   },
   { 
     icon: '🦷', 
-    title: 'Tooth Decay', 
-    desc: 'Bacteria damage teeth over time',
+    title: 'ಹಲ್ಲು ಕೊಳೆತ', 
+    desc: 'ಬ್ಯಾಕ್ಟೀರಿಯಾ ಕಾಲಕ್ರಮೇಣ ಹಲ್ಲುಗಳನ್ನು ಹಾಳು ಮಾಡುತ್ತದೆ',
     ಅಪೇಕ್ಷಣೀಯ: false,
-    feedback: 'Tooth decay causes pain ಮತ್ತು health issues. It\'s an unಅಪೇಕ್ಷಣೀಯ change we prevent with brushing ಮತ್ತು dental care.'
+    feedback: 'ಹಲ್ಲು ಕೊಳೆತ ನೋವು ಮತ್ತು ಆರೋಗ್ಯ ಸಮಸ್ಯೆ ಉಂಟುಮಾಡುತ್ತದೆ. ಚಿಕ್ಕು ಮತ್ತು ದಂತ ಚಿಕಿತ್ಸೆಯಿಂದ ತಡೆಯುವ ಅನಪೇಕ್ಷಿತ ಬದಲಾವಣೆ.'
   },
   { 
     icon: '🍞', 
-    title: 'à²°à³Šà²Ÿà³à²Ÿà²¿ à²¤à²¯à²¾à²°à²¿à²•à³†', 
-    desc: 'Yeast makes dough rise ಮತ್ತು bake into bread',
+    title: 'ರಾಟ್ಟಿ ತಯಾರಿ', 
+    desc: 'ಯೀಸ್ಟ್ ಹಿಟ್ಟನ್ನು ಏರಿಸಿ ರೊಟ್ಟಿ ಬೇಯಿಸುತ್ತದೆ',
     ಅಪೇಕ್ಷಣೀಯ: true,
-    feedback: 'Bread-making uses fermentation (yeast producing CO₂) to create fluffy, delicious bread. A very ಅಪೇಕ್ಷಣೀಯ change!'
+    feedback: 'ರೊಟ್ಟಿ ತಯಾರಿ ಹುದುಗುವಿಕೆ (ಯೀಸ್ಟ್ CO₂ ಉತ್ಪಾದಿಸುತ್ತದೆ) ಬಳಸಿ ಮೃದು, ರುಚಿಕರ ರೊಟ್ಟಿ ಮಾಡುತ್ತದೆ. ಅತ್ಯಂತ ಅಪೇಕ್ಷಣೀಯ ಬದಲಾವಣೆ!'
   },
   { 
     icon: '🌡️', 
-    title: 'à²œà²¾à²—à²¤à²¿à²• à²¤à²¾à²ªà²®à²¾à²¨ à²à²°à²¿à²•à³†', 
-    desc: 'Earth\'s temperature is rising',
+    title: 'ಜಾಗತಿಕ ತಾಪಮಾನ ಏರಿಕೆ', 
+    desc: 'ಭೂಮಿಯ ಉಷ್ಣತೆ ಏರುತ್ತಿದೆ',
     ಅಪೇಕ್ಷಣೀಯ: false,
-    feedback: 'Global warming causes extreme weather, rising seas, ಮತ್ತು ecosystem damage. It\'s a major unಅಪೇಕ್ಷಣೀಯ change facing our planet.'
+    feedback: 'ಜಾಗತಿಕ ತಾಪಮಾನ ಏರಿಕೆ ತೀವ್ರ ಹವಾಮಾನ, ಸಮುದ್ರ ಮಟ್ಟ ಏರಿಕೆ ಮತ್ತು ಪರಿಸರ ಹಾನಿ ಉಂಟುಮಾಡುತ್ತದೆ. ನಮ್ಮ ಗ್ರಹದ ಮುಂದಿರುವ ಪ್ರಮುಖ ಅನಪೇಕ್ಷಿತ ಬದಲಾವಣೆ.'
   }
 ];
 
@@ -298,7 +298,7 @@ const qIcon = document.getElementById('q-icon');
 const qTitle = document.getElementById('q-title');
 const qDesc = document.getElementById('q-desc');
 const btnDesirable = document.getElementById('btn-desirable');
-const btnUnಅಪೇಕ್ಷಣೀಯ = document.getElementById('btn-undesirable');
+const btnUndesirable = document.getElementById('btn-undesirable');
 const feedbackPanel = document.getElementById('feedback-panel');
 const feedbackTitle = document.getElementById('feedback-title');
 const feedbackText = document.getElementById('feedback-text');
@@ -309,9 +309,9 @@ function loadQuestion() {
   if (currentIndex >= questions.length) {
     qIcon.textContent = '🎉';
     qTitle.textContent = 'ಕ್ವಿಜ್ ಪೂರ್ಣ!';
-    qDesc.textContent = `You got ${score} out of ${questions.length} correct!`;
+    qDesc.textContent = `ನೀವು ${questions.length} ರಲ್ಲಿ ${score} ಸರಿ ಪಡೆದಿರುವಿರಿ!`;
     btnDesirable.style.display = 'none';
-    btnUnಅಪೇಕ್ಷಣೀಯ.style.display = 'none';
+    btnUndesirable.style.display = 'none';
     feedbackPanel.classList.remove('show');
     return;
   }
@@ -322,9 +322,9 @@ function loadQuestion() {
   qDesc.textContent = q.desc;
   
   btnDesirable.disabled = false;
-  btnUnಅಪೇಕ್ಷಣೀಯ.disabled = false;
+  btnUndesirable.disabled = false;
   btnDesirable.classList.remove('ಅಪೇಕ್ಷಣೀಯ', 'unಅಪೇಕ್ಷಣೀಯ');
-  btnUnಅಪೇಕ್ಷಣೀಯ.classList.remove('ಅಪೇಕ್ಷಣೀಯ', 'unಅಪೇಕ್ಷಣೀಯ');
+  btnUndesirable.classList.remove('ಅಪೇಕ್ಷಣೀಯ', 'unಅಪೇಕ್ಷಣೀಯ');
   
   feedbackPanel.classList.remove('show', 'correct', 'wrong');
   answered = false;
@@ -340,13 +340,13 @@ function checkAnswer(isDesirable) {
   const correct = q.ಅಪೇಕ್ಷಣೀಯ === isDesirable;
   
   btnDesirable.disabled = true;
-  btnUnಅಪೇಕ್ಷಣೀಯ.disabled = true;
+  btnUndesirable.disabled = true;
   
   // Mark correct answer
   if (q.ಅಪೇಕ್ಷಣೀಯ) {
     btnDesirable.classList.add('ಅಪೇಕ್ಷಣೀಯ');
   } else {
-    btnUnಅಪೇಕ್ಷಣೀಯ.classList.add('unಅಪೇಕ್ಷಣೀಯ');
+    btnUndesirable.classList.add('unಅಪೇಕ್ಷಣೀಯ');
   }
   
   // Show feedback

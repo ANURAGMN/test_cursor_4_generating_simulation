@@ -250,7 +250,7 @@ body {
 <div class="concept-card">
   <div class="concept-title">📚 ಸಮಯದ SI ಘಟಕ</div>
   <div class="concept-text">
-    The SI unit of time is the <strong>ಸೆಕೆಂಡ್ (ಗಳು)</strong>. ಇತರ ಸಾಮಾನ್ಯ ಘಟಕಗಳು ನಿಮಿಷ (ನಿಮಿ) ಮತ್ತು ಗಂಟೆ (ಗಂ).ays use correct symbols without periods!
+    ಸಮಯದ SI ಘಟಕ <strong>ಸೆಕೆಂಡ್</strong>. ಇತರ ಸಾಮಾನ್ಯ ಘಟಕಗಳು ನಿಮಿಷ (ನಿಮಿ) ಮತ್ತು ಗಂಟೆ (ಗಂ). ಯಾವಾಗಲೂ ಸರಿಯಾದ ಸಂಕೇತಗಳನ್ನು ಬಳಸಿ!
   </div>
 </div>
 
@@ -262,8 +262,8 @@ body {
       <select class="unit-select" id="unit-select" onchange="convertTime()">
         <option value="h">ಗಂಟೆಗಳು</option>
         <option value="min">ನಿಮಿಷಗಳು</option>
-        <option value="s" selected>ಸೆಕೆಂಡ್â€Œಗಳು</option>
-        <option value="ms">ಮಿಲಿಸೆಕೆಂಡ್â€Œಗಳು</option>
+        <option value="s" selected>ಸೆಕೆಂಡ್ಗಳು</option>
+        <option value="ms">ಮಿಲಿಸೆಕೆಂಡ್ಗಳು</option>
       </select>
     </div>
   </div>
@@ -283,12 +283,12 @@ body {
       </div>
       <div class="result-item highlight" id="result-s">
         <div class="result-value" id="value-s">1</div>
-        <div class="result-unit">ಸೆಕೆಂಡ್â€Œಗಳು</div>
+        <div class="result-unit">ಸೆಕೆಂಡ್ಗಳು</div>
         <div class="result-symbol">s</div>
       </div>
       <div class="result-item" id="result-ms">
         <div class="result-value" id="value-ms">1000</div>
-        <div class="result-unit">ಮಿಲಿಸೆಕೆಂಡ್â€Œಗಳು</div>
+        <div class="result-unit">ಮಿಲಿಸೆಕೆಂಡ್ಗಳು</div>
         <div class="result-symbol">ms</div>
       </div>
     </div>
@@ -311,16 +311,16 @@ body {
   </div>
   <div class="conversion-row">
     <span>1 ಮಿಲಿಸೆಕೆಂಡ್ (ms)</span>
-    <span>= 1000 ಮೈಕ್ರೋಸೆಕೆಂಡ್â€Œಗಳು (μs)</span>
+    <span>= 1000 ಮೈಕ್ರೋಸೆಕೆಂಡ್ಗಳು (μs)</span>
   </div>
 </div>
 
 <div class="small-units">
   <div class="small-title">🔬 ಚಿಕ್ಕ ಸಮಯ ಘಟಕ ಏಕೆ ಮುಖ್ಯ</div>
   <div class="small-text">
-    • <strong>ಕ್ರೀಡೆಗಳು:</strong> ಒಲಂಪಿಕ್ ಒಟ್ಟು ಮಿಲಿಸೆಕೆಂಡ್â€Œಗಳಿಂದ!<br>
+    • <strong>ಕ್ರೀಡೆಗಳು:</strong> ಒಲಂಪಿಕ್ ಒಟ್ಟು ಮಿಲಿಸೆಕೆಂಡ್ಗಳಿಂದ!<br>
     • <strong>ಔಷಧಿ:</strong> ECG ಹೃದಯ ಬಡಿತ ನಿಖರವಾಗಿ<br>
-    • <strong>ಕಂಪ್ಯೂಟರ್â€Œಗಳು:</strong> ಪ್ರೊಸೆಸರ್â€Œಗಳು ನ್ಯಾನೋಸೆಕೆಂಡ್â€Œಗಳಲ್ಲಿ ಕೆಲಸ<br>
+    • <strong>ಕಂಪ್ಯೂಟರ್‌ಗಳು:</strong> ಪ್ರೊಸೆಸರ್‌ಗಳು ನ್ಯಾನೋಸೆಕೆಂಡ್ಗಳಲ್ಲಿ ಕೆಲಸ<br>
     • <strong>ಸಂಗೀತ:</strong> ಡಿಜಿಟಲ್ ರೆಕಾರ್ಡಿಂಗ್ ಸೆಕೆಂಡಿಗೆ ಸಾವಿರಾರು ಸ್ಯಾಂಪಲ್
   </div>
 </div>
@@ -358,19 +358,19 @@ function convertTime() {
   const value = parseFloat(document.getElementById('time-input').value) || 0;
   const unit = document.getElementById('unit-select').value;
   
-  // Convert to ಸೆಕೆಂಡ್â€Œಗಳು ಮೊದಲ
-  let ಸೆಕೆಂಡ್â€Œಗಳು;
+  // Convert to ಸೆಕೆಂಡ್ಗಳು ಮೊದಲ
+  let ಸೆಕೆಂಡ್ಗಳು;
   ಸ್ವಿಚ್(unit) {
-    case 'h': ಸೆಕೆಂಡ್â€Œಗಳು = value * 3600; break;
-    case 'min': ಸೆಕೆಂಡ್â€Œಗಳು = value * 60; break;
-    case 's': ಸೆಕೆಂಡ್â€Œಗಳು = value; break;
-    case 'ms': ಸೆಕೆಂಡ್â€Œಗಳು = value / 1000; break;
+    case 'h': ಸೆಕೆಂಡ್ಗಳು = value * 3600; break;
+    case 'min': ಸೆಕೆಂಡ್ಗಳು = value * 60; break;
+    case 's': ಸೆಕೆಂಡ್ಗಳು = value; break;
+    case 'ms': ಸೆಕೆಂಡ್ಗಳು = value / 1000; break;
   }
   
   // Convert to all units
-  const ಗಂಟೆಗಳು = ಸೆಕೆಂಡ್â€Œಗಳು / 3600;
-  const ನಿಮಿಷಗಳು = ಸೆಕೆಂಡ್â€Œಗಳು / 60;
-  const ಮಿಲಿಸೆಕೆಂಡ್â€Œಗಳು = ಸೆಕೆಂಡ್â€Œಗಳು * 1000;
+  const ಗಂಟೆಗಳು = ಸೆಕೆಂಡ್ಗಳು / 3600;
+  const ನಿಮಿಷಗಳು = ಸೆಕೆಂಡ್ಗಳು / 60;
+  const ಮಿಲಿಸೆಕೆಂಡ್ಗಳು = ಸೆಕೆಂಡ್ಗಳು * 1000;
   
   // Format numbers nicely
   function format(num) {
@@ -383,8 +383,8 @@ function convertTime() {
   
   document.getElementById('value-h').textContent = format(ಗಂಟೆಗಳು);
   document.getElementById('value-min').textContent = format(ನಿಮಿಷಗಳು);
-  document.getElementById('value-s').textContent = format(ಸೆಕೆಂಡ್â€Œಗಳು);
-  document.getElementById('value-ms').textContent = format(ಮಿಲಿಸೆಕೆಂಡ್â€Œಗಳು);
+  document.getElementById('value-s').textContent = format(ಸೆಕೆಂಡ್ಗಳು);
+  document.getElementById('value-ms').textContent = format(ಮಿಲಿಸೆಕೆಂಡ್ಗಳು);
   
   // Highlight current unit
   document.querySelectorAll('.result-item').forEach(item => item.classList.remove('highlight'));

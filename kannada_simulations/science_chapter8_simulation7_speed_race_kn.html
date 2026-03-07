@@ -349,16 +349,16 @@ function startRace() {
   document.getElementById('results-panel').style.display = 'none';
   document.getElementById('calc-box').style.display = 'none';
   
-  // Simulation ವೇಗ factor (1 real ಸೆಕೆಂಡ್ = 30 simulated ಸೆಕೆಂಡ್â€Œಗಳು)
+  // Simulation ವೇಗ factor (1 real ಸೆಕೆಂಡ್ = 30 simulated ಸೆಕೆಂಡ್ಗಳು)
   const simFactor = 30;
   
   raceInterval = setಮಧ್ಯಂತರ(() => {
-    raceTime += 0.1 * simFactor; // ಸೆಕೆಂಡ್â€Œಗಳು
+    raceTime += 0.1 * simFactor; // ಸೆಕೆಂಡ್ಗಳು
     
     // Update positions
     racers.forEach(racer => {
       if (!finishTimes[racer]) {
-        // position = ವೇಗ * time / 3600 (convert ಸೆಕೆಂಡ್â€Œಗಳು to ಗಂಟೆಗಳು)
+        // position = ವೇಗ * time / 3600 (convert ಸೆಕೆಂಡ್ಗಳು to ಗಂಟೆಗಳು)
         positions[racer] = ವೇಗs[racer] * (raceTime / 3600);
         
         if (positions[racer] >= distance) {
@@ -375,9 +375,9 @@ function startRace() {
     
     // Update timer
     const ನಿಮಿಷಗಳು = Math.floor(raceTime / 60);
-    const ಸೆಕೆಂಡ್â€Œಗಳು = (raceTime % 60).toFixed(1);
+    const ಸೆಕೆಂಡ್ಗಳು = (raceTime % 60).toFixed(1);
     document.getElementById('timer').textContent = 
-      `${ನಿಮಿಷಗಳು.toString().padStart(2, '0')}:${ಸೆಕೆಂಡ್â€Œಗಳು.padStart(4, '0')}`;
+      `${ನಿಮಿಷಗಳು.toString().padStart(2, '0')}:${ಸೆಕೆಂಡ್ಗಳು.padStart(4, '0')}`;
     
     // Check if race ಪೂರ್ಣ
     if (finishOrder.length === racers.length) {
@@ -402,8 +402,8 @@ function endRace() {
   finishOrder.forEach((racer, index) => {
     const time = finishTimes[racer];
     const ನಿಮಿಷಗಳು = Math.floor(time / 60);
-    const ಸೆಕೆಂಡ್â€Œಗಳು = (time % 60).toFixed(1);
-    const timeStr = ನಿಮಿಷಗಳು > 0 ? `${ನಿಮಿಷಗಳು}m ${ಸೆಕೆಂಡ್â€Œಗಳು}s` : `${ಸೆಕೆಂಡ್â€Œಗಳು}s`;
+    const ಸೆಕೆಂಡ್ಗಳು = (time % 60).toFixed(1);
+    const timeStr = ನಿಮಿಷಗಳು > 0 ? `${ನಿಮಿಷಗಳು}m ${ಸೆಕೆಂಡ್ಗಳು}s` : `${ಸೆಕೆಂಡ್ಗಳು}s`;
     
     resultsHTML += `
       <div class="result-row">

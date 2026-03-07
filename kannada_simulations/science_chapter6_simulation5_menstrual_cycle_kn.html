@@ -250,7 +250,7 @@ body {
       <div class="cycle-segment ovulation"></div>
       <div class="cycle-segment luteal"></div>
       <div class="cycle-center">
-        <div class="cycle-day" id="cycle-day">Day 1</div>
+        <div class="cycle-day" id="cycle-day">ದಿನ 1</div>
         <div class="cycle-phase" id="cycle-phase">ಋತುಚಕ್ರ</div>
       </div>
     </div>
@@ -266,28 +266,28 @@ body {
       <div class="legend-dot menstruation"></div>
       <div>
         <div class="legend-text">ಋತುಚಕ್ರ</div>
-        <div class="legend-days">Days 1-5</div>
+        <div class="legend-days">ದಿನ 1-5</div>
       </div>
     </div>
     <div class="legend-item" onclick="jumpToPhase('follicular')">
       <div class="legend-dot follicular"></div>
       <div>
-        <div class="legend-text">Follicular Phase</div>
-        <div class="legend-days">Days 6-13</div>
+        <div class="legend-text">ಫಾಲಿಕ್ಯುಲರ್ ಹಂತ</div>
+        <div class="legend-days">ದಿನ 6-13</div>
       </div>
     </div>
     <div class="legend-item" onclick="jumpToPhase('ovulation')">
       <div class="legend-dot ovulation"></div>
       <div>
         <div class="legend-text">ಅಂಡೋತ್ಸರ್ಜನ</div>
-        <div class="legend-days">Day 14</div>
+        <div class="legend-days">ದಿನ 14</div>
       </div>
     </div>
     <div class="legend-item" onclick="jumpToPhase('luteal')">
       <div class="legend-dot luteal"></div>
       <div>
-        <div class="legend-text">Luteal Phase</div>
-        <div class="legend-days">Days 15-28</div>
+        <div class="legend-text">ಲ್ಯೂಟಿಯಲ್ ಹಂತ</div>
+        <div class="legend-days">ದಿನ 15-28</div>
       </div>
     </div>
   </div>
@@ -371,7 +371,7 @@ function updateCycle(day) {
   day = parseInt(day);
   const phase = getPhase(day);
   
-  cycleDay.textContent = `Day ${day}`;
+  cycleDay.textContent = `ದಿನ ${day}`;
   cyclePhase.textContent = phase.name.charAt(0).toUpperCase() + phase.name.slice(1);
   cycleDay.style.color = phase.color;
   

@@ -54,7 +54,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -176,7 +176,7 @@ svg { width: 100%; height: 100%; }
   <div class="visual">
     <div class="action-label" id="action-label">ಕೆಳಗೆ ಒಂದು ಉದಾಹರಣೆ ಆಯ್ಕೆಮಾಡಿ</div>
     <svg viewBox="0 0 400 260" id="scene">
-      <!-- à²•à²¾à²—à²¦ example -->
+      <!-- ಕಾಗದ example -->
       <g id="paper-scene" style="display:none">
         <rect id="paper" x="150" y="80" width="100" height="120" rx="3" fill="#fff" stroke="#ccc" stroke-width="2"/>
         <line x1="160" y1="100" x2="240" y2="100" stroke="#ddd" stroke-width="1"/>
@@ -191,7 +191,7 @@ svg { width: 100%; height: 100%; }
         <text x="200" y="220" font-size="11" fill="#666" text-anchor="middle">ಕಾಗದ ದೋಣಿ</text>
       </g>
       
-      <!-- à²¸à³€à²®à³†à²¸à³à²£à³à²£ example -->
+      <!-- ಸೀಮೆಸುಣ್ಣ example -->
       <g id="chalk-scene" style="display:none">
         <rect id="chalk" x="170" y="100" width="60" height="20" rx="5" fill="#f5f5f5" stroke="#ccc"/>
         <text x="200" y="150" font-size="11" fill="#666" text-anchor="middle">ಸೀಮೆಸುಣ್ಣ ಕಡ್ಡಿ</text>
@@ -236,7 +236,7 @@ svg { width: 100%; height: 100%; }
         <text x="200" y="230" font-size="11" fill="#666" text-anchor="middle">ಊದಿದ ಬಲೂನ್</text>
       </g>
       
-      <!-- à²°à²¬à³à²¬à²°à³ bಮತ್ತು example -->
+      <!-- ರಬ್ಬರ್ bಮತ್ತು example -->
       <g id="rubber-scene" style="display:none">
         <ellipse id="rubber" cx="200" cy="120" rx="40" ry="25" fill="none" stroke="#ff9800" stroke-width="8"/>
         <text x="200" y="180" font-size="11" fill="#666" text-anchor="middle">ರಬ್ಬರ್ ಬ್ಯಾಂಡ್</text>
@@ -330,17 +330,17 @@ const examples = {
   paper: {
     before: 'paper-scene',
     after: 'paper-folded',
-    action: '📄 Fold the à²•à²¾à²—à²¦',
-    title: '✅ à²•à²¾à²—à²¦ Folded - Physical Change!',
-    result: 'à²•à²¾à²—à²¦ <strong>à²†à²•à²¾à²°</strong> à²«à³à²²à²¾à²Ÿà³ à²¶à³€à²Ÿà³â€Œà²¨à²¿à²‚à²¦ à²¹à²¡à²—à³. à²†à²¦à²°à³† à²…à²¦à³'s still <strong>paper</strong>! You can unfold it ಮತ್ತು get the original sheet back.',
+    action: '📄 Fold the ಕಾಗದ',
+    title: '✅ ಕಾಗದ Folded - Physical Change!',
+    result: 'ಕಾಗದ <strong>ಆಕಾರ</strong> ಫ್ಲಾಟ್ ಶೀಟ್‌ನಿಂದ ಹಡಗು. ಆದರೆ ಅದು ಇನ್ನೂ <strong>ಕಾಗದ</strong>! ನೀವು ಅದನ್ನು ಬಿಚ್ಚಿ ಮೂಲ ಶೀಟ್ ಮರಳಿ ಪಡೆಯಬಹುದು.',
     learning: 'ಕಾಗದ ಮಡಚುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ಕಾಗದ ಅಣುಗಳು ಅದೇ ಉಳಿಯುತ್ತವೆ - ವ್ಯವಸ್ಥೆ ಮಾತ್ರ ಬದಲಾಗುತ್ತದೆ. ಇದು <strong>ಹಿಮ್ಮುಖ</strong> ಬದಲಾವಣೆ!'
   },
   chalk: {
     before: 'chalk-scene',
     after: 'chalk-crushed',
-    action: '🔨 Crush the à²¸à³€à²®à³†à²¸à³à²£à³à²£',
-    title: '✅ à²¸à³€à²®à³†à²¸à³à²£à³à²£ Crushed - Physical Change!',
-    result: 'à²¸à³€à²®à³†à²¸à³à²£à³à²£ <strong>à²•à²¡à³à²¡à²¿à²¯à²¿à²‚à²¦ à²ªà³à²¡à²¿</strong>à²—à³† à²¬à²¦à²²à²¾à²¯à²¿à²¤à³. à²†à²¦à²°à³† à²…à²¦à³'s still <strong>calcium carbite (chalk)</strong>! The chemical composition hasn\'t changed.',
+    action: '🔨 Crush the ಸೀಮೆಸುಣ್ಣ',
+    title: '✅ ಸೀಮೆಸುಣ್ಣ Crushed - Physical Change!',
+    result: 'ಸೀಮೆಸುಣ್ಣ <strong>ಕಡ್ಡಿಯಿಂದ ಪುಡಿ</strong>ಗೆ ಬದಲಾಯಿತು. ಆದರೆ ಅದು's still <strong>calcium carbite (chalk)</strong>! The chemical composition hasn\'t changed.',
     learning: 'ಸೀಮೆಸುಣ್ಣ ಚೂರ್ಣ ಮಾಡುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ತುಂಡುಗಳು ಚಿಕ್ಕದಾಗಿವೆ, ಆದರೆ ಪ್ರತಿ ಕಣವೂ ಇನ್ನೂ ಸೀಮೆಸುಣ್ಣ. ಇದು <strong>ಅಹಿಮ್ಮುಖ</strong> ಭೌತಿಕ ಬದಲಾವಣೆ!'
   },
   ice: {
@@ -348,7 +348,7 @@ const examples = {
     after: 'ice-melted',
     action: '🔥 Melt the Ice',
     title: '✅ Ice Melted - Physical Change!',
-    result: 'à²à²¸à³ <strong>à²˜à²¨à²¦à²¿à²‚à²¦ à²¦à³à²°à²µ</strong>à²•à³à²•à³† à²¬à²¦à²²à²¾à²¯à²¿à²¤à³. à²†à²¦à²°à³† à²…à²¦à³'s still <strong>H₂O (ನೀರು)</strong>! The state changed, not the substance.',
+    result: 'ಐಸ್ <strong>ಘನದಿಂದ ದ್ರವ</strong>ಕ್ಕೆ ಬದಲಾಯಿತು. ಆದರೆ ಅದು's still <strong>H₂O (ನೀರು)</strong>! The state changed, not the substance.',
     learning: 'ಬರ್ಫ ಕರಗುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong> - ಸ್ಥಿತಿ ಬದಲಾವಣೆ. ಬರ್ಫ, ನೀರು ಮತ್ತು ಆವಿ ಎಲ್ಲವೂ H₂O! ಇದು <strong>ಹಿಮ್ಮುಖ</strong> - ನೀರನ್ನು ಘನೀಕರಿಸಿ ಮತ್ತೆ ಬರ್ಫ ಪಡೆಯಬಹುದು.'
   },
   balloon: {
@@ -356,15 +356,15 @@ const examples = {
     after: 'balloon-inflated',
     action: '💨 ಬಲೂನ್ ಊದಿ',
     title: '✅ Balloon Inflated - Physical Change!',
-    result: 'à²¬à²²à³‚à²¨à³ <strong>à²—à²¾à²¤à³à²° à²®à²¤à³à²¤à³ à²†à²•à²¾à²°</strong> à²¬à²¦à²²à²¾à²¯à²¿à²¤à³. à²°à²¬à³à²¬à²°à³ à²ªà²¦à²¾à²°à³à²¥ à²…à²¦à³‡! à²’à²³à²—à³† à²—à²¾à²³à²¿ à²¸à³‡à²°à²¿à²¸à²²à²¾à²¯à²¿à²¤à³.',
+    result: 'ಬಲೂನ್ <strong>ಗಾತ್ರ ಮತ್ತು ಆಕಾರ</strong> ಬದಲಾಯಿತು. ರಬ್ಬರ್ ಪದಾರ್ಥ ಅದೇ! ಒಳಗೆ ಗಾಳಿ ಸೇರಿಸಲಾಯಿತು.',
     learning: 'ಬಲೂನ್ ಊದುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ರಬ್ಬರ್ ಚಾಚುತ್ತದೆ ಆದರೆ ಹೊಸ ಪದಾರ್ಥವಾಗುವುದಿಲ್ಲ. ಇದು <strong>ಹಿಮ್ಮುಖ</strong> - ಗಾಳಿ ಬಿಟ್ಟರೆ ಉಬ್ಬಿಕೊಳ್ಳುವುದಿಳಿದುಹೋಗುತ್ತದೆ!'
   },
   rubber: {
     before: 'rubber-scene',
     after: 'rubber-stretched',
     action: '↔️ ಬ್ಯಾಂಡ್ ಚಾಚಿ',
-    title: '✅ à²°à²¬à³à²¬à²°à³ Stretched - Physical Change!',
-    result: 'à²°à²¬à³à²¬à²°à³ à²¬à³à²¯à²¾à²‚à²¡à³ à²šà²¾à²šà²¿à²¦à²¾à²— <strong>à²†à²•à²¾à²°</strong> à²¬à²¦à²²à²¾à²¯à²¿à²¤à³. à²†à²¦à²°à³† à²…à²¦à³'s still the same rubber material!',
+    title: '✅ ರಬ್ಬರ್ Stretched - Physical Change!',
+    result: 'ರಬ್ಬರ್ ಬ್ಯಾಂಡ್ ಚಾಚಿದಾಗ <strong>ಆಕಾರ</strong> ಬದಲಾಯಿತು. ಆದರೆ ಅದು's still the same rubber material!',
     learning: 'ರಬ್ಬರ್ ಬ್ಯಾಂಡ್ ಚಾಚುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ರಬ್ಬರ್ ಅಣುಗಳು ಚಾಚುತ್ತವೆ ಆದರೆ ರಾಸಾಯನಿಕವಾಗಿ ಬದಲಾಗುವುದಿಲ್ಲ. <strong>ಹಿಮ್ಮುಖ</strong> - ಬಿಟ್ಟರೆ ಹಿಂದೆ ಬರುತ್ತದೆ!'
   },
   spring: {
@@ -372,7 +372,7 @@ const examples = {
     after: 'spring-compressed',
     action: '⬇️ ಸ್ಪ್ರಿಂಗ್ ಒತ್ತಿ',
     title: '✅ Spring Compressed - Physical Change!',
-    result: 'à²¸à³à²ªà³à²°à²¿à²‚à²—à³ à²’à²¤à³à²¤à²¿à²¦à²¾à²— <strong>à²†à²•à²¾à²°</strong> à²¬à²¦à²²à²¾à²¯à²¿à²¤à³. à²²à³‹à²¹ à²‡à²¨à³à²¨à³‚ à²…à²¦à³‡ à²ªà²¦à²¾à²°à³à²¥!',
+    result: 'ಸ್ಪ್ರಿಂಗ್ ಒತ್ತಿದಾಗ <strong>ಆಕಾರ</strong> ಬದಲಾಯಿತು. ಲೋಹ ಇನ್ನೂ ಅದೇ ಪದಾರ್ಥ!',
     learning: 'ಸ್ಪ್ರಿಂಗ್ ಒತ್ತುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ಲೋಹ ಸುರುಳಿಗಳು ಒಟ್ಟಿಗೆ ಬರುತ್ತವೆ ಆದರೆ ಹೊಸ ಪದಾರ್ಥ ರೂಪುಗೊಳ್ಳುವುದಿಲ್ಲ. <strong>ಹಿಮ್ಮುಖ</strong> - ಬಿಟ್ಟರೆ ಹಿಂದೆ ಬರುತ್ತದೆ!'
   }
 };
@@ -414,8 +414,8 @@ function selectExample(type, icon, btn) {
   resultBox.classList.remove('show');
   
   learningText.innerHTML = `
-    <strong>${icon} ${type.charAt(0).toUpperCase() + type.slice(1)} selected</strong><br><br>
-    Tap the button to see what happens when we perform this action. Watch carefully - will a new substance be formed?
+    <strong>${icon} ${type.charAt(0).toUpperCase() + type.slice(1)} ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ</strong><br><br>
+    ಈ ಕ್ರಿಯೆ ಮಾಡಿದಾಗ ಏನಾಗುತ್ತದೆ ನೋಡಲು ಬಟನ್ ಟ್ಯಾಪ್ ಮಾಡಿ. ಜಾಗ್ರತೆಯಿಂದ ನೋಡಿ – ಹೊಸ ಪದಾರ್ಥ ರೂಪುಗೊಳ್ಳುವುದೇ?
   `;
 }
 

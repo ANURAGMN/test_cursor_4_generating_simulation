@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -161,13 +161,13 @@ svg { width: 100%; height: 100%; }
 <div class="concept-card">
   <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    ಅಗ್ನಿ (ದಹನ) ಅಗತ್ಯ <strong>ಮೂರು ವಸ್ತುಗಳು</strong>: a <strong>fuel</strong> (ದಹನೀಯ ಪದಾರ್ಥ), <strong>ಆಮ್ಲಜನಕ</strong> (from air), ಮತ್ತು <strong>heat</strong> (à²‰à²°à²¿à²¯à³à²µ à²‰à²·à³à²£à²¤à³†). à²’à²‚à²¦à²¨à³à²¨à³ à²¤à³†à²—à³†à²¦à²°à³† à²…à²—à³à²¨à²¿ à²†à²°à²¿à²¹à³‹à²—à³à²¤à³à²¤à²¦à³†!
+    ಅಗ್ನಿ (ದಹನ) ಅಗತ್ಯ <strong>ಮೂರು ವಸ್ತುಗಳು</strong>: a <strong>fuel</strong> (ದಹನೀಯ ಪದಾರ್ಥ), <strong>ಆಮ್ಲಜನಕ</strong> (from air), ಮತ್ತು <strong>heat</strong> (ಉರಿಯುವ ಉಷ್ಣತೆ). ಒಂದನ್ನು ತೆಗೆದರೆ ಅಗ್ನಿ ಆರಿಹೋಗುತ್ತದೆ!
   </div>
 </div>
 
 <div class="sim-card">
   <div class="visual">
-    <div class="status-badge no-fire" id="status-badge">à²®à³‚à²°à³ à²…à²‚à²¶à²—à²³à²¨à³à²¨à³‚ à²†à²¯à³à²•à³†à²®à²¾à²¡à²¿</div>
+    <div class="status-badge no-fire" id="status-badge">ಮೂರು ಅಂಶಗಳನ್ನೂ ಆಯ್ಕೆಮಾಡಿ</div>
     <svg viewBox="0 0 400 280" id="scene">
       <!-- ಅಗ್ನಿ ತ್ರಿಕೋಣ outline -->
       <polygon points="200,40 100,220 300,220" fill="none" stroke="#455a64" stroke-width="2" stroke-dasharray="5,5"/>
@@ -176,7 +176,7 @@ svg { width: 100%; height: 100%; }
       <text x="200" y="30" font-size="10" fill="#90a4ae" text-anchor="middle">FIRE</text>
       <text x="80" y="235" font-size="10" fill="#90a4ae" text-anchor="middle">FUEL</text>
       <text x="320" y="235" font-size="10" fill="#90a4ae" text-anchor="middle">HEAT</text>
-      <text x="200" y="250" font-size="10" fill="#90a4ae" text-anchor="middle">à²†à²®à³à²²à²œà²¨à²•</text>
+      <text x="200" y="250" font-size="10" fill="#90a4ae" text-anchor="middle">ಆಮ್ಲಜನಕ</text>
       
       <!-- Fuel icon position -->
       <g id="fuel-icon" transform="translate(100, 180)" style="opacity:0.3">
@@ -209,7 +209,7 @@ svg { width: 100%; height: 100%; }
         <text x="0" y="50" font-size="10" fill="#f44336" text-anchor="middle">No Fire</text>
       </g>
       
-      <!-- à²¸à²‚à²ªà²°à³à²•à²¿à²¸à²¿ing lines when elements are active -->
+      <!-- ಸಂಪರ್ಕಿಸಿing lines when elements are active -->
       <line id="line-fuel-oxygen" x1="120" y1="200" x2="200" y2="220" stroke="#4caf50" stroke-width="3" style="display:none"/>
       <line id="line-oxygen-heat" x1="200" y1="220" x2="280" y2="200" stroke="#4caf50" stroke-width="3" style="display:none"/>
       <line id="line-heat-fuel" x1="280" y1="200" x2="120" y2="200" stroke="#4caf50" stroke-width="3" style="display:none"/>
@@ -220,17 +220,17 @@ svg { width: 100%; height: 100%; }
     <div class="element-btn" id="btn-fuel" onclick="toggleElement('fuel', this)">
       <div class="icon">🪵</div>
       <div class="name">FUEL</div>
-      <div class="desc">à²¦à²¹à²¨à³€à²¯ à²ªà²¦à²¾à²°à³à²¥</div>
+      <div class="desc">ದಹನೀಯ ಪದಾರ್ಥ</div>
     </div>
     <div class="element-btn" id="btn-oxygen" onclick="toggleElement('ಆಮ್ಲಜನಕ', this)">
       <div class="icon">💨</div>
-      <div class="name">à²†à²®à³à²²à²œà²¨à²•</div>
+      <div class="name">ಆಮ್ಲಜನಕ</div>
       <div class="desc">From air (O₂)</div>
     </div>
     <div class="element-btn" id="btn-heat" onclick="toggleElement('heat', this)">
       <div class="icon">🌡️</div>
       <div class="name">HEAT</div>
-      <div class="desc">à²‰à²°à²¿à²¯à³à²µ à²‰à²·à³à²£à²¤à³†</div>
+      <div class="desc">ಉರಿಯುವ ಉಷ್ಣತೆ</div>
     </div>
   </div>
 </div>
@@ -238,25 +238,25 @@ svg { width: 100%; height: 100%; }
 <div class="result-panel" id="result-panel">
   <div class="result-title" id="result-title">🔺 ಅಗ್ನಿ ತ್ರಿಕೋಣ</div>
   <div class="result-text" id="result-text">
-    à²à²¨à²¾à²—à³à²¤à³à²¤à²¦à³† à²¨à³‹à²¡à²²à³ à²ªà³à²°à²¤à²¿ à²…à²‚à²¶ à²†à²¨à³/à²†à²«à³. à²…à²—à³à²¨à²¿à²—à³† à²®à³‚à²°à³ à²…à²‚à²¶ à²…à²—à²¤à³à²¯!
+    ಏನಾಗುತ್ತದೆ ನೋಡಲು ಪ್ರತಿ ಅಂಶ ಆನ್/ಆಫ್. ಅಗ್ನಿಗೆ ಮೂರು ಅಂಶ ಅಗತ್ಯ!
   </div>
 </div>
 
 <div class="learning-panel">
   <div class="learning-title">🔬 How to ನಿಲ್ಲಿಸಿ Fire</div>
   <div class="learning-text" id="learning-text">
-    <strong>à²‡à²‚à²§à²¨ à²¤à³†à²—à³†à²¦à³à²¹à²¾à²•à²¿:</strong> à²‰à²°à²¿à²¯à³à²¤à³à²¤à²¿à²°à³à²µ à²ªà²¦à²¾à²°à³à²¥ à²¤à³†à²—à³†à²¦à³à²¹à²¾à²•à²¿<br>
-    <strong>à²†à²®à³à²²à²œà²¨à²• à²¤à³†à²—à³†à²¦à³à²¹à²¾à²•à²¿:</strong> ಕಂಬಳಿ ಮುಚ್ಚಿ ಅಥವಾ CO₂ ಅಗ್ನಿಶಾಮಕ<br>
-    <strong>à²‰à²·à³à²£ à²¤à³†à²—à³†à²¦à³à²¹à²¾à²•à²¿:</strong> à²¤à²‚à²ªà²¾à²—à²¿à²¸à²²à³ ನೀರು à²¸à³à²°à²¿à²¯à²¿à²°à²¿<br><br>
-    à²’à²‚à²¦à³ à²…à²¥à²µà²¾ à²¹à³†à²šà³à²šà³ à²…à²‚à²¶ à²¤à³†à²—à³†à²¦à³ à²…à²—à³à²¨à²¿à²¶à²¾à²®à²•!
+    <strong>ಇಂಧನ ತೆಗೆದುಹಾಕಿ:</strong> ಉರಿಯುತ್ತಿರುವ ಪದಾರ್ಥ ತೆಗೆದುಹಾಕಿ<br>
+    <strong>ಆಮ್ಲಜನಕ ತೆಗೆದುಹಾಕಿ:</strong> ಕಂಬಳಿ ಮುಚ್ಚಿ ಅಥವಾ CO₂ ಅಗ್ನಿಶಾಮಕ<br>
+    <strong>ಉಷ್ಣ ತೆಗೆದುಹಾಕಿ:</strong> ತಂಪಾಗಿಸಲು ನೀರು ಸುರಿಯಿರಿ<br><br>
+    ಒಂದು ಅಥವಾ ಹೆಚ್ಚು ಅಂಶ ತೆಗೆದು ಅಗ್ನಿಶಾಮಕ!
   </div>
 </div>
 
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೆನಪಿಡಿ</div>
   <div class="takeaway-text">
-    <strong>ದಹನ</strong> à²‡à²‚à²§à²¨ à²†à²®à³à²²à²œà²¨à²•à²¦à³Šà²‚à²¦à²¿à²—à³† à²ªà³à²°à²¤à²¿à²•à³à²°à²¿à²¯à²¿à²¸à²¿ à²‰à²·à³à²£ à²®à²¤à³à²¤à³ à²¬à³†à²³à²•à³ à²‰à²¤à³à²ªà²¾à²¦à²¿à²¸à³à²µ ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ.<br><br>
-    <strong>à²‰à²°à²¿à²¯à³à²µ à²‰à²·à³à²£à²¤à³†</strong> = à²‰à²°à²¿à²¯à²²à³ à²•à²¨à²¿à²·à³à²  à²‰à²·à³à²£à²¤à³†. à²µà²¸à³à²¤à³à²—à²³à²¿à²—à³† à²µà²¿à²­à²¿à²¨à³à²¨ à²‰à²°à²¿à²¯à³à²µ à²‰à²·à³à²£à²¤à³†!
+    <strong>ದಹನ</strong> ಇಂಧನ ಆಮ್ಲಜನಕದೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಿ ಉಷ್ಣ ಮತ್ತು ಬೆಳಕು ಉತ್ಪಾದಿಸುವ ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ.<br><br>
+    <strong>ಉರಿಯುವ ಉಷ್ಣತೆ</strong> = ಉರಿಯಲು ಕನಿಷ್ಠ ಉಷ್ಣತೆ. ವಸ್ತುಗಳಿಗೆ ವಿಭಿನ್ನ ಉರಿಯುವ ಉಷ್ಣತೆ!
   </div>
 </div>
 

@@ -382,7 +382,7 @@ body {
 <div class="sim-card">
   <div class="controls">
     <button class="control-btn" id="start-btn" onclick="startExperiment()">
-      🔥 ಪ್ರಾರಂಭ Heating
+      🔥 ಉಷ್ಣ ಪ್ರಾರಂಭಿಸಿ
     </button>
     <button class="control-btn" onclick="resetExperiment()">
       🔄 ಮರುಹೊಂದಿಸಿ
@@ -390,7 +390,7 @@ body {
   </div>
   
   <div class="heat-slider">
-    <label>🌡️ ಸರಿಹೊಂದಿಸಿ Flame Intensity:</label>
+    <label>🌡️ ಜ್ವಾಲೆ ತೀವ್ರತೆ ಸರಿಹೊಂದಿಸಿ:</label>
     <input type="range" id="heat-level" min="1" max="3" value="2" oninput="adjustHeat(this.value)">
     <div class="heat-value" id="heat-value">ಮಧ್ಯಮ ಉಷ್ಣ</div>
   </div>
@@ -403,7 +403,7 @@ body {
         <div class="flame-outer"></div>
         <div class="flame-inner"></div>
       </div>
-      <div class="flame-label">Heat ಮೂಲ</div>
+      <div class="flame-label">ಉಷ್ಣ ಮೂಲ</div>
     </div>
     
     <div class="metal-strip">
@@ -503,7 +503,7 @@ const particles = [
   document.getElementById('p4')
 ];
 
-// Drop times based on heat level (ಸೆಕೆಂಡ್â€Œಗಳು)
+// Drop times based on heat level (seconds)
 const dropSchedule = {
   1: [4, 6, 8, 10],    // Low heat
   2: [2, 3.5, 5, 6.5], // ಮಧ್ಯಮ heat
@@ -512,7 +512,7 @@ const dropSchedule = {
 
 function adjustHeat(value) {
   heatLevel = parseInt(value);
-  const labels = ['Low Heat 🔥', 'ಮಧ್ಯಮ ಉಷ್ಣ 🔥🔥', 'High Heat 🔥🔥🔥'];
+  const labels = ['ಕಡಿಮೆ ಉಷ್ಣ 🔥', 'ಮಧ್ಯಮ ಉಷ್ಣ 🔥🔥', 'ಅಧಿಕ ಉಷ್ಣ 🔥🔥🔥'];
   document.getElementById('heat-value').textContent = labels[heatLevel - 1];
   
   flame.className = 'flame';
@@ -595,7 +595,7 @@ function resetExperiment() {
   
   timerDisplay.textContent = '⏱️ 0.0s';
   heatGradient.style.width = '0%';
-  startBtn.textContent = '🔥 ಪ್ರಾರಂಭ Heating';
+  startBtn.textContent = '🔥 ಉಷ್ಣ ಪ್ರಾರಂಭಿಸಿ';
   startBtn.disabled = false;
   
   for (let i = 1; i <= 4; i++) {
