@@ -260,7 +260,7 @@ svg { width: 100%; height: 100%; }
       </g>
       
       <!-- ಸ್ವಿಚ್ (interactive) -->
-      <g id="ಸ್ವಿಚ್-group" transform="translate(180, 85)" style="cursor:pointer" onclick="toggleಸ್ವಿಚ್()">
+      <g id="switch-group" transform="translate(180, 85)" style="cursor:pointer" onclick="toggleಸ್ವಿಚ್()">
         <!-- ಸ್ವಿಚ್ base -->
         <rect x="0" y="10" width="100" height="10" rx="3" fill="#455a64"/>
         
@@ -275,7 +275,7 @@ svg { width: 100%; height: 100%; }
         </g>
         
         <!-- Label -->
-        <text x="50" y="45" font-size="10" fill="#fff" text-anchor="middle" id="ಸ್ವಿಚ್-label">à²®à³à²šà³à²šà²²à³ à²Ÿà³à²¯à²¾à²ªà³ à²®à²¾à²¡à²¿</text>
+        <text x="50" y="45" font-size="10" fill="#fff" text-anchor="middle" id="switch-label">à²®à³à²šà³à²šà²²à³ à²Ÿà³à²¯à²¾à²ªà³ à²®à²¾à²¡à²¿</text>
       </g>
       
       <!-- Bulb -->
@@ -465,20 +465,20 @@ function setಸ್ವಿಚ್Type(type, btn) {
         <line x1="20" y1="15" x2="${isOn ? '80' : '60'}" y2="${isOn ? '15' : '-5'}" stroke="#78909c" stroke-width="6" stroke-linecap="round" id="lever-line"/>
         <circle cx="${isOn ? '80' : '60'}" cy="${isOn ? '15' : '-5'}" r="6" fill="#b0bec5" id="lever-knob"/>
       </g>
-      <text x="50" y="45" font-size="10" fill="#fff" text-anchor="middle" id="ಸ್ವಿಚ್-label">${isOn ? 'TAP TO OPEN' : 'à²®à³à²šà³à²šà²²à³ à²Ÿà³à²¯à²¾à²ªà³ à²®à²¾à²¡à²¿'}</text>
+      <text x="50" y="45" font-size="10" fill="#fff" text-anchor="middle" id="switch-label">${isOn ? 'TAP TO OPEN' : 'à²®à³à²šà³à²šà²²à³ à²Ÿà³à²¯à²¾à²ªà³ à²®à²¾à²¡à²¿'}</text>
     `;
   } else if (type === 'push') {
     ಸ್ವಿಚ್Group.innerHTML = `
       <rect x="20" y="0" width="60" height="30" rx="5" fill="#455a64"/>
       <circle cx="50" cy="15" r="12" fill="${isOn ? '#4caf50' : '#f44336'}" id="push-btn"/>
       <circle cx="50" cy="15" r="8" fill="${isOn ? '#81c784' : '#e57373'}"/>
-      <text x="50" y="50" font-size="10" fill="#fff" text-anchor="middle" id="ಸ್ವಿಚ್-label">${isOn ? 'PRESSED' : 'TAP TO PRESS'}</text>
+      <text x="50" y="50" font-size="10" fill="#fff" text-anchor="middle" id="switch-label">${isOn ? 'PRESSED' : 'TAP TO PRESS'}</text>
     `;
   } else if (type === 'toggle') {
     ಸ್ವಿಚ್Group.innerHTML = `
       <rect x="25" y="5" width="50" height="20" rx="10" fill="#455a64"/>
       <circle cx="${isOn ? '65' : '35'}" cy="15" r="10" fill="${isOn ? '#4caf50' : '#9e9e9e'}" id="toggle-knob"/>
-      <text x="50" y="45" font-size="10" fill="#fff" text-anchor="middle" id="ಸ್ವಿಚ್-label">${isOn ? 'ON' : 'OFF'}</text>
+      <text x="50" y="45" font-size="10" fill="#fff" text-anchor="middle" id="switch-label">${isOn ? 'ON' : 'OFF'}</text>
     `;
   }
   
