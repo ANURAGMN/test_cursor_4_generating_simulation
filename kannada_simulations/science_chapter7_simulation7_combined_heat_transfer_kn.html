@@ -399,7 +399,7 @@ body {
   </div>
   <div class="table-row">
     <div class="table-cell cell-conv">ಸಂವಹನ</div>
-    <div class="table-cell">à²¨à³€à²°à²¿à²¨ à²’à²³à²—à³†</div>
+    <div class="table-cell">ನೀರಿನ ಒಳಗೆ</div>
     <div class="table-cell">ಬಿಸಿ ಏರುತ್ತದೆ, ತಂಪು ಇಳಿಯುತ್ತದೆ</div>
   </div>
   <div class="table-row">
@@ -420,12 +420,12 @@ const methods = {
   },
   convection: {
     title: '💧 ಸಂವಹನ: ಪಾತ್ರೆಯ ಒಳಗೆ ನೀರಿನ ಸಂಚಲನ',
-    text: 'à²¨à³€à²°à²¿à²¨ à²’à²³à²—à³† <strong>à²¸à²‚à²µà²¹à²¨</strong>. à²…à²¡à²¿à²¯ à²¬à²¿à²¸à²¿ ನೀರು à²•à²¡à²¿à²®à³† à²¸à²¾à²‚à²¦à³à²° à²®à²¤à³à²¤à³ à²à²°à³à²¤à³à²¤à²¦à³†. à²®à³‡à²²à²¿à²¨ à²¤à²‚à²ªà³ ನೀರು à²‡à²³à²¿à²¯à³à²¤à³à²¤à²¦à³†. à²ˆ à²µà³ƒà²¤à³à²¤à²¾à²•à²¾à²° à²šà²²à²¨à³† à²Žà²²à³à²² ನೀರು à²¸à²®à²µà²¾à²—à²¿ à²¬à²¿à²¸à²¿ -'s why we see bubbles rising!',
+    text: 'ನೀರಿನ ಒಳಗೆ <strong>ಸಂವಹನ</strong>. ಅಡಿಯ ಬಿಸಿ ನೀರು ಕಡಿಮೆ ಸಾಂದ್ರ ಮತ್ತು ಏರುತ್ತದೆ. ಮೇಲಿನ ತಂಪು ನೀರು ಇಳಿಯುತ್ತದೆ. ಈ ವೃತ್ತಾಕಾರ ಚಲನೆ ಎಲ್ಲ ನೀರು ಸಮವಾಗಿ ಬಿಸಿ -'s why we see bubbles rising!',
     infoClass: 'convection-info'
   },
   radiation: {
     title: '☀️ ವಿಕಿರಣ: Heat you feel stಮತ್ತುing nearby',
-    text: 'à²…à²¡à³à²—à³† à²…à²Ÿà³à²Ÿà²¿ à²¹à²¤à³à²¤à²¿à²° à²¨à²¿à²‚à²¤à²°à³† à²¸à³à²ªà²°à³à²¶à²¿à²¸à²¦à³† à²‰à²·à³à²£ - à²…à²¦à³'s <strong>radiation</strong>! The hot pan ಮತ್ತು flame radiate heat à²¶à²•à³à²¤à²¿ as waves. This is why you feel warm near a cooking stove.',
+    text: 'ಅಡುಗೆ ಅಟ್ಟಿ ಹತ್ತಿರ ನಿಂತರೆ ಸ್ಪರ್ಶಿಸದೆ ಉಷ್ಣ - ಅದು's <strong>radiation</strong>! The hot pan ಮತ್ತು flame radiate heat ಶಕ್ತಿ as waves. This is why you feel warm near a cooking stove.',
     infoClass: 'radiation-info'
   }
 };
@@ -434,7 +434,7 @@ const methodInfo = document.getElementById('method-info');
 const methodTitle = document.getElementById('method-title');
 const methodText = document.getElementById('method-text');
 
-function selectವಿಧಾನ(method, btn) {
+function selectMethod(method, btn) {
   document.querySelectorAll('.highlight-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   

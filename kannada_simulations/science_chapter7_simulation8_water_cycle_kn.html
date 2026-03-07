@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -131,7 +131,7 @@ body {
   height: 55px;
   background: radial-gradient(circle, #ffeb3b 0%, #ff9800 100%);
   border-radius: 50%;
-  box-ನೆರಳು: 0 0 30px #ffeb3b;
+  box-shadow: 0 0 30px #ffeb3b;
 }
 
 .sun.active {
@@ -139,8 +139,8 @@ body {
 }
 
 @keyframes sunPulse {
-  0%, 100% { box-ನೆರಳು: 0 0 30px #ffeb3b; }
-  50% { box-ನೆರಳು: 0 0 50px #ff9800, 0 0 80px #ffeb3b; }
+  0%, 100% { box-shadow: 0 0 30px #ffeb3b; }
+  50% { box-shadow: 0 0 50px #ff9800, 0 0 80px #ffeb3b; }
 }
 
 /* Clouds */
@@ -148,7 +148,7 @@ body {
   position: absolute;
   background: #fff;
   border-radius: 50px;
-  box-ನೆರಳು: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .cloud-1 {
@@ -432,7 +432,7 @@ body {
   background: rgba(255,255,255,0.95);
   border-radius: 10px;
   padding: 12px;
-  box-ನೆರಳು: 0 -4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
   transform: translateY(100%);
   transition: transform 0.3s ease;
   z-index: 50;
@@ -485,7 +485,7 @@ body {
 }
 
 .step-dot.active { background: #0288d1; transform: scale(1.2); }
-.step-dot.à²ªà³‚à²°à³à²£d { background: #4caf50; }
+.step-dot.ಪೂರ್ಣ { background: #4caf50; }
 
 .step-dot:hover { transform: scale(1.3); }
 
@@ -604,7 +604,7 @@ body {
     </div>
     
     <!-- Lಮತ್ತು -->
-    <div class="lಮತ್ತು clickable" onclick="showInfo('runoff')">
+    <div class="land clickable" onclick="showInfo('runoff')">
       <div class="tree" style="right: 90px;">🌳</div>
       <div class="tree" style="right: 50px;">🌲</div>
     </div>
@@ -621,7 +621,7 @@ body {
       <button class="close-popup" onclick="hideInfo()">✕</button>
       <div class="info-popup-title" id="popup-title">☀️ ಆವಿಯಾಗುವಿಕೆ</div>
       <div class="info-popup-text" id="popup-text">
-        à²¸à³‚à²°à³à²¯à²¨ à²‰à²·à³à²£ à²¸à²®à³à²¦à³à²°, à²¨à²¦à²¿, à²¸à²°à³‹à²µà²°à²¦ ನೀರು à²†à²µà²¿à²¯à²¾à²—à³à²¤à³à²¤à²¦à³†.
+        ಸೂರ್ಯನ ಉಷ್ಣ ಸಮುದ್ರ, ನದಿ, ಸರೋವರದ ನೀರು ಆವಿಯಾಗುತ್ತದೆ.
       </div>
     </div>
   </div>
@@ -646,8 +646,8 @@ body {
   <div class="takeaway-text">
     • <strong>ಆವಿಯಾಗುವಿಕೆ:</strong> ನೀರು → ನೀರಿನ ಆವಿ (ಸೂರ್ಯ ಬಿಸಿ)<br>
     • <strong>ಘನೀಕರಣ:</strong> ಆವಿ → ಮೋಡ (ತಂಪಾಗುವಿಕೆ)<br>
-    • <strong>à²…à²µà²•à³à²·à³‡à²ªà²£:</strong> à²®à²³à³†, à²¹à²¿à²®, à²†à²²à²¿à²•à²²à³à²²à³ à²¬à³€à²³à³à²¤à³à²¤à²¦à³†<br>
-    • <strong>à²¸à²‚à²—à³à²°à²¹:</strong> ನೀರು à²¸à²®à³à²¦à³à²° à²®à²¤à³à²¤à³ à²­à³‚à²®à²¿à²—à³† à²®à²°à²³à³à²¤à³à²¤à²¦à³†
+    • <strong>ಅವಕ್ಷೇಪಣ:</strong> ಮಳೆ, ಹಿಮ, ಆಲಿಕಲ್ಲು ಬೀಳುತ್ತದೆ<br>
+    • <strong>ಸಂಗ್ರಹ:</strong> ನೀರು ಸಮುದ್ರ ಮತ್ತು ಭೂಮಿಗೆ ಮರಳುತ್ತದೆ
   </div>
 </div>
 
@@ -661,23 +661,23 @@ const stageInfo = {
   },
   evaporation: {
     title: '☀️ ಆವಿಯಾಗುವಿಕೆ',
-    text: 'The Sun\'s heat causes ನೀರು from oceans, rivers, lakes, ಮತ್ತು wet soil to <strong>evaporate</strong> (turn into invisible à²¨à³€à²°à²¿à²¨ à²†à²µà²¿). Plants also release à²¨à³€à²°à²¿à²¨ à²†à²µà²¿ through <strong>transpiration</strong>.'
+    text: 'The Sun\'s heat causes ನೀರು from oceans, rivers, lakes, ಮತ್ತು wet soil to <strong>evaporate</strong> (turn into invisible ನೀರಿನ ಆವಿ). Plants also release ನೀರಿನ ಆವಿ through <strong>transpiration</strong>.'
   },
   condensation: {
     title: '☁️ ಘನೀಕರಣ',
-    text: 'à²¨à³€à²°à²¿à²¨ à²†à²µà²¿ à²à²°à²¿à²¦à²¾à²— <strong>à²¤à²‚à²ªà²¾à²—à³à²¤à³à²¤à²¦à³†</strong>. à²¤à²‚à²ªà³ à²—à²¾à²³à²¿'t hold as much moisture, so vapor <strong>condenses</strong> into tiny ನೀರು droplets that form clouds.'
+    text: 'ನೀರಿನ ಆವಿ ಏರಿದಾಗ <strong>ತಂಪಾಗುತ್ತದೆ</strong>. ತಂಪು ಗಾಳಿ't hold as much moisture, so vapor <strong>condenses</strong> into tiny ನೀರು droplets that form clouds.'
   },
   precipitation: {
     title: '🌧️ ಅವಕ್ಷೇಪಣ',
-    text: 'à²®à³‹à²¡à²¦ à²¨à³€à²°à²¿à²¨ à²¬à²¿à²‚à²¦à³à²—à²³à³ à²­à²¾à²°à²µà²¾à²¦à²¾à²— <strong>à²…à²µà²•à³à²·à³‡à²ªà²£</strong> - à²®à²³à³†, à²¹à²¿à²®, à²¸à³à²²à³€à²Ÿà³ à²…à²¥à²µà²¾ à²†à²²à²¿à²•à²²à³à²²à³ à²‰à²·à³à²£à²¤à³† à²…à²¨à³à²¸à²¾à²°.'
+    text: 'ಮೋಡದ ನೀರಿನ ಬಿಂದುಗಳು ಭಾರವಾದಾಗ <strong>ಅವಕ್ಷೇಪಣ</strong> - ಮಳೆ, ಹಿಮ, ಸ್ಲೀಟ್ ಅಥವಾ ಆಲಿಕಲ್ಲು ಉಷ್ಣತೆ ಅನುಸಾರ.'
   },
   runoff: {
     title: '🏞️ ಹರಿವು & ಅಂತರ್ಸೇಚನ',
-    text: 'à²­à³‚à²®à²¿à²¯ à²®à³‡à²²à³† à²¬à³€à²³à³à²µ ನೀರು <strong>à²¹à²°à²¿à²¦à³</strong> à²œà²²à²¸à³à²°à³‹à²¤/à²¨à²¦à²¿ à²…à²¥à²µà²¾ <strong>à²’à²³à²¸à³‡à²°à³à²¤à³à²¤à²¦à³†</strong> à²­à³‚à²œà²².'
+    text: 'ಭೂಮಿಯ ಮೇಲೆ ಬೀಳುವ ನೀರು <strong>ಹರಿದು</strong> ಜಲಸ್ರೋತ/ನದಿ ಅಥವಾ <strong>ಒಳಸೇರುತ್ತದೆ</strong> ಭೂಜಲ.'
   },
   collection: {
     title: '💧 ಸಂಗ್ರಹ',
-    text: 'ನೀರು <strong>à²¸à²®à³à²¦à³à²°, à²¸à²°à³‹à²µà²°, à²¨à²¦à²¿</strong> à²…à²¥à²µà²¾ à²­à³‚à²œà²². à²‡à²²à³à²²à²¿à²‚à²¦ à²šà²•à³à²° à²®à²¤à³à²¤à³†!'
+    text: 'ನೀರು <strong>ಸಮುದ್ರ, ಸರೋವರ, ನದಿ</strong> ಅಥವಾ ಭೂಜಲ. ಇಲ್ಲಿಂದ ಚಕ್ರ ಮತ್ತೆ!'
   }
 };
 
@@ -801,8 +801,8 @@ function updateGuidedStep() {
   
   // Update step dots
   document.querySelectorAll('.step-dot').forEach((dot, i) => {
-    dot.classList.remove('active', 'à²ªà³‚à²°à³à²£d');
-    if (i < currentStep) dot.classList.add('à²ªà³‚à²°à³à²£d');
+    dot.classList.remove('active', 'ಪೂರ್ಣ');
+    if (i < currentStep) dot.classList.add('ಪೂರ್ಣ');
     if (i === currentStep) dot.classList.add('active');
   });
   
@@ -853,7 +853,7 @@ function resetSimulation() {
   clearHighlights();
 }
 
-// Hide instruction after à²®à³Šà²¦à²² interaction
+// Hide instruction after ಮೊದಲ interaction
 document.getElementById('cycle-visual').addEventListener('click', function(e) {
   if (e.target.classList.contains('cycle-visual')) {
     instruction.classList.add('hidden');

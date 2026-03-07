@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -70,13 +70,13 @@ body {
   height: 60px;
   background: radial-gradient(circle, #ffeb3b 0%, #ff9800 100%);
   border-radius: 50%;
-  box-ನೆರಳು: 0 0 40px #ffeb3b, 0 0 80px #ff9800;
+  box-shadow: 0 0 40px #ffeb3b, 0 0 80px #ff9800;
   animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { box-ನೆರಳು: 0 0 40px #ffeb3b, 0 0 80px #ff9800; }
-  50% { box-ನೆರಳು: 0 0 60px #ffeb3b, 0 0 100px #ff9800; }
+  0%, 100% { box-shadow: 0 0 40px #ffeb3b, 0 0 80px #ff9800; }
+  50% { box-shadow: 0 0 60px #ffeb3b, 0 0 100px #ff9800; }
 }
 
 .sun-rays {
@@ -153,7 +153,7 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease;
   border: 2px solid #fff;
-  box-ನೆರಳು: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 .location-marker:active { transform: scale(1.2); }
@@ -261,7 +261,7 @@ body {
 <div class="concept-card">
   <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    The <strong>Sun</strong> is the main ಮೂಲ of heat for Earth. Places near the ವಿಷುವದ್ರೇಖೆ receive more direct sunlight ಮತ್ತು à²¬à²¿à²¸à²¿ than places farther away. Geography also affects local temperatures.
+    The <strong>Sun</strong> is the main ಮೂಲ of heat for Earth. Places near the ವಿಷುವದ್ರೇಖೆ receive more direct sunlight ಮತ್ತು ಬಿಸಿ than places farther away. Geography also affects local temperatures.
   </div>
 </div>
 
@@ -297,7 +297,7 @@ body {
     </div>
     <div class="region-tab" onclick="selectRegion('sikkim', this)">
       <span class="emoji">🏔️</span>
-      à²¸à²¿à²•à³à²•à²¿à²‚
+      ಸಿಕ್ಕಿಂ
     </div>
   </div>
 </div>
@@ -305,7 +305,7 @@ body {
 <div class="region-info" id="region-info">
   <div class="region-title" id="region-title">🌴 ಕೇರಳ - ಉಷ್ಣವಲಯ ಹವಾಮಾನ</div>
   <div class="region-text" id="region-text">
-    ಕೇರಳ ವಿಷುವದ್ರೇಖೆಗೆ ಹತ್ತಿರ, ಹೆಚ್ಚು ಸೂರ್ಯನ ಬೆಳಕುrect sunlight à²‰à²¦à³à²¦à²•à³à²•à³‚ the year. It's also a <strong>à²¤à³€à²° à²°à²¾à²œà³à²¯</strong>, à²¸à²®à³à²¦à³à²° à²‰à²·à³à²£à²¤à³† à²®à²¤à³à²¤à³ à²’à²¦à³à²¦à³† à²¹à³†à²šà³à²šà³.
+    ಕೇರಳ ವಿಷುವದ್ರೇಖೆಗೆ ಹತ್ತಿರ, ಹೆಚ್ಚು ಸೂರ್ಯನ ಬೆಳಕುrect sunlight ಉದ್ದಕ್ಕೂ the year. It's also a <strong>ತೀರ ರಾಜ್ಯ</strong>, ಸಮುದ್ರ ಉಷ್ಣತೆ ಮತ್ತು ಒದ್ದೆ ಹೆಚ್ಚು.
   </div>
   <div class="temp-badge temp-hot" id="temp-badge">🌡️ ಸರಾಸರಿ: 25-32°C (ಬಿಸಿ ಮತ್ತು ಒದ್ದೆ)</div>
 </div>
@@ -315,18 +315,18 @@ body {
   <div class="factor-row">
     <div class="factor-item">
       <div class="icon">📍</div>
-      <div class="label">à²…à²•à³à²·à²¾à²‚à²¶</div>
+      <div class="label">ಅಕ್ಷಾಂಶ</div>
       <div class="desc">ದೂರ from ವಿಷುವದ್ರೇಖೆ</div>
     </div>
     <div class="factor-item">
       <div class="icon">⛰️</div>
-      <div class="label">à²Žà²¤à³à²¤à²°</div>
-      <div class="desc">à²¸à²®à³à²¦à³à²° à²®à²Ÿà³à²Ÿà²¦ à²®à³‡à²²à³† à²Žà²¤à³à²¤à²°</div>
+      <div class="label">ಎತ್ತರ</div>
+      <div class="desc">ಸಮುದ್ರ ಮಟ್ಟದ ಮೇಲೆ ಎತ್ತರ</div>
     </div>
     <div class="factor-item">
       <div class="icon">🌊</div>
-      <div class="label">à²¸à²®à³à²¦à³à²° à²¸à²¨à²¿à²¹</div>
-      <div class="desc">à²¤à³€à²° à²µà²¿à²°à³à²¦à³à²§ à²’à²³à²¨à²¾à²¡à³</div>
+      <div class="label">ಸಮುದ್ರ ಸನಿಹ</div>
+      <div class="desc">ತೀರ ವಿರುದ್ಧ ಒಳನಾಡು</div>
     </div>
   </div>
 </div>
@@ -334,10 +334,10 @@ body {
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೆನಪಿಡಿ</div>
   <div class="takeaway-text">
-    • The <strong>Sun</strong> à²­à³‚à²®à²¿à²¯ à²ªà³à²°à²¾à²¥à²®à²¿à²• à²‰à²·à³à²£ à²®à³‚à²²<br>
-    • ಹತ್ತಿರದ ಸ್ಥಳಗಳು <strong>ವಿಷುವದ್ರೇಖೆ</strong> à²¬à²¿à²¸à²¿<br>
-    • <strong>à²ªà²°à³à²µà²¤à²—à²³à³</strong> à²Žà²¤à³à²¤à²°à²¦à²¿à²‚à²¦ à²¤à²‚à²ªà³<br>
-    • <strong>à²¤à³€à²° à²ªà³à²°à²¦à³‡à²¶à²—à²³à³</strong> à²®à²§à³à²¯à²® à²‰à²·à³à²£à²¤à³†<br>
+    • The <strong>Sun</strong> ಭೂಮಿಯ ಪ್ರಾಥಮಿಕ ಉಷ್ಣ ಮೂಲ<br>
+    • ಹತ್ತಿರದ ಸ್ಥಳಗಳು <strong>ವಿಷುವದ್ರೇಖೆ</strong> ಬಿಸಿ<br>
+    • <strong>ಪರ್ವತಗಳು</strong> ಎತ್ತರದಿಂದ ತಂಪು<br>
+    • <strong>ತೀರ ಪ್ರದೇಶಗಳು</strong> ಮಧ್ಯಮ ಉಷ್ಣತೆ<br>
     • These ವ್ಯತ್ಯಾಸs create India's diverse climates!
   </div>
 </div>
@@ -348,7 +348,7 @@ body {
 const regions = {
   kerala: {
     title: '🌴 ಕೇರಳ - ಉಷ್ಣವಲಯ ಹವಾಮಾನ',
-    text: 'ಕೇರಳ ವಿಷುವದ್ರೇಖೆಗೆ ಹತ್ತಿರ, ಹೆಚ್ಚು ಸೂರ್ಯನ ಬೆಳಕುrect sunlight à²‰à²¦à³à²¦à²•à³à²•à³‚ the year. It\'s also a <strong>à²¤à³€à²° à²°à²¾à²œà³à²¯</strong>, à²¸à²®à³à²¦à³à²° à²‰à²·à³à²£à²¤à³† à²®à²¤à³à²¤à³ à²’à²¦à³à²¦à³† à²¹à³†à²šà³à²šà³.',
+    text: 'ಕೇರಳ ವಿಷುವದ್ರೇಖೆಗೆ ಹತ್ತಿರ, ಹೆಚ್ಚು ಸೂರ್ಯನ ಬೆಳಕುrect sunlight ಉದ್ದಕ್ಕೂ the year. It\'s also a <strong>ತೀರ ರಾಜ್ಯ</strong>, ಸಮುದ್ರ ಉಷ್ಣತೆ ಮತ್ತು ಒದ್ದೆ ಹೆಚ್ಚು.',
     temp: '🌡️ ಸರಾಸರಿ: 25-32°C (ಬಿಸಿ ಮತ್ತು ಒದ್ದೆ)',
     tempClass: 'temp-hot'
   },
@@ -359,8 +359,8 @@ const regions = {
     tempClass: 'temp-moderate'
   },
   sikkim: {
-    title: '🏔️ à²¸à²¿à²•à³à²•à²¿à²‚ - ಶೀತ ಪರ್ವತ ವಾತಾವರಣ',
-    text: 'à²¸à²¿à²•à³à²•à²¿à²‚ <strong>à²¹à²¿à²®à²¾à²²à²¯</strong>à²¦à²²à³à²²à²¿ à²¹à³†à²šà³à²šà³ à²Žà²¤à³à²¤à²°. à²…à²¦à³'s in India, it\'s cold most of the year because temperature decreases with altitude (about 6°C per 1000m).',
+    title: '🏔️ ಸಿಕ್ಕಿಂ - ಶೀತ ಪರ್ವತ ವಾತಾವರಣ',
+    text: 'ಸಿಕ್ಕಿಂ <strong>ಹಿಮಾಲಯ</strong>ದಲ್ಲಿ ಹೆಚ್ಚು ಎತ್ತರ. ಅದು's in India, it\'s cold most of the year because temperature decreases with altitude (about 6°C per 1000m).',
     temp: '🌡️ Average: 5-20°C (Cold)',
     tempClass: 'temp-cold'
   }

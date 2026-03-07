@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -105,7 +105,7 @@ body {
   background: #fff;
   border: 3px solid #ff5722;
   cursor: pointer;
-  box-ನೆರಳು: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .distance-value {
@@ -263,7 +263,7 @@ body {
 }
 
 .color-box:hover { transform: scale(1.05); }
-.color-box.selected { box-ನೆರಳು: 0 0 0 3px #ffeb3b; }
+.color-box.selected { box-shadow: 0 0 0 3px #ffeb3b; }
 
 .color-box.dark { background: #333; color: #fff; }
 .color-box.light { background: #f5f5f5; color: #333; border: 2px solid #e0e0e0; }
@@ -310,15 +310,15 @@ body {
 
 <div class="sim-card">
   <div class="controls">
-    <button class="control-btn active" onclick="setಮೂಲ('fire', this)">
+    <button class="control-btn active" onclick="setSource('fire', this)">
       <span class="emoji">🔥</span>
       ಅಗ್ನಿಕುಂಡ
     </button>
-    <button class="control-btn" onclick="setಮೂಲ('sun', this)">
+    <button class="control-btn" onclick="setSource('sun', this)">
       <span class="emoji">☀️</span>
       Sun
     </button>
-    <button class="control-btn" onclick="setಮೂಲ('pan', this)">
+    <button class="control-btn" onclick="setSource('pan', this)">
       <span class="emoji">🍳</span>
       Hot Pan
     </button>
@@ -326,7 +326,7 @@ body {
   
   <div class="distance-control">
     <label>📏 ಸರಿಹೊಂದಿಸಿ ದೂರ from Heat ಮೂಲ:</label>
-    <input type="range" id="distance-slider" min="1" max="10" value="5" oninput="updateದೂರ(this.value)">
+    <input type="range" id="distance-slider" min="1" max="10" value="5" oninput="updateDistance(this.value)">
     <div class="distance-value">
       <span>🔥 ಮುಚ್ಚಿ</span>
       <span>Far 🧊</span>
@@ -353,7 +353,7 @@ body {
       <div class="temp-ಸೂಚಕ temp-warm" id="temp-indicator">🌡️ Warm</div>
     </div>
     
-    <div class="intensity-meter" id="intensity-meter">à²¤à³€à²µà³à²°à²¤à³†: 50%</div>
+    <div class="intensity-meter" id="intensity-meter">ತೀವ್ರತೆ: 50%</div>
   </div>
 </div>
 
@@ -362,11 +362,11 @@ body {
   <div class="color-test">
     <div class="color-box dark selected" onclick="selectColor('dark', this)">
       <div class="temp" id="dark-temp">🔥</div>
-      <div class="label">à²•à²ªà³à²ªà³ à²¶à²°à³à²Ÿà³</div>
+      <div class="label">ಕಪ್ಪು ಶರ್ಟ್</div>
     </div>
     <div class="color-box light" onclick="selectColor('light', this)">
       <div class="temp" id="light-temp">❄️</div>
-      <div class="label">à²¬à²¿à²³à²¿ à²¶à²°à³à²Ÿà³</div>
+      <div class="label">ಬಿಳಿ ಶರ್ಟ್</div>
     </div>
   </div>
   <div class="color-result" id="color-result">
@@ -378,8 +378,8 @@ body {
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೆನಪಿಡಿ</div>
   <div class="takeaway-text">
-    • ವಿಕಿರಣ needs <strong>à²®à²¾à²§à³à²¯à²® à²‡à²²à³à²²</strong><br>
-    • ಉಷ್ಣ ತೀವ್ರತೆ <strong>à²¦à³‚à²°à²¦à³Šà²‚à²¦à²¿à²—à³† à²•à²¡à²¿à²®à³†</strong><br>
+    • ವಿಕಿರಣ needs <strong>ಮಾಧ್ಯಮ ಇಲ್ಲ</strong><br>
+    • ಉಷ್ಣ ತೀವ್ರತೆ <strong>ದೂರದೊಂದಿಗೆ ಕಡಿಮೆ</strong><br>
     • <strong>ಗಾಢ ಬಣ್ಣಗಳು ಹೀರಿಕೊಳ್ಳುತ್ತವೆ</strong> more heat<br>
     • <strong>ಒಳ್ಳೆ ಬಣ್ಣಗಳು ಪ್ರತಿಫಲಿಸುತ್ತವೆ</strong> heat<br>
     • ಬೇಸಿಗೆಯಲ್ಲಿ ಬಿಳಿ, ಚಳಿಯಲ್ಲಿ ಗಾಢ ಧರಿಸಿ!
@@ -389,7 +389,7 @@ body {
 </div>
 
 <script>
-let currentಮೂಲ = 'fire';
+let currentSource = 'fire';
 let distance = 5;
 
 const ಮೂಲs = {
@@ -406,8 +406,8 @@ const tempIndicator = document.getElementById('temp-indicator');
 const intensityMeter = document.getElementById('intensity-meter');
 const receiver = document.getElementById('receiver');
 
-function setಮೂಲ(type, btn) {
-  currentಮೂಲ = type;
+function setSource(type, btn) {
+  currentSource = type;
   
   document.querySelectorAll('.control-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -418,10 +418,10 @@ function setಮೂಲ(type, btn) {
   receiverIcon.textContent = ಮೂಲ.receiver;
   receiverLabel.textContent = ಮೂಲ.receiverLabel;
   
-  updateದೂರ(distance);
+  updateDistance(distance);
 }
 
-function updateದೂರ(value) {
+function updateDistance(value) {
   distance = parseInt(value);
   
   // ಲೆಕ್ಕ ಹಾಕಿ intensity (inverse square law simplified)
@@ -471,7 +471,7 @@ function selectColor(color, el) {
 }
 
 // Initialize
-updateದೂರ(5);
+updateDistance(5);
 </script>
 </body>
 </html>
