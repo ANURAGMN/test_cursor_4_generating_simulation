@@ -255,19 +255,19 @@ svg { width: 100%; height: 100%; display: block; }
 
 <div class="insight-box">
   <div class="insight-title">🔑 ಮುಖ್ಯ ಅಂತರ್ದೃಷ್ಟಿ:</div>
-  <strong>ನೀಲಿ litmus → ಕೆಂಪು</strong> indicates ACID. <strong>ಕೆಂಪು litmus → ನೀಲಿ</strong> indicates BASE. If <strong>ಎರಡೂ ಬದಲಾಗುವುದಿಲ್ಲ</strong>, the substance is NEUTRAL. This makes litmus a ಪೂರ್ಣ ಸೂಚಕ!
+  <strong>ನೀಲಿ ಲಿಟ್ಮಸ್ → ಕೆಂಪು</strong> ಆಮ್ಲ. <strong>ಕೆಂಪು ಲಿಟ್ಮಸ್ → ನೀಲಿ</strong> ಕ್ಷಾರ. <strong>ಎರಡೂ ಬದಲಾಗದಿದ್ದರೆ</strong> ಪದಾರ್ಥ ತಟಸ್ಥ. ಲಿಟ್ಮಸ್ ಒಂದು ಪೂರ್ಣ ಸೂಚಕ!
 </div>
 
 <div class="real-world">
   <div class="icon">🌿</div>
   <div class="text">
-    <strong>ಲಿಟ್ಮಸ್ ಎಲ್ಲಿಂದ ಬರುತ್ತದೆ?</strong> ಲಿಟ್ಮಸ್ ನೈಸರ್ಗಿಕ ಬಣ್ಣ <span class="highlight-base">ಲೈಕನ್</span> (ಕಲ್ಲು ಮತ್ತು ಮರಗಳಲ್ಲಿ ಬೆಳೆಯುವ ಜೀವಿಗಳು). ಶತಮಾನಗಳಿಂದ ಬಳಕೆಯಲ್ಲಿದೆ for centuries!
+    <strong>ಲಿಟ್ಮಸ್ ಎಲ್ಲಿಂದ ಬರುತ್ತದೆ?</strong> ಲಿಟ್ಮಸ್ ನೈಸರ್ಗಿಕ ಬಣ್ಣ <span class="highlight-base">ಲೈಕನ್</span> (ಕಲ್ಲು ಮತ್ತು ಮರಗಳಲ್ಲಿ ಬೆಳೆಯುವ ಜೀವಿಗಳು). ಶತಮಾನಗಳಿಂದ ಬಳಕೆಯಲ್ಲಿದೆ!
   </div>
 </div>
 
 <div class="takeaway" id="takeaway">
   <div class="takeaway-title">💡 ನೀವು ಕಂಡುಕೊಂಡದ್ದು:</div>
-  <span id="takeaway-text">Litmus is a ಪೂರ್ಣ ಸೂಚಕ that can identify acidic, ಮೂಲ, ಮತ್ತು neutral substances!</span>
+  <span id="takeaway-text">ಲಿಟ್ಮಸ್ ಒಂದು ಪೂರ್ಣ ಸೂಚಕ; ಆಮ್ಲೀಯ, ಕ್ಷಾರೀಯ ಮತ್ತು ತಟಸ್ಥ ಪದಾರ್ಥಗಳನ್ನು ಗುರುತಿಸಬಹುದು!</span>
 </div>
 
 </div>
@@ -290,7 +290,7 @@ const defaultSolution = 'lemon';
 
 container.innerHTML = `
 <div class="visual">
-  <div class="static-hint">👆 Select solution & tap "Dip"</div>
+  <div class="static-hint">👆 ದ್ರಾವಣ ಆಯ್ಕೆಮಾಡಿ, «ಕಾಗದಗಳನ್ನು ಮುಳುಗಿಸಿ» ಒತ್ತಿ</div>
 
   <svg viewBox="0 0 400 300">
     <!-- Lab bench -->
@@ -439,7 +439,7 @@ async function runTest() {
     resultText.textContent = '🔴 ಆಮ್ಲೀಯ';
     resultText.setAttribute('fill', '#d32f2f');
     resultBox.querySelector('rect').setAttribute('stroke', '#d32f2f');
-    takeawayText.textContent = `${sol.name} is ಆಮ್ಲೀಯ! ನೀಲಿ litmus turned red because acids release H⁺ ions.`;
+    takeawayText.textContent = `${sol.name} ಆಮ್ಲೀಯ! ಆಮ್ಲಗಳು H⁺ ಅಯಾನುಗಳನ್ನು ಬಿಡುಗಡೆ ಮಾಡುವುದರಿಂದ ನೀಲಿ ಲಿಟ್ಮಸ್ ಕೆಂಪಾಗುತ್ತದೆ.`;
   } else if (sol.type === 'ಮೂಲ') {
     blueStatus.textContent = 'ಬದಲಾವಣೆ ಇಲ್ಲ';
     redStatus.textContent = '→ ನೀಲಿ!';
@@ -452,7 +452,7 @@ async function runTest() {
     resultText.textContent = '🔵 ಕ್ಷಾರೀಯ';
     resultText.setAttribute('fill', '#1565c0');
     resultBox.querySelector('rect').setAttribute('stroke', '#1565c0');
-    takeawayText.textContent = `${sol.name} is ಕ್ಷಾರೀಯ! ಕೆಂಪು litmus turned blue because bases release OH⁻ ions.`;
+    takeawayText.textContent = `${sol.name} ಕ್ಷಾರೀಯ! ಕ್ಷಾರಗಳು OH⁻ ಅಯಾನುಗಳನ್ನು ಬಿಡುಗಡೆ ಮಾಡುವುದರಿಂದ ಕೆಂಪು ಲಿಟ್ಮಸ್ ನೀಲಿಯಾಗುತ್ತದೆ.`;
   } else {
     blueStatus.textContent = 'ಬದಲಾವಣೆ ಇಲ್ಲ';
     redStatus.textContent = 'ಬದಲಾವಣೆ ಇಲ್ಲ';
@@ -460,12 +460,12 @@ async function runTest() {
     blueResult.className = 'metric-value';
     redResult.textContent = 'ಕೆಂಪು';
     redResult.className = 'metric-value';
-    conclusion.textContent = 'NEUTRAL';
+    conclusion.textContent = 'ತಟಸ್ಥ';
     conclusion.className = 'metric-value neutral';
-    resultText.textContent = '⚪ NEUTRAL';
+    resultText.textContent = '⚪ ತಟಸ್ಥ';
     resultText.setAttribute('fill', '#2e7d32');
     resultBox.querySelector('rect').setAttribute('stroke', '#2e7d32');
-    takeawayText.textContent = `${sol.name} is NEUTRAL! Neither litmus paper changed color because it has balanced pH.`;
+    takeawayText.textContent = `${sol.name} ತಟಸ್ಥ! ಸಮತೋಲಿತ pH ಇರುವುದರಿಂದ ಯಾವ ಲಿಟ್ಮಸ್ ಕಾಗದವೂ ಬಣ್ಣ ಬದಲಾಯಿಸಲಿಲ್ಲ.`;
   }
 
   resultBox.setAttribute('opacity', '1');
