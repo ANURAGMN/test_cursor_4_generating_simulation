@@ -337,10 +337,10 @@ svg { width: 100%; height: 100%; display: block; }
 <div class="concept-card">
   <div class="concept-title">📚 ಕಲಿಯಲು ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    <strong>Neutralisation</strong> is when an <span style="color:#e65100;font-weight:600;">ACID</span> ಮತ್ತು a <span style="color:#1565c0;font-weight:600;">BASE</span> react to cancel each other out, producing a neutral solution.
+    <strong>ತಟಸ್ಥೀಕರಣ</strong> ಎಂದರೆ <span style="color:#e65100;font-weight:600;">ಆಮ್ಲ</span> ಮತ್ತು <span style="color:#1565c0;font-weight:600;">ಕ್ಷಾರ</span> ಪರಸ್ಪರ ಪ್ರತಿಕ್ರಿಯಿಸಿ ರದ್ದುಗೊಂಡು ತಟಸ್ಥ ದ್ರಾವಣ ಉಂಟಾಗುವುದು.
   </div>
   <div class="concept-equation">
-    ACID + BASE → ಉಪ್ಪು + ನೀರು (Neutral pH)
+    ಆಮ್ಲ + ಕ್ಷಾರ → ಉಪ್ಪು + ನೀರು (ತಟಸ್ಥ pH)
   </div>
 </div>
 
@@ -348,13 +348,13 @@ svg { width: 100%; height: 100%; display: block; }
 
 <!-- pH Scale -->
 <div class="ph-scale">
-  <div class="ph-title">pH Scale - Measuring Acidity & ಮೂಲity</div>
+  <div class="ph-title">pH ಮಾಪನ – ಆಮ್ಲತೆ ಮತ್ತು ಕ್ಷಾರತೆ</div>
   <div class="ph-bar">
     <div class="ph-pointer" id="ph-pointer" style="left: calc(50% - 3px);"></div>
   </div>
   <div class="ph-labels">
     <span class="acidic-label">0-6<br>ಆಮ್ಲೀಯ</span>
-    <span class="neutral-label">7<br>NEUTRAL</span>
+    <span class="neutral-label">7<br>ತಟಸ್ಥ</span>
     <span class="ಮೂಲ-label">8-14<br>ಕ್ಷಾರೀಯ</span>
   </div>
 </div>
@@ -372,7 +372,7 @@ const container = document.getElementById('sim');
 
 container.innerHTML = `
 <div class="visual">
-  <div class="soil-ಸೂಚಕ" id="soil-display">Select soil type</div>
+  <div class="soil-ಸೂಚಕ" id="soil-display">ಮಣ್ಣಿನ ಪ್ರಕಾರ ಆಯ್ಕೆಮಾಡಿ</div>
 
   <svg viewBox="0 0 400 240">
     <!-- Sun -->
@@ -393,15 +393,15 @@ container.innerHTML = `
     <!-- Treatment items -->
     <g id="lime-bag" transform="translate(70, 155)" opacity="0.3">
       <rect x="-28" y="0" width="56" height="55" rx="5" fill="#eceff1" stroke="#b0bec5" stroke-width="2"/>
-      <text x="0" y="18" text-anchor="middle" font-size="9" fill="#455a64" font-weight="700">LIME</text>
+      <text x="0" y="18" text-anchor="middle" font-size="9" fill="#455a64" font-weight="700">ಸುಣ್ಣ</text>
       <text x="0" y="32" text-anchor="middle" font-size="7" fill="#666">(ಕ್ಷಾರ)</text>
       <circle cx="0" cy="44" r="8" fill="#e0e0e0" stroke="#bdbdbd"/>
     </g>
     
     <g id="compost-bag" transform="translate(330, 155)" opacity="0.3">
       <rect x="-28" y="0" width="56" height="55" rx="5" fill="#795548" stroke="#5d4037" stroke-width="2"/>
-      <text x="0" y="18" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">COMPOST</text>
-      <text x="0" y="32" text-anchor="middle" font-size="7" fill="#ddd">(releases acids)</text>
+      <text x="0" y="18" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">ಕಂಪೋಸ್ಟ್</text>
+      <text x="0" y="32" text-anchor="middle" font-size="7" fill="#ddd">(ಆಮ್ಲ ಬಿಡುಗಡೆ)</text>
       <text x="0" y="46" text-anchor="middle" font-size="14">🍂</text>
     </g>
   </svg>
@@ -411,7 +411,7 @@ container.innerHTML = `
 <div class="learning-box" id="learning-box">
   <div class="learning-title">🔬 ಸಮಸ್ಯೆಯನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು</div>
   <div class="learning-text" id="learning-text">
-    Plants grow best in <span class="neutral">neutral soil (pH 7)</span>. When soil becomes too acidic or too ಮೂಲ, plants cannot absorb nutrients ಮತ್ತು they become unhealthy.
+    ಸಸ್ಯಗಳು <span class="neutral">ತಟಸ್ಥ ಮಣ್ಣಿನಲ್ಲಿ (pH 7)</span> ಉತ್ತಮ ಬೆಳೆಯುತ್ತವೆ. ಮಣ್ಣು ಅತಿ ಆಮ್ಲೀಯ ಅಥವಾ ಅತಿ ಕ್ಷಾರೀಯವಾದಾಗ ಸಸ್ಯಗಳು ಪೋಷಕಾಂಶ ಹೀರಲಾರವು ಮತ್ತು ಅನಾರೋಗ್ಯವಾಗುತ್ತವೆ.
   </div>
 </div>
 
@@ -422,22 +422,22 @@ container.innerHTML = `
 </div>
 
 <div class="soil-selector">
-  <div class="selector-label">Step 1: Select a problem soil to treat</div>
+  <div class="selector-label">ಹಂತ 1: ಚಿಕಿತ್ಸೆ ಮಾಡಲು ಸಮಸ್ಯಾತ್ಮಕ ಮಣ್ಣು ಆಯ್ಕೆಮಾಡಿ</div>
   <div class="soil-btns">
     <button class="soil-btn acidic" data-type="acidic">
       <span class="icon">🟠</span>
-      Acidic Soil
-      <div class="ph-info">pH 4-5 (too much acid)</div>
+      ಆಮ್ಲೀಯ ಮಣ್ಣು
+      <div class="ph-info">pH 4-5 (ಅಧಿಕ ಆಮ್ಲ)</div>
     </button>
     <button class="soil-btn ಮೂಲ" data-type="ಮೂಲ">
       <span class="icon">🔵</span>
-      ಮೂಲ Soil
-      <div class="ph-info">pH 9-10 (too much base)</div>
+      ಕ್ಷಾರೀಯ ಮಣ್ಣು
+      <div class="ph-info">pH 9-10 (ಅಧಿಕ ಕ್ಷಾರ)</div>
     </button>
   </div>
 </div>
 
-<button class="action-btn" id="treat-btn" disabled>Step 2: Apply Neutralisation Treatment</button>`;
+<button class="action-btn" id="treat-btn" disabled>ಹಂತ 2: ತಟಸ್ಥೀಕರಣ ಚಿಕಿತ್ಸೆ ಲೇಪಿಸಿ</button>`;
 
 let selectedSoil = null;
 let isTreated = false;
@@ -472,20 +472,20 @@ container.querySelectorAll('.soil-btn').forEach(btn => {
       soilLayer.style.transition = 'fill 0.5s ease';
       soilLayer.style.fill = '#8d6e63';
       plantIcon.textContent = '🥀';
-      soilDisplay.textContent = '🟠 Acidic (pH 4-5)';
+      soilDisplay.textContent = '🟠 ಆಮ್ಲೀಯ (pH 4-5)';
       soilDisplay.className = 'soil-ಸೂಚಕ acidic';
       phPointer.style.left = '12%';
       limeBag.style.opacity = '1';
       compostBag.style.opacity = '0.3';
       
-      learningTitle.textContent = '🔬 The Problem: Acidic Soil';
+      learningTitle.textContent = '🔬 ಸಮಸ್ಯೆ: ಆಮ್ಲೀಯ ಮಣ್ಣು';
       learningText.innerHTML = `
-        This soil has <span class="acid">too much ACID (low pH)</span>. The excess acid prevents the plant from absorbing nutrients.<br><br>
-        <strong>ದ್ರಾವಣ:</strong> Add <span class="base">LIME (a BASE)</span> to neutralise the acid!<br>
-        <em>ನೆನಪಿಡಿ: Base + Acid → Neutral</em>
+        ಈ ಮಣ್ಣಿನಲ್ಲಿ <span class="acid">ಅಧಿಕ ಆಮ್ಲ (ಕಡಿಮೆ pH)</span>. ಅಧಿಕ ಆಮ್ಲ ಸಸ್ಯವು ಪೋಷಕಾಂಶ ಹೀರುವುದನ್ನು ತಡೆಯುತ್ತದೆ.<br><br>
+        <strong>ಪರಿಹಾರ:</strong> ಆಮ್ಲ ತಟಸ್ಥೀಕರಿಸಲು <span class="base">ಸುಣ್ಣ (ಕ್ಷಾರ)</span> ಸೇರಿಸಿ!<br>
+        <em>ನೆನಪಿಡಿ: ಕ್ಷಾರ + ಆಮ್ಲ → ತಟಸ್ಥ</em>
       `;
       
-      treatBtn.textContent = 'Step 2: Add LIME (ಕ್ಷಾರ) to Neutralise';
+      treatBtn.textContent = 'ಹಂತ 2: ಸುಣ್ಣ (ಕ್ಷಾರ) ಸೇರಿಸಿ ತಟಸ್ಥೀಕರಿಸಿ';
       treatBtn.style.background = 'linear-gradient(135deg, #78909c 0%, #546e7a 100%)';
       
     } else {
@@ -499,12 +499,12 @@ container.querySelectorAll('.soil-btn').forEach(btn => {
       
       learningTitle.textContent = '🔬 ಸಮಸ್ಯೆ: ಕ್ಷಾರ ಮಣ್ಣು';
       learningText.innerHTML = `
-        This soil has <span class="base">too much BASE (high pH)</span>. The excess base prevents the plant from absorbing iron.<br><br>
-        <strong>ದ್ರಾವಣ:</strong> Add <span class="acid">COMPOST (releases ACIDS)</span> to neutralise the base!<br>
-        <em>ನೆನಪಿಡಿ: Acid + Base → Neutral</em>
+        ಈ ಮಣ್ಣಿನಲ್ಲಿ <span class="base">ಅಧಿಕ ಕ್ಷಾರ (ಅಧಿಕ pH)</span>. ಅಧಿಕ ಕ್ಷಾರ ಸಸ್ಯವು ಕಬ್ಬಿಣ ಹೀರುವುದನ್ನು ತಡೆಯುತ್ತದೆ.<br><br>
+        <strong>ಪರಿಹಾರ:</strong> ಕ್ಷಾರ ತಟಸ್ಥೀಕರಿಸಲು <span class="acid">ಕಂಪೋಸ್ಟ್ (ಆಮ್ಲ ಬಿಡುಗಡೆ)</span> ಸೇರಿಸಿ!<br>
+        <em>ನೆನಪಿಡಿ: ಆಮ್ಲ + ಕ್ಷಾರ → ತಟಸ್ಥ</em>
       `;
       
-      treatBtn.textContent = 'Step 2: Add COMPOST (ಆಮ್ಲ) to Neutralise';
+      treatBtn.textContent = 'ಹಂತ 2: ಕಂಪೋಸ್ಟ್ (ಆಮ್ಲ) ಸೇರಿಸಿ ತಟಸ್ಥೀಕರಿಸಿ';
       treatBtn.style.background = 'linear-gradient(135deg, #8d6e63 0%, #6d4c41 100%)';
     }
     
@@ -517,53 +517,53 @@ treatBtn.onclick = function() {
   if (!selectedSoil || isTreated) return;
   isTreated = true;
   treatBtn.disabled = true;
-  treatBtn.textContent = '⏳ Neutralising...';
+  treatBtn.textContent = '⏳ ತಟಸ್ಥೀಕರಿಸುತ್ತಿದೆ...';
   
   setTimeout(() => {
     soilLayer.style.fill = '#5d4037';
     plantIcon.textContent = '🌿';
-    soilDisplay.textContent = '🟢 Neutral (pH 7)';
+    soilDisplay.textContent = '🟢 ತಟಸ್ಥ (pH 7)';
     soilDisplay.className = 'soil-ಸೂಚಕ neutral';
     phPointer.style.left = 'calc(50% - 3px)';
     
-    learningTitle.textContent = '✅ Neutralisation ಪೂರ್ಣ!';
+    learningTitle.textContent = '✅ ತಟಸ್ಥೀಕರಣ ಪೂರ್ಣ!';
     
     if (selectedSoil === 'acidic') {
       learningText.innerHTML = `
-        The <span class="base">LIME (base)</span> reacted with the <span class="acid">acid in the soil</span>.<br>
-        They <strong>neutralised</strong> each other → pH is now <span class="neutral">7 (neutral)</span>!<br>
-        The plant can now absorb nutrients properly.
+        <span class="base">ಸುಣ್ಣ (ಕ್ಷಾರ)</span> ಮಣ್ಣಿನ <span class="acid">ಆಮ್ಲ</span>ದೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಿತು.<br>
+        ಪರಸ್ಪರ <strong>ತಟಸ್ಥೀಕರಣ</strong> → pH ಈಗ <span class="neutral">7 (ತಟಸ್ಥ)</span>!<br>
+        ಸಸ್ಯ ಈಗ ಪೋಷಕಾಂಶ ಸರಿಯಾಗಿ ಹೀರಬಲ್ಲದು.
       `;
       
-      reactionEquation.textContent = 'Soil Acid + Lime (ಕ್ಷಾರ) → ಉಪ್ಪು + ನೀರು';
-      reactionResult.textContent = '🌿 ಫಲಿತಾಂಶ: Neutral soil (pH 7) - Plant is healthy!';
+      reactionEquation.textContent = 'ಮಣ್ಣಿನ ಆಮ್ಲ + ಸುಣ್ಣ (ಕ್ಷಾರ) → ಉಪ್ಪು + ನೀರು';
+      reactionResult.textContent = '🌿 ಫಲಿತಾಂಶ: ತಟಸ್ಥ ಮಣ್ಣು (pH 7) — ಸಸ್ಯ ಆರೋಗ್ಯಕರ!';
       
       takeawayText.innerHTML = `
-        <strong>Neutralisation in action:</strong> When soil is too ಆಮ್ಲೀಯ, farmers add LIME (a base). The base neutralises the acid, bringing soil to neutral pH 7.<br><br>
-        <strong>The reaction:</strong> Acid + Base → ಉಪ್ಪು + ನೀರು<br><br>
-        This is the same neutralisation reaction you learn in chemistry - just applied to farming! 🧪🌾
+        <strong>ತಟಸ್ಥೀಕರಣ ಕ್ರಿಯೆ:</strong> ಮಣ್ಣು ಅತಿ ಆಮ್ಲೀಯವಾದಾಗ ರೈತರು ಸುಣ್ಣ (ಕ್ಷಾರ) ಸೇರಿಸುತ್ತಾರೆ. ಕ್ಷಾರ ಆಮ್ಲವನ್ನು ತಟಸ್ಥೀಕರಿಸಿ ಮಣ್ಣನ್ನು ತಟಸ್ಥ pH 7 ಗೆ ತರುತ್ತದೆ.<br><br>
+        <strong>ಪ್ರತಿಕ್ರಿಯೆ:</strong> ಆಮ್ಲ + ಕ್ಷಾರ → ಉಪ್ಪು + ನೀರು<br><br>
+        ರಸಾಯನಶಾಸ್ತ್ರದಲ್ಲಿ ಕಲಿಯುವ ಅದೇ ತಟಸ್ಥೀಕರಣ — ಕೃಷಿಗೆ ಅನ್ವಯ! 🧪🌾
       `;
     } else {
       learningText.innerHTML = `
-        The <span class="acid">acids released by COMPOST</span> reacted with the <span class="base">base in the soil</span>.<br>
-        They <strong>neutralised</strong> each other → pH is now <span class="neutral">7 (neutral)</span>!<br>
-        The plant can now absorb iron properly.
+        <span class="acid">ಕಂಪೋಸ್ಟ್ ಬಿಡುಗಡೆ ಮಾಡುವ ಆಮ್ಲಗಳು</span> ಮಣ್ಣಿನ <span class="base">ಕ್ಷಾರ</span>ದೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಿದವು.<br>
+        ಪರಸ್ಪರ <strong>ತಟಸ್ಥೀಕರಣ</strong> → pH ಈಗ <span class="neutral">7 (ತಟಸ್ಥ)</span>!<br>
+        ಸಸ್ಯ ಈಗ ಕಬ್ಬಿಣ ಸರಿಯಾಗಿ ಹೀರಬಲ್ಲದು.
       `;
       
-      reactionEquation.textContent = 'Compost Acids + Soil Base → ಉಪ್ಪು + ನೀರು';
-      reactionResult.textContent = '🌿 ಫಲಿತಾಂಶ: Neutral soil (pH 7) - Plant is healthy!';
+      reactionEquation.textContent = 'ಕಂಪೋಸ್ಟ್ ಆಮ್ಲ + ಮಣ್ಣಿನ ಕ್ಷಾರ → ಉಪ್ಪು + ನೀರು';
+      reactionResult.textContent = '🌿 ಫಲಿತಾಂಶ: ತಟಸ್ಥ ಮಣ್ಣು (pH 7) — ಸಸ್ಯ ಆರೋಗ್ಯಕರ!';
       
       takeawayText.innerHTML = `
-        <strong>Neutralisation in action:</strong> When soil is too ಕ್ಷಾರೀಯ, farmers add organic COMPOST. As compost decomposes, it releases acids that neutralise the base.<br><br>
-        <strong>The reaction:</strong> Acid + Base → ಉಪ್ಪು + ನೀರು<br><br>
-        This is the same neutralisation reaction you learn in chemistry - just applied to farming! 🧪🌾
+        <strong>ತಟಸ್ಥೀಕರಣ ಕ್ರಿಯೆ:</strong> ಮಣ್ಣು ಅತಿ ಕ್ಷಾರೀಯವಾದಾಗ ರೈತರು ಸಾವಯವ ಕಂಪೋಸ್ಟ್ ಸೇರಿಸುತ್ತಾರೆ. ಕಂಪೋಸ್ಟ್ ಕೊಳೆತಾಗ ಆಮ್ಲ ಬಿಡುಗಡೆ ಮಾಡಿ ಕ್ಷಾರವನ್ನು ತಟಸ್ಥೀಕರಿಸುತ್ತದೆ.<br><br>
+        <strong>ಪ್ರತಿಕ್ರಿಯೆ:</strong> ಆಮ್ಲ + ಕ್ಷಾರ → ಉಪ್ಪು + ನೀರು<br><br>
+        ರಸಾಯನಶಾಸ್ತ್ರದಲ್ಲಿ ಕಲಿಯುವ ಅದೇ ತಟಸ್ಥೀಕರಣ — ಕೃಷಿಗೆ ಅನ್ವಯ! 🧪🌾
       `;
     }
     
     reactionDisplay.classList.add('show');
     takeaway.classList.add('show');
     
-    treatBtn.textContent = '✅ Neutralisation ಯಶಸ್ಸುful!';
+    treatBtn.textContent = '✅ ತಟಸ್ಥೀಕರಣ ಯಶಸ್ವಿ!';
     treatBtn.style.background = 'linear-gradient(135deg, #4caf50 0%, #2e7d32 100%)';
   }, 800);
 };
