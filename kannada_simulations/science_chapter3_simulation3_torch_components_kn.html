@@ -223,7 +223,7 @@ svg { width: 100%; height: 100%; }
 <div class="concept-card">
   <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    ಟಾರ್ಚ್‌ಗೆ ಮೂರು ಮುಖ್ಯ ಭಾಗಗಳಿವೆ: <strong>ವಿದ್ಯುತ್ ಕೋಶs</strong> (ಶಕ್ತಿ ನೀಡುತ್ತದೆ), ಒಂದು <strong>Lamp</strong> (ಬೆಳಕು ಉತ್ಪಾದಿಸುತ್ತದೆ), ಮತ್ತು ಒಂದು <strong>ಸ್ವಿಚ್</strong> (ಸರ್ಕ್ಯೂಟ್ ನಿಯಂತ್ರಿಸುತ್ತದೆ). ಇವು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು ಸಹಾಯn about electrical circuits!
+    ಟಾರ್ಚ್‌ಗೆ ಮೂರು ಮುಖ್ಯ ಭಾಗಗಳಿವೆ: <strong>ವಿದ್ಯುತ್ ಕೋಶಗಳು</strong> (ಶಕ್ತಿ ನೀಡುತ್ತದೆ), <strong>ದೀಪ</strong> (ಬೆಳಕು ಉತ್ಪಾದಿಸುತ್ತದೆ), ಮತ್ತು <strong>ಸ್ವಿಚ್</strong> (ಸರ್ಕ್ಯೂಟ್ ನಿಯಂತ್ರಿಸುತ್ತದೆ). ಇವು ವಿದ್ಯುತ್ ಸರ್ಕ್ಯೂಟ್ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು ಸಹಾಯ ಮಾಡುತ್ತವೆ!
   </div>
 </div>
 
@@ -274,8 +274,8 @@ svg { width: 100%; height: 100%; }
         <rect x="167" y="110" width="6" height="20" fill="#9e9e9e"/>
         <rect x="168" y="110" width="5" height="20" fill="#ffd600"/>
         <rect x="227" y="110" width="6" height="20" fill="#9e9e9e"/>
-        <text x="140" y="125" font-size="8" fill="#fff" text-anchor="middle">CELL 1</text>
-        <text x="200" y="125" font-size="8" fill="#fff" text-anchor="middle">CELL 2</text>
+        <text x="140" y="125" font-size="8" fill="#fff" text-anchor="middle">ಕೋಶ 1</text>
+        <text x="200" y="125" font-size="8" fill="#fff" text-anchor="middle">ಕೋಶ 2</text>
       </g>
       
       <!-- End cap -->
@@ -284,7 +284,7 @@ svg { width: 100%; height: 100%; }
       <!-- Component labels -->
       <g id="labels" style="display:none;">
         <line x1="85" y1="75" x2="85" y2="50" stroke="#fff" stroke-width="1"/>
-        <text x="85" y="45" font-size="10" fill="#fff" text-anchor="middle">LAMP</text>
+        <text x="85" y="45" font-size="10" fill="#fff" text-anchor="middle">ದೀಪ</text>
         
         <line x1="200" y1="75" x2="200" y2="50" stroke="#fff" stroke-width="1"/>
         <text x="200" y="45" font-size="10" fill="#fff" text-anchor="middle">ಸ್ವಿಚ್</text>
@@ -301,7 +301,7 @@ svg { width: 100%; height: 100%; }
   <div class="mode-btns">
     <button class="mode-btn active" id="btn-assembled" onclick="setMode('assembled')">
       <div class="icon">🔦</div>
-      <div class="name">Assembled</div>
+      <div class="name">ಜೋಡಿಸಿದ್ದು</div>
     </button>
     <button class="mode-btn" id="btn-exploded" onclick="setMode('exploded')">
       <div class="icon">🔧</div>
@@ -310,11 +310,11 @@ svg { width: 100%; height: 100%; }
   </div>
   
   <div class="ಸ್ವಿಚ್-control">
-    <span class="ಸ್ವಿಚ್-label">OFF</span>
+    <span class="ಸ್ವಿಚ್-label">ಆಫ್</span>
     <div class="switch-toggle" id="switch-toggle" onclick="toggleSwitch()">
       <div class="switch-knob"></div>
     </div>
-    <span class="ಸ್ವಿಚ್-label on">ON</span>
+    <span class="ಸ್ವಿಚ್-label on">ಆನ್</span>
   </div>
 </div>
 
@@ -322,14 +322,14 @@ svg { width: 100%; height: 100%; }
   <div class="component-item" onclick="showComponent('lamp', this)">
     <div class="icon">💡</div>
     <div class="info">
-      <div class="name">Lamp (Bulb/LED)</div>
+      <div class="name">ದೀಪ (ಬಲ್ಬ್/ಎಲ್ಇಡಿ)</div>
       <div class="desc">ಪ್ರವಾಹ ಹರಿದಾಗ ಬೆಳಕು ಉತ್ಪಾದಿಸುತ್ತದೆ</div>
     </div>
   </div>
   <div class="component-item" onclick="showComponent('ಘಟಕಗಳು', this)">
     <div class="icon">🔋</div>
     <div class="info">
-      <div class="name">ವಿದ್ಯುತ್ ಕೋಶs</div>
+      <div class="name">ವಿದ್ಯುತ್ ಕೋಶಗಳು</div>
       <div class="desc">ವಿದ್ಯುತ್ ಶಕ್ತಿ ಒದಗಿಸುತ್ತದೆ</div>
     </div>
   </div>
@@ -350,7 +350,7 @@ svg { width: 100%; height: 100%; }
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೀವು ಕಲಿತದ್ದು</div>
   <div class="takeaway-text">
-    ಟಾರ್ಚ್ ಒಂದು ಸರಳ ವಿದ್ಯುತ್ ಸರ್ಕ್ಯೂಟ್! ಅದು <strong>ಘಟಕಗಳು</strong> ಶಕ್ತಿ ಒದಗಿಸುತ್ತದೆ, ಅದು <strong>ಸ್ವಿಚ್</strong> ಪ್ರವಾಹ ಹರಿವು ನಿಯಂತ್ರಣ, ಮತ್ತು <strong>lamp</strong> ವಿದ್ಯುತ್ ಶಕ್ತಿಯನ್ನು ಬೆಳಕಾಗಿ. ಸ್ವಿಚ್ ಆನ್ ಆದಾಗ ಪ್ರವಾಹ ಪೂರ್ಣ ಮಾರ್ಗ (ಸರ್ಕ್ಯೂಟ್) ಮತ್ತು ದೀಪ ಉಜ್ಜ್ವಲ.
+    ಟಾರ್ಚ್ ಒಂದು ಸರಳ ವಿದ್ಯುತ್ ಸರ್ಕ್ಯೂಟ್! <strong>ಕೋಶಗಳು</strong> ಶಕ್ತಿ ಒದಗಿಸುತ್ತವೆ, <strong>ಸ್ವಿಚ್</strong> ಪ್ರವಾಹ ಹರಿವನ್ನು ನಿಯಂತ್ರಿಸುತ್ತದೆ, ಮತ್ತು <strong>ದೀಪ</strong> ವಿದ್ಯುತ್ ಶಕ್ತಿಯನ್ನು ಬೆಳಕಾಗಿ ಪರಿವರ್ತಿಸುತ್ತದೆ. ಸ್ವಿಚ್ ಆನ್ ಆದಾಗ ಪ್ರವಾಹ ಪೂರ್ಣ ಮಾರ್ಗದಲ್ಲಿ (ಸರ್ಕ್ಯೂಟ್) ಹರಿಯುತ್ತದೆ ಮತ್ತು ದೀಪ ಉಜ್ಜ್ವಲವಾಗುತ್ತದೆ.
   </div>
 </div>
 
@@ -374,16 +374,16 @@ const detailText = document.getElementById('detail-text');
 
 const componentDetails = {
   lamp: {
-    title: '💡 Lamp (Light ಮೂಲ)',
-    text: 'The lamp is the component that produces light. It can be an <strong>incಮತ್ತುescent bulb</strong> (with a thin wire filament that glows when heated) or an <strong>LED</strong> (LED - more efficient, no filament). When electric current flows through it, electrical ಶಕ್ತಿ is converted to light ಶಕ್ತಿ.'
+    title: '💡 ದೀಪ (ಬೆಳಕಿನ ಮೂಲ)',
+    text: 'ದೀಪ ಬೆಳಕು ಉತ್ಪಾದಿಸುವ ಘಟಕ. ಇದು <strong>ಉಜ್ಜ್ವಲ ಬಲ್ಬ್</strong> (ಬಿಸಿಯಾದಾಗ ಹೊಳೆಯುವ ತೆಳು ತಂತಿ ಫಿಲಾಮೆಂಟ್) ಅಥವಾ <strong>ಎಲ್ಇಡಿ</strong> (ಹೆಚ್ಚು ದಕ್ಷ, ಫಿಲಾಮೆಂಟ್ ಇಲ್ಲ) ಆಗಿರಬಹುದು. ವಿದ್ಯುತ್ ಪ್ರವಾಹ ಹರಿದಾಗ ವಿದ್ಯುತ್ ಶಕ್ತಿ ಬೆಳಕಿನ ಶಕ್ತಿಯಾಗಿ ಪರಿವರ್ತನೆಯಾಗುತ್ತದೆ.'
   },
   ಘಟಕಗಳು: {
-    title: '🔋 ವಿದ್ಯುತ್ ಕೋಶs (Power ಮೂಲ)',
-    text: 'Electric ಘಟಕಗಳು are the ಮೂಲ of electrical ಶಕ್ತಿ in a torch. Each cell has two terminals: <strong>ಧನ (+)</strong> shown by a metal cap, ಮತ್ತು <strong>ಋಣ (-)</strong> shown by a flat metal disc. When two or more ಘಟಕಗಳು are connected together (+ of one to - of next), they form a <strong>ಬ್ಯಾಟರಿ</strong> that provides more power.'
+    title: '🔋 ವಿದ್ಯುತ್ ಕೋಶಗಳು (ಶಕ್ತಿ ಮೂಲ)',
+    text: 'ವಿದ್ಯುತ್ ಕೋಶಗಳು ಟಾರ್ಚ್‌ನಲ್ಲಿ ವಿದ್ಯುತ್ ಶಕ್ತಿಯ ಮೂಲ. ಪ್ರತಿ ಕೋಶಕ್ಕೆ ಎರಡು ತುದಿಗಳಿವೆ: ಲೋಹದ ಟೋಪಿ ತೋರಿಸುವ <strong>ಧನ (+)</strong> ಮತ್ತು ಚಪ್ಪಟೆ ಲೋಹದ ತಟ್ಟೆ ತೋರಿಸುವ <strong>ಋಣ (-)</strong>. ಎರಡು ಅಥವಾ ಹೆಚ್ಚು ಕೋಶಗಳನ್ನು ಒಂದರ + ಮತ್ತು ಮುಂದಿನ - ಸೇರಿಸಿದಾಗ <strong>ಬ್ಯಾಟರಿ</strong> ಉಂಟಾಗಿ ಹೆಚ್ಚು ಶಕ್ತಿ ನೀಡುತ್ತದೆ.'
   },
   ಸ್ವಿಚ್: {
     title: '🔘 ಸ್ವಿಚ್ (ಸರ್ಕ್ಯೂಟ್ ನಿಯಂತ್ರಕ)',
-    text: 'ಸ್ವಿಚ್ ಸರ್ಕ್ಯೂಟ್ ಪೂರ್ಣವೇ ಅಥವಾ ಮುರಿದಿದೆಯೇ ನಿಯಂತ್ರಿಸುತ್ತದೆoken. In <strong>ಆನ್ ಸ್ಥಾನ</strong>, it closes the gap ಮತ್ತು allows current to flow - the lamp glows. In <strong>ಆಫ್ ಸ್ಥಾನ</strong>, it creates a gap that breaks the circuit - no current flows, lamp stays off. It\'s like a gate for electricity!'
+    text: 'ಸ್ವಿಚ್ ಸರ್ಕ್ಯೂಟ್ ಪೂರ್ಣವೇ ಅಥವಾ ಮುರಿದಿದೆಯೇ ನಿಯಂತ್ರಿಸುತ್ತದೆ. <strong>ಆನ್ ಸ್ಥಾನ</strong>ದಲ್ಲಿ ಅದು ಅಂತರ ಮುಚ್ಚಿ ಪ್ರವಾಹ ಹರಿಯಲು ಅನುಮತಿಸುತ್ತದೆ — ದೀಪ ಹೊಳೆಯುತ್ತದೆ. <strong>ಆಫ್ ಸ್ಥಾನ</strong>ದಲ್ಲಿ ಸರ್ಕ್ಯೂಟ್ ಮುರಿಯುವ ಅಂತರ ಉಂಟುಮಾಡುತ್ತದೆ — ಪ್ರವಾಹ ಹರಿಯುವುದಿಲ್ಲ, ದೀಪ ಆಫ್. ವಿದ್ಯುತ್ಗೆ ದ್ವಾರದಂತೆ!'
   }
 };
 
@@ -399,7 +399,7 @@ function setMode(mode) {
   } else {
     ಘಟಕಗಳುInternal.style.display = 'none';
     labels.style.display = 'none';
-    statusText.textContent = isOn ? 'ಸ್ವಿಚ್ is ON - ಪ್ರವಾಹ ಹರಿಯುತ್ತಿದೆ!' : 'Try the ಸ್ವಿಚ್ below';
+    statusText.textContent = isOn ? 'ಸ್ವಿಚ್ ಆನ್ — ಪ್ರವಾಹ ಹರಿಯುತ್ತಿದೆ!' : 'ಕೆಳಗಿನ ಸ್ವಿಚ್ ಪ್ರಯತ್ನಿಸಿ';
   }
 }
 
