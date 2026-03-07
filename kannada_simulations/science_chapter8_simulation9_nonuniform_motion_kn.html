@@ -375,7 +375,7 @@ function setMode(newMode, btn) {
 }
 
 function getSpeedAtTime(t) {
-  ಸ್ವಿಚ್(mode) {
+  switch(mode) {
     case 'accelerate':
       // ತ್ವರಣಗೊಳ್ಳುತ್ತಿದೆ: ವೇಗ increases over time
       return Math.min(t * 20, 100); // km/h
@@ -538,7 +538,7 @@ function drawGraph() {
   ctx.fillStyle = '#9c27b0';
   ctx.fillText('Non-uniform', w - 70, 20);
   ctx.fillStyle = '#2196f3';
-  ctx.fillText('Uniform (ref)', w - 70, 35);
+  ctx.fillText('ಏಕರೂಪ (ಉಲ್ಲೇಖ)', w - 70, 35);
 }
 
 // Initialize

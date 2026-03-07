@@ -656,16 +656,16 @@ body {
 <script>
 const stageInfo = {
   sun: {
-    title: '☀️ The Sun - Energy ಮೂಲ',
-    text: 'ಸೂರ್ಯ <strong>ಉಷ್ಣ ಶಕ್ತಿ</strong> ನೀಡುತ್ತದೆwers the entire ನೀರು cycle. Without the Sun, ನೀರು wouldn\'t evaporate ಮತ್ತು the cycle would stop!'
+    title: '☀️ ಸೂರ್ಯ - ಶಕ್ತಿ ಮೂಲ',
+    text: 'ಸೂರ್ಯ <strong>ಉಷ್ಣ ಶಕ್ತಿ</strong> ನೀಡಿ ಸಂಪೂರ್ಣ ನೀರು ಚಕ್ರ ಚಾಲನೆ ಮಾಡುತ್ತದೆ. ಸೂರ್ಯ ಇಲ್ಲದೆ ನೀರು ಆವಿಯಾಗುವುದಿಲ್ಲ ಮತ್ತು ಚಕ್ರ ನಿಲುಗಡೆಯಾಗುತ್ತದೆ!'
   },
   evaporation: {
     title: '☀️ ಆವಿಯಾಗುವಿಕೆ',
-    text: 'The Sun\'s heat causes ನೀರು from oceans, rivers, lakes, ಮತ್ತು wet soil to <strong>evaporate</strong> (turn into invisible ನೀರಿನ ಆವಿ). Plants also release ನೀರಿನ ಆವಿ through <strong>transpiration</strong>.'
+    text: 'ಸೂರ್ಯನ ಉಷ್ಣ ಸಮುದ್ರ, ನದಿ, ಸರೋವರ ಮತ್ತು ಒದ್ದೆ ಮಣ್ಣಿನ ನೀರನ್ನು <strong>ಆವಿಯಾಗಿಸುತ್ತದೆ</strong> (ಅದೃಶ್ಯ ನೀರಿನ ಆವಿ). ಸಸ್ಯಗಳು <strong>ಬಾಷ್ಪೋತ್ಸರ್ಜನ</strong>ದಿಂದ ನೀರಿನ ಆವಿ ಬಿಡುಗಡೆ ಮಾಡುತ್ತವೆ.'
   },
   condensation: {
     title: '☁️ ಘನೀಕರಣ',
-    text: 'ನೀರಿನ ಆವಿ ಏರಿದಾಗ <strong>ತಂಪಾಗುತ್ತದೆ</strong>. ತಂಪು ಗಾಳಿ't hold as much moisture, so vapor <strong>condenses</strong> into tiny ನೀರು droplets that form clouds.'
+    text: 'ನೀರಿನ ಆವಿ ಏರಿದಾಗ <strong>ತಂಪಾಗುತ್ತದೆ</strong>. ತಂಪು ಗಾಳಿ ಹೆಚ್ಚು ಶೇಷವನ್ನು ಹಿಡಿದಿಡಲು ಸಾಧ್ಯವಿಲ್ಲ, ಆದ್ದರಿಂದ ಆವಿ <strong>ಘನೀಕರಣ</strong>ಗೊಂಡು ಸಣ್ಣ ನೀರು ಬಿಂದುಗಳಾಗಿ ಮೋಡ ರೂಪಿಸುತ್ತದೆ.'
   },
   precipitation: {
     title: '🌧️ ಅವಕ್ಷೇಪಣ',
@@ -808,7 +808,7 @@ function updateGuidedStep() {
   
   // Update navigation buttons
   document.getElementById('prev-btn').disabled = currentStep === 0;
-  document.getElementById('next-btn').textContent = currentStep === steps.length - 1 ? 'Finish ✓' : 'ಮುಂದೆ →';
+  document.getElementById('next-btn').textContent = currentStep === steps.length - 1 ? 'ಪೂರ್ಣ ✓' : 'ಮುಂದೆ →';
   
   // Show info for current step
   showInfo(steps[currentStep]);

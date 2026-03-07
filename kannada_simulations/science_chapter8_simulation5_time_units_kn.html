@@ -298,7 +298,7 @@ body {
 <div class="conversions-table">
   <div class="table-title">📐 ಪರಿವರ್ತನಾ ಅಂಶಗಳು</div>
   <div class="conversion-row">
-    <span>1 hour (h)</span>
+    <span>1 ಗಂಟೆ (h)</span>
     <span>= 60 ನಿಮಿಷ = 3600 ಸೆಕೆಂಡ್</span>
   </div>
   <div class="conversion-row">
@@ -341,7 +341,7 @@ body {
     <div class="notation-item">
       <div class="notation-correct">h</div>
       <div class="notation-wrong">hr, hrs</div>
-      <div class="notation-label">hour</div>
+      <div class="notation-label">ಗಂಟೆ</div>
     </div>
     <div class="notation-item">
       <div class="notation-correct">ms</div>
@@ -360,7 +360,7 @@ function convertTime() {
   
   // Convert to ಸೆಕೆಂಡ್ಗಳು ಮೊದಲ
   let ಸೆಕೆಂಡ್ಗಳು;
-  ಸ್ವಿಚ್(unit) {
+  switch(unit) {
     case 'h': ಸೆಕೆಂಡ್ಗಳು = value * 3600; break;
     case 'min': ಸೆಕೆಂಡ್ಗಳು = value * 60; break;
     case 's': ಸೆಕೆಂಡ್ಗಳು = value; break;

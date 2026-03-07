@@ -583,10 +583,10 @@ function playDemo() {
   if (btn.textContent.includes('▶️')) {
     btn.textContent = '⏸️ ಇಡಿ';
     
-    ಸ್ವಿಚ್(currentClock) {
+    switch(currentClock) {
       case 'sundial':
         let angle = -90;
-        animationInterval = setಮಧ್ಯಂತರ(() => {
+        animationInterval = setInterval(() => {
           angle += 2;
           if (angle > 90) angle = -90;
           document.getElementById('sundial-gnomon').style.setProperty('--angle', angle + 'deg');
@@ -595,7 +595,7 @@ function playDemo() {
         
       case 'ನೀರು':
         let ನೀರುLevel = 80;
-        animationInterval = setಮಧ್ಯಂತರ(() => {
+        animationInterval = setInterval(() => {
           ನೀರುLevel -= 1;
           if (ನೀರುLevel < 10) ನೀರುLevel = 80;
           document.getElementById('water-level').style.height = ನೀರುLevel + '%';
@@ -605,7 +605,7 @@ function playDemo() {
       case 'hourglass':
         let sandTop = 80, sandBottom = 10;
         document.getElementById('sand-flow').classList.add('flowing');
-        animationInterval = setಮಧ್ಯಂತರ(() => {
+        animationInterval = setInterval(() => {
           sandTop -= 1;
           sandBottom += 1;
           if (sandTop < 10) { sandTop = 80; sandBottom = 10; }
@@ -614,9 +614,9 @@ function playDemo() {
         }, 100);
         break;
         
-      case 'cಮತ್ತುle':
+      case 'candle':
         let burned = 10;
-        animationInterval = setಮಧ್ಯಂತರ(() => {
+        animationInterval = setInterval(() => {
           burned += 1;
           if (burned > 90) burned = 10;
           document.getElementById('candle-burned').style.height = burned + '%';
@@ -626,7 +626,7 @@ function playDemo() {
       case 'pendulum':
       case 'quartz':
         let secondsDeg = 0;
-        animationInterval = setಮಧ್ಯಂತರ(() => {
+        animationInterval = setInterval(() => {
           secondsDeg += 6;
           if (secondsDeg >= 360) secondsDeg = 0;
           document.getElementById('second-hand').style.setProperty('--second', secondsDeg + 'deg');

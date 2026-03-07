@@ -306,7 +306,7 @@ body {
     <div class="odometer">
       <div>
         <div class="odometer-label">ಓಡೋಮೀಟರ್</div>
-        <div class="trip-display" id="trip-display">Trip: 0.00 km</div>
+        <div class="trip-display" id="trip-display">ಅಂತರ: 0.00 km</div>
       </div>
       <div class="odometer-display" id="odometer-display">000000</div>
     </div>
@@ -421,14 +421,14 @@ function updateDashboard() {
   odometerDisplay.textContent = odometerValue;
   
   // Update trip meter
-  tripDisplay.textContent = `Trip: ${tripDistance.toFixed(2)} km`;
+  tripDisplay.textContent = `ಅಂತರ: ${tripDistance.toFixed(2)} km`;
   
   requestAnimationFrame(updateDashboard);
 }
 
 function resetTrip() {
   tripDistance = 0;
-  tripDisplay.textContent = 'Trip: 0.00 km';
+  tripDisplay.textContent = 'ಅಂತರ: 0.00 km';
 }
 
 // Add ವೇಗ marks to dial

@@ -302,7 +302,7 @@ body {
 </div>
 
 <div class="results-panel" id="results-panel" style="display: none;">
-  <div class="results-title">🏆 Race ಫಲಿತಾಂಶs</div>
+  <div class="results-title">🏆 ಓಟ ಫಲಿತಾಂಶಗಳು</div>
   <div id="results-list"></div>
 </div>
 
@@ -352,7 +352,7 @@ function startRace() {
   // Simulation ವೇಗ factor (1 real ಸೆಕೆಂಡ್ = 30 simulated ಸೆಕೆಂಡ್ಗಳು)
   const simFactor = 30;
   
-  raceInterval = setಮಧ್ಯಂತರ(() => {
+  raceInterval = setInterval(() => {
     raceTime += 0.1 * simFactor; // ಸೆಕೆಂಡ್ಗಳು
     
     // Update positions
@@ -397,7 +397,7 @@ function endRace() {
   
   const ranks = ['🥇', '🥈', '🥉', '4️⃣'];
   let resultsHTML = '';
-  let calcText = 'Time = ದೂರ ÷ ವೇಗ\n\n';
+  let calcText = 'ಸಮಯ = ದೂರ ÷ ವೇಗ\n\n';
   
   finishOrder.forEach((racer, index) => {
     const time = finishTimes[racer];

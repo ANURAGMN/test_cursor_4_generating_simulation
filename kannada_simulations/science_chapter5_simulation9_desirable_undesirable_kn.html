@@ -329,7 +329,7 @@ function loadQuestion() {
   feedbackPanel.classList.remove('show', 'correct', 'wrong');
   answered = false;
   
-  progressText.textContent = `Question ${currentIndex + 1} of ${questions.length}`;
+  progressText.textContent = `ಪ್ರಶ್ನೆ ${currentIndex + 1} / ${questions.length}`;
 }
 
 function checkAnswer(isDesirable) {
@@ -356,7 +356,7 @@ function checkAnswer(isDesirable) {
     score++;
   } else {
     feedbackPanel.classList.add('wrong');
-    feedbackTitle.textContent = '❌ Not quite!';
+    feedbackTitle.textContent = '❌ ಸಂಪೂರ್ಣ ಸರಿಯಲ್ಲ!';
   }
   
   feedbackText.textContent = q.feedback;

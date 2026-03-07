@@ -303,11 +303,11 @@ function toggleElement(type, btn) {
     
     resultTitle.textContent = '🔥 ಅಗ್ನಿ ಉರಿಯುತ್ತಿದೆ!';
     resultText.innerHTML = `
-      All three elements are present:<br>
-      ✅ <strong>Fuel</strong> provides material to burn<br>
-      ✅ <strong>ಆಮ್ಲಜನಕ</strong> supports combustion<br>
-      ✅ <strong>Heat</strong> reached ignition temperature<br><br>
-      The fire will keep burning as long as all three are present!
+      ಮೂರು ಅಂಶಗಳೂ ಇವೆ:<br>
+      ✅ <strong>ಇಂಧನ</strong> ಉರಿಯಲು ಪದಾರ್ಥ ಒದಗಿಸುತ್ತದೆ<br>
+      ✅ <strong>ಆಮ್ಲಜನಕ</strong> ದಹನಕ್ಕೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ<br>
+      ✅ <strong>ಉಷ್ಣ</strong> ಉರಿಯೂಡಿ ಉಷ್ಣತೆ ತಲುಪಿದೆ<br><br>
+      ಮೂರೂ ಇರುವವರೆಗೂ ಅಗ್ನಿ ಉರಿಯುತ್ತದೆ!
     `;
   } else {
     fireDisplay.style.display = 'none';
@@ -315,38 +315,38 @@ function toggleElement(type, btn) {
     statusBadge.className = 'status-badge no-fire';
     
     const missing = [];
-    if (!elements.fuel) missing.push('Fuel');
+    if (!elements.fuel) missing.push('ಇಂಧನ');
     if (!elements.ಆಮ್ಲಜನಕ) missing.push('ಆಮ್ಲಜನಕ');
-    if (!elements.heat) missing.push('Heat');
+    if (!elements.heat) missing.push('ಉಷ್ಣ');
     
-    statusBadge.textContent = `Missing: ${missing.join(', ')}`;
+    statusBadge.textContent = `ಕಾಣೆಯಾಗಿದೆ: ${missing.join(', ')}`;
     
-    resultTitle.textContent = '❌ No Fire';
+    resultTitle.textContent = '❌ ಅಗ್ನಿ ಇಲ್ಲ';
     
     if (missing.length === 3) {
       resultText.textContent = 'ಅಗ್ನಿ ಪ್ರಾರಂಭಿಸಲು ಮೂರು ಅಂಶಗಳನ್ನೂ ಆಯ್ಕೆಮಾಡಿ!';
     } else if (missing.length === 1) {
       resultText.innerHTML = `
-        Almost there! Missing: <strong>${missing[0]}</strong><br><br>
+        ಸ್ವಲ್ಪ ಇನ್ನೂ! ಕಾಣೆಯಾಗಿದೆ: <strong>${missing[0]}</strong><br><br>
         ${getMissingExplanation(missing[0])}
       `;
     } else {
       resultText.innerHTML = `
-        Missing: <strong>${missing.join(' ಮತ್ತು ')}</strong><br><br>
-        Fire cannot start without all three elements of the fire triangle.
+        ಕಾಣೆಯಾಗಿದೆ: <strong>${missing.join(' ಮತ್ತು ')}</strong><br><br>
+        ಅಗ್ನಿ ತ್ರಿಕೋಣದ ಮೂರು ಅಂಶಗಳೂ ಇಲ್ಲದೆ ಅಗ್ನಿ ಪ್ರಾರಂಭವಾಗುವುದಿಲ್ಲ.
       `;
     }
   }
 }
 
 function getMissingExplanation(element) {
-  ಸ್ವಿಚ್(element) {
-    case 'Fuel':
-      return 'Without fuel (ದಹನೀಯ ಪದಾರ್ಥ), there\'s nothing to burn. This is why fire stops when the wood runs out!';
+  switch(element) {
+    case 'ಇಂಧನ':
+      return 'ದಹನೀಯ ಪದಾರ್ಥ (ಇಂಧನ) ಇಲ್ಲದೆ ಏನೂ ಉರಿಯುವುದಿಲ್ಲ. ಮರ ತೀರಿದಾಗ ಅಗ್ನಿ ನಿಲುಗಡೆಯಾಗುವುದು ಈ ಕಾರಣ!';
     case 'ಆಮ್ಲಜನಕ':
-      return 'Without ಆಮ್ಲಜನಕ, combustion cannot occur. This is why covering a fire with a blanket can put it out!';
-    case 'Heat':
-      return 'Without enough heat to reach ignition temperature, the fuel won\'t catch fire. This is why wet wood doesn\'t burn easily!';
+      return 'ಆಮ್ಲಜನಕ ಇಲ್ಲದೆ ದಹನ ಸಾಧ್ಯವಿಲ್ಲ. ಬೆಂಕಿಯನ್ನು ಹೊದಿಕೆಯಿಂದ ಮುಚ್ಚಿದರೆ ಆರಿಹೋಗುವುದು ಈ ಕಾರಣ!';
+    case 'ಉಷ್ಣ':
+      return 'ಉರಿಯೂಡಿ ಉಷ್ಣತೆ ತಲುಪಲು ಸಾಕಷ್ಟು ಉಷ್ಣ ಇಲ್ಲದೆ ಇಂಧನ ಉರಿಯುವುದಿಲ್ಲ. ಒದ್ದೆ ಮರ ಸುಲಭವಾಗಿ ಉರಿಯದು ಈ ಕಾರಣ!';
   }
 }
 </script>

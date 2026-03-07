@@ -275,7 +275,7 @@ function loadQuestion() {
   if (currentIndex >= ಬದಲಾಗುತ್ತದೆ.length) {
     // Quiz ಪೂರ್ಣ
     itemName.textContent = '🎉 ಕ್ವಿಜ್ ಪೂರ್ಣ!';
-    itemDesc.textContent = `You identified ${revCount + irrevCount} ಬದಲಾಗುತ್ತದೆ correctly!`;
+    itemDesc.textContent = `ನೀವು ${revCount + irrevCount} ಬದಲಾವಣೆಗಳನ್ನು ಸರಿಯಾಗಿ ಗುರುತಿಸಿದ್ದೀರಿ!`;
     itemIcon.textContent = '🏆';
     btnReversible.style.display = 'none';
     btnIrreversible.style.display = 'none';
@@ -320,7 +320,7 @@ function checkAnswer(isReversible) {
     }
   } else {
     feedbackBox.classList.add('wrong');
-    feedbackTitle.textContent = '❌ Not quite!';
+    feedbackTitle.textContent = '❌ ಸಂಪೂರ್ಣ ಸರಿಯಲ್ಲ!';
     if (change.reversible) {
       btnReversible.classList.add('reversible');
     } else {

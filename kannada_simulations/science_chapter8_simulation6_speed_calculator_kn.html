@@ -284,7 +284,7 @@ body {
 </div>
 
 <div class="examples-box">
-  <div class="examples-title">🌟 Real-World ವೇಗs</div>
+  <div class="examples-title">🌟 ನೈಜ ಜೀವನದ ವೇಗಗಳು</div>
   <div class="example-item">
     <span>🚶 ನಡೆಯುವುದು</span>
     <span>~5 km/h</span>
@@ -294,7 +294,7 @@ body {
     <span>~15-25 km/h</span>
   </div>
   <div class="example-item">
-    <span>🚗 Car (city)</span>
+    <span>🚗 ಕಾರು (ನಗರ)</span>
     <span>~40-60 km/h</span>
   </div>
   <div class="example-item">
@@ -358,11 +358,11 @@ function calculate() {
   
   let result, label, unit, working;
   
-  ಸ್ವಿಚ್(currentMode) {
+  switch(currentMode) {
     case 'ವೇಗ':
       if (time === 0) {
         result = 0;
-        working = 'Cannot divide by zero!';
+        working = 'ಶೂನ್ಯದಿಂದ ಭಾಗಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ!';
       } else {
         result = distance / time;
         working = `ವೇಗ = ದೂರ ÷ ಸಮಯ\nವೇಗ = ${distance} km ÷ ${time} h\nವೇಗ = ${result.toFixed(2)} km/h`;
@@ -381,12 +381,12 @@ function calculate() {
     case 'time':
       if (ವೇಗ === 0) {
         result = 0;
-        working = 'Cannot divide by zero!';
+        working = 'ಶೂನ್ಯದಿಂದ ಭಾಗಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ!';
       } else {
         result = distance / ವೇಗ;
         working = `ಸಮಯ = ದೂರ ÷ ವೇಗ\nಸಮಯ = ${distance} km ÷ ${ವೇಗ} km/h\nಸಮಯ = ${result.toFixed(2)} h`;
       }
-      label = 'Time';
+      label = 'ಸಮಯ';
       unit = 'ಗಂಟೆಗಳು';
       break;
   }

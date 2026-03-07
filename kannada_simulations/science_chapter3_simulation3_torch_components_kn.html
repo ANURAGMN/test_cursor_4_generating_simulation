@@ -184,6 +184,14 @@ svg { width: 100%; height: 100%; }
 
 .switch-toggle.on .switch-knob { left: 32px; }
 
+.switch-state-label {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  color: #546e7a;
+  text-align: center;
+}
+
 .takeaway {
   background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
   border-radius: 10px;
@@ -315,6 +323,7 @@ svg { width: 100%; height: 100%; }
       <div class="switch-knob"></div>
     </div>
     <span class="ಸ್ವಿಚ್-label on">ಆನ್</span>
+    <div class="switch-state-label" id="switch-state-label">ಸ್ಥಿತಿ: ಆಫ್ — ಟ್ಯಾಪ್ ಮಾಡಿ ಆನ್ ಮಾಡಲು</div>
   </div>
 </div>
 
@@ -368,6 +377,7 @@ const ಸ್ವಿಚ್Slider = document.getElementById('switch-slider');
 const ಘಟಕಗಳುInternal = document.getElementById('cells-internal');
 const labels = document.getElementById('labels');
 const statusText = document.getElementById('status-text');
+const switchStateLabel = document.getElementById('switch-state-label');
 const detailPanel = document.getElementById('detail-panel');
 const detailTitle = document.getElementById('detail-title');
 const detailText = document.getElementById('detail-text');
@@ -416,12 +426,14 @@ function toggleSwitch() {
     lampFilament.setAttribute('fill', '#ffffff');
     lampBulb.classList.add('lamp-glow');
     statusText.textContent = 'ಸ್ವಿಚ್ ಆನ್ - ಸರ್ಕ್ಯೂಟ್ ಪೂರ್ಣ - ದೀಪ ಬೆಳಗುತ್ತದೆ!';
+    if (switchStateLabel) switchStateLabel.textContent = 'ಸ್ಥಿತಿ: ಆನ್ — ಟ್ಯಾಪ್ ಮಾಡಿ ಆಫ್ ಮಾಡಲು';
   } else {
     lightBeam.style.display = 'none';
     lampBulb.setAttribute('fill', '#e0e0e0');
     lampFilament.setAttribute('fill', '#bdbdbd');
     lampBulb.classList.remove('lamp-glow');
     statusText.textContent = 'ಸ್ವಿಚ್ ಆಫ್ - ಸರ್ಕ್ಯೂಟ್ ಮುರಿದಿದೆ - ಬೆಳಕು ಇಲ್ಲ';
+    if (switchStateLabel) switchStateLabel.textContent = 'ಸ್ಥಿತಿ: ಆಫ್ — ಟ್ಯಾಪ್ ಮಾಡಿ ಆನ್ ಮಾಡಲು';
   }
 }
 
