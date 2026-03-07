@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -69,7 +69,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -273,7 +273,7 @@ svg { width: 100%; height: 100%; }
         <line x1="0" y1="0" x2="60" y2="80" stroke="#616161" stroke-width="6" stroke-linecap="round"/>
         <line x1="20" y1="0" x2="60" y2="80" stroke="#616161" stroke-width="6" stroke-linecap="round"/>
         
-        <!-- à²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚ ribbon -->
+        <!-- ಮೆಗ್ನೀಸಿಯಂ ribbon -->
         <g id="mg-ribbon">
           <rect x="-5" y="-5" width="30" height="8" rx="2" fill="#e0e0e0" id="mg-piece"/>
           <text x="10" y="25" font-size="10" fill="#90a4ae" text-anchor="middle">Mg</text>
@@ -303,16 +303,16 @@ svg { width: 100%; height: 100%; }
       </g>
       
       <!-- Labels -->
-      <text x="150" y="275" font-size="10" fill="#90a4ae" text-anchor="middle">à²¬à³à²¨à³à²¸à³†à²¨à³ à²¬à²°à³à²¨à²°à³</text>
+      <text x="150" y="275" font-size="10" fill="#90a4ae" text-anchor="middle">ಬರ್ನರ್</text>
     </svg>
   </div>
   
   <div id="instruction" style="text-align: center; font-size: 12px; color: #666; padding: 8px; margin-top: 5px;">
-    à²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚ à²°à²¿à²¬à³à²¬à²¨à³ à²‰à²°à²¿à²¸à²²à³ "à²¸à³à²¡à²¿" à²Ÿà³à²¯à²¾à²ªà³ à²®à²¾à²¡à²¿
+    ಮೆಗ್ನೀಸಿಯಂ ರಿಬ್ಬನ್ ಉರಿಸಲು "ಸುಡಿ" ಟ್ಯಾಪ್ ಮಾಡಿ
   </div>
   <div class="controls">
-    <button class="ctrl-btn burn" id="burn-btn" onclick="burnà²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚()">🔥 Burn Mg</button>
-    <button class="ctrl-btn dissolve" id="dissolve-btn" onclick="dissolveInನೀರು()" disabled>💧 ಕರಗಿಸಿ</button>
+    <button class="ctrl-btn burn" id="burn-btn" onclick="burnMagnesium()">🔥 Burn Mg</button>
+    <button class="ctrl-btn dissolve" id="dissolve-btn" onclick="dissolveInWater()" disabled>💧 ಕರಗಿಸಿ</button>
     <button class="ctrl-btn test" id="test-btn" onclick="testWithLitmus()" disabled>🧪 Test pH</button>
   </div>
 </div>
@@ -320,29 +320,29 @@ svg { width: 100%; height: 100%; }
 <div class="equation-box" id="equation-box">
   <div class="equation-title">⚗️ ರಾಸಾಯನಿಕ ಸಮೀಕರಣ</div>
   <div class="equation" id="equation">2Mg + O₂ → 2MgO</div>
-  <div class="equation-explain" id="equation-explain">à²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚ + ಆಮ್ಲಜನಕ → à²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚ ಆಕ್ಸೈಡ್ (ಬಿಳಿ ಬೂದಿ)</div>
+  <div class="equation-explain" id="equation-explain">ಮೆಗ್ನೀಸಿಯಂ + ಆಮ್ಲಜನಕ → ಮೆಗ್ನೀಸಿಯಂ ಆಕ್ಸೈಡ್ (ಬಿಳಿ ಬೂದಿ)</div>
 </div>
 
 <div class="litmus-result">
   <div class="litmus-card">
     <div class="label">ಕೆಂಪು ಲಿಟ್ಮಸ್</div>
     <div class="strip" id="red-strip" style="background: #f44336;"></div>
-    <div class="status" id="red-status">à²ªà²°à³€à²•à³à²·à³† à²®à³Šà²¦à²²à³</div>
+    <div class="status" id="red-status">ಪರೀಕ್ಷೆ ಮೊದಲು</div>
   </div>
   <div class="litmus-card">
     <div class="label">ನೀಲಿ ಲಿಟ್ಮಸ್</div>
     <div class="strip" id="blue-strip" style="background: #2196f3;"></div>
-    <div class="status" id="blue-status">à²ªà²°à³€à²•à³à²·à³† à²®à³Šà²¦à²²à³</div>
+    <div class="status" id="blue-status">ಪರೀಕ್ಷೆ ಮೊದಲು</div>
   </div>
 </div>
 
 <div class="learning-panel">
   <div class="learning-title">🔬 ಪ್ರಯೋಗ ಪ್ರಗತಿ</div>
   <div class="learning-text" id="learning-text">
-    This experiment shows how ಲೋಹಗಳು ಆಮ್ಲಜನಕದೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತವೆ to form <strong>à²•à³à²·à²¾à²°à³€à²¯ à²†à²•à³à²¸à³ˆà²¡à³â€Œà²—à²³à³</strong>.<br><br>
-    <strong>Step 1:</strong> à²œà³à²µà²¾à²²à³†à²¯à²²à³à²²à²¿ à²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚ à²°à²¿à²¬à³à²¬à²¨à³ à²¸à³à²¡à²¿<br>
-    <strong>Step 2:</strong> à²¨à³€à²°à²²à³à²²à²¿ à²¬à³‚à²¦à²¿ (MgO) à²•à²°à²—à²¿à²¸à²¿<br>
-    <strong>Step 3:</strong> à²²à²¿à²Ÿà³à²®à²¸à³ à²ªà³‡à²ªà²°à³â€Œà²¨à²¿à²‚à²¦ à²ªà²°à³€à²•à³à²·à²¿à²¸à²¿
+    This experiment shows how ಲೋಹಗಳು ಆಮ್ಲಜನಕದೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತವೆ to form <strong>ಕ್ಷಾರೀಯ ಆಕ್ಸೈಡ್‌ಗಳು</strong>.<br><br>
+    <strong>Step 1:</strong> ಜ್ವಾಲೆಯಲ್ಲಿ ಮೆಗ್ನೀಸಿಯಂ ರಿಬ್ಬನ್ ಸುಡಿ<br>
+    <strong>Step 2:</strong> ನೀರಲ್ಲಿ ಬೂದಿ (MgO) ಕರಗಿಸಿ<br>
+    <strong>Step 3:</strong> ಲಿಟ್ಮಸ್ ಪೇಪರ್‌ನಿಂದ ಪರೀಕ್ಷಿಸಿ
   </div>
 </div>
 
@@ -350,10 +350,10 @@ svg { width: 100%; height: 100%; }
   <div class="takeaway-title">🎯 ನೀವು ಕಲಿಯುವುದು</div>
   <div class="takeaway-text">
     <strong>ಲೋಹ oxides are ಕ್ಷಾರೀಯ:</strong><br>
-    • à²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚ + ಆಮ್ಲಜನಕ → à²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚ Oxide (ಮೂಲ)<br>
+    • ಮೆಗ್ನೀಸಿಯಂ + ಆಮ್ಲಜನಕ → ಮೆಗ್ನೀಸಿಯಂ Oxide (ಮೂಲ)<br>
     • MgO + ನೀರು → Mg(OH)₂ (base/alkali)<br>
     • ಕೆಂಪು ಲಿಟ್ಮಸ್ ನೀಲಿ<br><br>
-    <strong>Note:</strong> à²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚ à²ªà³à²°à²•à²¾à²¶à²®à²¾à²¨ à²¬à²¿à²³à²¿ à²¬à³†à²³à²•à²¿à²¨à²²à³à²²à²¿ à²‰à²°à²¿à²¯à³à²¤à³à²¤à²¦à³† - à²¨à³‡à²° à²¨à³‹à²¡à²¬à³‡à²¡à²¿!
+    <strong>Note:</strong> ಮೆಗ್ನೀಸಿಯಂ ಪ್ರಕಾಶಮಾನ ಬಿಳಿ ಬೆಳಕಿನಲ್ಲಿ ಉರಿಯುತ್ತದೆ - ನೇರ ನೋಡಬೇಡಿ!
   </div>
 </div>
 
@@ -385,7 +385,7 @@ function setInstruction(text) {
   instruction.textContent = text;
 }
 
-function burnà²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚() {
+function burnMagnesium() {
   burnBtn.disabled = true;
   
   // Light the flame
@@ -403,14 +403,14 @@ function burnà²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚() 
     stepIndicator.textContent = '🔥 ಪ್ರಕಾಶಮಾನ ಬಿಳಿ ಬೆಳಕಿನಿಂದ ಉರಿಯುತ್ತಿದೆ!';
     
     learningText.innerHTML = `
-      <strong style="color:#ff5722">🔥 à²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚ is burning!</strong><br><br>
-      The magnesium ribbon burns with a <strong>brilliant white light</strong>. This is because the reaction releases a lot of à²¶à²•à³à²¤à²¿.<br><br>
+      <strong style="color:#ff5722">🔥 ಮೆಗ್ನೀಸಿಯಂ is burning!</strong><br><br>
+      The magnesium ribbon burns with a <strong>brilliant white light</strong>. This is because the reaction releases a lot of ಶಕ್ತಿ.<br><br>
       ⚠️ <em>Never look directly at burning magnesium!</em>
     `;
   }, 500);
   
   setTimeout(() => {
-    // ಉರಿಯುತ್ತಿದೆ à²ªà³‚à²°à³à²£ - show ash
+    // ಉರಿಯುತ್ತಿದೆ ಪೂರ್ಣ - show ash
     mgPiece.classList.remove('burning');
     brightLight.style.opacity = '0';
     flame.classList.remove('flame');
@@ -425,15 +425,15 @@ function burnà²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚() 
     beaker.style.opacity = '1';
     
     learningText.innerHTML = `
-      <strong style="color:#2e7d32">✅ à²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚ Oxide (MgO) formed!</strong><br><br>
-      The shiny magnesium has turned into <strong>white powdery ash</strong> - this is à²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚ Oxide.<br><br>
+      <strong style="color:#2e7d32">✅ ಮೆಗ್ನೀಸಿಯಂ Oxide (MgO) formed!</strong><br><br>
+      The shiny magnesium has turned into <strong>white powdery ash</strong> - this is ಮೆಗ್ನೀಸಿಯಂ Oxide.<br><br>
       <strong>Reaction:</strong> 2Mg + O₂ → 2MgO<br><br>
       Now let's dissolve it in ನೀರು ಮತ್ತು test if it's acidic or ಮೂಲ!
     `;
   }, 2500);
 }
 
-function dissolveInನೀರು() {
+function dissolveInWater() {
   dissolveBtn.disabled = true;
   
   instruction.textContent = 'ನೀರಲ್ಲಿ MgO ಕರಗುತ್ತಿದೆ...';
@@ -460,21 +460,21 @@ function dissolveInನೀರು() {
     if (frame < totalFrames) {
       requestAnimationFrame(animateDissolve);
     } else {
-      // Animation à²ªà³‚à²°à³à²£
+      // Animation ಪೂರ್ಣ
       mgoAsh.style.display = 'none';
       litmusInBeaker.style.display = 'block';
       
       equation.textContent = 'MgO + H₂O → Mg(OH)₂';
-      equationExplain.textContent = 'à²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚ Oxide + ನೀರು → à²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚ ಜಲವಿದ್ಯುತ್xide (a base)';
+      equationExplain.textContent = 'ಮೆಗ್ನೀಸಿಯಂ Oxide + ನೀರು → ಮೆಗ್ನೀಸಿಯಂ ಹೈಡ್ರಾಕ್ಸೈಡ್ (a base)';
       
-      stepIndicator.textContent = 'à²¹à²‚à²¤ 3: à²²à²¿à²Ÿà³à²®à²¸à³ à²ªà³‡à²ªà²°à³â€Œà²¨à²¿à²‚à²¦ à²ªà²°à³€à²•à³à²·à²¿à²¸à²¿';
-      instruction.textContent = 'à²¦à³à²°à²¾à²µà²£ à²¸à²¿à²¦à³à²§! à²²à²¿à²Ÿà³à²®à²¸à³ à²ªà³‡à²ªà²°à³â€Œà²¨à²¿à²‚à²¦ à²ªà²°à³€à²•à³à²·à²¿à²¸à²¿.';
+      stepIndicator.textContent = 'ಹಂತ 3: ಲಿಟ್ಮಸ್ ಪೇಪರ್‌ನಿಂದ ಪರೀಕ್ಷಿಸಿ';
+      instruction.textContent = 'ದ್ರಾವಣ ಸಿದ್ಧ! ಲಿಟ್ಮಸ್ ಪೇಪರ್‌ನಿಂದ ಪರೀಕ್ಷಿಸಿ.';
       
       testBtn.disabled = false;
       
       learningText.innerHTML = `
         <strong style="color:#2196f3">💧 ಕರಗಿಸಿd in ನೀರು!</strong><br><br>
-        MgO dissolves in ನೀರು to form <strong>à²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚ ಜಲವಿದ್ಯುತ್xide Mg(OH)₂</strong> - a BASE.<br><br>
+        MgO dissolves in ನೀರು to form <strong>ಮೆಗ್ನೀಸಿಯಂ ಹೈಡ್ರಾಕ್ಸೈಡ್ Mg(OH)₂</strong> - a BASE.<br><br>
         <strong>Reaction:</strong> MgO + H₂O → Mg(OH)₂<br><br>
         Now let's test if this solution is acidic or ಮೂಲ using litmus paper!
       `;
@@ -487,7 +487,7 @@ function dissolveInನೀರು() {
 function testWithLitmus() {
   testBtn.disabled = true;
   
-  instruction.textContent = 'à²²à²¿à²Ÿà³à²®à²¸à³ à²ªà³‡à²ªà²°à³â€Œà²—à²³à²¿à²‚à²¦ à²ªà²°à³€à²•à³à²·à²¿à²¸à²²à²¾à²—à³à²¤à³à²¤à²¿à²¦à³†...';
+  instruction.textContent = 'ಲಿಟ್ಮಸ್ ಪೇಪರ್â€Œಗಳಿಂದ ಪರೀಕ್ಷಿಸಲಾಗುತ್ತಿದೆ...';
   stepIndicator.textContent = 'Testing pH...';
   
   setTimeout(() => {
@@ -506,7 +506,7 @@ function testWithLitmus() {
     learningText.innerHTML = `
       <strong style="color:#2e7d32">✅ ಪ್ರಯೋಗ ಪೂರ್ಣ!</strong><br><br>
       <strong>ಫಲಿತಾಂಶ:</strong> ಕೆಂಪು litmus paper turned <span style="color:#1565c0; font-weight:bold">BLUE</span>!<br><br>
-      This proves that <strong>à²®à³†à²—à³à²¨à³€à²¸à²¿à²¯à²‚ Oxide is a ಕ್ಷಾರೀಯ oxide</strong>.<br><br>
+      This proves that <strong>ಮೆಗ್ನೀಸಿಯಂ Oxide is a ಕ್ಷಾರೀಯ oxide</strong>.<br><br>
       <strong>ತೀರ್ಮಾನ:</strong> When metals burn in ಆಮ್ಲಜನಕ, they form <strong>ಲೋಹ ಆಕ್ಸೈಡ್‌ಗಳು that are ಮೂಲ in nature</strong>.
     `;
   }, 1000);
