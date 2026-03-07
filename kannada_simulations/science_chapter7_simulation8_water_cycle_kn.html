@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -113,7 +113,7 @@ body {
 
 .clickable:hover { transform: scale(1.1); }
 .clickable.highlighted { 
-  filter: drop-shadow(0 0 10px #ffeb3b) drop-shadow(0 0 20px #ff9800);
+  filter: drop-ನೆರಳು(0 0 10px #ffeb3b) drop-ನೆರಳು(0 0 20px #ff9800);
   animation: pulse 1s ease-in-out infinite;
 }
 
@@ -131,7 +131,7 @@ body {
   height: 55px;
   background: radial-gradient(circle, #ffeb3b 0%, #ff9800 100%);
   border-radius: 50%;
-  box-shadow: 0 0 30px #ffeb3b;
+  box-ನೆರಳು: 0 0 30px #ffeb3b;
 }
 
 .sun.active {
@@ -139,8 +139,8 @@ body {
 }
 
 @keyframes sunPulse {
-  0%, 100% { box-shadow: 0 0 30px #ffeb3b; }
-  50% { box-shadow: 0 0 50px #ff9800, 0 0 80px #ffeb3b; }
+  0%, 100% { box-ನೆರಳು: 0 0 30px #ffeb3b; }
+  50% { box-ನೆರಳು: 0 0 50px #ff9800, 0 0 80px #ffeb3b; }
 }
 
 /* Clouds */
@@ -148,7 +148,7 @@ body {
   position: absolute;
   background: #fff;
   border-radius: 50px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-ನೆರಳು: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .cloud-1 {
@@ -284,8 +284,8 @@ body {
   font-weight: 700;
 }
 
-/* Land */
-.land {
+/* Lಮತ್ತು */
+.lಮತ್ತು {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -301,7 +301,7 @@ body {
   font-size: 35px;
 }
 
-/* Evaporation arrows */
+/* ಆವಿಯಾಗುವಿಕೆ arrows */
 .evap-container {
   position: absolute;
   bottom: 90px;
@@ -432,7 +432,7 @@ body {
   background: rgba(255,255,255,0.95);
   border-radius: 10px;
   padding: 12px;
-  box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+  box-ನೆರಳು: 0 -4px 15px rgba(0,0,0,0.2);
   transform: translateY(100%);
   transition: transform 0.3s ease;
   z-index: 50;
@@ -467,8 +467,8 @@ body {
   color: #999;
 }
 
-/* Step indicator */
-.step-indicator {
+/* Step ಸೂಚಕ */
+.step-ಸೂಚಕ {
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -485,7 +485,7 @@ body {
 }
 
 .step-dot.active { background: #0288d1; transform: scale(1.2); }
-.step-dot.completed { background: #4caf50; }
+.step-dot.à²ªà³‚à²°à³à²£d { background: #4caf50; }
 
 .step-dot:hover { transform: scale(1.3); }
 
@@ -531,9 +531,9 @@ body {
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    The <strong>Sun's heat</strong> drives the water cycle. Tap on the sun, clouds, rain, or labels to learn about each stage!
+    The <strong>Sun's heat</strong> ಜಲ ಚಕ್ರ ಚಾಲನೆ. ಸೂರ್ಯ, ಮೇಘ, ಮಳೆ ಟ್ಯಾಪ್ ಮಾಡಿ labels to learn about each stage!
   </div>
 </div>
 
@@ -549,12 +549,12 @@ body {
     </button>
     <button class="control-btn" onclick="resetSimulation()">
       <span class="icon">🔄</span>
-      Reset
+      ಮರುಹೊಂದಿಸಿ
     </button>
   </div>
   
   <div class="cycle-visual" id="cycle-visual">
-    <div class="instruction-overlay" id="instruction">👆 Tap elements or use controls above</div>
+    <div class="instruction-overlay" id="instruction">👆 ಅಂಶಗಳನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ ಅಥವಾ ಮೇಲಿನ ನಿಯಂತ್ರಣಗಳನ್ನು ಬಳಸಿ</div>
     
     <!-- Sun -->
     <div class="sun clickable" id="sun" onclick="showInfo('sun')"></div>
@@ -563,7 +563,7 @@ body {
     <div class="cloud cloud-1 clickable" onclick="showInfo('condensation')"></div>
     <div class="cloud cloud-2 clickable" id="rain-cloud" onclick="showInfo('condensation')"></div>
     
-    <!-- Evaporation arrows -->
+    <!-- ಆವಿಯಾಗುವಿಕೆ arrows -->
     <div class="evap-container" id="evap-container">
       <div class="evap-arrow">
         <svg viewBox="0 0 20 30"><polygon points="10,0 20,15 15,15 15,30 5,30 5,15 0,15"/></svg>
@@ -600,34 +600,34 @@ body {
     <!-- Ocean -->
     <div class="ocean clickable" onclick="showInfo('collection')">
       <div class="ocean-waves"><div class="wave"></div></div>
-      <div class="ocean-label">OCEAN</div>
+      <div class="ocean-label">ಮಹಾಸಾಗರ</div>
     </div>
     
-    <!-- Land -->
-    <div class="land clickable" onclick="showInfo('runoff')">
+    <!-- Lಮತ್ತು -->
+    <div class="lಮತ್ತು clickable" onclick="showInfo('runoff')">
       <div class="tree" style="right: 90px;">🌳</div>
       <div class="tree" style="right: 50px;">🌲</div>
     </div>
     
     <!-- Stage Labels -->
-    <div class="stage-label label-evap" onclick="showInfo('evaporation')">☀️ Evaporation</div>
-    <div class="stage-label label-cond" onclick="showInfo('condensation')">☁️ Condensation</div>
-    <div class="stage-label label-precip" onclick="showInfo('precipitation')">🌧️ Precipitation</div>
-    <div class="stage-label label-runoff" onclick="showInfo('runoff')">🏞️ Runoff</div>
-    <div class="stage-label label-collect" onclick="showInfo('collection')">💧 Collection</div>
+    <div class="stage-label label-evap" onclick="showInfo('evaporation')">☀️ ಆವಿಯಾಗುವಿಕೆ</div>
+    <div class="stage-label label-cond" onclick="showInfo('condensation')">☁️ ಘನೀಕರಣ</div>
+    <div class="stage-label label-precip" onclick="showInfo('precipitation')">🌧️ ಅವಕ್ಷೇಪಣ</div>
+    <div class="stage-label label-runoff" onclick="showInfo('runoff')">🏞️ ಹರಿವು</div>
+    <div class="stage-label label-collect" onclick="showInfo('collection')">💧 ಸಂಗ್ರಹ</div>
     
     <!-- Info Popup -->
     <div class="info-popup" id="info-popup">
       <button class="close-popup" onclick="hideInfo()">✕</button>
-      <div class="info-popup-title" id="popup-title">☀️ Evaporation</div>
+      <div class="info-popup-title" id="popup-title">☀️ ಆವಿಯಾಗುವಿಕೆ</div>
       <div class="info-popup-text" id="popup-text">
-        The Sun's heat causes water from oceans, rivers, and lakes to evaporate into water vapor.
+        à²¸à³‚à²°à³à²¯à²¨ à²‰à²·à³à²£ à²¸à²®à³à²¦à³à²°, à²¨à²¦à²¿, à²¸à²°à³‹à²µà²°à²¦ ನೀರು à²†à²µà²¿à²¯à²¾à²—à³à²¤à³à²¤à²¦à³†.
       </div>
     </div>
   </div>
   
   <!-- Guided mode elements -->
-  <div class="step-indicator" id="step-indicator" style="display: none;">
+  <div class="step-ಸೂಚಕ" id="step-indicator" style="display: none;">
     <div class="step-dot" data-step="0" onclick="goToStep(0)"></div>
     <div class="step-dot" data-step="1" onclick="goToStep(1)"></div>
     <div class="step-dot" data-step="2" onclick="goToStep(2)"></div>
@@ -636,18 +636,18 @@ body {
   </div>
   
   <div class="nav-buttons" id="nav-buttons" style="display: none;">
-    <button class="nav-btn prev" id="prev-btn" onclick="prevStep()">← Previous</button>
-    <button class="nav-btn next" id="next-btn" onclick="nextStep()">Next →</button>
+    <button class="nav-btn prev" id="prev-btn" onclick="prevStep()">← ಹಿಂದಿನ</button>
+    <button class="nav-btn next" id="next-btn" onclick="nextStep()">ಮುಂದೆ →</button>
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 The Cycle Never Stops!</div>
+  <div class="takeaway-title">🎯 ಚಕ್ರ ಎಂದಿಗೂ ನಿಲ್ಲುವುದಿಲ್ಲ!</div>
   <div class="takeaway-text">
-    • <strong>Evaporation:</strong> Water → Water vapor (Sun heats)<br>
-    • <strong>Condensation:</strong> Vapor → Clouds (cooling)<br>
-    • <strong>Precipitation:</strong> Rain, snow, hail falls<br>
-    • <strong>Collection:</strong> Water returns to oceans & ground
+    • <strong>ಆವಿಯಾಗುವಿಕೆ:</strong> ನೀರು → ನೀರಿನ ಆವಿ (ಸೂರ್ಯ ಬಿಸಿ)<br>
+    • <strong>ಘನೀಕರಣ:</strong> ಆವಿ → ಮೋಡ (ತಂಪಾಗುವಿಕೆ)<br>
+    • <strong>à²…à²µà²•à³à²·à³‡à²ªà²£:</strong> à²®à²³à³†, à²¹à²¿à²®, à²†à²²à²¿à²•à²²à³à²²à³ à²¬à³€à²³à³à²¤à³à²¤à²¦à³†<br>
+    • <strong>à²¸à²‚à²—à³à²°à²¹:</strong> ನೀರು à²¸à²®à³à²¦à³à²° à²®à²¤à³à²¤à³ à²­à³‚à²®à²¿à²—à³† à²®à²°à²³à³à²¤à³à²¤à²¦à³†
   </div>
 </div>
 
@@ -656,28 +656,28 @@ body {
 <script>
 const stageInfo = {
   sun: {
-    title: '☀️ The Sun - Energy Source',
-    text: 'The Sun provides the <strong>heat energy</strong> that powers the entire water cycle. Without the Sun, water wouldn\'t evaporate and the cycle would stop!'
+    title: '☀️ The Sun - Energy ಮೂಲ',
+    text: 'ಸೂರ್ಯ <strong>ಉಷ್ಣ ಶಕ್ತಿ</strong> ನೀಡುತ್ತದೆwers the entire ನೀರು cycle. Without the Sun, ನೀರು wouldn\'t evaporate ಮತ್ತು the cycle would stop!'
   },
   evaporation: {
-    title: '☀️ Evaporation',
-    text: 'The Sun\'s heat causes water from oceans, rivers, lakes, and wet soil to <strong>evaporate</strong> (turn into invisible water vapor). Plants also release water vapor through <strong>transpiration</strong>.'
+    title: '☀️ ಆವಿಯಾಗುವಿಕೆ',
+    text: 'The Sun\'s heat causes ನೀರು from oceans, rivers, lakes, ಮತ್ತು wet soil to <strong>evaporate</strong> (turn into invisible à²¨à³€à²°à²¿à²¨ à²†à²µà²¿). Plants also release à²¨à³€à²°à²¿à²¨ à²†à²µà²¿ through <strong>transpiration</strong>.'
   },
   condensation: {
-    title: '☁️ Condensation',
-    text: 'As water vapor rises, it <strong>cools down</strong>. Cool air can\'t hold as much moisture, so vapor <strong>condenses</strong> into tiny water droplets that form clouds.'
+    title: '☁️ ಘನೀಕರಣ',
+    text: 'à²¨à³€à²°à²¿à²¨ à²†à²µà²¿ à²à²°à²¿à²¦à²¾à²— <strong>à²¤à²‚à²ªà²¾à²—à³à²¤à³à²¤à²¦à³†</strong>. à²¤à²‚à²ªà³ à²—à²¾à²³à²¿'t hold as much moisture, so vapor <strong>condenses</strong> into tiny ನೀರು droplets that form clouds.'
   },
   precipitation: {
-    title: '🌧️ Precipitation',
-    text: 'When water droplets in clouds become heavy enough, they fall as <strong>precipitation</strong> - rain, snow, sleet, or hail depending on temperature.'
+    title: '🌧️ ಅವಕ್ಷೇಪಣ',
+    text: 'à²®à³‹à²¡à²¦ à²¨à³€à²°à²¿à²¨ à²¬à²¿à²‚à²¦à³à²—à²³à³ à²­à²¾à²°à²µà²¾à²¦à²¾à²— <strong>à²…à²µà²•à³à²·à³‡à²ªà²£</strong> - à²®à²³à³†, à²¹à²¿à²®, à²¸à³à²²à³€à²Ÿà³ à²…à²¥à²µà²¾ à²†à²²à²¿à²•à²²à³à²²à³ à²‰à²·à³à²£à²¤à³† à²…à²¨à³à²¸à²¾à²°.'
   },
   runoff: {
-    title: '🏞️ Runoff & Infiltration',
-    text: 'Water that falls on land either <strong>runs off</strong> into streams and rivers, or <strong>infiltrates</strong> (seeps) into the ground to become groundwater.'
+    title: '🏞️ ಹರಿವು & ಅಂತರ್ಸೇಚನ',
+    text: 'à²­à³‚à²®à²¿à²¯ à²®à³‡à²²à³† à²¬à³€à²³à³à²µ ನೀರು <strong>à²¹à²°à²¿à²¦à³</strong> à²œà²²à²¸à³à²°à³‹à²¤/à²¨à²¦à²¿ à²…à²¥à²µà²¾ <strong>à²’à²³à²¸à³‡à²°à³à²¤à³à²¤à²¦à³†</strong> à²­à³‚à²œà²².'
   },
   collection: {
-    title: '💧 Collection',
-    text: 'Water collects in <strong>oceans, lakes, and rivers</strong>, or is stored underground as groundwater. From here, the cycle begins again!'
+    title: '💧 ಸಂಗ್ರಹ',
+    text: 'ನೀರು <strong>à²¸à²®à³à²¦à³à²°, à²¸à²°à³‹à²µà²°, à²¨à²¦à²¿</strong> à²…à²¥à²µà²¾ à²­à³‚à²œà²². à²‡à²²à³à²²à²¿à²‚à²¦ à²šà²•à³à²° à²®à²¤à³à²¤à³†!'
   }
 };
 
@@ -753,7 +753,7 @@ function toggleAnimation() {
     instruction.classList.add('hidden');
     playBtn.classList.add('active');
     document.getElementById('play-icon').textContent = '⏸️';
-    document.getElementById('play-text').textContent = 'Pause';
+    document.getElementById('play-text').textContent = 'ಇಡಿ';
     
     // Activate all animations
     sun.classList.add('active');
@@ -801,14 +801,14 @@ function updateGuidedStep() {
   
   // Update step dots
   document.querySelectorAll('.step-dot').forEach((dot, i) => {
-    dot.classList.remove('active', 'completed');
-    if (i < currentStep) dot.classList.add('completed');
+    dot.classList.remove('active', 'à²ªà³‚à²°à³à²£d');
+    if (i < currentStep) dot.classList.add('à²ªà³‚à²°à³à²£d');
     if (i === currentStep) dot.classList.add('active');
   });
   
   // Update navigation buttons
   document.getElementById('prev-btn').disabled = currentStep === 0;
-  document.getElementById('next-btn').textContent = currentStep === steps.length - 1 ? 'Finish ✓' : 'Next →';
+  document.getElementById('next-btn').textContent = currentStep === steps.length - 1 ? 'Finish ✓' : 'ಮುಂದೆ →';
   
   // Show info for current step
   showInfo(steps[currentStep]);
@@ -853,7 +853,7 @@ function resetSimulation() {
   clearHighlights();
 }
 
-// Hide instruction after first interaction
+// Hide instruction after à²®à³Šà²¦à²² interaction
 document.getElementById('cycle-visual').addEventListener('click', function(e) {
   if (e.target.classList.contains('cycle-visual')) {
     instruction.classList.add('hidden');

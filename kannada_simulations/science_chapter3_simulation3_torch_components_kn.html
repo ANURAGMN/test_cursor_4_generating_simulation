@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -69,7 +69,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -144,7 +144,7 @@ svg { width: 100%; height: 100%; }
 .detail-title { font-size: 13px; font-weight: 700; color: #1565c0; margin-bottom: 6px; }
 .detail-text { font-size: 11px; color: #37474f; line-height: 1.6; }
 
-.switch-control {
+.ಸ್ವಿಚ್-control {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,10 +155,10 @@ svg { width: 100%; height: 100%; }
   border-radius: 10px;
 }
 
-.switch-label { font-size: 12px; font-weight: 600; color: #666; }
-.switch-label.on { color: #4caf50; }
+.ಸ್ವಿಚ್-label { font-size: 12px; font-weight: 600; color: #666; }
+.ಸ್ವಿಚ್-label.on { color: #4caf50; }
 
-.switch-toggle {
+.ಸ್ವಿಚ್-toggle {
   width: 60px;
   height: 32px;
   background: #e0e0e0;
@@ -168,9 +168,9 @@ svg { width: 100%; height: 100%; }
   transition: background 0.3s ease;
 }
 
-.switch-toggle.on { background: #4caf50; }
+.ಸ್ವಿಚ್-toggle.on { background: #4caf50; }
 
-.switch-knob {
+.ಸ್ವಿಚ್-knob {
   position: absolute;
   top: 4px;
   left: 4px;
@@ -179,10 +179,10 @@ svg { width: 100%; height: 100%; }
   background: #fff;
   border-radius: 50%;
   transition: left 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-ನೆರಳು: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-.switch-toggle.on .switch-knob { left: 32px; }
+.ಸ್ವಿಚ್-toggle.on .ಸ್ವಿಚ್-knob { left: 32px; }
 
 .takeaway {
   background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
@@ -216,14 +216,14 @@ svg { width: 100%; height: 100%; }
 <div id="app">
 
 <div class="header">
-  <h1>🔦 Inside a Torch</h1>
-  <p>Explore the components that make a torch work</p>
+  <h1>🔦 ಟಾರ್ಚ್ ಒಳಭಾಗ</h1>
+  <p>ಟಾರ್ಚ್ ಕೆಲಸ ಮಾಡುವ ಭಾಗಗಳನ್ನು ಅನ್ವೇಷಿಸಿ</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    A torch has three main components: <strong>Electric Cells</strong> (provide energy), a <strong>Lamp</strong> (produces light), and a <strong>Switch</strong> (controls the circuit). Understanding these helps us learn about electrical circuits!
+    ಟಾರ್ಚ್‌ಗೆ ಮೂರು ಮುಖ್ಯ ಭಾಗಗಳಿವೆ: <strong>ವಿದ್ಯುತ್ ಕೋಶs</strong> (ಶಕ್ತಿ ನೀಡುತ್ತದೆ), ಒಂದು <strong>Lamp</strong> (ಬೆಳಕು ಉತ್ಪಾದಿಸುತ್ತದೆ), ಮತ್ತು ಒಂದು <strong>ಸ್ವಿಚ್</strong> (ಸರ್ಕ್ಯೂಟ್ ನಿಯಂತ್ರಿಸುತ್ತದೆ). ಇವು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು ಸಹಾಯn about electrical circuits!
   </div>
 </div>
 
@@ -260,13 +260,13 @@ svg { width: 100%; height: 100%; }
       <!-- Torch body tube -->
       <rect x="95" y="80" width="200" height="80" rx="5" fill="url(#bodyGrad)"/>
       
-      <!-- Switch area -->
-      <g id="switch-component" class="component-highlight">
-        <rect x="180" y="75" width="40" height="20" rx="5" fill="#455a64" id="switch-body"/>
-        <rect x="185" y="78" width="15" height="14" rx="3" fill="#78909c" id="switch-slider"/>
+      <!-- ಸ್ವಿಚ್ area -->
+      <g id="ಸ್ವಿಚ್-component" class="component-highlight">
+        <rect x="180" y="75" width="40" height="20" rx="5" fill="#455a64" id="ಸ್ವಿಚ್-body"/>
+        <rect x="185" y="78" width="15" height="14" rx="3" fill="#78909c" id="ಸ್ವಿಚ್-slider"/>
       </g>
       
-      <!-- Internal cells (shown when exploded) -->
+      <!-- Internal ಘಟಕಗಳು (shown when exploded) -->
       <g id="cells-internal" style="display:none;">
         <rect x="110" y="95" width="60" height="50" rx="3" fill="#1565c0"/>
         <rect x="170" y="95" width="60" height="50" rx="3" fill="#1565c0"/>
@@ -287,14 +287,14 @@ svg { width: 100%; height: 100%; }
         <text x="85" y="45" font-size="10" fill="#fff" text-anchor="middle">LAMP</text>
         
         <line x1="200" y1="75" x2="200" y2="50" stroke="#fff" stroke-width="1"/>
-        <text x="200" y="45" font-size="10" fill="#fff" text-anchor="middle">SWITCH</text>
+        <text x="200" y="45" font-size="10" fill="#fff" text-anchor="middle">ಸ್ವಿಚ್</text>
         
         <line x1="200" y1="165" x2="200" y2="190" stroke="#fff" stroke-width="1"/>
-        <text x="200" y="205" font-size="10" fill="#fff" text-anchor="middle">CELLS (inside)</text>
+        <text x="200" y="205" font-size="10" fill="#fff" text-anchor="middle">ಘಟಕಗಳು (à²’à²³à²—à³†)</text>
       </g>
       
       <!-- Status text -->
-      <text x="200" y="225" font-size="12" fill="#fff" text-anchor="middle" font-weight="600" id="status-text">Tap components below to learn</text>
+      <text x="200" y="225" font-size="12" fill="#fff" text-anchor="middle" font-weight="600" id="status-text">à²•à²²à²¿à²¯à²²à³ à²•à³†à²³à²—à²¿à²¨ à²˜à²Ÿà²•à²—à²³à²¨à³à²¨à³ à²Ÿà³à²¯à²¾à²ªà³ à²®à²¾à²¡à²¿</text>
     </svg>
   </div>
   
@@ -305,16 +305,16 @@ svg { width: 100%; height: 100%; }
     </button>
     <button class="mode-btn" id="btn-exploded" onclick="setMode('exploded')">
       <div class="icon">🔧</div>
-      <div class="name">See Inside</div>
+      <div class="name">à²’à²³à²—à³† à²¨à³‹à²¡à²¿</div>
     </button>
   </div>
   
-  <div class="switch-control">
-    <span class="switch-label">OFF</span>
-    <div class="switch-toggle" id="switch-toggle" onclick="toggleSwitch()">
-      <div class="switch-knob"></div>
+  <div class="ಸ್ವಿಚ್-control">
+    <span class="ಸ್ವಿಚ್-label">OFF</span>
+    <div class="ಸ್ವಿಚ್-toggle" id="ಸ್ವಿಚ್-toggle" onclick="toggleಸ್ವಿಚ್()">
+      <div class="ಸ್ವಿಚ್-knob"></div>
     </div>
-    <span class="switch-label on">ON</span>
+    <span class="ಸ್ವಿಚ್-label on">ON</span>
   </div>
 </div>
 
@@ -323,34 +323,34 @@ svg { width: 100%; height: 100%; }
     <div class="icon">💡</div>
     <div class="info">
       <div class="name">Lamp (Bulb/LED)</div>
-      <div class="desc">Produces light when current flows</div>
+      <div class="desc">à²ªà³à²°à²µà²¾à²¹ à²¹à²°à²¿à²¦à²¾à²— à²¬à³†à²³à²•à³ à²‰à²¤à³à²ªà²¾à²¦à²¿à²¸à³à²¤à³à²¤à²¦à³†</div>
     </div>
   </div>
-  <div class="component-item" onclick="showComponent('cells', this)">
+  <div class="component-item" onclick="showComponent('ಘಟಕಗಳು', this)">
     <div class="icon">🔋</div>
     <div class="info">
-      <div class="name">Electric Cells</div>
-      <div class="desc">Provide electrical energy</div>
+      <div class="name">ವಿದ್ಯುತ್ ಕೋಶs</div>
+      <div class="desc">à²µà²¿à²¦à³à²¯à³à²¤à³ à²¶à²•à³à²¤à²¿ à²’à²¦à²—à²¿à²¸à³à²¤à³à²¤à²¦à³†</div>
     </div>
   </div>
-  <div class="component-item" onclick="showComponent('switch', this)">
+  <div class="component-item" onclick="showComponent('ಸ್ವಿಚ್', this)">
     <div class="icon">🔘</div>
     <div class="info">
-      <div class="name">Switch</div>
-      <div class="desc">Controls ON/OFF of the circuit</div>
+      <div class="name">ಸ್ವಿಚ್</div>
+      <div class="desc">à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³ à²†à²¨à³/à²†à²«à³ à²¨à²¿à²¯à²‚à²¤à³à²°à²£</div>
     </div>
   </div>
 </div>
 
 <div class="detail-panel" id="detail-panel">
-  <div class="detail-title" id="detail-title">Component Details</div>
+  <div class="detail-title" id="detail-title">à²˜à²Ÿà²• à²µà²¿à²µà²°</div>
   <div class="detail-text" id="detail-text"></div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 What You Learned</div>
+  <div class="takeaway-title">🎯 ನೀವು ಕಲಿತದ್ದು</div>
   <div class="takeaway-text">
-    A torch is a simple electrical circuit! The <strong>cells</strong> provide energy, the <strong>switch</strong> controls the flow of current, and the <strong>lamp</strong> converts electrical energy into light. When the switch is ON, current flows in a complete path (circuit) and the lamp glows.
+    à²Ÿà²¾à²°à³à²šà³ à²’à²‚à²¦à³ à²¸à²°à²³ à²µà²¿à²¦à³à²¯à³à²¤à³ à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³! à²…à²¦à³ <strong>ಘಟಕಗಳು</strong> à²¶à²•à³à²¤à²¿ à²’à²¦à²—à²¿à²¸à³à²¤à³à²¤à²¦à³†, à²…à²¦à³ <strong>ಸ್ವಿಚ್</strong> à²ªà³à²°à²µà²¾à²¹ à²¹à²°à²¿à²µà³ à²¨à²¿à²¯à²‚à²¤à³à²°à²£, à²®à²¤à³à²¤à³ <strong>lamp</strong> à²µà²¿à²¦à³à²¯à³à²¤à³ à²¶à²•à³à²¤à²¿à²¯à²¨à³à²¨à³ à²¬à³†à²³à²•à²¾à²—à²¿. à²¸à³à²µà²¿à²šà³ à²†à²¨à³ à²†à²¦à²¾à²— à²ªà³à²°à²µà²¾à²¹ à²ªà³‚à²°à³à²£ à²®à²¾à²°à³à²— (à²¸à²°à³à²•à³à²¯à³‚à²Ÿà³) à²®à²¤à³à²¤à³ à²¦à³€à²ª à²‰à²œà³à²œà³à²µà²².
   </div>
 </div>
 
@@ -363,9 +363,9 @@ let currentMode = 'assembled';
 const lightBeam = document.getElementById('light-beam');
 const lampBulb = document.getElementById('lamp-bulb');
 const lampFilament = document.getElementById('lamp-filament');
-const switchToggle = document.getElementById('switch-toggle');
-const switchSlider = document.getElementById('switch-slider');
-const cellsInternal = document.getElementById('cells-internal');
+const ಸ್ವಿಚ್Toggle = document.getElementById('switch-toggle');
+const ಸ್ವಿಚ್Slider = document.getElementById('switch-slider');
+const ಘಟಕಗಳುInternal = document.getElementById('cells-internal');
 const labels = document.getElementById('labels');
 const statusText = document.getElementById('status-text');
 const detailPanel = document.getElementById('detail-panel');
@@ -374,16 +374,16 @@ const detailText = document.getElementById('detail-text');
 
 const componentDetails = {
   lamp: {
-    title: '💡 Lamp (Light Source)',
-    text: 'The lamp is the component that produces light. It can be an <strong>incandescent bulb</strong> (with a thin wire filament that glows when heated) or an <strong>LED</strong> (Light Emitting Diode - more efficient, no filament). When electric current flows through it, electrical energy is converted to light energy.'
+    title: '💡 Lamp (Light ಮೂಲ)',
+    text: 'The lamp is the component that produces light. It can be an <strong>incಮತ್ತುescent bulb</strong> (with a thin wire à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³ that glows when heated) or an <strong>LED</strong> (à²²à³ˆà²Ÿà³ à²Žà²®à²¿à²Ÿà²¿à²‚à²—à³ à²¡à²¯à³‹à²¡à³ - more efficient, no à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³). When electric current flows through it, electrical à²¶à²•à³à²¤à²¿ is converted to light à²¶à²•à³à²¤à²¿.'
   },
-  cells: {
-    title: '🔋 Electric Cells (Power Source)',
-    text: 'Electric cells are the source of electrical energy in a torch. Each cell has two terminals: <strong>positive (+)</strong> shown by a metal cap, and <strong>negative (-)</strong> shown by a flat metal disc. When two or more cells are connected together (+ of one to - of next), they form a <strong>battery</strong> that provides more power.'
+  ಘಟಕಗಳು: {
+    title: '🔋 ವಿದ್ಯುತ್ ಕೋಶs (Power ಮೂಲ)',
+    text: 'Electric ಘಟಕಗಳು are the ಮೂಲ of electrical à²¶à²•à³à²¤à²¿ in a torch. Each cell has two terminals: <strong>ಧನ (+)</strong> shown by a metal cap, ಮತ್ತು <strong>ಋಣ (-)</strong> shown by a flat metal disc. When two or more ಘಟಕಗಳು are connected together (+ of one to - of next), they form a <strong>ಬ್ಯಾಟರಿ</strong> that provides more power.'
   },
-  switch: {
-    title: '🔘 Switch (Circuit Controller)',
-    text: 'The switch controls whether the circuit is complete or broken. In <strong>ON position</strong>, it closes the gap and allows current to flow - the lamp glows. In <strong>OFF position</strong>, it creates a gap that breaks the circuit - no current flows, lamp stays off. It\'s like a gate for electricity!'
+  ಸ್ವಿಚ್: {
+    title: '🔘 ಸ್ವಿಚ್ (ಸರ್ಕ್ಯೂಟ್ ನಿಯಂತ್ರಕ)',
+    text: 'ಸ್ವಿಚ್ ಸರ್ಕ್ಯೂಟ್ ಪೂರ್ಣವೇ ಅಥವಾ ಮುರಿದಿದೆಯೇ ನಿಯಂತ್ರಿಸುತ್ತದೆoken. In <strong>ಆನ್ ಸ್ಥಾನ</strong>, it closes the gap ಮತ್ತು allows current to flow - the lamp glows. In <strong>ಆಫ್ ಸ್ಥಾನ</strong>, it creates a gap that breaks the circuit - no current flows, lamp stays off. It\'s like a gate for electricity!'
   }
 };
 
@@ -393,35 +393,35 @@ function setMode(mode) {
   document.getElementById('btn-exploded').classList.toggle('active', mode === 'exploded');
   
   if (mode === 'exploded') {
-    cellsInternal.style.display = 'block';
+    ಘಟಕಗಳುInternal.style.display = 'block';
     labels.style.display = 'block';
-    statusText.textContent = 'Components visible - tap to learn more';
+    statusText.textContent = 'ಭಾಗಗಳು ಗೋಚರ - ಇನ್ನಷ್ಟು ತಿಳಿಯಲು ಟ್ಯಾಪ್ ಮಾಡಿ';
   } else {
-    cellsInternal.style.display = 'none';
+    ಘಟಕಗಳುInternal.style.display = 'none';
     labels.style.display = 'none';
-    statusText.textContent = isOn ? 'Switch is ON - Current flowing!' : 'Try the switch below';
+    statusText.textContent = isOn ? 'ಸ್ವಿಚ್ is ON - à²ªà³à²°à²µà²¾à²¹ à²¹à²°à²¿à²¯à³à²¤à³à²¤à²¿à²¦à³†!' : 'Try the ಸ್ವಿಚ್ below';
   }
 }
 
-function toggleSwitch() {
+function toggleಸ್ವಿಚ್() {
   isOn = !isOn;
-  switchToggle.classList.toggle('on', isOn);
+  ಸ್ವಿಚ್Toggle.classList.toggle('on', isOn);
   
-  // Move switch slider in SVG
-  switchSlider.setAttribute('x', isOn ? '200' : '185');
+  // Move ಸ್ವಿಚ್ slider in SVG
+  ಸ್ವಿಚ್Slider.setAttribute('x', isOn ? '200' : '185');
   
   if (isOn) {
     lightBeam.style.display = 'block';
     lampBulb.setAttribute('fill', '#ffff00');
     lampFilament.setAttribute('fill', '#ffffff');
     lampBulb.classList.add('lamp-glow');
-    statusText.textContent = 'Switch ON - Circuit complete - Lamp glows!';
+    statusText.textContent = 'ಸ್ವಿಚ್ ಆನ್ - ಸರ್ಕ್ಯೂಟ್ ಪೂರ್ಣ - ದೀಪ ಬೆಳಗುತ್ತದೆ!';
   } else {
     lightBeam.style.display = 'none';
     lampBulb.setAttribute('fill', '#e0e0e0');
     lampFilament.setAttribute('fill', '#bdbdbd');
     lampBulb.classList.remove('lamp-glow');
-    statusText.textContent = 'Switch OFF - Circuit broken - No light';
+    statusText.textContent = 'ಸ್ವಿಚ್ ಆಫ್ - ಸರ್ಕ್ಯೂಟ್ ಮುರಿದಿದೆ - ಬೆಳಕು ಇಲ್ಲ';
   }
 }
 
@@ -435,8 +435,8 @@ function showComponent(type, element) {
   document.querySelectorAll('.component-item').forEach(item => item.classList.remove('active'));
   element.classList.add('active');
   
-  // Show exploded view for cells
-  if (type === 'cells' && currentMode !== 'exploded') {
+  // Show exploded view for ಘಟಕಗಳು
+  if (type === 'ಘಟಕಗಳು' && currentMode !== 'exploded') {
     setMode('exploded');
   }
 }

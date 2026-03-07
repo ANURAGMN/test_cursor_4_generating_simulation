@@ -7,6 +7,8 @@ Blue Litmus|ನೀಲಿ ಲಿಟ್ಮಸ್
 Red Litmus|ಕೆಂಪು ಲಿಟ್ಮಸ್
 Soap Solution|ಸಾಬೂನು ದ್ರಾವಣ
 Baking Soda|ಬೇಕಿಂಗ್ ಸೋಡಾ
+Water|ನೀರು
+Baking soda|ಬೇಕಿಂಗ್ ಸೋಡಾ
 Lime Water|ಸುಣ್ಣದ ನೀರು
 Tap Water|ನಳ ನೀರು
 Sugar Solution|ಸಕ್ಕರೆ ದ್ರಾವಣ
@@ -176,3 +178,1759 @@ Original|ಮೂಲ
 Result|ಫಲಿತಾಂಶ
 Blue|ನೀಲಿ
 Red|ಕೆಂಪು
+
+# Olfactory and script-driven UI (headers, hints, buttons, metrics)
+Olfactory Indicators|ಘ್ರಾಣ ಸೂಚಕಗಳು
+Using smell to identify acids and bases!|ವಾಸನೆಯಿಂದ ಆಮ್ಲ ಮತ್ತು ಕ್ಷಾರಗಳನ್ನು ಗುರುತಿಸಿ!
+Mix onion with different solutions|ವಿವಿಧ ದ್ರಾವಣಗಳೊಂದಿಗೆ ಈರುಳ್ಳಿ ಮಿಶ್ರಣ ಮಾಡಿ
+Select solution & mix with onion|ದ್ರಾವಣ ಆಯ್ಕೆಮಾಡಿ ಮತ್ತು ಈರುಳ್ಳಿಯೊಂದಿಗೆ ಮಿಶ್ರಣ ಮಾಡಿ
+Chopped Onion|ಕತ್ತರಿಸಿದ ಈರುಳ್ಳಿ
+Tamarind Water|ಹುಣಿಸೆ ನೀರು
+Mix Together|ಒಟ್ಟಿಗೆ ಮಿಶ್ರಣ ಮಾಡಿ
+Strong Smell<br>= ACID|ಬಲವಾದ ವಾಸನೆ<br>= ಆಮ್ಲ
+No Smell<br>= BASE|ವಾಸನೆ ಇಲ್ಲ<br>= ಕ್ಷಾರ
+Onion Smell:|ಈರುಳ್ಳಿ ವಾಸನೆ:
+Type:|ರೀತಿ:
+How Olfactory Indicators Work|ಘ್ರಾಣ ಸೂಚಕಗಳು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತವೆ
+Chop onion<br>(pungent)|ಈರುಳ್ಳಿ ಕತ್ತರಿಸಿ<br>(ಕಟುವಾದ)
+Add acid<br>or base|ಆಮ್ಲ ಅಥವಾ<br>ಕ್ಷಾರ ಸೇರಿಸಿ
+Check if<br>smell changes|ವಾಸನೆ ಬದಲಾಗುತ್ತದೆಯೇ<br>ಪರಿಶೀಲಿಸಿ
+Identify<br>substance|ಪದಾರ್ಥವನ್ನು<br>ಗುರುತಿಸಿ
+Kitchen science:|ಅಡುಗೆ ಮನೆ ವಿಜ್ಞಾನ:
+Tamarind Water (Acid)|ಹುಣಿಸೆ ನೀರು (ಆಮ್ಲ)
+Baking Soda (Base)|ಬೇಕಿಂಗ್ ಸೋಡಾ (ಕ್ಷಾರ)
+Vinegar (Acid)|ವಿನಿಗರ್ (ಆಮ್ಲ)
+Soap Solution (Base)|ಸಾಬೂನು ದ್ರಾವಣ (ಕ್ಷಾರ)
+(Acid)|(ಆಮ್ಲ)
+(Base)|(ಕ್ಷಾರ)
+(ACID)|(ಆಮ್ಲ)
+(BASE)|(ಕ್ಷಾರ)
+Reset|ಮರುಹೊಂದಿಸಿ
+Still pungent! 😤|ಇನ್ನೂ ಕಟುವಾಗಿದೆ! 😤
+Disappeared! 😊|ಅದೃಶ್ಯವಾಯಿತು! 😊
+ACIDIC|ಆಮ್ಲೀಯ
+BASIC|ಕ್ಷಾರೀಯ
+😤 Smell remains → ACID|😤 ವಾಸನೆ ಉಳಿದಿದೆ → ಆಮ್ಲ
+😊 No smell → BASE|😊 ವಾಸನೆ ಇಲ್ಲ → ಕ್ಷಾರ
+Olfactory indicators use smell changes to identify acids and bases!|ಘ್ರಾಣ ಸೂಚಕಗಳು ವಾಸನೆ ಬದಲಾವಣೆಗಳನ್ನು ಬಳಸಿ ಆಮ್ಲ ಮತ್ತು ಕ್ಷಾರಗಳನ್ನು ಗುರುತಿಸುತ್ತವೆ!
+cooking onions with baking soda|ಬೇಕಿಂಗ್ ಸೋಡಾದೊಂದಿಗೆ ಈರುಳ್ಳಿ ಬೇಯಿಸುವುದು
+
+# Electricity sources (Ch3) – full UI in Kannada
+Sources of Electricity|ವಿದ್ಯುತ್ ಮೂಲಗಳು
+Where does our electricity come from?|ನಮ್ಮ ವಿದ್ಯುತ್ ಎಲ್ಲಿಂದ ಬರುತ್ತದೆ?
+Key Concept|ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ
+Electricity is generated from various <strong>energy sources</strong>. These include renewable sources (sun, wind, water) and non-renewable sources (coal, gas). The electricity travels through wires to reach our homes.|ವಿವಿಧ <strong>ಶಕ್ತಿ ಮೂಲಗಳಿಂದ</strong> ವಿದ್ಯುತ್ ಉತ್ಪಾದನೆಯಾಗುತ್ತದೆ. ನವೀಕರಣೀಯ ಮೂಲಗಳು (ಸೂರ್ಯ, ಗಾಳಿ, ನೀರು) ಮತ್ತು ನವೀಕರಣೇತರ ಮೂಲಗಳು (ಇಂಗಾಲ, ಅನಿಲ) ಸೇರಿವೆ. ವಿದ್ಯುತ್ ತಂತಿಗಳ ಮೂಲಕ ನಮ್ಮ ಮನೆಗಳನ್ನು ತಲುಪುತ್ತದೆ.
+Select a source below|ಕೆಳಗೆ ಒಂದು ಮೂಲ ಆಯ್ಕೆಮಾಡಿ
+Hydro|ಜಲವಿದ್ಯುತ್
+Solar|ಸೌರ
+Wind|ಗಾಳಿ
+Thermal|ಉಷ್ಣ
+How is Electricity Generated?|ವಿದ್ಯುತ್ ಹೇಗೆ ಉತ್ಪಾದನೆಯಾಗುತ್ತದೆ?
+Tap on any source above to see how it generates electricity and powers your home!|ವಿದ್ಯುತ್ ಹೇಗೆ ಉತ್ಪಾದನೆಯಾಗಿ ನಿಮ್ಮ ಮನೆಗೆ ಶಕ್ತಿ ನೀಡುತ್ತದೆ ನೋಡಲು ಮೇಲೆ ಯಾವುದೇ ಮೂಲವನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ!
+Source|ಮೂಲ
+Generator|ಜನರೇಟರ್
+Electricity|ವಿದ್ಯುತ್
+Home|ಮನೆ
+Safety First!|ಮೊದಲು ಸುರಕ್ಷತೆ!
+The electricity in our homes comes from power plants and is very dangerous. For experiments, always use <strong>batteries or cells</strong> only - never the main power supply!|ನಮ್ಮ ಮನೆಗಳ ವಿದ್ಯುತ್ ವಿದ್ಯುತ್ ಕೇಂದ್ರಗಳಿಂದ ಬರುತ್ತದೆ ಮತ್ತು ಅತ್ಯಂತ ಅಪಾಯಕಾರಿ. ಪ್ರಯೋಗಗಳಿಗೆ ಯಾವಾಗಲೂ <strong>ಬ್ಯಾಟರಿಗಳು ಅಥವಾ ಕೋಶಗಳನ್ನು</strong> ಮಾತ್ರ ಬಳಸಿ - ಮುಖ್ಯ ವಿದ್ಯುತ್ ಸರಬರಾಜನ್ನು ಎಂದಿಗೂ ಬಳಸಬೇಡಿ!
+What You Learned|ನೀವು ಕಲಿತದ್ದು
+Electricity can be generated from many sources - falling water (hydroelectric), sunlight (solar), wind, and burning fuels (thermal). It travels through wires to power our homes. Always use batteries for safe experiments!|ವಿದ್ಯುತ್ ಅನೇಕ ಮೂಲಗಳಿಂದ ಉತ್ಪಾದನೆಯಾಗಬಹುದು - falling water (ಜಲವಿದ್ಯುತ್), sunlight (ಸೌರ), ಗಾಳಿ, ಮತ್ತು ಇಂಧನ ಸುಡುವುದು (ಉಷ್ಣ). ಅದು ತಂತಿಗಳ ಮೂಲಕ ನಮ್ಮ ಮನೆಗಳಿಗೆ ಶಕ್ತಿ ನೀಡುತ್ತದೆ. ಸುರಕ್ಷಿತ ಪ್ರಯೋಗಗಳಿಗೆ ಯಾವಾಗಲೂ ಬ್ಯಾಟರಿಗಳನ್ನು ಬಳಸಿ!
+Hydroelectric Power|ಜಲವಿದ್ಯುತ್ ಶಕ್ತಿ
+Falling water from a dam spins a turbine connected to a generator. The spinning generator produces electricity. This is a renewable source - water cycle continues forever!|ಅಣೆಕಟ್ಟಿನಿಂದ falling water ಟರ್ಬೈನ್ ಅನ್ನು ತಿರುಗಿಸುತ್ತದೆ, ಅದು ಜನರೇಟರ್ಗೆ ಸಂಪರ್ಕವಾಗಿದೆ. ತಿರುಗುವ ಜನರೇಟರ್ ವಿದ್ಯುತ್ ಉತ್ಪಾದಿಸುತ್ತದೆ. ಇದು ನವೀಕರಣೀಯ ಮೂಲ - ಜಲ ಚಕ್ರ ಶಾಶ್ವತವಾಗಿ ಮುಂದುವರಿಯುತ್ತದೆ!
+<strong>Example:</strong> Bhakra Nangal Dam in India generates hydroelectric power|<strong>ಉದಾಹರಣೆ:</strong> ಭಾರತದ ಭಾಕ್ರಾ ನಂಗಲ್ ಅಣೆಕಟ್ಟು ಜಲವಿದ್ಯುತ್ ಉತ್ಪಾದಿಸುತ್ತದೆ
+Solar Power|ಸೌರ ಶಕ್ತಿ
+Solar panels contain special cells that convert sunlight directly into electricity. No moving parts needed! This is renewable - the sun shines every day.|ಸೌರ ಫಲಕಗಳಲ್ಲಿ ವಿಶೇಷ ಕೋಶಗಳಿವೆ, ಸೂರ್ಯನ ಬೆಳಕನ್ನು ನೇರವಾಗಿ ವಿದ್ಯುತ್ಗೆ ಪರಿವರ್ತಿಸುತ್ತವೆ. ಚಲಿಸುವ ಭಾಗಗಳ ಅಗತ್ಯವಿಲ್ಲ! ಇದು ನವೀಕರಣೀಯ - ಸೂರ್ಯನು ಪ್ರತಿದಿನ ಬೆಳಗುತ್ತದೆ.
+<strong>Example:</strong> Solar panels on rooftops and solar farms|<strong>ಉದಾಹರಣೆ:</strong> ಛಾವಣಿಗಳ ಮೇಲೆ ಸೌರ ಫಲಕಗಳು ಮತ್ತು ಸೌರ ಕ್ಷೇತ್ರಗಳು
+Wind Power|ಗಾಳಿ ಶಕ್ತಿ
+Wind spins the blades of a windmill (turbine). The spinning blades turn a generator to produce electricity. Renewable source - wind keeps blowing!|ಗಾಳಿ ಗಾಳಿಮರದ (ಟರ್ಬೈನ್) ಚಕ್ರಗಳನ್ನು ತಿರುಗಿಸುತ್ತದೆ. ತಿರುಗುವ ಚಕ್ರಗಳು ವಿದ್ಯುತ್ ಉತ್ಪಾದಿಸಲು ಜನರೇಟರ್ ಅನ್ನು ತಿರುಗಿಸುತ್ತವೆ. ನವೀಕರಣೀಯ ಮೂಲ - ಗಾಳಿ ಬೀಸುತ್ತಲೇ ಇರುತ್ತದೆ!
+<strong>Example:</strong> Wind farms in Gujarat and Tamil Nadu|<strong>ಉದಾಹರಣೆ:</strong> ಗುಜರಾತ್ ಮತ್ತು ತಮಿಳುನಾಡು ಗಾಳಿ ಕ್ಷೇತ್ರಗಳು
+Thermal Power|ಉಷ್ಣ ವಿದ್ಯುತ್
+Burning coal, oil, or gas heats water to make steam. Steam spins a turbine connected to a generator. Non-renewable - fossil fuels will run out and cause pollution.|ಇಂಗಾಲ, ತೈಲ ಅಥವಾ ಅನಿಲ ಸುಡುವುದರಿಂದ ನೀರು ಬಿಸಿಯಾಗಿ ಆವಿ ಉಂಟಾಗುತ್ತದೆ. ಆವಿ ಜನರೇಟರ್ಗೆ ಸಂಪರ್ಕವಾದ ಟರ್ಬೈನ್ ಅನ್ನು ತಿರುಗಿಸುತ್ತದೆ. ನವೀಕರಣೇತರ - ಜೀವಾಶ್ಮ ಇಂಧನಗಳು ಖಾಲಿಯಾಗುತ್ತವೆ ಮತ್ತು ಮಾಲಿನ್ಯ ಉಂಟುಮಾಡುತ್ತವೆ.
+<strong>Example:</strong> Most power plants in India use coal|<strong>ಉದಾಹರಣೆ:</strong> ಭಾರತದ ಹೆಚ್ಚಿನ ವಿದ್ಯುತ್ ಕೇಂದ್ರಗಳು ಇಂಗಾಲ ಬಳಸುತ್ತವೆ
+Example:|ಉದಾಹರಣೆ:
+
+# Fix partial replacements (must come before shorter forms)
+Sources of Heat|ಉಷ್ಣದ ಮೂಲಗಳು
+Uses of Electricity|ವಿದ್ಯುತ್ ಬಳಕೆಗಳು
+ಮೂಲs of Heat|ಉಷ್ಣದ ಮೂಲಗಳು
+Uses of ವಿದ್ಯುತ್|ವಿದ್ಯುತ್ ಬಳಕೆಗಳು
+
+# H1 headers (short form) and subtitles – all chapters
+Simple Pendulum|ಸರಳ ಲೋಲಕ
+Conduction of Heat|ಉಷ್ಣ ವಾಹಕತೆ
+Desirable vs Undesirable|ಅಪೇಕ್ಷಣೀಯ ಮತ್ತು ಅನಪೇಕ್ಷಿತ
+Combustion Examples|ದಹನ ಉದಾಹರಣೆಗಳು
+The Burning Candle|ಉರಿಯುವ ಮೇಣ
+Candle Under Glass|ಗಾಜಿನ ಕೆಳಗೆ ಮೇಣ
+Fire Triangle|ಅಗ್ನಿ ತ್ರಿಕೋಣ
+States of Water|ನೀರಿನ ಸ್ಥಿತಿಗಳು
+Reversible vs Irreversible|ಹಿಮ್ಮುಖ ಮತ್ತು ಅಹಿಮ್ಮುಖ
+Chemical Changes|ರಾಸಾಯನಿಕ ಬದಲಾವಣೆಗಳು
+Weathering & Erosion|ವಾತಾವರಣ ಮತ್ತು ಕೊರೆತ
+Physical Changes|ಭೌತಿಕ ಬದಲಾವಣೆಗಳು
+Circuit Symbols|ಸರ್ಕ್ಯೂಟ್ ಚಿಹ್ನೆಗಳು
+Electric Switch|ವಿದ್ಯುತ್ ಸ್ವಿಚ್
+Simple Electrical Circuit|ಸರಳ ವಿದ್ಯುತ್ ಸರ್ಕ್ಯೂಟ್
+Lamp Types|ದೀಪ ಪ್ರಕಾರಗಳು
+Battery – Connecting Cells|ಬ್ಯಾಟರಿ – ಕೋಶಗಳನ್ನು ಜೋಡಿಸುವುದು
+Electric Cell|ವಿದ್ಯುತ್ ಕೋಶ
+Inside a Torch|ಟಾರ್ಚ್ ಒಳಭಾಗ
+Conductors & Insulators|ವಾಹಕಗಳು ಮತ್ತು ಅವಾಹಕಗಳು
+Neutralisation in Agriculture|ಕೃಷಿಯಲ್ಲಿ ತಟಸ್ಥೀಕರಣ
+Treating Ant Bites|ಇರುವೆ ಕಚ್ಚುವಿಕೆ ಚಿಕಿತ್ಸೆ
+Neutralisation Reaction|ತಟಸ್ಥೀಕರಣ ಪ್ರತಿಕ್ರಿಯೆ
+Turmeric Indicator|ಹಲ್ದಿ ಸೂಚಕ
+Properties of Acids & Bases|ಆಮ್ಲಗಳು ಮತ್ತು ಕ್ಷಾರಗಳ ಗುಣಗಳು
+Litmus Paper Test|ಲಿಟ್ಮಸ್ ಪೇಪರ್ ಪರೀಕ್ಷೆ
+Industrial Waste Treatment|ಕೈಗಾರಿಕಾ ತ್ಯಾಜ್ಯ ಚಿಕಿತ್ಸೆ
+Science Fair Mystery|ವಿಜ್ಞಾನ ಮೇಳ ರಹಸ್ಯ
+
+# Subtitle <p> and concept/section/takeaway titles
+Speed changes during motion|ಚಲನೆಯ ಸಮಯದಲ್ಲಿ ವೇಗ ಬದಲಾವಣೆ
+Constant speed in a straight line|ನೇರ ರೇಖೆಯಲ್ಲಿ ಸ್ಥಿರ ವೇಗ
+Who finishes 1 km first?|1 ಕಿಮೀ ಯಾರು ಮೊದಲು ಪೂರ್ಣಗೊಳಿಸುತ್ತಾರೆ?
+Calculate speed, distance, or time!|ವೇಗ, ದೂರ ಅಥವಾ ಸಮಯ ಲೆಕ್ಕ ಹಾಕಿ!
+Convert between different units of time|ವಿವಿಧ ಸಮಯ ಘಟಕಗಳ ನಡುವೆ ಪರಿವರ್ತಿಸಿ
+Compare pendulums of different lengths!|ವಿವಿಧ ಉದ್ದದ ಲೋಲಕಗಳನ್ನು ಹೋಲಿಸಿ!
+Interactive - adjust length and mass!|ಸಂವಾದಾತ್ಮಕ - ಉದ್ದ ಮತ್ತು ದ್ರವ್ಯರಾಶಿ ಸರಿಹೊಂದಿಸಿ!
+Move the Sun and watch the shadow tell time!|ಸೂರ್ಯನನ್ನು ಚಲಿಸಿ ಮತ್ತು ನೆರಳು ಸಮಯ ಹೇಳುವುದನ್ನು ನೋಡಿ!
+Interactive vehicle dashboard|ಸಂವಾದಾತ್ಮಕ ವಾಹನ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್
+From ancient sundials to atomic clocks|ಪ್ರಾಚೀನ ಸೂರ್ಯ ಘಡಿಯಾರದಿಂದ ಪರಮಾಣು ಗಡಿಯಾರಗಳವರೆಗೆ
+Which material transfers heat fastest?|ಯಾವ ಪದಾರ್ಥ ಉಷ್ಣವನ್ನು ಅತ್ಯಂತ ವೇಗವಾಗಿ ವರ್ಗಾವಣೆ ಮಾಡುತ್ತದೆ?
+Interactive experiment - control the heat!|ಸಂವಾದಾತ್ಮಕ ಪ್ರಯೋಗ - ಉಷ್ಣವನ್ನು ನಿಯಂತ್ರಿಸಿ!
+Protecting our precious water resources|ನಮ್ಮ ಅಮೂಲ್ಯ ಜಲ ಸಂಪನ್ಮೂಲಗಳನ್ನು ರಕ್ಷಿಸುವುದು
+The Sun and regional temperature differences|ಸೂರ್ಯ ಮತ್ತು ಪ್ರಾದೇಶಿಕ ಉಷ್ಣಾಂಶ ವ್ಯತ್ಯಾಸಗಳು
+Are all changes good for us?|ಎಲ್ಲಾ ಬದಲಾವಣೆಗಳು ನಮಗೆ ಒಳ್ಳೆಯವೇ?
+Different materials burn differently!|ವಿವಿಧ ಪದಾರ್ಥಗಳು ವಿಭಿನ್ನವಾಗಿ ಸುಡುತ್ತವೆ!
+See the difference between both changes!|ಎರಡು ಬದಲಾವಣೆಗಳ ನಡುವಿನ ವ್ಯತ್ಯಾಸ ನೋಡಿ!
+Why does the candle go out?|ಮೇಣ ಏಕೆ ಆರಿಹೋಗುತ್ತದೆ?
+Same substance, different forms!|ಅದೇ ಪದಾರ್ಥ, ವಿಭಿನ್ನ ರೂಪಗಳು!
+Can we get the original substance back?|ನಾವು ಮೂಲ ಪದಾರ್ಥವನ್ನು ಮರಳಿ ಪಡೆಯಬಹುದೇ?
+Changes where NEW substances are formed|ಹೊಸ ಪದಾರ್ಥಗಳು ರೂಪುಗೊಳ್ಳುವ ಬದಲಾವಣೆಗಳು
+Slow changes that shape our Earth|ನಮ್ಮ ಭೂಮಿಯನ್ನು ಆಕಾರಗೊಳಿಸುವ ನಿಧಾನ ಬದಲಾವಣೆಗಳು
+Changes where NO new substance is formed|ಹೊಸ ಪದಾರ್ಥ ರೂಪುಗೊಳ್ಳದ ಬದಲಾವಣೆಗಳು
+Learn to read and draw circuit diagrams|ಸರ್ಕ್ಯೂಟ್ ರೇಖಾಚಿತ್ರಗಳನ್ನು ಓದಲು ಮತ್ತು ಬರೆಯಲು ಕಲಿಯಿರಿ
+Understanding how switches control circuits|ಸ್ವಿಚ್‌ಗಳು ಸರ್ಕ್ಯೂಟ್‌ಗಳನ್ನು ಹೇಗೆ ನಿಯಂತ್ರಿಸುತ್ತವೆ
+Build a complete circuit to light the bulb!|ಬಲ್ಬ್ ಬೆಳಗಿಸಲು ಸಂಪೂರ್ಣ ಸರ್ಕ್ಯೂಟ್ ನಿರ್ಮಿಸಿ!
+Comparing Incandescent Bulb vs LED|ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ ಬಲ್ಬ್ ಮತ್ತು LED ಹೋಲಿಕೆ
+Learn how cells combine to form a battery|ಕೋಶಗಳು ಬ್ಯಾಟರಿ ರೂಪಿಸಲು ಹೇಗೆ ಜೋಡಾಗುತ್ತವೆ
+Understanding the structure and terminals|ರಚನೆ ಮತ್ತು ಟರ್ಮಿನಲ್‌ಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು
+Explore the components that make a torch work|ಟಾರ್ಚ್ ಕೆಲಸ ಮಾಡುವ ಭಾಗಗಳನ್ನು ಅನ್ವೇಷಿಸಿ
+Test materials to see if they conduct electricity|ಪದಾರ್ಥಗಳು ವಿದ್ಯುತ್ ಹರಿಸುತ್ತವೆಯೇ ಪರೀಕ್ಷಿಸಿ
+Classify appliances by how they use electricity|ಉಪಕರಣಗಳನ್ನು ವಿದ್ಯುತ್ ಬಳಕೆಯಿಂದ ವರ್ಗೀಕರಿಸಿ
+How farmers use chemistry to grow healthy crops|ರೈತರು ಆರೋಗ್ಯಕರ ಬೆಳೆ ಬೆಳೆಯಲು ರಸಾಯನಶಾಸ್ತ್ರವನ್ನು ಹೇಗೆ ಬಳಸುತ್ತಾರೆ
+Using neutralisation to relieve pain!|ನೋವು ಕಡಿಮೆ ಮಾಡಲು ತಟಸ್ಥೀಕರಣ ಬಳಸುವುದು!
+What happens when acid meets base?|ಆಮ್ಲ ಕ್ಷಾರವನ್ನು ಭೇಟಿ ಮಾಡಿದಾಗ ಏನಾಗುತ್ತದೆ?
+The golden spice that detects bases!|ಕ್ಷಾರಗಳನ್ನು ಗುರುತಿಸುವ ಸುವರ್ಣ ಮಸಾಲೆ!
+Learn what makes them different!|ಅವುಗಳನ್ನು ವಿಭಿನ್ನವಾಗಿ ಮಾಡುವುದನ್ನು ಕಲಿಯಿರಿ!
+The classic indicator for acids and bases!|ಆಮ್ಲ ಮತ್ತು ಕ್ಷಾರಗಳ ಶಾಸ್ತ್ರೀಯ ಸೂಚಕ!
+Protecting aquatic life through neutralisation!|ತಟಸ್ಥೀಕರಣದಿಂದ ಜಲಚರ ಜೀವನ ರಕ್ಷಣೆ!
+Discover how indicators reveal hidden messages!|ಸೂಚಕಗಳು ಗುಪ್ತ ಸಂದೇಶಗಳನ್ನು ಹೇಗೆ ಬಹಿರಂಗಗೊಳಿಸುತ್ತವೆ!
+
+# Concept/section/takeaway titles
+What is ಅಸಮ ಚಲನೆ?|ಅಸಮ ಚಲನೆ ಎಂದರೇನು?
+What is ಏಕರೂಪ ರೇಖೀಯ ಚಲನೆ?|ಏಕರೂಪ ರೇಖೀಯ ಚಲನೆ ಎಂದರೇನು?
+Understanding Speed|ವೇಗ ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು
+Speed Formula|ವೇಗ ಸೂತ್ರ
+SI Unit of Time|ಸಮಯದ SI ಘಟಕ
+Experiment Goal|ಪ್ರಯೋಗ ಉದ್ದೇಶ
+What to Look For|ಏನನ್ನು ನೋಡಬೇಕು
+What is a Simple Pendulum?|ಸರಳ ಲೋಲಕ ಎಂದರೇನು?
+Key Discovery|ಮುಖ್ಯ ಆವಿಷ್ಕಾರ
+How Sundials Work|ಸೂರ್ಯ ಘಡಿಯಾರಗಳು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತವೆ
+The Science|ವಿಜ್ಞಾನ
+Dashboard Instruments|ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಉಪಕರಣಗಳು
+Speedometer|ಸ್ಪೀಡೋಮೀಟರ್
+Odometer|ಓಡೋಮೀಟರ್
+Evolution of Accuracy|ನಿಖರತೆಯ ವಿಕಾಸ
+Real World Impact|ನೈಜ ಪ್ರಭಾವ
+The Cycle Never Stops!|ಚಕ್ರ ಎಂದಿಗೂ ನಿಲ್ಲುವುದಿಲ್ಲ!
+Remember|ನೆನಪಿಡಿ
+Key Difference|ಮುಖ್ಯ ವ್ಯತ್ಯಾಸ
+What This Shows|ಇದು ಏನನ್ನು ತೋರಿಸುತ್ತದೆ
+Rainwater Harvesting|ವರ್ಷಾಧಾರ ಸಂಗ್ರಹಣೆ
+What Can We Do?|ನಾವು ಏನು ಮಾಡಬಹುದು?
+Daily Goals|ದೈನಂದಿನ ಗುರಿಗಳು
+Healthy Eating Tips|ಆರೋಗ್ಯಕರ ಆಹಾರ ಸಲಹೆಗಳು
+Important Points|ಮುಖ್ಯ ಅಂಶಗಳು
+Fun Facts|ರೋಚಕ ತಥ್ಯಗಳು
+Ways to Say No|ಒಪ್ಪಿಗೆ ನೀಡಬೇಡಿ ಹೇಳುವ ವಿಧಾನಗಳು
+Key Understanding|ಮುಖ್ಯ ತಿಳುವಳಿಕೆ
+Key Points|ಮುಖ್ಯ ಅಂಶಗಳು
+Key Question|ಮುಖ್ಯ ಪ್ರಶ್ನೆ
+Scientific Conclusion|ವೈಜ್ಞಾನಿಕ ತೀರ್ಮಾನ
+Quick Guide|ತ್ವರಿತ ಮಾರ್ಗದರ್ಶಿ
+Signs of Chemical Change|ರಾಸಾಯನಿಕ ಬದಲಾವಣೆಯ ಚಿಹ್ನೆಗಳು
+Earth's Slow Sculptors|ಭೂಮಿಯ ನಿಧಾನ ಶಿಲ್ಪಿಗಳು
+Remember!|ನೆನಪಿಡಿ!
+Sustainability Tip|ಸುಸ್ಥಿರತಾ ಸಲಹೆ
+What You'll Learn|ನೀವು ಕಲಿಯುವುದು
+ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ to Learn|ಕಲಿಯಲು ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ
+Simulate ant bite and treatment|ಇರುವೆ ಕಚ್ಚುವಿಕೆ ಮತ್ತು ಚಿಕಿತ್ಸೆ ಅನುಕರಿಸಿ
+Mix acid and base to observe the reaction|ಪ್ರತಿಕ್ರಿಯೆ ಗಮನಿಸಲು ಆಮ್ಲ ಮತ್ತು ಕ್ಷಾರ ಮಿಶ್ರಣ ಮಾಡಿ
+the ratio of acid to base:|ಆಮ್ಲ-ಕ್ಷಾರ ಅನುಪಾತ:
+Test solutions with turmeric paper|ಹಲ್ದಿ ಕಾಗದದಿಂದ ದ್ರಾವಣಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ
+Tap a substance to learn about its properties!|ಅದರ ಗುಣಗಳನ್ನು ತಿಳಿಯಲು ಒಂದು ಪದಾರ್ಥವನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ!
+Turmeric paper <strong>cannot distinguish between acids and neutral substances</strong> - it stays yellow in both cases. It only changes color (turns red) when it contacts a BASE.|ಹಲ್ದಿ ಕಾಗದವು <strong>ಆಮ್ಲಗಳು ಮತ್ತು ತಟಸ್ಥ ಪದಾರ್ಥಗಳ ನಡುವೆ ವ್ಯತ್ಯಾಸ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ</strong> - ಎರಡೂ ಸಂದರ್ಭಗಳಲ್ಲಿ ಹಳದಿ ಉಳಿಯುತ್ತದೆ. BASE ಯನ್ನು ಸ್ಪರ್ಶಿಸಿದಾಗ ಮಾತ್ರ ಬಣ್ಣ ಬದಲಾಗುತ್ತದೆ (ಕೆಂಪಾಗುತ್ತದೆ).
+
+# Buttons and controls
+Start|ಪ್ರಾರಂಭ
+Pause|ಇಡಿ
+Start Race!|ಓಟ ಪ್ರಾರಂಭಿಸಿ!
+Calculate|ಲೆಕ್ಕ ಹಾಕಿ
+Start Experiment|ಪ್ರಯೋಗ ಪ್ರಾರಂಭಿಸಿ
+Stop|ನಿಲ್ಲಿಸಿ
+ಮರುಹೊಂದಿಸಿ Trip Meter|ಟ್ರಿಪ್ ಮೀಟರ್ ಮರುಹೊಂದಿಸಿ
+Animate|ಅನಿಮೇಟ್
+Previous|ಹಿಂದಿನ
+Next →|ಮುಂದೆ →
+← Previous|← ಹಿಂದಿನ
+Race Mode|ಓಟ ಮೋಡ್
+Compare Mode|ಹೋಲಿಕೆ ಮೋಡ್
+Boys|ಹುಡುಗರು
+Girls|ಹುಡುಗಿಯರು
+Before Puberty|ಯೌವನದ ಮೊದಲು
+During Puberty|ಯೌವನದ ಸಮಯದಲ್ಲಿ
+After Puberty|ಯೌವನದ ನಂತರ
+Common Changes|ಸಾಮಾನ್ಯ ಬದಲಾವಣೆಗಳು
+In Boys|ಹುಡುಗರಲ್ಲಿ
+In Girls|ಹುಡುಗಿಯರಲ್ಲಿ
+
+# Ch5/Ch6 concept text and labels (full sentences – avoid breaking CSS)
+In a <strong>physical change</strong>, the substance changes its <strong>appearance</strong> (shape, size, or state) but remains the <strong>same substance</strong>. No new material is created.|ಭೌತಿಕ ಬದಲಾವಣೆಯಲ್ಲಿ, ಪದಾರ್ಥದ <strong>ಗೋಚರತೆ</strong> (ಆಕಾರ, ಗಾತ್ರ ಅಥವಾ ಸ್ಥಿತಿ) ಬದಲಾಗುತ್ತದೆ ಆದರೆ <strong>ಅದೇ ಪದಾರ್ಥ</strong> ಉಳಿಯುತ್ತದೆ. ಹೊಸ ಪದಾರ್ಥ ಉಂಟಾಗುವುದಿಲ್ಲ.
+In a <strong>chemical change</strong>, one or more <strong>new substances</strong> are formed. The original materials are transformed into something completely different through a chemical reaction.|<strong>ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ</strong>ಯಲ್ಲಿ ಒಂದು ಅಥವಾ ಹೆಚ್ಚು <strong>ಹೊಸ ಪದಾರ್ಥಗಳು</strong> ರೂಪುಗೊಳ್ಳುತ್ತವೆ. ಮೂಲ ಪದಾರ್ಥಗಳು ರಾಸಾಯನಿಕ ಪ್ರತಿಕ್ರಿಯೆಯಿಂದ ಸಂಪೂರ್ಣವಾಗಿ ಬೇರೆಯದಾಗಿ ಪರಿವರ್ತನೆಯಾಗುತ್ತವೆ.
+Select an example below|ಕೆಳಗೆ ಒಂದು ಉದಾಹರಣೆ ಆಯ್ಕೆಮಾಡಿ
+Select an example first|ಮೊದಲು ಒಂದು ಉದಾಹರಣೆ ಆಯ್ಕೆಮಾಡಿ
+Select an example above to see a physical change in action!<br><br>In physical changes:<br>|ಭೌತಿಕ ಬದಲಾವಣೆ ಕ್ರಿಯೆಯಲ್ಲಿ ನೋಡಲು ಮೇಲೆ ಒಂದು ಉದಾಹರಣೆ ಆಯ್ಕೆಮಾಡಿ!<br><br>ಭೌತಿಕ ಬದಲಾವಣೆಗಳಲ್ಲಿ:<br>
+Paper Sheet|ಕಾಗದ ಹಾಳೆ
+Paper Boat|ಕಾಗದ ದೋಣಿ
+Chalk Stick|ಸೀಮೆಸುಣ್ಣ ಕಡ್ಡಿ
+Chalk Powder|ಸೀಮೆಸುಣ್ಣ ಪುಡಿ
+Paper folded is still paper. Crushed chalk is still chalk. Melted ice is still H₂O (water). The material doesn't change - only its appearance does!|ಮಡಚಿದ ಕಾಗದ ಇನ್ನೂ ಕಾಗದ. ಚೂರ್ಣವಾದ ಸೀಮೆಸುಣ್ಣ ಇನ್ನೂ ಸೀಮೆಸುಣ್ಣ. ಕರಗಿದ ಬರ್ಫ ಇನ್ನೂ H₂O (ನೀರು). ಪದಾರ್ಥ ಬದಲಾಗುವುದಿಲ್ಲ - ಅದರ ಗೋಚರತೆ ಮಾತ್ರ ಬದಲಾಗುತ್ತದೆ!
+These physical changes are called <strong>secondary sexual characteristics</strong>. They help distinguish males from females but are not directly involved in reproduction.|ಈ ಭೌತಿಕ ಬದಲಾವಣೆಗಳನ್ನು <strong>ದ್ವಿತೀಯಕ ಲೈಂಗಿಕ ಲಕ್ಷಣಗಳು</strong> ಎಂದು ಕರೆಯಲಾಗುತ್ತದೆ. ಅವು ಪುರುಷರು ಮತ್ತು ಸ್ತ್ರೀಯನ್ನು ವ್ಯತ್ಯಾಸ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತವೆ ಆದರೆ ಪ್ರಜನನದಲ್ಲಿ ನೇರವಾಗಿ ಭಾಗವಹಿಸುವುದಿಲ್ಲ.
+Water exists in three states: <strong>solid (ice)</strong>, <strong>liquid (water)</strong>, and <strong>gas (steam)</strong>. Changing states is a <strong>physical change</strong> - the substance (H₂O) remains the same!|ನೀರು ಮೂರು ಸ್ಥಿತಿಗಳಲ್ಲಿ ಇರುತ್ತದೆ: <strong>ಘನ (ಬರ್ಫ)</strong>, <strong>ದ್ರವ (ನೀರು)</strong>, ಮತ್ತು <strong>ವಾಯು (ಆವಿ)</strong>. ಸ್ಥಿತಿ ಬದಲಾವಣೆ <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong> - ಪದಾರ್ಥ (H₂O) ಅದೇ ಉಳಿಯುತ್ತದೆ!
+State changes are <strong>physical changes</strong> and are <strong>reversible</strong>. Heat ice → water → steam, then cool steam → water → ice!|ಸ್ಥಿತಿ ಬದಲಾವಣೆಗಳು <strong>ಭೌತಿಕ ಬದಲಾವಣೆಗಳು</strong> ಮತ್ತು <strong>ಹಿಮ್ಮುಖವಾಗುವಂಥವು</strong>. ಬರ್ಫ → ನೀರು → ಆವಿ ಬಿಸಿ ಮಾಡಿ, ನಂತರ ಆವಿ → ನೀರು → ಬರ್ಫ ತಂಪು ಮಾಡಿ!
+You cannot un-chop vegetables! Even though it's a physical change, it's irreversible.|ನೀವು ತರಕಾರಿಗಳನ್ನು ಕತ್ತರಿಸಿದ್ದನ್ನು ರದ್ದು ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ! ಭೌತಿಕ ಬದಲಾವಣೆಯಾಗಿದ್ದರೂ ಅಹಿಮ್ಮುಖ.
+Which type has a dull appearance?|ಯಾವ ಪ್ರಕಾರಕ್ಕೆ ಮಂಕಾದ ಗೋಚರತೆ ಇದೆ?
+Folding paper is a <strong>physical change</strong>. The paper molecules stay the same - only the arrangement changes. This is also a <strong>reversible</strong> change!|ಕಾಗದ ಮಡಚುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ಕಾಗದ ಅಣುಗಳು ಅದೇ ಉಳಿಯುತ್ತವೆ - ವ್ಯವಸ್ಥೆ ಮಾತ್ರ ಬದಲಾಗುತ್ತದೆ. ಇದು <strong>ಹಿಮ್ಮುಖ</strong> ಬದಲಾವಣೆ!
+Crushing chalk is a <strong>physical change</strong>. The pieces are smaller, but each tiny particle is still chalk. This is an <strong>irreversible</strong> physical change - you can't easily put it back together!|ಸೀಮೆಸುಣ್ಣ ಚೂರ್ಣ ಮಾಡುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ತುಂಡುಗಳು ಚಿಕ್ಕದಾಗಿವೆ, ಆದರೆ ಪ್ರತಿ ಕಣವೂ ಇನ್ನೂ ಸೀಮೆಸುಣ್ಣ. ಇದು <strong>ಅಹಿಮ್ಮುಖ</strong> ಭೌತಿಕ ಬದಲಾವಣೆ!
+Melting ice is a <strong>physical change</strong> - a change of state. Ice, water, and steam are all H₂O! This is <strong>reversible</strong> - freeze the water and you get ice again.|ಬರ್ಫ ಕರಗುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong> - ಸ್ಥಿತಿ ಬದಲಾವಣೆ. ಬರ್ಫ, ನೀರು ಮತ್ತು ಆವಿ ಎಲ್ಲವೂ H₂O! ಇದು <strong>ಹಿಮ್ಮುಖ</strong> - ನೀರನ್ನು ಘನೀಕರಿಸಿ ಮತ್ತೆ ಬರ್ಫ ಪಡೆಯಬಹುದು.
+Inflating a balloon is a <strong>physical change</strong>. The rubber stretches but doesn't become a new substance. This is <strong>reversible</strong> - let the air out and it deflates!|ಬಲೂನ್ ಊದುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ರಬ್ಬರ್ ಚಾಚುತ್ತದೆ ಆದರೆ ಹೊಸ ಪದಾರ್ಥವಾಗುವುದಿಲ್ಲ. ಇದು <strong>ಹಿಮ್ಮುಖ</strong> - ಗಾಳಿ ಬಿಟ್ಟರೆ ಉಬ್ಬಿಕೊಳ್ಳುವುದಿಳಿದುಹೋಗುತ್ತದೆ!
+Stretching a rubber band is a <strong>physical change</strong>. The rubber molecules stretch but don't change chemically. It's <strong>reversible</strong> - release it and it bounces back!|ರಬ್ಬರ್ ಬ್ಯಾಂಡ್ ಚಾಚುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ರಬ್ಬರ್ ಅಣುಗಳು ಚಾಚುತ್ತವೆ ಆದರೆ ರಾಸಾಯನಿಕವಾಗಿ ಬದಲಾಗುವುದಿಲ್ಲ. <strong>ಹಿಮ್ಮುಖ</strong> - ಬಿಟ್ಟರೆ ಹಿಂದೆ ಬರುತ್ತದೆ!
+Compressing a spring is a <strong>physical change</strong>. The metal coils get closer together but no new substance forms. It's <strong>reversible</strong> - release and it springs back!|ಸ್ಪ್ರಿಂಗ್ ಒತ್ತುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ಲೋಹ ಸುರುಳಿಗಳು ಒಟ್ಟಿಗೆ ಬರುತ್ತವೆ ಆದರೆ ಹೊಸ ಪದಾರ್ಥ ರೂಪುಗೊಳ್ಳುವುದಿಲ್ಲ. <strong>ಹಿಮ್ಮುಖ</strong> - ಬಿಟ್ಟರೆ ಹಿಂದೆ ಬರುತ್ತದೆ!
+Ice Cube|ಬರ್ಫ ಘನ
+Water (melted ice)|ನೀರು (ಕರಗಿದ ಬರ್ಫ)
+Deflated Balloon|ಉಬ್ಬಿಕೊಳ್ಳದ ಬಲೂನ್
+Inflated Balloon|ಊದಿದ ಬಲೂನ್
+Rubber Band|ರಬ್ಬರ್ ಬ್ಯಾಂಡ್
+Stretched Rubber Band|ಚಾಚಿದ ರಬ್ಬರ್ ಬ್ಯಾಂಡ್
+Spring (normal)|ಸ್ಪ್ರಿಂಗ್ (ಸಾಮಾನ್ಯ)
+Spring (compressed)|ಸ್ಪ್ರಿಂಗ್ (ಒತ್ತಿದ)
+Select an example above to see a physical change in action!<br><br>|ಭೌತಿಕ ಬದಲಾವಣೆ ಕ್ರಿಯೆಯಲ್ಲಿ ನೋಡಲು ಮೇಲೆ ಒಂದು ಉದಾಹರಣೆ ಆಯ್ಕೆಮಾಡಿ!<br><br>
+Crushing chalk is a <strong>physical change</strong>. The pieces are smaller, but each tiny particle is still chalk. This is an <strong>irreversible</strong> physical change - you can't easily put it back together!|ಸೀಮೆಸುಣ್ಣ ಚೂರ್ಣ ಮಾಡುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ತುಂಡುಗಳು ಚಿಕ್ಕದಾಗಿವೆ, ಆದರೆ ಪ್ರತಿ ಕಣವೂ ಇನ್ನೂ ಸೀಮೆಸುಣ್ಣ. ಇದು <strong>ಅಹಿಮ್ಮುಖ</strong> ಭೌತಿಕ ಬದಲಾವಣೆ!
+Crushing chalk is a <strong>physical change</strong>. The pieces are smaller, but each tiny particle is still chalk. This is an <strong>irreversible</strong> physical change - you can\'t easily put it back together!|ಸೀಮೆಸುಣ್ಣ ಚೂರ್ಣ ಮಾಡುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ತುಂಡುಗಳು ಚಿಕ್ಕದಾಗಿವೆ, ಆದರೆ ಪ್ರತಿ ಕಣವೂ ಇನ್ನೂ ಸೀಮೆಸುಣ್ಣ. ಇದು <strong>ಅಹಿಮ್ಮುಖ</strong> ಭೌತಿಕ ಬದಲಾವಣೆ!
+Inflating a balloon is a <strong>physical change</strong>. The rubber stretches but doesn\'t become a new substance. This is <strong>reversible</strong> - let the air out and it deflates!|ಬಲೂನ್ ಊದುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ರಬ್ಬರ್ ಚಾಚುತ್ತದೆ ಆದರೆ ಹೊಸ ಪದಾರ್ಥವಾಗುವುದಿಲ್ಲ. ಇದು <strong>ಹಿಮ್ಮುಖ</strong> - ಗಾಳಿ ಬಿಟ್ಟರೆ ಉಬ್ಬಿಕೊಳ್ಳುವುದಿಳಿದುಹೋಗುತ್ತದೆ!
+Stretching a rubber band is a <strong>physical change</strong>. The rubber molecules stretch but don\'t change chemically. It\'s <strong>reversible</strong> - release it and it bounces back!|ರಬ್ಬರ್ ಬ್ಯಾಂಡ್ ಚಾಚುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ರಬ್ಬರ್ ಅಣುಗಳು ಚಾಚುತ್ತವೆ ಆದರೆ ರಾಸಾಯನಿಕವಾಗಿ ಬದಲಾಗುವುದಿಲ್ಲ. <strong>ಹಿಮ್ಮುಖ</strong> - ಬಿಟ್ಟರೆ ಹಿಂದೆ ಬರುತ್ತದೆ!
+Compressing a spring is a <strong>physical change</strong>. The metal coils get closer together but no new substance forms. It\'s <strong>reversible</strong> - release and it springs back!|ಸ್ಪ್ರಿಂಗ್ ಒತ್ತುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ಲೋಹ ಸುರುಳಿಗಳು ಒಟ್ಟಿಗೆ ಬರುತ್ತವೆ ಆದರೆ ಹೊಸ ಪದಾರ್ಥ ರೂಪುಗೊಳ್ಳುವುದಿಲ್ಲ. <strong>ಹಿಮ್ಮುಖ</strong> - ಬಿಟ್ಟರೆ ಹಿಂದೆ ಬರುತ್ತದೆ!
+In physical changes:<br>|ಭೌತಿಕ ಬದಲಾವಣೆಗಳಲ್ಲಿ:<br>
+• Shape, size, or state may change<br>|• ಆಕಾರ, ಗಾತ್ರ ಅಥವಾ ಸ್ಥಿತಿ ಬದಲಾಗಬಹುದು<br>
+• The <strong>substance remains the same</strong><br>|• <strong>ಪದಾರ್ಥ ಅದೇ ಉಳಿಯುತ್ತದೆ</strong><br>
+• No new material is formed|• ಹೊಸ ಪದಾರ್ಥ ರೂಪುಗೊಳ್ಳುವುದಿಲ್ಲ
+Physical Change = Same Substance, Different Form|ಭೌತಿಕ ಬದಲಾವಣೆ = ಅದೇ ಪದಾರ್ಥ, ವಿಭಿನ್ನ ರೂಪ
+Understanding ಭೌತಿಕ ಬದಲಾವಣೆಗಳು|ಭೌತಿಕ ಬದಲಾವಣೆಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು
+Inflating a balloon is a <strong>physical change</strong>. The rubber stretches but doesn't become a new substance. This is <strong>reversible</strong> - let the air out and it deflates!|ಬಲೂನ್ ಊದುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ರಬ್ಬರ್ ಚಾಚುತ್ತದೆ ಆದರೆ ಹೊಸ ಪದಾರ್ಥವಾಗುವುದಿಲ್ಲ. ಇದು <strong>ಹಿಮ್ಮುಖ</strong> - ಗಾಳಿ ಬಿಟ್ಟರೆ ಉಬ್ಬಿಕೊಳ್ಳುವುದಿಳಿದುಹೋಗುತ್ತದೆ!
+Stretching a rubber band is a <strong>physical change</strong>. The rubber molecules stretch but don't change chemically. It's <strong>reversible</strong> - release it and it bounces back!|ರಬ್ಬರ್ ಬ್ಯಾಂಡ್ ಚಾಚುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ರಬ್ಬರ್ ಅಣುಗಳು ಚಾಚುತ್ತವೆ ಆದರೆ ರಾಸಾಯನಿಕವಾಗಿ ಬದಲಾಗುವುದಿಲ್ಲ. <strong>ಹಿಮ್ಮುಖ</strong> - ಬಿಟ್ಟರೆ ಹಿಂದೆ ಬರುತ್ತದೆ!
+Compressing a spring is a <strong>physical change</strong>. The metal coils get closer together but no new substance forms. It's <strong>reversible</strong> - release and it springs back!|ಸ್ಪ್ರಿಂಗ್ ಒತ್ತುವುದು <strong>ಭೌತಿಕ ಬದಲಾವಣೆ</strong>. ಲೋಹ ಸುರುಳಿಗಳು ಒಟ್ಟಿಗೆ ಬರುತ್ತವೆ ಆದರೆ ಹೊಸ ಪದಾರ್ಥ ರೂಪುಗೊಳ್ಳುವುದಿಲ್ಲ. <strong>ಹಿಮ್ಮುಖ</strong> - ಬಿಟ್ಟರೆ ಹಿಂದೆ ಬರುತ್ತದೆ!
+
+# Batch 68 files: Ch2
+Spray the indicator to reveal the message|ಸೂಚಕ ಸಿಂಪಡಿಸಿ ಸಂದೇಶ ಬಹಿರಂಗಗೊಳಿಸಿ
+What's happening here?|ಇಲ್ಲಿ ಏನು ನಡೆಯುತ್ತಿದೆ?
+The message was written using a|ಸಂದೇಶ ಬರೆಯಲು ಬಳಸಲಾಗಿದೆ
+basic solution|ಕ್ಷಾರ ದ್ರಾವಣ
+invisible when dry|ಒಣಗಿದಾಗ ಅದೃಶ್ಯ
+that changes color when it contacts the base, revealing the hidden text!|ಕ್ಷಾರ ಸ್ಪರ್ಶಿಸಿದಾಗ ಬಣ್ಣ ಬದಲಾಗಿ ಗುಪ್ತ ಪಠ್ಯ ಬಹಿರಂಗವಾಗುತ್ತದೆ!
+Ashwin|ಆಶ್ವಿನ್
+Keerthi|ಕೀರ್ತಿ
+Secret messages:|ಗುಪ್ತ ಸಂದೇಶಗಳು:
+Spies used|ಚಾರರು ಬಳಸುತ್ತಿದ್ದರು
+invisible ink|ಅದೃಶ್ಯ ಶಾಯಿ
+base indicators|ಕ್ಷಾರ ಸೂಚಕಗಳು
+Reacting...|ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತಿದೆ...
+Revealing...|ಬಹಿರಂಗಗೊಳಿಸುತ್ತಿದೆ...
+Revealed!|ಬಹಿರಂಗವಾಯಿತು!
+Visible!|ದೃಶ್ಯಮಾನ!
+Message Revealed!|ಸಂದೇಶ ಬಹಿರಂಗ!
+Simulate waste release and treatment|ತ್ಯಾಜ್ಯ ಬಿಡುಗಡೆ ಮತ್ತು ಚಿಕಿತ್ಸೆ ಅನುಕರಿಸಿ
+Waste|ತ್ಯಾಜ್ಯ
+Safe Water|ಸುರಕ್ಷಿತ ನೀರು
+Water pH Level|ನೀರು pH ಮಟ್ಟ
+Why treatment matters:|ಚಿಕಿತ್ಸೆ ಏಕೆ ಮುಖ್ಯ:
+Factory waste is often|ಕಾರ್ಖಾನೆ ತ್ಯಾಜ್ಯ ಸಾಮಾನ್ಯವಾಗಿ
+DISASTER!|ಅನಾಹುತ!
+Polluted!|ಮಾಲಿನ್ಯ!
+Neutralised|ತಟಸ್ಥೀಕರಣವಾಯಿತು
+Success|ಯಶಸ್ಸು
+SUCCESS!|ಯಶಸ್ಸು!
+Waiting...|ಕಾಯುತ್ತಿದೆ...
+Test different solutions with litmus paper|ಲಿಟ್ಮಸ್ ಕಾಗದದಿಂದ ವಿವಿಧ ದ್ರಾವಣಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ
+neither changes|ಎರಡೂ ಬದಲಾಗುವುದಿಲ್ಲ
+Where does litmus come from?|ಲಿಟ್ಮಸ್ ಎಲ್ಲಿಂದ ಬರುತ್ತದೆ?
+Litmus is a natural dye extracted from|ಲಿಟ್ಮಸ್ ನೈಸರ್ಗಿಕ ಬಣ್ಣ
+lichens|ಲೈಕನ್
+Sour Taste|ಹುಳಿ ರುಚಿ
+Common Examples|ಸಾಮಾನ್ಯ ಉದಾಹರಣೆಗಳು
+Corrosive Nature|ಅರೆತ ಸ್ವಭಾವ
+Turmeric can identify|ಹಲ್ದಿ ಗುರುತಿಸಬಲ್ಲದು
+basic substances|ಕ್ಷಾರ ಪದಾರ್ಥಗಳು
+turns red/brown), but it|ಕೆಂಪು/ಕಂದು ಆಗುತ್ತದೆ), ಆದರೆ
+cannot differentiate|ವ್ಯತ್ಯಾಸ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ
+Onions contain sulfur compounds that give them a|ಈರುಳ್ಳಿಯಲ್ಲಿ ಗಂಧಕ ಸಂಯುಕ್ತಗಳಿವೆ
+pungent smell|ಕಟುವಾದ ವಾಸನೆ
+When mixed with a|ಅದರೊಂದಿಗೆ ಮಿಶ್ರಣ ಮಾಡಿದಾಗ
+(formed)|(ರೂಪುಗೊಂಡಿದೆ)
+Ant Bites|ಇರುವೆ ಕಚ್ಚುವಿಕೆ
+Relief!|ಉಪಶಮನ!
+When an ant bites, it injects|ಇರುವೆ ಕಚ್ಚಿದಾಗ ಅದು ಚುಚ್ಚುತ್ತದೆ
+Normal (~7)|ಸಾಮಾನ್ಯ (~7)
+The Problem: Basic Soil|ಸಮಸ್ಯೆ: ಕ್ಷಾರ ಮಣ್ಣು
+
+# Ch3 electricity, torch, cell, battery, lamp, circuit, switch, symbols, conductors
+main purpose|ಮುಖ್ಯ ಉದ್ದೇಶ
+First select a category, then tap appliances that belong to it.|ಮೊದಲು ವರ್ಗ ಆಯ್ಕೆಮಾಡಿ, ನಂತರ ಅದಕ್ಕೆ ಸೇರಿದ ಉಪಕರಣಗಳನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ.
+Conductors|ವಾಹಕಗಳು
+allow electric current to flow through them (metals like|ವಿದ್ಯುತ್ ಹರಿಯಲು ಅನುಮತಿಸುತ್ತವೆ (ಲೋಹಗಳು
+Insulators|ಅವಾಹಕಗಳು
+CONDUCTOR - Bulb glows!|ವಾಹಕ - ಬಲ್ಬ್ ಬೆಳಗುತ್ತದೆ!
+INSULATOR - No current!|ಅವಾಹಕ - ವಿದ್ಯುತ್ ಇಲ್ಲ!
+A torch has three main components:|ಟಾರ್ಚ್‌ಗೆ ಮೂರು ಮುಖ್ಯ ಭಾಗಗಳಿವೆ:
+(provide energy), a|(ಶಕ್ತಿ ನೀಡುತ್ತದೆ), ಒಂದು
+(produces light), and a|(ಬೆಳಕು ಉತ್ಪಾದಿಸುತ್ತದೆ), ಮತ್ತು ಒಂದು
+Components visible - tap to learn more|ಭಾಗಗಳು ಗೋಚರ - ಇನ್ನಷ್ಟು ತಿಳಿಯಲು ಟ್ಯಾಪ್ ಮಾಡಿ
+Switch ON - Circuit complete - Lamp glows!|ಸ್ವಿಚ್ ಆನ್ - ಸರ್ಕ್ಯೂಟ್ ಪೂರ್ಣ - ದೀಪ ಬೆಳಗುತ್ತದೆ!
+Switch OFF - Circuit broken - No light|ಸ್ವಿಚ್ ಆಫ್ - ಸರ್ಕ್ಯೂಟ್ ಮುರಿದಿದೆ - ಬೆಳಕು ಇಲ್ಲ
+An electric cell is a|ವಿದ್ಯುತ್ ಕೋಶ ಒಂದು
+portable source of electrical energy|ವಿದ್ಯುತ್ ಶಕ್ತಿಯ ಜಡೆ ಮೂಲ
+It has two terminals:|ಅದಕ್ಕೆ ಎರಡು ಟರ್ಮಿನಲ್‌ಗಳಿವೆ:
+Positive Terminal (+)|ಧನ ಟರ್ಮಿನಲ್ (+)
+Negative Terminal (-)|ಋಣ ಟರ್ಮಿನಲ್ (-)
+Correct! The positive terminal has a metal cap (bump)|ಸರಿ! ಧನ ಟರ್ಮಿನಲ್‌ಗೆ ಲೋಹ ಟೋಪಿ (ಬಂಪ್) ಇದೆ
+battery|ಬ್ಯಾಟರಿ
+is formed when two or more cells are connected together. The|ಎರಡು ಅಥವಾ ಹೆಚ್ಚು ಕೋಶಗಳನ್ನು ಜೋಡಿಸಿದಾಗ ರೂಪುಗೊಳ್ಳುತ್ತದೆ.
+positive (+)|ಧನ (+)
+There are two main types of lamps:|ದೀಪಗಳ ಎರಡು ಮುಖ್ಯ ಪ್ರಕಾರಗಳಿವೆ:
+Incandescent|ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್
+(has a filament that glows when heated) and|(ಬಿಸಿ ಮಾಡಿದಾಗ ಜ್ವಲಿಸುವ ಫಿಲಾಮೆಂಟ್ ಇದೆ) ಮತ್ತು
+Incandescent Bulb|ಇನ್ಕ್ಯಾಂಡಿಸೆಂಟ್ ಬಲ್ಬ್
+ON - Filament glowing!|ಆನ್ - ಫಿಲಾಮೆಂಟ್ ಜ್ವಲಿಸುತ್ತಿದೆ!
+An electrical circuit is a|ವಿದ್ಯುತ್ ಸರ್ಕ್ಯೂಟ್ ಒಂದು
+complete closed path|ಸಂಪೂರ್ಣ ಮುಚ್ಚಿದ ಮಾರ್ಗ
+through which electric current can flow. It needs: a|ಇದರ ಮೂಲಕ ವಿದ್ಯುತ್ ಹರಿಯಬಹುದು. ಅಗತ್ಯ: ಒಂದು
+All components placed! Test the circuit|ಎಲ್ಲಾ ಭಾಗಗಳು ಇರಿಸಲಾಗಿವೆ! ಸರ್ಕ್ಯೂಟ್ ಪರೀಕ್ಷಿಸಿ
+Circuit ON - Current flowing - Bulb glows!|ಸರ್ಕ್ಯೂಟ್ ಆನ್ - ವಿದ್ಯುತ್ ಹರಿಯುತ್ತಿದೆ - ಬಲ್ಬ್ ಬೆಳಗುತ್ತದೆ!
+Circuit OFF - Switch open - No current|ಸರ್ಕ್ಯೂಟ್ ಆಫ್ - ಸ್ವಿಚ್ ತೆರೆದಿದೆ - ವಿದ್ಯುತ್ ಇಲ್ಲ
+A switch is a device that|ಸ್ವಿಚ್ ಒಂದು ಸಾಧನ
+completes or breaks|ಪೂರ್ಣಗೊಳಿಸುತ್ತದೆ ಅಥವಾ ಮುರಿಯುತ್ತದೆ
+an electrical circuit. In|ವಿದ್ಯುತ್ ಸರ್ಕ್ಯೂಟ್.
+Electrical components are represented by|ವಿದ್ಯುತ್ ಭಾಗಗಳನ್ನು ಪ್ರತಿನಿಧಿಸಲಾಗಿದೆ
+standard symbols|ಸಾಮಾನ್ಯ ಚಿಹ್ನೆಗಳಿಂದ
+in circuit diagrams. These symbols are used worldwide, ma|ಸರ್ಕ್ಯೂಟ್ ರೇಖಾಚಿತ್ರಗಳಲ್ಲಿ. ಈ ಚಿಹ್ನೆಗಳನ್ನು ಜಾಗತಿಕವಾಗಿ ಬಳಸಲಾಗುತ್ತದೆ
+Correct! When the switch closes, the circuit is complet|ಸರಿ! ಸ್ವಿಚ್ ಮುಚ್ಚಿದಾಗ ಸರ್ಕ್ಯೂಟ್ ಪೂರ್ಣವಾಗುತ್ತದೆ
+Not quite. When the switch closes, it completes the cir|ಸಂಪೂರ್ಣವಲ್ಲ. ಸ್ವಿಚ್ ಮುಚ್ಚಿದಾಗ ಅದು ಸರ್ಕ್ಯೂಟ್ ಪೂರ್ಣಗೊಳಿಸುತ್ತದೆ
+Cell Symbol|ಕೋಶ ಚಿಹ್ನೆ
+
+# Ch4 malleability, ductility, sonority, heat conduction, conductivity, rusting, oxides, applications
+is the property of materials that allows them to be|ಪದಾರ್ಥಗಳ ಗುಣ
+beaten or hammered into thin sheets|ಹಾಳೆಗಳಾಗಿ ಬಡಿಯಲು ಅನುಮತಿಸುತ್ತದೆ
+without breaking. Metals are malleable; non-metals are br|ಮುರಿಯದೆ. ಲೋಹಗಳು ನಮ್ಯ; ಅಲೋಹಗಳು
+MALLEABLE - Flattened!|ನಮ್ಯ - ಚಪ್ಪಡಿಯಾಯಿತು!
+Metal flattened into a sheet!|ಲೋಹ ಹಾಳೆಯಾಗಿ ಚಪ್ಪಡಿಯಾಯಿತು!
+BRITTLE - Shattered!|ಭಂಗುರ - ಚೂರ್ಣವಾಯಿತು!
+drawn into thin wires|ತೆಳು ತಂತಿಗಳಾಗಿ ಎಳೆಯಬಹುದು
+without breaking. Metals are ductile; non-metals are not.|ಮುರಿಯದೆ. ಲೋಹಗಳು ಸೆಳೆತವಾಗಿರುತ್ತವೆ; ಅಲೋಹಗಳು ಅಲ್ಲ.
+DUCTILE - Wire formed!|ಸೆಳೆತ - ತಂತಿ ರೂಪುಗೊಂಡಿದೆ!
+Metal stretched into a thin wire!|ಲೋಹ ತೆಳು ತಂತಿಯಾಗಿ ಎಳೆಯಲಾಗಿದೆ!
+NOT DUCTILE - Broke!|ಸೆಳೆತವಲ್ಲ - ಮುರಿದಿದೆ!
+is the property of metals to produce a|ಲೋಹಗಳ ಗುಣ
+ringing sound|ಘಂಟಾ ಧ್ವನಿ
+when struck. Metals are sonorous; non-metals produce a du|ಅಪ್ಪಳಿಸಿದಾಗ. ಲೋಹಗಳು ಧ್ವನಿಮುದ್ರಣ; ಅಲೋಹಗಳು ಮಂಕಾದ ಶಬ್ದ
+Metal produces a ringing sound!|ಲೋಹ ಘಂಟಾ ಧ್ವನಿ ಉತ್ಪಾದಿಸುತ್ತದೆ!
+Non-metal produces a dull thud!|ಅಲೋಹ ಮಂಕಾದ ಶಬ್ದ ಉತ್ಪಾದಿಸುತ್ತದೆ!
+Conduction of heat|ಉಷ್ಣ ವಾಹಕತೆ
+is the transfer of heat through a material.|ಪದಾರ್ಥದ ಮೂಲಕ ಉಷ್ಣ ವರ್ಗಾವಣೆ.
+Metals|ಲೋಹಗಳು
+Heating in progress...|ಉಷ್ಣ ಹಾಕುತ್ತಿದೆ...
+Water: 80°C - Observing heat transfer...|ನೀರು: 80°C - ಉಷ್ಣ ವರ್ಗಾವಣೆ ಗಮನಿಸುತ್ತಿದೆ...
+Experiment Complete|ಪ್ರಯೋಗ ಪೂರ್ಣ
+Electrical conductivity|ವಿದ್ಯುತ್ ವಾಹಕತೆ
+is the ability to allow electric current to flow.|ವಿದ್ಯುತ್ ಹರಿಯಲು ಅನುಮತಿಸುವ ಸಾಮರ್ಥ್ಯ.
+CONDUCTOR - Bulb glows!|ವಾಹಕ - ಬಲ್ಬ್ ಬೆಳಗುತ್ತದೆ!
+Current flows - bulb lights up!|ವಿದ್ಯುತ್ ಹರಿಯುತ್ತದೆ - ಬಲ್ಬ್ ಬೆಳಗುತ್ತದೆ!
+INSULATOR - No current!|ಅವಾಹಕ - ವಿದ್ಯುತ್ ಇಲ್ಲ!
+Rusting|ತುಕ್ಕು
+is a chemical reaction where iron reacts with|ಕಬ್ಬಿಣ ಪ್ರತಿಕ್ರಿಯಿಸುವ ರಾಸಾಯನಿಕ ಪ್ರತಿಕ್ರಿಯೆ
+oxygen and water (moisture)|ಆಮ್ಲಜನಕ ಮತ್ತು ನೀರು (ಆರ್ದ್ರತೆ)
+metals react with oxygen|ಲೋಹಗಳು ಆಮ್ಲಜನಕದೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತವೆ
+metal oxides|ಲೋಹ ಆಕ್ಸೈಡ್‌ಗಳು
+which are|ಅವು
+Bright light! Magnesium is burning...|ಪ್ರಕಾಶಮಾನ ಬೆಳಕು! ಮೆಗ್ನೀಶಿಯಂ ಉರಿಯುತ್ತಿದೆ...
+Burning with bright white light!|ಪ್ರಕಾಶಮಾನ ಬಿಳಿ ಬೆಳಕಿನಿಂದ ಉರಿಯುತ್ತಿದೆ!
+Step 2: Dissolve MgO in water|ಹಂತ 2: MgO ನೀರಲ್ಲಿ ಕರಗಿಸಿ
+non-metals react with oxygen|ಅಲೋಹಗಳು ಆಮ್ಲಜನಕದೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತವೆ
+non-metal oxides|ಅಲೋಹ ಆಕ್ಸೈಡ್‌ಗಳು
+Igniting sulfur...|ಸಲ್ಫರ್ ಉರಿಸುತ್ತಿದೆ...
+Sulfur burns with blue flame!|ಸಲ್ಫರ್ ನೀಲಿ ಜ್ವಾಲೆಯಿಂದ ಉರಿಯುತ್ತದೆ!
+SO2 gas collecting in the jar...|SO2 ಅನಿಲ ಜಾರ್‌ನಲ್ಲಿ ಸಂಗ್ರಹವಾಗುತ್ತಿದೆ...
+Non-metals|ಅಲೋಹಗಳು
+Lustre|ದ್ಯುತಿ
+Lustre (Shine)|ದ್ಯುತಿ (ಹೊಳಪು)
+Hardness|ಕಾಠಿಣ್ಯ
+Nature of Oxide|ಆಕ್ಸೈಡ್ ಸ್ವಭಾವ
+properties|ಗುಣಗಳು
+Understanding WHY a material is used helps us remember|ಪದಾರ್ಥ ಏಕೆ ಬಳಸಲಾಗುತ್ತದೆ ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು ನೆನಪಿಡಲು ಸಹಾಯ
+Perfect! All 4 correct!|ಪರಿಪೂರ್ಣ! ನಾಲ್ಕೂ ಸರಿ!
+
+# Ch5 physical changes, weathering, chemical, reversible, states, fire, oxygen, candle, combustion, desirable
+Fold Paper|ಕಾಗದ ಮಡಚಿ
+Crush Chalk|ಸೀಮೆಸುಣ್ಣ ಚೂರ್ಣ ಮಾಡಿ
+Inflate Balloon|ಬಲೂನ್ ಊದಿ
+Changing...|ಬದಲಾಯಿಸುತ್ತಿದೆ...
+Change Complete!|ಬದಲಾವಣೆ ಪೂರ್ಣ!
+Select another example|ಇನ್ನೊಂದು ಉದಾಹರಣೆ ಆಯ್ಕೆಮಾಡಿ
+Weathering|ವಾತಾವರಣ
+breaks rocks into smaller pieces.|ಕಲ್ಲುಗಳನ್ನು ಚಿಕ್ಕ ತುಂಡುಗಳಾಗಿ ಒಡೆಯುತ್ತದೆ.
+Erosion|ಕೊರೆತ
+Present Day|ಇಂದಿನ ದಿನ
+Ready to mix|ಮಿಶ್ರಣ ಮಾಡಲು ಸಿದ್ಧ
+Mix the Chemicals|ರಾಸಾಯನಿಕಗಳನ್ನು ಮಿಶ್ರಣ ಮಾಡಿ
+Chemical Equation|ರಾಸಾಯನಿಕ ಸಮೀಕರಣ
+Pouring vinegar...|ವಿನಿಗರ್ ಸುರಿಯುತ್ತಿದೆ...
+Reaction happening!|ಪ್ರತಿಕ್ರಿಯೆ ನಡೆಯುತ್ತಿದೆ!
+Chemical Change Complete!|ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ ಪೂರ್ಣ!
+Reversible changes|ಹಿಮ್ಮುಖ ಬದಲಾವಣೆಗಳು
+can be undone - you can get the original back.|ರದ್ದು ಮಾಡಬಹುದು - ಮೂಲ ಮರಳಿ ಪಡೆಯಬಹುದು.
+Irreversible changes|ಅಹಿಮ್ಮುಖ ಬದಲಾವಣೆಗಳು
+Quiz Complete!|ಕ್ವಿಜ್ ಪೂರ್ಣ!
+Correct!|ಸರಿ!
+LIQUID|ದ್ರವ
+H2O in container|ಪಾತ್ರೆಯಲ್ಲಿ H2O
+SOLID|ಘನ
+LIQUID (WATER)|ದ್ರವ (ನೀರು)
+Fire (combustion) requires|ಅಗ್ನಿ (ದಹನ) ಅಗತ್ಯ
+three things|ಮೂರು ವಸ್ತುಗಳು
+(combustible material),|(ದಹನೀಯ ಪದಾರ್ಥ),
+FIRE BURNING!|ಅಗ್ನಿ ಉರಿಯುತ್ತಿದೆ!
+Fire is Burning!|ಅಗ್ನಿ ಉರಿಯುತ್ತಿದೆ!
+Select all three elements to start a fire!|ಅಗ್ನಿ ಪ್ರಾರಂಭಿಸಲು ಮೂರು ಅಂಶಗಳನ್ನೂ ಆಯ್ಕೆಮಾಡಿ!
+Oxygen is essential for combustion.|ದಹನಕ್ಕೆ ಆಮ್ಲಜನಕ ಅಗತ್ಯ.
+When a candle is covered with a glass jar, the oxygen ins|ಮೇಣವನ್ನು ಗಾಜಿನ ಜಾರ್‌ನಿಂದ ಮುಚ್ಚಿದಾಗ ಆಮ್ಲಜನಕ
+Ready|ಸಿದ್ಧ
+Burning|ಉರಿಯುತ್ತಿದೆ
+Covered|ಮುಚ್ಚಲಾಗಿದೆ
+Extinguished|ಆರಿಹೋಯಿತು
+A candle shows|ಮೇಣ ತೋರಿಸುತ್ತದೆ
+difference|ವ್ಯತ್ಯಾಸ
+Tap each button to see a zoomed view of each process!|ಪ್ರತಿ ಪ್ರಕ್ರಿಯೆಯ ಜೂಮ್ ನೋಟ ನೋಡಲು ಪ್ರತಿ ಬಟನ್ ಟ್ಯಾಪ್ ಮಾಡಿ!
+SAME SUBSTANCE|ಅದೇ ಪದಾರ್ಥ
+Same color = Same substance! Reversible!|ಅದೇ ಬಣ್ಣ = ಅದೇ ಪದಾರ್ಥ! ಹಿಮ್ಮುಖ!
+Chemical Change Zone|ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ ವಲಯ
+Combustion|ದಹನ
+is a chemical reaction where a substance reacts with oxyg|ರಾಸಾಯನಿಕ ಪ್ರತಿಕ್ರಿಯೆ - ಪದಾರ್ಥ ಆಮ್ಲಜನಕದೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತದೆ
+Select a material to burn|ಉರಿಸಲು ಒಂದು ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ
+Select another material|ಇನ್ನೊಂದು ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ
+Changes can be|ಬದಲಾವಣೆಗಳು
+desirable|ಅಪೇಕ್ಷಣೀಯ
+(useful, beneficial) or|(ಉಪಯುಕ್ತ, ಲಾಭಕರ) ಅಥವಾ
+Cooking Food|ಆಹಾರ ಬೇಯಿಸುವುದು
+
+# Ch6 life stages, say no, growth, physical changes, voice, menstrual, emotional, nutrition, hygiene, healthy habits
+Human life progresses through|ಮಾನವ ಜೀವನ ಮುಂದುವರಿಯುತ್ತದೆ
+five main stages|ಐದು ಮುಖ್ಯ ಹಂತಗಳ ಮೂಲಕ
+Infancy (0-2 years)|ಶಿಶು ಅವಧಿ (0-2 ವರ್ಷ)
+Childhood (3-9 years)|ಬಾಲ್ಯ (3-9 ವರ್ಷ)
+Adolescence (10-19 years)|ಕೌಮಾರ (10-19 ವರ್ಷ)
+Tobacco, alcohol, and drugs are|ಸಿಗರೇಟ್, ಮದ್ಯ ಮತ್ತು ಮಾದಕ ದ್ರವ್ಯಗಳು
+addictive|ವ್ಯಸನಕಾರಿ
+Great choice!|ಉತ್ತಮ ಆಯ್ಕೆ!
+Congratulations!|ಅಭಿನಂದನೆಗಳು!
+Scenario 1: Peer Pressure|ಸನ್ನಿವೇಶ 1: ಸಮವಯಸ್ಕ ಒತ್ತಡ
+During adolescence, there's a|ಕೌಮಾರದಲ್ಲಿ ಉಂಟಾಗುತ್ತದೆ
+growth spurt|ಬೆಳವಣಿಗೆ ಉಲ್ಬಣ
+Age: 12 years|ವಯಸ್ಸು: 12 ವರ್ಷ
+Puberty|ಯೌವನ
+is when your body starts changing from a child's body to|ನಿಮ್ಮ ದೇಹ ಮಗುವಿನ ದೇಹದಿಂದ ಬದಲಾಗಲು ಪ್ರಾರಂಭಿಸುವ ಸಮಯ
+natural and normal|ನೈಸರ್ಗಿಕ ಮತ್ತು ಸಾಮಾನ್ಯ
+Growth Spurt|ಬೆಳವಣಿಗೆ ಉಲ್ಬಣ
+Sweating More|ಹೆಚ್ಚು ಬೆವರು
+Skin Changes|ಚರ್ಮ ಬದಲಾವಣೆಗಳು
+During puberty, the|ಯೌವನದಲ್ಲಿ
+larynx (voice box)|ಸ್ವರ ಪೆಟ್ಟಿಗೆ
+grows larger. In boys, this causes a significant deepenin|ದೊಡ್ಡದಾಗುತ್ತದೆ. ಹುಡುಗರಲ್ಲಿ ಧ್ವನಿ ಆಳವಾಗುತ್ತದೆ
+Menstruation|ಋತುಚಕ್ರ
+(periods) is a natural monthly cycle in girls/women where|(ಪೀರಿಯಡ್ಸ್) ಹುಡುಗಿಯರು/ಮಹಿಳೆಯರ ನೈಸರ್ಗಿಕ ಮಾಸಿಕ ಚಕ್ರ
+Menstruation (Days 1-5)|ಋತುಚಕ್ರ (ದಿನ 1-5)
+This is when the uterine lining sheds, resulting in bleed|ಗರ್ಭಾಶಯ ಅಂಚು ಉದುರಿ ರಕ್ತಸ್ರಾವ
+Ovulation (Day 14)|ಅಂಡೋತ್ಪತ್ತಿ (ದಿನ 14)
+During adolescence,|ಕೌಮಾರದಲ್ಲಿ,
+hormones|ಹಾರ್ಮೋನ್‌ಗಳು
+can cause stronger emotions and mood swings. Feeling happ|ಭಾವನೆಗಳು ಮತ್ತು ಮನಸ್ಥಿತಿ ಬದಲಾವಣೆ ಉಂಟುಮಾಡಬಹುದು
+Great job exploring emotions!|ಭಾವನೆಗಳನ್ನು ಅನ್ವೇಷಿಸಿದ್ದಕ್ಕೆ ಶಾಭಾಶ್!
+Understanding your feelings is the first step to managing|ನಿಮ್ಮ ಭಾವನೆಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು ನಿರ್ವಹಣೆಯ ಮೊದಲ ಹೆಜ್ಜೆ
+balanced diet|ಸಮತೋಲಿತ ಆಹಾರ
+with proteins, carbohydrates, fats, vitamins, and mineral|ಪ್ರೊಟೀನ್‌ಗಳು, ಕಾರ್ಬೋಹೈಡ್ರೇಟ್‌ಗಳು, ಕೊಬ್ಬು, ಜೀವಸತ್ವಗಳು ಮತ್ತು ಖನಿಜಗಳೊಂದಿಗೆ
+BALANCED|ಸಮತೋಲಿತ
+Carbohydrates are your body|ಕಾರ್ಬೋಹೈಡ್ರೇಟ್‌ಗಳು ನಿಮ್ಮ ದೇಹ
+Proteins - Body Building|ಪ್ರೊಟೀನ್‌ಗಳು - ದೇಹ ನಿರ್ಮಾಣ
+Proteins are essential for <strong>building and repairing|ಪ್ರೊಟೀನ್‌ಗಳು <strong>ನಿರ್ಮಾಣ ಮತ್ತು ದುರಸ್ತಿ</strong>ಗೆ ಅಗತ್ಯ
+During adolescence, your body produces more|ಕೌಮಾರದಲ್ಲಿ ನಿಮ್ಮ ದೇಹ ಹೆಚ್ಚು ಉತ್ಪಾದಿಸುತ್ತದೆ
+sweat and oils|ಬೆವರು ಮತ್ತು ತೈಲಗಳು
+Maintaining cleanliness prevents body odor, skin proble|ಶುಚಿತ್ವ ಕಾಪಾಡುವುದರಿಂದ ದೇಹದ ವಾಸನೆ, ಚರ್ಮ ಸಮಸ್ಯೆ ತಡೆಯುತ್ತದೆ
+Adolescence is the perfect time to build|ಕೌಮಾರವೇ ನಿರ್ಮಿಸಲು ಸೂಕ್ತ ಸಮಯ
+healthy habits|ಆರೋಗ್ಯಕರ ಅಭ್ಯಾಸಗಳು
+Exercise|ವ್ಯಾಯಾಮ
+Builds strong muscles and bones|ಸ್ನಾಯು ಮತ್ತು ಅಸ್ಥಿಗಳನ್ನು ಬಲಪಡಿಸುತ್ತದೆ
+Improves mood and reduces stress|ಮನಸ್ಥಿತಿ ಉತ್ತಮಗೊಳಿಸಿ ಒತ್ತಡ ಕಡಿಮೆ
+Enhances concentration and memory|ಸಾಂದ್ರತೆ ಮತ್ತು ನೆನಪು ಹೆಚ್ಚಿಸುತ್ತದೆ
+
+# Ch7 heat sources, water conservation, conduction, convection, radiation, water cycle, infiltration
+Equator|ವಿಷುವದ್ರೇಖೆ
+Kerala|ಕೇರಳ
+Delhi|ದೆಹಲಿ
+Kerala - Tropical Climate|ಕೇರಳ - ಉಷ್ಣವಲಯ ಹವಾಮಾನ
+Kerala is located close to the equator, receiving more di|ಕೇರಳ ವಿಷುವದ್ರೇಖೆಗೆ ಹತ್ತಿರ, ಹೆಚ್ಚು ಸೂರ್ಯನ ಬೆಳಕು
+Delhi - Extreme Climate|ದೆಹಲಿ - ತೀವ್ರ ಹವಾಮಾನ
+Groundwater is being|ಭೂಜಲ
+depleted|ಖಾಲಿಯಾಗುತ್ತಿದೆ
+due to overuse and reduced infiltration (from concrete, l|ಅತಿಯಾದ ಬಳಕೆ ಮತ್ತು ಕಡಿಮೆ ಅಂತರ್ಸೇಚನ (ಕಾಂಕ್ರೀಟ್
+Rainwater falling on rooftops is collected through gutter|ಛಾವಣಿಯ ಮೇಲೆ ಬೀಳುವ ಮಳೆನೀರು ಗಟರ್ಸ್ ಮೂಲಕ ಸಂಗ್ರಹ
+Recharge Pit|ರಿಚಾರ್ಜ್ ಗುಂಡಿ
+Ice Stupa (Ladakh)|ಐಸ್ ಸ್ಟೂಪಾ (ಲಡಾಕ್)
+Conduction|ವಾಹಕತೆ
+transfers heat through solids from hot to cold regions. W|ಘನಗಳ ಮೂಲಕ ಉಷ್ಣವನ್ನು ಬಿಸಿ ಪ್ರದೇಶದಿಂದ ತಂಪು ಪ್ರದೇಶಕ್ಕೆ ವರ್ಗಾವಣೆ
+Medium Heat|ಮಧ್ಯಮ ಉಷ್ಣ
+Heating...|ಉಷ್ಣ ಹಾಕುತ್ತಿದೆ...
+Complete!|ಪೂರ್ಣ!
+(metals) transfer heat quickly.|(ಲೋಹಗಳು) ಉಷ್ಣವನ್ನು ವೇಗವಾಗಿ ವರ್ಗಾವಣೆ ಮಾಡುತ್ತವೆ.
+0.0 seconds|0.0 ಸೆಕೆಂಡ್
+Convection|ಸಂವಹನ
+transfers heat by fluid movement. Hot fluid rises (less d|ದ್ರವ ಚಲನೆಯಿಂದ ಉಷ್ಣ ವರ್ಗಾವಣೆ. ಬಿಸಿ ದ್ರವ ಏರುತ್ತದೆ
+Turn on the heat to see convection in action! Hot water a|ಉಷ್ಣ ಆನ್ ಮಾಡಿ ಸಂವಹನ ನೋಡಿ! ಕೆಳಗಿನ ಬಿಸಿ ನೀರು
+A room heater warms the air nearby. <strong>Warm air rise|ಕೋಣೆಯ ಹೀಟರ್ ಹತ್ತಿರದ ಗಾಳಿಯನ್ನು ಬಿಸಿ ಮಾಡುತ್ತದೆ. <strong>ಬಿಸಿ ಗಾಳಿ ಏರುತ್ತದೆ
+Turn on heat and watch the convection current form!|ಉಷ್ಣ ಆನ್ ಮಾಡಿ ಸಂವಹನ ಪ್ರವಾಹ ರೂಪುಗೊಳ್ಳುವುದನ್ನು ನೋಡಿ!
+transfers heat without any medium - through empty space!|ಯಾವುದೇ ಮಾಧ್ಯಮವಿಲ್ಲದೆ - ಖಾಲಿ ಜಾಗದ ಮೂಲಕ ಉಷ್ಣ ವರ್ಗಾವಣೆ!
+Fireplace|ಅಗ್ನಿಕುಂಡ
+Close|ಮುಚ್ಚಿ
+Dark colors ABSORB|ಗಾಢ ಬಣ್ಣಗಳು ಹೀರಿಕೊಳ್ಳುತ್ತವೆ
+Light colors REFLECT|ಥಳಥಳ ಬಣ್ಣಗಳು ಪ್ರತಿಫಲಿಸುತ್ತವೆ
+In real life, heat transfer often involves all three meth|ನೈಜ ಜೀವನದಲ್ಲಿ ಉಷ್ಣ ವರ್ಗಾವಣೆ ಸಾಮಾನ್ಯವಾಗಿ ಮೂರು ವಿಧಾನಗಳನ್ನು ಒಳಗೊಂಡಿರುತ್ತದೆ
+conduction, convection, and radiation|ವಾಹಕತೆ, ಸಂವಹನ ಮತ್ತು ವಿಕಿರಣ
+working together. Heating water in a pan is a perfect e|ಒಟ್ಟಿಗೆ ಕೆಲಸ. ಪಾತ್ರೆಯಲ್ಲಿ ನೀರು ಬಿಸಿ ಮಾಡುವುದು ಪರಿಪೂರ್ಣ ಉದಾಹರಣೆ
+Conduction: Flame → Pan → Water (bottom)|ವಾಹಕತೆ: ಜ್ವಾಲೆ → ಪಾತ್ರೆ → ನೀರು (ಕೆಳಭಾಗ)
+Heat from the flame transfers to the metal pan through|ಜ್ವಾಲೆಯ ಉಷ್ಣ ಲೋಹದ ಪಾತ್ರೆಗೆ ವರ್ಗಾವಣೆ
+Convection: Water circulation inside the pan|ಸಂವಹನ: ಪಾತ್ರೆಯ ಒಳಗೆ ನೀರಿನ ಸಂಚಲನ
+drives the water cycle. Tap on the sun, clouds, rain, or|ಜಲ ಚಕ್ರ ಚಾಲನೆ. ಸೂರ್ಯ, ಮೇಘ, ಮಳೆ ಟ್ಯಾಪ್ ಮಾಡಿ
+Tap elements or use controls above|ಅಂಶಗಳನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ ಅಥವಾ ಮೇಲಿನ ನಿಯಂತ್ರಣಗಳನ್ನು ಬಳಸಿ
+OCEAN|ಮಹಾಸಾಗರ
+The Sun provides the <strong>heat energy</strong> that po|ಸೂರ್ಯ <strong>ಉಷ್ಣ ಶಕ್ತಿ</strong> ನೀಡುತ್ತದೆ
+Evaporation|ಆವಿಯಾಗುವಿಕೆ
+Condensation|ಘನೀಕರಣ
+Infiltration|ಅಂತರ್ಸೇಚನ
+is water seeping into ground. Speed depends on|ನೀರು ನೆಲದ ಒಳಗೆ ಜಿನುಗುವುದು. ವೇಗ ಅವಲಂಬಿಸಿರುತ್ತದೆ
+particle size|ಕಣದ ಗಾತ್ರ
+
+# Ch8 historical clocks, speedometer, sundial, pendulum, time units, speed calculator, race, uniform, nonuniform
+Humans have always needed to measure time. Early methods|ಮಾನವರು ಯಾವಾಗಲೂ ಸಮಯ ಅಳೆಯಲು ಬಯಸಿದ್ದಾರೆ. ಆರಂಭದ ವಿಧಾನಗಳು
+repeating natural events|ಪುನರಾವರ್ತಿತ ನೈಸರ್ಗಿಕ ಘಟನೆಗಳನ್ನು
+(sun, moon, seasons). Later inventions used|(ಸೂರ್ಯ, ಚಂದ್ರ, ಋತುಗಳು). ನಂತರದ ಆವಿಷ್ಕಾರಗಳು
+Sundial Demo|ಸೂರ್ಯ ಘಡಿಯಾರ ಡೆಮೋ
+Shadow moves as the Sun crosses the sky|ಸೂರ್ಯ ಆಕಾಶದಾದ್ಯಂತ ಚಲಿಸಿದಂತೆ ನೆರಳು ಚಲಿಸುತ್ತದೆ
+Water drains at constant rate - marks show time|ನೀರು ಸ್ಥಿರ ದರದಲ್ಲಿ ಹರಿದು ಗುರುತುಗಳು ಸಮಯ ತೋರಿಸುತ್ತವೆ
+Shows current speed in km/h|ಕಿಮೀ/ಗಂ ನಲ್ಲಿ ಪ್ರಸ್ತುತ ವೇಗ ತೋರಿಸುತ್ತದೆ
+ODOMETER|ಓಡೋಮೀಟರ್
+Press and hold the pedals to control speed|ವೇಗ ನಿಯಂತ್ರಿಸಲು ಪೆಡಲ್‌ಗಳನ್ನು ಒತ್ತಿ ಹಿಡಿದಿರಿ
+A sundial uses the Sun's position in the sky to cast a|ಸೂರ್ಯ ಘಡಿಯಾರ ಆಕಾಶದಲ್ಲಿ ಸೂರ್ಯನ ಸ್ಥಾನವನ್ನು ಬಳಸಿ
+shadow|ನೆರಳು
+from a vertical stick (gnomon). As the Sun moves, the sha|ಲಂಬ ಕೋಲಿನ (ಗ್ನೋಮನ್)ಿಂದ. ಸೂರ್ಯ ಚಲಿಸಿದಂತೆ ನೆರಳು
+Morning|ಬೆಳಿಗ್ಗೆ
+Late Morning|ನಂತರದ ಬೆಳಿಗ್ಗೆ
+Afternoon|ಮಧ್ಯಾಹ್ನ
+A simple pendulum is a|ಸರಳ ಲೋಲಕ ಒಂದು
+(weight) hanging from a|(ತೂಕ) ನೇತಾಡುತ್ತಿದೆ
+string|ದಾರ
+Running...|ಓಡುತ್ತಿದೆ...
+Test whether|ಪರೀಕ್ಷಿಸಿ
+length affects time period|ಉದ್ದ ಕಾಲಾವಧಿಯನ್ನು ಪರಿಣಾಮ ಬೀರುತ್ತದೆಯೇ
+We'll swing three pendulums of different lengths and me|ವಿವಿಧ ಉದ್ದದ ಮೂರು ಲೋಲಕಗಳನ್ನು ಊಘಾಡಿ ಅಳೆಯುತ್ತೇವೆ
+second (s)|ಸೆಕೆಂಡ್ (ಗಳು)
+Other common units are minutes (min) and hours (h). Alw|ಇತರ ಸಾಮಾನ್ಯ ಘಟಕಗಳು ನಿಮಿಷ (ನಿಮಿ) ಮತ್ತು ಗಂಟೆ (ಗಂ).
+Enter a time value to convert:|ಪರಿವರ್ತಿಸಲು ಸಮಯ ನಮೂದಿಸಿ:
+Speed|ವೇಗ
+tells us how fast an object is moving. It's the distance|ವಸ್ತು ಎಷ್ಟು ವೇಗವಾಗಿ ಚಲಿಸುತ್ತಿದೆ ತಿಳಿಸುತ್ತದೆ. ಅದು ದೂರ
+Find Speed|ವೇಗ ಕಂಡುಹಿಡಿ
+Higher speed = cover distance faster. In this race, all r|ಎತ್ತರ ವೇಗ = ದೂರ ವೇಗವಾಗಿ ಕ್ರಮಿಸುತ್ತದೆ. ಈ ಓಟದಲ್ಲಿ
+Who arrives first depends on their|ಯಾರು ಮೊದಲು ಬರುತ್ತಾರೆ ಅವರ ಮೇಲೆ ಅವಲಂಬಿತ
+speed|ವೇಗ
+An object is in|ವಸ್ತು
+uniform linear motion|ಏಕರೂಪ ರೇಖೀಯ ಚಲನೆಯಲ್ಲಿ
+when it moves in a|ಅದು ಚಲಿಸಿದಾಗ
+straight line|ನೇರ ರೇಖೆಯಲ್ಲಿ
+constant speed|ಸ್ಥಿರ ವೇಗ
+non-uniform motion|ಅಸಮ ಚಲನೆ
+, an object's speed|, ವಸ್ತುವಿನ ವೇಗ
+changes|ಬದಲಾಗುತ್ತದೆ
+
+# Case variants and high-impact single words (so body/script match)
+CONDUCTORS|ವಾಹಕಗಳು
+INSULATORS|ವಾಹಕವಲ್ಲದವು
+SWITCH|ಸ್ವಿಚ್
+Positive (+)|ಧನ (+)
+POSITIVE (+)|ಧನ (+)
+ELECTRIC CELL|ವಿದ್ಯುತ್ ಸೆಲ್
+negative (-)|ಋಣ (-)
+Basic|ಕ್ಷಾರೀಯ
+liquid|ದ್ರವ
+oxygen|ಆಮ್ಲಜನಕ
+conduction|ವಾಹನ
+convection currents|ಸಂವಹನ ಪ್ರವಾಹ
+Dark colors absorb|ಗಾಢ ಬಣ್ಣ ಹೀರಿಕೊಳ್ಳುತ್ತದೆ
+Light colors reflect|ಒಳ ಬಣ್ಣ ಪ್ರತಿಫಲಿಸುತ್ತದೆ
+ODOMETER|ಓಡೋಮೀಟರ್
+Adam's apple|ಆಡಮ್‌ಸ್ ಆಪಲ್
+equator|ಭೂಮಧ್ಯರೇಖೆ
+Growth Spurt|ಬೆಳವಣಿಗೆ ಏರಿಕೆ
+Water Vapor|ನೀರಿನ ಆವಿ
+AFTER|ನಂತರ
+REACTION!|ಪ್ರತಿಕ್ರಿಯೆ!
+Electrical conductivity|ವಿದ್ಯುತ್ ವಾಹಕತೆ
+non-metals|ಅಲೋಹಗಳು
+Battery|ಬ್ಯಾಟರಿ
+source|ಮೂಲ
+Before|ಮೊದಲು
+NEGATIVE (−)|ಋಣ (−)
+
+# Batch 2: remaining high-impact phrases
+indicator|ಸೂಚಕ
+How did the white paper suddenly show a message when the|ಬಿಳಿ ಕಾಗದಕ್ಕೆ ಹೇಗೆ ಒಂದೇ ಸಮಯದಲ್ಲಿ ಸಂದೇಶ ಕಾಣಿಸಿತು
+This simple demonstration shows the power of|ಈ ಸರಳ ಪ್ರದರ್ಶನ ತೋರಿಸುತ್ತದೆ
+and can kill fish and other aquatic life. By adding a|ಮೀನು ಮತ್ತು ಇತರ ಜಲಚರ ಜೀವಿಗಳನ್ನು ಸಾಯಿಸಬಲ್ಲದು. ಸೇರಿಸುವ ಮೂಲಕ
+(organisms that grow on rocks and trees). It's been used|(ಕಲ್ಲು ಮತ್ತು ಮರಗಳಲ್ಲಿ ಬೆಳೆಯುವ ಜೀವಿಗಳು). ಶತಮಾನಗಳಿಂದ ಬಳಕೆಯಲ್ಲಿದೆ
+Examples|ಉದಾಹರಣೆಗಳು
+Bitter Taste|ಹುಳಿ ರುಚಿ
+Real-life observation:|ನೈಜ ಜೀವನ ಅವಲೋಕನ:
+Ever noticed a|ಇದುವರೆಗೆ ಗಮನಿಸಿದ್ದೀರಾ
+curry stain turning red|ಕರಿ ಕಲೆ ಕೆಂಪಾಗುವುದು
+, the smell remains.|, ವಾಸನೆ ಉಳಿದಿದೆ.
+Notice how|ಗಮನಿಸಿ ಹೇಗೆ
+(released)|(ಬಿಡುಗಡೆ)
+Real-life example:|ನೈಜ ಜೀವನ ಉದಾಹರಣೆ:
+(HCOOH) into your skin. Applying|(HCOOH) ನಿಮ್ಮ ಚರ್ಮದೊಳಗೆ. ಲೇಪಿಸುವುದು
+baking soda|ಬೇಕಿಂಗ್ ಸೋಡಾ
+Healthy Skin|ಆರೋಗ್ಯಕರ ಚರ್ಮ
+Not needed|ಅಗತ್ಯವಿಲ್ಲ
+: cooking, lighting, cooling, communication, entertainmen|: ಅಡುಗೆ, ಬೆಳಕು, ತಂಪು, ಸಂವಹನ, ಮನರಂಜನೆ
+0 / 12 appliances sorted|0 / 12 ಉಪಕರಣಗಳು ವರ್ಗೀಕರಿಸಲಾಗಿದೆ
+block the flow of current (plastic, rubber, wood). This i|ವಿದ್ಯುತ್ ಹರಿವನ್ನು ತಡೆಯುತ್ತವೆ (ಪ್ಲಾಸ್ಟಿಕ್, ರಬ್ಬರ್, ಮರ).
+Select a material|ಒಂದು ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ
+Drag material here|ಪದಾರ್ಥವನ್ನು ಇಲ್ಲಿ ಎಳೆಯಿರಿ
+Switch|ಸ್ವಿಚ್
+(controls the circuit). Understanding these helps us lear|(ಸರ್ಕ್ಯೂಟ್ ನಿಯಂತ್ರಿಸುತ್ತದೆ). ಇವು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಲು ಸಹಾಯ
+SWITCH|ಸ್ವಿಚ್
+Switch (Circuit Controller)|ಸ್ವಿಚ್ (ಸರ್ಕ್ಯೂಟ್ ನಿಯಂತ್ರಕ)
+The switch controls whether the circuit is complete or br|ಸ್ವಿಚ್ ಸರ್ಕ್ಯೂಟ್ ಪೂರ್ಣವೇ ಅಥವಾ ಮುರಿದಿದೆಯೇ ನಿಯಂತ್ರಿಸುತ್ತದೆ
+Positive (+)|ಧನ (+)
+Negative (-)|ಋಣ (-)
+Current flows from positive to negative terminal throug|ವಿದ್ಯುತ್ ಧನದಿಂದ ಋಣ ಟರ್ಮಿನಲ್‌ಕ್ಕೆ ಹರಿಯುತ್ತದೆ
+Negative Terminal (-)|ಋಣ ಟರ್ಮಿನಲ್ (-)
+Not quite. The metal cap (bump) is the POSITIVE termina|ಸಂಪೂರ್ಣವಲ್ಲ. ಲೋಹ ಟೋಪಿ (ಬಂಪ್) ಧನ ಟರ್ಮಿನಲ್
+terminal of one cell connects to the|ಒಂದು ಕೋಶದ ಟರ್ಮಿನಲ್ ಸಂಪರ್ಕವಾಗುತ್ತದೆ
+negative (-)|ಋಣ (-)
+terminal of the next cell.|ಮುಂದಿನ ಕೋಶದ ಟರ್ಮಿನಲ್‌ಗೆ.
+Tap switch to test|ಪರೀಕ್ಷಿಸಲು ಸ್ವಿಚ್ ಟ್ಯಾಪ್ ಮಾಡಿ
+Feature|ವೈಶಿಷ್ಟ್ಯ
+source|ಮೂಲ
+connecting wires|ಸಂಪರ್ಕ ತಂತಿಗಳು
+forming an unbroken loop.|ಅಖಂಡ ಲೂಪ್ ರೂಪಿಸುತ್ತದೆ.
+Test Circuit|ಸರ್ಕ್ಯೂಟ್ ಪರೀಕ್ಷಿಸಿ
+Place all components to complete circuit|ಸರ್ಕ್ಯೂಟ್ ಪೂರ್ಣಗೊಳಿಸಲು ಎಲ್ಲಾ ಭಾಗಗಳನ್ನು ಇರಿಸಿ
+ON position|ಆನ್ ಸ್ಥಾನ
+, it closes the gap allowing current to flow. In|, ಅದು ಅಂತರ ಮುಚ್ಚಿ ವಿದ್ಯುತ್ ಹರಿಯಲು ಅನುಮತಿಸುತ್ತದೆ.
+OFF position|ಆಫ್ ಸ್ಥಾನ
+Single power source|ಏಕ ಶಕ್ತಿ ಮೂಲ
+Battery|ಬ್ಯಾಟರಿ
+Multiple cells|ಅನೇಕ ಕೋಶಗಳು
+Battery Symbol|ಬ್ಯಾಟರಿ ಚಿಹ್ನೆ
+Lamp/Bulb Symbol|ದೀಪ/ಬಲ್ಬ್ ಚಿಹ್ನೆ
+Switch (Open/OFF)|ಸ್ವಿಚ್ (ತೆರೆದಿದೆ/ಆಫ್)
+Select a material below, then hammer!|ಕೆಳಗೆ ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ, ನಂತರ ಬಡಿಯಿರಿ!
+Copper|ತಾಮ್ರ
+Non-metal shattered into pieces!|ಅಲೋಹ ಚೂರುಗಳಾಗಿ ಒಡೆದಿದೆ!
+Electrical Wires|ವಿದ್ಯುತ್ ತಂತಿಗಳು
+Copper, Aluminium|ತಾಮ್ರ, ಅಲ್ಯೂಮಿನಿಯಂ
+Cooking Utensils|ಅಡುಗೆ ಪಾತ್ರೆಗಳು
+Select a material and try to draw it into a wire|ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ ತಂತಿಯಾಗಿ ಎಳೆಯಲು ಪ್ರಯತ್ನಿಸಿ
+Metal|ಲೋಹ
+Tap an object below to strike it|ಕೆಳಗೆ ವಸ್ತುವನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ ಅಪ್ಪಳಿಸಿ
+Metal Bell|ಲೋಹ ಘಂಟೆ
+are good conductors of heat;|ಉಷ್ಣದ ಉತ್ತಮ ವಾಹಕಗಳು;
+non-metals|ಅಲೋಹಗಳು
+like wood and plastic are poor conductors (insulators).|ಮರ ಮತ್ತು ಪ್ಲಾಸ್ಟಿಕ್ ಕಳಪೆ ವಾಹಕಗಳು (ಅವಾಹಕಗಳು).
+Experiment finished!|ಪ್ರಯೋಗ ಮುಗಿದಿದೆ!
+are good conductors;|ಉತ್ತಮ ವಾಹಕಗಳು;
+No current - bulb stays off!|ವಿದ್ಯುತ್ ಇಲ್ಲ - ಬಲ್ಬ್ ಆಫ್!
+to form iron oxide (rust). Both air AND water are needed|ಕಬ್ಬಿಣ ಆಕ್ಸೈಡ್ (ತುಕ್ಕು) ರೂಪಿಸಲು. ಗಾಳಿ ಮತ್ತು ನೀರು ಅಗತ್ಯ
+RUSTED!|ತುಕ್ಕು!
+Air + Water|ಗಾಳಿ + ನೀರು
+basic|ಕ್ಷಾರೀಯ
+in nature. They turn red litmus paper blue.|ಸ್ವಭಾವದಲ್ಲಿ. ಅವು ಕೆಂಪು ಲಿಟ್ಮಸ್ ನೀಲಿ ಮಾಡುತ್ತವೆ.
+Step 1: Hold Mg ribbon in flame|ಹಂತ 1: ಜ್ವಾಲೆಯಲ್ಲಿ Mg ರಿಬ್ಬನ್ ಹಿಡಿಯಿರಿ
+White ash (MgO) formed! Now dissolve it.|ಬಿಳಿ ಬೂದಿ (MgO) ರೂಪುಗೊಂಡಿದೆ! ಈಗ ಕರಗಿಸಿ.
+Dissolving MgO in water...|ನೀರಲ್ಲಿ MgO ಕರಗುತ್ತಿದೆ...
+Dissolving in water...|ನೀರಲ್ಲಿ ಕರಗುತ್ತಿದೆ...
+in nature. They turn blue litmus paper red.|ಸ್ವಭಾವದಲ್ಲಿ. ಅವು ನೀಲಿ ಲಿಟ್ಮಸ್ ಕೆಂಪು ಮಾಡುತ್ತವೆ.
+Step 1: Burn sulfur powder|ಹಂತ 1: ಸಲ್ಫರ್ ಪುಡಿ ಸುಡಿ
+Produces toxic SO2 - Do in lab only!|ವಿಷ SO2 ಉತ್ಪಾದಿಸುತ್ತದೆ - ಲ್ಯಾಬ್‌ನಲ್ಲಿ ಮಾತ್ರ!
+Step 2: Dissolve SO2 in water|ಹಂತ 2: ನೀರಲ್ಲಿ SO2 ಕರಗಿಸಿ
+SO2 gas collected! Now add water.|SO2 ಅನಿಲ ಸಂಗ್ರಹ! ಈಗ ನೀರು ಸೇರಿಸಿ.
+Oxide Nature|ಆಕ್ಸೈಡ್ ಸ್ವಭಾವ
+METALS|ಲೋಹಗಳು
+Lustrous (Shiny)|ದ್ಯುತಿವಂತ (ಹೊಳೆಯುವ)
+Stretch Band|ಬ್ಯಾಂಡ್ ಚಾಚಿ
+Press Spring|ಸ್ಪ್ರಿಂಗ್ ಒತ್ತಿ
+− (shorter line)|− (ಕಿರಿದಾದ ರೇಖೆ)
+- 1 gram can be drawn into a 2 km long wire!|- 1 ಗ್ರಾಂ 2 ಕಿಮೀ ಉದ್ದದ ತಂತಿಯಾಗಿ ಎಳೆಯಬಹುದು!
+- Blame someone else|- ಬೇರೆಯವರನ್ನು ದೂಷಿಸಿ
+- connect everything in a closed loop|- ಎಲ್ಲವನ್ನೂ ಮುಚ್ಚಿದ ಲೂಪ್‌ನಲ್ಲಿ ಸಂಪರ್ಕಿಸಿ
+- controls the circuit|- ಸರ್ಕ್ಯೂಟ್ ನಿಯಂತ್ರಿಸುತ್ತದೆ
+- fix leaks, shorter showers|- ಸೋರಿಕೆ ಸರಿಪಡಿಸಿ, ಚಿಕ್ಕ ಸ್ನಾನ
+- Give a reason|- ಕಾರಣ ನೀಡಿ
+- how fast you're going right now. Important for safety and following speed limits.|- ಈಗ ಎಷ್ಟು ವೇಗವಾಗಿ ಹೋಗುತ್ತಿದ್ದೀರಿ. ಭದ್ರತೆ ಮತ್ತು ವೇಗ ಮಿತಿಗಳಿಗೆ ಮುಖ್ಯ.
+- it fuels your morning|- ಅದು ನಿಮ್ಮ ಬೆಳಿಗ್ಗೆಯನ್ನು ಶಕ್ತೀಕರಿಸುತ್ತದೆ
+- it's a great conductor!|- ಅದು ಉತ್ತಮ ವಾಹಕ!
+- larger particles = bigger gaps = faster water flow!|- ದೊಡ್ಡ ಕಣಗಳು = ದೊಡ್ಡ ಅಂತರ = ವೇಗವಾದ ನೀರಿನ ಹರಿವು!
+- Leave the situation|- ಪರಿಸ್ಥಿತಿಯಿಂದ ಹೊರಬನ್ನಿ
+- longer = slower|- ಉದ್ದ = ನಿಧಾನ
+- provides electrical energy|- ವಿದ್ಯುತ್ ಶಕ್ತಿ ಒದಗಿಸುತ್ತದೆ
+- roots help infiltration|- ಬೇರುಗಳು ಒಳಸೇರುವಿಕೆಗೆ ಸಹಾಯ
+- Simple and direct|- ಸರಳ ಮತ್ತು ನೇರ
+- the metal spoon handle gets hot fast!|- ಲೋಹದ ಚಮಚ ಹಿಡಿಕೆ ಬೇಗ ಬಿಸಿಯಾಗುತ್ತದೆ!
+- the wooden spoon handle stays cool.|- ಮರದ ಚಮಚ ಹಿಡಿಕೆ ತಂಪಾಗಿ ಉಳಿಯುತ್ತದೆ.
+- there's no "wrong" way to feel|- ಭಾವಿಸಲು "ತಪ್ಪಾದ" ಮಾರ್ಗವಿಲ್ಲ
+- they happen to everyone!|- ಎಲ್ಲರಿಗೂ ಸಂಭವಿಸುತ್ತದೆ!
+- they resist heat flow|- ಅವು ಉಷ್ಣ ಹರಿವನ್ನು ತಡೆಯುತ್ತವೆ
+- uses the energy (load)|- ಶಕ್ತಿಯನ್ನು ಬಳಸುತ್ತದೆ (ಲೋಡ್)
+〰️ Wire Symbol|〰️ ತಂತಿ ಚಿಹ್ನೆ
+- You don't owe an explanation|- ನೀವು ವಿವರಣೆ ಕೊಡಬೇಕಾಗಿಲ್ಲ
+! Good nutrition, exercise, and sleep help you grow to your full potential.|! ಉತ್ತಮ ಪೋಷಣೆ, ವ್ಯಾಯಾಮ ಮತ್ತು ನಿದ್ರೆ ನಿಮ್ಮ ಪೂರ್ಣ ಸಾಮರ್ಥ್ಯಕ್ಕೆ ಬೆಳೆಯಲು ಸಹಾಯ.
+"A friend offers you a cigarette at a party and says 'Everyone's doing it, don't be boring!' What do you do?"|"ಸ್ನೇಹಿತ ಪಾರ್ಟಿಯಲ್ಲಿ ಸಿಗರೇಟ್ ನೀಡಿ 'ಎಲ್ಲರೂ ಮಾಡುತ್ತಾರೆ, ಬೋರ್ ಆಗಬೇಡ!' ಎಂದರೆ ನೀವೇನು ಮಾಡುತ್ತೀರಿ?"
+"I'm into sports, can't risk it"|"ನಾನು ಕ್ರೀಡೆ ಮಾಡುತ್ತೇನೆ, ಅಪಾಯಕ್ಕೆ ಒಳಗಾಗಲಾರೆ"
+"Menstruating girls are impure or should be isolated"|"ಋತುಮತಿ ಹುಡುಗಿಯರು ಅಶುದ್ಧ ಅಥವಾ ಪ್ರತ್ಯೇಕಿಸಬೇಕು"
+"My parents would be upset"|"ನನ್ನ ತಂದೆತಾಯಿಗಳು ಅಸಮಾಧಾನಗೊಳ್ಳುತ್ತಾರೆ"
+"No thanks, I'm good"|"ಇಲ್ಲ ಧನ್ಯವಾದ, ನನಗೆ ಸರಿ"
+"You shouldn't exercise during periods"|"ಋತುಕಾಲದಲ್ಲಿ ವ್ಯಾಯಾಮ ಮಾಡಬಾರದು"
+(about 1 octave lower)|(ಸುಮಾರು 1 ಅಕ್ಟೇವ್ ಕೆಳಗೆ)
+(about 3 notes lower)|(ಸುಮಾರು 3 ಸ್ವರ ಕೆಳಗೆ)
+(after treatment). It reduces dependence on groundwater!|(ಚಿಕಿತ್ಸೆಯ ನಂತರ). ಭೂಜಲ ಅವಲಂಬನೆ ಕಡಿಮೆ!
+(circle with X),|(X ನೊಂದಿಗೆ ವೃತ್ತ),
+(depends on elements)|(ಅಂಶಗಳ ಮೇಲೆ ಅವಲಂಬಿತ)
+(ease of catching fire)|(ಉರಿಯುವ ಸುಲಭತೆ)
+(electricity blocked)|(ವಿದ್ಯುತ್ ನಿರ್ಬಂಧಿತ)
+(electricity flows)|(ವಿದ್ಯುತ್ ಹರಿಯುತ್ತದೆ)
+(gap for open, line for closed),|(ತೆರೆದಕ್ಕೆ ಅಂತರ, ಮುಚ್ಚಿದಕ್ಕೆ ರೇಖೆ),
+(less dense)|(ಕಡಿಮೆ ಸಾಂದ್ರತೆ)
+(liquids & gases)|(ದ್ರವಗಳು ಮತ್ತು ಅನಿಲಗಳು)
+(metals) allow current to flow - used for wires.|(ಲೋಹಗಳು) ಪ್ರವಾಹ ಹರಿಯಲು ಅನುಮತಿ - ತಂತಿಗಳಿಗೆ.
+(more dense)|(ಹೆಚ್ಚು ಸಾಂದ್ರತೆ)
+(multiple cells),|(ಅನೇಕ ಸೆಲ್ಗಳು),
+(pendulums, vibrations).|(ಊಸರವಳಿಗಳು, ಕಂಪನಗಳು).
+(plastic, rubber, wood) block current - used for safety covers. This is why electrical wires have copper inside and plastic outside!|(ಪ್ಲಾಸ್ಟಿಕ್, ರಬ್ಬರ್, ಮರ) ಪ್ರವಾಹ ನಿರ್ಬಂಧ - ಭದ್ರತಾ ಆವರಣ. ವಿದ್ಯುತ್ ತಂತಿಗಳಲ್ಲಿ ಒಳಗೆ ತಾಮ್ರ ಹೊರಗೆ ಪ್ಲಾಸ್ಟಿಕ್!
+(solid) forming|(ಘನ) ರೂಪಿಸುವುದು
+(to reach ignition temperature). Remove any one and the fire goes out!|(ಉರಿಯುವ ಉಷ್ಣತೆ). ಒಂದನ್ನು ತೆಗೆದರೆ ಅಗ್ನಿ ಆರಿಹೋಗುತ್ತದೆ!
+(what's formed after burning)|(ಸುಡಿದ ನಂತರ ರೂಪುಗೊಂಡದ್ದು)
+, creating a continuous circular flow.|, ನಿರಂತರ ವೃತ್ತಾಕಾರ ಹರಿವು.
+, it creates a gap that stops current flow.|, ಪ್ರವಾಹ ನಿಲುಗಡೆ ಅಂತರ.
+, so it rises. Cooler water from the top|, ಅದು ಏರುತ್ತದೆ. ಮೇಲಿನ ತಂಪು ನೀರು
+, so the sea keeps temperatures moderate and humidity high.|, ಸಮುದ್ರ ಉಷ್ಣತೆ ಮತ್ತು ಒದ್ದೆ ಹೆಚ್ಚು.
+, water is in|, ನೀರು ಇದೆ
+. It covers|. ಅದು ಒಳಗೊಂಡಿದೆ
+. Most real-world motion is non-uniform!|. ಹೆಚ್ಚು ನೈಜ ಚಲನೆ ಅಸಮ ಏಕರೂಪ!
+. The metal particles vibrate and pass energy to neighboring particles. The pan gets hot, and the water touching the pan bottom heats up first.|. ಲೋಹ ಕಣಗಳು ಕಂಪಿಸಿ ನೆರೆಯ ಕಣಗಳಿಗೆ ಶಕ್ತಿ. ಪಾತ್ರೆ ಬಿಸಿಯಾಗುತ್ತದೆ, ಪಾತ್ರೆ ಅಡಿಯ ನೀರು ಮೊದಲು.
+. The molecules move faster and spread apart, but they are still|. ಅಣುಗಳು ವೇಗವಾಗಿ ಹರಡುತ್ತವೆ, ಆದರೆ ಇನ್ನೂ
+. The total voltage equals the sum of all cell voltages. More cells provide more energy!|. ಒಟ್ಟು ವೋಲ್ಟೇಜ್ ಎಲ್ಲ ಸೆಲ್ ವೋಲ್ಟೇಜ್ ಮೊತ್ತ. ಹೆಚ್ಚು ಸೆಲ್ಗಳು ಹೆಚ್ಚು ಶಕ್ತಿ!
+. There is nothing impure about it!|. ಅದರಲ್ಲಿ ಅಶುದ್ಧವೇನೂ ಇಲ್ಲ!
+. When oxygen runs out, the flame dies!|. ಆಮ್ಲಜನಕ ಮುಗಿದರೆ ಜ್ವಾಲೆ ಆರಿಹೋಗುತ್ತದೆ!
+: carbon dioxide gas (the bubbles!), water, and sodium acetate.|: CO₂ ಅನಿಲ (ಬುರುಡೆಗಳು!), ನೀರು, ಸೋಡಿಯಂ ಅಸಿಟೇಟ್.
+: The lever connects both contacts, completing the path. Current can now flow through the circuit.|: ಲಿವರ್ ಎರಡು ಸಂಪರ್ಕ ಸೇರಿಸಿ ಮಾರ್ಗ ಪೂರ್ಣ. ಪ್ರವಾಹ ಸರ್ಕ್ಯೂಟ್ ಮೂಲಕ ಹರಿಯುತ್ತದೆ.
+: The lever doesn't touch both contacts, creating a gap. Current cannot jump across the gap, so it stops flowing.|: ಲಿವರ್ ಎರಡು ಸಂಪರ್ಕ ಸ್ಪರ್ಶಿಸುವುದಿಲ್ಲ, ಅಂತರ. ಪ್ರವಾಹ ಅಂತರ ದಾಟಲು ಸಾಧ್ಯವಿಲ್ಲ, ನಿಲುಗಡೆ.
+~1000 hours|~1000 ಗಂಟೆಗಳು
+~1500 BCE - Ancient India (Ghatika-yantra)|~ಕ್ರಿ.ಪೂ 1500 - ಪ್ರಾಚೀನ ಭಾರತ (ಘಟಿಕಾ-ಯಂತ್ರ)
+~3500 BCE - Ancient Egypt|~ಕ್ರಿ.ಪೂ 3500 - ಪ್ರಾಚೀನ ಈಜಿಪ್ಟ್
+~50,000 hours|~50,000 ಗಂಟೆಗಳು
+~8th Century CE|~8ನೇ ಶತಮಾನ
+~9th Century CE|~9ನೇ ಶತಮಾನ
+⏳ Hourglass Demo|⏳ ಮರಳು ಗಡಿಯಾರ ಡೆಮೊ
+⏱️ Simulate Time Passing:|⏱️ ಸಮಯ ಕಳೆಯುವುದನ್ನು ಅನುಕರಿಸಿ:
+⏱️ Tap "Make It Rain" to start!|⏱️ ಪ್ರಾರಂಭಿಸಲು "ಮಳೆ ಮಾಡಿ" ಟ್ಯಾಪ್ ಮಾಡಿ!
++ (longer line)|+ (ಉದ್ದದ ರೇಖೆ)
+= 1000 microseconds (μs)|= 1000 ಮೈಕ್ರೋಸೆಕೆಂಡ್ (μs)
+= 1000 milliseconds|= 1000 ಮಿಲಿಸೆಕೆಂಡ್
+= 60 minutes = 3600 seconds|= 60 ನಿಮಿಷ = 3600 ಸೆಕೆಂಡ್
+= 60 seconds|= 60 ಸೆಕೆಂಡ್
+= Acceleration due to gravity (9.8 m/s²)|= ಗುರುತ್ವ ತ್ವರಣ (9.8 m/s²)
+= Length of pendulum (meters)|= ಊಸರವಳಿ ಉದ್ದ (ಮೀಟರ್)
+= Melting/Freezing point|= ಕರಗುವ/ಘನೀಕರಣ ಬಿಂದು
+= minimum temperature needed to start burning. Different materials have different ignition temperatures!|= ಉರಿಯಲು ಕನಿಷ್ಠ ಉಷ್ಣತೆ. ವಸ್ತುಗಳಿಗೆ ವಿಭಿನ್ನ ಉರಿಯುವ ಉಷ್ಣತೆ!
+= Time period (seconds)|= ಕಾಲಾವಧಿ (ಸೆಕೆಂಡ್)
+⌚ Quartz Clock Demo|⌚ ಕ್ವಾರ್ಟ್ಜ್ ಗಡಿಯಾರ ಡೆಮೊ
+⬇️ BRAKE|⬇️ ಬ್ರೇಕ್
+⬇️ Compress the Spring|⬇️ ಸ್ಪ್ರಿಂಗ್ ಒತ್ತಿ
+➡️ Pull Through Die|➡️ ಡೈ ಮೂಲಕ ಎಳೆಯಿರಿ
+→ Turned BLUE!|→ ನೀಲಿ ಆಯಿತು!
+→ Turned RED!|→ ಕೆಂಪು ಆಯಿತು!
+↓ HEAT from flame ↓|↓ ಜ್ವಾಲೆಯಿಂದ ಉಷ್ಣ ↓
+← Extreme|← ಅತಿ
+↔️ Stretch the Band|↔️ ಬ್ಯಾಂಡ್ ಚಾಚಿ
+☀️ Move the Sun across the sky (6 AM - 6 PM):|☀️ ಸೂರ್ಯನನ್ನು ಆಕಾಶದಾದ್ಯಂತ ಸರಿಸಿ (6 AM - 6 PM):
+☀️ RADIATION|☀️ ವಿಕಿರಣ
+☀️ Sea Breeze (Daytime)|☀️ ಸಮುದ್ರ ಗಾಳಿ (ಹಗಲು)
+✈️ Airplane|✈️ ವಿಮಾನ
+✍️ Correct Notation (SI Standard)|✍️ ಸರಿಯಾದ ಸಂಕೇತ (SI ಪ್ರಮಾಣ)
+✓ Complete|✓ ಪೂರ್ಣ
+✓ SAME YELLOW MOLECULES!|✓ ಅದೇ ಹಳದಿ ಅಣುಗಳು!
+✓ That's a valid feeling!|✓ ಅದು ಸರಿಯಾದ ಭಾವನೆ!
+✖️ Wires Crossing (Not Connected)|✖️ ತಂತಿಗಳು ಛೇದನ (ಸಂಪರ್ಕವಿಲ್ಲ)
+✗ Different colors = Different substances! Irreversible!|✗ ವಿಭಿನ್ನ ಬಣ್ಣ = ವಿಭಿನ್ನ ಪದಾರ್ಥ! ಹಿಮ್ಮುಖವಲ್ಲ!
+✗ DIFFERENT molecules! Cannot get wax back!|✗ ವಿಭಿನ್ನ ಅಣುಗಳು! ಮೇಣ ಮರಳಿ ಸಿಗುವುದಿಲ್ಲ!
+✗ NEW SUBSTANCES|✗ ಹೊಸ ಪದಾರ್ಥಗಳು
+❄️ Ice Stupa - Ladakh|❄️ ಐಸ್ ಸ್ತೂಪ - ಲಡಾಖ್
+✅ Desirable|✅ ಅಪೇಕ್ಷಣೀಯ
+✅ DUCTILE|✅ ಸಾಕರ್ಷಕ
+✅ MALLEABLE|✅ ತಟ್ಟಬಹುದಾದ
+✅ Reaction Complete|✅ ಪ್ರತಿಕ್ರಿಯೆ ಪೂರ್ಣ
+✅ Reversible|✅ ಹಿಮ್ಮುಖ
+✅ Test Complete|✅ ಪರೀಕ್ಷೆ ಪೂರ್ಣ
+✨ Key Characteristics|✨ ಮುಖ್ಯ ಲಕ್ಷಣಗಳು
+❌ BRITTLE|❌ ಸ್ಫಟಿಕ
+❌ Irreversible|❌ ಹಿಮ್ಮುಖವಲ್ಲ
+❌ NOT DUCTILE|❌ ಸಾಕರ್ಷಕವಲ್ಲ
+⚠️ Extremely bright!|⚠️ ಅತ್ಯಂತ ಪ್ರಕಾಶಮಾನ!
+⚠️ Harmful Substances to Avoid|⚠️ ತಪ್ಪಿಸಬೇಕಾದ ಹಾನಿಕಾರಕ ಪದಾರ್ಥಗಳು
+⚠️ Limitations of Sundials|⚠️ ಸೂರ್ಯ ಘಡಿಯಾರದ ಮಿತಿಗಳು
+⚠️ Produces toxic SO₂ - Do in lab only!|⚠️ ವಿಷ SO₂ - ಲ್ಯಾಬ್‌ನಲ್ಲಿ ಮಾತ್ರ!
+⚠️ The Problem: Groundwater Depletion|⚠️ ಸಮಸ್ಯೆ: ಭೂಜಲ ಕ್ಷೀಣತೆ
+⚡ CONDUCTOR|⚡ ವಾಹಕ
+⚡ Current flowing ⚡|⚡ ಪ್ರವಾಹ ಹರಿಯುತ್ತಿದೆ ⚡
+⚡ Test Conductivity|⚡ ವಾಹಕತೆ ಪರೀಕ್ಷಿಸಿ
+• ❌ Accuracy limited to ~15-30 minutes|• ❌ ನಿಖರತೆ ~15-30 ನಿಮಿಷ
+• Alloying (stainless steel)|• ಮಿಶ್ರಲೋಹ (ಸ್ಟೇನ್ಲೆಸ್ ಸ್ಟೀಲ್)
+• Body hair growth|• ಶರೀರ ಕೇಶ ಬೆಳವಣಿಗೆ
+• Breast development in girls|• ಹುಡುಗಿಯರಲ್ಲಿ ಸ್ತನ ವಿಕಾಸ
+• Carry extra supplies when going out|• ಹೊರಗೆ ಹೋಗುವಾಗ ಹೆಚ್ಚು ಸಾಮಗ್ರಿ ತೆಗೆದುಕೊಳ್ಳಿ
+• Change sanitary products every 4-6 hours|• 4-6 ಗಂಟೆ마다 ಸ್ಯಾನಿಟರಿ ಉತ್ಪನ್ನ ಬದಲಿಸಿ
+• Changes of state (melting, freezing, boiling)|• ಸ್ಥಿತಿ ಬದಲಾವಣೆ (ಕರಗುವಿಕೆ, ಘನೀಕರಣ, ಕುದಿಯುವಿಕೆ)
+• Channeling emotions into positive activities helps|• ಭಾವನೆಗಳನ್ನು ಧನಾತ್ಮಕ ಚಟುವಟಿಕೆಗೆ ತಿರುಗಿಸುವುದು ಸಹಾಯ
+• Chemical reactions|• ರಾಸಾಯನಿಕ ಪ್ರತಿಕ್ರಿಯೆಗಳು
+• CO₂ and H₂O are produced (chemical change)|• CO₂ ಮತ್ತು H₂O ಉತ್ಪಾದನೆ (ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ)
+• Cold fluid|• ತಂಪು ದ್ರವ
+• Create|• ರಚಿಸಿ
+• Creates|• ರಚಿಸುತ್ತದೆ
+• Creates new substances|• ಹೊಸ ಪದಾರ್ಥಗಳು ರಚಿಸುತ್ತದೆ
+• Cutting, breaking, crushing|• ಕತ್ತರಿಸುವುದು, ಒಡೆಯುವುದು, ಪುಡಿಮಾಡುವುದು
+• Cycle length varies (21-35 days is normal)|• ಚಕ್ರ ಉದ್ದ ಬದಲಾಗುತ್ತದೆ (21-35 ದಿನ ಸಾಮಾನ್ಯ)
+• Day: Land hot → Air rises → Sea breeze blows in|• ಹಗಲು: ಭೂಮಿ ಬಿಸಿ → ಗಾಳಿ ಏರುತ್ತದೆ → ಸಮುದ್ರ ಗಾಳಿ
+• Development of identity and independence|• ಗುರುತು ಮತ್ತು ಸ್ವಾತಂತ್ರ್ಯ ವಿಕಾಸ
+• Development of reproductive capability|• ಪ್ರಜನನ ಸಾಮರ್ಥ್ಯ ವಿಕಾಸ
+• Diamond (carbon) - hardest non-metal|• ವಜ್ರ (ಕಾರ್ಬನ್) - ಅತ್ಯಂತ ಗಟ್ಟಿ ಅಲೋಹ
+• Dispose of used products properly (wrapped in paper)|• ಉಪಯೋಗಿಸಿದ ಉತ್ಪನ್ನ ಕಾಗದದಲ್ಲಿ ಸುರಕ್ಷಿತವಾಗಿ ತ್ಯಜಿಸಿ
+• Dissolving (sometimes)|• ಕರಗುವಿಕೆ (ಕೆಲವೊಮ್ಮೆ)
+• Don't use electrical devices near water|• ನೀರಿನ ಹತ್ತಿರ ವಿದ್ಯುತ್ ಸಾಧನ ಬಳಸಬೇಡಿ
+• Drink plenty of|• ಸಾಕಷ್ಟು ಕುಡಿಯಿರಿ
+• Eat fruits and vegetables daily|• ದೈನಂದಿನ ಹಣ್ಣು ತರಕಾರಿ ತಿನ್ನಿರಿ
+• Everyone experiences them at different times|• ಎಲ್ಲರೂ ವಿಭಿನ್ನ ಸಮಯದಲ್ಲಿ ಅನುಭವಿಸುತ್ತಾರೆ
+• Everyone's voice is unique - that's what makes you, you!|• ಪ್ರತಿಯೊಬ್ಬರ ಸ್ವರ ವಿಶಿಷ್ಟ - ಅದು ನಿಮ್ಮನ್ನು ನೀವು ಮಾಡುತ್ತದೆ!
+• Facial hair in boys|• ಹುಡುಗರಲ್ಲಿ ಮುಖ ಕೇಶ
+• Form new substances (usually CO₂, H₂O, or oxides)|• ಹೊಸ ಪದಾರ್ಥ ರೂಪ (ಸಾಮಾನ್ಯವಾಗಿ CO₂, H₂O ಅಥವಾ ಆಕ್ಸೈಡ್)
+• Galvanisation (zinc coating)|• ಗ್ಯಾಲ್ವನೈಸೇಷನ್ (ಜಿಂಕ್ ಲೇಪನ)
+• Good hygiene prevents infections and illness|• ಉತ್ತಮ ಆರೋಗ್ಯಕರ ಅಂಗೀಕಾರ ಸೋಂಕು ತಡೆ
+• Government schemes provide free sanitary products in schools|• ಸರ್ಕಾರಿ ಯೋಜನೆಗಳು ಶಾಲೆಗಳಲ್ಲಿ ಉಚಿತ ಸ್ಯಾನಿಟರಿ ಉತ್ಪನ್ನ
+• Grand Canyon: Carved over 5-6 million years|• ಗ್ರ್ಯಾಂಡ್ ಕ್ಯಾನಿಯನ್: 5-6 ಮಿಲಿಯನ್ ವರ್ಷ
+• Heat intensity|• ಉಷ್ಣ ತೀವ್ರತೆ
+• Heat travels from|• ಉಷ್ಣ ಪ್ರಯಾಣ
+• Higher heat =|• ಹೆಚ್ಚು ಉಷ್ಣ =
+• Hot fluid|• ಬಿಸಿ ದ್ರವ
+• How does length affect time period?|• ಉದ್ದ ಕಾಲಾವಧಿಯನ್ನು ಹೇಗೆ ಪರಿಣಾಮ?
+• Ice expands in cracks|• ಬಿರುಕುಗಳಲ್ಲಿ ಐಸ್ ವಿಸ್ತರಿಸುತ್ತದೆ
+• If you have concerns, talk to a parent or doctor|• ಚಿಂತೆ ಇದ್ದರೆ ತಂದೆತಾಯಿ ಅಥವಾ ವೈದ್ಯರೊಂದಿಗೆ ಮಾತು
+• If you have skin problems, consult a doctor|• ಚರ್ಮ ಸಮಸ್ಯೆ ಇದ್ದರೆ ವೈದ್ಯರನ್ನು ಸಂಪರ್ಕಿಸಿ
+• Include|• ಒಳಗೊಳ್ಳಿ
+• Install|• ಸ್ಥಾಪಿಸಿ
+• It helps you feel confident and comfortable|• ಆತ್ಮವಿಶ್ವಾಸ ಮತ್ತು ಸೌಕರ್ಯ ನೀಡುತ್ತದೆ
+• It naturally ends around age 45-55 (menopause)|• 45-55 ವಯಸ್ಸಿನಲ್ಲಿ ಸ್ವಾಭಾವಿಕವಾಗಿ ಕೊನೆ (ರಜೋನಿವೃತ್ತಿ)
+• It's okay to ask for help when feelings are overwhelming|• ಭಾವನೆಗಳು ಅತಿಯಾದಾಗ ಸಹಾಯ ಕೇಳಲು ಸರಿ
+• Limit junk food, sugary drinks, and processed foods|• ಜಂಕ್ ಫುಡ್, ಸಕ್ಕರೆ ಪಾನೀಯ, ಪ್ರಾಸೆಸ್ಡ್ ಆಹಾರ ಕಡಿಮೆ
+• Magnesium + Oxygen → Magnesium Oxide (basic)|• ಮೆಗ್ನೀಸಿಯಂ + ಆಮ್ಲಜನಕ → ಮೆಗ್ನೀಸಿಯಂ ಆಕ್ಸೈಡ್ (ಕ್ಷಾರೀಯ)
+• Maintain hygiene with sanitary products|• ಸ್ಯಾನಿಟರಿ ಉತ್ಪನ್ನದಿಂದ ಆರೋಗ್ಯಕರ ನಿರ್ವಹಣೆ
+• Mercury - liquid metal at room temperature|• ಪಾದರಸ - ಕೋಣೆಯ ಉಷ್ಣತೆಯಲ್ಲಿ ದ್ರವ ಲೋಹ
+• Mood swings are normal during adolescence|• ಕೌಮಾರದಲ್ಲಿ ಮನೋಭಾವ ಬದಲಾವಣೆ ಸಾಮಾನ್ಯ
+• Need oxygen to occur|• ಸಂಭವಿಸಲು ಆಮ್ಲಜನಕ ಅಗತ್ಯ
+• Never insert objects into sockets|• ಸಾಕೆಟ್‌ಗೆ ವಸ್ತು ಸೇರಿಸಬೇಡಿ
+• Never touch switches with wet hands|• ಒದ್ದೆ ಕೈಯಿಂದ ಸ್ವಿಚ್ ಸ್ಪರ್ಶಿಸಬೇಡಿ
+• Night: Sea warm → Air rises → Land breeze blows out|• ರಾತ್ರಿ: ಸಮುದ್ರ ಬಿಸಿ → ಗಾಳಿ ಏರುತ್ತದೆ → ಭೂ ಗಾಳಿ
+• No oxygen = no fire|• ಆಮ್ಲಜನಕ ಇಲ್ಲ = ಅಗ್ನಿ ಇಲ್ಲ
+• Oxygen causes oxidation|• ಆಮ್ಲಜನಕ ಉತ್ಕರ್ಷಣೆ
+• Painting/oiling (blocks air & water)|• ಬಣ್ಣ/ಎಣ್ಣೆ (ಗಾಳಿ ಮತ್ತು ನೀರು ನಿರ್ಬಂಧ)
+• Particles|• ಕಣಗಳು
+• Periods last 3-7 days|• ಋತು 3-7 ದಿನ
+• Pins closer to flame drop|• ಜ್ವಾಲೆಗೆ ಹತ್ತಿರದ ಪಿನ್ಗಳು ಬೀಳುತ್ತವೆ
+• Places near the|• ಹತ್ತಿರದ ಸ್ಥಳಗಳು
+• Plant roots split rocks|• ಸಸ್ಯ ಬೇರುಗಳು ಕಲ್ಲು ಒಡೆಯುತ್ತವೆ
+• Recycling aluminium uses 95% less energy than making new aluminium|• ಅಲ್ಯೂಮಿನಿಯಂ ಮರುಬಳಕೆ ಹೊಸದಕ್ಕಿಂತ 95% ಕಡಿಮೆ ಶಕ್ತಿ
+• Release heat and light|• ಉಷ್ಣ ಮತ್ತು ಬೆಳಕು ಬಿಡುಗಡೆ
+• Smooth river pebbles: Thousands of years of tumbling|• ನುಣುಪು ನದಿ ಕಲ್ಲು: ಸಾವಿರಾರು ವರ್ಷ
+• Sodium, Potassium - soft metals (can be cut with knife)|• ಸೋಡಿಯಂ, ಪೊಟ್ಯಾಸಿಯಂ - ಮೃದು ಲೋಹ (ಅಡಿಗೆ ಕತ್ತರಿಸಬಹುದು)
+• Soil formation: Centuries of rock breakdown|• ಮಣ್ಣು ರಚನೆ: ಶತಮಾನಗಳ ಕಲ್ಲು ಒಡೆಯುವಿಕೆ
+• Stretching, bending, folding|• ಚಾಚುವುದು, ಬಾಗುವುದು, ಮಡಿಸುವುದು
+• Support community water conservation projects|• ಸಮುದಾಯ ನೀರು ಸಂರಕ್ಷಣೆ ಯೋಜನೆಗಳನ್ನು ಬೆಂಬಲಿಸಿ
+• Talk to parents, teachers, or counselors when needed|• ಅಗತ್ಯವಿದ್ದಾಗ ತಂದೆತಾಯಿ, ಶಿಕ್ಷಕ ಅಥವಾ ಸಲಹೆಗಾರರೊಂದಿಗೆ ಮಾತು
+• That's why pan bodies are metal but handles are plastic/wood!|• ಅದಕ್ಕೇ ಪಾತ್ರೆ ಲೋಹ ಹಿಡಿಕೆ ಪ್ಲಾಸ್ಟಿಕ್/ಮರ!
+• The candle uses up O₂ inside the jar|• ಜಾರ್ ಒಳಗೆ ಮೇಣ O₂ ಬಳಸುತ್ತದೆ
+• The steeper the line, the|• ರೇಖೆ ಏರಿದಷ್ಟು
+• These habits will benefit you throughout life|• ಈ ಅಭ್ಯಾಸಗಳು ಜೀವನದುದ್ದಕ್ಕೂ ಲಾಭ
+• This constant period is why pendulums are used in clocks!|• ಈ ಸ್ಥಿರ ಅವಧಿಯೇ ಊಸರವಳಿಗಳು ಗಡಿಯಾರದಲ್ಲಿ!
+• This is why grandfather clocks use long pendulums!|• ಅದಕ್ಕೇ ದಾದಾ ಗಡಿಯಾರ ಉದ್ದ ಊಸರವಳಿ!
+• Time period|• ಕಾಲಾವಧಿ
+• Try changing the mass slider - the period stays the same!|• ದ್ರವ್ಯರಾಶಿ ಸ್ಲೈಡರ್ ಬದಲಾಯಿಸಿ - ಅವಧಿ ಒಂದೇ!
+• Turns blue litmus RED|• ನೀಲಿ ಲಿಟ್ಮಸ್ ಕೆಂಪು
+• Turns red litmus BLUE|• ಕೆಂಪು ಲಿಟ್ಮಸ್ ನೀಲಿ
+• Two drawing pins as contact points|• ಎರಡು ಡ್ರಾಯಿಂಗ್ ಪಿನ್ ಸಂಪರ್ಕ ಬಿಂದು
+• Use only batteries for experiments|• ಪ್ರಯೋಗಗಳಿಗೆ ಬ್ಯಾಟರಿ ಮಾತ್ರ
+• Wash the area with water during each change|• ಪ್ರತಿ ಬದಲಾವಣೆಯಲ್ಲಿ ನೀರಿನಿಂದ ತೊಳೆಯಿರಿ
+• Water dissolves minerals|• ನೀರು ಖನಿಜ ಕರಗಿಸುತ್ತದೆ
+• Water tables are falling in many areas of India|• ಭಾರತದ ಅನೇಕ ಪ್ರದೇಶದಲ್ಲಿ ಭೂಜಲ ಇಳಿಯುತ್ತಿದೆ
+• Wear white in summer, dark in winter!|• ಬೇಸಿಗೆಯಲ್ಲಿ ಬಿಳಿ, ಚಳಿಯಲ್ಲಿ ಗಾಢ ಧರಿಸಿ!
+• When the safety pin touches both drawing pins, the circuit closes!|• ಸೇಫ್ಟಿ ಪಿನ್ ಎರಡು ಡ್ರಾಯಿಂಗ್ ಪಿನ್ ಸ್ಪರ್ಶಿಸಿದರೆ ಸರ್ಕ್ಯೂಟ್ ಮುಚ್ಚುತ್ತದೆ!
+• Which pendulum completes 10 swings fastest?|• ಯಾವ ಊಸರವಳಿ 10 ಆಂದೋಲನ ವೇಗ?
+⚖️ Average Weight|⚖️ ಸರಾಸರಿ ತೂಕ
+⭐ Adolescence|⭐ ಕೌಮಾರ
+⭐ Adolescence - The Focus Stage|⭐ ಕೌಮಾರ - ಕೇಂದ್ರ ಹಂತ
+⭐ Notice:|⭐ ಗಮನಿಸಿ:
+0-2 years|0-2 ವರ್ಷ
+1 Million yrs|1 ಮಿಲಿಯನ್ ವರ್ಷ
+1 millisecond (ms)|1 ಮಿಲಿಸೆಕೆಂಡ್ (ms)
+1 minute (min)|1 ನಿಮಿಷ (ನಿಮಿ)
+100% normal|100% ಸಾಮಾನ್ಯ
+10-19 years|10-19 ವರ್ಷ
+1656 CE - Christiaan Huygens|1656 CE - ಕ್ರಿಶ್ಚಿಯನ್ ಹ್ಯೂಜೆನ್ಸ್
+1927 CE - Modern Era|1927 CE - ಆಧುನಿಕ ಯುಗ
+2 Cells|2 ಸೆಲ್ಗಳು
+20-60 years|20-60 ವರ್ಷ
+3 Cells|3 ಸೆಲ್ಗಳು
+3-9 years|3-9 ವರ್ಷ
+60 minutes|60 ನಿಮಿಷ
+60+ years|60+ ವರ್ಷ
+8-10 hours|8-10 ಗಂಟೆಗಳು
+A complete circuit needs:|ಪೂರ್ಣ ಸರ್ಕ್ಯೂಟ್ ಅಗತ್ಯ:
+A gap anywhere breaks the circuit - no current flows|ಎಲ್ಲಿಯಾದರೂ ಅಂತರ ಸರ್ಕ್ಯೂಟ್ ಮುರಿಯುತ್ತದೆ - ಪ್ರವಾಹ ಇಲ್ಲ
+A switch controls the flow of current by completing (ON) or breaking (OFF) the circuit. When ON, it closes the gap and allows current to flow. When OFF, it creates a gap that stops the current. This simple principle is used in all electrical devices!|ಸ್ವಿಚ್ ಮುಚ್ಚಿ (ON) ಅಥವಾ ಮುರಿದು (OFF) ಪ್ರವಾಹ ನಿಯಂತ್ರಣ. ON ಆದಾಗ ಅಂತರ ಮುಚ್ಚಿ ಪ್ರವಾಹ; OFF ಆದಾಗ ಅಂತರ ಪ್ರವಾಹ ನಿಲುಗಡೆ. ಈ ತತ್ತ್ವ ಎಲ್ಲ ವಿದ್ಯುತ್ ಸಾಧನದಲ್ಲಿ!
+A torch is a simple electrical circuit! The|ಟಾರ್ಚ್ ಒಂದು ಸರಳ ವಿದ್ಯುತ್ ಸರ್ಕ್ಯೂಟ್! ಅದು
+Accelerate|ತ್ವರಣ
+Accelerating|ತ್ವರಣಗೊಳ್ಳುತ್ತಿದೆ
+Accuracy ~ 1 second in millions of years!|ನಿಖರತೆ ಲಕ್ಷಾಂತರ ವರ್ಷದಲ್ಲಿ ~1 ಸೆಕೆಂಡ್!
+Accuracy ~ 1 second/day|ನಿಖರತೆ ~1 ಸೆಕೆಂಡ್/ದಿನ
+Accuracy ~ 15 seconds/day|ನಿಖರತೆ ~15 ಸೆಕೆಂಡ್/ದಿನ
+Accuracy ~ 15-30 minutes|ನಿಖರತೆ ~15-30 ನಿಮಿಷ
+Adam's Apple|ಆಡಮ್‌ಸ್ ಆಪಲ್
+Adding water to dissolve SO₂...|SO₂ ಕರಗಿಸಲು ನೀರು ಸೇರಿಸಲಾಗುತ್ತಿದೆ...
+adjustment|ಸರಿಹೊಂದಿಸುವಿಕೆ
+Adolescents need 8-10 hours of sleep per night. During sleep, your body repairs itself, and your brain processes what you learned during the day.|ಕೌಮಾರದವರಿಗೆ ರಾತ್ರಿ 8-10 ಗಂಟೆ ನಿದ್ರೆ. ನಿದ್ರೆಯಲ್ಲಿ ಶರೀರ ಸರಿಪಡಿಸುತ್ತದೆ, ಮೆದುಳು ಹಗಲು ಕಲಿತದ್ದನ್ನು ಸಂಸ್ಕರಿಸುತ್ತದೆ.
+Adulthood|ಪ್ರೌಢಾವಸ್ಥೆ
+After|ನಂತರ
+AFTER - NEW SUBSTANCES!|ನಂತರ - ಹೊಸ ಪದಾರ್ಥಗಳು!
+Air and water both present|ಗಾಳಿ ಮತ್ತು ನೀರು ಇರುವುದು
+Air Pollution|ವಾಯು ಮಾಲಿನ್ಯ
+Alcohol|ಆಲ್ಕೊಹಾಲ್
+All combustion reactions:|ಎಲ್ಲ ದಹನ ಪ್ರತಿಕ್ರಿಯೆ:
+All emotions are valid|ಎಲ್ಲ ಭಾವನೆಗಳು ಸರಿ
+All three states are H₂O!|ಮೂರು ಸ್ಥಿತಿಗಳೂ H₂O!
+Almost none|ಬಹುತೇಕ ಇಲ್ಲ
+Altitude|ಎತ್ತರ
+Aluminium|ಅಲ್ಯೂಮಿನಿಯಂ
+Aluminium Foil|ಅಲ್ಯೂಮಿನಿಯಂ ಫಾಯಿಲ್
+Aluminium, Steel|ಅಲ್ಯೂಮಿನಿಯಂ, ಸ್ಟೀಲ್
+An electric cell has two terminals:|ವಿದ್ಯುತ್ ಸೆಲ್‌ಗೆ ಎರಡು ಟರ್ಮಿನಲ್:
+and harmful to your developing body and mind. Learning to say NO is an important life skill. It's okay to refuse - your health matters most!|ಮತ್ತು ಬೆಳೆಯುತ್ತಿರುವ ಶರೀರ ಮನಸ್ಸಿಗೆ ಹಾನಿ. ನಿರಾಕರಣೆ ಕಲಿಯುವುದು ಜೀವನ ಕೌಶಲ. ನಿರಾಕರಿಸಲು ಸರಿ - ಆರೋಗ್ಯ ಮುಖ್ಯ!
+Angry|ಕೋಪ
+Anxious|ಉದ್ವಿಗ್ನ
+Apply after bathing to prevent body odor throughout the day|ಸ್ನಾನದ ನಂತರ ಲೇಪಿಸಿ ದಿನವಿಡೀ ದೇಹ ವಾಸನೆ ತಡೆ
+Aquifer|ಜಲಭೃತ್
+are colder due to high altitude|ಎತ್ತರದಿಂದ ತಂಪು
+are more efficient, last longer, but need correct polarity (+ to +, − to −) to work.|ಹೆಚ್ಚು ಕಾರ್ಯಕ್ಷಮ, ಹೆಚ್ಚು ಕಾಲ, ಆದರೆ ಸರಿ ಧ್ರುವತೆ (+ to +, − to −) ಅಗತ್ಯ.
+are not ductile - they break when stretched.|ಸಾಕರ್ಷಕವಲ್ಲ - ಚಾಚಿದರೆ ಒಡೆಯುತ್ತವೆ.
+are poor conductors (insulators).|ಕಳಪೆ ವಾಹಕ (ವಾಹಕವಲ್ಲದ).
+are sonorous - they ring when struck! That's why bells, cymbals, and ghungroos are made of metal.|ಧ್ವನಿವಂತ - ಹೊಡೆದಾಗ ಶಬ್ದ! ಅದಕ್ಕೇ ಗಂಟೆ, ಜಂಗ್ಲ್ ಲೋಹ.
+are used for drainage|ಒಳಚರಂಡಿಗೆ ಬಳಕೆ
+are warmer|ಬಿಸಿ
+As water vapor rises, it <strong>cools down</strong>. Cool air can\|ನೀರಿನ ಆವಿ ಏರಿದಾಗ <strong>ತಂಪಾಗುತ್ತದೆ</strong>. ತಂಪು ಗಾಳಿ
+at night.|ರಾತ್ರಿಯಲ್ಲಿ.
+Atomic:|ಅಣು:
+Bacteria convert milk to curd overnight|ಬ್ಯಾಕ್ಟೀರಿಯಾ ರಾತ್ರಿಯಲ್ಲಿ ಹಾಲನ್ನು ಮೊಸರು
+baking soda|ಬೇಕಿಂಗ್ ಸೋಡಾ
+Balance|ಸಮತೋಲನ
+Basic|ಕ್ಷಾರೀಯ
+basic oxides|ಕ್ಷಾರೀಯ ಆಕ್ಸೈಡ್‌ಗಳು
+Battery|ಬ್ಯಾಟರಿ
+Battery Voltage = Cell 1 + Cell 2 + Cell 3 ...|ಬ್ಯಾಟರಿ ವೋಲ್ಟೇಜ್ = ಸೆಲ್ 1 + ಸೆಲ್ 2 + ಸೆಲ್ 3 ...
+Be a responsible citizen - recycle!|ಜವಾಬ್ದಾರಿಯುತ ನಾಗರಿಕ - ಮರುಬಳಕೆ!
+Be respectful in messages|ಸಂದೇಶಗಳಲ್ಲಿ ಗೌರವ
+BEFORE|ಮೊದಲು
+Before eating, after using toilet, after touching dirty surfaces|ಊಟದ ಮೊದಲು, ಶೌಚಾಲಯ ನಂತರ, ಕೊಳಕು ಮೇಲ್ಮೈ ಸ್ಪರ್ಶ ನಂತರ
+Before test|ಪರೀಕ್ಷೆ ಮೊದಲು
+Bells & Cymbals|ಗಂಟೆ ಮತ್ತು ಜಂಗ್ಲ್
+Better decision making|ಉತ್ತಮ ನಿರ್ಧಾರ
+Better emotional regulation|ಉತ್ತಮ ಭಾವನಾ ನಿಯಂತ್ರಣ
+Biodegradable|ಜೈವಿಕ ವಿಘಟನೀಯ
+Bitter|ಕಹಿ
+Bitter Gourd|ಹಾಗಲಕಾಯಿ
+Black Shirt|ಕಪ್ಪು ಶರ್ಟ್
+Body Shape Changes|ದೇಹ ಆಕಾರ ಬದಲಾವಣೆ
+Boiling →|ಕುದಿಯುವಿಕೆ →
+Boosts immune system|ರೋಗನಿರೋಧಕ ಶಕ್ತಿ ಹೆಚ್ಚಿಸುತ್ತದೆ
+Both air (oxygen) AND water are needed|ಗಾಳಿ (ಆಮ್ಲಜನಕ) ಮತ್ತು ನೀರು ಅಗತ್ಯ
+Braking|ಬ್ರೇಕ್ ಮಾಡುವುದು
+breakfast|ಉಪಾಹಾರ
+Breast Development|ಸ್ತನ ವಿಕಾಸ
+Bridge construction|ಸೇತು ನಿರ್ಮಾಣ
+Brittle materials|ಸ್ಫಟಿಕ ವಸ್ತುಗಳು
+Broader Shoulders|ಅಗಲ ಭುಜ
+Bronze, Brass|ಕಂಚು, ಪಿತ್ತಳೆ
+Brush Teeth Twice|ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಚಿಕ್ಕಡಿ
+Building positive relationships with family and friends is important. Good social connections provide support, fun, and help you develop communication skills.|ಕುಟುಂಬ ಸ್ನೇಹಿತರೊಂದಿಗೆ ಧನಾತ್ಮಕ ಸಂಬಂಧ. ಉತ್ತಮ ಸಾಮಾಜಿಕ ಸಂಪರ್ಕ ಬೆಂಬಲ, ಆನಂದ ಮತ್ತು ಸಂವಹನ ಕೌಶಲ.
+Builds trust and teamwork skills|ವಿಶ್ವಾಸ ಮತ್ತು ತಂಡ ಕೆಲಸ
+Bunsen Burner|ಬುನ್ಸೆನ್ ಬರ್ನರ್
+Burn magnesium ribbon in flame|ಜ್ವಾಲೆಯಲ್ಲಿ ಮೆಗ್ನೀಸಿಯಂ ರಿಬ್ಬನ್ ಸುಡಿ
+Burn sulfur to produce SO₂ gas|SO₂ ಅನಿಲಕ್ಕೆ ಸಲ್ಫರ್ ಸುಡಿ
+but don't move position|ಆದರೆ ಸ್ಥಾನ ಬದಲಾಯಿಸಬೇಡಿ
+but powerful!|ಆದರೆ ಶಕ್ತಿಶಾಲಿ!
+Calcium:|ಕ್ಯಾಲ್ಸಿಯಂ:
+Can be reversed: Cool it → Solid again!|ಹಿಮ್ಮುಖ: ತಂಪು → ಮತ್ತೆ ಘನ!
+can cause flooding (water can't seep in)|ವೈಪ್ಲವ್ಯ ಕಾರಣ (ನೀರು ಒಳಸೇರಲು ಸಾಧ್ಯವಿಲ್ಲ)
+Can reverse it|ಹಿಮ್ಮುಖ ಮಾಡಬಹುದು
+Candle burns down past marks showing hours|ಮೇಣ ಗಂಟೆ ಗುರುತುಗಳ ಮೂಲಕ ಸುಡುತ್ತದೆ
+Candle Clock|ಮೇಣ ಗಡಿಯಾರ
+Candle on table|ಮೇಜಿನ ಮೇಲೆ ಮೇಣ
+cannot be undone - the original is lost forever.|ರದ್ದು ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ - ಮೂಲ ಶಾಶ್ವತವಾಗಿ ಕಳೆದುಹೋಗಿದೆ.
+Cannot reverse|ಹಿಮ್ಮುಖ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ
+Carbon Dioxide|ಕಾರ್ಬನ್ ಡೈಆಕ್ಸೈಡ್
+carbon dioxide (CO₂)|ಕಾರ್ಬನ್ ಡೈಆಕ್ಸೈಡ್ (CO₂)
+Carbs|ಕಾರ್ಬೋಹೈಡ್ರೇಟ್
+cause harm or loss.|ಹಾನಿ ಅಥವಾ ನಷ್ಟ.
+Causes cancer, lung disease|ಕ್ಯಾನ್ಸರ್, ಶ್ವಾಸಕೋಶ ರೋಗ
+Cell will break|ಸೆಲ್ ಒಡೆಯುತ್ತದೆ
+cells|ಸೆಲ್ಗಳು
+CELLS (inside)|ಸೆಲ್ಗಳು (ಒಳಗೆ)
+Chalk|ಸೀಮೆಸುಣ್ಣ
+Charcoal|ಇದ್ದಲು
+Chemical|ರಾಸಾಯನಿಕ
+chemical change|ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ
+Childhood|ಬಾಲ್ಯ
+Child's voice|ಮಗುವಿನ ಸ್ವರ
+Circuit complete|ಸರ್ಕ್ಯೂಟ್ ಪೂರ್ಣ
+Circuit OFF|ಸರ್ಕ್ಯೂಟ್ ಆಫ್
+Circuit ON|ಸರ್ಕ್ಯೂಟ್ ಆನ್
+Circuit Symbol|ಸರ್ಕ್ಯೂಟ್ ಚಿಹ್ನೆ
+City Traffic|ನಗರ ಸಂಚಾರ
+Clean Clothes Daily|ದೈನಂದಿನ ಸ್ವಚ್ಛ ಬಟ್ಟೆ
+Clean face 2-3 times daily to prevent acne and pimples|ಮೊಡವೆ ತಡೆಯಲು ದಿನಕ್ಕೆ 2-3 ಬಾರಿ ಮುಖ ತೊಳೆಯಿರಿ
+Clean your body thoroughly, especially armpits and private areas|ಶರೀರವನ್ನು ಚೆನ್ನಾಗಿ ತೊಳೆಯಿರಿ, ವಿಶೇಷವಾಗಿ ಅಂಗೈ ಮತ್ತು ಖಾಸಗಿ ಭಾಗ
+Click "Light Candle" to start the experiment. Then cover it with a glass jar to see what happens!|ಪ್ರಯೋಗ ಪ್ರಾರಂಭಿಸಲು "ಮೇಣ ಬೆಳಗಿಸಿ" ಕ್ಲಿಕ್ ಮಾಡಿ. ನಂತರ ಏನಾಗುತ್ತದೆ ನೋಡಲು ಗಾಜಿನ ಜಾರ್‌ನಿಂದ ಮುಚ್ಚಿ!
+cloudy days|ಮೋಡದ ದಿನಗಳು
+Coastal areas|ತೀರ ಪ್ರದೇಶಗಳು
+coastal state|ತೀರ ರಾಜ್ಯ
+Coastal vs inland|ತೀರ ವಿರುದ್ಧ ಒಳನಾಡು
+Coins and medals|ನಾಣ್ಯ ಮತ್ತು ಪದಕ
+Collection:|ಸಂಗ್ರಹ:
+Color change|ಬಣ್ಣ ಬದಲಾವಣೆ
+Combustible material|ದಹನೀಯ ಪದಾರ್ಥ
+Compare with metals:|ಲೋಹಗಳೊಂದಿಗೆ ಹೋಲಿಕೆ:
+complete|ಪೂರ್ಣ
+completely natural biological process|ಸಂಪೂರ್ಣ ಸ್ವಾಭಾವಿಕ ಜೈವಿಕ ಪ್ರಕ್ರಿಯೆ
+completely new substances|ಸಂಪೂರ್ಣ ಹೊಸ ಪದಾರ್ಥಗಳು
+Component Details|ಘಟಕ ವಿವರ
+Composting|ಕಂಪೋಸ್ಟಿಂಗ್
+Computers:|ಕಂಪ್ಯೂಟರ್‌ಗಳು:
+Concrete cities|ಕಾಂಕ್ರೀಟ್ ನಗರಗಳು
+Concrete surfaces|ಕಾಂಕ್ರೀಟ್ ಮೇಲ್ಮೈ
+conduction|ವಾಹನ
+Conductor|ವಾಹಕ
+CONDUCTORS|ವಾಹಕಗಳು
+Confused|ಗೊಂದಲ
+Connect|ಸಂಪರ್ಕಿಸಿ
+Connection Status:|ಸಂಪರ್ಕ ಸ್ಥಿತಿ:
+constant|ಸ್ಥಿರ
+Controls ON/OFF of the circuit|ಸರ್ಕ್ಯೂಟ್ ಆನ್/ಆಫ್ ನಿಯಂತ್ರಣ
+controls the flow of current, and the|ಪ್ರವಾಹ ಹರಿವು ನಿಯಂತ್ರಣ, ಮತ್ತು
+convection currents|ಸಂವಹನ ಪ್ರವಾಹ
+converts electrical energy into light. When the switch is ON, current flows in a complete path (circuit) and the lamp glows.|ವಿದ್ಯುತ್ ಶಕ್ತಿಯನ್ನು ಬೆಳಕಾಗಿ. ಸ್ವಿಚ್ ಆನ್ ಆದಾಗ ಪ್ರವಾಹ ಪೂರ್ಣ ಮಾರ್ಗ (ಸರ್ಕ್ಯೂಟ್) ಮತ್ತು ದೀಪ ಉಜ್ಜ್ವಲ.
+Cover with blanket or use CO₂ extinguisher|ಕಂಬಳಿ ಮುಚ್ಚಿ ಅಥವಾ CO₂ ಅಗ್ನಿಶಾಮಕ
+Creates happy memories|ಸಂತೋಷದ ನೆನಪುಗಳು
+Creative activities|ಸೃಜನಾತ್ಮಕ ಚಟುವಟಿಕೆಗಳು
+Crystal vibrates 32,768 times per second!|ಕ್ರಿಸ್ಟಲ್ ಸೆಕೆಂಡಿಗೆ 32,768 ಬಾರಿ ಕಂಪಿಸುತ್ತದೆ!
+Crystal vibrations (32,768 Hz)|ಕ್ರಿಸ್ಟಲ್ ಕಂಪನ (32,768 Hz)
+Current flowing!|ಪ್ರವಾಹ ಹರಿಯುತ್ತಿದೆ!
+Current flows|ಪ್ರವಾಹ ಹರಿಯುತ್ತದೆ
+Current flows from + terminal through circuit to − terminal|+ ಟರ್ಮಿನಲ್‌ನಿಂದ ಸರ್ಕ್ಯೂಟ್ ಮೂಲಕ − ಟರ್ಮಿನಲ್
+Current flows only in a|ಪ್ರವಾಹ ಹರಿಯುವುದು ಮಾತ್ರ
+Current flows: + → External Circuit → −|ಪ್ರವಾಹ: + → ಬಾಹ್ಯ ಸರ್ಕ್ಯೂಟ್ → −
+Cut into strips|ಪಟ್ಟಿಗಳಾಗಿ ಕತ್ತರಿಸಿ
+Cyclist|ಸೈಕ್ಲಿಸ್ಟ್
+Daily Bath/Shower|ದೈನಂದಿನ ಸ್ನಾನ
+Damages liver, brain|ಯಕೃತ್ತು, ಮೆದುಳಿಗೆ ಹಾನಿ
+Dark colors absorb|ಗಾಢ ಬಣ್ಣ ಹೀರಿಕೊಳ್ಳುತ್ತದೆ
+Daytime|ಹಗಲು
+Decomposition:|ವಿಘಟನೆ:
+decreases with distance|ದೂರದೊಂದಿಗೆ ಕಡಿಮೆ
+Deep breathing|ಆಳ ಉಸಿರಾಟ
+Deepens significantly|ಗಣನೀಯವಾಗಿ ಆಳ
+Deforestation|ವನನಾಶ
+depends on length|ಉದ್ದದ ಮೇಲೆ ಅವಲಂಬಿತ
+different lengths|ವಿಭಿನ್ನ ಉದ್ದ
+Different materials have different:|ವಿಭಿನ್ನ ವಸ್ತುಗಳಿಗೆ ವಿಭಿನ್ನ:
+Different molecules|ವಿಭಿನ್ನ ಅಣುಗಳು
+Digital recording samples thousands of times per second|ಡಿಜಿಟಲ್ ರೆಕಾರ್ಡಿಂಗ್ ಸೆಕೆಂಡಿಗೆ ಸಾವಿರಾರು ಸ್ಯಾಂಪಲ್
+Dip filter paper|ಫಿಲ್ಟರ್ ಕಾಗದ ಮುಳುಗಿಸಿ
+Dissolve the ash (MgO) in water|ನೀರಲ್ಲಿ ಬೂದಿ (MgO) ಕರಗಿಸಿ
+Dissolving SO₂ in water...|ನೀರಲ್ಲಿ SO₂ ಕರಗುತ್ತಿದೆ...
+Divide by 3.6|3.6 ರಿಂದ ಭಾಗಿಸಿ
+does NOT depend on mass|ದ್ರವ್ಯರಾಶಿಯ ಮೇಲೆ ಅವಲಂಬಿತವಲ್ಲ
+don't have free electrons - they're insulators that protect us from electric shocks.|ಮುಕ್ತ ಇಲೆಕ್ಟ್ರಾನ್ ಇಲ್ಲ - ವಿದ್ಯುತ್ ಆಘಾತದಿಂದ ರಕ್ಷಿಸುವ ವಾಹಕವಲ್ಲದ.
+Don't talk to strangers online|ಆನ್‌ಲೈನ್ ಅಪರಿಚಿತರೊಂದಿಗೆ ಮಾತು ಮಾಡಬೇಡಿ
+Drugs|ಮಾದಕ ವಸ್ತು
+Dry air only (no water)|ಒಣ ಗಾಳಿ ಮಾತ್ರ (ನೀರು ಇಲ್ಲ)
+Ductile materials|ಸಾಕರ್ಷಕ ವಸ್ತುಗಳು
+During periods, extra hygiene is important:|ಋತುಕಾಲದಲ್ಲಿ ಹೆಚ್ಚುವರಿ ಆರೋಗ್ಯಕರ ಅಗತ್ಯ:
+during the day and|ಹಗಲು ಮತ್ತು
+During the day,|ಹಗಲು,
+During the peak growth period, adolescents can grow|ವೇಗದ ಬೆಳವಣಿಗೆ ಅವಧಿಯಲ್ಲಿ ಕೌಮಾರದವರು ಬೆಳೆಯಬಹುದು
+e.g., Coal, Sulfur|ಉದಾ., ಕಲ್ಲಿದ್ದಲು, ಸಲ್ಫರ್
+ECG measures heartbeats precisely|ECG ಹೃದಯ ಬಡಿತ ನಿಖರವಾಗಿ
+Eco-friendly, washable|ಪರಿಸರ ಸ್ನೇಹಿ, ಜಲದಿಂದ ತೊಳೆಯಬಹುದು
+Efficiency|ಕಾರ್ಯಕ್ಷಮತೆ
+ELECTRIC CELL|ವಿದ್ಯುತ್ ಸೆಲ್
+Electric current can pass through us, which is very dangerous.|ವಿದ್ಯುತ್ ಪ್ರವಾಹ ನಮ್ಮ ಮೂಲಕ ಹರಿಯಬಹುದು, ಅಪಾಯಕಾರಿ.
+Electrical conductivity|ವಿದ್ಯುತ್ ವಾಹಕತೆ
+energy|ಶಕ್ತಿ
+Environment-safe disposal|ಪರಿಸರ ಸುರಕ್ಷಿತ ವಿಲೇವಾರಿ
+Equal distances|ಸಮಾನ ದೂರ
+equal distances in equal time intervals|ಸಮಾನ ಸಮಯದಲ್ಲಿ ಸಮಾನ ದೂರ
+equator|ಭೂಮಧ್ಯರೇಖೆ
+Essential for healthy blood cells. Found in milk, eggs, fortified foods.|ಆರೋಗ್ಯಕರ ರಕ್ತ ಕೋಶಕ್ಕೆ ಅಗತ್ಯ. ಹಾಲು, ಮೊಟ್ಟೆ, ಫೋರ್ಟಿಫೈಡ್ ಆಹಾರ.
+Every stage of life is important and brings new experiences!|ಜೀವನದ ಪ್ರತಿ ಹಂತ ಮುಖ್ಯ ಮತ್ತು ಹೊಸ ಅನುಭವ!
+Everyone grows at their own pace - some earlier, some later. This is completely|ಎಲ್ಲರೂ ತಮ್ಮ ವೇಗದಲ್ಲಿ ಬೆಳೆಯುತ್ತಾರೆ - ಕೆಲವು ಮುಂಚೆ, ಕೆಲವು ನಂತರ. ಇದು ಸಂಪೂರ್ಣ
+Exceptions exist:|ವಿನಾಯಿತಿಗಳಿವೆ:
+expands and becomes lighter|ವಿಸ್ತರಿಸಿ ಹಗುರವಾಗುತ್ತದೆ
+Extreme →|ಅತಿ →
+extremely slow|ಅತ್ಯಂತ ನಿಧಾನ
+Facial Hair|ಮುಖ ಕೇಶ
+faster|ವೇಗವಾಗಿ
+Fats are needed for <strong>brain development</strong>, absorbing vitamins, and providing long-lasting energy. Choose healthy fats from nuts, seeds, and oils. Avoid trans fats and excessive fried foods.|<strong>ಮೆದುಳು ವಿಕಾಸ</strong>, ಜೀವಸತ್ವ ಹೀರಿಕೆ ಮತ್ತು ದೀರ್ಘ ಶಕ್ತಿಗೆ ಕೊಬ್ಬು. ಬೀಜ, ಎಣ್ಣೆ ಉತ್ತಮ ಕೊಬ್ಬು. ಟ್ರಾನ್ಸ್ ಫ್ಯಾಟ್ ಮತ್ತು ಅಧಿಕ ಫ್ರೈಡ್ ತಪ್ಪಿಸಿ.
+filament|ಫಿಲಾಮೆಂಟ್
+Filament heats & glows|ಫಿಲಾಮೆಂಟ್ ಬಿಸಿಯಾಗಿ ಉಜ್ಜ್ವಲ
+FINISH|ಮುಗಿದಿದೆ
+Fire extinguishers work by removing one or more of these elements!|ಒಂದು ಅಥವಾ ಹೆಚ್ಚು ಅಂಶ ತೆಗೆದು ಅಗ್ನಿಶಾಮಕ!
+first|ಮೊದಲ
+Flame → Pan|ಜ್ವಾಲೆ → ಪಾತ್ರೆ
+Flame colors|ಜ್ವಾಲೆ ಬಣ್ಣಗಳು
+Flat metal disc|ಫ್ಲಾಟ್ ಲೋಹ ಡಿಸ್ಕ್
+flatten into sheets when hammered.|ಹೊಡೆದಾಗ ಹಾಳೆಯಾಗಿ ಚಪ್ಪಡಿ.
+Flowering|ಅರಳುವಿಕೆ
+fluids|ದ್ರವಗಳು
+for agriculture and cities|ಕೃಷಿ ಮತ್ತು ನಗರಗಳಿಗೆ
+for calcium and strong bones|ಕ್ಯಾಲ್ಸಿಯಂ ಮತ್ತು ಬಲವಾದ ಮೂಳೆಗೆ
+for different latitudes|ವಿಭಿನ್ನ ಅಕ್ಷಾಂಶಕ್ಕೆ
+for electricity:|ವಿದ್ಯುತ್ಗೆ:
+for rusting to occur.|ತುಕ್ಕು ಸಂಭವಿಸಲು.
+For strong bones. Found in milk, curd, cheese, green leafy vegetables.|ಬಲವಾದ ಮೂಳೆ. ಹಾಲು, ಮೊಸರು, ಚೀಸ್, ಹಸಿರು ಎಲೆ ತರಕಾರಿ.
+forming|ರೂಪಿಸುವುದು
+free electrons|ಮುಕ್ತ ಇಲೆಕ್ಟ್ರಾನ್‌ಗಳು
+Frequency|ಆವರ್ತನೆ
+from all groups|ಎಲ್ಲ ಗುಂಪುಗಳಿಂದ
+Fruit Rotting|ಹಣ್ಣು ಕೊಳೆತ
+Fuel + O₂ → Products + Heat + Light|ಇಂಧನ + O₂ → ಉತ್ಪನ್ನ + ಉಷ್ಣ + ಬೆಳಕು
+Gap in circuit|ಸರ್ಕ್ಯೂಟ್‌ನಲ್ಲಿ ಅಂತರ
+gardening, washing, or even drinking|ಉದ್ಯಾನ, ತೊಳೆಯುವುದು ಅಥವಾ ಕುಡಿಯುವುದು
+Gas bubbles|ಅನಿಲ ಬುರುಡೆಗಳು
+Glass|ಗಾಜು
+Global Warming|ಜಾಗತಿಕ ತಾಪಮಾನ ಏರಿಕೆ
+Gold is extremely ductile|ಚಿನ್ನ ಅತ್ಯಂತ ಸಾಕರ್ಷಕ
+Gold, Silver, Platinum|ಚಿನ್ನ, ಬೆಳ್ಳಿ, ಪ್ಲಾಟಿನಂ
+Gravel beds|ಜಲ್ಲಿ ಹಾಸು
+Growing Plant|ಬೆಳೆಯುತ್ತಿರುವ ಸಸ್ಯ
+Growing steadily|ಸ್ಥಿರವಾಗಿ ಬೆಳೆಯುತ್ತಿದೆ
+Growth Spurt|ಬೆಳವಣಿಗೆ ಏರಿಕೆ
+Growth spurt usually happens between ages 10-14|ಬೆಳವಣಿಗೆ ಏರಿಕೆ ಸಾಮಾನ್ಯವಾಗಿ 10-14 ವಯಸ್ಸಿನಲ್ಲಿ
+Growth spurt usually happens between ages 12-16|ಬೆಳವಣಿಗೆ ಏರಿಕೆ ಸಾಮಾನ್ಯವಾಗಿ 12-16 ವಯಸ್ಸಿನಲ್ಲಿ
+H₂O in container|ಧಾರಕದಲ್ಲಿ H₂O
+Harmful chemicals|ಹಾನಿಕಾರಕ ರಾಸಾಯನಿಕ
+Harmful/Unwanted|ಹಾನಿಕಾರಕ/ಅನಪೇಕ್ಷಿತ
+have free electrons that carry electric current - they're good conductors!|ವಿದ್ಯುತ್ ಪ್ರವಾಹವನ್ನು ಸಾಗಿಸುವ ಮುಕ್ತ ಇಲೆಕ್ಟ್ರಾನ್ - ಉತ್ತಮ ವಾಹಕ!
+have moderate temperatures|ಮಧ್ಯಮ ಉಷ್ಣತೆ
+healthy habits|ಆರೋಗ್ಯಕರ ಅಭ್ಯಾಸಗಳು
+Healthy range|ಆರೋಗ್ಯಕರ ವ್ಯಾಪ್ತಿ
+Heat from the flame|ಜ್ವಾಲೆಯಿಂದ ಉಷ್ಣ
+Heat waves in air|ಗಾಳಿಯಲ್ಲಿ ಉಷ್ಣ ತರಂಗ
+heats and cools quickly (specific heat is low)|ಬೇಗ ಬಿಸಿ ಮತ್ತು ತಂಪು (ವಿಶಿಷ್ಟ ಉಷ್ಣ ಕಡಿಮೆ)
+heats and cools slowly (specific heat is high)|ನಿಧಾನವಾಗಿ ಬಿಸಿ ಮತ್ತು ತಂಪು (ವಿಶಿಷ್ಟ ಉಷ್ಣ ಹೆಚ್ಚು)
+Height above sea level|ಸಮುದ್ರ ಮಟ್ಟದ ಮೇಲೆ ಎತ್ತರ
+help replenish groundwater for future generations.|ಭವಿಷ್ಯದ ಪೀಳಿಗೆಗೆ ಭೂಜಲ ಪುನಃಪೂರಣೆ.
+help us or nature in some way.|ನಮಗೆ ಅಥವಾ ಪ್ರಕೃತಿಗೆ ಯಾವುದೇ ರೀತಿಯಲ್ಲಿ ಸಹಾಯ.
+higher the speed|ವೇಗ ಹೆಚ್ಚು
+Hot particles vibrate faster and transfer energy to neighbors (particles don't move, only energy does!)|ಬಿಸಿ ಕಣಗಳು ವೇಗವಾಗಿ ಕಂಪಿಸಿ ನೆರೆಯವರಿಗೆ ಶಕ್ತಿ (ಕಣ ಚಲಿಸುವುದಿಲ್ಲ, ಶಕ್ತಿ ಮಾತ್ರ!)
+Hot rises, cold sinks|ಬಿಸಿ ಏರುತ್ತದೆ, ತಂಪು ಇಳಿಯುತ್ತದೆ
+Hot water rises|ಬಿಸಿ ನೀರು ಏರುತ್ತದೆ
+Hourglass|ಮರಳು ಗಡಿಯಾರ
+hours|ಗಂಟೆಗಳು
+How it works|ಅದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ
+How might you feel in this situation?|ಈ ಪರಿಸ್ಥಿತಿಯಲ್ಲಿ ನೀವು ಹೇಗೆ ಭಾವಿಸಬಹುದು?
+humans go through adolescence|ಮಾನವರು ಕೌಮಾರದ ಮೂಲಕ ಹೋಗುತ್ತಾರೆ
+Ice cube turns into water|ಐಸ್ ಘನ ನೀರಾಗುತ್ತದೆ
+Ice Stupa|ಐಸ್ ಸ್ತೂಪ
+If the bulb glows →|ಬಲ್ಬ್ ಉಜ್ಜ್ವಲವಾದರೆ →
+If the bulb stays off →|ಬಲ್ಬ್ ಆಫ್ ಉಳಿದರೆ →
+Ignition temperature|ಉರಿಯುವ ಉಷ್ಣತೆ
+Ignition temperatures|ಉರಿಯುವ ಉಷ್ಣತೆಗಳು
+Important for blood formation, especially after menstruation begins. Found in spinach, dates, jaggery.|ರಕ್ತ ರಚನೆಗೆ ಮುಖ್ಯ, ಋತು ಪ್ರಾರಂಭ ನಂತರ. ಪಾಲಕ್, ಖರ್ಜೂರ, ಬೆಲ್ಲ.
+Improves communication abilities|ಸಂವಹನ ಸಾಮರ್ಥ್ಯ ಸುಧಾರಣೆ
+Improves focus and clarity|ಕೇಂದ್ರೀಕರಣ ಮತ್ತು ಸ್ಪಷ್ಟತೆ ಸುಧಾರಣೆ
+Improves learning and memory|ಕಲಿಕೆ ಮತ್ತು ನೆನಪು ಸುಧಾರಣೆ
+in boys is temporary - it happens as muscles adjust to the larger larynx|ಹುಡುಗರಲ್ಲಿ ತಾತ್ಕಾಲಿಕ - ದೊಡ್ಡ ಸ್ವರಪೆಟ್ಟಿಗೆಗೆ ಸ್ನಾಯು ಹೊಂದಿಕೊಳ್ಳುವಾಗ
+In circuit diagrams, the longer line represents positive terminal|ಸರ್ಕ್ಯೂಟ್ ಚಿತ್ರದಲ್ಲಿ ಉದ್ದ ರೇಖೆ ಧನ ಟರ್ಮಿನಲ್
+in equal time intervals|ಸಮಾನ ಸಮಯದಲ್ಲಿ
+in gardens|ಉದ್ಯಾನಗಳಲ್ಲಿ
+Increases energy levels|ಶಕ್ತಿ ಮಟ್ಟ ಹೆಚ್ಚಿಸುತ್ತದೆ
+Increases self-confidence|ಆತ್ಮವಿಶ್ವಾಸ ಹೆಚ್ಚಿಸುತ್ತದೆ
+Independence, career, family responsibilities|ಸ್ವಾತಂತ್ರ್ಯ, ವೃತ್ತಿ, ಕುಟುಂಬ ಜವಾಬ್ದಾರಿ
+Infancy|ಶಿಶು ಅವಧಿ
+inside a glass bulb. When electric current passes through the filament, it gets very hot (about 2500°C) and glows, producing light.|ಗಾಜಿನ ಬಲ್ಬ್ ಒಳಗೆ. ವಿದ್ಯುತ್ ಪ್ರವಾಹ ಫಿಲಾಮೆಂಟ್ ಮೂಲಕ ಹಾದುಹೋದಾಗ ಬಹು ಬಿಸಿ (ಸುಮಾರು 2500°C) ಮತ್ತು ಬೆಳಕು.
+Inside the water, <strong>convection</strong> takes over. Hot water at the bottom becomes less dense and rises. Cooler water from the top sinks down. This circular movement heats all the water evenly - that\|ನೀರಿನ ಒಳಗೆ <strong>ಸಂವಹನ</strong>. ಅಡಿಯ ಬಿಸಿ ನೀರು ಕಡಿಮೆ ಸಾಂದ್ರ ಮತ್ತು ಏರುತ್ತದೆ. ಮೇಲಿನ ತಂಪು ನೀರು ಇಳಿಯುತ್ತದೆ. ಈ ವೃತ್ತಾಕಾರ ಚಲನೆ ಎಲ್ಲ ನೀರು ಸಮವಾಗಿ ಬಿಸಿ -
+Inside water|ನೀರಿನ ಒಳಗೆ
+instantaneous speed|ತತ್ಕ್ಷಣ ವೇಗ
+Insulator|ವಾಹಕವಲ್ಲದ
+INSULATORS|ವಾಹಕವಲ್ಲದವು
+Intensity: 50%|ತೀವ್ರತೆ: 50%
+Interval|ಮಧ್ಯಂತರ
+Iron + Oxygen + Water → Rust (Hydrated Iron Oxide)|ಕಬ್ಬಿಣ + ಆಮ್ಲಜನಕ + ನೀರು → ತುಕ್ಕು (ಜಲಯುಕ್ತ ಕಬ್ಬಿಣ ಆಕ್ಸೈಡ್)
+irreversible|ಹಿಮ್ಮುಖವಲ್ಲ
+is a chemical change where fuel reacts with oxygen, producing heat and light.|ಇಂಧನ ಆಮ್ಲಜನಕದೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಿ ಉಷ್ಣ ಮತ್ತು ಬೆಳಕು ಉತ್ಪಾದಿಸುವ ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ.
+is Earth's primary heat source|ಭೂಮಿಯ ಪ್ರಾಥಮಿಕ ಉಷ್ಣ ಮೂಲ
+is just the larynx showing through the skin|ಚರ್ಮದ ಮೂಲಕ ಕಾಣುವ ಸ್ವರಪೆಟ್ಟಿಗೆ
+is over 1,600 years old but has NOT rusted! This shows the advanced metallurgy skills of ancient India. The pillar has a unique composition that protects it from corrosion.|1,600 ವರ್ಷಕ್ಕಿಂತ ಹಳೆಯದು ಆದರೆ ತುಕ್ಕು ಹಿಡಿಯಲಿಲ್ಲ! ಪ್ರಾಚೀನ ಭಾರತದ ಉನ್ನತ ಲೋಹಶಾಸ್ತ್ರ. ಸ್ತಂಭಕ್ಕೆ ತುಕ್ಕು ರಕ್ಷಣೆ ನೀಡುವ ವಿಶಿಷ್ಟ ಸಂಯೋಜನೆ.
+is the transition period between childhood and adulthood.|ಬಾಲ್ಯ ಮತ್ತು ಪ್ರೌಢಾವಸ್ಥೆಯ ನಡುವಿನ ಪರಿವರ್ತನಾ ಅವಧಿ.
+Jealous|ಅಸೂಯೆ
+Jewellery|ಆಭರಣ
+Just like plants need to grow and mature before producing seeds, and animals need to grow before they can reproduce,|ಸಸ್ಯಗಳು ಬೀಜ ಉತ್ಪಾದಿಸಲು ಬೆಳೆಯಬೇಕು, ಪ್ರಾಣಿಗಳು ಸಂತಾನೋತ್ಪತ್ತಿಗೆ ಬೆಳೆಯಬೇಕು,
+Keep personal info private|ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಖಾಸಗಿಯಾಗಿ ಇರಿಸಿ
+Key characteristics:|ಮುಖ್ಯ ಲಕ್ಷಣಗಳು:
+land breeze|ಭೂ ಗಾಳಿ
+Land heats and cools|ಭೂಮಿ ಬಿಸಿ ಮತ್ತು ತಂಪು
+land heats up faster|ಭೂಮಿ ಬೇಗ ಬಿಸಿಯಾಗುತ್ತದೆ
+Large|ದೊಡ್ಡ
+Larynx|ಸ್ವರಪೆಟ್ಟಿಗೆ
+Latitude|ಅಕ್ಷಾಂಶ
+Learning, playing, developing social skills|ಕಲಿಕೆ, ಆಟ, ಸಾಮಾಜಿಕ ಕೌಶಲ ವಿಕಾಸ
+Length|ಉದ್ದ
+Lifespan|ಆಯುಷ್ಯ
+Light + Heat|ಬೆಳಕು + ಉಷ್ಣ
+Light colors reflect|ಒಳ ಬಣ್ಣ ಪ್ರತಿಫಲಿಸುತ್ತದೆ
+Light Emitting Diode|ಲೈಟ್ ಎಮಿಟಿಂಗ್ ಡಯೋಡ್
+Light exercise can actually help reduce cramps and improve mood!|ಹಗುರ ವ್ಯಾಯಾಮ ಸೆಳೆತ ಕಡಿಮೆ ಮತ್ತು ಮನೋಭಾವ ಸುಧಾರಣೆ!
+Light source|ಬೆಳಕಿನ ಮೂಲ
+Like Adolescence|ಕೌಮಾರದಂತೆ
+Like Adulthood|ಪ್ರೌಢಾವಸ್ಥೆಯಂತೆ
+Like Childhood|ಬಾಲ್ಯದಂತೆ
+like coal, sulfur, and chalk are brittle - they break when hammered.|ಕಲ್ಲಿದ್ದಲು, ಸಲ್ಫರ್, ಸೀಮೆಸುಣ್ಣ ಸ್ಫಟಿಕ - ಹೊಡೆದಾಗ ಒಡೆಯುತ್ತವೆ.
+like copper, aluminium, and iron are malleable - they can be beaten into thin sheets (like silver foil on sweets!).|ತಾಮ್ರ, ಅಲ್ಯೂಮಿನಿಯಂ, ಕಬ್ಬಿಣ ತಟ್ಟಬಹುದಾದ - ತೆಳು ಹಾಳೆ (ಮಿಠಾಯಿಯ ಮೇಲೆ ಬೆಳ್ಳಿ ಫಾಯಿಲ್!).
+like copper, gold, and aluminium are ductile - they can be drawn into wires (like electrical wires!).|ತಾಮ್ರ, ಚಿನ್ನ, ಅಲ್ಯೂಮಿನಿಯಂ ಸಾಕರ್ಷಕ - ತಂತಿ (ವಿದ್ಯುತ್ ತಂತಿ!).
+Like Infancy|ಶಿಶು ಅವಧಿಯಂತೆ
+like iron and aluminium saves energy and natural resources!|ಕಬ್ಬಿಣ ಮತ್ತು ಅಲ್ಯೂಮಿನಿಯಂ ಶಕ್ತಿ ಮತ್ತು ನೈಸರ್ಗಿಕ ಸಂಪನ್ಮೂಲ ಉಳಿಸುತ್ತದೆ!
+like wood, plastic, and rubber produce dull sounds - they absorb vibrations instead of transmitting them.|ಮರ, ಪ್ಲಾಸ್ಟಿಕ್, ರಬ್ಬರ್ ಮಂದ ಶಬ್ದ - ಕಂಪನ ಹೀರಿಕೊಳ್ಳುತ್ತವೆ ಪ್ರಸರಿಸುವ ಬದಲು.
+liquid|ದ್ರವ
+Liquid Wax|ದ್ರವ ಮೇಣ
+Longer leg = Positive (+)|ಉದ್ದ ಲೆಗ್ = ಧನ (+)
+Longer line = Positive (+)|ಉದ್ದ ರೇಖೆ = ಧನ (+)
+Longer pendulum = Longer time period|ಉದ್ದ ಊಸರವಳಿ = ಉದ್ದ ಕಾಲಾವಧಿ
+Look at any cell carefully:|ಯಾವುದೇ ಸೆಲ್ ಜಾಗ್ರತೆ ನೋಡಿ:
+Look for these signs:|ಈ ಚಿಹ್ನೆಗಳನ್ನು ನೋಡಿ:
+Low (wastes heat)|ಕಡಿಮೆ (ಉಷ್ಣ ವ್ಯರ್ಥ)
+Magnesium|ಮೆಗ್ನೀಸಿಯಂ
+Magnesium + Oxygen → Magnesium Oxide (white ash)|ಮೆಗ್ನೀಸಿಯಂ + ಆಮ್ಲಜನಕ → ಮೆಗ್ನೀಸಿಯಂ ಆಕ್ಸೈಡ್ (ಬಿಳಿ ಬೂದಿ)
+Magnesium burns with a brilliant white light - don't look directly at it!|ಮೆಗ್ನೀಸಿಯಂ ಪ್ರಕಾಶಮಾನ ಬಿಳಿ ಬೆಳಕಿನಲ್ಲಿ ಉರಿಯುತ್ತದೆ - ನೇರ ನೋಡಬೇಡಿ!
+Make paste|ಪೇಸ್ಟ್ ಮಾಡಿ
+Making Bread|ರೊಟ್ಟಿ ತಯಾರಿಕೆ
+Malleable materials|ತಟ್ಟಬಹುದಾದ ವಸ್ತುಗಳು
+Marked candles burn at steady rate|ಗುರುತು ಮೇಣ ಸ್ಥಿರ ದರದಲ್ಲಿ ಉರಿಯುತ್ತದೆ
+Mass doesn't appear!|ದ್ರವ್ಯರಾಶಿ ಕಾಣಿಸುವುದಿಲ್ಲ!
+Match|ಹೊಂದಿಸಿ
+Matchstick|ಅಂಟುಸೈಜ್
+Mature Tree|ಪಕ್ವ ಮರ
+Mean Position|ಮಧ್ಯ ಸ್ಥಾನ
+Medicine:|ಔಷಧಿ:
+Medium|ಮಧ್ಯಮ
+Medium (100cm)|ಮಧ್ಯಮ (100ಸೆಂ)
+Medium gaps|ಮಧ್ಯಮ ಅಂತರ
+Melting →|ಕರಗುವಿಕೆ →
+Melting Ice|ಕರಗುತ್ತಿರುವ ಐಸ್
+melts solid wax into liquid|ಘನ ಮೇಣ ದ್ರವವಾಗಿ ಕರಗುತ್ತದೆ
+Mental|ಮಾನಸಿಕ
+Method|ವಿಧಾನ
+Mg ribbon|Mg ರಿಬ್ಬನ್
+millisecond|ಮಿಲಿಸೆಕೆಂಡ್
+milliseconds|ಮಿಲಿಸೆಕೆಂಡ್‌ಗಳು
+minute|ನಿಮಿಷ
+minutes|ನಿಮಿಷಗಳು
+Molecules packed tightly|ಅಣುಗಳು ಬಿಗಿಯಾಗಿ ಜೋಡಣೆ
+Molecules?|ಅಣುಗಳು?
+More cells = More voltage = Brighter bulb! 💡|ಹೆಚ್ಚು ಸೆಲ್ = ಹೆಚ್ಚು ವೋಲ್ಟೇಜ್ = ಪ್ರಕಾಶಮಾನ ಬಲ್ಬ್! 💡
+more radiated heat → Feel hotter!|ಹೆಚ್ಚು ವಿಕಿರಣ ಉಷ್ಣ → ಹೆಚ್ಚು ಬಿಸಿ!
+Most common, easy to use|ಅತ್ಯಂತ ಸಾಮಾನ್ಯ, ಬಳಸಲು ಸುಲಭ
+Mountains|ಪರ್ವತಗಳು
+Move the slider to simulate days passing and observe which nail rusts!|ದಿನ ಕಳೆಯುವುದನ್ನು ಅನುಕರಿಸಲು ಸ್ಲೈಡರ್ ಸರಿಸಿ ಯಾವ ಉಗುರು ತುಕ್ಕು ನೋಡಿ!
+Move the time slider to see how weathering and erosion slowly transform the landscape over thousands to millions of years!|ಕಾಲ ಸ್ಲೈಡರ್ ಸರಿಸಿ ಸಾವಿರಾರು-ಲಕ್ಷಾಂತರ ವರ್ಷದಲ್ಲಿ ಹವಾಮಾನ ಮತ್ತು ಸವಕಳಿ ಭೂದೃಶ್ಯವನ್ನು ಹೇಗೆ ರೂಪಾಂತರಿಸುತ್ತದೆ ನೋಡಿ!
+moves those pieces to new locations. Together, they shape mountains, valleys, and create soil over thousands of years!|ಆ ತುಣುಕುಗಳನ್ನು ಹೊಸ ಸ್ಥಳಕ್ಕೆ ಸರಿಸುತ್ತದೆ. ಒಟ್ಟಿಗೆ ಪರ್ವತ, ಕಣಿವೆ ಮತ್ತು ಸಾವಿರಾರು ವರ್ಷದಲ್ಲಿ ಮಣ್ಣು!
+Multiply by 3.6|3.6 ರಿಂದ ಗುಣಿಸಿ
+Music & Dance|ಸಂಗೀತ ಮತ್ತು ನೃತ್ಯ
+Music:|ಸಂಗೀತ:
+NaHCO₃ + CH₃COOH → CO₂ + H₂O + CH₃COONa|NaHCO₃ + CH₃COOH → CO₂ + H₂O + CH₃COONa
+Nasha Mukt Bharat Abhiyaan|ನಶಾ ಮುಕ್ತ ಭಾರತ ಅಭಿಯಾನ
+National De-addiction Helpline (Toll-free, 24/7)|ರಾಷ್ಟ್ರೀಯ ನಶಾ ಮುಕ್ತಿ ಹೆಲ್ಪ್‌ಲೈನ್ (ಟೋಲ್-ಫ್ರೀ, 24/7)
+Needs correct (+/−)|ಸರಿ (+/−) ಅಗತ್ಯ
+Negative (−)|ಋಣ (−)
+Negative Terminal|ಋಣ ಟರ್ಮಿನಲ್
+Never taste unknown substances!|ಅಜ್ಞಾತ ಪದಾರ್ಥ ರುಚಿ ನೋಡಬೇಡಿ!
+New smell|ಹೊಸ ವಾಸನೆ
+New substance?|ಹೊಸ ಪದಾರ್ಥ?
+night|ರಾತ್ರಿ
+Nighttime|ರಾತ್ರಿ
+No (Brittle)|ಇಲ್ಲ (ಸ್ಫಟಿಕ)
+No current flows|ಪ್ರವಾಹ ಹರಿಯುವುದಿಲ್ಲ
+NO medium|ಮಾಧ್ಯಮ ಇಲ್ಲ
+Non-ductile materials|ಸಾಕರ್ಷಕವಲ್ಲದ ವಸ್ತುಗಳು
+Non-lustrous (Dull)|ಅದ್ಯುತಿವಂತವಲ್ಲ (ಮಂದ)
+Non-metal|ಅಲೋಹ
+non-metals|ಅಲೋಹಗಳು
+Non-sonorous materials|ಧ್ವನಿವಂತವಲ್ಲದ ವಸ್ತುಗಳು
+non-uniform motion|ಅಸಮ ಏಕರೂಪ ಚಲನೆ
+normal|ಸಾಮಾನ್ಯ
+Not connected|ಸಂಪರ್ಕವಿಲ್ಲ
+Nothing happens|ಏನೂ ಆಗುವುದಿಲ್ಲ
+ODOMETER|ಓಡೋಮೀಟರ್
+of each appliance, we can appreciate how electricity makes our lives easier in cooking, lighting, cooling, communication, entertainment, and even transportation!|ಪ್ರತಿ ಉಪಕರಣದಿಂದ ವಿದ್ಯುತ್ ಅಡುಗೆ, ಬೆಳಕು, ತಂಪು, ಸಂವಹನ, ಮನರಂಜನೆ ಮತ್ತು ಸಾರಿಗೆಯಲ್ಲಿ ಜೀವನ ಸುಲಭ!
+of sleep each night|ಪ್ರತಿ ರಾತ್ರಿ ನಿದ್ರೆ
+Olympic races decided by milliseconds!|ಒಲಂಪಿಕ್ ಓಟ ಮಿಲಿಸೆಕೆಂಡ್‌ಗಳಿಂದ!
+Only state/form|ಕೇವಲ ಸ್ಥಿತಿ/ರೂಪ
+oscillation|ಆಂದೋಲನ
+Oscillations|ಆಂದೋಲನಗಳು
+Our body is a conductor!|ನಮ್ಮ ಶರೀರ ವಾಹಕ!
+over time. It covers|ಕಾಲಕ್ರಮೇಣ. ಅದು ಒಳಗೊಂಡಿದೆ
+Over-extraction|ಅತಿ ಹೊರತೆಗೆಯುವಿಕೆ
+Ovulation|ಅಂಡೋತ್ಸರ್ಜನ
+OXYGEN|ಆಮ್ಲಜನಕ
+oxygen is necessary for burning|ಉರಿಯಲು ಆಮ್ಲಜನಕ ಅಗತ್ಯ
+Paper|ಕಾಗದ
+Particle vibration|ಕಣ ಕಂಪನ
+Pendulum|ಊಸರವಳಿ
+Pendulum Clock|ಊಸರವಳಿ ಗಡಿಯಾರ
+Pendulum swings at constant rate|ಊಸರವಳಿ ಸ್ಥಿರ ದರದಲ್ಲಿ ಊಘಾಡುತ್ತದೆ
+Pendulum:|ಊಸರವಳಿ:
+Period (T)|ಅವಧಿ (T)
+Plant trees|ಮರ ನೆಡಿ
+Plastic|ಪ್ಲಾಸ್ಟಿಕ್
+Plastic Box|ಪ್ಲಾಸ್ಟಿಕ್ ಬಾಕ್ಸ್
+Plastic Scale|ಪ್ಲಾಸ್ಟಿಕ್ ಸ್ಕೇಲ್
+Polarity|ಧ್ರುವತೆ
+Positive (+)|ಧನ (+)
+Positive Terminal|ಧನ ಟರ್ಮಿನಲ್
+Pour water to cool it down|ತಂಪಾಗಿಸಲು ನೀರು ಸುರಿಯಿರಿ
+Precipitate|ಅವಕ್ಷೇಪ
+Precipitation:|ಅವಕ್ಷೇಪಣ:
+prevent infiltration → groundwater depletion!|ಒಳಸೇರುವಿಕೆ ತಡೆ → ಭೂಜಲ ಕ್ಷೀಣತೆ!
+prevent water from seeping into ground|ನೀರು ಭೂಮಿಗೆ ಒಳಸೇರುವುದು ತಡೆ
+Prevention methods:|ನಿವಾರಣೆ ವಿಧಾನಗಳು:
+Processors work in nanoseconds|ಪ್ರೊಸೆಸರ್‌ಗಳು ನ್ಯಾನೋಸೆಕೆಂಡ್‌ಗಳಲ್ಲಿ ಕೆಲಸ
+produce a dull thud sound.|ಮಂದ ಥಡ್ ಶಬ್ದ ಉತ್ಪಾದಿಸುತ್ತದೆ.
+Produces light when current flows|ಪ್ರವಾಹ ಹರಿದಾಗ ಬೆಳಕು ಉತ್ಪಾದಿಸುತ್ತದೆ
+Products|ಉತ್ಪನ್ನಗಳು
+Property|ಗುಣಧರ್ಮ
+Property Used: Heat Conductivity|ಬಳಸಿದ ಗುಣ: ಉಷ್ಣ ವಾಹಕತೆ
+Protein|ಪ್ರೋಟೀನ್
+Provide electrical energy|ವಿದ್ಯುತ್ ಶಕ್ತಿ ಒದಗಿಸುತ್ತದೆ
+provide energy, the|ಶಕ್ತಿ ಒದಗಿಸುತ್ತದೆ, ಅದು
+Provides emotional support|ಭಾವನಾತ್ಮಕ ಬೆಂಬಲ
+Proximity to Sea|ಸಮುದ್ರ ಸನಿಹ
+purpose|ಉದ್ದೇಶ
+Push Button|ಪುಶ್ ಬಟನ್
+Quartz Clock|ಕ್ವಾರ್ಟ್ಜ್ ಗಡಿಯಾರ
+Quartz:|ಕ್ವಾರ್ಟ್ಜ್:
+Question 1 of 10|10 ರಲ್ಲಿ ಪ್ರಶ್ನೆ 1
+Quick Check: Which terminal has the metal cap (bump)?|ತ್ವರಿತ ಪರಿಶೀಲನೆ: ಯಾವ ಟರ್ಮಿನಲ್‌ಗೆ ಲೋಹ ಕ್ಯಾಪ್ (ಬಂಪ್)?
+Race Time (simulated)|ಓಟ ಸಮಯ (ಅನುಕರಣ)
+radiated heat → Stay cooler!|ವಿಕಿರಣ ಉಷ್ಣ → ತಂಪಾಗಿ ಉಳಿಯಿರಿ!
+Rain, snow, hail falls|ಮಳೆ, ಹಿಮ, ಆಲಿಕಲ್ಲು ಬೀಳುತ್ತದೆ
+Rainwater harvesting|ಮಳೆನೀರು ಸಂಗ್ರಹಣೆ
+Reaction!|ಪ್ರತಿಕ್ರಿಯೆ!
+Real Component|ನೈಜ ಘಟಕ
+Real vs Symbol Comparison|ನೈಜ ವಿರುದ್ಧ ಚಿಹ್ನೆ ಹೋಲಿಕೆ
+recharge pits|ರಿಚಾರ್ಜ್ ಗುಂಡಿಗಳು
+Records|ರೆಕಾರ್ಡ್‌ಗಳು
+Recycling metals|ಲೋಹ ಮರುಬಳಕೆ
+reduces water retention|ನೀರು ಧಾರಣ ಕಡಿಮೆ
+Regular pendulum swings keep time|ನಿಯಮಿತ ಊಸರವಳಿ ಸಮಯ ಇಡುತ್ತದೆ
+Remove FUEL:|ಇಂಧನ ತೆಗೆದುಹಾಕಿ:
+Remove HEAT:|ಉಷ್ಣ ತೆಗೆದುಹಾಕಿ:
+Remove OXYGEN:|ಆಮ್ಲಜನಕ ತೆಗೆದುಹಾಕಿ:
+repeating processes|ಪುನರಾವರ್ತನೆ ಪ್ರಕ್ರಿಯೆಗಳು
+Report cyberbullying|ಸೈಬರ್ ಬುಲ್ಲಿಯಿಂಗ್ ವರದಿ ಮಾಡಿ
+Reusable Pads|ಮರುಬಳಕೆ ಪ್ಯಾಡ್‌ಗಳು
+Reversible?|ಹಿಮ್ಮುಖ?
+Rings ✓|ರಿಂಗ್ ✓
+rises|ಏರುತ್ತದೆ
+Room temperature|ಕೋಣೆಯ ಉಷ್ಣತೆ
+Rubber|ರಬ್ಬರ್
+Rubber Ball|ರಬ್ಬರ್ ಚೆಂಡು
+Rubber Eraser|ರಬ್ಬರ್ ಈರೇಸರ್
+Rubber gloves for electricians|ವಿದ್ಯುತ್ ತಂತ್ರಜ್ಞರಿಗೆ ರಬ್ಬರ್ ಕೈಚೀಲ
+Safety rules:|ಭದ್ರತಾ ನಿಯಮಗಳು:
+Safety:|ಭದ್ರತೆ:
+Same molecules|ಅದೇ ಅಣುಗಳು
+Same molecules, just moving freely!|ಅದೇ ಅಣುಗಳು, ಮುಕ್ತವಾಗಿ ಚಲಿಸುತ್ತಿವೆ!
+Sand flows through narrow neck|ಇಸುಕು ಕಿರಿದಾದ ಕಂಠದ ಮೂಲಕ ಹರಿಯುತ್ತದೆ
+Sanitary Pads|ಸ್ಯಾನಿಟರಿ ಪ್ಯಾಡ್‌ಗಳು
+Say "No thanks, I'm good" and stay confident|"ಇಲ್ಲ ಧನ್ಯವಾದ, ನನಗೆ ಸರಿ" ಎಂದು ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಇರಿ
+Scenario 2: Curiosity|ದೃಶ್ಯ 2: ಜಿಜ್ಞಾಸೆ
+Scenario 3: Online Influence|ದೃಶ್ಯ 3: ಆನ್‌ಲೈನ್ ಪ್ರಭಾವ
+Scenario 4: Stress Relief|ದೃಶ್ಯ 4: ಒತ್ತಡ ನಿವಾರಣೆ
+Scenario 5: Family Situation|ದೃಶ್ಯ 5: ಕುಟುಂಬ ಪರಿಸ್ಥಿತಿ
+Score: 0/0|ಸ್ಕೋರ್: 0/0
+screen time with outdoor play|ಆಟದೊಂದಿಗೆ ಸ್ಕ್ರೀನ್ ಸಮಯ
+sea breeze|ಸಮುದ್ರ ಗಾಳಿ
+Sea breeze provides relief from heat in coastal areas during hot afternoons!|ಬಿಸಿ ಮಧ್ಯಾಹ್ನ ತೀರ ಪ್ರದೇಶದಲ್ಲಿ ಸಮುದ್ರ ಗಾಳಿ ಉಷ್ಣ ನಿವಾರಣೆ!
+second|ಸೆಕೆಂಡ್
+seconds|ಸೆಕೆಂಡ್‌ಗಳು
+See Inside|ಒಳಗೆ ನೋಡಿ
+Seed → Seedling|ಬೀಜ → ಮೊಳಕೆ
+Seed Germination|ಬೀಜ ಮೊಳಕೆ
+Select all 3 elements|ಮೂರು ಅಂಶಗಳನ್ನೂ ಆಯ್ಕೆಮಾಡಿ
+Semiconductor emits light|ಸೆಮಿಕಂಡಕ್ಟರ್ ಬೆಳಕು ಹೊರಸೂಸುತ್ತದೆ
+series|ಸರಣಿ
+shatter into pieces when hammered.|ಹೊಡೆದಾಗ ತುಣುಕುಗಳಾಗಿ ಒಡೆಯುತ್ತದೆ.
+Shiny ✓|ಹೊಳೆಯುವ ✓
+Short|ಕಿರಿದಾದ
+Short (50cm)|ಕಿರಿದಾದ (50ಸೆಂ)
+Short, clean nails prevent dirt buildup and infections|ಕಿರಿದಾದ, ಸ್ವಚ್ಛ ಉಗುರು ಕೊಳಕು ಮತ್ತು ಸೋಂಕು ತಡೆ
+Shorter leg = Negative (−)|ಕಿರಿದಾದ ಲೆಗ್ = ಋಣ (−)
+Shorter line = Negative (−)|ಕಿರಿದಾದ ರೇಖೆ = ಋಣ (−)
+Show Current|ಪ್ರವಾಹ ತೋರಿಸಿ
+Shows|ತೋರಿಸುತ್ತದೆ
+Sikkim|ಸಿಕ್ಕಿಂ
+Sikkim is in the <strong>Himalayas</strong> at high altitude. Even though it\|ಸಿಕ್ಕಿಂ <strong>ಹಿಮಾಲಯ</strong>ದಲ್ಲಿ ಹೆಚ್ಚು ಎತ್ತರ. ಅದು
+sinks|ಇಳಿಯುತ್ತದೆ
+sinks to replace it|ಅದನ್ನು ಬದಲಿಸಲು ಇಳಿಯುತ್ತದೆ
+Sleep|ನಿದ್ರೆ
+Slight change|ಸ್ವಲ್ಪ ಬದಲಾವಣೆ
+SO₂ gas collected! Now add water.|SO₂ ಅನಿಲ ಸಂಗ್ರಹ! ಈಗ ನೀರು ಸೇರಿಸಿ.
+SO₂ gas collecting in the jar...|ಜಾರ್‌ನಲ್ಲಿ SO₂ ಅನಿಲ ಸಂಗ್ರಹ...
+Social|ಸಾಮಾಜಿಕ
+Solid Wax|ಘನ ಮೇಣ
+Solution ready! Test with litmus papers.|ದ್ರಾವಣ ಸಿದ್ಧ! ಲಿಟ್ಮಸ್ ಪೇಪರ್‌ನಿಂದ ಪರೀಕ್ಷಿಸಿ.
+Sonorous materials|ಧ್ವನಿವಂತ ವಸ್ತುಗಳು
+source|ಮೂಲ
+speed|ವೇಗ
+Sports:|ಕ್ರೀಡೆಗಳು:
+Standard circuit symbols are used worldwide to represent electrical components. Key symbols:|ವಿದ್ಯುತ್ ಘಟಕಗಳನ್ನು ಪ್ರತಿನಿಧಿಸಲು ವಿಶ್ವದಲ್ಲಿ ಪ್ರಮಾಣಿತ ಸರ್ಕ್ಯೂಟ್ ಚಿಹ್ನೆಗಳು. ಮುಖ್ಯ ಚಿಹ್ನೆಗಳು:
+state.|ಸ್ಥಿತಿ.
+Step 2: Dissolve SO₂ in water|ಹಂತ 2: ನೀರಲ್ಲಿ SO₂ ಕರಗಿಸಿ
+Step 3: Test with litmus paper|ಹಂತ 3: ಲಿಟ್ಮಸ್ ಪೇಪರ್‌ನಿಂದ ಪರೀಕ್ಷಿಸಿ
+Storage Tank|ಭಂಡಾರ ಟ್ಯಾಂಕ್
+stretch into thin wires.|ತೆಳು ತಂತಿಗಳಾಗಿ ಚಾಚಿ.
+Sulfur|ಸಲ್ಫರ್
+Sulfur (S)|ಸಲ್ಫರ್ (S)
+Sulfur + Oxygen → Sulfur Dioxide (pungent gas)|ಸಲ್ಫರ್ + ಆಮ್ಲಜನಕ → ಸಲ್ಫರ್ ಡೈಆಕ್ಸೈಡ್ (ಕಟು ಅನಿಲ)
+Sundial|ಸೂರ್ಯ ಘಡಿಯಾರ
+Sundial:|ಸೂರ್ಯ ಘಡಿಯಾರ:
+Supports growth hormone release|ಬೆಳವಣಿಗೆ ಹಾರ್ಮೋನ್ ಬಿಡುಗಡೆ ಬೆಂಬಲ
+switch|ಸ್ವಿಚ್
+Take away the burning material|ಉರಿಯುತ್ತಿರುವ ಪದಾರ್ಥ ತೆಗೆದುಹಾಕಿ
+Take breaks|ವಿರಾಮ ತೆಗೆದುಕೊಳ್ಳಿ
+Take it to fit in - you don't want to seem uncool|ಹೊಂದಿಕೊಳ್ಳಲು ಸೇರಿಕೊಳ್ಳಿ - ಅನ್ಕೂಲ್ ಕಾಣಬೇಡಿ
+Talk to someone|ಯಾರಾದರೂ ಮಾತು ಮಾಡಿ
+Tap "Burn" to ignite the magnesium ribbon|ಮೆಗ್ನೀಸಿಯಂ ರಿಬ್ಬನ್ ಉರಿಸಲು "ಸುಡಿ" ಟ್ಯಾಪ್ ಮಾಡಿ
+Tap "Burn" to ignite the sulfur powder|ಸಲ್ಫರ್ ಪುಡಿ ಉರಿಸಲು "ಸುಡಿ" ಟ್ಯಾಪ್ ಮಾಡಿ
+Tap an object to strike it and hear what sound it makes!|ವಸ್ತುವನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ ಹೊಡೆದು ಶಬ್ದ ಕೇಳಿ!
+Tap buttons to add/arrange cells|ಸೆಲ್‌ಗಳನ್ನು ಸೇರಿಸಲು/ವ್ಯವಸ್ಥೆ ಟ್ಯಾಪ್ ಬಟನ್
+Tap components below to learn|ಕಲಿಯಲು ಕೆಳಗಿನ ಘಟಕಗಳನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ
+Tap each component above to place it in the circuit!|ಸರ್ಕ್ಯೂಟ್‌ನಲ್ಲಿ ಇಡಲು ಮೇಲಿನ ಪ್ರತಿ ಘಟಕ ಟ್ಯಾಪ್ ಮಾಡಿ!
+Tap on items to check them off! Good hygiene becomes easier when it's a habit. Try to do these same things at the same time every day.|ವಸ್ತುಗಳನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ ಚೆಕ್ ಮಾಡಿ! ಅಭ್ಯಾಸವಾದಾಗ ಉತ್ತಮ ಆರೋಗ್ಯಕರ ಸುಲಭ. ಪ್ರತಿದಿನ ಒಂದೇ ಸಮಯದಲ್ಲಿ ಮಾಡಲು ಪ್ರಯತ್ನಿಸಿ.
+Tap on the terminals above to see current flow!|ಪ್ರವಾಹ ನೋಡಲು ಮೇಲಿನ ಟರ್ಮಿನಲ್‌ಗಳನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ!
+Tap the button to start the experiment!|ಪ್ರಯೋಗ ಪ್ರಾರಂಭಿಸಲು ಬಟನ್ ಟ್ಯಾಪ್ ಮಾಡಿ!
+Tap the switch in the circuit above to see this in action!|ಇದನ್ನು ನೋಡಲು ಮೇಲಿನ ಸರ್ಕ್ಯೂಟ್‌ನ ಸ್ವಿಚ್ ಟ್ಯಾಪ್ ಮಾಡಿ!
+TAP TO CLOSE|ಮುಚ್ಚಲು ಟ್ಯಾಪ್ ಮಾಡಿ
+Taste|ರುಚಿ
+Temperature change|ಉಷ್ಣತೆ ಬದಲಾವಣೆ
+terminal is the flat metal disc at the other end|ಟರ್ಮಿನಲ್ ಇನ್ನೊಂದು ತುದಿಯ ಫ್ಲಾಟ್ ಲೋಹ ಡಿಸ್ಕ್
+terminal is the small metal cap or bump at one end|ಟರ್ಮಿನಲ್ ಒಂದು ತುದಿಯ ಚಿಕ್ಕ ಲೋಹ ಕ್ಯಾಪ್ ಅಥವಾ ಬಂಪ್
+Test with litmus paper|ಲಿಟ್ಮಸ್ ಪೇಪರ್‌ನಿಂದ ಪರೀಕ್ಷಿಸಿ
+Testing with litmus papers...|ಲಿಟ್ಮಸ್ ಪೇಪರ್‌ಗಳಿಂದ ಪರೀಕ್ಷಿಸಲಾಗುತ್ತಿದೆ...
+That's why cooking pots are metal (to heat food) but handles are often wood or plastic (to stay cool)!|ಅದಕ್ಕೇ ಅಡುಗೆ ಪಾತ್ರೆ ಲೋಹ (ಆಹಾರ ಬಿಸಿ) ಹಿಡಿಕೆ ಮರ ಅಥವಾ ಪ್ಲಾಸ್ಟಿಕ್ (ತಂಪಾಗಿ)!
+That's why wires are copper (conductor) with rubber coating (insulator)!|ಅದಕ್ಕೇ ತಂತಿ ತಾಮ್ರ (ವಾಹಕ) ರಬ್ಬರ್ ಲೇಪನ (ವಾಹಕವಲ್ಲದ)!
+The balloon changed <strong>size and shape</strong>. But the rubber material is the same! Air was just added inside.|ಬಲೂನ್ <strong>ಗಾತ್ರ ಮತ್ತು ಆಕಾರ</strong> ಬದಲಾಯಿತು. ರಬ್ಬರ್ ಪದಾರ್ಥ ಅದೇ! ಒಳಗೆ ಗಾಳಿ ಸೇರಿಸಲಾಯಿತು.
+The cell symbol has two vertical lines:|ಸೆಲ್ ಚಿಹ್ನೆಗೆ ಎರಡು ಲಂಬ ರೇಖೆಗಳಿವೆ:
+The chalk changed from a <strong>stick to powder</strong>. But it\|ಸೀಮೆಸುಣ್ಣ <strong>ಕಡ್ಡಿಯಿಂದ ಪುಡಿ</strong>ಗೆ ಬದಲಾಯಿತು. ಆದರೆ ಅದು
+The Earth rotates|ಭೂಮಿ ತಿರುಗುತ್ತದೆ
+The ice changed from <strong>solid to liquid</strong>. But it\|ಐಸ್ <strong>ಘನದಿಂದ ದ್ರವ</strong>ಕ್ಕೆ ಬದಲಾಯಿತು. ಆದರೆ ಅದು
+The internet is useful but needs responsible use:|ಇಂಟರ್ನೆಟ್ ಉಪಯುಕ್ತ ಆದರೆ ಜವಾಬ್ದಾರಿಯುತ ಬಳಕೆ ಅಗತ್ಯ:
+The paper changed <strong>shape</strong> from a flat sheet to a boat. But it\|ಕಾಗದ <strong>ಆಕಾರ</strong> ಫ್ಲಾಟ್ ಶೀಟ್‌ನಿಂದ ಹಡಗು. ಆದರೆ ಅದು
+The rubber band changed <strong>shape</strong> when stretched. But it\|ರಬ್ಬರ್ ಬ್ಯಾಂಡ್ ಚಾಚಿದಾಗ <strong>ಆಕಾರ</strong> ಬದಲಾಯಿತು. ಆದರೆ ಅದು
+the same wax molecules|ಅದೇ ಮೇಣ ಅಣುಗಳು
+The spring changed <strong>shape</strong> when compressed. But the metal is still the same material!|ಸ್ಪ್ರಿಂಗ್ ಒತ್ತಿದಾಗ <strong>ಆಕಾರ</strong> ಬದಲಾಯಿತು. ಲೋಹ ಇನ್ನೂ ಅದೇ ಪದಾರ್ಥ!
+The substance itself|ಪದಾರ್ಥ ಸ್ವತಃ
+The Sun's heat causes water from oceans, rivers, and lakes to evaporate into water vapor.|ಸೂರ್ಯನ ಉಷ್ಣ ಸಮುದ್ರ, ನದಿ, ಸರೋವರದ ನೀರು ಆವಿಯಾಗುತ್ತದೆ.
+The switch acts like a|ಸ್ವಿಚ್ ಒಂದು ರೀತಿ ಕೆಲಸ
+The word "speedometer" comes from "speed" + "meter" (measuring device). Modern cars also have digital speedometers that use GPS satellites for accurate readings!|"ಸ್ಪೀಡೋಮೀಟರ್" "ವೇಗ" + "ಮೀಟರ್". ಆಧುನಿಕ ಕಾರುಗಳಲ್ಲಿ ಜಿಪಿಎಸ್ ನಿಖರ ವಾಚನಕ್ಕೆ ಡಿಜಿಟಲ್ ಸ್ಪೀಡೋಮೀಟರ್!
+This classic experiment proves that|ಈ ಶಾಸ್ತ್ರೀಯ ಪ್ರಯೋಗ ಸಾಬೀತು
+This experiment shows a|ಈ ಪ್ರಯೋಗ ತೋರಿಸುತ್ತದೆ
+This is why fire extinguishers work by cutting off oxygen supply!|ಅದಕ್ಕೇ ಅಗ್ನಿಶಾಮಕ ಆಮ್ಲಜನಕ ಸರಬರಾಜು ಕಡಿದು!
+throughout|ಉದ್ದಕ್ಕೂ
+Thuds ✗|ಥಡ್ ✗
+Time Elapsed|ಕಳೆದ ಸಮಯ
+Time Period|ಕಾಲಾವಧಿ
+Time period depends ONLY on length.|ಕಾಲಾವಧಿ ಕೇವಲ ಉದ್ದದ ಮೇಲೆ ಅವಲಂಬಿತ.
+Time: 0 seconds|ಸಮಯ: 0 ಸೆಕೆಂಡ್
+to prepare the body for adulthood.|ಶರೀರವನ್ನು ಪ್ರೌಢಾವಸ್ಥೆಗೆ ತಯಾರಿ.
+to relax and recharge|ವಿಶ್ರಾಂತಿ ಮತ್ತು ರಿಚಾರ್ಜ್
+Tobacco/Cigarettes|ಅಗರೆ/ಸಿಗರೇಟ್
+Toggle each element on/off to see what happens. Fire needs ALL THREE elements to burn!|ಏನಾಗುತ್ತದೆ ನೋಡಲು ಪ್ರತಿ ಅಂಶ ಆನ್/ಆಫ್. ಅಗ್ನಿಗೆ ಮೂರು ಅಂಶ ಅಗತ್ಯ!
+total distance|ಒಟ್ಟು ದೂರ
+Total Voltage (Battery)|ಒಟ್ಟು ವೋಲ್ಟೇಜ್ (ಬ್ಯಾಟರಿ)
+Train|ರೈಲು
+Trim Nails Weekly|ವಾರಕ್ಕೊಮ್ಮೆ ಉಗುರು ಕತ್ತರಿಸಿ
+Turmeric powder|ಅರಿಸಿನ ಪುಡಿ
+Unequal distances in equal time intervals|ಸಮಾನ ಸಮಯದಲ್ಲಿ ಅಸಮಾನ ದೂರ
+uniform linear motion|ಏಕರೂಪ ರೇಖೀಯ ಚಲನೆ
+Uniform Motion|ಏಕರೂಪ ಚಲನೆ
+use a heated filament to produce light and work either way.|ಬಿಸಿ ಫಿಲಾಮೆಂಟ್ ಬೆಳಕು ಉತ್ಪಾದಿಸಿ ಎರಡೂ ರೀತಿ ಕೆಲಸ.
+Use Deodorant|ಡಿಯೋಡರಂಟ್ ಬಳಸಿ
+Use water wisely|ನೀರನ್ನು ಬುದ್ಧಿವಂತಿಕೆಯಿಂದ ಬಳಸಿ
+Useful/Beneficial|ಉಪಯುಕ್ತ/ಲಾಭಕರ
+Usually Irreversible:|ಸಾಮಾನ್ಯವಾಗಿ ಹಿಮ್ಮುಖವಲ್ಲ:
+Usually Reversible:|ಸಾಮಾನ್ಯವಾಗಿ ಹಿಮ್ಮುಖ:
+Vaping/E-cigarettes|ವೇಪಿಂಗ್/ಇ-ಸಿಗರೇಟ್
+Vapor → Clouds (cooling)|ಆವಿ → ಮೋಡ (ತಂಪಾಗುವಿಕೆ)
+variety of foods|ವಿವಿಧ ಆಹಾರ
+vibrate|ಕಂಪಿಸುತ್ತದೆ
+Vitamin B12:|ಜೀವಸತ್ವ B12:
+Vitamins|ಜೀವಸತ್ವಗಳು
+Vitamins and minerals help your body <strong>function properly</strong>, fight diseases, and support growth. Fruits and vegetables are the best sources. Each color provides different nutrients!|ಜೀವಸತ್ವ ಮತ್ತು ಖನಿಜ ಶರೀರ <strong>ಸರಿಯಾಗಿ ಕೆಲಸ</strong>, ರೋಗದಿಂದ ಹೋರಾಟ ಮತ್ತು ಬೆಳವಣಿಗೆ. ಹಣ್ಣು ತರಕಾರಿ ಉತ್ತಮ ಮೂಲ. ಪ್ರತಿ ಬಣ್ಣ ವಿಭಿನ್ನ ಪೋಷಕ!
+Voice cracking|ಸ್ವರ ಒಡೆಯುವಿಕೆ
+Voice Deepens|ಸ್ವರ ಆಳ
+Voice Pitch|ಸ್ವರ ಪಿಚ್
+Walker|ನಡೆದಾಡುವವನು
+Wash Hands Frequently|ಆಗಾಗ್ಗೆ ಕೈ ತೊಳೆಯಿರಿ
+water|ನೀರು
+Water → Water vapor (Sun heats)|ನೀರು → ನೀರಿನ ಆವಿ (ಸೂರ್ಯ ಬಿಸಿ)
+Water Clock (Clepsydra)|ನೀರು ಗಡಿಯಾರ (ಕ್ಲೆಪ್ಸಿಡ್ರಾ)
+Water collects in <strong>oceans, lakes, and rivers</strong>, or is stored underground as groundwater. From here, the cycle begins again!|ನೀರು <strong>ಸಮುದ್ರ, ಸರೋವರ, ನದಿ</strong> ಅಥವಾ ಭೂಜಲ. ಇಲ್ಲಿಂದ ಚಕ್ರ ಮತ್ತೆ!
+Water flow measures time intervals|ನೀರು ಹರಿವು ಸಮಯ ಮಧ್ಯಂತರ ಅಳೆಯುತ್ತದೆ
+Water returns to oceans & ground|ನೀರು ಸಮುದ್ರ ಮತ್ತು ಭೂಮಿಗೆ ಮರಳುತ್ತದೆ
+Water seeps to groundwater|ನೀರು ಭೂಜಲಕ್ಕೆ ಒಳಸೇರುತ್ತದೆ
+Water that falls on land either <strong>runs off</strong> into streams and rivers, or <strong>infiltrates</strong> (seeps) into the ground to become groundwater.|ಭೂಮಿಯ ಮೇಲೆ ಬೀಳುವ ನೀರು <strong>ಹರಿದು</strong> ಜಲಸ್ರೋತ/ನದಿ ಅಥವಾ <strong>ಒಳಸೇರುತ್ತದೆ</strong> ಭೂಜಲ.
+water vapor|ನೀರಿನ ಆವಿ
+Wax is still wax - only the state changed|ಮೇಣ ಇನ್ನೂ ಮೇಣ - ಕೇವಲ ಸ್ಥಿತಿ ಬದಲಾಯಿತು
+Wax Melting|ಮೇಣ ಕರಗುವಿಕೆ
+WAX VAPOR|ಮೇಣ ಆವಿ
+Wear fresh underwear and clothes, especially after sweating|ತಾಜಾ ಅಂಡರ್‌ವೇರ್ ಮತ್ತು ಬಟ್ಟೆ ಧರಿಸಿ, ವಿಶೇಷವಾಗಿ ಬೆವರಿದ ನಂತರ
+We'll place both a metal spoon and a wooden spoon in hot water and observe which handle gets hotter faster.|ಲೋಹ ಮತ್ತು ಮರದ ಚಮಚ ಬಿಸಿ ನೀರಲ್ಲಿ ಇಡುತ್ತೇವೆ ಯಾವ ಹಿಡಿಕೆ ಬೇಗ ಬಿಸಿಯಾಗುತ್ತದೆ ನೋಡುತ್ತೇವೆ.
+What will happen if the switch is closed?|ಸ್ವಿಚ್ ಮುಚ್ಚಿದರೆ ಏನಾಗುತ್ತದೆ?
+When the jar covers the candle, oxygen inside the jar gets consumed. The flame produces|ಜಾರ್ ಮೇಣ ಮುಚ್ಚಿದಾಗ ಜಾರ್ ಒಳಗೆ ಆಮ್ಲಜನಕ consumed. ಜ್ವಾಲೆ ಉತ್ಪಾದಿಸುತ್ತದೆ
+When water droplets in clouds become heavy enough, they fall as <strong>precipitation</strong> - rain, snow, sleet, or hail depending on temperature.|ಮೋಡದ ನೀರಿನ ಬಿಂದುಗಳು ಭಾರವಾದಾಗ <strong>ಅವಕ್ಷೇಪಣ</strong> - ಮಳೆ, ಹಿಮ, ಸ್ಲೀಟ್ ಅಥವಾ ಆಲಿಕಲ್ಲು ಉಷ್ಣತೆ ಅನುಸಾರ.
+When we connect cells correctly (+ to − of next cell), their voltages|ಸೆಲ್‌ಗಳನ್ನು ಸರಿಯಾಗಿ ಸಂಪರ್ಕಿಸಿದಾಗ (+ ಮುಂದಿನ ಸೆಲ್ −), ಅವುಗಳ ವೋಲ್ಟೇಜ್
+Where|ಎಲ್ಲಿ
+Which type of material can be beaten into thin sheets?|ಯಾವ ವಸ್ತು ತೆಳು ಹಾಳೆಗೆ ತಟ್ಟಬಹುದು?
+Which type of material is used and why?|ಯಾವ ವಸ್ತು ಬಳಕೆ ಮತ್ತು ಏಕೆ?
+White Shirt|ಬಿಳಿ ಶರ್ಟ್
+Wires|ತಂತಿಗಳು
+Wires Crossing|ತಂತಿಗಳು ಛೇದನ
+Wisdom, slower pace, enjoying life experiences|ಜ್ಞಾನ, ನಿಧಾನ, ಜೀವನ ಅನುಭವ ಆನಂದ
+with a flat disc. In circuit symbols, the longer line represents positive. Current flows from positive through the external circuit to negative.|ಫ್ಲಾಟ್ ಡಿಸ್ಕ್‌ನೊಂದಿಗೆ. ಸರ್ಕ್ಯೂಟ್ ಚಿಹ್ನೆಯಲ್ಲಿ ಉದ್ದ ರೇಖೆ ಧನ. ಪ್ರವಾಹ ಧನದಿಂದ ಬಾಹ್ಯ ಸರ್ಕ್ಯೂಟ್ ಮೂಲಕ ಋಣ.
+with a metal cap and|ಲೋಹ ಕ್ಯಾಪ್‌ನೊಂದಿಗೆ ಮತ್ತು
+with family and friends|ಕುಟುಂಬ ಮತ್ತು ಸ್ನೇಹಿತರೊಂದಿಗೆ
+Wood Block|ಮರ ಬ್ಲಾಕ್
+Wood is a poor conductor|ಮರ ಕಳಪೆ ವಾಹಕ
+Wood stick|ಮರ ಕಡ್ಡಿ
+Wooden|ಮರದ
+Wooden Spoon|ಮರದ ಚಮಚ
+Wooden spoon handles|ಮರದ ಚಮಚ ಹಿಡಿಕೆಗಳು
+Wooden Stick|ಮರದ ಕಡ್ಡಿ
+Works either way|ಎರಡೂ ರೀತಿ ಕೆಲಸ
+Writing/Journaling|ಬರವಣಿಗೆ/ಜರ್ನಲ್
+You can feel warmth standing near the stove without touching anything - that\|ಅಡುಗೆ ಅಟ್ಟಿ ಹತ್ತಿರ ನಿಂತರೆ ಸ್ಪರ್ಶಿಸದೆ ಉಷ್ಣ - ಅದು
+You can make a simple switch using:|ನೀವು ಸರಳ ಸ್ವಿಚ್ ಮಾಡಬಹುದು:
+You feel warmth|ನೀವು ಉಷ್ಣ ಅನುಭವಿಸುತ್ತೀರಿ
+Your best friend starts spending more time with someone else.|ನಿಮ್ಮ ಅತ್ಯುತ್ತಮ ಸ್ನೇಹಿತ ಬೇರೆಯವರೊಂದಿಗೆ ಹೆಚ್ಚು ಸಮಯ ಕಳೆಯಲಾರಂಭಿಸುತ್ತಾರೆ.
+🌇 Evening|🌇 ಸಂಜೆ
+🌊 River Rocks|🌊 ನದಿ ಕಲ್ಲುಗಳು
+🌍 Factors Affecting Temperature|🌍 ಉಷ್ಣತೆಯನ್ನು ಪ್ರಭಾವಿಸುವ ಅಂಶಗಳು
+🌙 Land Breeze (Nighttime)|🌙 ಭೂ ಗಾಳಿ (ರಾತ್ರಿ)
+🌟 Age 12: Early Adolescence|🌟 ವಯಸ್ಸು 12: ಆರಂಭಿಕ ಕೌಮಾರ
+🌡️ Average: 25-32°C (Warm & Humid)|🌡️ ಸರಾಸರಿ: 25-32°C (ಬಿಸಿ ಮತ್ತು ಒದ್ದೆ)
+🌡️ Place spoons in hot water|🌡️ ಚಮಚಗಳನ್ನು ಬಿಸಿ ನೀರಲ್ಲಿ ಇಡಿ
+🌡️ Temperature Control:|🌡️ ಉಷ್ಣತೆ ನಿಯಂತ್ರಣ:
+🌧️ Precipitation|🌧️ ಅವಕ್ಷೇಪಣ
+🌬️ Land Breeze|🌬️ ಭೂ ಗಾಳಿ
+🌬️ Sea Breeze|🌬️ ಸಮುದ್ರ ಗಾಳಿ
+🌾 Millets|🌾 ಜೋಳ
+🌿 Growth in Nature - Same Pattern!|🌿 ಪ್ರಕೃತಿಯಲ್ಲಿ ಬೆಳವಣಿಗೆ - ಅದೇ ಮಾದರಿ!
+🍝 Pasta|🍝 ಪಾಸ್ಟಾ
+🍞 Bread|🍞 ರೊಟ್ಟಿ
+🎉 All Appliances Classified!|🎉 ಎಲ್ಲ ಉಪಕರಣ ವರ್ಗೀಕೃತ!
+🎉 Great job! All correct!|🎉 ಉತ್ತಮ! ಎಲ್ಲ ಸರಿ!
+🎮 Identify the Substance|🎮 ಪದಾರ್ಥ ಗುರುತಿಸಿ
+🎮 Match the Application!|🎮 ಅನ್ವಯ ಹೊಂದಿಸಿ!
+🎯 THE KEY DIFFERENCE|🎯 ಮುಖ್ಯ ವ್ಯತ್ಯಾಸ
+🏔️ Mountain|🏔️ ಪರ್ವತ
+🏔️ Sikkim - Cold Mountain Climate|🏔️ ಸಿಕ್ಕಿಂ - ತಂಪು ಪರ್ವತ ಹವಾಮಾನ
+🏞️ Runoff|🏞️ ಹರಿವು
+👁️ Observation|👁️ ವೀಕ್ಷಣೆ
+👆 First select a category, then tap appliances that belong to it!|👆 ಮೊದಲು ವರ್ಗ ಆಯ್ಕೆ, ನಂತರ ಅದಕ್ಕೆ ಸೇರಿದ ಉಪಕರಣ ಟ್ಯಾಪ್ ಮಾಡಿ!
+👆 Tap on terminals to learn more|👆 ಹೆಚ್ಚು ಕಲಿಯಲು ಟರ್ಮಿನಲ್‌ಗಳನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ
+👆 Tap the switch to toggle ON/OFF|👆 ಆನ್/ಆಫ್ ಟಾಗಲ್ ಮಾಡಲು ಸ್ವಿಚ್ ಟ್ಯಾಪ್ ಮಾಡಿ
+👕 Experiment: Dark vs Light Colors|👕 ಪ್ರಯೋಗ: ಗಾಢ ವಿರುದ್ಧ ಒಳ ಬಣ್ಣ
+👥 Healthy Social Life|👥 ಆರೋಗ್ಯಕರ ಸಾಮಾಜಿಕ ಜೀವನ
+👨 Adulthood (20-60 years)|👨 ಪ್ರೌಢಾವಸ್ಥೆ (20-60 ವರ್ಷ)
+💡 CONDUCTORS|💡 ವಾಹಕಗಳು
+💡 Hygiene Tip|💡 ಆರೋಗ್ಯಕರ ಸಲಹೆ
+💧 Add Water|💧 ನೀರು ಸೇರಿಸಿ
+💧 Collection|💧 ಸಂಗ್ರಹ
+💧 CONVECTION|💧 ಸಂವಹನ
+💧 Dissolve|💧 ಕರಗಿಸಿ
+💧 Medium|💧 ಮಾಧ್ಯಮ
+💧 Water|💧 ನೀರು
+💨 Blowing air...|💨 ಗಾಳಿ ಊದುತ್ತಿದೆ...
+💨 Inflate the Balloon|💨 ಬಲೂನ್ ಊದಿ
+💨 Steam|💨 ಆವಿ
+💪 Positive Ways to Handle Emotions|💪 ಭಾವನೆಗಳನ್ನು ನಿಭಾಯಿಸಲು ಧನಾತ್ಮಕ ಮಾರ್ಗಗಳು
+📅 Explore the Cycle (28-day average):|📅 ಚಕ್ರ ಅನ್ವೇಷಿಸಿ (28-ದಿನ ಸರಾಸರಿ):
+📊 All Three Methods in One Scene|📊 ಒಂದು ದೃಶ್ಯದಲ್ಲಿ ಮೂರು ವಿಧಾನ
+📊 Equivalent Values|📊 ಸಮಾನ ಮೌಲ್ಯಗಳು
+📊 Growth Spurt Facts|📊 ಬೆಳವಣಿಗೆ ಏರಿಕೆ ಸತ್ಯ
+📊 Pin Drop Times|📊 ಪಿನ್ ಡ್ರಾಪ್ ಸಮಯಗಳು
+📊 Voice Change Comparison|📊 ಸ್ವರ ಬದಲಾವಣೆ ಹೋಲಿಕೆ
+📊 Why the Difference?|📊 ಏಕೆ ವ್ಯತ್ಯಾಸ?
+📋 Circuit Rules|📋 ಸರ್ಕ್ಯೂಟ್ ನಿಯಮಗಳು
+📋 Daily Hygiene Checklist|📋 ದೈನಂದಿನ ಆರೋಗ್ಯಕರ ಚೆಕ್‌ಲಿಸ್ಟ್
+📏 Average Height|📏 ಸರಾಸರಿ ಎತ್ತರ
+📏 String Length|📏 ದಾರದ ಉದ್ದ
+📐 Conversion Factors|📐 ಪರಿವರ್ತನಾ ಅಂಶಗಳು
+📐 Time Calculation|📐 ಸಮಯ ಲೆಕ್ಕ
+📐 Time Period Formula|📐 ಕಾಲಾವಧಿ ಸೂತ್ರ
+📖 Secondary Sexual Characteristics|📖 ದ್ವಿತೀಯಕ ಲೈಂಗಿಕ ಲಕ್ಷಣಗಳು
+📝 Working:|📝 ಕೆಲಸ:
+📱 Online Safety Tips|📱 ಆನ್‌ಲೈನ್ ಭದ್ರತಾ ಸಲಹೆಗಳು
+🔄 Uniform vs Non-Uniform|🔄 ಏಕರೂಪ ವಿರುದ್ಧ ಅಸಮ ಏಕರೂಪ
+🔄 Unit Conversion|🔄 ಘಟಕ ಪರಿವರ್ತನೆ
+🔇 NOT SONOROUS (Thud)|🔇 ಧ್ವನಿವಂತವಲ್ಲ (ಥಡ್)
+🔋 How to Identify Terminals|🔋 ಟರ್ಮಿನಲ್‌ಗಳನ್ನು ಹೇಗೆ ಗುರುತಿಸುವುದು
+🔍 Zoomed: Inside the Flame|🔍 ಜೂಮ್: ಜ್ವಾಲೆಯ ಒಳಗೆ
+🔍 Zoomed: Top of Candle|🔍 ಜೂಮ್: ಮೇಣದ ಮೇಲ್ಭಾಗ
+🔔 SONOROUS (Ring)|🔔 ಧ್ವನಿವಂತ (ರಿಂಗ್)
+🔥 CHEMICAL|🔥 ರಾಸಾಯನಿಕ
+🔥 CONDUCTION|🔥 ವಾಹನ
+🔥 Heat Transfer Race 🏁|🔥 ಉಷ್ಣ ವರ್ಗಾವಣೆ ಓಟ 🏁
+🔥 Light Candle|🔥 ಮೇಣ ಬೆಳಗಿಸಿ
+🔬 Building Your Circuit|🔬 ನಿಮ್ಮ ಸರ್ಕ್ಯೂಟ್ ನಿರ್ಮಿಸಿ
+🔬 Circuit Tester Experiment|🔬 ಸರ್ಕ್ಯೂಟ್ ಟೆಸ್ಟರ್ ಪ್ರಯೋಗ
+🔬 Experiment Progress|🔬 ಪ್ರಯೋಗ ಪ್ರಗತಿ
+🔬 How It Works|🔬 ಅದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ
+🔬 Observation|🔬 ವೀಕ್ಷಣೆ
+🔬 Understanding Battery Connection|🔬 ಬ್ಯಾಟರಿ ಸಂಪರ್ಕ ಅರ್ಥ
+🔬 What's Happening?|🔬 ಏನಾಗುತ್ತಿದೆ?
+🔬 Why Small Time Units Matter|🔬 ಚಿಕ್ಕ ಸಮಯ ಘಟಕ ಏಕೆ ಮುಖ್ಯ
+🔴 Short|🔴 ಕಿರಿದಾದ
+🔵 METALS|🔵 ಲೋಹಗಳು
+🔵 Negative Terminal (−)|🔵 ಋಣ ಟರ್ಮಿನಲ್ (−)
+🕯️ Candle Clock Demo|🕯️ ಮೇಣ ಗಡಿಯಾರ ಡೆಮೊ
+🕰️ Pendulum Clock Demo|🕰️ ಊಸರವಳಿ ಗಡಿಯಾರ ಡೆಮೊ
+😴 Quality Sleep|😴 ಗುಣಮಟ್ಟದ ನಿದ್ರೆ
+🚆 Train|🚆 ರೈಲು
+🚫 Breaking Myths|🚫 ಪುರಾಣಗಳನ್ನು ಭಂಗಿಸುವುದು
+🚫 INSULATORS|🚫 ವಾಹಕವಲ್ಲದವು
+🚴 Cycling|🚴 ಸೈಕ್ಲಿಂಗ್
+🚶 Walking|🚶 ನಡೆಯುವುದು
+🛡️ INSULATOR|🛡️ ವಾಹಕವಲ್ಲದ
+🟡 NON-METALS|🟡 ಅಲೋಹಗಳು
+🟢 Medium|🟢 ಮಧ್ಯಮ
+🤔 Context Matters!|🤔 ಸಂದರ್ಭ ಮುಖ್ಯ!
+🥄 Baking soda|🥄 ಬೇಕಿಂಗ್ ಸೋಡಾ
+🥇 1st Place|🥇 1ನೇ ಸ್ಥಾನ
+🥈 2nd Place|🥈 2ನೇ ಸ್ಥಾನ
+🥉 3rd Place|🥉 3ನೇ ಸ್ಥಾನ
+🥔 Potatoes|🥔 ಆಲೂಗಡ್ಡೆ
+🥜 Healthy Fats - Brain & Energy|🥜 ಆರೋಗ್ಯಕರ ಕೊಬ್ಬು - ಮೆದುಳು ಮತ್ತು ಶಕ್ತಿ
+🥤 Plastic|🥤 ಪ್ಲಾಸ್ಟಿಕ್
+🥦 Vitamins & Minerals - Body Protectors|🥦 ಜೀವಸತ್ವ ಮತ್ತು ಖನಿಜ - ಶರೀರ ರಕ್ಷಕಗಳು
+🧘 Mental Wellness|🧘 ಮಾನಸಿಕ ಯೋಗಕ್ಷೇಮ
+🧠 Quick Quiz|🧠 ತ್ವರಿತ ಕ್ವಿಜ್
+🧠 Quick Quiz: Identify the Circuit|🧠 ತ್ವರಿತ ಕ್ವಿಜ್: ಸರ್ಕ್ಯೂಟ್ ಗುರುತಿಸಿ
+🧪 How to prepare turmeric paper:|🧪 ಅರಿಸಿನ ಕಾಗದ ತಯಾರಿ:
+🧹 Detergent|🧹 ಡಿಟರ್ಜೆಂಟ್
+🪨 Gravel|🪨 ಜಲ್ಲಿ
+🪨 Sea Cliff|🪨 ಸಮುದ್ರ ಬಂಡೆ
+🫙 Cover with Jar|🫙 ಜಾರ್‌ನಿಂದ ಮುಚ್ಚಿ
+🫙 Glass|🫙 ಗಾಜು
+
+baking soda|ಬೇಕಿಂಗ್ ಸೋಡಾ
+basic|ಮೂಲ
+Battery|ಬ್ಯಾಟರಿ
+conduction|ವಾಹಕತೆ
+CONDUCTORS|ವಾಹಕಗಳು
+convection currents|ಸಂವಹನ ಪ್ರವಾಹಗಳು
+Dark colors absorb|ಗಾಢ ಬಣ್ಣಗಳು ಹೀರಿಕೊಳ್ಳುತ್ತವೆ
+ELECTRIC CELL|ವಿದ್ಯುತ್ ಘಟಕ
+Electrical conductivity|ವಿದ್ಯುತ್ ವಾಹಕತೆ
+equator|ವಿಷುವದ್ರೇಖೆ
+Growth Spurt|ವೃದ್ಧಿ ಚಿಗಿತ
+healthy habits|ಆರೋಗ್ಯಕರ ಅಭ್ಯಾಸಗಳು
+INSULATORS|ವಿದ್ಯುತ್ ನಿರೋಧಕಗಳು
+Light colors reflect|ಒಳ್ಳೆ ಬಣ್ಣಗಳು ಪ್ರತಿಫಲಿಸುತ್ತವೆ
+liquid|ದ್ರವ
+negative (−)|ಋಣ (−)
+non-metals|ಅಲೋಹಗಳು
+non-uniform motion|ಅಸಮ ಚಲನೆ
+ODOMETER|ಓಡೋಮೀಟರ್
+Positive (+)|ಧನ (+)
+source|ಮೂಲ
+speed|ವೇಗ
+switch|ಸ್ವಿಚ್
+uniform linear motion|ಸಮ ರೇಖೀಯ ಚಲನೆ
+• Chemical reactions|• ರಾಸಾಯನಿಕ ಪ್ರತಿಕ್ರಿಯೆಗಳು
+GRAVEL|ಜಲ್ಲಿ
+Understanding Battery connection|ಬ್ಯಾಟರಿ ಸಂಪರ್ಕ ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು
+String length|ದಾರದ ಉದ್ದ
+All Three Methods in One Scene|ಎಲ್ಲ ಮೂರು ವಿಧಾನಗಳು ಒಂದು ದೃಶ್ಯದಲ್ಲಿ
+Quality sleep|ಗುಣಮಟ್ಟದ ನಿದ್ರೆ
+Vitamins & Minerals - Body Protectors|ಜೀವಸತ್ವ ಮತ್ತು ಖನಿಜ - ಶರೀರ ರಕ್ಷಕಗಳು
+Mental Wellness|ಮಾನಸಿಕ ಯೋಗಕ್ಷೇಮ
+Healthy Social Life|ಆರೋಗ್ಯಕರ ಸಾಮಾಜಿಕ ಜೀವನ
+Cold Mountain Climate|ಶೀತ ಪರ್ವತ ವಾತಾವರಣ
+Play the Application!|ಅಪ್ಲಿಕೇಶನ್ ನಿಲುಕಿಸಿ!
+Land Breeze|ಭೂ ಬೀಸಣಿಕೆ
+POSITIVE (+)|ಧನ (+)
+negative (-)|ಋಣ (-)
+Baking soda|ಬೇಕಿಂಗ್ ಸೋಡಾ
+Basic|ಮೂಲ
+Switch|ಸ್ವಿಚ್
+reactions|ಪ್ರತಿಕ್ರಿಯೆಗಳು
+NaHCO3 + CH3COOH → CO2 + H2O + CH3COONa|ಸೋಡಿಯಂ ಬೈಕಾರ್ಬನೇಟ್ + ಅಸಿಟಿಕ್ ಆಮ್ಲ → CO2 + ನೀರು + ಸೋಡಿಯಂ ಅಸಿಟೇಟ್
+inside a glass bulb. When electric current passes through the filament, it gets very hot (about 2500°C) and glows, producing light.|ಗಾಜಿನ ಬಲ್ಬ್ ಒಳಗೆ. ವಿದ್ಯುತ್ ಪ್ರವಾಹ ಫಿಲಾಮೆಂಟ್ ಮೂಲಕ ಹರಿಯುವಾಗ, ಅದು ಬಹಳ ಬಿಸಿಯಾಗುತ್ತದೆ (ಸುಮಾರು 2500°C) ಮತ್ತು ಬೆಳಗುತ್ತದೆ, ಬೆಳಕನ್ನು ಉತ್ಪಾದಿಸುತ್ತದೆ.
+Sea Breeze|ಸಮುದ್ರ ಬೀಸಣಿಕೆ
+
+# Mojibake fixes
+à²¨à³€à²°à³|ನೀರು
+à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³‚|ಫಿಲಾಮೆಂಟ್
+à²¸à³†à²²à³à²—à²³à³|ಘಟಕಗಳು

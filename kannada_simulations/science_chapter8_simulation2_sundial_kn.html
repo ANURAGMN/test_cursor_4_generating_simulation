@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -82,7 +82,7 @@ body {
   background: radial-gradient(circle, #ffeb3b 0%, #ff9800 100%);
   cursor: pointer;
   border: 3px solid #fff;
-  box-shadow: 0 0 15px rgba(255,152,0,0.5);
+  box-ನೆರಳು: 0 0 15px rgba(255,152,0,0.5);
 }
 
 .time-display {
@@ -115,7 +115,7 @@ body {
   height: 60px;
   background: radial-gradient(circle, #ffeb3b 0%, #ff9800 100%);
   border-radius: 50%;
-  box-shadow: 0 0 40px #ffeb3b;
+  box-ನೆರಳು: 0 0 40px #ffeb3b;
   transition: all 0.3s ease;
 }
 
@@ -158,7 +158,7 @@ body {
   height: 90px;
   background: linear-gradient(180deg, #efebe9 0%, #d7ccc8 100%);
   border-radius: 90px 90px 0 0;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-ನೆರಳು: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .sundial-face {
@@ -206,11 +206,11 @@ body {
   background: linear-gradient(90deg, #5d4037, #8d6e63);
   transform: translateX(-50%);
   transform-origin: bottom center;
-  box-shadow: 2px 0 4px rgba(0,0,0,0.3);
+  box-ನೆರಳು: 2px 0 4px rgba(0,0,0,0.3);
   z-index: 10;
 }
 
-.shadow {
+.ನೆರಳು {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -264,20 +264,20 @@ body {
 
 <div class="header">
   <h1>☀️ ಸಂವಾದಾತ್ಮಕ ಸೂರ್ಯ ಘಡಿಯಾರ</h1>
-  <p>Move the Sun and watch the shadow tell time!</p>
+  <p>ಸೂರ್ಯನನ್ನು ಚಲಿಸಿ ಮತ್ತು ನೆರಳು ಸಮಯ ಹೇಳುವುದನ್ನು ನೋಡಿ!</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 How Sundials Work</div>
+  <div class="concept-title">📚 ಸೂರ್ಯ ಘಡಿಯಾರಗಳು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತವೆ</div>
   <div class="concept-text">
-    A sundial uses the Sun's position in the sky to cast a <strong>shadow</strong> from a vertical stick (gnomon). As the Sun moves, the shadow moves, pointing to different hour marks.
+    ಸೂರ್ಯ ಘಡಿಯಾರ ಆಕಾಶದಲ್ಲಿ ಸೂರ್ಯನ ಸ್ಥಾನವನ್ನು ಬಳಸಿ <strong>ನೆರಳು</strong> ಲಂಬ ಕೋಲಿನ (ಗ್ನೋಮನ್)ಿಂದ. ಸೂರ್ಯ ಚಲಿಸಿದಂತೆ ನೆರಳುdow moves, pointing to different hour marks.
   </div>
 </div>
 
 <div class="sim-card">
   <div class="time-control">
-    <label>☀️ Move the Sun across the sky (6 AM - 6 PM):</label>
-    <input type="range" id="time-slider" min="6" max="18" value="12" step="0.5" oninput="updateSundial(this.value)">
+    <label>☀️ ಸೂರ್ಯನನ್ನು ಆಕಾಶದಾದ್ಯಂತ ಸರಿಸಿ (6 AM - 6 PM):</label>
+    <input type="range" id="time-slider" min="6" max="18" value="12" step="0.5" oninput="updateà²¸à³‚à²°à³à²¯ à²˜à²¡à²¿à²¯à²¾à²°(this.value)">
     <div class="time-display">
       <span>🌅 6 AM</span>
       <span>☀️ 12 PM</span>
@@ -320,7 +320,7 @@ body {
           <div class="hour-mark" style="transform: rotate(60deg);"></div>
           <div class="hour-mark" style="transform: rotate(75deg);"></div>
         </div>
-        <div class="shadow" id="shadow"></div>
+        <div class="ನೆರಳು" id="shadow"></div>
         <div class="gnomon"></div>
         
         <div class="hour-label" style="left: 15px; top: 30px;">6</div>
@@ -334,19 +334,19 @@ body {
 </div>
 
 <div class="info-panel">
-  <div class="info-title">🔬 The Science</div>
+  <div class="info-title">🔬 ವಿಜ್ಞಾನ</div>
   <div class="info-text">
-    The Earth rotates <strong>15° per hour</strong>. As the Sun appears to move across the sky (east to west), the shadow of the gnomon sweeps across the dial face, acting like a clock hand!
+    à²­à³‚à²®à²¿ à²¤à²¿à²°à³à²—à³à²¤à³à²¤à²¦à³† <strong>15° per hour</strong>. As the Sun appears to move across the sky (east to west), the ನೆರಳು of the gnomon sweeps across the dial face, acting like a clock hಮತ್ತು!
   </div>
 </div>
 
 <div class="limitations">
-  <div class="limitations-title">⚠️ Limitations of Sundials</div>
+  <div class="limitations-title">⚠️ ಮಿತಿಗಳು à²¸à³‚à²°à³à²¯ à²˜à²¡à²¿à²¯à²¾à²°s</div>
   <div class="limitations-text">
-    • ❌ Don't work at <strong>night</strong><br>
-    • ❌ Don't work on <strong>cloudy days</strong><br>
-    • ❌ Need <strong>adjustment</strong> for different latitudes<br>
-    • ❌ Accuracy limited to ~15-30 minutes
+    • ❌ Don't work at <strong>à²°à²¾à²¤à³à²°à²¿</strong><br>
+    • ❌ Don't work on <strong>à²®à³‹à²¡à²¦ à²¦à²¿à²¨à²—à²³à³</strong><br>
+    • ❌ Need <strong>à²¸à²°à²¿à²¹à³Šà²‚à²¦à²¿à²¸à³à²µà²¿à²•à³†</strong> à²µà²¿à²­à²¿à²¨à³à²¨ à²…à²•à³à²·à²¾à²‚à²¶à²•à³à²•à³†<br>
+    • ❌ ನಿಖರತೆ ~15-30 ವರೆಗೆ à²¨à²¿à²®à²¿à²·à²—à²³à³
   </div>
 </div>
 
@@ -354,15 +354,15 @@ body {
 
 <script>
 const sun = document.getElementById('sun');
-const shadow = document.getElementById('shadow');
+const ನೆರಳು = document.getElementById('shadow');
 const currentTime = document.getElementById('current-time');
 const timePeriod = document.getElementById('time-period');
 
-function updateSundial(hours) {
-  hours = parseFloat(hours);
+function updateà²¸à³‚à²°à³à²¯ à²˜à²¡à²¿à²¯à²¾à²°(à²—à²‚à²Ÿà³†à²—à²³à³) {
+  à²—à²‚à²Ÿà³†à²—à²³à³ = parseFloat(à²—à²‚à²Ÿà³†à²—à²³à³);
   
-  // Calculate sun position (arc from left to right)
-  const progress = (hours - 6) / 12; // 0 to 1
+  // ಲೆಕ್ಕ ಹಾಕಿ sun position (arc from left to right)
+  const progress = (à²—à²‚à²Ÿà³†à²—à²³à³ - 6) / 12; // 0 to 1
   const angle = progress * Math.PI; // 0 to PI
   
   const sunX = 30 + (progress * 320); // Left to right
@@ -371,36 +371,36 @@ function updateSundial(hours) {
   sun.style.left = sunX + 'px';
   sun.style.top = sunY + 'px';
   
-  // Calculate shadow angle (opposite to sun)
-  // At 6AM (sun on left), shadow points right (+75deg)
-  // At 12PM (sun above), shadow points down (0deg)
-  // At 6PM (sun on right), shadow points left (-75deg)
-  const shadowAngle = 75 - (progress * 150);
-  shadow.style.transform = `translateX(-50%) rotate(${shadowAngle}deg)`;
+  // ಲೆಕ್ಕ ಹಾಕಿ ನೆರಳು angle (opposite to sun)
+  // At 6AM (sun on left), ನೆರಳು points right (+75deg)
+  // At 12PM (sun above), ನೆರಳು points down (0deg)
+  // At 6PM (sun on right), ನೆರಳು points left (-75deg)
+  const ನೆರಳುAngle = 75 - (progress * 150);
+  ನೆರಳು.style.transform = `translateX(-50%) rotate(${ನೆರಳುAngle}deg)`;
   
   // Update time display
-  const hour = Math.floor(hours);
-  const minutes = (hours % 1) * 60;
-  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const hour = Math.floor(à²—à²‚à²Ÿà³†à²—à²³à³);
+  const à²¨à²¿à²®à²¿à²·à²—à²³à³ = (à²—à²‚à²Ÿà³†à²—à²³à³ % 1) * 60;
+  const ampm = à²—à²‚à²Ÿà³†à²—à²³à³ >= 12 ? 'PM' : 'AM';
   const displayHour = hour > 12 ? hour - 12 : (hour === 0 ? 12 : hour);
-  currentTime.textContent = `${displayHour}:${minutes.toString().padStart(2, '0')} ${ampm}`;
+  currentTime.textContent = `${displayHour}:${à²¨à²¿à²®à²¿à²·à²—à²³à³.toದಾರದ ಉದ್ದ().padಪ್ರಾರಂಭ(2, '0')} ${ampm}`;
   
   // Update time period
-  if (hours < 9) {
-    timePeriod.textContent = '🌅 Morning';
-  } else if (hours < 12) {
-    timePeriod.textContent = '☀️ Late Morning';
-  } else if (hours < 14) {
+  if (à²—à²‚à²Ÿà³†à²—à²³à³ < 9) {
+    timePeriod.textContent = '🌅 ಬೆಳಿಗ್ಗೆ';
+  } else if (à²—à²‚à²Ÿà³†à²—à²³à³ < 12) {
+    timePeriod.textContent = '☀️ ನಂತರದ ಬೆಳಿಗ್ಗೆ';
+  } else if (à²—à²‚à²Ÿà³†à²—à²³à³ < 14) {
     timePeriod.textContent = '☀️ Noon';
-  } else if (hours < 17) {
-    timePeriod.textContent = '🌤️ Afternoon';
+  } else if (à²—à²‚à²Ÿà³†à²—à²³à³ < 17) {
+    timePeriod.textContent = '🌤️ ಮಧ್ಯಾಹ್ನ';
   } else {
-    timePeriod.textContent = '🌇 Evening';
+    timePeriod.textContent = '🌇 ಸಂಜೆ';
   }
 }
 
 // Initialize
-updateSundial(12);
+updateà²¸à³‚à²°à³à²¯ à²˜à²¡à²¿à²¯à²¾à²°(12);
 </script>
 </body>
 </html>

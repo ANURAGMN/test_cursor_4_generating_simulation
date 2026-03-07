@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -72,7 +72,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -214,7 +214,7 @@ body {
 .takeaway-title { font-size: 12px; font-weight: 700; color: #1a237e; margin-bottom: 6px; }
 .takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
 
-@media screen and (max-width: 360px) {
+@media screen ಮತ್ತು (max-width: 360px) {
   .categories { grid-template-columns: repeat(2, 1fr); }
   .appliances { grid-template-columns: repeat(3, 1fr); }
 }
@@ -225,20 +225,20 @@ body {
 <div id="app">
 
 <div class="header">
-  <h1>⚡ Uses of Electricity</h1>
-  <p>Classify appliances by how they use electricity</p>
+  <h1>⚡ ವಿದ್ಯುತ್ ಬಳಕೆಗಳು</h1>
+  <p>ಉಪಕರಣಗಳನ್ನು ವಿದ್ಯುತ್ ಬಳಕೆಯಿಂದ ವರ್ಗೀಕರಿಸಿ</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    Electricity is used in many areas of daily life. We can group electrical appliances by their <strong>main purpose</strong>: cooking, lighting, cooling, communication, entertainment, and transportation.
+    ವಿದ್ಯುತ್ is used in many areas of daily ಜೀವನ. We can group electrical appliances by their <strong>ಮುಖ್ಯ ಉದ್ದೇಶ</strong>: ಅಡುಗೆ, ಬೆಳಕು, ತಂಪು, ಸಂವಹನ, ಮನರಂಜನೆt, ಮತ್ತು transportation.
   </div>
 </div>
 
 <div class="sim-card">
   <div class="instruction">
-    👆 First select a category, then tap appliances that belong to it!
+    👆 ಮೊದಲು ವರ್ಗ ಆಯ್ಕೆ, ನಂತರ ಅದಕ್ಕೆ ಸೇರಿದ ಉಪಕರಣ ಟ್ಯಾಪ್ ಮಾಡಿ!
   </div>
   
   <div class="categories" id="categories"></div>
@@ -248,18 +248,18 @@ body {
   <div class="score-bar">
     <div class="score-fill" id="score-fill" style="width: 0%"></div>
   </div>
-  <div class="score-text" id="score-text">0 / 12 appliances sorted</div>
+  <div class="score-text" id="score-text">0 / 12 ಉಪಕರಣಗಳು ವರ್ಗೀಕರಿಸಲಾಗಿದೆ</div>
 </div>
 
 <div class="result-card" id="result-card">
-  <div class="result-title">🎉 All Appliances Classified!</div>
+  <div class="result-title">🎉 ಎಲ್ಲ ಉಪಕರಣ ವರ್ಗೀಕೃತ!</div>
   <div class="result-grid" id="result-grid"></div>
 </div>
 
 <div class="takeaway" id="takeaway">
-  <div class="takeaway-title">🎯 What You Learned</div>
+  <div class="takeaway-title">🎯 ನೀವು ಕಲಿತದ್ದು</div>
   <div class="takeaway-text">
-    Electricity powers many different types of devices in our daily life. By understanding the <strong>purpose</strong> of each appliance, we can appreciate how electricity makes our lives easier in cooking, lighting, cooling, communication, entertainment, and even transportation!
+    ವಿದ್ಯುತ್ powers many different types of devices in our daily ಜೀವನ. By understಮತ್ತುing the <strong>à²‰à²¦à³à²¦à³‡à²¶</strong> à²ªà³à²°à²¤à²¿ à²‰à²ªà²•à²°à²£à²¦à²¿à²‚à²¦ à²µà²¿à²¦à³à²¯à³à²¤à³ à²…à²¡à³à²—à³†, à²¬à³†à²³à²•à³, à²¤à²‚à²ªà³, à²¸à²‚à²µà²¹à²¨, à²®à²¨à²°à²‚à²œà²¨à³† à²®à²¤à³à²¤à³ à²¸à²¾à²°à²¿à²—à³†à²¯à²²à³à²²à²¿ à²œà³€à²µà²¨ à²¸à³à²²à²­!
   </div>
 </div>
 
@@ -286,7 +286,7 @@ const appliances = [
   { name: 'Telephone', icon: '☎️', category: 'communication' },
   { name: 'Television', icon: '📺', category: 'entertainment' },
   { name: 'Computer', icon: '💻', category: 'entertainment' },
-  { name: 'Electric Train', icon: '🚃', category: 'transport' },
+  { name: 'Electric à²°à³ˆà²²à³', icon: '🚃', category: 'transport' },
   { name: 'Electric Car', icon: '🚗', category: 'transport' }
 ];
 
@@ -315,8 +315,8 @@ categoriesData.forEach(cat => {
   categoriesEl.appendChild(div);
 });
 
-// Shuffle and render appliances
-const shuffled = [...appliances].sort(() => Math.random() - 0.5);
+// Shuffle ಮತ್ತು render appliances
+const shuffled = [...appliances].sort(() => Math.rಮತ್ತುom() - 0.5);
 shuffled.forEach((app, idx) => {
   const div = document.createElement('div');
   div.className = 'appliance';
@@ -359,11 +359,11 @@ function updateScore() {
   scoreText.textContent = `${sortedCount} / ${appliances.length} appliances sorted`;
   
   if (sortedCount === appliances.length) {
-    showResults();
+    showà²®à³‚à²²s();
   }
 }
 
-function showResults() {
+function showà²®à³‚à²²s() {
   resultGrid.innerHTML = '';
   categoriesData.forEach(cat => {
     const div = document.createElement('div');
@@ -379,7 +379,7 @@ function showResults() {
   takeaway.classList.add('show');
 }
 
-// Auto-select first category
+// Auto-select à²®à³Šà²¦à²² category
 selectCategory('cooking');
 </script>
 </body>

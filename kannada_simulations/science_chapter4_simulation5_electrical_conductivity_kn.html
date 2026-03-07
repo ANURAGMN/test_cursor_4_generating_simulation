@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -69,7 +69,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -193,8 +193,8 @@ svg { width: 100%; height: 100%; }
 .takeaway-text { font-size: 11px; color: #37474f; line-height: 1.5; }
 
 @keyframes glow {
-  0%, 100% { filter: drop-shadow(0 0 5px #ffeb3b); }
-  50% { filter: drop-shadow(0 0 20px #ffeb3b); }
+  0%, 100% { filter: drop-ನೆರಳು(0 0 5px #ffeb3b); }
+  50% { filter: drop-ನೆರಳು(0 0 20px #ffeb3b); }
 }
 
 .bulb-on { animation: glow 1s ease-in-out infinite; }
@@ -216,9 +216,9 @@ svg { width: 100%; height: 100%; }
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    <strong>Electrical conductivity</strong> is the ability to allow electric current to flow. <strong>Metals</strong> are good conductors; <strong>non-metals</strong> are poor conductors (insulators).
+    <strong>ವಿದ್ಯುತ್ ವಾಹಕತೆ</strong> ವಿದ್ಯುತ್ ಹರಿಯಲು ಅನುಮತಿಸುವ ಸಾಮರ್ಥ್ಯ. <strong>ಲೋಹಗಳು</strong> ಉತ್ತಮ ವಾಹಕಗಳು; <strong>ಅಲೋಹಗಳು</strong> à²•à²³à²ªà³† à²µà²¾à²¹à²• (à²µà²¾à²¹à²•à²µà²²à³à²²à²¦).
   </div>
 </div>
 
@@ -226,15 +226,15 @@ svg { width: 100%; height: 100%; }
   <div class="visual">
     <div class="result-badge" id="result-badge" style="display:none"></div>
     <svg viewBox="0 0 400 280" id="scene">
-      <!-- Battery -->
+      <!-- ಬ್ಯಾಟರಿ -->
       <g transform="translate(50, 100)">
         <rect x="0" y="20" width="50" height="80" rx="5" fill="#37474f"/>
         <rect x="15" y="10" width="20" height="15" rx="2" fill="#616161"/>
         <text x="25" y="65" font-size="14" fill="#fff" text-anchor="middle">🔋</text>
-        <text x="25" y="120" font-size="9" fill="#90a4ae" text-anchor="middle">Battery</text>
+        <text x="25" y="120" font-size="9" fill="#90a4ae" text-anchor="middle">ಬ್ಯಾಟರಿ</text>
       </g>
       
-      <!-- Wires -->
+      <!-- à²¤à²‚à²¤à²¿à²—à²³à³ -->
       <path d="M 100 140 L 140 140 L 140 100 L 180 100" stroke="#ff5722" stroke-width="4" fill="none" id="wire1"/>
       <path d="M 220 100 L 260 100 L 260 140 L 300 140" stroke="#ff5722" stroke-width="4" fill="none" id="wire2"/>
       
@@ -257,100 +257,100 @@ svg { width: 100%; height: 100%; }
         <text x="0" y="45" font-size="9" fill="#90a4ae" text-anchor="middle">Bulb</text>
       </g>
       
-      <!-- Current flow indicators (hidden) -->
+      <!-- Current flow ಸೂಚಕs (hidden) -->
       <g id="current-flow" style="display:none">
         <circle cx="120" cy="140" r="4" fill="#ffeb3b"/>
         <circle cx="280" cy="140" r="4" fill="#ffeb3b"/>
-        <text x="200" y="150" font-size="10" fill="#ffeb3b" text-anchor="middle">⚡ Current flowing ⚡</text>
+        <text x="200" y="150" font-size="10" fill="#ffeb3b" text-anchor="middle">⚡ ಪ್ರವಾಹ ಹರಿಯುತ್ತಿದೆ ⚡</text>
       </g>
       
       <!-- Instructions -->
-      <text x="200" y="35" font-size="12" fill="#fff" text-anchor="middle" id="instruction">Select a material to test in the circuit</text>
+      <text x="200" y="35" font-size="12" fill="#fff" text-anchor="middle" id="instruction">ಒಂದು ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ to test in the circuit</text>
     </svg>
   </div>
   
   <div class="materials-grid">
     <div class="material-btn" onclick="selectಪದಾರ್ಥ('copper', '🥉', true, '#b87333', this)">
       <div class="icon">🥉</div>
-      <div class="name">Copper</div>
-      <div class="type">Metal</div>
+      <div class="name">ತಾಮ್ರ</div>
+      <div class="type">ಲೋಹ</div>
     </div>
     <div class="material-btn" onclick="selectಪದಾರ್ಥ('iron', '⚙️', true, '#616161', this)">
       <div class="icon">⚙️</div>
       <div class="name">Iron</div>
-      <div class="type">Metal</div>
+      <div class="type">ಲೋಹ</div>
     </div>
     <div class="material-btn" onclick="selectಪದಾರ್ಥ('aluminium', '🔘', true, '#bdbdbd', this)">
       <div class="icon">🔘</div>
-      <div class="name">Aluminium</div>
-      <div class="type">Metal</div>
+      <div class="name">à²…à²²à³à²¯à³‚à²®à²¿à²¨à²¿à²¯à²‚</div>
+      <div class="type">ಲೋಹ</div>
     </div>
     <div class="material-btn" onclick="selectಪದಾರ್ಥ('rubber', '⚫', false, '#37474f', this)">
       <div class="icon">⚫</div>
-      <div class="name">Rubber</div>
-      <div class="type">Non-metal</div>
+      <div class="name">à²°à²¬à³à²¬à²°à³</div>
+      <div class="type">à²…à²²à³‹à²¹</div>
     </div>
     <div class="material-btn" onclick="selectಪದಾರ್ಥ('plastic', '🧊', false, '#90caf9', this)">
       <div class="icon">🧊</div>
-      <div class="name">Plastic</div>
-      <div class="type">Non-metal</div>
+      <div class="name">à²ªà³à²²à²¾à²¸à³à²Ÿà²¿à²•à³</div>
+      <div class="type">à²…à²²à³‹à²¹</div>
     </div>
     <div class="material-btn" onclick="selectಪದಾರ್ಥ('wood', '🪵', false, '#8d6e63', this)">
       <div class="icon">🪵</div>
       <div class="name">Wood</div>
-      <div class="type">Non-metal</div>
+      <div class="type">à²…à²²à³‹à²¹</div>
     </div>
   </div>
   
   <button class="test-btn" id="test-btn" onclick="testಪದಾರ್ಥ()" disabled>
-    ⚡ Test Conductivity
+    ⚡ ವಾಹಕತೆ ಪರೀಕ್ಷಿಸಿ
   </button>
 </div>
 
 <div class="results-panel">
   <div class="result-card conductor">
-    <div class="label">💡 CONDUCTORS</div>
+    <div class="label">💡 ವಾಹಕಗಳು</div>
     <div class="items" id="conductor-items">-</div>
   </div>
   <div class="result-card insulator">
-    <div class="label">🚫 INSULATORS</div>
+    <div class="label">🚫 ವಾಹಕವಲ್ಲದವು</div>
     <div class="items" id="insulator-items">-</div>
   </div>
 </div>
 
 <div class="learning-panel">
-  <div class="learning-title">🔬 Circuit Tester Experiment</div>
+  <div class="learning-title">🔬 ಸರ್ಕ್ಯೂಟ್ ಟೆಸ್ಟರ್ ಪ್ರಯೋಗ</div>
   <div class="learning-text" id="learning-text">
-    We'll use a simple circuit with a battery and bulb to test if materials conduct electricity.<br><br>
-    If the bulb glows → <strong>Conductor</strong> (electricity flows)<br>
-    If the bulb stays off → <strong>Insulator</strong> (electricity blocked)
+    We'll use a simple circuit with a ಬ್ಯಾಟರಿ ಮತ್ತು bulb to test if materials conduct electricity.<br><br>
+    ಬಲ್ಬ್ ಉಜ್ಜ್ವಲವಾದರೆ → <strong>à²µà²¾à²¹à²•</strong> (à²µà²¿à²¦à³à²¯à³à²¤à³ à²¹à²°à²¿à²¯à³à²¤à³à²¤à²¦à³†)<br>
+    ಬಲ್ಬ್ ಆಫ್ ಉಳಿದರೆ → <strong>à²µà²¾à²¹à²•à²µà²²à³à²²à²¦</strong> (à²µà²¿à²¦à³à²¯à³à²¤à³ à²¨à²¿à²°à³à²¬à²‚à²§à²¿à²¤)
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 What You'll Learn</div>
+  <div class="takeaway-title">🎯 ನೀವು ಕಲಿಯುವುದು</div>
   <div class="takeaway-text">
-    <strong>Metals</strong> have free electrons that carry electric current - they're good conductors!<br><br>
-    <strong>Non-metals</strong> don't have free electrons - they're insulators that protect us from electric shocks.<br><br>
-    That's why wires are copper (conductor) with rubber coating (insulator)!
+    <strong>ಲೋಹಗಳು</strong> à²µà²¿à²¦à³à²¯à³à²¤à³ à²ªà³à²°à²µà²¾à²¹à²µà²¨à³à²¨à³ à²¸à²¾à²—à²¿à²¸à³à²µ à²®à³à²•à³à²¤ à²‡à²²à³†à²•à³à²Ÿà³à²°à²¾à²¨à³ - à²‰à²¤à³à²¤à²® à²µà²¾à²¹à²•!<br><br>
+    <strong>ಅಲೋಹಗಳು</strong> à²®à³à²•à³à²¤ à²‡à²²à³†à²•à³à²Ÿà³à²°à²¾à²¨à³ à²‡à²²à³à²² - à²µà²¿à²¦à³à²¯à³à²¤à³ à²†à²˜à²¾à²¤à²¦à²¿à²‚à²¦ à²°à²•à³à²·à²¿à²¸à³à²µ à²µà²¾à²¹à²•à²µà²²à³à²²à²¦.<br><br>
+    à²…à²¦à²•à³à²•à³‡ à²¤à²‚à²¤à²¿ à²¤à²¾à²®à³à²° (à²µà²¾à²¹à²•) à²°à²¬à³à²¬à²°à³ à²²à³‡à²ªà²¨ (à²µà²¾à²¹à²•à²µà²²à³à²²à²¦)!
   </div>
 </div>
 
 </div>
 
 <script>
-let selectedMaterial = null;
+let selectedಪದಾರ್ಥ = null;
 let selectedBtn = null;
-let isConductor = false;
+let isà²µà²¾à²¹à²• = false;
 let materialColor = '#bdbdbd';
 
 const conductorList = [];
 const insulatorList = [];
 
-const testMaterialBox = document.getElementById('test-material');
+const testಪದಾರ್ಥBox = document.getElementById('test-material');
 const materialIcon = document.getElementById('material-icon');
-const bulbGlass = document.getElementById('bulb-glass');
-const filament = document.getElementById('filament');
+const bulbà²—à²¾à²œà³ = document.getElementById('bulb-glass');
+const à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³ = document.getElementById('filament');
 const bulbGroup = document.getElementById('bulb-group');
 const currentFlow = document.getElementById('current-flow');
 const testBtn = document.getElementById('test-btn');
@@ -358,23 +358,23 @@ const resultBadge = document.getElementById('result-badge');
 const instruction = document.getElementById('instruction');
 const learningText = document.getElementById('learning-text');
 
-function selectMaterial(name, icon, conductor, color, btn) {
+function selectಪದಾರ್ಥ(name, icon, conductor, color, btn) {
   if (btn.classList.contains('tested')) return;
   
-  // Reset previous selection
+  // ಮರುಹೊಂದಿಸಿ previous selection
   document.querySelectorAll('.material-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   
-  selectedMaterial = name;
+  selectedಪದಾರ್ಥ = name;
   selectedBtn = btn;
-  isConductor = conductor;
+  isà²µà²¾à²¹à²• = conductor;
   materialColor = color;
   
-  // Reset visual
-  testMaterialBox.setAttribute('fill', color);
+  // ಮರುಹೊಂದಿಸಿ visual
+  testಪದಾರ್ಥBox.setAttribute('fill', color);
   materialIcon.textContent = icon;
-  bulbGlass.setAttribute('fill', '#9e9e9e');
-  filament.setAttribute('stroke', '#666');
+  bulbà²—à²¾à²œà³.setAttribute('fill', '#9e9e9e');
+  à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³.setAttribute('stroke', '#666');
   bulbGroup.classList.remove('bulb-on');
   currentFlow.style.display = 'none';
   resultBadge.style.display = 'none';
@@ -387,54 +387,54 @@ function selectMaterial(name, icon, conductor, color, btn) {
   
   learningText.innerHTML = `
     <strong>${name.charAt(0).toUpperCase() + name.slice(1)}</strong> is a <strong>${conductor ? 'METAL' : 'NON-METAL'}</strong>.<br><br>
-    Will it allow electricity to flow and light up the bulb? Let's find out!
+    Will it allow electricity to flow ಮತ್ತು light up the bulb? Let's find out!
   `;
 }
 
-function testMaterial() {
-  if (!selectedMaterial) return;
+function testಪದಾರ್ಥ() {
+  if (!selectedಪದಾರ್ಥ) return;
   
   testBtn.disabled = true;
   
   setTimeout(() => {
-    if (isConductor) {
-      // Metal - conducts electricity
-      bulbGlass.setAttribute('fill', '#ffeb3b');
-      filament.setAttribute('stroke', '#ff9800');
+    if (isà²µà²¾à²¹à²•) {
+      // ಲೋಹ - conducts electricity
+      bulbà²—à²¾à²œà³.setAttribute('fill', '#ffeb3b');
+      à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³.setAttribute('stroke', '#ff9800');
       bulbGroup.classList.add('bulb-on');
       currentFlow.style.display = 'block';
       
-      resultBadge.textContent = '💡 CONDUCTOR - Bulb glows!';
+      resultBadge.textContent = '💡 ವಾಹಕ - ಬಲ್ಬ್ ಬೆಳಗುತ್ತದೆ!';
       resultBadge.className = 'result-badge conductor';
       resultBadge.style.display = 'block';
       
       selectedBtn.classList.add('tested', 'conductor');
-      conductorList.push(selectedMaterial);
+      conductorList.push(selectedಪದಾರ್ಥ);
       
-      instruction.textContent = '💡 Current flows - bulb lights up!';
+      instruction.textContent = '💡 ವಿದ್ಯುತ್ ಹರಿಯುತ್ತದೆ - ಬಲ್ಬ್ ಬೆಳಗುತ್ತದೆ!';
       
       learningText.innerHTML = `
-        <strong style="color:#2e7d32">💡 ${selectedMaterial.toUpperCase()} is a CONDUCTOR!</strong><br><br>
+        <strong style="color:#2e7d32">💡 ${selectedಪದಾರ್ಥ.toUpperCase()} is a CONDUCTOR!</strong><br><br>
         The bulb lights up because <strong>electricity flows through</strong> this metal.<br><br>
-        Metals have <strong>free electrons</strong> that can move and carry electric current from the battery to the bulb.
+        ಲೋಹಗಳು have <strong>à²®à³à²•à³à²¤ à²‡à²²à³†à²•à³à²Ÿà³à²°à²¾à²¨à³â€Œà²—à²³à³</strong> that can move ಮತ್ತು carry electric current from the ಬ್ಯಾಟರಿ to the bulb.
       `;
     } else {
-      // Non-metal - insulator
-      bulbGlass.setAttribute('fill', '#757575');
+      // à²…à²²à³‹à²¹ - insulator
+      bulbà²—à²¾à²œà³.setAttribute('fill', '#757575');
       
-      resultBadge.textContent = '🚫 INSULATOR - No current!';
+      resultBadge.textContent = '🚫 ಅವಾಹಕ - ವಿದ್ಯುತ್ ಇಲ್ಲ!';
       resultBadge.className = 'result-badge insulator';
       resultBadge.style.display = 'block';
       
       selectedBtn.classList.add('tested', 'insulator');
-      insulatorList.push(selectedMaterial);
+      insulatorList.push(selectedಪದಾರ್ಥ);
       
-      instruction.textContent = '🚫 No current - bulb stays off!';
+      instruction.textContent = '🚫 ವಿದ್ಯುತ್ ಇಲ್ಲ - ಬಲ್ಬ್ ಆಫ್!';
       
       learningText.innerHTML = `
-        <strong style="color:#c62828">🚫 ${selectedMaterial.toUpperCase()} is an INSULATOR!</strong><br><br>
+        <strong style="color:#c62828">🚫 ${selectedಪದಾರ್ಥ.toUpperCase()} is an INSULATOR!</strong><br><br>
         The bulb stays off because <strong>electricity cannot flow through</strong> this non-metal.<br><br>
-        Non-metals don't have free electrons, so they <strong>block electric current</strong>. This makes them useful for safety!
+        ಅಲೋಹಗಳು don't have à²®à³à²•à³à²¤ à²‡à²²à³†à²•à³à²Ÿà³à²°à²¾à²¨à³â€Œà²—à²³à³, so they <strong>block electric current</strong>. This makes them useful for safety!
       `;
     }
     
@@ -442,8 +442,8 @@ function testMaterial() {
     document.getElementById('conductor-items').textContent = conductorList.length ? conductorList.join(', ') : '-';
     document.getElementById('insulator-items').textContent = insulatorList.length ? insulatorList.join(', ') : '-';
     
-    testBtn.textContent = '⚡ Select another material';
-    selectedMaterial = null;
+    testBtn.textContent = '⚡ ಇನ್ನೊಂದು ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ';
+    selectedಪದಾರ್ಥ = null;
   }, 500);
 }
 </script>

@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -85,8 +85,8 @@ body {
 }
 
 .choice-btn:active { transform: scale(0.95); }
-.choice-btn.desirable { border-color: #4caf50; background: #e8f5e9; color: #2e7d32; }
-.choice-btn.undesirable { border-color: #f44336; background: #ffebee; color: #c62828; }
+.choice-btn.ಅಪೇಕ್ಷಣೀಯ { border-color: #4caf50; background: #e8f5e9; color: #2e7d32; }
+.choice-btn.unಅಪೇಕ್ಷಣೀಯ { border-color: #f44336; background: #ffebee; color: #c62828; }
 .choice-btn:disabled { opacity: 0.6; }
 
 .feedback-panel {
@@ -157,14 +157,14 @@ body {
 <div id="app">
 
 <div class="header">
-  <h1>👍 Desirable vs Undesirable</h1>
-  <p>Are all changes good for us?</p>
+  <h1>👍 ಅಪೇಕ್ಷಣೀಯ ಮತ್ತು ಅನಪೇಕ್ಷಿತ</h1>
+  <p>ಎಲ್ಲಾ ಬದಲಾವಣೆಗಳು ನಮಗೆ ಒಳ್ಳೆಯವೇ?</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    Changes can be <strong>desirable</strong> (useful, beneficial) or <strong>undesirable</strong> (harmful, unwanted). The same change can be desirable in one situation and undesirable in another!
+    ಬದಲಾವಣೆಗಳು <strong>ಅಪೇಕ್ಷಣೀಯ</strong> (ಉಪಯುಕ್ತ, ಲಾಭಕರ) ಅಥವಾ <strong>unಅಪೇಕ್ಷಣೀಯ</strong> (harmful, unwanted). The same change can be ಅಪೇಕ್ಷಣೀಯ in one situation ಮತ್ತು unಅಪೇಕ್ಷಣೀಯ in another!
   </div>
 </div>
 
@@ -173,44 +173,44 @@ body {
     <div class="question-icon" id="q-icon">🥛</div>
     <div class="question-info">
       <div class="question-title" id="q-title">ಹಾಲು turning into ಮೊಸರು</div>
-      <div class="question-desc" id="q-desc">Bacteria convert milk to curd overnight</div>
+      <div class="question-desc" id="q-desc">à²¬à³à²¯à²¾à²•à³à²Ÿà³€à²°à²¿à²¯à²¾ à²°à²¾à²¤à³à²°à²¿à²¯à²²à³à²²à²¿ à²¹à²¾à²²à²¨à³à²¨à³ à²®à³Šà²¸à²°à³</div>
     </div>
   </div>
   
   <div class="choice-btns">
     <button class="choice-btn" id="btn-desirable" onclick="checkAnswer(true)">
-      ✅ Desirable<br><span style="font-size:9px">Useful/Beneficial</span>
+      ✅ ಅಪೇಕ್ಷಣೀಯ<br><span style="font-size:9px">à²‰à²ªà²¯à³à²•à³à²¤/à²²à²¾à²­à²•à²°</span>
     </button>
     <button class="choice-btn" id="btn-undesirable" onclick="checkAnswer(false)">
-      ❌ Undesirable<br><span style="font-size:9px">Harmful/Unwanted</span>
+      ❌ Unಅಪೇಕ್ಷಣೀಯ<br><span style="font-size:9px">à²¹à²¾à²¨à²¿à²•à²¾à²°à²•/à²…à²¨à²ªà³‡à²•à³à²·à²¿à²¤</span>
     </button>
   </div>
   
   <div class="feedback-panel" id="feedback-panel">
-    <div class="feedback-title" id="feedback-title">Correct!</div>
+    <div class="feedback-title" id="feedback-title">ಸರಿ!</div>
     <div class="feedback-text" id="feedback-text"></div>
   </div>
   
   <div class="score-bar" id="score-bar"></div>
-  <div class="progress-text" id="progress-text">Question 1 of 10</div>
+  <div class="progress-text" id="progress-text">10 à²°à²²à³à²²à²¿ à²ªà³à²°à²¶à³à²¨à³† 1</div>
 </div>
 
 <div class="context-panel">
-  <div class="context-title">🤔 Context Matters!</div>
+  <div class="context-title">🤔 ಸಂದರ್ಭ ಮುಖ್ಯ!</div>
   <div class="context-text" id="context-text">
     The same change can be viewed differently based on the situation:<br><br>
-    • <strong>Fire:</strong> Desirable for cooking, undesirable in a forest<br>
-    • <strong>Decomposition:</strong> Desirable in composting, undesirable for food<br>
-    • <strong>Rain:</strong> Desirable for crops, undesirable during floods
+    • <strong>Fire:</strong> Desirable for cooking, unಅಪೇಕ್ಷಣೀಯ in a forest<br>
+    • <strong>à²µà²¿à²˜à²Ÿà²¨à³†:</strong> Desirable in composting, unಅಪೇಕ್ಷಣೀಯ for food<br>
+    • <strong>Rain:</strong> Desirable for crops, unಅಪೇಕ್ಷಣೀಯ during floods
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 Key Understanding</div>
+  <div class="takeaway-title">🎯 ಮುಖ್ಯ ತಿಳುವಳಿಕೆ</div>
   <div class="takeaway-text">
-    <strong>Desirable changes</strong> help us or nature in some way.<br>
-    <strong>Undesirable changes</strong> cause harm or loss.<br><br>
-    Many changes that seem undesirable (like decay) are actually essential for nature's balance!
+    <strong>Desirable ಬದಲಾಗುತ್ತದೆ</strong> à²¨à²®à²—à³† à²…à²¥à²µà²¾ à²ªà³à²°à²•à³ƒà²¤à²¿à²—à³† à²¯à²¾à²µà³à²¦à³‡ à²°à³€à²¤à²¿à²¯à²²à³à²²à²¿ à²¸à²¹à²¾à²¯.<br>
+    <strong>Unಅಪೇಕ್ಷಣೀಯ ಬದಲಾಗುತ್ತದೆ</strong> à²¹à²¾à²¨à²¿ à²…à²¥à²µà²¾ à²¨à²·à³à²Ÿ.<br><br>
+    Many ಬದಲಾಗುತ್ತದೆ that seem unಅಪೇಕ್ಷಣೀಯ (like decay) are actually essential for nature's balance!
   </div>
 </div>
 
@@ -220,73 +220,73 @@ body {
 const questions = [
   { 
     icon: '🥛', 
-    title: 'Milk turning into Curd', 
-    desc: 'Bacteria convert milk to curd overnight',
-    desirable: true,
-    feedback: 'Curd is nutritious and delicious! Making curd from milk is a beneficial chemical change that gives us yogurt, lassi, and other dairy products.'
+    title: 'ಹಾಲು turning into ಮೊಸರು', 
+    desc: 'à²¬à³à²¯à²¾à²•à³à²Ÿà³€à²°à²¿à²¯à²¾ à²°à²¾à²¤à³à²°à²¿à²¯à²²à³à²²à²¿ à²¹à²¾à²²à²¨à³à²¨à³ à²®à³Šà²¸à²°à³',
+    ಅಪೇಕ್ಷಣೀಯ: true,
+    feedback: 'ಮೊಸರು is nutritious ಮತ್ತು delicious! Making curd from milk is a beneficial ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ that gives us yogurt, lassi, ಮತ್ತು other dairy products.'
   },
   { 
     icon: '🔩', 
-    title: 'Rusting of Iron', 
+    title: 'ಕಬ್ಬಿಣದ ತುಕ್ಕು', 
     desc: 'Iron objects develop brown rust over time',
-    desirable: false,
-    feedback: 'Rusting weakens iron structures, damages tools, and costs billions in repairs. It\'s an undesirable chemical change we try to prevent.'
+    ಅಪೇಕ್ಷಣೀಯ: false,
+    feedback: 'ತುಕ್ಕು weakens iron structures, damages tools, ಮತ್ತು costs billions in repairs. It\'s an unಅಪೇಕ್ಷಣೀಯ ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ we try to prevent.'
   },
   { 
     icon: '🍳', 
-    title: 'Cooking Food', 
+    title: 'ಆಹಾರ ಬೇಯಿಸುವುದು', 
     desc: 'Raw ingredients become cooked meals',
-    desirable: true,
-    feedback: 'Cooking makes food safer, tastier, and easier to digest. It\'s a desirable change that humans have used for thousands of years!'
+    ಅಪೇಕ್ಷಣೀಯ: true,
+    feedback: 'Cooking makes food safer, tastier, ಮತ್ತು easier to digest. It\'s a ಅಪೇಕ್ಷಣೀಯ change that humans have used for thousಮತ್ತುs of years!'
   },
   { 
     icon: '🍌', 
-    title: 'Fruit Rotting', 
-    desc: 'Fresh fruits become spoiled and inedible',
-    desirable: false,
-    feedback: 'Rotting fruit wastes food and can cause illness. However, in nature, this decomposition returns nutrients to soil!'
+    title: 'à²¹à²£à³à²£à³ à²•à³Šà²³à³†à²¤', 
+    desc: 'Fresh fruits become spoiled ಮತ್ತು inedible',
+    ಅಪೇಕ್ಷಣೀಯ: false,
+    feedback: 'Rotting fruit wastes food ಮತ್ತು can cause illness. However, in nature, this decomposition returns nutrients to soil!'
   },
   { 
     icon: '🌱', 
-    title: 'Seed Germination', 
+    title: 'à²¬à³€à²œ à²®à³Šà²³à²•à³†', 
     desc: 'Seeds sprout into young plants',
-    desirable: true,
-    feedback: 'Germination is how plants reproduce! This desirable change is essential for agriculture and maintaining ecosystems.'
+    ಅಪೇಕ್ಷಣೀಯ: true,
+    feedback: 'Germination is how plants reproduce! This ಅಪೇಕ್ಷಣೀಯ change is essential for agriculture ಮತ್ತು maintaining ecosystems.'
   },
   { 
     icon: '🏭', 
-    title: 'Air Pollution', 
+    title: 'à²µà²¾à²¯à³ à²®à²¾à²²à²¿à²¨à³à²¯', 
     desc: 'Factories release smoke into the air',
-    desirable: false,
-    feedback: 'Air pollution causes health problems and climate change. It\'s an undesirable byproduct we must reduce.'
+    ಅಪೇಕ್ಷಣೀಯ: false,
+    feedback: 'Air pollution causes health problems ಮತ್ತು climate change. It\'s an unಅಪೇಕ್ಷಣೀಯ byproduct we must reduce.'
   },
   { 
     icon: '🥬', 
-    title: 'Composting', 
+    title: 'à²•à²‚à²ªà³‹à²¸à³à²Ÿà²¿à²‚à²—à³', 
     desc: 'Kitchen waste turns into fertilizer',
-    desirable: true,
-    feedback: 'Composting converts waste into valuable fertilizer! It\'s a desirable way to recycle organic matter.'
+    ಅಪೇಕ್ಷಣೀಯ: true,
+    feedback: 'à²•à²‚à²ªà³‹à²¸à³à²Ÿà²¿à²‚à²—à³ converts waste into valuable fertilizer! It\'s a ಅಪೇಕ್ಷಣೀಯ way to recycle organic matter.'
   },
   { 
     icon: '🦷', 
     title: 'Tooth Decay', 
     desc: 'Bacteria damage teeth over time',
-    desirable: false,
-    feedback: 'Tooth decay causes pain and health issues. It\'s an undesirable change we prevent with brushing and dental care.'
+    ಅಪೇಕ್ಷಣೀಯ: false,
+    feedback: 'Tooth decay causes pain ಮತ್ತು health issues. It\'s an unಅಪೇಕ್ಷಣೀಯ change we prevent with brushing ಮತ್ತು dental care.'
   },
   { 
     icon: '🍞', 
-    title: 'Making Bread', 
-    desc: 'Yeast makes dough rise and bake into bread',
-    desirable: true,
-    feedback: 'Bread-making uses fermentation (yeast producing CO₂) to create fluffy, delicious bread. A very desirable change!'
+    title: 'à²°à³Šà²Ÿà³à²Ÿà²¿ à²¤à²¯à²¾à²°à²¿à²•à³†', 
+    desc: 'Yeast makes dough rise ಮತ್ತು bake into bread',
+    ಅಪೇಕ್ಷಣೀಯ: true,
+    feedback: 'Bread-making uses fermentation (yeast producing CO₂) to create fluffy, delicious bread. A very ಅಪೇಕ್ಷಣೀಯ change!'
   },
   { 
     icon: '🌡️', 
-    title: 'Global Warming', 
+    title: 'à²œà²¾à²—à²¤à²¿à²• à²¤à²¾à²ªà²®à²¾à²¨ à²à²°à²¿à²•à³†', 
     desc: 'Earth\'s temperature is rising',
-    desirable: false,
-    feedback: 'Global warming causes extreme weather, rising seas, and ecosystem damage. It\'s a major undesirable change facing our planet.'
+    ಅಪೇಕ್ಷಣೀಯ: false,
+    feedback: 'Global warming causes extreme weather, rising seas, ಮತ್ತು ecosystem damage. It\'s a major unಅಪೇಕ್ಷಣೀಯ change facing our planet.'
   }
 ];
 
@@ -298,7 +298,7 @@ const qIcon = document.getElementById('q-icon');
 const qTitle = document.getElementById('q-title');
 const qDesc = document.getElementById('q-desc');
 const btnDesirable = document.getElementById('btn-desirable');
-const btnUndesirable = document.getElementById('btn-undesirable');
+const btnUnಅಪೇಕ್ಷಣೀಯ = document.getElementById('btn-undesirable');
 const feedbackPanel = document.getElementById('feedback-panel');
 const feedbackTitle = document.getElementById('feedback-title');
 const feedbackText = document.getElementById('feedback-text');
@@ -308,10 +308,10 @@ const progressText = document.getElementById('progress-text');
 function loadQuestion() {
   if (currentIndex >= questions.length) {
     qIcon.textContent = '🎉';
-    qTitle.textContent = 'Quiz Complete!';
+    qTitle.textContent = 'ಕ್ವಿಜ್ ಪೂರ್ಣ!';
     qDesc.textContent = `You got ${score} out of ${questions.length} correct!`;
     btnDesirable.style.display = 'none';
-    btnUndesirable.style.display = 'none';
+    btnUnಅಪೇಕ್ಷಣೀಯ.style.display = 'none';
     feedbackPanel.classList.remove('show');
     return;
   }
@@ -322,9 +322,9 @@ function loadQuestion() {
   qDesc.textContent = q.desc;
   
   btnDesirable.disabled = false;
-  btnUndesirable.disabled = false;
-  btnDesirable.classList.remove('desirable', 'undesirable');
-  btnUndesirable.classList.remove('desirable', 'undesirable');
+  btnUnಅಪೇಕ್ಷಣೀಯ.disabled = false;
+  btnDesirable.classList.remove('ಅಪೇಕ್ಷಣೀಯ', 'unಅಪೇಕ್ಷಣೀಯ');
+  btnUnಅಪೇಕ್ಷಣೀಯ.classList.remove('ಅಪೇಕ್ಷಣೀಯ', 'unಅಪೇಕ್ಷಣೀಯ');
   
   feedbackPanel.classList.remove('show', 'correct', 'wrong');
   answered = false;
@@ -337,22 +337,22 @@ function checkAnswer(isDesirable) {
   answered = true;
   
   const q = questions[currentIndex];
-  const correct = q.desirable === isDesirable;
+  const correct = q.ಅಪೇಕ್ಷಣೀಯ === isDesirable;
   
   btnDesirable.disabled = true;
-  btnUndesirable.disabled = true;
+  btnUnಅಪೇಕ್ಷಣೀಯ.disabled = true;
   
   // Mark correct answer
-  if (q.desirable) {
-    btnDesirable.classList.add('desirable');
+  if (q.ಅಪೇಕ್ಷಣೀಯ) {
+    btnDesirable.classList.add('ಅಪೇಕ್ಷಣೀಯ');
   } else {
-    btnUndesirable.classList.add('undesirable');
+    btnUnಅಪೇಕ್ಷಣೀಯ.classList.add('unಅಪೇಕ್ಷಣೀಯ');
   }
   
   // Show feedback
   if (correct) {
     feedbackPanel.classList.add('correct');
-    feedbackTitle.textContent = '✅ Correct!';
+    feedbackTitle.textContent = '✅ ಸರಿ!';
     score++;
   } else {
     feedbackPanel.classList.add('wrong');

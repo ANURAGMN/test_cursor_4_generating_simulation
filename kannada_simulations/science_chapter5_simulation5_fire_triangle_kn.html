@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -154,36 +154,36 @@ svg { width: 100%; height: 100%; }
 <div id="app">
 
 <div class="header">
-  <h1>🔥 Fire Triangle</h1>
+  <h1>🔥 ಅಗ್ನಿ ತ್ರಿಕೋಣ</h1>
   <p>What does fire need to burn?</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    Fire (combustion) requires <strong>three things</strong>: a <strong>fuel</strong> (combustible material), <strong>oxygen</strong> (from air), and <strong>heat</strong> (to reach ignition temperature). Remove any one and the fire goes out!
+    ಅಗ್ನಿ (ದಹನ) ಅಗತ್ಯ <strong>ಮೂರು ವಸ್ತುಗಳು</strong>: a <strong>fuel</strong> (ದಹನೀಯ ಪದಾರ್ಥ), <strong>ಆಮ್ಲಜನಕ</strong> (from air), ಮತ್ತು <strong>heat</strong> (à²‰à²°à²¿à²¯à³à²µ à²‰à²·à³à²£à²¤à³†). à²’à²‚à²¦à²¨à³à²¨à³ à²¤à³†à²—à³†à²¦à²°à³† à²…à²—à³à²¨à²¿ à²†à²°à²¿à²¹à³‹à²—à³à²¤à³à²¤à²¦à³†!
   </div>
 </div>
 
 <div class="sim-card">
   <div class="visual">
-    <div class="status-badge no-fire" id="status-badge">Select all 3 elements</div>
+    <div class="status-badge no-fire" id="status-badge">à²®à³‚à²°à³ à²…à²‚à²¶à²—à²³à²¨à³à²¨à³‚ à²†à²¯à³à²•à³†à²®à²¾à²¡à²¿</div>
     <svg viewBox="0 0 400 280" id="scene">
-      <!-- Fire Triangle outline -->
+      <!-- ಅಗ್ನಿ ತ್ರಿಕೋಣ outline -->
       <polygon points="200,40 100,220 300,220" fill="none" stroke="#455a64" stroke-width="2" stroke-dasharray="5,5"/>
       
       <!-- Triangle labels -->
       <text x="200" y="30" font-size="10" fill="#90a4ae" text-anchor="middle">FIRE</text>
       <text x="80" y="235" font-size="10" fill="#90a4ae" text-anchor="middle">FUEL</text>
       <text x="320" y="235" font-size="10" fill="#90a4ae" text-anchor="middle">HEAT</text>
-      <text x="200" y="250" font-size="10" fill="#90a4ae" text-anchor="middle">OXYGEN</text>
+      <text x="200" y="250" font-size="10" fill="#90a4ae" text-anchor="middle">à²†à²®à³à²²à²œà²¨à²•</text>
       
       <!-- Fuel icon position -->
       <g id="fuel-icon" transform="translate(100, 180)" style="opacity:0.3">
         <text x="0" y="0" font-size="35">🪵</text>
       </g>
       
-      <!-- Oxygen icon position -->
+      <!-- ಆಮ್ಲಜನಕ icon position -->
       <g id="oxygen-icon" transform="translate(180, 200)" style="opacity:0.3">
         <text x="0" y="0" font-size="30">💨</text>
         <text x="35" y="0" font-size="12" fill="#90a4ae">O₂</text>
@@ -209,7 +209,7 @@ svg { width: 100%; height: 100%; }
         <text x="0" y="50" font-size="10" fill="#f44336" text-anchor="middle">No Fire</text>
       </g>
       
-      <!-- Connecting lines when elements are active -->
+      <!-- à²¸à²‚à²ªà²°à³à²•à²¿à²¸à²¿ing lines when elements are active -->
       <line id="line-fuel-oxygen" x1="120" y1="200" x2="200" y2="220" stroke="#4caf50" stroke-width="3" style="display:none"/>
       <line id="line-oxygen-heat" x1="200" y1="220" x2="280" y2="200" stroke="#4caf50" stroke-width="3" style="display:none"/>
       <line id="line-heat-fuel" x1="280" y1="200" x2="120" y2="200" stroke="#4caf50" stroke-width="3" style="display:none"/>
@@ -220,43 +220,43 @@ svg { width: 100%; height: 100%; }
     <div class="element-btn" id="btn-fuel" onclick="toggleElement('fuel', this)">
       <div class="icon">🪵</div>
       <div class="name">FUEL</div>
-      <div class="desc">Combustible material</div>
+      <div class="desc">à²¦à²¹à²¨à³€à²¯ à²ªà²¦à²¾à²°à³à²¥</div>
     </div>
-    <div class="element-btn" id="btn-oxygen" onclick="toggleElement('oxygen', this)">
+    <div class="element-btn" id="btn-oxygen" onclick="toggleElement('ಆಮ್ಲಜನಕ', this)">
       <div class="icon">💨</div>
-      <div class="name">OXYGEN</div>
+      <div class="name">à²†à²®à³à²²à²œà²¨à²•</div>
       <div class="desc">From air (O₂)</div>
     </div>
     <div class="element-btn" id="btn-heat" onclick="toggleElement('heat', this)">
       <div class="icon">🌡️</div>
       <div class="name">HEAT</div>
-      <div class="desc">Ignition temperature</div>
+      <div class="desc">à²‰à²°à²¿à²¯à³à²µ à²‰à²·à³à²£à²¤à³†</div>
     </div>
   </div>
 </div>
 
 <div class="result-panel" id="result-panel">
-  <div class="result-title" id="result-title">🔺 Fire Triangle</div>
+  <div class="result-title" id="result-title">🔺 ಅಗ್ನಿ ತ್ರಿಕೋಣ</div>
   <div class="result-text" id="result-text">
-    Toggle each element on/off to see what happens. Fire needs ALL THREE elements to burn!
+    à²à²¨à²¾à²—à³à²¤à³à²¤à²¦à³† à²¨à³‹à²¡à²²à³ à²ªà³à²°à²¤à²¿ à²…à²‚à²¶ à²†à²¨à³/à²†à²«à³. à²…à²—à³à²¨à²¿à²—à³† à²®à³‚à²°à³ à²…à²‚à²¶ à²…à²—à²¤à³à²¯!
   </div>
 </div>
 
 <div class="learning-panel">
-  <div class="learning-title">🔬 How to Stop Fire</div>
+  <div class="learning-title">🔬 How to ನಿಲ್ಲಿಸಿ Fire</div>
   <div class="learning-text" id="learning-text">
-    <strong>Remove FUEL:</strong> Take away the burning material<br>
-    <strong>Remove OXYGEN:</strong> Cover with blanket or use CO₂ extinguisher<br>
-    <strong>Remove HEAT:</strong> Pour water to cool it down<br><br>
-    Fire extinguishers work by removing one or more of these elements!
+    <strong>à²‡à²‚à²§à²¨ à²¤à³†à²—à³†à²¦à³à²¹à²¾à²•à²¿:</strong> à²‰à²°à²¿à²¯à³à²¤à³à²¤à²¿à²°à³à²µ à²ªà²¦à²¾à²°à³à²¥ à²¤à³†à²—à³†à²¦à³à²¹à²¾à²•à²¿<br>
+    <strong>à²†à²®à³à²²à²œà²¨à²• à²¤à³†à²—à³†à²¦à³à²¹à²¾à²•à²¿:</strong> ಕಂಬಳಿ ಮುಚ್ಚಿ ಅಥವಾ CO₂ ಅಗ್ನಿಶಾಮಕ<br>
+    <strong>à²‰à²·à³à²£ à²¤à³†à²—à³†à²¦à³à²¹à²¾à²•à²¿:</strong> à²¤à²‚à²ªà²¾à²—à²¿à²¸à²²à³ ನೀರು à²¸à³à²°à²¿à²¯à²¿à²°à²¿<br><br>
+    à²’à²‚à²¦à³ à²…à²¥à²µà²¾ à²¹à³†à²šà³à²šà³ à²…à²‚à²¶ à²¤à³†à²—à³†à²¦à³ à²…à²—à³à²¨à²¿à²¶à²¾à²®à²•!
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 Remember</div>
+  <div class="takeaway-title">🎯 ನೆನಪಿಡಿ</div>
   <div class="takeaway-text">
-    <strong>Combustion</strong> is a chemical change where fuel reacts with oxygen, producing heat and light.<br><br>
-    <strong>Ignition temperature</strong> = minimum temperature needed to start burning. Different materials have different ignition temperatures!
+    <strong>ದಹನ</strong> à²‡à²‚à²§à²¨ à²†à²®à³à²²à²œà²¨à²•à²¦à³Šà²‚à²¦à²¿à²—à³† à²ªà³à²°à²¤à²¿à²•à³à²°à²¿à²¯à²¿à²¸à²¿ à²‰à²·à³à²£ à²®à²¤à³à²¤à³ à²¬à³†à²³à²•à³ à²‰à²¤à³à²ªà²¾à²¦à²¿à²¸à³à²µ ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ.<br><br>
+    <strong>à²‰à²°à²¿à²¯à³à²µ à²‰à²·à³à²£à²¤à³†</strong> = à²‰à²°à²¿à²¯à²²à³ à²•à²¨à²¿à²·à³à²  à²‰à²·à³à²£à²¤à³†. à²µà²¸à³à²¤à³à²—à²³à²¿à²—à³† à²µà²¿à²­à²¿à²¨à³à²¨ à²‰à²°à²¿à²¯à³à²µ à²‰à²·à³à²£à²¤à³†!
   </div>
 </div>
 
@@ -265,7 +265,7 @@ svg { width: 100%; height: 100%; }
 <script>
 let elements = {
   fuel: false,
-  oxygen: false,
+  ಆಮ್ಲಜನಕ: false,
   heat: false
 };
 
@@ -273,7 +273,7 @@ const statusBadge = document.getElementById('status-badge');
 const fireDisplay = document.getElementById('fire-display');
 const noFireDisplay = document.getElementById('no-fire-display');
 const fuelIcon = document.getElementById('fuel-icon');
-const oxygenIcon = document.getElementById('oxygen-icon');
+const ಆಮ್ಲಜನಕIcon = document.getElementById('oxygen-icon');
 const heatIcon = document.getElementById('heat-icon');
 const resultTitle = document.getElementById('result-title');
 const resultText = document.getElementById('result-text');
@@ -284,28 +284,28 @@ function toggleElement(type, btn) {
   
   // Update icons
   fuelIcon.style.opacity = elements.fuel ? '1' : '0.3';
-  oxygenIcon.style.opacity = elements.oxygen ? '1' : '0.3';
+  ಆಮ್ಲಜನಕIcon.style.opacity = elements.ಆಮ್ಲಜನಕ ? '1' : '0.3';
   heatIcon.style.opacity = elements.heat ? '1' : '0.3';
   
   // Update connecting lines
-  document.getElementById('line-fuel-oxygen').style.display = (elements.fuel && elements.oxygen) ? 'block' : 'none';
-  document.getElementById('line-oxygen-heat').style.display = (elements.oxygen && elements.heat) ? 'block' : 'none';
+  document.getElementById('line-fuel-oxygen').style.display = (elements.fuel && elements.ಆಮ್ಲಜನಕ) ? 'block' : 'none';
+  document.getElementById('line-oxygen-heat').style.display = (elements.ಆಮ್ಲಜನಕ && elements.heat) ? 'block' : 'none';
   document.getElementById('line-heat-fuel').style.display = (elements.heat && elements.fuel) ? 'block' : 'none';
   
   // Check if all elements present
-  const allPresent = elements.fuel && elements.oxygen && elements.heat;
+  const allPresent = elements.fuel && elements.ಆಮ್ಲಜನಕ && elements.heat;
   
   if (allPresent) {
     fireDisplay.style.display = 'block';
     noFireDisplay.style.display = 'none';
-    statusBadge.textContent = '🔥 FIRE BURNING!';
+    statusBadge.textContent = '🔥 ಅಗ್ನಿ ಉರಿಯುತ್ತಿದೆ!';
     statusBadge.className = 'status-badge fire';
     
-    resultTitle.textContent = '🔥 Fire is Burning!';
+    resultTitle.textContent = '🔥 ಅಗ್ನಿ ಉರಿಯುತ್ತಿದೆ!';
     resultText.innerHTML = `
       All three elements are present:<br>
       ✅ <strong>Fuel</strong> provides material to burn<br>
-      ✅ <strong>Oxygen</strong> supports combustion<br>
+      ✅ <strong>ಆಮ್ಲಜನಕ</strong> supports combustion<br>
       ✅ <strong>Heat</strong> reached ignition temperature<br><br>
       The fire will keep burning as long as all three are present!
     `;
@@ -316,7 +316,7 @@ function toggleElement(type, btn) {
     
     const missing = [];
     if (!elements.fuel) missing.push('Fuel');
-    if (!elements.oxygen) missing.push('Oxygen');
+    if (!elements.ಆಮ್ಲಜನಕ) missing.push('ಆಮ್ಲಜನಕ');
     if (!elements.heat) missing.push('Heat');
     
     statusBadge.textContent = `Missing: ${missing.join(', ')}`;
@@ -324,7 +324,7 @@ function toggleElement(type, btn) {
     resultTitle.textContent = '❌ No Fire';
     
     if (missing.length === 3) {
-      resultText.textContent = 'Select all three elements to start a fire!';
+      resultText.textContent = 'ಅಗ್ನಿ ಪ್ರಾರಂಭಿಸಲು ಮೂರು ಅಂಶಗಳನ್ನೂ ಆಯ್ಕೆಮಾಡಿ!';
     } else if (missing.length === 1) {
       resultText.innerHTML = `
         Almost there! Missing: <strong>${missing[0]}</strong><br><br>
@@ -332,7 +332,7 @@ function toggleElement(type, btn) {
       `;
     } else {
       resultText.innerHTML = `
-        Missing: <strong>${missing.join(' and ')}</strong><br><br>
+        Missing: <strong>${missing.join(' ಮತ್ತು ')}</strong><br><br>
         Fire cannot start without all three elements of the fire triangle.
       `;
     }
@@ -340,11 +340,11 @@ function toggleElement(type, btn) {
 }
 
 function getMissingExplanation(element) {
-  switch(element) {
+  ಸ್ವಿಚ್(element) {
     case 'Fuel':
-      return 'Without fuel (combustible material), there\'s nothing to burn. This is why fire stops when the wood runs out!';
-    case 'Oxygen':
-      return 'Without oxygen, combustion cannot occur. This is why covering a fire with a blanket can put it out!';
+      return 'Without fuel (ದಹನೀಯ ಪದಾರ್ಥ), there\'s nothing to burn. This is why fire stops when the wood runs out!';
+    case 'ಆಮ್ಲಜನಕ':
+      return 'Without ಆಮ್ಲಜನಕ, combustion cannot occur. This is why covering a fire with a blanket can put it out!';
     case 'Heat':
       return 'Without enough heat to reach ignition temperature, the fuel won\'t catch fire. This is why wet wood doesn\'t burn easily!';
   }

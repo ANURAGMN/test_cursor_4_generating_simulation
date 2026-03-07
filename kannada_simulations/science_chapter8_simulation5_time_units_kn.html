@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -244,51 +244,51 @@ body {
 
 <div class="header">
   <h1>⏰ ಸಮಯ ಘಟಕ ಪರಿವರ್ತಕ</h1>
-  <p>Convert between different units of time</p>
+  <p>ವಿವಿಧ ಸಮಯ ಘಟಕಗಳ ನಡುವೆ ಪರಿವರ್ತಿಸಿ</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 SI Unit of Time</div>
+  <div class="concept-title">📚 ಸಮಯದ SI ಘಟಕ</div>
   <div class="concept-text">
-    The SI unit of time is the <strong>second (s)</strong>. Other common units are minutes (min) and hours (h). Always use correct symbols without periods!
+    The SI unit of time is the <strong>ಸೆಕೆಂಡ್ (ಗಳು)</strong>. ಇತರ ಸಾಮಾನ್ಯ ಘಟಕಗಳು ನಿಮಿಷ (ನಿಮಿ) ಮತ್ತು ಗಂಟೆ (ಗಂ).ays use correct symbols without periods!
   </div>
 </div>
 
 <div class="sim-card">
   <div class="input-section">
-    <div class="input-label">Enter a time value to convert:</div>
+    <div class="input-label">ಪರಿವರ್ತಿಸಲು ಸಮಯ ನಮೂದಿಸಿ:</div>
     <div class="input-row">
       <input type="number" class="input-field" id="time-input" value="1" min="0" oninput="convertTime()">
       <select class="unit-select" id="unit-select" onchange="convertTime()">
-        <option value="h">hours</option>
-        <option value="min">minutes</option>
-        <option value="s" selected>seconds</option>
-        <option value="ms">milliseconds</option>
+        <option value="h">à²—à²‚à²Ÿà³†à²—à²³à³</option>
+        <option value="min">à²¨à²¿à²®à²¿à²·à²—à²³à³</option>
+        <option value="s" selected>à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³</option>
+        <option value="ms">à²®à²¿à²²à²¿à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³</option>
       </select>
     </div>
   </div>
   
   <div class="results-section">
-    <div class="results-title">📊 Equivalent Values</div>
+    <div class="results-title">📊 ಸಮಾನ ಮೌಲ್ಯಗಳು</div>
     <div class="results-grid">
       <div class="result-item" id="result-h">
         <div class="result-value" id="value-h">0.000278</div>
-        <div class="result-unit">hours</div>
+        <div class="result-unit">à²—à²‚à²Ÿà³†à²—à²³à³</div>
         <div class="result-symbol">h</div>
       </div>
       <div class="result-item" id="result-min">
         <div class="result-value" id="value-min">0.0167</div>
-        <div class="result-unit">minutes</div>
+        <div class="result-unit">à²¨à²¿à²®à²¿à²·à²—à²³à³</div>
         <div class="result-symbol">min</div>
       </div>
       <div class="result-item highlight" id="result-s">
         <div class="result-value" id="value-s">1</div>
-        <div class="result-unit">seconds</div>
+        <div class="result-unit">à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³</div>
         <div class="result-symbol">s</div>
       </div>
       <div class="result-item" id="result-ms">
         <div class="result-value" id="value-ms">1000</div>
-        <div class="result-unit">milliseconds</div>
+        <div class="result-unit">à²®à²¿à²²à²¿à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³</div>
         <div class="result-symbol">ms</div>
       </div>
     </div>
@@ -296,47 +296,47 @@ body {
 </div>
 
 <div class="conversions-table">
-  <div class="table-title">📐 Conversion Factors</div>
+  <div class="table-title">📐 ಪರಿವರ್ತನಾ ಅಂಶಗಳು</div>
   <div class="conversion-row">
     <span>1 hour (h)</span>
-    <span>= 60 minutes = 3600 seconds</span>
+    <span>= 60 à²¨à²¿à²®à²¿à²· = 3600 à²¸à³†à²•à³†à²‚à²¡à³</span>
   </div>
   <div class="conversion-row">
-    <span>1 minute (min)</span>
-    <span>= 60 seconds</span>
+    <span>1 à²¨à²¿à²®à²¿à²· (à²¨à²¿à²®à²¿)</span>
+    <span>= 60 à²¸à³†à²•à³†à²‚à²¡à³</span>
   </div>
   <div class="conversion-row">
-    <span>1 second (s)</span>
-    <span>= 1000 milliseconds</span>
+    <span>1 ಸೆಕೆಂಡ್ (ಗಳು)</span>
+    <span>= 1000 à²®à²¿à²²à²¿à²¸à³†à²•à³†à²‚à²¡à³</span>
   </div>
   <div class="conversion-row">
-    <span>1 millisecond (ms)</span>
-    <span>= 1000 microseconds (μs)</span>
+    <span>1 à²®à²¿à²²à²¿à²¸à³†à²•à³†à²‚à²¡à³ (ms)</span>
+    <span>= 1000 ಮೈಕ್ರೋà²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ (μs)</span>
   </div>
 </div>
 
 <div class="small-units">
-  <div class="small-title">🔬 Why Small Time Units Matter</div>
+  <div class="small-title">🔬 ಚಿಕ್ಕ ಸಮಯ ಘಟಕ ಏಕೆ ಮುಖ್ಯ</div>
   <div class="small-text">
-    • <strong>Sports:</strong> Olympic races decided by milliseconds!<br>
-    • <strong>Medicine:</strong> ECG measures heartbeats precisely<br>
-    • <strong>Computers:</strong> Processors work in nanoseconds<br>
-    • <strong>Music:</strong> Digital recording samples thousands of times per second
+    • <strong>à²•à³à²°à³€à²¡à³†à²—à²³à³:</strong> à²’à²²à²‚à²ªà²¿à²•à³ à²“à²Ÿ à²®à²¿à²²à²¿à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à²¿à²‚à²¦!<br>
+    • <strong>à²”à²·à²§à²¿:</strong> ECG à²¹à³ƒà²¦à²¯ à²¬à²¡à²¿à²¤ à²¨à²¿à²–à²°à²µà²¾à²—à²¿<br>
+    • <strong>à²•à²‚à²ªà³à²¯à³‚à²Ÿà²°à³â€Œà²—à²³à³:</strong> à²ªà³à²°à³Šà²¸à³†à²¸à²°à³â€Œà²—à²³à³ à²¨à³à²¯à²¾à²¨à³‹à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à²²à³à²²à²¿ à²•à³†à²²à²¸<br>
+    • <strong>à²¸à²‚à²—à³€à²¤:</strong> à²¡à²¿à²œà²¿à²Ÿà²²à³ à²°à³†à²•à²¾à²°à³à²¡à²¿à²‚à²—à³ à²¸à³†à²•à³†à²‚à²¡à²¿à²—à³† à²¸à²¾à²µà²¿à²°à²¾à²°à³ à²¸à³à²¯à²¾à²‚à²ªà²²à³
   </div>
 </div>
 
 <div class="notation-box">
-  <div class="notation-title">✍️ Correct Notation (SI Standard)</div>
+  <div class="notation-title">✍️ ಸರಿಯಾದ ಸಂಕೇತ (SI ಪ್ರಮಾಣ)</div>
   <div class="notation-grid">
     <div class="notation-item">
       <div class="notation-correct">s</div>
       <div class="notation-wrong">sec</div>
-      <div class="notation-label">second</div>
+      <div class="notation-label">à²¸à³†à²•à³†à²‚à²¡à³</div>
     </div>
     <div class="notation-item">
       <div class="notation-correct">min</div>
       <div class="notation-wrong">mins</div>
-      <div class="notation-label">minute</div>
+      <div class="notation-label">à²¨à²¿à²®à²¿à²·</div>
     </div>
     <div class="notation-item">
       <div class="notation-correct">h</div>
@@ -346,7 +346,7 @@ body {
     <div class="notation-item">
       <div class="notation-correct">ms</div>
       <div class="notation-wrong">msec</div>
-      <div class="notation-label">millisecond</div>
+      <div class="notation-label">à²®à²¿à²²à²¿à²¸à³†à²•à³†à²‚à²¡à³</div>
     </div>
   </div>
 </div>
@@ -358,19 +358,19 @@ function convertTime() {
   const value = parseFloat(document.getElementById('time-input').value) || 0;
   const unit = document.getElementById('unit-select').value;
   
-  // Convert to seconds first
-  let seconds;
-  switch(unit) {
-    case 'h': seconds = value * 3600; break;
-    case 'min': seconds = value * 60; break;
-    case 's': seconds = value; break;
-    case 'ms': seconds = value / 1000; break;
+  // Convert to à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ à²®à³Šà²¦à²²
+  let à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³;
+  ಸ್ವಿಚ್(unit) {
+    case 'h': à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ = value * 3600; break;
+    case 'min': à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ = value * 60; break;
+    case 's': à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ = value; break;
+    case 'ms': à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ = value / 1000; break;
   }
   
   // Convert to all units
-  const hours = seconds / 3600;
-  const minutes = seconds / 60;
-  const milliseconds = seconds * 1000;
+  const à²—à²‚à²Ÿà³†à²—à²³à³ = à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ / 3600;
+  const à²¨à²¿à²®à²¿à²·à²—à²³à³ = à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ / 60;
+  const à²®à²¿à²²à²¿à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ = à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ * 1000;
   
   // Format numbers nicely
   function format(num) {
@@ -381,10 +381,10 @@ function convertTime() {
     return num.toExponential(2);
   }
   
-  document.getElementById('value-h').textContent = format(hours);
-  document.getElementById('value-min').textContent = format(minutes);
-  document.getElementById('value-s').textContent = format(seconds);
-  document.getElementById('value-ms').textContent = format(milliseconds);
+  document.getElementById('value-h').textContent = format(à²—à²‚à²Ÿà³†à²—à²³à³);
+  document.getElementById('value-min').textContent = format(à²¨à²¿à²®à²¿à²·à²—à²³à³);
+  document.getElementById('value-s').textContent = format(à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³);
+  document.getElementById('value-ms').textContent = format(à²®à²¿à²²à²¿à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³);
   
   // Highlight current unit
   document.querySelectorAll('.result-item').forEach(item => item.classList.remove('highlight'));

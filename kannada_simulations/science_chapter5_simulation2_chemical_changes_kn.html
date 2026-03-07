@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -170,25 +170,25 @@ svg { width: 100%; height: 100%; }
 <div id="app">
 
 <div class="header">
-  <h1>⚗️ Chemical Changes</h1>
-  <p>Changes where NEW substances are formed</p>
+  <h1>⚗️ ರಾಸಾಯನಿಕ ಬದಲಾವಣೆಗಳು</h1>
+  <p>ಹೊಸ ಪದಾರ್ಥಗಳು ರೂಪುಗೊಳ್ಳುವ ಬದಲಾವಣೆಗಳು</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    In a <strong>chemical change</strong>, one or more <strong>new substances</strong> are formed. The original materials are transformed into something completely different through a chemical reaction.
+    <strong>ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ</strong>ಯಲ್ಲಿ ಒಂದು ಅಥವಾ ಹೆಚ್ಚು <strong>ಹೊಸ ಪದಾರ್ಥಗಳು</strong> ರೂಪುಗೊಳ್ಳುತ್ತವೆ. ಮೂಲ ಪದಾರ್ಥಗಳು ರಾಸಾಯನಿಕ ಪ್ರತಿಕ್ರಿಯೆಯಿಂದ ಸಂಪೂರ್ಣವಾಗಿ ಬೇರೆಯದಾಗಿ ಪರಿವರ್ತನೆಯಾಗುತ್ತವೆ.
   </div>
 </div>
 
 <div class="sim-card">
   <div class="experiment-tabs">
     <button class="exp-tab active" onclick="selectExperiment('vinegar', this)">🧪 ವಿನಿಗರ್ + ಬೇಕಿಂಗ್ ಸೋಡಾ</button>
-    <button class="exp-tab" onclick="selectExperiment('limewater', this)">💨 CO₂ + ಸುಣ್ಣದ ನೀರು</button>
+    <button class="exp-tab" onclick="selectExperiment('limeನೀರು', this)">💨 CO₂ + ಸುಣ್ಣದ ನೀರು</button>
   </div>
   
   <div class="visual">
-    <div class="status-badge" id="status-badge">Ready to mix</div>
+    <div class="status-badge" id="status-badge">ಮಿಶ್ರಣ ಮಾಡಲು ಸಿದ್ಧ</div>
     <svg viewBox="0 0 400 280" id="scene">
       <!-- ವಿನಿಗರ್ + ಬೇಕಿಂಗ್ ಸೋಡಾ Scene -->
       <g id="vinegar-scene">
@@ -235,7 +235,7 @@ svg { width: 100%; height: 100%; }
       
       <!-- ಸುಣ್ಣದ ನೀರು Scene -->
       <g id="limewater-scene" style="display:none">
-        <!-- Test tube with lime water -->
+        <!-- Test tube with lime ನೀರು -->
         <rect x="170" y="80" width="60" height="150" rx="30" fill="none" stroke="#90a4ae" stroke-width="3"/>
         <rect x="175" y="150" width="50" height="75" rx="25" fill="#e0e0e0" opacity="0.3" id="limewater"/>
         <text x="200" y="250" font-size="10" fill="#666" text-anchor="middle">ಸುಣ್ಣದ ನೀರು Ca(OH)₂</text>
@@ -246,14 +246,14 @@ svg { width: 100%; height: 100%; }
           <text x="250" y="60" font-size="10" fill="#fff">← Blow air</text>
         </g>
         
-        <!-- Bubbles in lime water (hidden) -->
+        <!-- Bubbles in lime ನೀರು (hidden) -->
         <g id="limewater-bubbles" style="display:none">
           <circle cx="190" cy="180" r="4" fill="#fff" class="bubble"/>
           <circle cx="200" cy="175" r="3" fill="#fff" class="bubble" style="animation-delay:0.2s"/>
           <circle cx="210" cy="185" r="4" fill="#fff" class="bubble" style="animation-delay:0.4s"/>
         </g>
         
-        <!-- ಹಾಲುy lime water -->
+        <!-- ಹಾಲುy lime ನೀರು -->
         <g id="milky-limewater" style="display:none">
           <rect x="175" y="150" width="50" height="75" rx="25" fill="#f5f5f5" opacity="0.9"/>
           <text x="200" y="190" font-size="9" fill="#666" text-anchor="middle">ಹಾಲುy!</text>
@@ -263,34 +263,34 @@ svg { width: 100%; height: 100%; }
   </div>
   
   <div class="controls">
-    <button class="mix-btn" id="mix-btn" onclick="performReaction()">🧪 Mix the Chemicals</button>
+    <button class="mix-btn" id="mix-btn" onclick="performReaction()">🧪 ರಾಸಾಯನಿಕಗಳನ್ನು ಮಿಶ್ರಣ ಮಾಡಿ</button>
   </div>
 </div>
 
 <div class="equation-box" id="equation-box">
-  <div class="equation-title">⚗️ Chemical Equation</div>
-  <div class="equation" id="equation">NaHCO₃ + CH₃COOH → CO₂ + H₂O + CH₃COONa</div>
-  <div class="equation-explain" id="equation-explain">ಬೇಕಿಂಗ್ ಸೋಡಾ + ವಿನಿಗರ್ → Carbon Dioxide + Water + Sodium Acetate</div>
+  <div class="equation-title">⚗️ ರಾಸಾಯನಿಕ ಸಮೀಕರಣ</div>
+  <div class="equation" id="equation">ಸೋಡಿಯಂ ಬೈಕಾರ್ಬನೇಟ್ + ಅಸಿಟಿಕ್ ಆಮ್ಲ → CO₂ + ನೀರು + ಸೋಡಿಯಂ ಅಸಿಟೇಟ್</div>
+  <div class="equation-explain" id="equation-explain">ಬೇಕಿಂಗ್ ಸೋಡಾ + ವಿನಿಗರ್ → à²•à²¾à²°à³à²¬à²¨à³ à²¡à³ˆà²†à²•à³à²¸à³ˆà²¡à³ + ನೀರು + Sodium Acetate</div>
 </div>
 
 <div class="learning-panel">
-  <div class="learning-title">🔬 What's Happening?</div>
+  <div class="learning-title">🔬 ಏನಾಗುತ್ತಿದೆ?</div>
   <div class="learning-text" id="learning-text">
-    This experiment shows a <strong>chemical change</strong>.<br><br>
-    When vinegar (acid) meets baking soda (base), they react to form <strong>completely new substances</strong>: carbon dioxide gas (the bubbles!), water, and sodium acetate.
+    à²ˆ à²ªà³à²°à²¯à³‹à²— à²¤à³‹à²°à²¿à²¸à³à²¤à³à²¤à²¦à³† <strong>ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ</strong>.<br><br>
+    When vinegar (acid) meets à²¬à³‡à²•à²¿à²‚à²—à³ à²¸à³‹à²¡à²¾ (base), they react to form <strong>à²¸à²‚à²ªà³‚à²°à³à²£ à²¹à³Šà²¸ à²ªà²¦à²¾à²°à³à²¥à²—à²³à³</strong>: COâ‚‚ à²…à²¨à²¿à²² (à²¬à³à²°à³à²¡à³†à²—à²³à³!), ನೀರು, à²¸à³‹à²¡à²¿à²¯à²‚ à²…à²¸à²¿à²Ÿà³‡à²Ÿà³.
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 Signs of Chemical Change</div>
+  <div class="takeaway-title">🎯 ರಾಸಾಯನಿಕ ಬದಲಾವಣೆಯ ಚಿಹ್ನೆಗಳು</div>
   <div class="takeaway-text">
-    Look for these signs:<br>
-    • <strong>Gas bubbles</strong> forming<br>
-    • <strong>Color change</strong><br>
-    • <strong>Temperature change</strong> (hot or cold)<br>
-    • <strong>Precipitate</strong> (solid) forming<br>
-    • <strong>New smell</strong><br><br>
-    Chemical changes are usually <strong>irreversible</strong>!
+    à²ˆ à²šà²¿à²¹à³à²¨à³†à²—à²³à²¨à³à²¨à³ à²¨à³‹à²¡à²¿:<br>
+    • <strong>à²…à²¨à²¿à²² à²¬à³à²°à³à²¡à³†à²—à²³à³</strong> à²°à³‚à²ªà²¿à²¸à³à²µà³à²¦à³<br>
+    • <strong>à²¬à²£à³à²£ à²¬à²¦à²²à²¾à²µà²£à³†</strong><br>
+    • <strong>à²‰à²·à³à²£à²¤à³† à²¬à²¦à²²à²¾à²µà²£à³†</strong> (hot or cold)<br>
+    • <strong>à²…à²µà²•à³à²·à³‡à²ª</strong> (à²˜à²¨) à²°à³‚à²ªà²¿à²¸à³à²µà³à²¦à³<br>
+    • <strong>à²¹à³Šà²¸ à²µà²¾à²¸à²¨à³†</strong><br><br>
+    à²°à²¾à²¸à²¾à²¯à²¨à²¿à²• ಬದಲಾಗುತ್ತದೆ are usually <strong>à²¹à²¿à²®à³à²®à³à²–à²µà²²à³à²²</strong>!
   </div>
 </div>
 
@@ -313,18 +313,18 @@ function selectExperiment(type, btn) {
   currentExperiment = type;
   reactionDone = false;
   
-  // Reset scenes
+  // ಮರುಹೊಂದಿಸಿ scenes
   document.getElementById('vinegar-scene').style.display = type === 'vinegar' ? 'block' : 'none';
-  document.getElementById('limewater-scene').style.display = type === 'limewater' ? 'block' : 'none';
+  document.getElementById('limewater-scene').style.display = type === 'limeನೀರು' ? 'block' : 'none';
   
-  // Reset vinegar scene
+  // ಮರುಹೊಂದಿಸಿ vinegar scene
   document.getElementById('pour-vinegar').style.display = 'none';
   document.getElementById('bubbles').style.display = 'none';
   document.getElementById('fizz-mixture').style.display = 'none';
   document.getElementById('co2-gas').style.display = 'none';
   document.getElementById('baking-soda').style.display = 'block';
   
-  // Reset limewater scene
+  // ಮರುಹೊಂದಿಸಿ limeನೀರು scene
   document.getElementById('limewater-bubbles').style.display = 'none';
   document.getElementById('milky-limewater').style.display = 'none';
   document.getElementById('limewater').style.display = 'block';
@@ -332,22 +332,22 @@ function selectExperiment(type, btn) {
   mixBtn.disabled = false;
   
   if (type === 'vinegar') {
-    mixBtn.textContent = '🧪 Pour Vinegar into Baking Soda';
-    statusBadge.textContent = 'Ready to mix';
-    equation.textContent = 'NaHCO₃ + CH₃COOH → CO₂ + H₂O + CH₃COONa';
-    equationExplain.textContent = 'Baking Soda + Vinegar → Carbon Dioxide + Water + Sodium Acetate';
+    mixBtn.textContent = '🧪 Pour ವಿನಿಗರ್ into ಬೇಕಿಂಗ್ ಸೋಡಾ';
+    statusBadge.textContent = 'ಮಿಶ್ರಣ ಮಾಡಲು ಸಿದ್ಧ';
+    equation.textContent = 'ಸೋಡಿಯಂ ಬೈಕಾರ್ಬನೇಟ್ + ಅಸಿಟಿಕ್ ಆಮ್ಲ → CO₂ + ನೀರು + ಸೋಡಿಯಂ ಅಸಿಟೇಟ್';
+    equationExplain.textContent = 'ಬೇಕಿಂಗ್ ಸೋಡಾ + ವಿನಿಗರ್ → à²•à²¾à²°à³à²¬à²¨à³ à²¡à³ˆà²†à²•à³à²¸à³ˆà²¡à³ + ನೀರು + Sodium Acetate';
     learningText.innerHTML = `
-      This experiment shows a <strong>chemical change</strong>.<br><br>
-      When vinegar (acid) meets baking soda (base), they react to form <strong>completely new substances</strong>: carbon dioxide gas (the bubbles!), water, and sodium acetate.
+      à²ˆ à²ªà³à²°à²¯à³‹à²— à²¤à³‹à²°à²¿à²¸à³à²¤à³à²¤à²¦à³† <strong>ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ</strong>.<br><br>
+      When vinegar (acid) meets à²¬à³‡à²•à²¿à²‚à²—à³ à²¸à³‹à²¡à²¾ (base), they react to form <strong>à²¸à²‚à²ªà³‚à²°à³à²£ à²¹à³Šà²¸ à²ªà²¦à²¾à²°à³à²¥à²—à²³à³</strong>: COâ‚‚ à²…à²¨à²¿à²² (à²¬à³à²°à³à²¡à³†à²—à²³à³!), ನೀರು, à²¸à³‹à²¡à²¿à²¯à²‚ à²…à²¸à²¿à²Ÿà³‡à²Ÿà³.
     `;
   } else {
-    mixBtn.textContent = '💨 Blow Air (CO₂) into Lime Water';
-    statusBadge.textContent = 'Ready to blow';
+    mixBtn.textContent = '💨 Blow Air (CO₂) into ಸುಣ್ಣದ ನೀರು';
+    statusBadge.textContent = 'ಸಿದ್ಧ to blow';
     equation.textContent = 'Ca(OH)₂ + CO₂ → CaCO₃ + H₂O';
-    equationExplain.textContent = 'Lime Water + Carbon Dioxide → Calcium Carbite (milky) + Water';
+    equationExplain.textContent = 'ಸುಣ್ಣದ ನೀರು + à²•à²¾à²°à³à²¬à²¨à³ à²¡à³ˆà²†à²•à³à²¸à³ˆà²¡à³ → Calcium Carbite (milky) + ನೀರು';
     learningText.innerHTML = `
       This experiment shows how to <strong>test for CO₂ gas</strong>.<br><br>
-      When we blow air into lime water, the CO₂ in our breath reacts with calcium hydroxide to form <strong>calcium carbonate</strong> - a white substance that makes the water look milky!
+      When we blow air into lime ನೀರು, the CO₂ in our breath reacts with calcium hydroxide to form <strong>calcium carbonate</strong> - a white substance that makes the ನೀರು look milky!
     `;
   }
 }
@@ -359,8 +359,8 @@ function performReaction() {
   reactionDone = true;
   
   if (currentExperiment === 'vinegar') {
-    // Vinegar + Baking Soda reaction
-    statusBadge.textContent = '⏳ Pouring vinegar...';
+    // ವಿನಿಗರ್ + ಬೇಕಿಂಗ್ ಸೋಡಾ reaction
+    statusBadge.textContent = '⏳ ವಿನಿಗರ್ ಸುರಿಯುತ್ತಿದೆ...';
     document.getElementById('pour-vinegar').style.display = 'block';
     
     setTimeout(() => {
@@ -368,45 +368,45 @@ function performReaction() {
       document.getElementById('baking-soda').style.display = 'none';
       document.getElementById('fizz-mixture').style.display = 'block';
       document.getElementById('bubbles').style.display = 'block';
-      statusBadge.textContent = '🫧 Reaction happening!';
+      statusBadge.textContent = '🫧 ಪ್ರತಿಕ್ರಿಯೆ ನಡೆಯುತ್ತಿದೆ!';
     }, 800);
     
     setTimeout(() => {
       document.getElementById('co2-gas').style.display = 'block';
-      statusBadge.textContent = '✅ Chemical Change Complete!';
+      statusBadge.textContent = '✅ ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ ಪೂರ್ಣ!';
       
       learningText.innerHTML = `
-        <strong style="color:#7b1fa2">✅ Chemical Change Observed!</strong><br><br>
+        <strong style="color:#7b1fa2">✅ à²°à²¾à²¸à²¾à²¯à²¨à²¿à²• Change Observed!</strong><br><br>
         <strong>What happened:</strong><br>
         • Vigorous <strong>bubbling</strong> (CO₂ gas released)<br>
-        • The baking soda <strong>disappeared</strong><br>
+        • The à²¬à³‡à²•à²¿à²‚à²—à³ à²¸à³‹à²¡à²¾ <strong>disappeared</strong><br>
         • <strong>New substances</strong> formed!<br><br>
-        The original substances (vinegar & baking soda) are <strong>gone forever</strong> - you can't get them back. This is a chemical change!
+        The original substances (vinegar & à²¬à³‡à²•à²¿à²‚à²—à³ à²¸à³‹à²¡à²¾) are <strong>gone forever</strong> - you can't get them back. This is a ರಾಸಾಯನಿಕ ಬದಲಾವಣೆ!
       `;
       
-      mixBtn.textContent = '✅ Reaction Complete';
+      mixBtn.textContent = '✅ ಪ್ರತಿಕ್ರಿಯೆ ಪೂರ್ಣ';
     }, 1500);
     
   } else {
-    // Lime water + CO2 reaction
-    statusBadge.textContent = '💨 Blowing air...';
+    // Lime ನೀರು + CO2 reaction
+    statusBadge.textContent = '💨 ಗಾಳಿ ಊದುತ್ತಿದೆ...';
     document.getElementById('limewater-bubbles').style.display = 'block';
     
     setTimeout(() => {
       document.getElementById('limewater').style.display = 'none';
       document.getElementById('milky-limewater').style.display = 'block';
-      statusBadge.textContent = '✅ Lime Water Turned Milky!';
+      statusBadge.textContent = '✅ ಸುಣ್ಣದ ನೀರು Turned ಹಾಲುy!';
       
       learningText.innerHTML = `
-        <strong style="color:#7b1fa2">✅ Chemical Change Observed!</strong><br><br>
+        <strong style="color:#7b1fa2">✅ à²°à²¾à²¸à²¾à²¯à²¨à²¿à²• Change Observed!</strong><br><br>
         <strong>What happened:</strong><br>
-        • Clear lime water turned <strong>milky white</strong><br>
+        • Clear lime ನೀರು turned <strong>milky white</strong><br>
         • A new substance (<strong>CaCO₃</strong>) formed<br>
         • This is how we <strong>test for CO₂</strong>!<br><br>
-        The milkiness is caused by tiny particles of calcium carbonate (chalk!) suspended in water. This proves CO₂ was present!
+        The milkiness is caused by tiny particles of calcium carbonate (chalk!) suspended in ನೀರು. This proves CO₂ was present!
       `;
       
-      mixBtn.textContent = '✅ Test Complete';
+      mixBtn.textContent = '✅ ಪರೀಕ್ಷೆ ಪೂರ್ಣ';
     }, 1500);
   }
 }

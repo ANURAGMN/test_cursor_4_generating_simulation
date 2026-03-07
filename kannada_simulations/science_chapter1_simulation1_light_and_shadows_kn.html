@@ -35,7 +35,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 8px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.08);
   margin-bottom: 12px;
 }
 
@@ -62,7 +62,7 @@ svg { width: 100%; height: 100%; }
   padding: 6px 8px;
   font-size: 11px;
   line-height: 1.3;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  box-ನೆರಳು: 0 3px 8px rgba(0,0,0,0.12);
 }
 
 /* ---------- Overlays ---------- */
@@ -75,7 +75,7 @@ svg { width: 100%; height: 100%; }
   padding: 6px 8px;
   font-size: 11px;
   line-height: 1.4;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  box-ನೆರಳು: 0 3px 8px rgba(0,0,0,0.12);
 }
 
 .control-toggle {
@@ -150,7 +150,7 @@ svg { width: 100%; height: 100%; }
 .light-ray { stroke: #FFD700; stroke-width: 3; }
 .object { fill: #888; stroke: #333; }
 .wall { fill: #eee; stroke: #ccc; }
-.shadow { fill: rgba(0,0,0,0.55); }
+.ನೆರಳು { fill: rgba(0,0,0,0.55); }
 
 /* ---------- Hover Hint (SVG) ---------- */
 .hover-hint text {
@@ -182,7 +182,7 @@ svg { width: 100%; height: 100%; }
 </div>
 
 <script>
-const typeKn = { "Opaque": "ಅಪಾರದರ್ಶಕ", "Translucent": "ಅರೆಪಾರದರ್ಶಕ", "Transparent": "ಪಾರದರ್ಶಕ" };
+const typeKn = { "ಅಪಾರದರ್ಶಕ": "ಅಪಾರದರ್ಶಕ", "ಅರೆಪಾರದರ್ಶಕ": "ಅರೆಪಾರದರ್ಶಕ", "ಪಾರದರ್ಶಕ": "ಪಾರದರ್ಶಕ" };
 
 function createSimulation(containerId, showHoverHint) {
   const c = document.getElementById(containerId);
@@ -213,7 +213,7 @@ function createSimulation(containerId, showHoverHint) {
       </g>
 
       <circle class="light" cx="120" cy="250" r="24"/>
-      <rect class="shadow"/>
+      <rect class="ನೆರಳು"/>
     </svg>
 
     <div class="metrics">
@@ -224,9 +224,9 @@ function createSimulation(containerId, showHoverHint) {
 
     <div class="control-overlay">
       <div class="segmented">
-        <button class="active" data-type="Opaque">ಅಪಾರದರ್ಶಕ</button>
-        <button data-type="Translucent">ಅರೆಪಾರದರ್ಶಕ</button>
-        <button data-type="Transparent">ಪಾರದರ್ಶಕ</button>
+        <button class="active" data-type="ಅಪಾರದರ್ಶಕ">ಅಪಾರದರ್ಶಕ</button>
+        <button data-type="ಅರೆಪಾರದರ್ಶಕ">ಅರೆಪಾರದರ್ಶಕ</button>
+        <button data-type="ಪಾರದರ್ಶಕ">ಪಾರದರ್ಶಕ</button>
       </div>
 
       <div class="control-group">
@@ -243,7 +243,7 @@ function createSimulation(containerId, showHoverHint) {
     </div>
   </div>`;
 
-  let state = { d:5, s:5, type:"Opaque" };
+  let state = { d:5, s:5, type:"ಅಪಾರದರ್ಶಕ" };
   const LS_Y=250, OBJ_X=400, SCREEN_X=850;
 
   const svg=c.querySelector("svg"),
@@ -251,7 +251,7 @@ function createSimulation(containerId, showHoverHint) {
         objGroup=c.querySelector(`#${containerId}-objGroup`),
         hover=showHoverHint ? c.querySelector(`#${containerId}-hover`) : null,
         light=c.querySelector(".light"),
-        shadow=c.querySelector(".shadow"),
+        ನೆರಳು=c.querySelector(".ನೆರಳು"),
         md=c.querySelector(".md"),
         ms=c.querySelector(".ms"),
         mt=c.querySelector(".mt"),
@@ -268,8 +268,8 @@ function createSimulation(containerId, showHoverHint) {
   }
 
   function render(){
-    const lx=120+(state.d-1)*20;
-    const h=50+(state.s-1)*12;
+    const lx=120+(à²¸à³à²¥à²¿à²¤à²¿.d-1)*20;
+    const h=50+(à²¸à³à²¥à²¿à²¤à²¿.s-1)*12;
     const y=LS_Y-h/2;
 
     light.setAttribute("cx",lx);
@@ -293,22 +293,22 @@ function createSimulation(containerId, showHoverHint) {
     rb2.setAttribute("x1",OBJ_X); rb2.setAttribute("y1",y+h);
     rb2.setAttribute("x2",SCREEN_X); rb2.setAttribute("y2",bY);
 
-    if(state.type==="Transparent"){
-      shadow.style.display="none";
+    if(à²¸à³à²¥à²¿à²¤à²¿.type==="ಪಾರದರ್ಶಕ"){
+      ನೆರಳು.style.display="none";
     } else {
-      shadow.style.display="block";
-      shadow.setAttribute("x",SCREEN_X);
-      shadow.setAttribute("y",Math.min(tY,bY));
-      shadow.setAttribute("height",Math.abs(bY-tY));
-      shadow.setAttribute("width",20);
-      shadow.style.filter = state.type==="Translucent" ? "blur(3px)" : "none";
+      ನೆರಳು.style.display="block";
+      ನೆರಳು.setAttribute("x",SCREEN_X);
+      ನೆರಳು.setAttribute("y",Math.min(tY,bY));
+      ನೆರಳು.setAttribute("height",Math.abs(bY-tY));
+      ನೆರಳು.setAttribute("width",20);
+      ನೆರಳು.style.filter = à²¸à³à²¥à²¿à²¤à²¿.type==="ಅರೆಪಾರದರ್ಶಕ" ? "blur(3px)" : "none";
     }
 
-    md.textContent=state.d.toFixed(1);
-    ms.textContent=state.s.toFixed(1);
-    mt.textContent=typeKn[state.type]||state.type;
-    dval.textContent=state.d.toFixed(1);
-    sval.textContent=state.s.toFixed(1);
+    md.textContent=à²¸à³à²¥à²¿à²¤à²¿.d.toFixed(1);
+    ms.textContent=à²¸à³à²¥à²¿à²¤à²¿.s.toFixed(1);
+    mt.textContent=typeKn[à²¸à³à²¥à²¿à²¤à²¿.type]||à²¸à³à²¥à²¿à²¤à²¿.type;
+    dval.textContent=à²¸à³à²¥à²¿à²¤à²¿.d.toFixed(1);
+    sval.textContent=à²¸à³à²¥à²¿à²¤à²¿.s.toFixed(1);
   }
 
   let dragging=false,x0=0,y0=0;
@@ -318,8 +318,8 @@ function createSimulation(containerId, showHoverHint) {
   };
   c.onpointermove=e=>{
     if(!dragging) return;
-    state.d=Math.min(10,Math.max(1,state.d+(e.clientX-x0)/40));
-    state.s=Math.min(10,Math.max(1,state.s-(e.clientY-y0)/40));
+    à²¸à³à²¥à²¿à²¤à²¿.d=Math.min(10,Math.max(1,à²¸à³à²¥à²¿à²¤à²¿.d+(e.clientX-x0)/40));
+    à²¸à³à²¥à²¿à²¤à²¿.s=Math.min(10,Math.max(1,à²¸à³à²¥à²¿à²¤à²¿.s-(e.clientY-y0)/40));
     x0=e.clientX;y0=e.clientY;
     render();
   };
@@ -327,12 +327,12 @@ function createSimulation(containerId, showHoverHint) {
 
   c.querySelector(".control-toggle").onclick=()=>{
     overlay.classList.toggle("open");
-    dist.value=state.d;
-    size.value=state.s;
+    dist.value=à²¸à³à²¥à²¿à²¤à²¿.d;
+    size.value=à²¸à³à²¥à²¿à²¤à²¿.s;
   };
 
-  dist.oninput=e=>{ state.d=+e.target.value; render(); };
-  size.oninput=e=>{ state.s=+e.target.value; render(); };
+  dist.oninput=e=>{ à²¸à³à²¥à²¿à²¤à²¿.d=+e.target.value; render(); };
+  size.oninput=e=>{ à²¸à³à²¥à²¿à²¤à²¿.s=+e.target.value; render(); };
 
   c.querySelector(".submit-btn").onclick=()=>overlay.classList.remove("open");
 
@@ -340,7 +340,7 @@ function createSimulation(containerId, showHoverHint) {
     b.onclick=()=>{
       c.querySelectorAll(".segmented button").forEach(x=>x.classList.remove("active"));
       b.classList.add("active");
-      state.type=b.dataset.type;
+      à²¸à³à²¥à²¿à²¤à²¿.type=b.dataset.type;
       render();
     };
   });

@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -111,7 +111,7 @@ body {
   transition: left 0.1s linear;
 }
 
-.speedometer-mini {
+.ವೇಗometer-mini {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -125,14 +125,14 @@ body {
   justify-content: center;
 }
 
-.speed-display {
+.ವೇಗ-display {
   font-size: 14px;
   font-weight: 700;
   color: #4caf50;
   font-family: monospace;
 }
 
-.speed-unit {
+.ವೇಗ-unit {
   font-size: 8px;
   color: #fff;
 }
@@ -252,13 +252,13 @@ body {
 
 <div class="header">
   <h1>🚗 Non-ಏಕರೂಪ ರೇಖೀಯ ಚಲನೆ</h1>
-  <p>Speed changes during motion</p>
+  <p>ಚಲನೆಯ ಸಮಯದಲ್ಲಿ ವೇಗ ಬದಲಾವಣೆ</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 What is ಅಸಮ ಚಲನೆ?</div>
+  <div class="concept-title">📚 ಅಸಮ ಚಲನೆ ಎಂದರೇನು?</div>
   <div class="concept-text">
-    In <strong>non-uniform motion</strong>, an object's speed <strong>changes</strong> over time. It covers <strong>unequal distances in equal time intervals</strong>. Most real-world motion is non-uniform!
+    In <strong>ಅಸಮ ಚಲನೆ</strong>, ವಸ್ತುವಿನ ವೇಗ <strong>ಬದಲಾಗುತ್ತದೆ</strong> à²•à²¾à²²à²•à³à²°à²®à³‡à²£. à²…à²¦à³ à²’à²³à²—à³Šà²‚à²¡à²¿à²¦à³† <strong>unà²¸à²®à²¾à²¨ à²¸à²®à²¯à²¦à²²à³à²²à²¿ à²¸à²®à²¾à²¨ à²¦à³‚à²°</strong>. à²¹à³†à²šà³à²šà³ à²¨à³ˆà²œ à²šà²²à²¨à³† à²…à²¸à²® à²à²•à²°à³‚à²ª!
   </div>
 </div>
 
@@ -266,22 +266,22 @@ body {
   <div class="mode-selector">
     <button class="mode-btn active" onclick="setMode('accelerate', this)">
       <span class="icon">🚀</span>
-      Accelerating
+      à²¤à³à²µà²°à²£à²—à³Šà²³à³à²³à³à²¤à³à²¤à²¿à²¦à³†
     </button>
     <button class="mode-btn" onclick="setMode('decelerate', this)">
       <span class="icon">🛑</span>
-      Braking
+      à²¬à³à²°à³‡à²•à³ à²®à²¾à²¡à³à²µà³à²¦à³
     </button>
     <button class="mode-btn" onclick="setMode('traffic', this)">
       <span class="icon">🚦</span>
-      City Traffic
+      à²¨à²—à²° à²¸à²‚à²šà²¾à²°
     </button>
   </div>
   
   <div class="motion-visual">
-    <div class="speedometer-mini">
-      <div class="speed-display" id="speed-display">0</div>
-      <div class="speed-unit">km/h</div>
+    <div class="ವೇಗometer-mini">
+      <div class="ವೇಗ-display" id="ವೇಗ-display">0</div>
+      <div class="ವೇಗ-unit">km/h</div>
     </div>
     <div class="road">
       <div class="road-line"></div>
@@ -291,24 +291,24 @@ body {
   
   <div class="data-display">
     <div class="data-item">
-      <div class="data-label">Time Elapsed</div>
+      <div class="data-label">à²•à²³à³†à²¦ à²¸à²®à²¯</div>
       <div class="data-value" id="time-display">0.0 s</div>
     </div>
     <div class="data-item">
-      <div class="data-label">ದೂರ Covered</div>
+      <div class="data-label">ದೂರ ಮುಚ್ಚಲಾಗಿದೆ</div>
       <div class="data-value" id="distance-display">0 m</div>
     </div>
   </div>
   
   <div class="controls">
-    <button class="control-btn start-btn" id="start-btn" onclick="startMotion()">▶️ Start</button>
-    <button class="control-btn reset-btn" onclick="resetMotion()">🔄 Reset</button>
+    <button class="control-btn start-btn" id="start-btn" onclick="startMotion()">▶️ ಪ್ರಾರಂಭ</button>
+    <button class="control-btn reset-btn" onclick="resetMotion()">🔄 ಮರುಹೊಂದಿಸಿ</button>
   </div>
   
   <div class="data-table">
     <div class="table-title">📊 ದೂರs in Each Second (Non-Uniform!)</div>
     <div class="table-row table-header">
-      <div class="table-cell">Interval</div>
+      <div class="table-cell">à²®à²§à³à²¯à²‚à²¤à²°</div>
       <div class="table-cell">0-1s</div>
       <div class="table-cell">1-2s</div>
       <div class="table-cell">2-3s</div>
@@ -334,16 +334,16 @@ body {
 </div>
 
 <div class="comparison-box">
-  <div class="comp-title">🔄 Uniform vs Non-Uniform</div>
+  <div class="comp-title">🔄 ಏಕರೂಪ ವಿರುದ್ಧ ಅಸಮ ಏಕರೂಪ</div>
   <div class="comparison-grid">
     <div class="comp-item">
-      <div class="comp-type">Uniform Motion</div>
-      <div class="comp-desc">Equal distances in equal time intervals</div>
+      <div class="comp-type">à²à²•à²°à³‚à²ª à²šà²²à²¨à³†</div>
+      <div class="comp-desc">à²¸à²®à²¾à²¨ à²¦à³‚à²° à²¸à²®à²¾à²¨ à²¸à²®à²¯à²¦à²²à³à²²à²¿</div>
       <div class="comp-graph">Graph: Straight line</div>
     </div>
     <div class="comp-item">
       <div class="comp-type">ಅಸಮ ಚಲನೆ</div>
-      <div class="comp-desc">Unequal distances in equal time intervals</div>
+      <div class="comp-desc">à²¸à²®à²¾à²¨ à²¸à²®à²¯à²¦à²²à³à²²à²¿ à²…à²¸à²®à²¾à²¨ à²¦à³‚à²°</div>
       <div class="comp-graph">Graph: Curved line</div>
     </div>
   </div>
@@ -356,12 +356,12 @@ let mode = 'accelerate';
 let isMoving = false;
 let animationId;
 let time = 0;
-let speed = 0;
+let ವೇಗ = 0;
 let position = 0;
 let dataPoints = [];
-let intervalDistances = [0, 0, 0, 0, 0];
-let lastIntervalPos = 0;
-let lastIntervalTime = 0;
+let intervalದೂರs = [0, 0, 0, 0, 0];
+let lastà²®à²§à³à²¯à²‚à²¤à²°Pos = 0;
+let lastà²®à²§à³à²¯à²‚à²¤à²°Time = 0;
 
 const car = document.getElementById('car');
 const canvas = document.getElementById('graph-canvas');
@@ -374,16 +374,16 @@ function setMode(newMode, btn) {
   resetMotion();
 }
 
-function getSpeedAtTime(t) {
-  switch(mode) {
+function getವೇಗAtTime(t) {
+  ಸ್ವಿಚ್(mode) {
     case 'accelerate':
-      // Accelerating: speed increases over time
+      // à²¤à³à²µà²°à²£à²—à³Šà²³à³à²³à³à²¤à³à²¤à²¿à²¦à³†: ವೇಗ increases over time
       return Math.min(t * 20, 100); // km/h
     case 'decelerate':
-      // Braking: starts fast, slows down
+      // à²¬à³à²°à³‡à²•à³ à²®à²¾à²¡à³à²µà³à²¦à³: starts fast, slows down
       return Math.max(100 - t * 20, 0);
     case 'traffic':
-      // City traffic: speed varies (stop-go pattern)
+      // City traffic: ವೇಗ varies (stop-go pattern)
       const cycle = t % 4;
       if (cycle < 1) return 0; // stopped
       if (cycle < 2) return (cycle - 1) * 60; // accelerating
@@ -395,7 +395,7 @@ function getSpeedAtTime(t) {
 function startMotion() {
   if (isMoving) return;
   isMoving = true;
-  document.getElementById('start-btn').textContent = '⏸️ Running...';
+  document.getElementById('start-btn').textContent = '⏸️ ಓಡುತ್ತಿದೆ...';
   animate();
 }
 
@@ -404,15 +404,15 @@ function animate() {
   
   time += 0.05;
   
-  // Get current speed based on mode
-  speed = getSpeedAtTime(time);
+  // Get current ವೇಗ based on mode
+  ವೇಗ = getವೇಗAtTime(time);
   
-  // Convert speed to m/s and calculate position
-  const speedMS = speed / 3.6;
-  position += speedMS * 0.05;
+  // Convert ವೇಗ to m/s ಮತ್ತು calculate position
+  const ವೇಗMS = ವೇಗ / 3.6;
+  position += ವೇಗMS * 0.05;
   
   // Update displays
-  document.getElementById('speed-display').textContent = speed.toFixed(0);
+  document.getElementById('speed-display').textContent = ವೇಗ.toFixed(0);
   document.getElementById('time-display').textContent = time.toFixed(1) + ' s';
   document.getElementById('distance-display').textContent = position.toFixed(0) + ' m';
   
@@ -423,16 +423,16 @@ function animate() {
   car.style.left = `${Math.min(carLeft, 360)}px`;
   
   // Record data point
-  dataPoints.push({ time: time, distance: position, speed: speed });
+  dataPoints.push({ time: time, distance: position, ವೇಗ: ವೇಗ });
   
   // Record interval distances
-  const currentInterval = Math.floor(time);
-  if (currentInterval >= 1 && currentInterval <= 5 && currentInterval > lastIntervalTime) {
-    intervalDistances[currentInterval - 1] = position - lastIntervalPos;
-    document.getElementById(`int${currentInterval}`).textContent = 
-      intervalDistances[currentInterval - 1].toFixed(0) + ' m';
-    lastIntervalPos = position;
-    lastIntervalTime = currentInterval;
+  const currentà²®à²§à³à²¯à²‚à²¤à²° = Math.floor(time);
+  if (currentà²®à²§à³à²¯à²‚à²¤à²° >= 1 && currentà²®à²§à³à²¯à²‚à²¤à²° <= 5 && currentà²®à²§à³à²¯à²‚à²¤à²° > lastà²®à²§à³à²¯à²‚à²¤à²°Time) {
+    intervalದೂರs[currentà²®à²§à³à²¯à²‚à²¤à²° - 1] = position - lastà²®à²§à³à²¯à²‚à²¤à²°Pos;
+    document.getElementById(`int${currentà²®à²§à³à²¯à²‚à²¤à²°}`).textContent = 
+      intervalದೂರs[currentà²®à²§à³à²¯à²‚à²¤à²° - 1].toFixed(0) + ' m';
+    lastà²®à²§à³à²¯à²‚à²¤à²°Pos = position;
+    lastà²®à²§à³à²¯à²‚à²¤à²°Time = currentà²®à²§à³à²¯à²‚à²¤à²°;
   }
   
   drawGraph();
@@ -441,7 +441,7 @@ function animate() {
     animationId = requestAnimationFrame(animate);
   } else {
     isMoving = false;
-    document.getElementById('start-btn').textContent = '✓ Complete';
+    document.getElementById('start-btn').textContent = '✓ ಪೂರ್ಣ';
   }
 }
 
@@ -449,15 +449,15 @@ function resetMotion() {
   isMoving = false;
   cancelAnimationFrame(animationId);
   time = 0;
-  speed = 0;
+  ವೇಗ = 0;
   position = 0;
   dataPoints = [];
-  intervalDistances = [0, 0, 0, 0, 0];
-  lastIntervalPos = 0;
-  lastIntervalTime = 0;
+  intervalದೂರs = [0, 0, 0, 0, 0];
+  lastà²®à²§à³à²¯à²‚à²¤à²°Pos = 0;
+  lastà²®à²§à³à²¯à²‚à²¤à²°Time = 0;
   
   car.style.left = '20px';
-  document.getElementById('start-btn').textContent = '▶️ Start';
+  document.getElementById('start-btn').textContent = '▶️ ಪ್ರಾರಂಭ';
   document.getElementById('speed-display').textContent = '0';
   document.getElementById('time-display').textContent = '0.0 s';
   document.getElementById('distance-display').textContent = '0 m';

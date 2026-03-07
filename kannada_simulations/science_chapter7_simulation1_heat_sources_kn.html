@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -70,13 +70,13 @@ body {
   height: 60px;
   background: radial-gradient(circle, #ffeb3b 0%, #ff9800 100%);
   border-radius: 50%;
-  box-shadow: 0 0 40px #ffeb3b, 0 0 80px #ff9800;
+  box-ನೆರಳು: 0 0 40px #ffeb3b, 0 0 80px #ff9800;
   animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 40px #ffeb3b, 0 0 80px #ff9800; }
-  50% { box-shadow: 0 0 60px #ffeb3b, 0 0 100px #ff9800; }
+  0%, 100% { box-ನೆರಳು: 0 0 40px #ffeb3b, 0 0 80px #ff9800; }
+  50% { box-ನೆರಳು: 0 0 60px #ffeb3b, 0 0 100px #ff9800; }
 }
 
 .sun-rays {
@@ -120,7 +120,7 @@ body {
   overflow: hidden;
 }
 
-.equator-line {
+.ವಿಷುವದ್ರೇಖೆ-line {
   position: absolute;
   top: 50%;
   left: 0;
@@ -130,7 +130,7 @@ body {
   opacity: 0.7;
 }
 
-.equator-label {
+.ವಿಷುವದ್ರೇಖೆ-label {
   position: absolute;
   top: 45%;
   right: 10px;
@@ -153,7 +153,7 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease;
   border: 2px solid #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-ನೆರಳು: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 .location-marker:active { transform: scale(1.2); }
@@ -254,14 +254,14 @@ body {
 <div id="app">
 
 <div class="header">
-  <h1>☀️ Sources of Heat</h1>
-  <p>The Sun and regional temperature differences</p>
+  <h1>☀️ ಉಷ್ಣದ ಮೂಲಗಳು</h1>
+  <p>ಸೂರ್ಯ ಮತ್ತು ಪ್ರಾದೇಶಿಕ ಉಷ್ಣಾಂಶ ವ್ಯತ್ಯಾಸಗಳು</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    The <strong>Sun</strong> is the main source of heat for Earth. Places near the equator receive more direct sunlight and are warmer than places farther away. Geography also affects local temperatures.
+    The <strong>Sun</strong> is the main ಮೂಲ of heat for Earth. Places near the ವಿಷುವದ್ರೇಖೆ receive more direct sunlight ಮತ್ತು à²¬à²¿à²¸à²¿ than places farther away. Geography also affects local temperatures.
   </div>
 </div>
 
@@ -278,8 +278,8 @@ body {
       </div>
     </div>
     <div class="earth">
-      <div class="equator-line"></div>
-      <div class="equator-label">Equator</div>
+      <div class="ವಿಷುವದ್ರೇಖೆ-line"></div>
+      <div class="ವಿಷುವದ್ರೇಖೆ-label">ವಿಷುವದ್ರೇಖೆ</div>
       <div class="location-marker marker-kerala active" onclick="selectRegion('kerala', this)">🌴</div>
       <div class="location-marker marker-delhi" onclick="selectRegion('delhi', this)">🏛️</div>
       <div class="location-marker marker-sikkim" onclick="selectRegion('sikkim', this)">🏔️</div>
@@ -289,56 +289,56 @@ body {
   <div class="region-tabs">
     <div class="region-tab active" onclick="selectRegion('kerala', this)">
       <span class="emoji">🌴</span>
-      Kerala
+      ಕೇರಳ
     </div>
     <div class="region-tab" onclick="selectRegion('delhi', this)">
       <span class="emoji">🏛️</span>
-      Delhi
+      ದೆಹಲಿ
     </div>
     <div class="region-tab" onclick="selectRegion('sikkim', this)">
       <span class="emoji">🏔️</span>
-      Sikkim
+      à²¸à²¿à²•à³à²•à²¿à²‚
     </div>
   </div>
 </div>
 
 <div class="region-info" id="region-info">
-  <div class="region-title" id="region-title">🌴 Kerala - Tropical Climate</div>
+  <div class="region-title" id="region-title">🌴 ಕೇರಳ - ಉಷ್ಣವಲಯ ಹವಾಮಾನ</div>
   <div class="region-text" id="region-text">
-    Kerala is located close to the equator, receiving more direct sunlight throughout the year. It's also a <strong>coastal state</strong>, so the sea keeps temperatures moderate and humidity high.
+    ಕೇರಳ ವಿಷುವದ್ರೇಖೆಗೆ ಹತ್ತಿರ, ಹೆಚ್ಚು ಸೂರ್ಯನ ಬೆಳಕುrect sunlight à²‰à²¦à³à²¦à²•à³à²•à³‚ the year. It's also a <strong>à²¤à³€à²° à²°à²¾à²œà³à²¯</strong>, à²¸à²®à³à²¦à³à²° à²‰à²·à³à²£à²¤à³† à²®à²¤à³à²¤à³ à²’à²¦à³à²¦à³† à²¹à³†à²šà³à²šà³.
   </div>
-  <div class="temp-badge temp-hot" id="temp-badge">🌡️ Average: 25-32°C (Warm & Humid)</div>
+  <div class="temp-badge temp-hot" id="temp-badge">🌡️ ಸರಾಸರಿ: 25-32°C (ಬಿಸಿ ಮತ್ತು ಒದ್ದೆ)</div>
 </div>
 
 <div class="comparison-box">
-  <div class="comparison-title">🌍 Factors Affecting Temperature</div>
+  <div class="comparison-title">🌍 ಉಷ್ಣತೆಯನ್ನು ಪ್ರಭಾವಿಸುವ ಅಂಶಗಳು</div>
   <div class="factor-row">
     <div class="factor-item">
       <div class="icon">📍</div>
-      <div class="label">Latitude</div>
-      <div class="desc">ದೂರ from equator</div>
+      <div class="label">à²…à²•à³à²·à²¾à²‚à²¶</div>
+      <div class="desc">ದೂರ from ವಿಷುವದ್ರೇಖೆ</div>
     </div>
     <div class="factor-item">
       <div class="icon">⛰️</div>
-      <div class="label">Altitude</div>
-      <div class="desc">Height above sea level</div>
+      <div class="label">à²Žà²¤à³à²¤à²°</div>
+      <div class="desc">à²¸à²®à³à²¦à³à²° à²®à²Ÿà³à²Ÿà²¦ à²®à³‡à²²à³† à²Žà²¤à³à²¤à²°</div>
     </div>
     <div class="factor-item">
       <div class="icon">🌊</div>
-      <div class="label">Proximity to Sea</div>
-      <div class="desc">Coastal vs inland</div>
+      <div class="label">à²¸à²®à³à²¦à³à²° à²¸à²¨à²¿à²¹</div>
+      <div class="desc">à²¤à³€à²° à²µà²¿à²°à³à²¦à³à²§ à²’à²³à²¨à²¾à²¡à³</div>
     </div>
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 Remember</div>
+  <div class="takeaway-title">🎯 ನೆನಪಿಡಿ</div>
   <div class="takeaway-text">
-    • The <strong>Sun</strong> is Earth's primary heat source<br>
-    • Places near the <strong>equator</strong> are warmer<br>
-    • <strong>Mountains</strong> are colder due to high altitude<br>
-    • <strong>Coastal areas</strong> have moderate temperatures<br>
-    • These differences create India's diverse climates!
+    • The <strong>Sun</strong> à²­à³‚à²®à²¿à²¯ à²ªà³à²°à²¾à²¥à²®à²¿à²• à²‰à²·à³à²£ à²®à³‚à²²<br>
+    • ಹತ್ತಿರದ ಸ್ಥಳಗಳು <strong>ವಿಷುವದ್ರೇಖೆ</strong> à²¬à²¿à²¸à²¿<br>
+    • <strong>à²ªà²°à³à²µà²¤à²—à²³à³</strong> à²Žà²¤à³à²¤à²°à²¦à²¿à²‚à²¦ à²¤à²‚à²ªà³<br>
+    • <strong>à²¤à³€à²° à²ªà³à²°à²¦à³‡à²¶à²—à²³à³</strong> à²®à²§à³à²¯à²® à²‰à²·à³à²£à²¤à³†<br>
+    • These ವ್ಯತ್ಯಾಸs create India's diverse climates!
   </div>
 </div>
 
@@ -347,20 +347,20 @@ body {
 <script>
 const regions = {
   kerala: {
-    title: '🌴 Kerala - Tropical Climate',
-    text: 'Kerala is located close to the equator, receiving more direct sunlight throughout the year. It\'s also a <strong>coastal state</strong>, so the sea keeps temperatures moderate and humidity high.',
-    temp: '🌡️ Average: 25-32°C (Warm & Humid)',
+    title: '🌴 ಕೇರಳ - ಉಷ್ಣವಲಯ ಹವಾಮಾನ',
+    text: 'ಕೇರಳ ವಿಷುವದ್ರೇಖೆಗೆ ಹತ್ತಿರ, ಹೆಚ್ಚು ಸೂರ್ಯನ ಬೆಳಕುrect sunlight à²‰à²¦à³à²¦à²•à³à²•à³‚ the year. It\'s also a <strong>à²¤à³€à²° à²°à²¾à²œà³à²¯</strong>, à²¸à²®à³à²¦à³à²° à²‰à²·à³à²£à²¤à³† à²®à²¤à³à²¤à³ à²’à²¦à³à²¦à³† à²¹à³†à²šà³à²šà³.',
+    temp: '🌡️ ಸರಾಸರಿ: 25-32°C (ಬಿಸಿ ಮತ್ತು ಒದ್ದೆ)',
     tempClass: 'temp-hot'
   },
   delhi: {
-    title: '🏛️ Delhi - Extreme Climate',
-    text: 'Delhi is farther from the equator and far from the sea (inland). It experiences <strong>extreme temperatures</strong> - very hot summers (up to 45°C) and cold winters (down to 5°C).',
+    title: '🏛️ ದೆಹಲಿ - ತೀವ್ರ ಹವಾಮಾನ',
+    text: 'ದೆಹಲಿ is farther from the ವಿಷುವದ್ರೇಖೆ ಮತ್ತು far from the sea (inlಮತ್ತು). It experiences <strong>extreme temperatures</strong> - very hot summers (up to 45°C) ಮತ್ತು cold winters (down to 5°C).',
     temp: '🌡️ Range: 5-45°C (Extreme Variation)',
     tempClass: 'temp-moderate'
   },
   sikkim: {
-    title: '🏔️ Sikkim - Cold Mountain Climate',
-    text: 'Sikkim is in the <strong>Himalayas</strong> at high altitude. Even though it\'s in India, it\'s cold most of the year because temperature decreases with altitude (about 6°C per 1000m).',
+    title: '🏔️ à²¸à²¿à²•à³à²•à²¿à²‚ - ಶೀತ ಪರ್ವತ ವಾತಾವರಣ',
+    text: 'à²¸à²¿à²•à³à²•à²¿à²‚ <strong>à²¹à²¿à²®à²¾à²²à²¯</strong>à²¦à²²à³à²²à²¿ à²¹à³†à²šà³à²šà³ à²Žà²¤à³à²¤à²°. à²…à²¦à³'s in India, it\'s cold most of the year because temperature decreases with altitude (about 6°C per 1000m).',
     temp: '🌡️ Average: 5-20°C (Cold)',
     tempClass: 'temp-cold'
   }

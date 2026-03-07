@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -228,13 +228,13 @@ body {
 
 <div class="header">
   <h1>🏁 ವೇಗ ಓಟ</h1>
-  <p>Who finishes 1 km first?</p>
+  <p>1 ಕಿಮೀ ಯಾರು ಮೊದಲು ಪೂರ್ಣಗೊಳಿಸುತ್ತಾರೆ?</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Understanding Speed</div>
+  <div class="concept-title">📚 ವೇಗ ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು</div>
   <div class="concept-text">
-    Higher speed = cover distance faster. In this race, all racers travel <strong>1 km</strong>. Who arrives first depends on their <strong>speed</strong>!
+    ಎತ್ತರ ವೇಗ = ದೂರ ವೇಗವಾಗಿ ಕ್ರಮಿಸುತ್ತದೆ. ಈ ಓಟದಲ್ಲಿacers travel <strong>1 km</strong>. ಯಾರು ಮೊದಲು ಬರುತ್ತಾರೆ ಅವರ ಮೇಲೆ ಅವಲಂಬಿತ <strong>ವೇಗ</strong>!
   </div>
 </div>
 
@@ -242,26 +242,26 @@ body {
   <div class="race-setup">
     <div class="racer-setup">
       <div class="icon">🚶</div>
-      <div class="name">Walker</div>
-      <input type="number" id="speed-walker" value="5" min="1" max="10">
+      <div class="name">à²¨à²¡à³†à²¦à²¾à²¡à³à²µà²µà²¨à³</div>
+      <input type="number" id="ವೇಗ-walker" value="5" min="1" max="10">
       <div class="unit">km/h</div>
     </div>
     <div class="racer-setup">
       <div class="icon">🚴</div>
-      <div class="name">Cyclist</div>
-      <input type="number" id="speed-cyclist" value="20" min="5" max="40">
+      <div class="name">à²¸à³ˆà²•à³à²²à²¿à²¸à³à²Ÿà³</div>
+      <input type="number" id="ವೇಗ-cyclist" value="20" min="5" max="40">
       <div class="unit">km/h</div>
     </div>
     <div class="racer-setup">
       <div class="icon">🚗</div>
       <div class="name">Car</div>
-      <input type="number" id="speed-car" value="60" min="20" max="120">
+      <input type="number" id="ವೇಗ-car" value="60" min="20" max="120">
       <div class="unit">km/h</div>
     </div>
     <div class="racer-setup">
       <div class="icon">🚆</div>
-      <div class="name">Train</div>
-      <input type="number" id="speed-train" value="100" min="50" max="200">
+      <div class="name">à²°à³ˆà²²à³</div>
+      <input type="number" id="ವೇಗ-train" value="100" min="50" max="200">
       <div class="unit">km/h</div>
     </div>
   </div>
@@ -274,7 +274,7 @@ body {
     </div>
     
     <div class="finish-line"></div>
-    <div class="finish-label">FINISH</div>
+    <div class="finish-label">à²®à³à²—à²¿à²¦à²¿à²¦à³†</div>
     
     <div class="racer racer-walker" id="racer-walker">🚶</div>
     <div class="racer racer-cyclist" id="racer-cyclist">🚴</div>
@@ -291,13 +291,13 @@ body {
   </div>
   
   <div class="controls">
-    <button class="control-btn start-btn" id="start-btn" onclick="startRace()">🏁 Start Race!</button>
-    <button class="control-btn reset-btn" onclick="resetRace()">🔄 Reset</button>
+    <button class="control-btn start-btn" id="start-btn" onclick="startRace()">🏁 ಓಟ ಪ್ರಾರಂಭಿಸಿ!</button>
+    <button class="control-btn reset-btn" onclick="resetRace()">🔄 ಮರುಹೊಂದಿಸಿ</button>
   </div>
   
   <div class="timer-display">
     <div class="timer-time" id="timer">00:00.0</div>
-    <div class="timer-label">Race Time (simulated)</div>
+    <div class="timer-label">à²“à²Ÿ à²¸à²®à²¯ (à²…à²¨à³à²•à²°à²£)</div>
   </div>
 </div>
 
@@ -307,7 +307,7 @@ body {
 </div>
 
 <div class="calculation-box" id="calc-box" style="display: none;">
-  <div class="calc-title">📐 Time Calculation</div>
+  <div class="calc-title">📐 ಸಮಯ ಲೆಕ್ಕ</div>
   <div class="calc-text" id="calc-text"></div>
 </div>
 
@@ -315,16 +315,16 @@ body {
 
 <script>
 let isRacing = false;
-let raceInterval;
+let raceà²®à²§à³à²¯à²‚à²¤à²°;
 let raceTime = 0;
 const distance = 1; // km
 
 const racers = ['walker', 'cyclist', 'car', 'train'];
 const icons = { walker: '🚶', cyclist: '🚴', car: '🚗', train: '🚆' };
-const names = { walker: 'Walker', cyclist: 'Cyclist', car: 'Car', train: 'Train' };
+const names = { walker: 'à²¨à²¡à³†à²¦à²¾à²¡à³à²µà²µà²¨à³', cyclist: 'à²¸à³ˆà²•à³à²²à²¿à²¸à³à²Ÿà³', car: 'Car', train: 'à²°à³ˆà²²à³' };
 
 let positions = {};
-let speeds = {};
+let ವೇಗs = {};
 let finishTimes = {};
 let finishOrder = [];
 
@@ -337,8 +337,8 @@ function startRace() {
   finishTimes = {};
   finishOrder = [];
   
-  // Get speeds
-  speeds = {
+  // Get ವೇಗs
+  ವೇಗs = {
     walker: parseFloat(document.getElementById('speed-walker').value),
     cyclist: parseFloat(document.getElementById('speed-cyclist').value),
     car: parseFloat(document.getElementById('speed-car').value),
@@ -349,17 +349,17 @@ function startRace() {
   document.getElementById('results-panel').style.display = 'none';
   document.getElementById('calc-box').style.display = 'none';
   
-  // Simulation speed factor (1 real second = 30 simulated seconds)
+  // Simulation ವೇಗ factor (1 real à²¸à³†à²•à³†à²‚à²¡à³ = 30 simulated à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³)
   const simFactor = 30;
   
-  raceInterval = setInterval(() => {
-    raceTime += 0.1 * simFactor; // seconds
+  raceà²®à²§à³à²¯à²‚à²¤à²° = setà²®à²§à³à²¯à²‚à²¤à²°(() => {
+    raceTime += 0.1 * simFactor; // à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³
     
     // Update positions
     racers.forEach(racer => {
       if (!finishTimes[racer]) {
-        // position = speed * time / 3600 (convert seconds to hours)
-        positions[racer] = speeds[racer] * (raceTime / 3600);
+        // position = ವೇಗ * time / 3600 (convert à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ to à²—à²‚à²Ÿà³†à²—à²³à³)
+        positions[racer] = ವೇಗs[racer] * (raceTime / 3600);
         
         if (positions[racer] >= distance) {
           positions[racer] = distance;
@@ -374,12 +374,12 @@ function startRace() {
     });
     
     // Update timer
-    const minutes = Math.floor(raceTime / 60);
-    const seconds = (raceTime % 60).toFixed(1);
+    const à²¨à²¿à²®à²¿à²·à²—à²³à³ = Math.floor(raceTime / 60);
+    const à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ = (raceTime % 60).toFixed(1);
     document.getElementById('timer').textContent = 
-      `${minutes.toString().padStart(2, '0')}:${seconds.padStart(4, '0')}`;
+      `${à²¨à²¿à²®à²¿à²·à²—à²³à³.toದಾರದ ಉದ್ದ().padಪ್ರಾರಂಭ(2, '0')}:${à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³.padಪ್ರಾರಂಭ(4, '0')}`;
     
-    // Check if race complete
+    // Check if race à²ªà³‚à²°à³à²£
     if (finishOrder.length === racers.length) {
       endRace();
     }
@@ -387,7 +387,7 @@ function startRace() {
 }
 
 function endRace() {
-  clearInterval(raceInterval);
+  clearà²®à²§à³à²¯à²‚à²¤à²°(raceà²®à²§à³à²¯à²‚à²¤à²°);
   isRacing = false;
   document.getElementById('start-btn').disabled = false;
   
@@ -397,25 +397,25 @@ function endRace() {
   
   const ranks = ['🥇', '🥈', '🥉', '4️⃣'];
   let resultsHTML = '';
-  let calcText = 'Time = Distance ÷ Speed\n\n';
+  let calcText = 'Time = ದೂರ ÷ ವೇಗ\n\n';
   
   finishOrder.forEach((racer, index) => {
     const time = finishTimes[racer];
-    const minutes = Math.floor(time / 60);
-    const seconds = (time % 60).toFixed(1);
-    const timeStr = minutes > 0 ? `${minutes}m ${seconds}s` : `${seconds}s`;
+    const à²¨à²¿à²®à²¿à²·à²—à²³à³ = Math.floor(time / 60);
+    const à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ = (time % 60).toFixed(1);
+    const timeStr = à²¨à²¿à²®à²¿à²·à²—à²³à³ > 0 ? `${à²¨à²¿à²®à²¿à²·à²—à²³à³}m ${à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³}s` : `${à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³}s`;
     
     resultsHTML += `
       <div class="result-row">
         <div class="result-rank">${ranks[index]}</div>
         <div class="result-icon">${icons[racer]}</div>
-        <div class="result-name">${names[racer]} (${speeds[racer]} km/h)</div>
+        <div class="result-name">${names[racer]} (${ವೇಗs[racer]} km/h)</div>
         <div class="result-time">${timeStr}</div>
       </div>
     `;
     
-    const calcTime = (distance / speeds[racer] * 3600).toFixed(1);
-    calcText += `${names[racer]}: 1 km ÷ ${speeds[racer]} km/h = ${calcTime}s\n`;
+    const calcTime = (distance / ವೇಗs[racer] * 3600).toFixed(1);
+    calcText += `${names[racer]}: 1 km ÷ ${ವೇಗs[racer]} km/h = ${calcTime}s\n`;
   });
   
   document.getElementById('results-list').innerHTML = resultsHTML;
@@ -423,7 +423,7 @@ function endRace() {
 }
 
 function resetRace() {
-  clearInterval(raceInterval);
+  clearà²®à²§à³à²¯à²‚à²¤à²°(raceà²®à²§à³à²¯à²‚à²¤à²°);
   isRacing = false;
   raceTime = 0;
   

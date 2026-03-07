@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -69,7 +69,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -84,14 +84,14 @@ body {
 
 svg { width: 100%; height: 100%; }
 
-.source-btns {
+.ಮೂಲ-btns {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 6px;
   margin-top: 10px;
 }
 
-.source-btn {
+.ಮೂಲ-btn {
   background: #f5f5f5;
   border: 2px solid #e0e0e0;
   border-radius: 10px;
@@ -102,10 +102,10 @@ svg { width: 100%; height: 100%; }
   -webkit-tap-highlight-color: transparent;
 }
 
-.source-btn:active { transform: scale(0.95); }
-.source-btn.active { border-color: #1976d2; background: #e3f2fd; }
-.source-btn .icon { font-size: 24px; }
-.source-btn .name { font-size: 9px; font-weight: 600; color: #333; margin-top: 4px; }
+.ಮೂಲ-btn:active { transform: scale(0.95); }
+.ಮೂಲ-btn.active { border-color: #1976d2; background: #e3f2fd; }
+.ಮೂಲ-btn .icon { font-size: 24px; }
+.ಮೂಲ-btn .name { font-size: 9px; font-weight: 600; color: #333; margin-top: 4px; }
 
 .info-panel {
   background: #e3f2fd;
@@ -139,7 +139,7 @@ svg { width: 100%; height: 100%; }
 
 .info-example strong { color: #1976d2; }
 
-.energy-flow {
+.à²¶à²•à³à²¤à²¿-flow {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -199,14 +199,14 @@ svg { width: 100%; height: 100%; }
 <div id="app">
 
 <div class="header">
-  <h1>🔌 Sources of Electricity</h1>
-  <p>Where does our electricity come from?</p>
+  <h1>🔌 ವಿದ್ಯುತ್ ಮೂಲಗಳು</h1>
+  <p>ನಮ್ಮ ವಿದ್ಯುತ್ ಎಲ್ಲಿಂದ ಬರುತ್ತದೆ?</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    Electricity is generated from various <strong>energy sources</strong>. These include renewable sources (sun, wind, water) and non-renewable sources (coal, gas). The electricity travels through wires to reach our homes.
+    ವಿವಿಧ <strong>ಶಕ್ತಿ ಮೂಲಗಳಿಂದ</strong> ವಿದ್ಯುತ್ ಉತ್ಪಾದನೆಯಾಗುತ್ತದೆ. ನವೀಕರಣೀಯ ಮೂಲಗಳು (ಸೂರ್ಯ, ಗಾಳಿ, ನೀರು) ಮತ್ತು ನವೀಕರಣೇತರ ಮೂಲಗಳು (ಇಂಗಾಲ, ಅನಿಲ) ಸೇರಿವೆ. ವಿದ್ಯುತ್ ತಂತಿಗಳ ಮೂಲಕ ನಮ್ಮ ಮನೆಗಳನ್ನು ತಲುಪುತ್ತದೆ.
   </div>
 </div>
 
@@ -220,8 +220,8 @@ svg { width: 100%; height: 100%; }
       <text x="50" y="35" font-size="22">☁️</text>
       <text x="150" y="28" font-size="18">☁️</text>
       
-      <!-- Power source area (changes based on selection) -->
-      <g id="power-source"></g>
+      <!-- Power ಮೂಲ area (ಬದಲಾಗುತ್ತದೆ based on selection) -->
+      <g id="power-ಮೂಲ"></g>
       
       <!-- Transmission tower -->
       <g transform="translate(280, 120)">
@@ -249,92 +249,92 @@ svg { width: 100%; height: 100%; }
       <path d="M 280 140 L 320 180" stroke="#333" stroke-width="2"/>
       
       <!-- Labels -->
-      <text x="120" y="310" font-size="10" fill="#fff" font-weight="600" id="source-label">Select a source below</text>
+      <text x="120" y="310" font-size="10" fill="#fff" font-weight="600" id="ಮೂಲ-label">ಕೆಳಗೆ ಒಂದು ಮೂಲ ಆಯ್ಕೆಮಾಡಿ</text>
     </svg>
   </div>
   
-  <div class="source-btns">
-    <button class="source-btn" data-source="hydro" onclick="showSource('hydro')">
+  <div class="ಮೂಲ-btns">
+    <button class="ಮೂಲ-btn" data-ಮೂಲ="hydro" onclick="showà²®à³‚à²²('hydro')">
       <div class="icon">💧</div>
-      <div class="name">Hydro</div>
+      <div class="name">ಜಲವಿದ್ಯುತ್</div>
     </button>
-    <button class="source-btn" data-source="solar" onclick="showSource('solar')">
+    <button class="ಮೂಲ-btn" data-ಮೂಲ="solar" onclick="showà²®à³‚à²²('solar')">
       <div class="icon">☀️</div>
-      <div class="name">Solar</div>
+      <div class="name">ಸೌರ</div>
     </button>
-    <button class="source-btn" data-source="wind" onclick="showSource('wind')">
+    <button class="ಮೂಲ-btn" data-ಮೂಲ="wind" onclick="showà²®à³‚à²²('wind')">
       <div class="icon">🌬️</div>
-      <div class="name">Wind</div>
+      <div class="name">ಗಾಳಿ</div>
     </button>
-    <button class="source-btn" data-source="thermal" onclick="showSource('thermal')">
+    <button class="ಮೂಲ-btn" data-ಮೂಲ="thermal" onclick="showà²®à³‚à²²('thermal')">
       <div class="icon">🏭</div>
-      <div class="name">Thermal</div>
+      <div class="name">ಉಷ್ಣ</div>
     </button>
   </div>
 </div>
 
 <div class="info-panel" id="info-panel">
-  <div class="info-title" id="info-title">⚡ How is Electricity Generated?</div>
+  <div class="info-title" id="info-title">⚡ ವಿದ್ಯುತ್ ಹೇಗೆ ಉತ್ಪಾದನೆಯಾಗುತ್ತದೆ?</div>
   <div class="info-text" id="info-text">
-    Tap on any source above to see how it generates electricity and powers your home!
+    ವಿದ್ಯುತ್ ಹೇಗೆ ಉತ್ಪಾದನೆಯಾಗಿ ನಿಮ್ಮ ಮನೆಗೆ ಶಕ್ತಿ ನೀಡುತ್ತದೆ ನೋಡಲು ಮೇಲೆ ಯಾವುದೇ ಮೂಲವನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ!
   </div>
   <div class="info-example" id="info-example" style="display:none;"></div>
 </div>
 
-<div class="energy-flow" id="energy-flow" style="display:none;">
+<div class="à²¶à²•à³à²¤à²¿-flow" id="energy-flow" style="display:none;">
   <div class="flow-item">
-    <div class="icon" id="flow-source">💧</div>
-    <div>Source</div>
+    <div class="icon" id="flow-ಮೂಲ">💧</div>
+    <div>ಮೂಲ</div>
   </div>
   <div class="flow-arrow">→</div>
   <div class="flow-item">
     <div class="icon">⚙️</div>
-    <div>Generator</div>
+    <div>ಜನರೇಟರ್</div>
   </div>
   <div class="flow-arrow">→</div>
   <div class="flow-item">
     <div class="icon">⚡</div>
-    <div>Electricity</div>
+    <div>ವಿದ್ಯುತ್</div>
   </div>
   <div class="flow-arrow">→</div>
   <div class="flow-item">
     <div class="icon">🏠</div>
-    <div>Home</div>
+    <div>ಮನೆ</div>
   </div>
 </div>
 
 <div class="safety-note">
-  <div class="title">⚠️ Safety First!</div>
+  <div class="title">⚠️ ಮೊದಲು ಸುರಕ್ಷತೆ!</div>
   <div class="text">
-    The electricity in our homes comes from power plants and is very dangerous. For experiments, always use <strong>batteries or cells</strong> only - never the main power supply!
+    ನಮ್ಮ ಮನೆಗಳ ವಿದ್ಯುತ್ ವಿದ್ಯುತ್ ಕೇಂದ್ರಗಳಿಂದ ಬರುತ್ತದೆ ಮತ್ತು ಅತ್ಯಂತ ಅಪಾಯಕಾರಿ. ಪ್ರಯೋಗಗಳಿಗೆ ಯಾವಾಗಲೂ <strong>ಬ್ಯಾಟರಿಗಳು ಅಥವಾ ಕೋಶಗಳನ್ನು</strong> ಮಾತ್ರ ಬಳಸಿ - ಮುಖ್ಯ ವಿದ್ಯುತ್ ಸರಬರಾಜನ್ನು ಎಂದಿಗೂ ಬಳಸಬೇಡಿ!
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 What You Learned</div>
+  <div class="takeaway-title">🎯 ನೀವು ಕಲಿತದ್ದು</div>
   <div class="takeaway-text">
-    Electricity can be generated from many sources - falling water (hydroelectric), sunlight (solar), wind, and burning fuels (thermal). It travels through wires to power our homes. Always use batteries for safe experiments!
+    ವಿದ್ಯುತ್ ಅನೇಕ ಮೂಲಗಳಿಂದ ಉತ್ಪಾದನೆಯಾಗಬಹುದು - falling ನೀರು (ಜಲವಿದ್ಯುತ್), sunlight (ಸೌರ), ಗಾಳಿ, ಮತ್ತು ಇಂಧನ ಸುಡುವುದು (ಉಷ್ಣ). ಅದು ತಂತಿಗಳ ಮೂಲಕ ನಮ್ಮ ಮನೆಗಳಿಗೆ ಶಕ್ತಿ ನೀಡುತ್ತದೆ. ಸುರಕ್ಷಿತ ಪ್ರಯೋಗಗಳಿಗೆ ಯಾವಾಗಲೂ ಬ್ಯಾಟರಿಗಳನ್ನು ಬಳಸಿ!
   </div>
 </div>
 
 </div>
 
 <script>
-const powerSource = document.getElementById('power-source');
+const powerಮೂಲ = document.getElementById('power-source');
 const infoTitle = document.getElementById('info-title');
 const infoText = document.getElementById('info-text');
 const infoExample = document.getElementById('info-example');
-const sourceLabel = document.getElementById('source-label');
-const energyFlow = document.getElementById('energy-flow');
-const flowSource = document.getElementById('flow-source');
+const ಮೂಲLabel = document.getElementById('source-label');
+const à²¶à²•à³à²¤à²¿Flow = document.getElementById('energy-flow');
+const flowಮೂಲ = document.getElementById('flow-source');
 const powerLineGlow = document.getElementById('power-line-glow');
-const houseWindow = document.getElementById('house-window');
+const houseಗಾಳಿow = document.getElementById('house-window');
 
-const sources = {
+const ಮೂಲs = {
   hydro: {
-    title: '💧 Hydroelectric Power',
-    text: 'Falling water from a dam spins a turbine connected to a generator. The spinning generator produces electricity. This is a renewable source - water cycle continues forever!',
-    example: '<strong>Example:</strong> Bhakra Nangal Dam in India generates hydroelectric power',
+    title: '💧 ಜಲವಿದ್ಯುತ್ ಶಕ್ತಿ',
+    text: 'ಅಣೆಕಟ್ಟಿನಿಂದ falling ನೀರು ಟರ್ಬೈನ್ ಅನ್ನು ತಿರುಗಿಸುತ್ತದೆ, ಅದು ಜನರೇಟರ್ಗೆ ಸಂಪರ್ಕವಾಗಿದೆ. ತಿರುಗುವ ಜನರೇಟರ್ ವಿದ್ಯುತ್ ಉತ್ಪಾದಿಸುತ್ತದೆ. ಇದು ನವೀಕರಣೀಯ ಮೂಲ - ಜಲ ಚಕ್ರ ಶಾಶ್ವತವಾಗಿ ಮುಂದುವರಿಯುತ್ತದೆ!',
+    example: '<strong>ಉದಾಹರಣೆ:</strong> ಭಾರತದ ಭಾಕ್ರಾ ನಂಗಲ್ ಅಣೆಕಟ್ಟು ಜಲವಿದ್ಯುತ್ ಉತ್ಪಾದಿಸುತ್ತದೆ',
     icon: '💧',
     svg: `
       <rect x="40" y="160" width="120" height="80" fill="#795548"/>
@@ -347,9 +347,9 @@ const sources = {
     `
   },
   solar: {
-    title: '☀️ Solar Power',
-    text: 'Solar panels contain special cells that convert sunlight directly into electricity. No moving parts needed! This is renewable - the sun shines every day.',
-    example: '<strong>Example:</strong> Solar panels on rooftops and solar farms',
+    title: '☀️ ಸೌರ ಶಕ್ತಿ',
+    text: 'ಸೌರ ಫಲಕಗಳಲ್ಲಿ ವಿಶೇಷ ಕೋಶಗಳಿವೆ, ಸೂರ್ಯನ ಬೆಳಕನ್ನು ನೇರವಾಗಿ ವಿದ್ಯುತ್ಗೆ ಪರಿವರ್ತಿಸುತ್ತವೆ. ಚಲಿಸುವ ಭಾಗಗಳ ಅಗತ್ಯವಿಲ್ಲ! ಇದು ನವೀಕರಣೀಯ - ಸೂರ್ಯನು ಪ್ರತಿದಿನ ಬೆಳಗುತ್ತದೆ.',
+    example: '<strong>ಉದಾಹರಣೆ:</strong> ಛಾವಣಿಗಳ ಮೇಲೆ ಸೌರ ಫಲಕಗಳು ಮತ್ತು ಸೌರ ಕ್ಷೇತ್ರಗಳು',
     icon: '☀️',
     svg: `
       <g transform="translate(80, 140)">
@@ -365,19 +365,19 @@ const sources = {
     `
   },
   wind: {
-    title: '🌬️ Wind Power',
-    text: 'Wind spins the blades of a windmill (turbine). The spinning blades turn a generator to produce electricity. Renewable source - wind keeps blowing!',
-    example: '<strong>Example:</strong> Wind farms in Gujarat and Tamil Nadu',
+    title: '🌬️ ಗಾಳಿ ಶಕ್ತಿ',
+    text: 'ಗಾಳಿ ಗಾಳಿಮರದ (ಟರ್ಬೈನ್) ಚಕ್ರಗಳನ್ನು ತಿರುಗಿಸುತ್ತದೆ. ತಿರುಗುವ ಚಕ್ರಗಳು ವಿದ್ಯುತ್ ಉತ್ಪಾದಿಸಲು ಜನರೇಟರ್ ಅನ್ನು ತಿರುಗಿಸುತ್ತವೆ. ನವೀಕರಣೀಯ ಮೂಲ - ಗಾಳಿ ಬೀಸುತ್ತಲೇ ಇರುತ್ತದೆ!',
+    example: '<strong>ಉದಾಹರಣೆ:</strong> ಗುಜರಾತ್ ಮತ್ತು ತಮಿಳುನಾಡು ಗಾಳಿ ಕ್ಷೇತ್ರಗಳು',
     icon: '🌬️',
     svg: `
-      <!-- Wind blowing -->
+      <!-- ಗಾಳಿ blowing -->
       <text x="40" y="130" font-size="28">🌬️</text>
       
-      <!-- Windmill tower -->
+      <!-- ಗಾಳಿmill tower -->
       <rect x="115" y="145" width="10" height="95" fill="#bdbdbd"/>
       <rect x="110" y="235" width="20" height="10" fill="#9e9e9e"/>
       
-      <!-- Windmill blades - centered at top of tower -->
+      <!-- ಗಾಳಿmill blades - centered at top of tower -->
       <g id="windmill-blades" transform="translate(120, 145)" transform-origin="0 0">
         <!-- Blade 1 - pointing up -->
         <ellipse cx="0" cy="-35" rx="6" ry="38" fill="#fff" stroke="#ddd" stroke-width="1"/>
@@ -392,9 +392,9 @@ const sources = {
     `
   },
   thermal: {
-    title: '🏭 Thermal Power',
-    text: 'Burning coal, oil, or gas heats water to make steam. Steam spins a turbine connected to a generator. Non-renewable - fossil fuels will run out and cause pollution.',
-    example: '<strong>Example:</strong> Most power plants in India use coal',
+    title: '🏭 ಉಷ್ಣ ವಿದ್ಯುತ್',
+    text: 'ಇಂಗಾಲ, ತೈಲ ಅಥವಾ ಅನಿಲ ಸುಡುವುದರಿಂದ ನೀರು ಬಿಸಿಯಾಗಿ ಆವಿ ಉಂಟಾಗುತ್ತದೆ. ಆವಿ ಜನರೇಟರ್ಗೆ ಸಂಪರ್ಕವಾದ ಟರ್ಬೈನ್ ಅನ್ನು ತಿರುಗಿಸುತ್ತದೆ. ನವೀಕರಣೇತರ - ಜೀವಾಶ್ಮ ಇಂಧನಗಳು ಖಾಲಿಯಾಗುತ್ತವೆ ಮತ್ತು ಮಾಲಿನ್ಯ ಉಂಟುಮಾಡುತ್ತವೆ.',
+    example: '<strong>ಉದಾಹರಣೆ:</strong> ಭಾರತದ ಹೆಚ್ಚಿನ ವಿದ್ಯುತ್ ಕೇಂದ್ರಗಳು ಇಂಗಾಲ ಬಳಸುತ್ತವೆ',
     icon: '🏭',
     svg: `
       <rect x="60" y="160" width="100" height="80" fill="#78909c"/>
@@ -408,39 +408,39 @@ const sources = {
   }
 };
 
-function showSource(type) {
-  const source = sources[type];
+function showà²®à³‚à²²(type) {
+  const ಮೂಲ = ಮೂಲs[type];
   
   // Update buttons
-  document.querySelectorAll('.source-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.source === type);
+  document.querySelectorAll('.ಮೂಲ-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.ಮೂಲ === type);
   });
   
   // Update SVG
-  powerSource.innerHTML = source.svg;
+  powerಮೂಲ.innerHTML = ಮೂಲ.svg;
   
-  // Animate windmill if selected
+  // ಅನಿಮೇಟ್ windmill if selected
   if (type === 'wind') {
     const blades = document.getElementById('windmill-blades');
     if (blades) blades.classList.add('rotating');
   }
   
   // Update info panel
-  infoTitle.textContent = source.title;
-  infoText.textContent = source.text;
-  infoExample.innerHTML = source.example;
+  infoTitle.textContent = ಮೂಲ.title;
+  infoText.textContent = ಮೂಲ.text;
+  infoExample.innerHTML = ಮೂಲ.example;
   infoExample.style.display = 'block';
   
   // Update label
-  sourceLabel.textContent = source.title.replace(/[^\w\s]/g, '').trim();
+  ಮೂಲLabel.textContent = ಮೂಲ.title.replace(/[^\w\s]/g, '').trim();
   
-  // Show energy flow
-  energyFlow.style.display = 'flex';
-  flowSource.textContent = source.icon;
+  // Show à²¶à²•à³à²¤à²¿ flow
+  à²¶à²•à³à²¤à²¿Flow.style.display = 'flex';
+  flowಮೂಲ.textContent = ಮೂಲ.icon;
   
-  // Animate power flow
+  // ಅನಿಮೇಟ್ power flow
   powerLineGlow.style.opacity = '1';
-  houseWindow.style.fill = '#ffeb3b';
+  houseಗಾಳಿow.style.fill = '#ffeb3b';
 }
 </script>
 </body>

@@ -63,7 +63,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -212,24 +212,24 @@ body {
 
 <div class="header">
   <h1>🏃 ವೇಗ ಕ್ಯಾಲ್ಕುಲೇಟರ್</h1>
-  <p>Calculate speed, distance, or time!</p>
+  <p>ವೇಗ, ದೂರ ಅಥವಾ ಸಮಯ ಲೆಕ್ಕ ಹಾಕಿ!</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Speed Formula</div>
+  <div class="concept-title">📚 ವೇಗ ಸೂತ್ರ</div>
   <div class="concept-text">
-    <strong>Speed</strong> tells us how fast an object is moving. It's the distance covered per unit time.
+    <strong>ವೇಗ</strong> ವಸ್ತು ಎಷ್ಟು ವೇಗವಾಗಿ ಚಲಿಸುತ್ತಿದೆ ತಿಳಿಸುತ್ತದೆ. ಅದು ದೂರ covered per unit time.
   </div>
   <div class="formula-display">
-    <div class="formula-big">Speed = ದೂರ ÷ Time</div>
+    <div class="formula-big">ವೇಗ = ದೂರ ÷ Time</div>
   </div>
 </div>
 
 <div class="sim-card">
   <div class="mode-tabs">
-    <button class="mode-tab active" onclick="setMode('speed', this)">
+    <button class="mode-tab active" onclick="setMode('ವೇಗ', this)">
       <span class="emoji">🏃</span>
-      Find Speed
+      ವೇಗ ಕಂಡುಹಿಡಿ
     </button>
     <button class="mode-tab" onclick="setMode('distance', this)">
       <span class="emoji">📏</span>
@@ -257,40 +257,40 @@ body {
     </div>
   </div>
   
-  <div class="input-group" id="speed-group" style="display: none;">
-    <div class="input-label">🏃 Speed</div>
+  <div class="input-group" id="ವೇಗ-group" style="display: none;">
+    <div class="input-label">🏃 ವೇಗ</div>
     <div class="input-row">
-      <input type="number" class="input-field" id="speed-input" value="50" min="0">
+      <input type="number" class="input-field" id="ವೇಗ-input" value="50" min="0">
       <div class="unit-label">km/h</div>
     </div>
   </div>
   
-  <button class="calculate-btn" onclick="calculate()">🔢 Calculate</button>
+  <button class="calculate-btn" onclick="calculate()">🔢 ಲೆಕ್ಕ ಹಾಕಿ</button>
   
   <div class="result-panel" id="result-panel">
-    <div class="result-label" id="result-label">Speed</div>
+    <div class="result-label" id="result-label">ವೇಗ</div>
     <div class="result-value" id="result-value">50</div>
     <div class="result-unit" id="result-unit">km/h</div>
   </div>
   
   <div class="working-panel" id="working-panel">
-    <div class="working-title">📝 Working:</div>
+    <div class="working-title">📝 ಕೆಲಸ:</div>
     <div class="working-text" id="working-text">
-      Speed = ದೂರ ÷ Time<br>
-      Speed = 100 km ÷ 2 h<br>
-      Speed = 50 km/h
+      ವೇಗ = ದೂರ ÷ Time<br>
+      ವೇಗ = 100 km ÷ 2 h<br>
+      ವೇಗ = 50 km/h
     </div>
   </div>
 </div>
 
 <div class="examples-box">
-  <div class="examples-title">🌟 Real-World Speeds</div>
+  <div class="examples-title">🌟 Real-World ವೇಗs</div>
   <div class="example-item">
-    <span>🚶 Walking</span>
+    <span>🚶 ನಡೆಯುವುದು</span>
     <span>~5 km/h</span>
   </div>
   <div class="example-item">
-    <span>🚴 Cycling</span>
+    <span>🚴 ಸೈಕ್ಲಿಂಗ್</span>
     <span>~15-25 km/h</span>
   </div>
   <div class="example-item">
@@ -298,29 +298,29 @@ body {
     <span>~40-60 km/h</span>
   </div>
   <div class="example-item">
-    <span>🚆 Train</span>
+    <span>🚆 à²°à³ˆà²²à³</span>
     <span>~80-160 km/h</span>
   </div>
   <div class="example-item">
-    <span>✈️ Airplane</span>
+    <span>✈️ ವಿಮಾನ</span>
     <span>~800-900 km/h</span>
   </div>
 </div>
 
 <div class="conversion-note">
-  <div class="conversion-title">🔄 Unit Conversion</div>
+  <div class="conversion-title">🔄 ಘಟಕ ಪರಿವರ್ತನೆ</div>
   <div class="conversion-text">
-    <strong>km/h to m/s:</strong> Divide by 3.6<br>
-    Example: 36 km/h = 36 ÷ 3.6 = 10 m/s<br><br>
-    <strong>m/s to km/h:</strong> Multiply by 3.6<br>
-    Example: 10 m/s = 10 × 3.6 = 36 km/h
+    <strong>km/h to m/s:</strong> 3.6 à²°à²¿à²‚à²¦ à²­à²¾à²—à²¿à²¸à²¿<br>
+    ಉದಾಹರಣೆ: 36 km/h = 36 ÷ 3.6 = 10 m/s<br><br>
+    <strong>m/s to km/h:</strong> 3.6 à²°à²¿à²‚à²¦ à²—à³à²£à²¿à²¸à²¿<br>
+    ಉದಾಹರಣೆ: 10 m/s = 10 × 3.6 = 36 km/h
   </div>
 </div>
 
 </div>
 
 <script>
-let currentMode = 'speed';
+let currentMode = 'ವೇಗ';
 
 function setMode(mode, btn) {
   currentMode = mode;
@@ -331,21 +331,21 @@ function setMode(mode, btn) {
   // Show/hide appropriate inputs
   const distanceGroup = document.getElementById('distance-group');
   const timeGroup = document.getElementById('time-group');
-  const speedGroup = document.getElementById('speed-group');
+  const ವೇಗGroup = document.getElementById('speed-group');
   
   distanceGroup.style.display = 'block';
   timeGroup.style.display = 'block';
-  speedGroup.style.display = 'none';
+  ವೇಗGroup.style.display = 'none';
   
   document.getElementById('distance-input').disabled = false;
   document.getElementById('time-input').disabled = false;
   
   if (mode === 'distance') {
     distanceGroup.style.display = 'none';
-    speedGroup.style.display = 'block';
+    ವೇಗGroup.style.display = 'block';
   } else if (mode === 'time') {
     timeGroup.style.display = 'none';
-    speedGroup.style.display = 'block';
+    ವೇಗGroup.style.display = 'block';
   }
   
   calculate();
@@ -354,40 +354,40 @@ function setMode(mode, btn) {
 function calculate() {
   const distance = parseFloat(document.getElementById('distance-input').value) || 0;
   const time = parseFloat(document.getElementById('time-input').value) || 0;
-  const speed = parseFloat(document.getElementById('speed-input').value) || 0;
+  const ವೇಗ = parseFloat(document.getElementById('speed-input').value) || 0;
   
   let result, label, unit, working;
   
-  switch(currentMode) {
-    case 'speed':
+  ಸ್ವಿಚ್(currentMode) {
+    case 'ವೇಗ':
       if (time === 0) {
         result = 0;
         working = 'Cannot divide by zero!';
       } else {
         result = distance / time;
-        working = `Speed = Distance ÷ Time\nSpeed = ${distance} km ÷ ${time} h\nSpeed = ${result.toFixed(2)} km/h`;
+        working = `ವೇಗ = ದೂರ ÷ Time\nವೇಗ = ${distance} km ÷ ${time} h\nವೇಗ = ${result.toFixed(2)} km/h`;
       }
-      label = 'Speed';
+      label = 'ವೇಗ';
       unit = 'km/h';
       break;
       
     case 'distance':
-      result = speed * time;
-      label = 'Distance';
+      result = ವೇಗ * time;
+      label = 'ದೂರ';
       unit = 'km';
-      working = `Distance = Speed × Time\nDistance = ${speed} km/h × ${time} h\nDistance = ${result.toFixed(2)} km`;
+      working = `ದೂರ = ವೇಗ × Time\nದೂರ = ${ವೇಗ} km/h × ${time} h\nದೂರ = ${result.toFixed(2)} km`;
       break;
       
     case 'time':
-      if (speed === 0) {
+      if (ವೇಗ === 0) {
         result = 0;
         working = 'Cannot divide by zero!';
       } else {
-        result = distance / speed;
-        working = `Time = Distance ÷ Speed\nTime = ${distance} km ÷ ${speed} km/h\nTime = ${result.toFixed(2)} h`;
+        result = distance / ವೇಗ;
+        working = `Time = ದೂರ ÷ ವೇಗ\nTime = ${distance} km ÷ ${ವೇಗ} km/h\nTime = ${result.toFixed(2)} h`;
       }
       label = 'Time';
-      unit = 'hours';
+      unit = 'à²—à²‚à²Ÿà³†à²—à²³à³';
       break;
   }
   

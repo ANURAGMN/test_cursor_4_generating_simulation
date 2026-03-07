@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -210,16 +210,16 @@ svg { width: 100%; height: 100%; }
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    During puberty, the <strong>larynx (voice box)</strong> grows larger. In boys, this causes a significant deepening of the voice. In girls, the change is more subtle.
+    ಯೌವನದಲ್ಲಿ <strong>ಸ್ವರ ಪೆಟ್ಟಿಗೆ</strong> ದೊಡ್ಡದಾಗುತ್ತದೆ. ಹುಡುಗರಲ್ಲಿ ಧ್ವನಿ ಆಳವಾಗುತ್ತದೆg of the voice. In girls, the change is more subtle.
   </div>
 </div>
 
 <div class="sim-card">
   <div class="gender-tabs">
-    <button class="gender-tab boys active" onclick="selectGender('boys', this)">👦 Boys</button>
-    <button class="gender-tab girls" onclick="selectGender('girls', this)">👧 Girls</button>
+    <button class="gender-tab boys active" onclick="selectGender('boys', this)">👦 ಹುಡುಗರು</button>
+    <button class="gender-tab girls" onclick="selectGender('girls', this)">👧 ಹುಡುಗಿಯರು</button>
   </div>
   
   <div class="visual">
@@ -227,10 +227,10 @@ svg { width: 100%; height: 100%; }
       <!-- Throat outline -->
       <ellipse cx="200" cy="100" rx="80" ry="90" fill="#ffccbc" stroke="#ff8a65" stroke-width="2"/>
       
-      <!-- Larynx (voice box) -->
+      <!-- à²¸à³à²µà²°à²ªà³†à²Ÿà³à²Ÿà²¿à²—à³† (voice box) -->
       <g id="larynx-group">
         <rect id="larynx-box" x="170" y="70" width="60" height="50" rx="10" fill="#ef9a9a" stroke="#e57373" stroke-width="2"/>
-        <text x="200" y="100" font-size="10" fill="#c62828" text-anchor="middle" font-weight="bold">Larynx</text>
+        <text x="200" y="100" font-size="10" fill="#c62828" text-anchor="middle" font-weight="bold">à²¸à³à²µà²°à²ªà³†à²Ÿà³à²Ÿà²¿à²—à³†</text>
       </g>
       
       <!-- Vocal cords -->
@@ -239,23 +239,23 @@ svg { width: 100%; height: 100%; }
         <line id="cord-right" x1="225" y1="85" x2="200" y2="95" stroke="#d32f2f" stroke-width="3"/>
       </g>
       
-      <!-- Adam's apple indicator (for boys) -->
+      <!-- ಆಡಮ್‌ಸ್ ಆಪಲ್ ಸೂಚಕ (for boys) -->
       <g id="adams-apple" style="display:none">
         <path d="M 195 55 L 200 45 L 205 55" fill="#ffab91" stroke="#ff7043" stroke-width="2"/>
-        <text x="200" y="38" font-size="8" fill="#e64a19" text-anchor="middle">Adam's Apple</text>
+        <text x="200" y="38" font-size="8" fill="#e64a19" text-anchor="middle">à²†à²¡à²®à³â€Œà²¸à³ à²†à²ªà²²à³</text>
       </g>
       
       <!-- Labels -->
-      <text x="200" y="180" font-size="10" fill="#666" text-anchor="middle" id="stage-label">Before Puberty</text>
+      <text x="200" y="180" font-size="10" fill="#666" text-anchor="middle" id="stage-label">ಯೌವನದ ಮೊದಲು</text>
     </svg>
   </div>
   
   <div class="stage-selector">
     <label>📅 ಹಂತ ಆಯ್ಕೆಮಾಡಿ:</label>
     <div class="stage-btns">
-      <button class="stage-btn active" onclick="selectStage('before', this)">Before Puberty</button>
-      <button class="stage-btn" onclick="selectStage('during', this)">During Puberty</button>
-      <button class="stage-btn" onclick="selectStage('after', this)">After Puberty</button>
+      <button class="stage-btn active" onclick="selectStage('before', this)">ಯೌವನದ ಮೊದಲು</button>
+      <button class="stage-btn" onclick="selectStage('during', this)">ಯೌವನದ ಸಮಯದಲ್ಲಿ</button>
+      <button class="stage-btn" onclick="selectStage('after', this)">ಯೌವನದ ನಂತರ</button>
     </div>
   </div>
   
@@ -268,43 +268,43 @@ svg { width: 100%; height: 100%; }
       <div class="wave-bar" style="height: 20px;"></div>
     </div>
     <div class="voice-info">
-      <div class="voice-label">Voice Pitch</div>
+      <div class="voice-label">à²¸à³à²µà²° à²ªà²¿à²šà³</div>
       <div class="voice-pitch" id="voice-pitch">High</div>
-      <div class="voice-desc" id="voice-desc">Child's voice</div>
+      <div class="voice-desc" id="voice-desc">à²®à²—à³à²µà²¿à²¨ à²¸à³à²µà²°</div>
     </div>
   </div>
 </div>
 
 <div class="larynx-info" id="larynx-info">
-  <div class="larynx-title" id="larynx-title">🔬 Before Puberty</div>
+  <div class="larynx-title" id="larynx-title">🔬 ಯೌವನದ ಮೊದಲು</div>
   <div class="larynx-text" id="larynx-text">
-    The larynx (voice box) is small in children, producing a higher-pitched voice. Boys and girls have similar voice pitches at this stage.
+    The ಸ್ವರ ಪೆಟ್ಟಿಗೆ is small in children, producing a higher-pitched voice. ಹುಡುಗರು ಮತ್ತು girls have similar voice pitches at this stage.
   </div>
 </div>
 
 <div class="comparison-panel">
-  <div class="comparison-title">📊 Voice Change Comparison</div>
+  <div class="comparison-title">📊 ಸ್ವರ ಬದಲಾವಣೆ ಹೋಲಿಕೆ</div>
   <div class="comparison-row">
     <div class="compare-box">
       <div class="icon">👦</div>
-      <div class="label">Boys' Voice</div>
-      <div class="value">Deepens significantly<br>(about 1 octave lower)</div>
+      <div class="label">ಹುಡುಗರು' Voice</div>
+      <div class="value">à²—à²£à²¨à³€à²¯à²µà²¾à²—à²¿ à²†à²³<br>(à²¸à³à²®à²¾à²°à³ 1 à²…à²•à³à²Ÿà³‡à²µà³ à²•à³†à²³à²—à³†)</div>
     </div>
     <div class="compare-box">
       <div class="icon">👧</div>
-      <div class="label">Girls' Voice</div>
-      <div class="value">Slight change<br>(about 3 notes lower)</div>
+      <div class="label">ಹುಡುಗಿಯರು' Voice</div>
+      <div class="value">à²¸à³à²µà²²à³à²ª à²¬à²¦à²²à²¾à²µà²£à³†<br>(à²¸à³à²®à²¾à²°à³ 3 à²¸à³à²µà²° à²•à³†à²³à²—à³†)</div>
     </div>
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 Fun Facts</div>
+  <div class="takeaway-title">🎯 ರೋಚಕ ತಥ್ಯಗಳು</div>
   <div class="takeaway-text">
-    • <strong>Voice cracking</strong> in boys is temporary - it happens as muscles adjust to the larger larynx<br>
-    • The <strong>Adam's apple</strong> is just the larynx showing through the skin<br>
-    • Voice changes usually complete by age 16-17 in boys<br>
-    • Everyone's voice is unique - that's what makes you, you!
+    • <strong>à²¸à³à²µà²° à²’à²¡à³†à²¯à³à²µà²¿à²•à³†</strong> à²¹à³à²¡à³à²—à²°à²²à³à²²à²¿ à²¤à²¾à²¤à³à²•à²¾à²²à²¿à²• - à²¦à³Šà²¡à³à²¡ à²¸à³à²µà²°à²ªà³†à²Ÿà³à²Ÿà²¿à²—à³†à²—à³† à²¸à³à²¨à²¾à²¯à³ à²¹à³Šà²‚à²¦à²¿à²•à³Šà²³à³à²³à³à²µà²¾à²—<br>
+    • The <strong>ಆಡಮ್‌ಸ್ ಆಪಲ್</strong> à²šà²°à³à²®à²¦ à²®à³‚à²²à²• à²•à²¾à²£à³à²µ à²¸à³à²µà²°à²ªà³†à²Ÿà³à²Ÿà²¿à²—à³†<br>
+    • Voice ಬದಲಾಗುತ್ತದೆ usually à²ªà³‚à²°à³à²£ by age 16-17 in boys<br>
+    • ಪ್ರತಿಯೊಬ್ಬರ ಸ್ವರ ವಿಶಿಷ್ಟ - ಅದು ನಿಮ್ಮನ್ನು ನೀವು ಮಾಡುತ್ತದೆ!
   </div>
 </div>
 
@@ -328,53 +328,53 @@ const waveVisual = document.getElementById('wave-visual');
 const voiceData = {
   boys: {
     before: {
-      larynxSize: { width: 60, height: 50 },
+      larynxಗಾತ್ರ: { width: 60, height: 50 },
       pitch: 'High',
-      desc: "Child's voice",
+      desc: "à²®à²—à³à²µà²¿à²¨ à²¸à³à²µà²°",
       waves: [20, 35, 50, 35, 20],
-      info: 'Before puberty, the larynx is small and the vocal cords are short. This produces a high-pitched voice, similar to girls of the same age.',
+      info: 'ಮೊದಲು puberty, the larynx is small ಮತ್ತು the vocal cords are short. This produces a high-pitched voice, similar to girls of the same age.',
       showAdams: false
     },
     during: {
-      larynxSize: { width: 75, height: 60 },
+      larynxಗಾತ್ರ: { width: 75, height: 60 },
       pitch: 'Changing',
       desc: 'Voice may crack!',
       waves: [25, 40, 30, 45, 25],
-      info: 'The larynx is growing rapidly! The vocal cords are getting longer and thicker. The voice may "crack" or squeak as the muscles learn to control the larger voice box. This is completely normal!',
+      info: 'The larynx is growing rapidly! The vocal cords are getting longer ಮತ್ತು thicker. The voice may "crack" or squeak as the muscles learn to control the larger voice box. This is à²ªà³‚à²°à³à²£ly à²¸à²¾à²®à²¾à²¨à³à²¯!',
       showAdams: true
     },
     after: {
-      larynxSize: { width: 90, height: 70 },
+      larynxಗಾತ್ರ: { width: 90, height: 70 },
       pitch: 'Deep',
       desc: 'Adult male voice',
       waves: [40, 55, 60, 55, 40],
-      info: 'The larynx has grown about 60% larger! The vocal cords are now longer and thicker, producing a deeper voice. The Adam\'s apple is visible as the larger larynx pushes against the throat.',
+      info: 'The larynx has grown about 60% larger! The vocal cords are now longer ಮತ್ತು thicker, producing a deeper voice. The Adam\'s apple is visible as the larger larynx pushes against the throat.',
       showAdams: true
     }
   },
   girls: {
     before: {
-      larynxSize: { width: 60, height: 50 },
+      larynxಗಾತ್ರ: { width: 60, height: 50 },
       pitch: 'High',
-      desc: "Child's voice",
+      desc: "à²®à²—à³à²µà²¿à²¨ à²¸à³à²µà²°",
       waves: [20, 35, 50, 35, 20],
-      info: 'Before puberty, girls and boys have similar voice pitches. The larynx is small and produces higher sounds.',
+      info: 'ಮೊದಲು puberty, girls ಮತ್ತು boys have similar voice pitches. The larynx is small ಮತ್ತು produces higher sounds.',
       showAdams: false
     },
     during: {
-      larynxSize: { width: 65, height: 52 },
+      larynxಗಾತ್ರ: { width: 65, height: 52 },
       pitch: 'Slightly Lower',
       desc: 'Subtle change',
       waves: [22, 38, 48, 38, 22],
-      info: 'The larynx grows slightly during puberty in girls, but not as much as in boys. The voice becomes a little deeper and more mature-sounding.',
+      info: 'The larynx grows slightly during puberty in girls, but not as much as in boys. The voice becomes a little deeper ಮತ್ತು more mature-sounding.',
       showAdams: false
     },
     after: {
-      larynxSize: { width: 70, height: 55 },
+      larynxಗಾತ್ರ: { width: 70, height: 55 },
       pitch: 'Mature',
       desc: 'Adult female voice',
       waves: [25, 40, 45, 40, 25],
-      info: 'Girls\' larynx grows about 30% - much less than boys. This is why adult women generally have higher voices than adult men. The change is gradual and usually not very noticeable.',
+      info: 'ಹುಡುಗಿಯರು\' larynx grows about 30% - much less than boys. This is why adult women generally have higher voices than adult men. The change is gradual ಮತ್ತು usually not very noticeable.',
       showAdams: false
     }
   }
@@ -402,24 +402,24 @@ function updateDisplay() {
   const data = voiceData[currentGender][currentStage];
   
   // Update larynx visual
-  const x = 200 - data.larynxSize.width / 2;
-  const y = 95 - data.larynxSize.height / 2;
+  const x = 200 - data.larynxಗಾತ್ರ.width / 2;
+  const y = 95 - data.larynxಗಾತ್ರ.height / 2;
   larynxBox.setAttribute('x', x);
   larynxBox.setAttribute('y', y);
-  larynxBox.setAttribute('width', data.larynxSize.width);
-  larynxBox.setAttribute('height', data.larynxSize.height);
+  larynxBox.setAttribute('width', data.larynxಗಾತ್ರ.width);
+  larynxBox.setAttribute('height', data.larynxಗಾತ್ರ.height);
   
   // Update vocal cords
   cordLeft.setAttribute('x1', x + 5);
   cordLeft.setAttribute('y1', y + 15);
-  cordRight.setAttribute('x1', x + data.larynxSize.width - 5);
+  cordRight.setAttribute('x1', x + data.larynxಗಾತ್ರ.width - 5);
   cordRight.setAttribute('y1', y + 15);
   
-  // Adam's apple
+  // ಆಡಮ್‌ಸ್ ಆಪಲ್
   adamsApple.style.display = data.showAdams ? 'block' : 'none';
   
   // Stage label
-  const stageNames = { before: 'Before Puberty', during: 'During Puberty', after: 'After Puberty' };
+  const stageNames = { before: 'ಯೌವನದ ಮೊದಲು', during: 'ಯೌವನದ ಸಮಯದಲ್ಲಿ', after: 'ಯೌವನದ ನಂತರ' };
   stageLabel.textContent = stageNames[currentStage];
   
   // Voice info
@@ -433,7 +433,7 @@ function updateDisplay() {
   });
   
   // Info panel
-  larynxTitle.textContent = `🔬 ${stageNames[currentStage]} - ${currentGender === 'boys' ? 'Boys' : 'Girls'}`;
+  larynxTitle.textContent = `🔬 ${stageNames[currentStage]} - ${currentGender === 'boys' ? 'ಹುಡುಗರು' : 'ಹುಡುಗಿಯರು'}`;
   larynxText.textContent = data.info;
 }
 

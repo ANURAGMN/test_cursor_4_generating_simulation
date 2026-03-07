@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -49,14 +49,14 @@ body {
   font-weight: 600;
   margin: 8px 4px;
   color: #fff;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  text-ನೆರಳು: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .sim-card {
   background: #fff;
   border-radius: 14px;
   padding: 8px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 12px;
 }
 
@@ -83,7 +83,7 @@ svg { width: 100%; height: 100%; display: block; }
   padding: 6px 8px;
   font-size: 11px;
   line-height: 1.3;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  box-ನೆರಳು: 0 3px 8px rgba(0,0,0,0.12);
   z-index: 10;
 }
 
@@ -96,7 +96,7 @@ svg { width: 100%; height: 100%; display: block; }
   padding: 8px 12px;
   font-size: 11px;
   font-weight: 600;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  box-ನೆರಳು: 0 3px 8px rgba(0,0,0,0.12);
   transition: all 0.3s ease;
 }
 
@@ -227,7 +227,7 @@ svg { width: 100%; height: 100%; display: block; }
 .takeaway.show { display: block; }
 .takeaway-title { font-weight: 600; color: #1b5e20; margin-bottom: 4px; }
 
-@media screen and (max-width: 380px) {
+@media screen ಮತ್ತು (max-width: 380px) {
   .action-btn { padding: 10px; font-size: 10px; }
   .process-step { padding: 6px; font-size: 8px; }
 }
@@ -245,17 +245,17 @@ svg { width: 100%; height: 100%; display: block; }
 <div id="app">
 
 <div class="header">
-  <h1>🏭 Industrial Waste Treatment</h1>
-  <p>Protecting aquatic life through neutralisation!</p>
+  <h1>🏭 ಕೈಗಾರಿಕಾ ತ್ಯಾಜ್ಯ ಚಿಕಿತ್ಸೆ</h1>
+  <p>ತಟಸ್ಥೀಕರಣದಿಂದ ಜಲಚರ ಜೀವನ ರಕ್ಷಣೆ!</p>
 </div>
 
-<div class="section-title">Simulate waste release and treatment</div>
+<div class="section-title">ತ್ಯಾಜ್ಯ ಬಿಡುಗಡೆ ಮತ್ತು ಚಿಕಿತ್ಸೆ ಅನುಕರಿಸಿ</div>
 <div class="sim-card" id="sim"></div>
 
 <div class="process-flow">
   <div class="process-step danger">
     <div class="process-icon">🏭</div>
-    <div>Acidic<br>Waste</div>
+    <div>Acidic<br>ತ್ಯಾಜ್ಯ</div>
   </div>
   <div class="process-arrow">→</div>
   <div class="process-step treatment">
@@ -265,23 +265,23 @@ svg { width: 100%; height: 100%; display: block; }
   <div class="process-arrow">→</div>
   <div class="process-step safe">
     <div class="process-icon">💧</div>
-    <div>Safe Water<br>(pH 7)</div>
+    <div>ಸುರಕ್ಷಿತ ನೀರು<br>(pH 7)</div>
   </div>
 </div>
 
 <div class="ph-display">
   <div class="ph-value neutral" id="ph-value">pH 7.0</div>
-  <div class="ph-label">Water pH Level</div>
+  <div class="ph-label">ನೀರು pH ಮಟ್ಟ</div>
 </div>
 
 <div class="insight-box">
-  <div class="insight-title">🔑 Why treatment matters:</div>
-  Factory waste is often <strong>acidic</strong> and can kill fish and other aquatic life. By adding a <strong>base</strong> to neutralise the acid before release, we protect our ecosystems!
+  <div class="insight-title">🔑 ಚಿಕಿತ್ಸೆ ಏಕೆ ಮುಖ್ಯ:</div>
+  ಕಾರ್ಖಾನೆ ತ್ಯಾಜ್ಯ ಸಾಮಾನ್ಯವಾಗಿ <strong>acidic</strong> ಮೀನು ಮತ್ತು ಇತರ ಜಲಚರ ಜೀವಿಗಳನ್ನು ಸಾಯಿಸಬಲ್ಲದು. ಸೇರಿಸುವ ಮೂಲಕ <strong>base</strong> to neutralise the acid before release, we protect our ecosystems!
 </div>
 
 <div class="takeaway" id="takeaway">
   <div class="takeaway-title">💡 ನೀವು ಕಂಡುಕೊಂಡದ್ದು:</div>
-  <span id="takeaway-text">Industrial waste treatment uses neutralisation to make acidic waste safe for rivers and lakes!</span>
+  <span id="takeaway-text">Industrial waste treatment uses neutralisation to make acidic waste safe for rivers ಮತ್ತು lakes!</span>
 </div>
 
 </div>
@@ -294,7 +294,7 @@ container.innerHTML = `
   <div class="static-hint">
     👆 See what happens with/without treatment
   </div>
-  <div class="status-badge" id="status-badge">⏳ Waiting...</div>
+  <div class="status-badge" id="status-badge">⏳ ಕಾಯುತ್ತಿದೆ...</div>
 
   <svg viewBox="0 0 400 320">
     <!-- Factory -->
@@ -309,7 +309,7 @@ container.innerHTML = `
     <rect x="120" y="80" width="100" height="15" rx="3" fill="#607d8b"/>
     <rect x="210" y="80" width="15" height="60" rx="3" fill="#607d8b"/>
     
-    <!-- Waste flow -->
+    <!-- ತ್ಯಾಜ್ಯ flow -->
     <rect x="215" y="140" width="10" height="50" rx="2" id="waste-flow" fill="transparent"/>
     
     <!-- Treatment tank -->
@@ -333,13 +333,13 @@ container.innerHTML = `
     <!-- Warning sign -->
     <g id="warning-sign" opacity="0" transform="translate(200, 180)">
       <rect x="-50" y="-12" width="100" height="24" rx="5" fill="#ffc107"/>
-      <text x="0" y="5" text-anchor="middle" font-size="9" fill="#333" font-weight="600">⚠️ ACIDIC WASTE!</text>
+      <text x="0" y="5" text-anchor="middle" font-size="9" fill="#333" font-weight="600">⚠️ ಆಮ್ಲೀಯ WASTE!</text>
     </g>
   </svg>
 </div>
 
 <div class="metrics">
-  <div class="metric-item"><span class="metric-label">Waste Type:</span> <span class="metric-value" id="waste-type">—</span></div>
+  <div class="metric-item"><span class="metric-label">ತ್ಯಾಜ್ಯ ರೀತಿ:</span> <span class="metric-value" id="waste-type">—</span></div>
   <div class="metric-item"><span class="metric-label">Treatment:</span> <span class="metric-value" id="treatment-status">—</span></div>
   <div class="metric-item"><span class="metric-label">River Status:</span> <span class="metric-value" id="river-status">Clean</span></div>
   <div class="metric-item"><span class="metric-label">Fish Status:</span> <span class="metric-value" id="fish-status">Healthy</span></div>
@@ -393,14 +393,14 @@ releaseBtn.onclick = function() {
       fish.style.transform = 'rotate(180deg)';
     });
     
-    statusBadge.textContent = '☠️ DISASTER!';
+    statusBadge.textContent = '☠️ ಅನಾಹುತ!';
     statusBadge.className = 'status-badge danger';
     
     wasteType.textContent = 'Acidic (pH 3)';
     wasteType.className = 'metric-value danger';
     treatmentStatus.textContent = 'None ❌';
     treatmentStatus.className = 'metric-value danger';
-    riverStatus.textContent = 'Polluted!';
+    riverStatus.textContent = 'ಮಾಲಿನ್ಯ!';
     riverStatus.className = 'metric-value danger';
     fishStatus.textContent = 'Dead ☠️';
     fishStatus.className = 'metric-value danger';
@@ -411,7 +411,7 @@ releaseBtn.onclick = function() {
     releaseBtn.disabled = true;
     treatBtn.disabled = false;
     
-    takeawayText.textContent = 'DISASTER! Untreated acidic waste (pH 3) has killed the fish! The acid destroyed their gills. This is why factories MUST neutralise waste before release!';
+    takeawayText.textContent = 'ಅನಾಹುತ! Untreated acidic waste (pH 3) has killed the fish! The acid destroyed their gills. This is why factories MUST neutralise waste before release!';
     takeaway.classList.add('show');
   }, 500);
 };
@@ -437,9 +437,9 @@ treatBtn.onclick = function() {
     statusBadge.textContent = '✅ SAFE!';
     statusBadge.className = 'status-badge safe';
     
-    wasteType.textContent = 'Neutralised';
+    wasteType.textContent = 'ತಟಸ್ಥೀಕರಣವಾಯಿತು';
     wasteType.className = 'metric-value safe';
-    treatmentStatus.textContent = 'Success ✅';
+    treatmentStatus.textContent = 'ಯಶಸ್ಸು ✅';
     treatmentStatus.className = 'metric-value safe';
     riverStatus.textContent = 'Clean';
     riverStatus.className = 'metric-value safe';
@@ -451,7 +451,7 @@ treatBtn.onclick = function() {
     
     treatBtn.disabled = true;
     
-    takeawayText.textContent = 'SUCCESS! By adding a base to neutralise the acidic waste, we performed a neutralisation reaction. The treated water (pH 7) is now safe for aquatic life!';
+    takeawayText.textContent = 'ಯಶಸ್ಸು! By adding a base to neutralise the acidic waste, we performed a neutralisation reaction. The treated ನೀರು (pH 7) is now safe for aquatic ಜೀವನ!';
   }, 800);
 };
 
@@ -467,7 +467,7 @@ resetBtn.onclick = function() {
     fish.style.transform = 'rotate(0deg)';
   });
   
-  statusBadge.textContent = '⏳ Waiting...';
+  statusBadge.textContent = '⏳ ಕಾಯುತ್ತಿದೆ...';
   statusBadge.className = 'status-badge';
   
   wasteType.textContent = '—';

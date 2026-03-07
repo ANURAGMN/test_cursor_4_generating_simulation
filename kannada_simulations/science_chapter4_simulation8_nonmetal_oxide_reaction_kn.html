@@ -68,7 +68,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -83,7 +83,7 @@ body {
 
 svg { width: 100%; height: 100%; }
 
-.step-indicator {
+.step-ಸೂಚಕ {
   position: absolute;
   top: 10px;
   left: 50%;
@@ -232,7 +232,7 @@ svg { width: 100%; height: 100%; }
 
 @keyframes sulfurBurn {
   0%, 100% { fill: #fdd835; }
-  50% { fill: #ffeb3b; filter: drop-shadow(0 0 10px #2196f3); }
+  50% { fill: #ffeb3b; filter: drop-ನೆರಳು(0 0 10px #2196f3); }
 }
 
 .burning-sulfur { animation: sulfurBurn 0.3s ease-in-out infinite; }
@@ -262,26 +262,26 @@ svg { width: 100%; height: 100%; }
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    When <strong>non-metals react with oxygen</strong>, they form <strong>non-metal oxides</strong> which are <strong>acidic</strong> in nature. They turn blue litmus paper red.
+    When <strong>ಅಲೋಹಗಳು ಆಮ್ಲಜನಕದೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತವೆ</strong>, they form <strong>ಅಲೋಹ ಆಕ್ಸೈಡ್‌ಗಳು</strong> ಅವು <strong>acidic</strong> ಸ್ವಭಾವದಲ್ಲಿ. ಅವು ನೀಲಿ ಲಿಟ್ಮಸ್ ಕೆಂಪು ಮಾಡುತ್ತವೆ.
   </div>
 </div>
 
 <div class="sim-card">
   <div class="visual">
-    <div class="step-indicator" id="step-indicator">Step 1: Burn sulfur powder</div>
-    <div class="warning-badge">⚠️ Produces toxic SO₂ - Do in lab only!</div>
+    <div class="step-ಸೂಚಕ" id="step-indicator">ಹಂತ 1: ಸಲ್ಫರ್ ಪುಡಿ ಸುಡಿ</div>
+    <div class="warning-badge">⚠️ ವಿಷ SO₂ - ಲ್ಯಾಬ್‌ನಲ್ಲಿ ಮಾತ್ರ!</div>
     <svg viewBox="0 0 400 280" id="scene">
       <!-- Deflagrating spoon with sulfur -->
       <g id="spoon-group" transform="translate(120, 100)">
         <line x1="30" y1="0" x2="30" y2="-60" stroke="#9e9e9e" stroke-width="4"/>
         <ellipse cx="30" cy="10" rx="25" ry="12" fill="#616161"/>
         
-        <!-- Sulfur powder -->
+        <!-- à²¸à²²à³à²«à²°à³ powder -->
         <g id="sulfur">
           <ellipse cx="30" cy="5" rx="18" ry="8" fill="#fdd835" id="sulfur-piece"/>
-          <text x="30" y="35" font-size="10" fill="#f57f17" text-anchor="middle">Sulfur (S)</text>
+          <text x="30" y="35" font-size="10" fill="#f57f17" text-anchor="middle">à²¸à²²à³à²«à²°à³ (S)</text>
         </g>
         
         <!-- ನೀಲಿ flame -->
@@ -312,7 +312,7 @@ svg { width: 100%; height: 100%; }
         </g>
       </g>
       
-      <!-- Water + litmus setup -->
+      <!-- ನೀರು + litmus setup -->
       <g id="water-setup" style="opacity:0.3" transform="translate(240, 80)">
         <rect x="5" y="90" width="90" height="45" rx="3" fill="#bbdefb" opacity="0.5"/>
         
@@ -327,53 +327,53 @@ svg { width: 100%; height: 100%; }
   </div>
   
   <div id="instruction" style="text-align: center; font-size: 12px; color: #666; padding: 8px;">
-    Tap "Burn" to ignite the sulfur powder
+    à²¸à²²à³à²«à²°à³ à²ªà³à²¡à²¿ à²‰à²°à²¿à²¸à²²à³ "à²¸à³à²¡à²¿" à²Ÿà³à²¯à²¾à²ªà³ à²®à²¾à²¡à²¿
   </div>
   
   <div class="controls">
-    <button class="ctrl-btn burn" id="burn-btn" onclick="burnSulfur()">🔥 Burn S</button>
-    <button class="ctrl-btn dissolve" id="dissolve-btn" onclick="dissolveGas()" disabled>💧 Add Water</button>
+    <button class="ctrl-btn burn" id="burn-btn" onclick="burnà²¸à²²à³à²«à²°à³()">🔥 Burn S</button>
+    <button class="ctrl-btn dissolve" id="dissolve-btn" onclick="dissolveGas()" disabled>💧 ನೀರು ಸೇರಿಸಿ</button>
     <button class="ctrl-btn test" id="test-btn" onclick="testWithLitmus()" disabled>🧪 Test pH</button>
   </div>
 </div>
 
 <div class="equation-box" id="equation-box">
-  <div class="equation-title">⚗️ Chemical Equation</div>
+  <div class="equation-title">⚗️ ರಾಸಾಯನಿಕ ಸಮೀಕರಣ</div>
   <div class="equation" id="equation">S + O₂ → SO₂</div>
-  <div class="equation-explain" id="equation-explain">Sulfur + Oxygen → Sulfur Dioxide (pungent gas)</div>
+  <div class="equation-explain" id="equation-explain">à²¸à²²à³à²«à²°à³ + ಆಮ್ಲಜನಕ → à²¸à²²à³à²«à²°à³ ಡೈಆಕ್ಸೈಡ್ (ಕಟುವಾದ ಅನಿಲ)</div>
 </div>
 
 <div class="litmus-result">
   <div class="litmus-card">
     <div class="label">ಕೆಂಪು ಲಿಟ್ಮಸ್</div>
     <div class="strip" id="red-strip" style="background: #f44336;"></div>
-    <div class="status" id="red-status">Before test</div>
+    <div class="status" id="red-status">à²ªà²°à³€à²•à³à²·à³† à²®à³Šà²¦à²²à³</div>
   </div>
   <div class="litmus-card">
     <div class="label">ನೀಲಿ ಲಿಟ್ಮಸ್</div>
     <div class="strip" id="blue-strip" style="background: #2196f3;"></div>
-    <div class="status" id="blue-status">Before test</div>
+    <div class="status" id="blue-status">à²ªà²°à³€à²•à³à²·à³† à²®à³Šà²¦à²²à³</div>
   </div>
 </div>
 
 <div class="learning-panel">
-  <div class="learning-title">🔬 Experiment Progress</div>
+  <div class="learning-title">🔬 ಪ್ರಯೋಗ ಪ್ರಗತಿ</div>
   <div class="learning-text" id="learning-text">
-    This experiment shows how non-metals react with oxygen to form <strong>acidic oxides</strong>.<br><br>
-    <strong>Step 1:</strong> Burn sulfur to produce SO₂ gas<br>
-    <strong>Step 2:</strong> Dissolve SO₂ in water to form acid<br>
-    <strong>Step 3:</strong> Test with litmus paper
+    This experiment shows how ಅಲೋಹಗಳು ಆಮ್ಲಜನಕದೊಂದಿಗೆ ಪ್ರತಿಕ್ರಿಯಿಸುತ್ತವೆ to form <strong>acidic oxides</strong>.<br><br>
+    <strong>Step 1:</strong> SO₂ ಅನಿಲಕ್ಕೆ ಸಲ್ಫರ್ ಸುಡಿ<br>
+    <strong>Step 2:</strong> Dissolve SO₂ in ನೀರು to form acid<br>
+    <strong>Step 3:</strong> à²²à²¿à²Ÿà³à²®à²¸à³ à²ªà³‡à²ªà²°à³â€Œà²¨à²¿à²‚à²¦ à²ªà²°à³€à²•à³à²·à²¿à²¸à²¿
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 What You'll Learn</div>
+  <div class="takeaway-title">🎯 ನೀವು ಕಲಿಯುವುದು</div>
   <div class="takeaway-text">
-    <strong>Non-metal oxides are ACIDIC:</strong><br>
-    • Sulfur + Oxygen → Sulfur Dioxide (acidic)<br>
-    • SO₂ + Water → H₂SO₃ (Sulfurous acid)<br>
-    • Turns blue litmus RED<br><br>
-    <strong>Compare with metals:</strong> Metal oxides are basic, non-metal oxides are acidic!
+    <strong>Non-ಲೋಹ ಆಕ್ಸೈಡ್‌ಗಳು are ಆಮ್ಲೀಯ:</strong><br>
+    • à²¸à²²à³à²«à²°à³ + ಆಮ್ಲಜನಕ → à²¸à²²à³à²«à²°à³ Dioxide (acidic)<br>
+    • SO₂ + ನೀರು → H₂SO₃ (à²¸à²²à³à²«à²°à³ous acid)<br>
+    • ನೀಲಿ ಲಿಟ್ಮಸ್ ಕೆಂಪು<br><br>
+    <strong>à²²à³‹à²¹à²—à²³à³Šà²‚à²¦à²¿à²—à³† à²¹à³‹à²²à²¿à²•à³†:</strong> ಲೋಹ oxides are ಮೂಲ, ಅಲೋಹ ಆಕ್ಸೈಡ್‌ಗಳು are acidic!
   </div>
 </div>
 
@@ -387,8 +387,8 @@ const sulfurPiece = document.getElementById('sulfur-piece');
 const blueFlame = document.getElementById('blue-flame');
 const so2Gas = document.getElementById('so2-gas');
 const smokeParticles = document.getElementById('smoke-particles');
-const waterSetup = document.getElementById('water-setup');
-const litmusPapersSvg = document.getElementById('litmus-papers-svg');
+const ನೀರುSetup = document.getElementById('water-setup');
+const litmusà²•à²¾à²—à²¦sSvg = document.getElementById('litmus-papers-svg');
 
 const burnBtn = document.getElementById('burn-btn');
 const dissolveBtn = document.getElementById('dissolve-btn');
@@ -400,10 +400,10 @@ const equation = document.getElementById('equation');
 const equationExplain = document.getElementById('equation-explain');
 const learningText = document.getElementById('learning-text');
 
-function burnSulfur() {
+function burnà²¸à²²à³à²«à²°à³() {
   burnBtn.disabled = true;
   
-  instruction.textContent = '🔥 Igniting sulfur...';
+  instruction.textContent = '🔥 ಸಲ್ಫರ್ ಉರಿಸುತ್ತಿದೆ...';
   
   setTimeout(() => {
     // Show blue flame (characteristic of sulfur)
@@ -411,10 +411,10 @@ function burnSulfur() {
     blueFlame.classList.add('blue-flame');
     sulfurPiece.classList.add('burning-sulfur');
     
-    stepIndicator.textContent = '🔵 Sulfur burns with blue flame!';
+    stepIndicator.textContent = '🔵 ಸಲ್ಫರ್ ನೀಲಿ ಜ್ವಾಲೆಯಿಂದ ಉರಿಯುತ್ತದೆ!';
     
     learningText.innerHTML = `
-      <strong style="color:#2196f3">🔵 Sulfur is burning with a BLUE flame!</strong><br><br>
+      <strong style="color:#2196f3">🔵 à²¸à²²à³à²«à²°à³ is burning with a BLUE flame!</strong><br><br>
       Unlike magnesium (white light), sulfur burns with a characteristic <strong>blue flame</strong>.<br><br>
       It produces <strong>sulfur dioxide (SO₂)</strong> - a colorless gas with a sharp, choking smell.
     `;
@@ -425,27 +425,27 @@ function burnSulfur() {
     smokeParticles.style.display = 'block';
     so2Gas.style.display = 'block';
     
-    instruction.textContent = 'SO₂ gas collecting in the jar...';
+    instruction.textContent = 'ಜಾರ್‌ನಲ್ಲಿ SO₂ ಅನಿಲ ಸಂಗ್ರಹ...';
   }, 1500);
   
   setTimeout(() => {
-    // Burning complete
+    // ಉರಿಯುತ್ತಿದೆ à²ªà³‚à²°à³à²£
     blueFlame.classList.remove('blue-flame');
     blueFlame.style.display = 'none';
     sulfurPiece.classList.remove('burning-sulfur');
     sulfur.style.opacity = '0.3';
     
-    stepIndicator.textContent = 'Step 2: Dissolve SO₂ in water';
-    instruction.textContent = 'SO₂ gas collected! Now add water.';
+    stepIndicator.textContent = 'Step 2: Dissolve SO₂ in ನೀರು';
+    instruction.textContent = 'SO₂ gas collected! Now add ನೀರು.';
     
     dissolveBtn.disabled = false;
-    waterSetup.style.opacity = '1';
+    ನೀರುSetup.style.opacity = '1';
     
     learningText.innerHTML = `
-      <strong style="color:#2e7d32">✅ Sulfur Dioxide (SO₂) collected!</strong><br><br>
+      <strong style="color:#2e7d32">✅ à²¸à²²à³à²«à²°à³ Dioxide (SO₂) collected!</strong><br><br>
       The jar is now filled with SO₂ gas - it has a <strong>pungent, suffocating smell</strong>.<br><br>
       <strong>Reaction:</strong> S + O₂ → SO₂<br><br>
-      Now let's dissolve it in water and test its nature!
+      Now let's dissolve it in ನೀರು ಮತ್ತು test its nature!
     `;
   }, 3000);
 }
@@ -453,25 +453,25 @@ function burnSulfur() {
 function dissolveGas() {
   dissolveBtn.disabled = true;
   
-  instruction.textContent = 'Adding water to dissolve SO₂...';
-  stepIndicator.textContent = 'Dissolving SO₂ in water...';
+  instruction.textContent = 'Adding ನೀರು to dissolve SO₂...';
+  stepIndicator.textContent = 'Dissolving SO₂ in ನೀರು...';
   
   setTimeout(() => {
     smokeParticles.style.display = 'none';
     so2Gas.style.opacity = '0.3';
-    litmusPapersSvg.style.display = 'block';
+    litmusà²•à²¾à²—à²¦sSvg.style.display = 'block';
     
     equation.textContent = 'SO₂ + H₂O → H₂SO₃';
-    equationExplain.textContent = 'Sulfur Dioxide + Water → Sulfurous Acid';
+    equationExplain.textContent = 'à²¸à²²à³à²«à²°à³ Dioxide + ನೀರು → à²¸à²²à³à²«à²°à³ous Acid';
     
-    stepIndicator.textContent = 'Step 3: Test with litmus paper';
+    stepIndicator.textContent = 'à²¹à²‚à²¤ 3: à²²à²¿à²Ÿà³à²®à²¸à³ à²ªà³‡à²ªà²°à³â€Œà²¨à²¿à²‚à²¦ à²ªà²°à³€à²•à³à²·à²¿à²¸à²¿';
     instruction.textContent = 'Acidic solution formed! Test with litmus.';
     
     testBtn.disabled = false;
     
     learningText.innerHTML = `
-      <strong style="color:#f44336">💧 Sulfurous Acid (H₂SO₃) formed!</strong><br><br>
-      SO₂ dissolves in water to form <strong>Sulfurous Acid</strong> - an ACID.<br><br>
+      <strong style="color:#f44336">💧 à²¸à²²à³à²«à²°à³ous Acid (H₂SO₃) formed!</strong><br><br>
+      SO₂ dissolves in ನೀರು to form <strong>à²¸à²²à³à²«à²°à³ous Acid</strong> - an ACID.<br><br>
       <strong>Reaction:</strong> SO₂ + H₂O → H₂SO₃<br><br>
       Now let's test if this solution is really acidic using litmus paper!
     `;
@@ -481,27 +481,27 @@ function dissolveGas() {
 function testWithLitmus() {
   testBtn.disabled = true;
   
-  instruction.textContent = 'Testing with litmus papers...';
+  instruction.textContent = 'à²²à²¿à²Ÿà³à²®à²¸à³ à²ªà³‡à²ªà²°à³â€Œà²—à²³à²¿à²‚à²¦ à²ªà²°à³€à²•à³à²·à²¿à²¸à²²à²¾à²—à³à²¤à³à²¤à²¿à²¦à³†...';
   stepIndicator.textContent = 'Testing pH...';
   
   setTimeout(() => {
-    // Blue litmus turns red (acid detected!)
+    // ನೀಲಿ litmus turns red (acid detected!)
     document.getElementById('blue-strip').style.background = '#f44336';
     document.getElementById('blue-litmus-svg').setAttribute('fill', '#f44336');
-    document.getElementById('blue-status').textContent = '→ Turned RED!';
+    document.getElementById('blue-status').textContent = '→ ಕೆಂಪು ಆಯಿತು!';
     document.getElementById('blue-status').style.color = '#c62828';
     
-    // Red litmus stays red
-    document.getElementById('red-status').textContent = 'No change';
+    // ಕೆಂಪು litmus stays red
+    document.getElementById('red-status').textContent = 'ಬದಲಾವಣೆ ಇಲ್ಲ';
     
-    stepIndicator.textContent = '✅ Experiment Complete!';
-    instruction.textContent = 'Blue litmus turned RED - it\'s an ACID!';
+    stepIndicator.textContent = '✅ ಪ್ರಯೋಗ ಪೂರ್ಣ!';
+    instruction.textContent = 'ನೀಲಿ litmus turned RED - it\'s an ACID!';
     
     learningText.innerHTML = `
-      <strong style="color:#c62828">✅ Experiment Complete!</strong><br><br>
-      <strong>Result:</strong> Blue litmus paper turned <span style="color:#c62828; font-weight:bold">RED</span>!<br><br>
-      This proves that <strong>Sulfur Dioxide is an ACIDIC oxide</strong>.<br><br>
-      <strong>Conclusion:</strong> When non-metals burn in oxygen, they form <strong>non-metal oxides that are acidic in nature</strong>.
+      <strong style="color:#c62828">✅ ಪ್ರಯೋಗ ಪೂರ್ಣ!</strong><br><br>
+      <strong>ಫಲಿತಾಂಶ:</strong> ನೀಲಿ litmus paper turned <span style="color:#c62828; font-weight:bold">RED</span>!<br><br>
+      This proves that <strong>à²¸à²²à³à²«à²°à³ Dioxide is an ಆಮ್ಲೀಯ oxide</strong>.<br><br>
+      <strong>ತೀರ್ಮಾನ:</strong> When ಅಲೋಹಗಳು burn in ಆಮ್ಲಜನಕ, they form <strong>ಅಲೋಹ ಆಕ್ಸೈಡ್‌ಗಳು that are acidic in nature</strong>.
     `;
   }, 1000);
 }

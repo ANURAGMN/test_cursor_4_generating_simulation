@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -69,7 +69,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -128,7 +128,7 @@ body {
   animation: rustSpread 2s ease-out forwards;
 }
 
-.water-level {
+.ನೀರು-level {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -146,7 +146,7 @@ body {
   background: linear-gradient(180deg, rgba(255, 193, 7, 0.6) 0%, rgba(255, 152, 0, 0.4) 100%);
 }
 
-.dry-indicator {
+.dry-ಸೂಚಕ {
   position: absolute;
   top: 10px;
   left: 50%;
@@ -154,7 +154,7 @@ body {
   font-size: 12px;
 }
 
-.air-indicator {
+.air-ಸೂಚಕ {
   position: absolute;
   top: 30%;
   left: 50%;
@@ -292,9 +292,9 @@ body {
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    <strong>Rusting</strong> is a chemical reaction where iron reacts with <strong>oxygen and water (moisture)</strong> to form iron oxide (rust). Both air AND water are needed for rusting.
+    <strong>ತುಕ್ಕು</strong> ಕಬ್ಬಿಣ ಪ್ರತಿಕ್ರಿಯಿಸುವ ರಾಸಾಯನಿಕ ಪ್ರತಿಕ್ರಿಯೆ <strong>ಆಮ್ಲಜನಕ ಮತ್ತು ನೀರು (ಆರ್ದ್ರತೆ)</strong> ಕಬ್ಬಿಣ ಆಕ್ಸೈಡ್ (ತುಕ್ಕು) ರೂಪಿಸಲು. ಗಾಳಿ ಮತ್ತು ನೀರು ಅಗತ್ಯ for rusting.
   </div>
 </div>
 
@@ -303,8 +303,8 @@ body {
     <!-- Tube A: Dry air only -->
     <div class="tube-wrapper">
       <div class="tube" id="tube-a">
-        <div class="dry-indicator">🔥 Dry</div>
-        <div class="air-indicator">O₂ Air</div>
+        <div class="dry-ಸೂಚಕ">🔥 Dry</div>
+        <div class="air-ಸೂಚಕ">O₂ Air</div>
         <div class="nail" id="nail-a">🔩</div>
         <div class="result-badge safe" id="result-a" style="display:none">No Rust</div>
       </div>
@@ -312,63 +312,63 @@ body {
       <div class="tube-condition">Dry Air Only</div>
     </div>
     
-    <!-- Tube B: Water only (no air) -->
+    <!-- Tube B: ನೀರು only (no air) -->
     <div class="tube-wrapper">
       <div class="tube" id="tube-b" style="background: linear-gradient(180deg, #e8f5e9 0%, #c8e6c9 100%);">
-        <div class="water-level" style="height: 70%;"></div>
+        <div class="ನೀರು-level" style="height: 70%;"></div>
         <div class="oil-layer"></div>
         <div class="nail" id="nail-b">🔩</div>
         <div class="result-badge safe" id="result-b" style="display:none">No Rust</div>
       </div>
       <div class="tube-label">Tube B</div>
-      <div class="tube-condition">Boiled Water + Oil</div>
+      <div class="tube-condition">Boiled ನೀರು + Oil</div>
     </div>
     
-    <!-- Tube C: Air + Water (moist) -->
+    <!-- Tube C: ಗಾಳಿ + ನೀರು (moist) -->
     <div class="tube-wrapper">
       <div class="tube" id="tube-c">
-        <div class="water-level" style="height: 30%;"></div>
-        <div class="air-indicator">O₂ + 💧</div>
+        <div class="ನೀರು-level" style="height: 30%;"></div>
+        <div class="air-ಸೂಚಕ">O₂ + 💧</div>
         <div class="nail" id="nail-c">🔩</div>
-        <div class="result-badge rusted" id="result-c" style="display:none">RUSTED!</div>
+        <div class="result-badge rusted" id="result-c" style="display:none">ತುಕ್ಕು!</div>
       </div>
       <div class="tube-label">Tube C</div>
-      <div class="tube-condition">Air + Water</div>
+      <div class="tube-condition">ಗಾಳಿ + ನೀರು</div>
     </div>
   </div>
   
   <div class="days-slider">
-    <label>⏱️ Simulate Time Passing:</label>
+    <label>⏱️ ಸಮಯ ಕಳೆಯುವುದನ್ನು ಅನುಕರಿಸಿ:</label>
     <input type="range" id="days-slider" min="0" max="7" value="0" oninput="updateDays(this.value)">
     <div class="days-display" id="days-display">Day 0</div>
   </div>
 </div>
 
 <div class="equation-box">
-  <div class="equation-title">⚗️ Chemical Reaction of Rusting</div>
+  <div class="equation-title">⚗️ à²°à²¾à²¸à²¾à²¯à²¨à²¿à²• Reaction of ತುಕ್ಕು</div>
   <div class="equation">4Fe + 3O₂ + 6H₂O → 4Fe(OH)₃ → 2Fe₂O₃·3H₂O</div>
-  <div style="font-size: 10px; color: #666; margin-top: 6px;">Iron + Oxygen + Water → Rust (Hydrated Iron Oxide)</div>
+  <div style="font-size: 10px; color: #666; margin-top: 6px;">ಕಬ್ಬಿಣ + ಆಮ್ಲಜನಕ + ನೀರು → ತುಕ್ಕು (ಜಲಯುಕ್ತ ಕಬ್ಬಿಣ ಆಕ್ಸೈಡ್)</div>
 </div>
 
 <div class="learning-panel">
-  <div class="learning-title">🔬 Understanding Rusting</div>
+  <div class="learning-title">🔬 Understಮತ್ತುing ತುಕ್ಕು</div>
   <div class="learning-text" id="learning-text">
-    Move the slider to simulate days passing and observe which nail rusts!<br><br>
-    <strong>Tube A:</strong> Dry air only (no water)<br>
-    <strong>Tube B:</strong> Boiled water with oil layer (no air)<br>
-    <strong>Tube C:</strong> Air and water both present
+    à²¦à²¿à²¨ à²•à²³à³†à²¯à³à²µà³à²¦à²¨à³à²¨à³ à²…à²¨à³à²•à²°à²¿à²¸à²²à³ à²¸à³à²²à³ˆà²¡à²°à³ à²¸à²°à²¿à²¸à²¿ à²¯à²¾à²µ à²‰à²—à³à²°à³ à²¤à³à²•à³à²•à³ à²¨à³‹à²¡à²¿!<br><br>
+    <strong>Tube A:</strong> à²’à²£ à²—à²¾à²³à²¿ à²®à²¾à²¤à³à²° (ನೀರು à²‡à²²à³à²²)<br>
+    <strong>Tube B:</strong> Boiled ನೀರು with oil layer (no air)<br>
+    <strong>Tube C:</strong> à²—à²¾à²³à²¿ à²®à²¤à³à²¤à³ ನೀರು à²‡à²°à³à²µà³à²¦à³
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 What You'll Learn</div>
+  <div class="takeaway-title">🎯 ನೀವು ಕಲಿಯುವುದು</div>
   <div class="takeaway-text">
-    <strong>Both air (oxygen) AND water are needed</strong> for rusting to occur.<br><br>
-    <strong>Prevention methods:</strong><br>
-    • Painting/oiling (blocks air & water)<br>
-    • Galvanisation (zinc coating)<br>
-    • Alloying (stainless steel)<br><br>
-    <strong>Fun fact:</strong> The Iron Pillar of Delhi (1600+ years old) hasn't rusted due to its unique composition!
+    <strong>à²—à²¾à²³à²¿ (à²†à²®à³à²²à²œà²¨à²•) à²®à²¤à³à²¤à³ ನೀರು à²…à²—à²¤à³à²¯</strong> à²¤à³à²•à³à²•à³ à²¸à²‚à²­à²µà²¿à²¸à²²à³.<br><br>
+    <strong>à²¨à²¿à²µà²¾à²°à²£à³† ವಿಧಾನà²—à²³à³:</strong><br>
+    • Painting/oiling (blocks air & ನೀರು)<br>
+    • ಗ್ಯಾಲ್ವನೈಸೇಷನ್ (ಜಿಂಕ್ ಲೇಪನ)<br>
+    • ಮಿಶ್ರಲೋಹ (ಸ್ಟೇನ್ಲೆಸ್ ಸ್ಟೀಲ್)<br><br>
+    <strong>Fun fact:</strong> The Iron Pillar of ದೆಹಲಿ (1600+ years old) hasn't rusted due to its unique composition!
   </div>
 </div>
 
@@ -388,7 +388,7 @@ function updateDays(days) {
   days = parseInt(days);
   daysDisplay.textContent = `Day ${days}`;
   
-  // Reset all
+  // ಮರುಹೊಂದಿಸಿ all
   nailA.className = 'nail';
   nailB.className = 'nail';
   nailC.className = 'nail';
@@ -398,16 +398,16 @@ function updateDays(days) {
   
   if (days === 0) {
     learningText.innerHTML = `
-      <strong>Day 0 - Experiment Start</strong><br><br>
-      All three iron nails are shiny and new. Let's see what happens over time in different conditions!
+      <strong>Day 0 - Experiment ಪ್ರಾರಂಭ</strong><br><br>
+      All three iron nails are shiny ಮತ್ತು new. Let's see what happens over time in different conditions!
     `;
   } else if (days <= 2) {
     learningText.innerHTML = `
       <strong>Day ${days} - Early Observation</strong><br><br>
       <strong>Tube A (Dry Air):</strong> Nail still shiny ✓<br>
-      <strong>Tube B (Water, No Air):</strong> Nail still shiny ✓<br>
-      <strong>Tube C (Air + Water):</strong> Starting to see slight discoloration...<br><br>
-      Rusting is a slow process!
+      <strong>Tube B (ನೀರು, No Air):</strong> Nail still shiny ✓<br>
+      <strong>Tube C (ಗಾಳಿ + ನೀರು):</strong> ಪ್ರಾರಂಭing to see slight discoloration...<br><br>
+      ತುಕ್ಕು is a slow process!
     `;
     nailC.style.opacity = 0.9;
   } else if (days <= 4) {
@@ -415,9 +415,9 @@ function updateDays(days) {
     learningText.innerHTML = `
       <strong>Day ${days} - Rust Beginning</strong><br><br>
       <strong>Tube A (Dry Air):</strong> Still no rust - air alone doesn't cause rusting!<br>
-      <strong>Tube B (Water, No Air):</strong> Still no rust - water alone doesn't cause rusting!<br>
-      <strong>Tube C (Air + Water):</strong> <span style="color:#bf360c">Brown spots appearing!</span><br><br>
-      Only the nail with BOTH air and water is rusting!
+      <strong>Tube B (ನೀರು, No Air):</strong> Still no rust - ನೀರು alone doesn't cause rusting!<br>
+      <strong>Tube C (ಗಾಳಿ + ನೀರು):</strong> <span style="color:#bf360c">Brown spots appearing!</span><br><br>
+      Only the nail with BOTH air ಮತ್ತು ನೀರು is rusting!
     `;
   } else if (days <= 6) {
     nailC.style.filter = 'sepia(80%) saturate(150%)';
@@ -425,11 +425,11 @@ function updateDays(days) {
     resultC.style.display = 'block';
     
     learningText.innerHTML = `
-      <strong>Day ${days} - Significant Rusting</strong><br><br>
+      <strong>Day ${days} - Significant ತುಕ್ಕು</strong><br><br>
       <strong>Tube A (Dry Air):</strong> ✅ No rust - protected from moisture<br>
-      <strong>Tube B (Water, No Air):</strong> ✅ No rust - oil blocks oxygen<br>
-      <strong>Tube C (Air + Water):</strong> <span style="color:#bf360c">❌ Heavily rusted!</span><br><br>
-      <strong>Conclusion forming:</strong> Rusting needs BOTH oxygen AND water!
+      <strong>Tube B (ನೀರು, No Air):</strong> ✅ No rust - oil blocks ಆಮ್ಲಜನಕ<br>
+      <strong>Tube C (ಗಾಳಿ + ನೀರು):</strong> <span style="color:#bf360c">❌ Heavily rusted!</span><br><br>
+      <strong>Conclusion à²°à³‚à²ªà²¿à²¸à³à²µà³à²¦à³:</strong> ತುಕ್ಕು needs BOTH ಆಮ್ಲಜನಕ AND ನೀರು!
     `;
   } else {
     // Day 7 - final
@@ -440,12 +440,12 @@ function updateDays(days) {
     resultC.style.display = 'block';
     
     learningText.innerHTML = `
-      <strong style="color:#2e7d32">Day 7 - Experiment Complete! ✅</strong><br><br>
-      <strong>Results:</strong><br>
-      • <strong>Tube A:</strong> No rust (had air but NO water)<br>
-      • <strong>Tube B:</strong> No rust (had water but NO air)<br>
-      • <strong>Tube C:</strong> <span style="color:#bf360c">Rusted!</span> (had BOTH air + water)<br><br>
-      <strong>Conclusion:</strong> Iron rusts only when <strong>both oxygen (from air) AND water</strong> are present together!
+      <strong style="color:#2e7d32">Day 7 - ಪ್ರಯೋಗ ಪೂರ್ಣ! ✅</strong><br><br>
+      <strong>ಫಲಿತಾಂಶs:</strong><br>
+      • <strong>Tube A:</strong> No rust (had air but NO ನೀರು)<br>
+      • <strong>Tube B:</strong> No rust (had ನೀರು but NO air)<br>
+      • <strong>Tube C:</strong> <span style="color:#bf360c">Rusted!</span> (had BOTH air + ನೀರು)<br><br>
+      <strong>ತೀರ್ಮಾನ:</strong> Iron rusts only when <strong>both ಆಮ್ಲಜನಕ (from air) AND ನೀರು</strong> are present together!
     `;
   }
 }

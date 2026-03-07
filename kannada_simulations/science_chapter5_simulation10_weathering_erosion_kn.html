@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -130,7 +130,7 @@ svg { width: 100%; height: 100%; }
   background: #5d4037;
   cursor: pointer;
   border: 3px solid #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-ನೆರಳು: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 .time-markers {
@@ -206,26 +206,26 @@ svg { width: 100%; height: 100%; }
 <div id="app">
 
 <div class="header">
-  <h1>🏔️ Weathering & Erosion</h1>
-  <p>Slow changes that shape our Earth</p>
+  <h1>🏔️ ವಾತಾವರಣ ಮತ್ತು ಕೊರೆತ</h1>
+  <p>ನಮ್ಮ ಭೂಮಿಯನ್ನು ಆಕಾರಗೊಳಿಸುವ ನಿಧಾನ ಬದಲಾವಣೆಗಳು</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    <strong>Weathering</strong> breaks rocks into smaller pieces. <strong>Erosion</strong> moves those pieces to new locations. Together, they shape mountains, valleys, and create soil over thousands of years!
+    <strong>ವಾತಾವರಣ</strong> ಕಲ್ಲುಗಳನ್ನು ಚಿಕ್ಕ ತುಂಡುಗಳಾಗಿ ಒಡೆಯುತ್ತದೆ. <strong>ಕೊರೆತ</strong> à²† à²¤à³à²£à³à²•à³à²—à²³à²¨à³à²¨à³ à²¹à³Šà²¸ à²¸à³à²¥à²³à²•à³à²•à³† à²¸à²°à²¿à²¸à³à²¤à³à²¤à²¦à³†. à²’à²Ÿà³à²Ÿà²¿à²—à³† à²ªà²°à³à²µà²¤, à²•à²£à²¿à²µà³† à²®à²¤à³à²¤à³ à²¸à²¾à²µà²¿à²°à²¾à²°à³ à²µà²°à³à²·à²¦à²²à³à²²à²¿ à²®à²£à³à²£à³!
   </div>
 </div>
 
 <div class="sim-card">
   <div class="mode-tabs">
-    <button class="mode-tab active" onclick="selectMode('mountain', this)">🏔️ Mountain</button>
-    <button class="mode-tab" onclick="selectMode('river', this)">🌊 River Rocks</button>
-    <button class="mode-tab" onclick="selectMode('cliff', this)">🪨 Sea Cliff</button>
+    <button class="mode-tab active" onclick="selectMode('mountain', this)">🏔️ ಪರ್ವತ</button>
+    <button class="mode-tab" onclick="selectMode('river', this)">🌊 ನದಿ ಕಲ್ಲುಗಳು</button>
+    <button class="mode-tab" onclick="selectMode('cliff', this)">🪨 ಸಮುದ್ರ ಬಂಡೆ</button>
   </div>
   
   <div class="visual">
-    <div class="time-display" id="time-display">⏳ Present Day</div>
+    <div class="time-display" id="time-display">⏳ ಇಂದಿನ ದಿನ</div>
     <svg viewBox="0 0 400 260" id="scene">
       <!-- Mountain Scene -->
       <g id="mountain-scene">
@@ -238,7 +238,7 @@ svg { width: 100%; height: 100%; }
         <polygon points="0,200 80,120 160,200" fill="#90a4ae"/>
         <polygon points="300,200 380,130 400,160 400,200" fill="#90a4ae"/>
         
-        <!-- Main mountain (changes over time) -->
+        <!-- Main mountain (ಬದಲಾಗುತ್ತದೆ over time) -->
         <polygon id="main-mountain" points="100,200 200,60 300,200" fill="#795548"/>
         
         <!-- Snow cap -->
@@ -277,7 +277,7 @@ svg { width: 100%; height: 100%; }
         <rect x="0" y="0" width="400" height="100" fill="#8d6e63"/>
         <rect x="0" y="180" width="400" height="80" fill="#8d6e63"/>
         
-        <!-- River water -->
+        <!-- River ನೀರು -->
         <rect x="0" y="100" width="400" height="80" fill="#4fc3f7"/>
         <path d="M 0 120 Q 100 110 200 120 Q 300 130 400 120" fill="none" stroke="#81d4fa" stroke-width="3"/>
         <path d="M 0 150 Q 100 160 200 150 Q 300 140 400 150" fill="none" stroke="#81d4fa" stroke-width="3"/>
@@ -298,8 +298,8 @@ svg { width: 100%; height: 100%; }
           <ellipse cx="350" cy="170" rx="6" ry="4" fill="#9e9e9e"/>
         </g>
         
-        <!-- Sand deposits -->
-        <ellipse id="sand" cx="200" cy="175" rx="0" ry="0" fill="#fff59d"/>
+        <!-- Sಮತ್ತು deposits -->
+        <ellipse id="sಮತ್ತು" cx="200" cy="175" rx="0" ry="0" fill="#fff59d"/>
       </g>
       
       <!-- Cliff Scene -->
@@ -336,55 +336,55 @@ svg { width: 100%; height: 100%; }
   
   <div class="controls">
     <div class="time-slider">
-      <label>⏳ Time Travel: Slide to see changes over time</label>
+      <label>⏳ Time Travel: Slide to see ಬದಲಾಗುತ್ತದೆ over time</label>
       <input type="range" id="time-slider" min="0" max="100" value="0" oninput="updateTime(this.value)">
       <div class="time-markers">
         <span>Now</span>
         <span>1,000 yrs</span>
         <span>10,000 yrs</span>
         <span>100,000 yrs</span>
-        <span>1 Million yrs</span>
+        <span>1 à²®à²¿à²²à²¿à²¯à²¨à³ à²µà²°à³à²·</span>
       </div>
     </div>
   </div>
 </div>
 
 <div class="process-panel">
-  <div class="process-title">🔬 What's Happening?</div>
+  <div class="process-title">🔬 ಏನಾಗುತ್ತಿದೆ?</div>
   <div class="process-text" id="process-text">
-    Move the time slider to see how weathering and erosion slowly transform the landscape over thousands to millions of years!
+    à²•à²¾à²² à²¸à³à²²à³ˆà²¡à²°à³ à²¸à²°à²¿à²¸à²¿ à²¸à²¾à²µà²¿à²°à²¾à²°à³-à²²à²•à³à²·à²¾à²‚à²¤à²° à²µà²°à³à²·à²¦à²²à³à²²à²¿ à²¹à²µà²¾à²®à²¾à²¨ à²®à²¤à³à²¤à³ à²¸à²µà²•à²³à²¿ à²­à³‚à²¦à³ƒà²¶à³à²¯à²µà²¨à³à²¨à³ à²¹à³‡à²—à³† à²°à³‚à²ªà²¾à²‚à²¤à²°à²¿à²¸à³à²¤à³à²¤à²¦à³† à²¨à³‹à²¡à²¿!
   </div>
 </div>
 
 <div class="types-panel">
   <div class="type-card physical">
-    <div class="title">⚒️ Physical Weathering</div>
+    <div class="title">⚒️ Physical ವಾತಾವರಣ</div>
     <div class="items">
-      • Temperature changes crack rocks<br>
-      • Ice expands in cracks<br>
-      • Plant roots split rocks<br>
-      • Wind/water wear down surface
+      • Temperature ಬದಲಾಗುತ್ತದೆ crack rocks<br>
+      • ಬಿರುಕುಗಳಲ್ಲಿ ಐಸ್ ವಿಸ್ತರಿಸುತ್ತದೆ<br>
+      • ಸಸ್ಯ ಬೇರುಗಳು ಕಲ್ಲು ಒಡೆಯುತ್ತವೆ<br>
+      • ಗಾಳಿ/ನೀರು wear down surface
     </div>
   </div>
   <div class="type-card chemical">
-    <div class="title">🧪 Chemical Weathering</div>
+    <div class="title">🧪 à²°à²¾à²¸à²¾à²¯à²¨à²¿à²• ವಾತಾವರಣ</div>
     <div class="items">
-      • Water dissolves minerals<br>
+      • ನೀರು ಖನಿಜ ಕರಗಿಸುತ್ತದೆ<br>
       • Acid rain reacts with rock<br>
-      • Oxygen causes oxidation<br>
-      • Creates new substances
+      • ಆಮ್ಲಜನಕ ಉತ್ಕರ್ಷಣೆ<br>
+      • ಹೊಸ ಪದಾರ್ಥಗಳು ರಚಿಸುತ್ತದೆ
     </div>
   </div>
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 Earth's Slow Sculptors</div>
+  <div class="takeaway-title">🎯 ಭೂಮಿಯ ನಿಧಾನ ಶಿಲ್ಪಿಗಳು</div>
   <div class="takeaway-text">
-    Weathering and erosion are <strong>extremely slow</strong> but powerful!<br><br>
-    • Grand Canyon: Carved over 5-6 million years<br>
-    • Smooth river pebbles: Thousands of years of tumbling<br>
-    • Soil formation: Centuries of rock breakdown<br><br>
-    These irreversible changes continuously reshape our planet!
+    ವಾತಾವರಣ ಮತ್ತು erosion are <strong>à²…à²¤à³à²¯à²‚à²¤ à²¨à²¿à²§à²¾à²¨</strong> à²†à²¦à²°à³† à²¶à²•à³à²¤à²¿à²¶à²¾à²²à²¿!<br><br>
+    • ಗ್ರ್ಯಾಂಡ್ ಕ್ಯಾನಿಯನ್: 5-6 ಮಿಲಿಯನ್ ವರ್ಷ<br>
+    • ನುಣುಪು ನದಿ ಕಲ್ಲು: ಸಾವಿರಾರು ವರ್ಷ<br>
+    • ಮಣ್ಣು ರಚನೆ: ಶತಮಾನಗಳ ಕಲ್ಲು ಒಡೆಯುವಿಕೆ<br><br>
+    These à²¹à²¿à²®à³à²®à³à²–à²µà²²à³à²² ಬದಲಾಗುತ್ತದೆ continuously reshape our planet!
   </div>
 </div>
 
@@ -415,7 +415,7 @@ function updateTime(value) {
   
   // Update time display
   if (value === 0) {
-    timeDisplay.textContent = '⏳ Present Day';
+    timeDisplay.textContent = '⏳ ಇಂದಿನ ದಿನ';
   } else if (value < 25) {
     timeDisplay.textContent = `⏳ ${Math.round(value * 40)} years`;
   } else if (value < 50) {
@@ -449,10 +449,10 @@ function updateMountain(value) {
   mountain.setAttribute('points', `${baseLeft},200 200,${peakY} ${baseRight},200`);
   
   // Snow cap shrinks
-  const snowSize = Math.max(0.01, 1 - (value / 80));
-  if (snowSize > 0.05) {
+  const snowಗಾತ್ರ = Math.max(0.01, 1 - (value / 80));
+  if (snowಗಾತ್ರ > 0.05) {
     snowCap.style.display = 'block';
-    snowCap.setAttribute('transform', `scale(${snowSize}) translate(${200 * (1 - snowSize) / snowSize}, ${70 * (1 - snowSize) / snowSize})`);
+    snowCap.setAttribute('transform', `scale(${snowಗಾತ್ರ}) translate(${200 * (1 - snowಗಾತ್ರ) / snowಗಾತ್ರ}, ${70 * (1 - snowಗಾತ್ರ) / snowಗಾತ್ರ})`);
   } else {
     snowCap.style.display = 'none';
   }
@@ -464,31 +464,31 @@ function updateMountain(value) {
   fallenRocks.style.display = value > 40 ? 'block' : 'none';
   
   // Sediment builds up at base
-  const sedimentSize = value * 0.8;
-  sediment.setAttribute('rx', sedimentSize);
-  sediment.setAttribute('ry', sedimentSize * 0.3);
+  const sedimentಗಾತ್ರ = value * 0.8;
+  sediment.setAttribute('rx', sedimentಗಾತ್ರ);
+  sediment.setAttribute('ry', sedimentಗಾತ್ರ * 0.3);
   
   // Update process text
   if (value < 25) {
     processText.innerHTML = `
-      <strong>🏔️ Mountain Weathering Begins</strong><br><br>
-      • Temperature changes cause rocks to expand and contract<br>
+      <strong>🏔️ ಪರ್ವತ ವಾತಾವರಣ Begins</strong><br><br>
+      • Temperature ಬದಲಾಗುತ್ತದೆ cause rocks to expಮತ್ತು ಮತ್ತು contract<br>
       • Small cracks form in the rock surface<br>
-      • Water seeps into cracks and freezes, expanding them
+      • ನೀರು seeps into cracks ಮತ್ತು freezes, expಮತ್ತುing them
     `;
   } else if (value < 50) {
     processText.innerHTML = `
-      <strong>⚒️ Physical Weathering Accelerates</strong><br><br>
+      <strong>⚒️ Physical ವಾತಾವರಣ à²¤à³à²µà²°à²£s</strong><br><br>
       • Cracks widen as ice wedging continues<br>
       • Rocks begin breaking off the mountain<br>
       • Plant roots grow into cracks, splitting rocks further
     `;
   } else if (value < 75) {
     processText.innerHTML = `
-      <strong>🪨 Erosion Moves Material Downhill</strong><br><br>
+      <strong>🪨 ಕೊರೆತ Moves ಪದಾರ್ಥ Downhill</strong><br><br>
       • Gravity pulls loose rocks down slopes<br>
       • Rain washes smaller particles to the base<br>
-      • Sediment accumulates, forming gentler slopes
+      • Sediment accumulates, à²°à³‚à²ªà²¿à²¸à³à²µà³à²¦à³ gentler slopes
     `;
   } else {
     processText.innerHTML = `
@@ -505,9 +505,9 @@ function updateRiver(value) {
   const rock2 = document.getElementById('rock2');
   const rock3 = document.getElementById('rock3');
   const pebbles = document.getElementById('pebbles');
-  const sand = document.getElementById('sand');
+  const sಮತ್ತು = document.getElementById('sand');
   
-  // Rocks become rounder and smaller
+  // Rocks become rounder ಮತ್ತು smaller
   const roundness = 1 - (value * 0.005);
   const size = 1 - (value * 0.004);
   
@@ -521,15 +521,15 @@ function updateRiver(value) {
   // Pebbles appear
   pebbles.style.display = value > 30 ? 'block' : 'none';
   
-  // Sand accumulates
-  const sandSize = value * 0.6;
-  sand.setAttribute('rx', sandSize);
-  sand.setAttribute('ry', sandSize * 0.3);
+  // Sಮತ್ತು accumulates
+  const sಮತ್ತುಗಾತ್ರ = value * 0.6;
+  sಮತ್ತು.setAttribute('rx', sಮತ್ತುಗಾತ್ರ);
+  sಮತ್ತು.setAttribute('ry', sಮತ್ತುಗಾತ್ರ * 0.3);
   
   if (value < 25) {
     processText.innerHTML = `
-      <strong>🌊 River Erosion Begins</strong><br><br>
-      • Fast-moving water carries sand and small rocks<br>
+      <strong>🌊 River ಕೊರೆತ Begins</strong><br><br>
+      • Fast-moving ನೀರು carries sಮತ್ತು ಮತ್ತು small rocks<br>
       • These particles scrape against larger rocks<br>
       • Sharp edges slowly wear down
     `;
@@ -537,22 +537,22 @@ function updateRiver(value) {
     processText.innerHTML = `
       <strong>💧 Rocks Becoming Smoother</strong><br><br>
       • Constant tumbling rounds the rocks<br>
-      • Smaller pieces break off and become pebbles<br>
+      • Smaller pieces break off ಮತ್ತು become pebbles<br>
       • This is called "abrasion"
     `;
   } else if (value < 75) {
     processText.innerHTML = `
-      <strong>🪨 Pebbles and Sand Form</strong><br><br>
-      • Large rocks are now smooth pebbles<br>
-      • Fine particles create sand deposits<br>
+      <strong>🪨 Pebbles ಮತ್ತು Sಮತ್ತು Form</strong><br><br>
+      • à²¦à³Šà²¡à³à²¡ rocks are now smooth pebbles<br>
+      • Fine particles create sಮತ್ತು deposits<br>
       • River slows, depositing sediment
     `;
   } else {
     processText.innerHTML = `
-      <strong>🏖️ Smooth Pebbles Complete!</strong><br><br>
+      <strong>🏖️ Smooth Pebbles ಪೂರ್ಣ!</strong><br><br>
       • Angular rocks are now smooth, round pebbles<br>
-      • Sand has accumulated on the riverbed<br>
-      • This is how beaches and riverbeds form!
+      • Sಮತ್ತು has accumulated on the riverbed<br>
+      • This is how beaches ಮತ್ತು riverbeds form!
     `;
   }
 }
@@ -568,9 +568,9 @@ function updateCliff(value) {
   cliffFace.setAttribute('points', `0,50 ${150 - erosion},50 ${180 - erosion},150 0,150`);
   
   // Cave forms
-  const caveSize = Math.max(0, (value - 20) * 0.4);
-  cave.setAttribute('rx', caveSize);
-  cave.setAttribute('ry', caveSize * 0.7);
+  const caveಗಾತ್ರ = Math.max(0, (value - 20) * 0.4);
+  cave.setAttribute('rx', caveಗಾತ್ರ);
+  cave.setAttribute('ry', caveಗಾತ್ರ * 0.7);
   cave.setAttribute('cx', 160 - erosion);
   
   // Fallen rocks appear
@@ -588,31 +588,31 @@ function updateCliff(value) {
   
   if (value < 25) {
     processText.innerHTML = `
-      <strong>🌊 Wave Erosion Begins</strong><br><br>
-      • Waves constantly hit the cliff base<br>
-      • Hydraulic action forces water into cracks<br>
-      • Salt and chemicals weaken the rock
+      <strong>🌊 Wave ಕೊರೆತ Begins</strong><br><br>
+      • Waves à²¸à³à²¥à²¿à²°ly hit the cliff base<br>
+      • Hydraulic action forces ನೀರು into cracks<br>
+      • ಉಪ್ಪು ಮತ್ತು chemicals weaken the rock
     `;
   } else if (value < 50) {
     processText.innerHTML = `
       <strong>🕳️ Cave Forming</strong><br><br>
       • Waves carve out a cave at the base<br>
-      • Softer rock erodes faster than hard rock<br>
+      • Softer rock erodes à²µà³‡à²—à²µà²¾à²—à²¿ than hard rock<br>
       • The cliff above is now unsupported
     `;
   } else if (value < 75) {
     processText.innerHTML = `
       <strong>💥 Cliff Collapse</strong><br><br>
       • The cave grows until the roof collapses<br>
-      • Large chunks of cliff fall into the sea<br>
-      • The cliff line retreats inland
+      • à²¦à³Šà²¡à³à²¡ chunks of cliff fall into the sea<br>
+      • The cliff line retreats inlಮತ್ತು
     `;
   } else {
     processText.innerHTML = `
       <strong>🗿 Sea Stack Forms!</strong><br><br>
-      • Part of the cliff is now isolated from land<br>
+      • Part of the cliff is now isolated from lಮತ್ತು<br>
       • This pillar of rock is called a "sea stack"<br>
-      • Eventually it will erode completely too!
+      • Eventually it will erode à²ªà³‚à²°à³à²£ly too!
     `;
   }
 }

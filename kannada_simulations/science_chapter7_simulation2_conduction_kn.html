@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -107,7 +107,7 @@ body {
   background: #fff;
   border: 3px solid #f44336;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-ನೆರಳು: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .heat-value {
@@ -190,7 +190,7 @@ body {
   height: 18px;
   background: linear-gradient(180deg, #bdbdbd, #9e9e9e, #bdbdbd);
   border-radius: 4px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  box-ನೆರಳು: 0 3px 8px rgba(0,0,0,0.2);
   overflow: hidden;
 }
 
@@ -231,13 +231,13 @@ body {
   background: radial-gradient(circle, #ffe082, #ffb74d);
   border-radius: 50%;
   margin-bottom: 3px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-ನೆರಳು: 0 2px 4px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
 }
 
 .wax-pin.melted .wax {
   background: transparent;
-  box-shadow: none;
+  box-ನೆರಳು: none;
 }
 
 .wax-pin.melted .pin {
@@ -254,7 +254,7 @@ body {
   background: #fff;
   padding: 2px 6px;
   border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  box-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .timer-display {
@@ -303,10 +303,10 @@ body {
 }
 
 .particle.cold { background: #90a4ae; }
-.particle.warm { background: #ff9800; animation: vibrate 0.3s linear infinite; }
-.particle.hot { background: #f44336; animation: vibrate 0.15s linear infinite; }
+.particle.warm { background: #ff9800; animation: à²•à²‚à²ªà²¿à²¸à³à²¤à³à²¤à²¦à³† 0.3s linear infinite; }
+.particle.hot { background: #f44336; animation: à²•à²‚à²ªà²¿à²¸à³à²¤à³à²¤à²¦à³† 0.15s linear infinite; }
 
-@keyframes vibrate {
+@keyframes à²•à²‚à²ªà²¿à²¸à³à²¤à³à²¤à²¦à³† {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-3px); }
   75% { transform: translateX(3px); }
@@ -368,31 +368,31 @@ body {
 <div id="app">
 
 <div class="header">
-  <h1>🔥 Conduction of Heat</h1>
-  <p>Interactive experiment - control the heat!</p>
+  <h1>🔥 ಉಷ್ಣ ವಾಹಕತೆ</h1>
+  <p>ಸಂವಾದಾತ್ಮಕ ಪ್ರಯೋಗ - ಉಷ್ಣವನ್ನು ನಿಯಂತ್ರಿಸಿ!</p>
 </div>
 
 <div class="concept-card">
-  <div class="concept-title">📚 Key Concept</div>
+  <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    <strong>Conduction</strong> transfers heat through solids from hot to cold regions. Watch the wax pins drop as heat travels along the metal strip!
+    <strong>ವಾಹಕತೆ</strong> ಘನಗಳ ಮೂಲಕ ಉಷ್ಣವನ್ನು ಬಿಸಿ ಪ್ರದೇಶದಿಂದ ತಂಪು ಪ್ರದೇಶಕ್ಕೆ ವರ್ಗಾವಣೆatch the wax pins drop as heat travels along the metal strip!
   </div>
 </div>
 
 <div class="sim-card">
   <div class="controls">
     <button class="control-btn" id="start-btn" onclick="startExperiment()">
-      🔥 Start Heating
+      🔥 ಪ್ರಾರಂಭ Heating
     </button>
     <button class="control-btn" onclick="resetExperiment()">
-      🔄 Reset
+      🔄 ಮರುಹೊಂದಿಸಿ
     </button>
   </div>
   
   <div class="heat-slider">
     <label>🌡️ ಸರಿಹೊಂದಿಸಿ Flame Intensity:</label>
     <input type="range" id="heat-level" min="1" max="3" value="2" oninput="adjustHeat(this.value)">
-    <div class="heat-value" id="heat-value">Medium Heat</div>
+    <div class="heat-value" id="heat-value">ಮಧ್ಯಮ ಉಷ್ಣ</div>
   </div>
   
   <div class="experiment-visual">
@@ -403,7 +403,7 @@ body {
         <div class="flame-outer"></div>
         <div class="flame-inner"></div>
       </div>
-      <div class="flame-label">Heat Source</div>
+      <div class="flame-label">Heat ಮೂಲ</div>
     </div>
     
     <div class="metal-strip">
@@ -437,7 +437,7 @@ body {
 </div>
 
 <div class="particle-view">
-  <div class="particle-title">🔬 Particle View - How Conduction Works</div>
+  <div class="particle-title">🔬 Particle View - How ವಾಹಕತೆ Works</div>
   <div class="particles-container">
     <div class="particle cold" id="p1">1</div>
     <div class="particle-arrow">→</div>
@@ -447,11 +447,11 @@ body {
     <div class="particle-arrow">→</div>
     <div class="particle cold" id="p4">4</div>
   </div>
-  <div class="particle-label">Hot particles vibrate faster and transfer energy to neighbors (particles don't move, only energy does!)</div>
+  <div class="particle-label">à²¬à²¿à²¸à²¿ à²•à²£à²—à²³à³ à²µà³‡à²—à²µà²¾à²—à²¿ à²•à²‚à²ªà²¿à²¸à²¿ à²¨à³†à²°à³†à²¯à²µà²°à²¿à²—à³† à²¶à²•à³à²¤à²¿ (à²•à²£ à²šà²²à²¿à²¸à³à²µà³à²¦à²¿à²²à³à²², à²¶à²•à³à²¤à²¿ à²®à²¾à²¤à³à²°!)</div>
 </div>
 
 <div class="results-panel">
-  <div class="results-title">📊 Pin Drop Times</div>
+  <div class="results-title">📊 ಪಿನ್ ಡ್ರಾಪ್ ಸಮಯಗಳು</div>
   <div class="pin-times">
     <div class="pin-time" id="time1">
       <div class="num">Pin 1</div>
@@ -473,12 +473,12 @@ body {
 </div>
 
 <div class="takeaway">
-  <div class="takeaway-title">🎯 What This Shows</div>
+  <div class="takeaway-title">🎯 ಇದು ಏನನ್ನು ತೋರಿಸುತ್ತದೆ</div>
   <div class="takeaway-text">
-    • Heat travels from <strong>hot to cold</strong> end<br>
-    • Pins closer to flame drop <strong>first</strong><br>
-    • Higher heat = <strong>faster</strong> conduction<br>
-    • Particles <strong>vibrate</strong> but don't move position
+    • ಉಷ್ಣ ಪ್ರಯಾಣ <strong>hot to cold</strong> end<br>
+    • ಜ್ವಾಲೆಗೆ ಹತ್ತಿರದ ಪಿನ್ಗಳು ಬೀಳುತ್ತವೆ <strong>à²®à³Šà²¦à²²</strong><br>
+    • ಹೆಚ್ಚು ಉಷ್ಣ = <strong>à²µà³‡à²—à²µà²¾à²—à²¿</strong> ವಾಹಕತೆ<br>
+    • ಕಣಗಳು <strong>à²•à²‚à²ªà²¿à²¸à³à²¤à³à²¤à²¦à³†</strong> à²†à²¦à²°à³† à²¸à³à²¥à²¾à²¨ à²¬à²¦à²²à²¾à²¯à²¿à²¸à²¬à³‡à²¡à²¿
   </div>
 </div>
 
@@ -487,7 +487,7 @@ body {
 <script>
 let isRunning = false;
 let timer = 0;
-let timerInterval;
+let timerà²®à²§à³à²¯à²‚à²¤à²°;
 let heatLevel = 2;
 let pinDropTimes = [0, 0, 0, 0];
 let droppedPins = [false, false, false, false];
@@ -503,16 +503,16 @@ const particles = [
   document.getElementById('p4')
 ];
 
-// Drop times based on heat level (seconds)
+// Drop times based on heat level (à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³)
 const dropSchedule = {
   1: [4, 6, 8, 10],    // Low heat
-  2: [2, 3.5, 5, 6.5], // Medium heat
+  2: [2, 3.5, 5, 6.5], // à²®à²§à³à²¯à²® heat
   3: [1, 2, 3, 4]      // High heat
 };
 
 function adjustHeat(value) {
   heatLevel = parseInt(value);
-  const labels = ['Low Heat 🔥', 'Medium Heat 🔥🔥', 'High Heat 🔥🔥🔥'];
+  const labels = ['Low Heat 🔥', 'ಮಧ್ಯಮ ಉಷ್ಣ 🔥🔥', 'High Heat 🔥🔥🔥'];
   document.getElementById('heat-value').textContent = labels[heatLevel - 1];
   
   flame.className = 'flame';
@@ -525,11 +525,11 @@ function startExperiment() {
   
   isRunning = true;
   timer = 0;
-  startBtn.textContent = '🔥 Heating...';
+  startBtn.textContent = '🔥 ಉಷ್ಣ ಹಾಕುತ್ತಿದೆ...';
   startBtn.disabled = true;
   
-  // Start timer
-  timerInterval = setInterval(() => {
+  // ಪ್ರಾರಂಭ timer
+  timerà²®à²§à³à²¯à²‚à²¤à²° = setà²®à²§à³à²¯à²‚à²¤à²°(() => {
     timer += 0.1;
     timerDisplay.textContent = `⏱️ ${timer.toFixed(1)}s`;
     
@@ -549,11 +549,11 @@ function startExperiment() {
     // Update particles
     updateParticles();
     
-    // Check if complete
+    // Check if à²ªà³‚à²°à³à²£
     if (droppedPins.every(d => d)) {
       setTimeout(() => {
-        clearInterval(timerInterval);
-        startBtn.textContent = '✓ Complete!';
+        clearà²®à²§à³à²¯à²‚à²¤à²°(timerà²®à²§à³à²¯à²‚à²¤à²°);
+        startBtn.textContent = '✓ ಪೂರ್ಣ!';
       }, 500);
     }
   }, 100);
@@ -587,7 +587,7 @@ function updateParticles() {
 }
 
 function resetExperiment() {
-  clearInterval(timerInterval);
+  clearà²®à²§à³à²¯à²‚à²¤à²°(timerà²®à²§à³à²¯à²‚à²¤à²°);
   isRunning = false;
   timer = 0;
   pinDropTimes = [0, 0, 0, 0];
@@ -595,7 +595,7 @@ function resetExperiment() {
   
   timerDisplay.textContent = '⏱️ 0.0s';
   heatGradient.style.width = '0%';
-  startBtn.textContent = '🔥 Start Heating';
+  startBtn.textContent = '🔥 ಪ್ರಾರಂಭ Heating';
   startBtn.disabled = false;
   
   for (let i = 1; i <= 4; i++) {
@@ -612,7 +612,7 @@ function resetExperiment() {
 
 function showPinInfo(num) {
   const distances = [3, 6, 9, 12];
-  alert(`Pin ${num}\nDistance from heat: ${distances[num-1]} cm\n${droppedPins[num-1] ? `Dropped at: ${pinDropTimes[num-1].toFixed(1)}s` : 'Not dropped yet'}`);
+  alert(`Pin ${num}\nದೂರ from heat: ${distances[num-1]} cm\n${droppedPins[num-1] ? `Dropped at: ${pinDropTimes[num-1].toFixed(1)}s` : 'Not dropped yet'}`);
 }
 
 // Initialize
