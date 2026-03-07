@@ -115,7 +115,7 @@ body {
 }
 
 .app-card:active { transform: scale(0.95); }
-.app-card.expಮತ್ತುed { 
+.app-card.expanded { 
   grid-column: span 2;
   background: #fff;
   border-color: #00796b;
@@ -133,7 +133,7 @@ body {
   border-top: 1px solid #e0e0e0;
 }
 
-.app-card.expಮತ್ತುed .detail { display: block; }
+.app-card.expanded .detail { display: block; }
 
 .detail-property {
   font-size: 10px;
@@ -255,7 +255,7 @@ body {
   <div class="category-tabs">
     <button class="cat-tab metals active" onclick="showCategory('metals', this)">🔵 ಲೋಹಗಳು</button>
     <button class="cat-tab nonmetals" onclick="showCategory('nonmetals', this)">🟡 ಅಲೋಹಗಳು</button>
-    <button class="cat-tab both" onclick="showCategory('both', this)">⚖️ Both Used</button>
+    <button class="cat-tab both" onclick="showCategory('both', this)">⚖️ ಎರಡೂ ಬಳಕೆ</button>
   </div>
   
   <div class="applications-grid" id="applications-grid">
@@ -414,12 +414,12 @@ function showCategory(category, btn) {
 }
 
 function toggleCard(card) {
-  // ಮುಚ್ಚಿ other expಮತ್ತುed cards
-  document.querySelectorAll('.app-card.expಮತ್ತುed').forEach(c => {
-    if (c !== card) c.classList.remove('expಮತ್ತುed');
+  // ಮುಚ್ಚಿ other expanded cards
+  document.querySelectorAll('.app-card.expanded').forEach(c => {
+    if (c !== card) c.classList.remove('expanded');
   });
   
-  card.classList.toggle('expಮತ್ತುed');
+  card.classList.toggle('expanded');
 }
 
 function checkMatch(id, answer, btn) {

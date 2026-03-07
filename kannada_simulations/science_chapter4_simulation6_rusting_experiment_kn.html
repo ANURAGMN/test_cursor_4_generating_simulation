@@ -340,7 +340,7 @@ body {
   <div class="days-slider">
     <label>⏱️ ಸಮಯ ಕಳೆಯುವುದನ್ನು ಅನುಕರಿಸಿ:</label>
     <input type="range" id="days-slider" min="0" max="7" value="0" oninput="updateDays(this.value)">
-    <div class="days-display" id="days-display">Day 0</div>
+    <div class="days-display" id="days-display">ದಿನ 0</div>
   </div>
 </div>
 
@@ -351,11 +351,11 @@ body {
 </div>
 
 <div class="learning-panel">
-  <div class="learning-title">🔬 Understanding ತುಕ್ಕು</div>
+  <div class="learning-title">🔬 ತುಕ್ಕು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು</div>
   <div class="learning-text" id="learning-text">
     ದಿನ ಕಳೆಯುವುದನ್ನು ಅನುಕರಿಸಲು ಸ್ಲೈಡರ್ ಸರಿಸಿ ಯಾವ ಉಗುರ್ ತುಕ್ಕು ನೋಡಿ!<br><br>
     <strong>Tube A:</strong> ಒಣ ಗಾಳಿ ಮಾತ್ರ (ನೀರು ಇಲ್ಲ)<br>
-    <strong>Tube B:</strong> Boiled ನೀರು with oil layer (no air)<br>
+    <strong>Tube B:</strong> ಕುದಿಸಿದ ನೀರು + ಎಣ್ಣೆ ಪದರ (ಗಾಳಿ ಇಲ್ಲ)<br>
     <strong>Tube C:</strong> ಗಾಳಿ ಮತ್ತು ನೀರು ಇರುವುದು
   </div>
 </div>
@@ -365,10 +365,10 @@ body {
   <div class="takeaway-text">
     <strong>ಗಾಳಿ (ಆಮ್ಲಜನಕ) ಮತ್ತು ನೀರು ಅಗತ್ಯ</strong> ತುಕ್ಕು ಸಂಭವಿಸಲು.<br><br>
     <strong>ನಿವಾರಣೆ ವಿಧಾನಗಳು:</strong><br>
-    • Painting/oiling (blocks air & ನೀರು)<br>
+    • ಬಣ್ಣ/ಎಣ್ಣೆ (ಗಾಳಿ ಮತ್ತು ನೀರು ನಿರ್ಬಂಧ)<br>
     • ಗ್ಯಾಲ್ವನೈಸೇಷನ್ (ಜಿಂಕ್ ಲೇಪನ)<br>
     • ಮಿಶ್ರಲೋಹ (ಸ್ಟೇನ್ಲೆಸ್ ಸ್ಟೀಲ್)<br><br>
-    <strong>Fun fact:</strong> The Iron Pillar of ದೆಹಲಿ (1600+ years old) hasn't rusted due to its unique composition!
+    <strong>ಆಸಕ್ತಿದಾಯಕ:</strong> ದೆಹಲಿಯ ಕಬ್ಬಿಣ ಸ್ತಂಭ (1600+ ವರ್ಷ) ಅದರ ವಿಶಿಷ್ಟ ಸಂಯೋಜನೆಯಿಂದಾಗಿ ತುಕ್ಕು ಹಿಡಿಯಲಿಲ್ಲ!
   </div>
 </div>
 
@@ -386,7 +386,7 @@ const learningText = document.getElementById('learning-text');
 
 function updateDays(days) {
   days = parseInt(days);
-  daysDisplay.textContent = `Day ${days}`;
+  daysDisplay.textContent = `ದಿನ ${days}`;
   
   // ಮರುಹೊಂದಿಸಿ all
   nailA.className = 'nail';
@@ -398,26 +398,26 @@ function updateDays(days) {
   
   if (days === 0) {
     learningText.innerHTML = `
-      <strong>Day 0 - Experiment ಪ್ರಾರಂಭ</strong><br><br>
-      All three iron nails are shiny ಮತ್ತು new. Let's see what happens over time in different conditions!
+      <strong>ದಿನ 0 - ಪ್ರಯೋಗ ಪ್ರಾರಂಭ</strong><br><br>
+      ಮೂರು ಕಬ್ಬಿಣದ ಉಗುರುಗಳು ಹೊಳಪು ಮತ್ತು ಹೊಸ. ವಿವಿಧ ಪರಿಸ್ಥಿತಿಗಳಲ್ಲಿ ಕಾಲಾಂತರದಲ್ಲಿ ಏನಾಗುತ್ತದೆ ನೋಡೋಣ!
     `;
   } else if (days <= 2) {
     learningText.innerHTML = `
-      <strong>Day ${days} - Early Observation</strong><br><br>
-      <strong>Tube A (Dry Air):</strong> Nail still shiny ✓<br>
-      <strong>Tube B (ನೀರು, No Air):</strong> Nail still shiny ✓<br>
-      <strong>Tube C (ಗಾಳಿ + ನೀರು):</strong> ಪ್ರಾರಂಭing to see slight discoloration...<br><br>
-      ತುಕ್ಕು is a slow process!
+      <strong>ದಿನ ${days} - ಆರಂಭಿಕ ಗಮನ</strong><br><br>
+      <strong>Tube A (ಒಣ ಗಾಳಿ):</strong> ಉಗುರು ಇನ್ನೂ ಹೊಳಪು ✓<br>
+      <strong>Tube B (ನೀರು, ಗಾಳಿ ಇಲ್ಲ):</strong> ಉಗುರು ಇನ್ನೂ ಹೊಳಪು ✓<br>
+      <strong>Tube C (ಗಾಳಿ + ನೀರು):</strong> ಸ್ವಲ್ಪ ಬಣ್ಣ ಬದಲಾವಣೆ ಕಾಣಿಸುತ್ತಿದೆ...<br><br>
+      ತುಕ್ಕು ನಿಧಾನ ಪ್ರಕ್ರಿಯೆ!
     `;
     nailC.style.opacity = 0.9;
   } else if (days <= 4) {
     nailC.style.filter = 'sepia(50%)';
     learningText.innerHTML = `
-      <strong>Day ${days} - Rust Beginning</strong><br><br>
-      <strong>Tube A (Dry Air):</strong> Still no rust - air alone doesn't cause rusting!<br>
-      <strong>Tube B (ನೀರು, No Air):</strong> Still no rust - ನೀರು alone doesn't cause rusting!<br>
-      <strong>Tube C (ಗಾಳಿ + ನೀರು):</strong> <span style="color:#bf360c">Brown spots appearing!</span><br><br>
-      Only the nail with BOTH air ಮತ್ತು ನೀರು is rusting!
+      <strong>ದಿನ ${days} - ತುಕ್ಕು ಆರಂಭ</strong><br><br>
+      <strong>Tube A (ಒಣ ಗಾಳಿ):</strong> ಇನ್ನೂ ತುಕ್ಕು ಇಲ್ಲ - ಗಾಳಿ ಮಾತ್ರ ತುಕ್ಕು ಉಂಟುಮಾಡುವುದಿಲ್ಲ!<br>
+      <strong>Tube B (ನೀರು, ಗಾಳಿ ಇಲ್ಲ):</strong> ಇನ್ನೂ ತುಕ್ಕು ಇಲ್ಲ - ನೀರು ಮಾತ್ರ ತುಕ್ಕು ಉಂಟುಮಾಡುವುದಿಲ್ಲ!<br>
+      <strong>Tube C (ಗಾಳಿ + ನೀರು):</strong> <span style="color:#bf360c">ಕಂದು ಚುಕ್ಕೆಗಳು ಕಾಣಿಸುತ್ತಿವೆ!</span><br><br>
+      ಗಾಳಿ ಮತ್ತು ನೀರು ಎರಡೂ ಇರುವ ಉಗುರು ಮಾತ್ರ ತುಕ್ಕು ಹಿಡಿಯುತ್ತಿದೆ!
     `;
   } else if (days <= 6) {
     nailC.style.filter = 'sepia(80%) saturate(150%)';
@@ -425,14 +425,14 @@ function updateDays(days) {
     resultC.style.display = 'block';
     
     learningText.innerHTML = `
-      <strong>Day ${days} - Significant ತುಕ್ಕು</strong><br><br>
-      <strong>Tube A (Dry Air):</strong> ✅ No rust - protected from moisture<br>
-      <strong>Tube B (ನೀರು, No Air):</strong> ✅ No rust - oil blocks ಆಮ್ಲಜನಕ<br>
-      <strong>Tube C (ಗಾಳಿ + ನೀರು):</strong> <span style="color:#bf360c">❌ Heavily rusted!</span><br><br>
-      <strong>Conclusion ರೂಪಿಸುವುದು:</strong> ತುಕ್ಕು needs BOTH ಆಮ್ಲಜನಕ AND ನೀರು!
+      <strong>ದಿನ ${days} - ಗಮನಾರ್ಹ ತುಕ್ಕು</strong><br><br>
+      <strong>Tube A (ಒಣ ಗಾಳಿ):</strong> ✅ ತುಕ್ಕು ಇಲ್ಲ - ಈರ್ಷ್ಯೆಯಿಂದ ರಕ್ಷಿತ<br>
+      <strong>Tube B (ನೀರು, ಗಾಳಿ ಇಲ್ಲ):</strong> ✅ ತುಕ್ಕು ಇಲ್ಲ - ಎಣ್ಣೆ ಆಮ್ಲಜನಕ ನಿರ್ಬಂಧಿಸುತ್ತದೆ<br>
+      <strong>Tube C (ಗಾಳಿ + ನೀರು):</strong> <span style="color:#bf360c">❌ ಬಹಳ ತುಕ್ಕು!</span><br><br>
+      <strong>ತೀರ್ಮಾನ:</strong> ತುಕ್ಕು ಆಮ್ಲಜನಕ ಮತ್ತು ನೀರು ಎರಡೂ ಅಗತ್ಯ!
     `;
   } else {
-    // Day 7 - final
+    // ದಿನ 7 - ಅಂತಿಮ
     nailC.style.filter = 'sepia(100%) saturate(200%)';
     nailC.classList.add('rusted');
     resultA.style.display = 'block';
@@ -440,12 +440,12 @@ function updateDays(days) {
     resultC.style.display = 'block';
     
     learningText.innerHTML = `
-      <strong style="color:#2e7d32">Day 7 - ಪ್ರಯೋಗ ಪೂರ್ಣ! ✅</strong><br><br>
-      <strong>ಫಲಿತಾಂಶs:</strong><br>
-      • <strong>Tube A:</strong> No rust (had air but NO ನೀರು)<br>
-      • <strong>Tube B:</strong> No rust (had ನೀರು but NO air)<br>
-      • <strong>Tube C:</strong> <span style="color:#bf360c">Rusted!</span> (had BOTH air + ನೀರು)<br><br>
-      <strong>ತೀರ್ಮಾನ:</strong> Iron rusts only when <strong>both ಆಮ್ಲಜನಕ (from air) AND ನೀರು</strong> are present together!
+      <strong style="color:#2e7d32">ದಿನ 7 - ಪ್ರಯೋಗ ಪೂರ್ಣ! ✅</strong><br><br>
+      <strong>ಫಲಿತಾಂಶಗಳು:</strong><br>
+      • <strong>Tube A:</strong> ತುಕ್ಕು ಇಲ್ಲ (ಗಾಳಿ ಇತ್ತು ನೀರು ಇಲ್ಲ)<br>
+      • <strong>Tube B:</strong> ತುಕ್ಕು ಇಲ್ಲ (ನೀರು ಇತ್ತು ಗಾಳಿ ಇಲ್ಲ)<br>
+      • <strong>Tube C:</strong> <span style="color:#bf360c">ತುಕ್ಕು!</span> (ಗಾಳಿ + ನೀರು ಎರಡೂ ಇತ್ತು)<br><br>
+      <strong>ತೀರ್ಮಾನ:</strong> ಕಬ್ಬಿಣ <strong>ಆಮ್ಲಜನಕ (ಗಾಳಿಯಿಂದ) ಮತ್ತು ನೀರು</strong> ಎರಡೂ ಒಟ್ಟಿಗೆ ಇರುವಾಗ ಮಾತ್ರ ತುಕ್ಕು ಹಿಡಿಯುತ್ತದೆ!
     `;
   }
 }

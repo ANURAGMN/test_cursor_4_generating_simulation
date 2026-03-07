@@ -244,7 +244,7 @@ svg { width: 100%; height: 100%; }
 <div class="concept-card">
   <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    <strong>ನಮ್ಯತೆ</strong> ಪದಾರ್ಥಗಳ ಗುಣ <strong>ಹಾಳೆಗಳಾಗಿ ಬಡಿಯಲು ಅನುಮತಿಸುತ್ತದೆ</strong> ಮುರಿಯದೆ. ಲೋಹಗಳು ನಮ್ಯ; ಅಲೋಹಗಳುittle (they break).
+    <strong>ನಮ್ಯತೆ</strong> ಪದಾರ್ಥಗಳ ಗುಣ <strong>ಹಾಳೆಗಳಾಗಿ ಬಡಿಯಲು ಅನುಮತಿಸುತ್ತದೆ</strong> ಮುರಿಯದೆ. ಲೋಹಗಳು ನಮ್ಯ; ಅಲೋಹಗಳು ಸ್ಥಿರ (ಮುರಿಯುತ್ತವೆ).
   </div>
 </div>
 
@@ -274,7 +274,7 @@ svg { width: 100%; height: 100%; }
       <!-- Hammer positioned above anvil -->
       <g transform="translate(200, 60)">
         <g id="hammer" style="transform-origin: 0 0;">
-          <!-- Hಮತ್ತುle -->
+          <!-- ಹಿಡಿ -->
           <rect x="-8" y="0" width="16" height="70" rx="3" fill="#8d6e63"/>
           <!-- Hammer head -->
           <rect x="-30" y="65" width="60" height="30" rx="5" fill="#616161"/>
@@ -300,12 +300,12 @@ svg { width: 100%; height: 100%; }
     </div>
     <div class="material-btn" onclick="selectMaterial('iron', '⚙️', true, '#616161', this)">
       <div class="icon">⚙️</div>
-      <div class="name">Iron</div>
+      <div class="name">ಕಬ್ಬಿಣ</div>
       <div class="type">ಲೋಹ</div>
     </div>
     <div class="material-btn" onclick="selectMaterial('coal', '⬛', false, '#263238', this)">
       <div class="icon">⬛</div>
-      <div class="name">Coal</div>
+      <div class="name">ಕಲ್ಲಿದ್ದಲು</div>
       <div class="type">ಅಲೋಹ</div>
     </div>
     <div class="material-btn" onclick="selectMaterial('sulfur', '🟡', false, '#fdd835', this)">
@@ -321,7 +321,7 @@ svg { width: 100%; height: 100%; }
   </div>
   
   <button class="hammer-btn" id="hammer-btn" onclick="hammerMaterial()" disabled>
-    🔨 Hammer the ಪದಾರ್ಥ
+    🔨 ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ
   </button>
 </div>
 
@@ -337,9 +337,9 @@ svg { width: 100%; height: 100%; }
 </div>
 
 <div class="learning-panel">
-  <div class="learning-title">🔬 Understanding ನಮ್ಯತೆ</div>
+  <div class="learning-title">🔬 ನಮ್ಯತೆ ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು</div>
   <div class="learning-text" id="learning-text">
-    ಒಂದು ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ ಮತ್ತು hammer it to see if it's malleable or brittle!<br><br>
+    ಒಂದು ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ ಮತ್ತು ನಮ್ಯವೇ ಸ್ಥಿರವೇ ಎಂದು ನೋಡಲು ಬಡಿಯಿರಿ!<br><br>
     <strong>ತಟ್ಟಬಹುದಾದ ವಸ್ತುಗಳು</strong> ಹೊಡೆದಾಗ ಹಾಳೆಯಾಗಿ ಚಪ್ಪಡಿ.<br>
     <strong>ಸ್ಫಟಿಕ ವಸ್ತುಗಳು</strong> ಹೊಡೆದಾಗ ತುಣುಕುಗಳಾಗಿ ಒಡೆಯುತ್ತದೆ.
   </div>
@@ -356,6 +356,7 @@ svg { width: 100%; height: 100%; }
 </div>
 
 <script>
+const materialDisplayNames = { copper: 'ತಾಮ್ರ', aluminium: 'ಅಲ್ಯೂಮಿನಿಯಂ', iron: 'ಕಬ್ಬಿಣ', coal: 'ಕಲ್ಲಿದ್ದಲು', sulfur: 'ಸಲ್ಫರ್', chalk: 'ಸೀಸಂಣ್ಣ' };
 let selectedMaterial = null;
 let selectedBtn = null;
 let isMalleable = false;
@@ -394,17 +395,17 @@ function selectMaterial(name, icon, malleable, color, btn) {
   
   // Update material display
   materialShape.setAttribute('fill', color);
-  materialLabel.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+  materialLabel.textContent = materialDisplayNames[name] || name;
   
   // Enable hammer
   hammerBtn.disabled = false;
-  hammerBtn.textContent = `🔨 Hammer the ${name.charAt(0).toUpperCase() + name.slice(1)}`;
+  hammerBtn.textContent = `🔨 ${name} ಬಡಿಯಿರಿ`;
   
-  instruction.textContent = `${icon} ${name.charAt(0).toUpperCase() + name.slice(1)} ready - tap hammer!`;
+  instruction.textContent = `${icon} ${name} ಸಿದ್ಧ - ಹತ್ಯಾರೆ ಬಡಿಯಿರಿ!`;
   
   learningText.innerHTML = `
-    <strong>${name.charAt(0).toUpperCase() + name.slice(1)}</strong> is a <strong>${malleable ? 'METAL' : 'NON-METAL'}</strong>.<br><br>
-    Let's see what happens when we hammer it! Will it flatten or break?
+    <strong>${materialDisplayNames[name] || name}</strong> <strong>${malleable ? 'ಲೋಹ' : 'ಅಲೋಹ'}</strong>.<br><br>
+    ಬಡಿದಾಗ ಏನಾಗುತ್ತದೆ ನೋಡೋಣ! ಹಾಳೆಯಾಗುತ್ತದೆಯೇ ಅಥವಾ ಮುರಿಯುತ್ತದೆಯೇ?
   `;
 }
 
@@ -432,9 +433,9 @@ function hammerMaterial() {
       instruction.textContent = '✅ ಲೋಹ ಹಾಳೆಯಾಗಿ ಚಪ್ಪಡಿಯಾಯಿತು!';
       
       learningText.innerHTML = `
-        <strong style="color:#2e7d32">✅ ${selectedMaterial.toUpperCase()} is MALLEABLE!</strong><br><br>
-        When hammered, this metal <strong>flattened into a thin sheet</strong> instead of breaking.<br><br>
-        This is because metals have atoms arranged in layers that can <strong>slide over each other</strong> when force is applied.
+        <strong style="color:#2e7d32">✅ ನಮ್ಯ!</strong><br><br>
+        ಬಡಿದಾಗ ಈ ಲೋಹ ಮುರಿಯದೆ <strong>ತೆಳು ಹಾಳೆಯಾಗಿ ಚಪ್ಪಟೆಯಾಯಿತು</strong>.<br><br>
+        ಲೋಹಗಳಲ್ಲಿ ಅಣುಗಳು ಪದರಗಳಾಗಿ ಜೋಡಣೆಗೊಂಡಿರುತ್ತವೆ; ಬಲ ಪ್ರಯೋಗಿಸಿದಾಗ <strong>ಒಂದರ ಮೇಲೊಂದು ಜಾರಬಲ್ಲವು</strong>.
       `;
     } else {
       // ಅಲೋಹ - shatters
@@ -461,15 +462,15 @@ function hammerMaterial() {
       instruction.textContent = '❌ ಅಲೋಹ ಚೂರುಗಳಾಗಿ ಒಡೆದಿದೆ!';
       
       learningText.innerHTML = `
-        <strong style="color:#c62828">❌ ${selectedMaterial.toUpperCase()} is BRITTLE!</strong><br><br>
-        When hammered, this non-metal <strong>broke into pieces</strong> instead of flattening.<br><br>
-        ಅಲೋಹಗಳು have atoms that are <strong>rigidly bonded</strong> ಮತ್ತು cannot slide - they crack under force.
+        <strong style="color:#c62828">❌ ಭಂಗುರ!</strong><br><br>
+        ಬಡಿದಾಗ ಈ ಅಲೋಹ ಚಪ್ಪಟೆಯಾಗದೆ <strong>ತುಂಡುಗಳಾಗಿ ಮುರಿಯಿತು</strong>.<br><br>
+        ಅಲೋಹಗಳಲ್ಲಿ ಅಣುಗಳು <strong>ಗಟ್ಟಿಯಾಗಿ ಬಂಧಿತವಾಗಿರುತ್ತವೆ</strong> ಮತ್ತು ಜಾರಲು ಸಾಧ್ಯವಿಲ್ಲ – ಬಲದಿಂದ ಒಡೆಯುತ್ತವೆ.
       `;
     }
     
     // Update results
-    document.getElementById('malleable-items').textContent = malleableList.length ? malleableList.join(', ') : '-';
-    document.getElementById('brittle-items').textContent = brittleList.length ? brittleList.join(', ') : '-';
+    document.getElementById('malleable-items').textContent = malleableList.length ? malleableList.map(m => materialDisplayNames[m] || m).join(', ') : '-';
+    document.getElementById('brittle-items').textContent = brittleList.length ? brittleList.map(m => materialDisplayNames[m] || m).join(', ') : '-';
     
     hammerBtn.textContent = '🔨 ಇನ್ನೊಂದು ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ';
     selectedMaterial = null;

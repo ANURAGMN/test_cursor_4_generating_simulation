@@ -199,13 +199,13 @@ svg { width: 100%; height: 100%; }
 <div class="concept-card">
   <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    <strong>ವಾಹಕತೆ of heat</strong> ಪದಾರ್ಥದ ಮೂಲಕ ಉಷ್ಣ ವರ್ಗಾವಣೆ. <strong>ಲೋಹಗಳು</strong> ಉಷ್ಣದ ಉತ್ತಮ ವಾಹಕಗಳು; <strong>ಅಲೋಹಗಳು</strong> ಮರ ಮತ್ತು ಪ್ಲಾಸ್ಟಿಕ್ ಕಳಪೆ ವಾಹಕಗಳು (ಅವಾಹಕಗಳು).
+    <strong>ಉಷ್ಣ ವಾಹಕತೆ</strong> ಪದಾರ್ಥದ ಮೂಲಕ ಉಷ್ಣ ವರ್ಗಾವಣೆ. <strong>ಲೋಹಗಳು</strong> ಉಷ್ಣದ ಉತ್ತಮ ವಾಹಕಗಳು; <strong>ಅಲೋಹಗಳು</strong> ಮರ ಮತ್ತು ಪ್ಲಾಸ್ಟಿಕ್ ಕಳಪೆ ವಾಹಕಗಳು (ಅವಾಹಕಗಳು).
   </div>
 </div>
 
 <div class="sim-card">
   <div class="visual">
-    <div class="temp-display" id="temp-display">🌡️ Place spoons in hot ನೀರು</div>
+    <div class="temp-display" id="temp-display">🌡️ ಚಮಚಗಳನ್ನು ಬಿಸಿ ನೀರಲ್ಲಿ ಇಡಿ</div>
     <svg viewBox="0 0 400 300" id="scene">
       <!-- Hot ನೀರು container -->
       <rect x="100" y="150" width="200" height="120" rx="10" fill="#1976d2"/>
@@ -253,10 +253,10 @@ svg { width: 100%; height: 100%; }
         <text x="20" y="-15" font-size="10" fill="#333" text-anchor="middle">ಮರದ</text>
       </g>
       
-      <!-- Hಮತ್ತು touching ಸೂಚಕ -->
+      <!-- ಕೈ ಸ್ಪರ್ಶ ಸೂಚಕ -->
       <g id="touch-indicator" style="display:none">
         <text x="80" y="60" font-size="24">👆</text>
-        <text x="50" y="85" font-size="10" fill="#d32f2f" id="touch-result">HOT!</text>
+        <text x="50" y="85" font-size="10" fill="#d32f2f" id="touch-result">ಬಿಸಿ!</text>
       </g>
       
       <!-- Timer -->
@@ -265,14 +265,14 @@ svg { width: 100%; height: 100%; }
   </div>
   
   <button class="start-btn" id="start-btn" onclick="startExperiment()">
-    🔥 ಪ್ರಾರಂಭ Heating Experiment
+    🔥 ಉಷ್ಣ ಪ್ರಯೋಗ ಪ್ರಾರಂಭಿಸಿ
   </button>
 </div>
 
 <div class="comparison-panel">
   <div class="spoon-card" id="metal-card">
     <div class="icon">🥄</div>
-    <div class="name">ಲೋಹ Spoon</div>
+    <div class="name">ಲೋಹದ ಚಮಚ</div>
     <div class="temp" id="metal-temp">25°C</div>
     <div class="status" id="metal-status">ಕೊಂಡೆಯ ಉಷ್ಣತೆ</div>
   </div>
@@ -285,7 +285,7 @@ svg { width: 100%; height: 100%; }
 </div>
 
 <div class="learning-panel">
-  <div class="learning-title">🔬 ಉಷ್ಣ ವಾಹಕತೆ Experiment</div>
+  <div class="learning-title">🔬 ಉಷ್ಣ ವಾಹಕತೆ ಪ್ರಯೋಗ</div>
   <div class="learning-text" id="learning-text">
     ಲೋಹ ಮತ್ತು ಮರದ ಚಮಚ ಬಿಸಿ ನೀರಲ್ಲಿ ಇಡುತ್ತೇವೆ ಯಾವ ಹಿಡಿಕೆ ಬೇಗ ಬಿಸಿಯಾಗುತ್ತದೆ ನೋಡುತ್ತೇವೆ.<br><br>
     ಪ್ರಯೋಗ ಪ್ರಾರಂಭಿಸಲು ಬಟನ್ ಟ್ಯಾಪ್ ಮಾಡಿ!
@@ -295,7 +295,7 @@ svg { width: 100%; height: 100%; }
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೀವು ಕಲಿಯುವುದು</div>
   <div class="takeaway-text">
-    <strong>ಲೋಹಗಳು conduct heat quickly</strong> - ಲೋಹದ ಚಮಚ ಹಿಡಿಕೆ ಬೇಗ ಬಿಸಿಯಾಗುತ್ತದೆ!<br><br>
+    <strong>ಲೋಹಗಳು ಉಷ್ಣವನ್ನು ಶೀಘ್ರವಾಗಿ ವಹನ ಮಾಡುತ್ತವೆ</strong> - ಲೋಹದ ಚಮಚ ಹಿಡಿಕೆ ಬೇಗ ಬಿಸಿಯಾಗುತ್ತದೆ!<br><br>
     <strong>ಮರ ಕಲಪೆ ವಾಹಕ</strong> - ಮರದ ಚಮಚ ಹಿಡಿಕೆ ತಂಪಾಗಿ ಉಳಿಯುತ್ತದೆ.<br><br>
     ಅದಕ್ಕೆ ಅಡುಗೆ ಪಾತ್ರೆ ಲೋಹ (ಆಹಾರ ಬಿಸಿ) ಹಿಡಿಕೆ ಮರ ಅಥವಾ ಪ್ಲಾಸ್ಟಿಕ್ (ತಂಪಾಗಿ)!
   </div>
@@ -340,7 +340,7 @@ function startExperiment() {
   
   interval = setInterval(() => {
     time++;
-    timer.textContent = `Time: ${time} ಸೆಕೆಂಡ್‌ಗಳು`;
+    timer.textContent = `ಸಮಯ: ${time} ಸೆಕೆಂಡ್‌ಗಳು`;
     
     // ಲೋಹ heats up quickly
     if (metalTemp < 70) {
@@ -362,30 +362,30 @@ function startExperiment() {
     
     if (metalTemp > 40) {
       metalCard.classList.add('hot');
-      metalStatus.textContent = metalTemp > 60 ? '🔥 Very hot!' : '⚠️ Getting hot';
+      metalStatus.textContent = metalTemp > 60 ? '🔥 ಬಹಳ ಬಿಸಿ!' : '⚠️ ಬಿಸಿಯಾಗುತ್ತಿದೆ';
       metalHandle.setAttribute('fill', `rgb(${150 + metalHeatPercent * 105}, ${150 - metalHeatPercent * 100}, ${150 - metalHeatPercent * 100})`);
     }
     
     if (woodTemp > 28) {
-      woodStatus.textContent = 'Still cool';
+      woodStatus.textContent = 'ಇನ್ನೂ ತಂಪಾಗಿದೆ';
     }
     
     // Update learning text based on progress
     if (time === 5) {
       learningText.innerHTML = `
         <strong>ನಂತರ 5 ಸೆಕೆಂಡ್‌ಗಳು:</strong><br><br>
-        ಲೋಹ spoon handle: <strong style="color:#d32f2f">${Math.round(metalTemp)}°C</strong> - Getting warm!<br>
-        ಮರದ spoon handle: <strong style="color:#4caf50">${Math.round(woodTemp)}°C</strong> - Still cool<br><br>
-        Heat is transferring ವೇಗವಾಗಿ through the metal!
+        ಲೋಹದ ಚಮಚ ಹಿಡಿಕೆ: <strong style="color:#d32f2f">${Math.round(metalTemp)}°C</strong> - ಬಿಸಿಯಾಗುತ್ತಿದೆ!<br>
+        ಮರದ ಚಮಚ ಹಿಡಿಕೆ: <strong style="color:#4caf50">${Math.round(woodTemp)}°C</strong> - ಇನ್ನೂ ತಂಪು<br><br>
+        ಉಷ್ಣ ಲೋಹದ ಮೂಲಕ ವೇಗವಾಗಿ ವರ್ಗಾವಣೆಯಾಗುತ್ತಿದೆ!
       `;
     }
     
     if (time === 10) {
       learningText.innerHTML = `
         <strong>ನಂತರ 10 ಸೆಕೆಂಡ್‌ಗಳು:</strong><br><br>
-        ಲೋಹ spoon: <strong style="color:#d32f2f">${Math.round(metalTemp)}°C</strong> - HOT! Don't touch!<br>
-        ಮರದ spoon: <strong style="color:#4caf50">${Math.round(woodTemp)}°C</strong> - Safe to hold<br><br>
-        The metal conducts heat much ವೇಗವಾಗಿ than wood!
+        ಲೋಹದ ಚಮಚ: <strong style="color:#d32f2f">${Math.round(metalTemp)}°C</strong> - ಬಿಸಿ! ಸ್ಪರ್ಶಿಸಬೇಡಿ!<br>
+        ಮರದ ಚಮಚ: <strong style="color:#4caf50">${Math.round(woodTemp)}°C</strong> - ಹಿಡಿಯಲು ಸುರಕ್ಷಿತ<br><br>
+        ಲೋಹ ಮರಕ್ಕಿಂತ ಉಷ್ಣವನ್ನು ಹೆಚ್ಚು ವೇಗವಾಗಿ ವಹನ ಮಾಡುತ್ತದೆ!
       `;
     }
     

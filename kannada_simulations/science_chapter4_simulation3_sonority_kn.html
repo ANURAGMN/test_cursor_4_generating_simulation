@@ -218,7 +218,7 @@ svg { width: 100%; height: 100%; }
 <div class="concept-card">
   <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    <strong>ಧ್ವನಿಮುದ್ರಣ</strong> ಲೋಹಗಳ ಗುಣ <strong>ಘಂಟಾ ಧ್ವನಿ</strong> ಅಪ್ಪಳಿಸಿದಾಗ. ಲೋಹಗಳು ಧ್ವನಿಮುದ್ರಣ; ಅಲೋಹಗಳು ಮಂಕಾದ ಶಬ್ದll sound.
+    <strong>ಧ್ವನಿಮುದ್ರಣ</strong> ಲೋಹಗಳ ಗುಣ <strong>ಘಂಟಾ ಧ್ವನಿ</strong> ಅಪ್ಪಳಿಸಿದಾಗ. ಲೋಹಗಳು ಧ್ವನಿಮುದ್ರಣ; ಅಲೋಹಗಳು ಮಂಕಾದ ಶಬ್ದ ಉತ್ಪಾದಿಸುತ್ತವೆ.
   </div>
 </div>
 
@@ -246,7 +246,7 @@ svg { width: 100%; height: 100%; }
       <!-- Instructions -->
       <text x="200" y="30" font-size="12" fill="#fff" text-anchor="middle" id="instruction">👆 ಕೆಳಗೆ ವಸ್ತುವನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ ಅಪ್ಪಳಿಸಿ</text>
     </svg>
-    <div class="sound-display" id="sound-display" style="display:none">🔔 RING!</div>
+    <div class="sound-display" id="sound-display" style="display:none">🔔 ಘಂಟೆ!</div>
   </div>
   
   <div class="objects-grid">
@@ -257,12 +257,12 @@ svg { width: 100%; height: 100%; }
     </div>
     <div class="object-btn" onclick="strikeObject('spoon', '🥄', true, this)">
       <div class="icon">🥄</div>
-      <div class="name">ಲೋಹ Spoon</div>
+      <div class="name">ಲೋಹದ ಚಮಚ</div>
       <div class="type">ಲೋಹ</div>
     </div>
     <div class="object-btn" onclick="strikeObject('coin', '🪙', true, this)">
       <div class="icon">🪙</div>
-      <div class="name">Coin</div>
+      <div class="name">ನಾಣ್ಯ</div>
       <div class="type">ಲೋಹ</div>
     </div>
     <div class="object-btn" onclick="strikeObject('wood', '🪵', false, this)">
@@ -295,11 +295,11 @@ svg { width: 100%; height: 100%; }
 </div>
 
 <div class="learning-panel">
-  <div class="learning-title">🔬 Understanding ಧ್ವನಿಮುದ್ರಣ</div>
+  <div class="learning-title">🔬 ಧ್ವನಿಮುದ್ರಣ ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು</div>
   <div class="learning-text" id="learning-text">
     ವಸ್ತುವನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ ಹೊಡೆದು ಶಬ್ದ ಕೇಳಿ!<br><br>
-    <strong>ಧ್ವನಿವಂತ ವಸ್ತುಗಳು</strong> produce a ಘಂಟಾ ಧ್ವನಿ that sustains.<br>
-    <strong>ಧ್ವನಿವಂತವಲ್ಲದ ವಸ್ತುಗಳು</strong> ಮಂದ ಥಡ್ ಶಬ್ದ ಉತ್ಪಾದಿಸುತ್ತದೆ.
+    <strong>ಧ್ವನಿವಂತ ವಸ್ತುಗಳು</strong> ನಿಲ್ಲುವ ಘಂಟಾ ಧ್ವನಿ ಉತ್ಪಾದಿಸುತ್ತವೆ.<br>
+    <strong>ಧ್ವನಿವಂತವಲ್ಲದ ವಸ್ತುಗಳು</strong> ಮಂದ ಥಡ್ ಶಬ್ದ ಉತ್ಪಾದಿಸುತ್ತವೆ.
   </div>
 </div>
 
@@ -352,7 +352,7 @@ function strikeObject(name, icon, isSonorous, btn) {
         }, i * 150);
       });
       
-      soundDisplay.textContent = '🔔 RING! ~~~';
+      soundDisplay.textContent = '🔔 ಘಂಟೆ! ~~~';
       soundDisplay.className = 'sound-display ring';
       soundDisplay.style.display = 'block';
       
@@ -362,24 +362,24 @@ function strikeObject(name, icon, isSonorous, btn) {
       instruction.textContent = '🔔 ಲೋಹ ಘಂಟಾ ಧ್ವನಿ ಉತ್ಪಾದಿಸುತ್ತದೆ!';
       
       learningText.innerHTML = `
-        <strong style="color:#2e7d32">🔔 ${name.toUpperCase()} is SONOROUS!</strong><br><br>
-        When struck, this metal object produces a <strong>clear ಘಂಟಾ ಧ್ವನಿ</strong> that sustains for a while.<br><br>
-        This is because metal atoms are tightly packed ಮತ್ತು can <strong>ಕಂಪಿಸುತ್ತದೆ together</strong>, creating sustained sound waves.
+        <strong style="color:#2e7d32">🔔 ಧ್ವನಿವಂತ!</strong><br><br>
+        ಹೊಡೆದಾಗ ಈ ಲೋಹ ವಸ್ತು ಸ್ವಲ್ಪ ಸಮಯ <strong>ಸ್ಪಷ್ಟ ಘಂಟಾ ಧ್ವನಿ</strong> ಉತ್ಪಾದಿಸುತ್ತದೆ.<br><br>
+        ಲೋಹದ ಅಣುಗಳು ಬಿಗಿಯಾಗಿ ಜೋಡಣೆಗೊಂಡಿರುತ್ತವೆ ಮತ್ತು <strong>ಒಟ್ಟಿಗೆ ಕಂಪಿಸಬಲ್ಲವು</strong> – ನಿರಂತರ ಧ್ವನಿ ತರಂಗಗಳನ್ನು ಉಂಟುಮಾಡುತ್ತವೆ.
       `;
       
       // Play a simulated ring sound effect visual
       setTimeout(() => {
-        soundDisplay.textContent = '🔔 RING! ~~';
+        soundDisplay.textContent = '🔔 ಘಂಟೆ! ~~';
       }, 300);
       setTimeout(() => {
-        soundDisplay.textContent = '🔔 RING! ~';
+        soundDisplay.textContent = '🔔 ಘಂಟೆ! ~';
       }, 600);
       
     } else {
       // ಅಲೋಹ - thud
       objectDisplay.classList.add('thud-anim');
       
-      soundDisplay.textContent = '🔇 THUD.';
+      soundDisplay.textContent = '🔇 ಥಡ್.';
       soundDisplay.className = 'sound-display thud';
       soundDisplay.style.display = 'block';
       
@@ -389,9 +389,9 @@ function strikeObject(name, icon, isSonorous, btn) {
       instruction.textContent = '🔇 ಅಲೋಹ ಮಂಕಾದ ಶಬ್ದ ಉತ್ಪಾದಿಸುತ್ತದೆ!';
       
       learningText.innerHTML = `
-        <strong style="color:#c62828">🔇 ${name.toUpperCase()} is NOT SONOROUS!</strong><br><br>
-        When struck, this non-metal object produces a <strong>dull thud sound</strong> that stops immediately.<br><br>
-        ಅಲೋಹಗಳು <strong>absorb vibrations</strong> instead of transmitting them, so no sustained sound is produced.
+        <strong style="color:#c62828">🔇 ಧ್ವನಿವಂತವಲ್ಲ!</strong><br><br>
+        ಹೊಡೆದಾಗ ಈ ಅಲೋಹ ವಸ್ತು ತಕ್ಷಣ ನಿಲ್ಲುವ <strong>ಮಂಕಾದ ಥಡ್ ಶಬ್ದ</strong> ಉತ್ಪಾದಿಸುತ್ತದೆ.<br><br>
+        ಅಲೋಹಗಳು ಕಂಪನಗಳನ್ನು ಪ್ರಸರಿಸುವ ಬದಲು <strong>ಹೀರಿಕೊಳ್ಳುತ್ತವೆ</strong> – ನಿರಂತರ ಧ್ವನಿ ಉತ್ಪಾದಿಸುವುದಿಲ್ಲ.
       `;
     }
     
