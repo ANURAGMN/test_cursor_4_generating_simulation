@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -260,10 +260,10 @@ body {
     <div class="input-row">
       <input type="number" class="input-field" id="time-input" value="1" min="0" oninput="convertTime()">
       <select class="unit-select" id="unit-select" onchange="convertTime()">
-        <option value="h">à²—à²‚à²Ÿà³†à²—à²³à³</option>
-        <option value="min">à²¨à²¿à²®à²¿à²·à²—à²³à³</option>
-        <option value="s" selected>à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³</option>
-        <option value="ms">à²®à²¿à²²à²¿à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³</option>
+        <option value="h">ಗಂಟೆಗಳು</option>
+        <option value="min">ನಿಮಿಷಗಳು</option>
+        <option value="s" selected>ಸೆಕೆಂಡ್â€Œಗಳು</option>
+        <option value="ms">ಮಿಲಿಸೆಕೆಂಡ್â€Œಗಳು</option>
       </select>
     </div>
   </div>
@@ -273,22 +273,22 @@ body {
     <div class="results-grid">
       <div class="result-item" id="result-h">
         <div class="result-value" id="value-h">0.000278</div>
-        <div class="result-unit">à²—à²‚à²Ÿà³†à²—à²³à³</div>
+        <div class="result-unit">ಗಂಟೆಗಳು</div>
         <div class="result-symbol">h</div>
       </div>
       <div class="result-item" id="result-min">
         <div class="result-value" id="value-min">0.0167</div>
-        <div class="result-unit">à²¨à²¿à²®à²¿à²·à²—à²³à³</div>
+        <div class="result-unit">ನಿಮಿಷಗಳು</div>
         <div class="result-symbol">min</div>
       </div>
       <div class="result-item highlight" id="result-s">
         <div class="result-value" id="value-s">1</div>
-        <div class="result-unit">à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³</div>
+        <div class="result-unit">ಸೆಕೆಂಡ್â€Œಗಳು</div>
         <div class="result-symbol">s</div>
       </div>
       <div class="result-item" id="result-ms">
         <div class="result-value" id="value-ms">1000</div>
-        <div class="result-unit">à²®à²¿à²²à²¿à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³</div>
+        <div class="result-unit">ಮಿಲಿಸೆಕೆಂಡ್â€Œಗಳು</div>
         <div class="result-symbol">ms</div>
       </div>
     </div>
@@ -299,29 +299,29 @@ body {
   <div class="table-title">📐 ಪರಿವರ್ತನಾ ಅಂಶಗಳು</div>
   <div class="conversion-row">
     <span>1 hour (h)</span>
-    <span>= 60 à²¨à²¿à²®à²¿à²· = 3600 à²¸à³†à²•à³†à²‚à²¡à³</span>
+    <span>= 60 ನಿಮಿಷ = 3600 ಸೆಕೆಂಡ್</span>
   </div>
   <div class="conversion-row">
-    <span>1 à²¨à²¿à²®à²¿à²· (à²¨à²¿à²®à²¿)</span>
-    <span>= 60 à²¸à³†à²•à³†à²‚à²¡à³</span>
+    <span>1 ನಿಮಿಷ (ನಿಮಿ)</span>
+    <span>= 60 ಸೆಕೆಂಡ್</span>
   </div>
   <div class="conversion-row">
     <span>1 ಸೆಕೆಂಡ್ (ಗಳು)</span>
-    <span>= 1000 à²®à²¿à²²à²¿à²¸à³†à²•à³†à²‚à²¡à³</span>
+    <span>= 1000 ಮಿಲಿಸೆಕೆಂಡ್</span>
   </div>
   <div class="conversion-row">
-    <span>1 à²®à²¿à²²à²¿à²¸à³†à²•à³†à²‚à²¡à³ (ms)</span>
-    <span>= 1000 ಮೈಕ್ರೋà²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ (μs)</span>
+    <span>1 ಮಿಲಿಸೆಕೆಂಡ್ (ms)</span>
+    <span>= 1000 ಮೈಕ್ರೋಸೆಕೆಂಡ್â€Œಗಳು (μs)</span>
   </div>
 </div>
 
 <div class="small-units">
   <div class="small-title">🔬 ಚಿಕ್ಕ ಸಮಯ ಘಟಕ ಏಕೆ ಮುಖ್ಯ</div>
   <div class="small-text">
-    • <strong>à²•à³à²°à³€à²¡à³†à²—à²³à³:</strong> à²’à²²à²‚à²ªà²¿à²•à³ à²“à²Ÿ à²®à²¿à²²à²¿à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à²¿à²‚à²¦!<br>
-    • <strong>à²”à²·à²§à²¿:</strong> ECG à²¹à³ƒà²¦à²¯ à²¬à²¡à²¿à²¤ à²¨à²¿à²–à²°à²µà²¾à²—à²¿<br>
-    • <strong>à²•à²‚à²ªà³à²¯à³‚à²Ÿà²°à³â€Œà²—à²³à³:</strong> à²ªà³à²°à³Šà²¸à³†à²¸à²°à³â€Œà²—à²³à³ à²¨à³à²¯à²¾à²¨à³‹à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à²²à³à²²à²¿ à²•à³†à²²à²¸<br>
-    • <strong>à²¸à²‚à²—à³€à²¤:</strong> à²¡à²¿à²œà²¿à²Ÿà²²à³ à²°à³†à²•à²¾à²°à³à²¡à²¿à²‚à²—à³ à²¸à³†à²•à³†à²‚à²¡à²¿à²—à³† à²¸à²¾à²µà²¿à²°à²¾à²°à³ à²¸à³à²¯à²¾à²‚à²ªà²²à³
+    • <strong>ಕ್ರೀಡೆಗಳು:</strong> ಒಲಂಪಿಕ್ ಒಟ್ಟು ಮಿಲಿಸೆಕೆಂಡ್â€Œಗಳಿಂದ!<br>
+    • <strong>ಔಷಧಿ:</strong> ECG ಹೃದಯ ಬಡಿತ ನಿಖರವಾಗಿ<br>
+    • <strong>ಕಂಪ್ಯೂಟರ್â€Œಗಳು:</strong> ಪ್ರೊಸೆಸರ್â€Œಗಳು ನ್ಯಾನೋಸೆಕೆಂಡ್â€Œಗಳಲ್ಲಿ ಕೆಲಸ<br>
+    • <strong>ಸಂಗೀತ:</strong> ಡಿಜಿಟಲ್ ರೆಕಾರ್ಡಿಂಗ್ ಸೆಕೆಂಡಿಗೆ ಸಾವಿರಾರು ಸ್ಯಾಂಪಲ್
   </div>
 </div>
 
@@ -331,12 +331,12 @@ body {
     <div class="notation-item">
       <div class="notation-correct">s</div>
       <div class="notation-wrong">sec</div>
-      <div class="notation-label">à²¸à³†à²•à³†à²‚à²¡à³</div>
+      <div class="notation-label">ಸೆಕೆಂಡ್</div>
     </div>
     <div class="notation-item">
       <div class="notation-correct">min</div>
       <div class="notation-wrong">mins</div>
-      <div class="notation-label">à²¨à²¿à²®à²¿à²·</div>
+      <div class="notation-label">ನಿಮಿಷ</div>
     </div>
     <div class="notation-item">
       <div class="notation-correct">h</div>
@@ -346,7 +346,7 @@ body {
     <div class="notation-item">
       <div class="notation-correct">ms</div>
       <div class="notation-wrong">msec</div>
-      <div class="notation-label">à²®à²¿à²²à²¿à²¸à³†à²•à³†à²‚à²¡à³</div>
+      <div class="notation-label">ಮಿಲಿಸೆಕೆಂಡ್</div>
     </div>
   </div>
 </div>
@@ -358,19 +358,19 @@ function convertTime() {
   const value = parseFloat(document.getElementById('time-input').value) || 0;
   const unit = document.getElementById('unit-select').value;
   
-  // Convert to à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ à²®à³Šà²¦à²²
-  let à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³;
+  // Convert to ಸೆಕೆಂಡ್â€Œಗಳು ಮೊದಲ
+  let ಸೆಕೆಂಡ್â€Œಗಳು;
   ಸ್ವಿಚ್(unit) {
-    case 'h': à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ = value * 3600; break;
-    case 'min': à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ = value * 60; break;
-    case 's': à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ = value; break;
-    case 'ms': à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ = value / 1000; break;
+    case 'h': ಸೆಕೆಂಡ್â€Œಗಳು = value * 3600; break;
+    case 'min': ಸೆಕೆಂಡ್â€Œಗಳು = value * 60; break;
+    case 's': ಸೆಕೆಂಡ್â€Œಗಳು = value; break;
+    case 'ms': ಸೆಕೆಂಡ್â€Œಗಳು = value / 1000; break;
   }
   
   // Convert to all units
-  const à²—à²‚à²Ÿà³†à²—à²³à³ = à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ / 3600;
-  const à²¨à²¿à²®à²¿à²·à²—à²³à³ = à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ / 60;
-  const à²®à²¿à²²à²¿à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ = à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ * 1000;
+  const ಗಂಟೆಗಳು = ಸೆಕೆಂಡ್â€Œಗಳು / 3600;
+  const ನಿಮಿಷಗಳು = ಸೆಕೆಂಡ್â€Œಗಳು / 60;
+  const ಮಿಲಿಸೆಕೆಂಡ್â€Œಗಳು = ಸೆಕೆಂಡ್â€Œಗಳು * 1000;
   
   // Format numbers nicely
   function format(num) {
@@ -381,10 +381,10 @@ function convertTime() {
     return num.toExponential(2);
   }
   
-  document.getElementById('value-h').textContent = format(à²—à²‚à²Ÿà³†à²—à²³à³);
-  document.getElementById('value-min').textContent = format(à²¨à²¿à²®à²¿à²·à²—à²³à³);
-  document.getElementById('value-s').textContent = format(à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³);
-  document.getElementById('value-ms').textContent = format(à²®à²¿à²²à²¿à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³);
+  document.getElementById('value-h').textContent = format(ಗಂಟೆಗಳು);
+  document.getElementById('value-min').textContent = format(ನಿಮಿಷಗಳು);
+  document.getElementById('value-s').textContent = format(ಸೆಕೆಂಡ್â€Œಗಳು);
+  document.getElementById('value-ms').textContent = format(ಮಿಲಿಸೆಕೆಂಡ್â€Œಗಳು);
   
   // Highlight current unit
   document.querySelectorAll('.result-item').forEach(item => item.classList.remove('highlight'));

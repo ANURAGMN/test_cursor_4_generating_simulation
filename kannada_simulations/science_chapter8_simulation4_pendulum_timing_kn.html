@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -123,7 +123,7 @@ body {
   border-radius: 50%;
   margin: 0 auto;
   margin-top: -3px;
-  box-ನೆರಳು: 0 3px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
 }
 
 .bob-short { background: radial-gradient(circle at 30% 30%, #ef5350, #c62828); }
@@ -248,23 +248,23 @@ body {
 <div class="concept-card">
   <div class="concept-title">📚 ಪ್ರಯೋಗ ಉದ್ದೇಶ</div>
   <div class="concept-text">
-    ಪರೀಕ್ಷಿಸಿ <strong>ಉದ್ದ ಕಾಲಾವಧಿಯನ್ನು ಪರಿಣಾಮ ಬೀರುತ್ತದೆಯೇ</strong>. ವಿವಿಧ ಉದ್ದದ ಮೂರು ಲೋಲಕಗಳನ್ನು ಊಘಾಡಿ ಅಳೆಯುತ್ತೇವೆasure how long each takes to à²ªà³‚à²°à³à²£ 10 à²†à²‚à²¦à³‹à²²à²¨s.
+    ಪರೀಕ್ಷಿಸಿ <strong>ಉದ್ದ ಕಾಲಾವಧಿಯನ್ನು ಪರಿಣಾಮ ಬೀರುತ್ತದೆಯೇ</strong>. ವಿವಿಧ ಉದ್ದದ ಮೂರು ಲೋಲಕಗಳನ್ನು ಊಘಾಡಿ ಅಳೆಯುತ್ತೇವೆasure how long each takes to ಪೂರ್ಣ 10 ಆಂದೋಲನs.
   </div>
 </div>
 
 <div class="sim-card">
   <div class="experiment-setup">
-    <div class="pendulum-setup active" onclick="selectà²Šà²¸à²°à²µà²³à²¿('short', this)">
+    <div class="pendulum-setup active" onclick="selectPendulum('short', this)">
       <div class="icon">🔴</div>
-      <div class="name">à²•à²¿à²°à²¿à²¦à²¾à²¦</div>
+      <div class="name">ಕಿರಿದಾದ</div>
       <div class="length">50 cm</div>
     </div>
-    <div class="pendulum-setup" onclick="selectà²Šà²¸à²°à²µà²³à²¿('medium', this)">
+    <div class="pendulum-setup" onclick="selectPendulum('medium', this)">
       <div class="icon">🟢</div>
-      <div class="name">à²®à²§à³à²¯à²®</div>
+      <div class="name">ಮಧ್ಯಮ</div>
       <div class="length">100 cm</div>
     </div>
-    <div class="pendulum-setup" onclick="selectà²Šà²¸à²°à²µà²³à²¿('long', this)">
+    <div class="pendulum-setup" onclick="selectPendulum('long', this)">
       <div class="icon">🔵</div>
       <div class="name">Long</div>
       <div class="length">150 cm</div>
@@ -279,7 +279,7 @@ body {
         <div class="mini-ದಾರ" style="height: 60px;"></div>
         <div class="mini-bob bob-short"></div>
       </div>
-      <div class="pendulum-label">à²•à²¿à²°à²¿à²¦à²¾à²¦ (50à²¸à³†à²‚)</div>
+      <div class="pendulum-label">ಕಿರಿದಾದ (50ಸೆಂ)</div>
     </div>
     
     <div class="pendulum-container">
@@ -287,7 +287,7 @@ body {
         <div class="mini-ದಾರ" style="height: 100px;"></div>
         <div class="mini-bob bob-medium"></div>
       </div>
-      <div class="pendulum-label">à²®à²§à³à²¯à²® (100à²¸à³†à²‚)</div>
+      <div class="pendulum-label">ಮಧ್ಯಮ (100ಸೆಂ)</div>
     </div>
     
     <div class="pendulum-container">
@@ -312,19 +312,19 @@ body {
 
 <div class="results-table">
   <div class="table-row table-header">
-    <div class="table-cell">à²Šà²¸à²°à²µà²³à²¿</div>
-    <div class="table-cell">à²‰à²¦à³à²¦</div>
+    <div class="table-cell">ಊಸರವಳಿ</div>
+    <div class="table-cell">ಉದ್ದ</div>
     <div class="table-cell">Time for 10</div>
-    <div class="table-cell">à²…à²µà²§à²¿ (T)</div>
+    <div class="table-cell">ಅವಧಿ (T)</div>
   </div>
   <div class="table-row">
-    <div class="table-cell">🔴 à²•à²¿à²°à²¿à²¦à²¾à²¦</div>
+    <div class="table-cell">🔴 ಕಿರಿದಾದ</div>
     <div class="table-cell">50 cm</div>
     <div class="table-cell" id="time-short">--</div>
     <div class="table-cell highlight" id="period-short">--</div>
   </div>
   <div class="table-row">
-    <div class="table-cell">🟢 à²®à²§à³à²¯à²®</div>
+    <div class="table-cell">🟢 ಮಧ್ಯಮ</div>
     <div class="table-cell">100 cm</div>
     <div class="table-cell" id="time-medium">--</div>
     <div class="table-cell highlight" id="period-medium">--</div>
@@ -345,9 +345,9 @@ body {
 <div class="takeaway">
   <div class="takeaway-title">🎯 ಏನನ್ನು ನೋಡಬೇಕು</div>
   <div class="takeaway-text">
-    • ಎಂಬ ಲೋಲಕ à²ªà³‚à²°à³à²£10 ಆಂದೋಲನಗಳನ್ನು ವೇಗವಾಗಿ ಪೂರ್ಣಗೊಳಿಸುತ್ತದೆ?<br>
+    • ಎಂಬ ಲೋಲಕ ಪೂರ್ಣ10 ಆಂದೋಲನಗಳನ್ನು ವೇಗವಾಗಿ ಪೂರ್ಣಗೊಳಿಸುತ್ತದೆ?<br>
     • ಉದ್ದ ಕಾಲಾವಧಿಯನ್ನು ಹೇಗೆ ಪರಿಣಾಮ?<br>
-    • <strong>à²‰à²¦à³à²¦ à²Šà²¸à²°à²µà²³à²¿ = à²‰à²¦à³à²¦ ಕಾಲಾವಧಿ</strong><br>
+    • <strong>ಉದ್ದ ಊಸರವಳಿ = ಉದ್ದ ಕಾಲಾವಧಿ</strong><br>
     • ಅದಕ್ಕೇ ದಾದಾ ಗಡಿಯಾರ ಉದ್ದ ಊಸರವಳಿ!
   </div>
 </div>
@@ -355,11 +355,11 @@ body {
 </div>
 
 <script>
-let currentà²Šà²¸à²°à²µà²³à²¿ = 'short';
+let currentPendulum = 'short';
 let isRunning = false;
 let startTime;
-let timerà²®à²§à³à²¯à²‚à²¤à²°;
-let à²†à²‚à²¦à³‹à²²à²¨Count = 0;
+let timerInterval;
+let ಆಂದೋಲನCount = 0;
 let results = { short: null, medium: null, long: null };
 
 // Theoretical time periods (T = 2π√(L/g))
@@ -369,14 +369,14 @@ const periods = {
   long: 2 * Math.PI * Math.sqrt(1.5 / 9.8)    // ~2.46s
 };
 
-function selectà²Šà²¸à²°à²µà²³à²¿(type, element) {
+function selectPendulum(type, element) {
   if (isRunning) return;
   
-  currentà²Šà²¸à²°à²µà²³à²¿ = type;
+  currentPendulum = type;
   document.querySelectorAll('.pendulum-setup').forEach(el => el.classList.remove('active'));
   element.classList.add('active');
   
-  document.getElementById('stopwatch-label').textContent = `ಸಿದ್ಧ to time ${type} pendulum (10 à²†à²‚à²¦à³‹à²²à²¨s)`;
+  document.getElementById('stopwatch-label').textContent = `ಸಿದ್ಧ to time ${type} pendulum (10 ಆಂದೋಲನs)`;
 }
 
 function startExperiment() {
@@ -384,25 +384,25 @@ function startExperiment() {
   
   isRunning = true;
   startTime = Date.now();
-  à²†à²‚à²¦à³‹à²²à²¨Count = 0;
+  ಆಂದೋಲನCount = 0;
   
   document.getElementById('start-btn').disabled = true;
-  document.getElementById('stopwatch-label').textContent = `Counting à²†à²‚à²¦à³‹à²²à²¨s for ${currentà²Šà²¸à²°à²µà²³à²¿} pendulum...`;
+  document.getElementById('stopwatch-label').textContent = `Counting ಆಂದೋಲನs for ${currentPendulum} pendulum...`;
   
   // ಪ್ರಾರಂಭ all pendulums swinging
-  animateà²Šà²¸à²°à²µà²³à²¿s();
+  animatePendulums();
   
   // ಪ್ರಾರಂಭ timer
-  timerà²®à²§à³à²¯à²‚à²¤à²° = setà²®à²§à³à²¯à²‚à²¤à²°(updateTimer, 10);
+  timerInterval = setInterval(updateTimer, 10);
   
-  // Auto-à²ªà³‚à²°à³à²£ after calculated time
-  const timeFor10 = periods[currentà²Šà²¸à²°à²µà²³à²¿] * 10;
+  // Auto-ಪೂರ್ಣ after calculated time
+  const timeFor10 = periods[currentPendulum] * 10;
   setTimeout(() => {
-    à²ªà³‚à²°à³à²£Experiment(timeFor10);
+    ಪೂರ್ಣExperiment(timeFor10);
   }, timeFor10 * 1000);
 }
 
-function animateà²Šà²¸à²°à²µà²³à²¿s() {
+function animatePendulums() {
   const pendulums = {
     short: document.getElementById('pendulum-short'),
     medium: document.getElementById('pendulum-medium'),
@@ -431,22 +431,22 @@ function updateTimer() {
   document.getElementById('stopwatch').textContent = elapsed.toFixed(2);
 }
 
-function à²ªà³‚à²°à³à²£Experiment(timeFor10) {
-  clearà²®à²§à³à²¯à²‚à²¤à²°(timerà²®à²§à³à²¯à²‚à²¤à²°);
+function ಪೂರ್ಣExperiment(timeFor10) {
+  clearInterval(timerInterval);
   isRunning = false;
   
   // Add some realistic variation
-  const actualTime = timeFor10 + (Math.rಮತ್ತುom() - 0.5) * 0.3;
+  const actualTime = timeFor10 + (Math.random() - 0.5) * 0.3;
   const period = actualTime / 10;
   
-  results[currentà²Šà²¸à²°à²µà²³à²¿] = { time: actualTime, period: period };
+  results[currentPendulum] = { time: actualTime, period: period };
   
   // Update table
-  document.getElementById(`time-${currentà²Šà²¸à²°à²µà²³à²¿}`).textContent = actualTime.toFixed(2) + 's';
-  document.getElementById(`period-${currentà²Šà²¸à²°à²µà²³à²¿}`).textContent = period.toFixed(2) + 's';
+  document.getElementById(`time-${currentPendulum}`).textContent = actualTime.toFixed(2) + 's';
+  document.getElementById(`period-${currentPendulum}`).textContent = period.toFixed(2) + 's';
   
   document.getElementById('stopwatch').textContent = actualTime.toFixed(2);
-  document.getElementById('stopwatch-label').textContent = `${currentà²Šà²¸à²°à²µà²³à²¿} pendulum: ${actualTime.toFixed(2)}s for 10 à²†à²‚à²¦à³‹à²²à²¨s`;
+  document.getElementById('stopwatch-label').textContent = `${currentPendulum} pendulum: ${actualTime.toFixed(2)}s for 10 ಆಂದೋಲನs`;
   
   document.getElementById('start-btn').disabled = false;
   
@@ -459,17 +459,17 @@ function checkAllDone() {
     document.getElementById('observation').style.display = 'block';
     document.getElementById('observation-text').innerHTML = `
       <strong>ಫಲಿತಾಂಶs Analysis:</strong><br>
-      • à²•à²¿à²°à²¿à²¦à²¾à²¦ (50à²¸à³†à²‚): Period = ${results.short.period.toFixed(2)}s<br>
-      • à²®à²§à³à²¯à²® (100à²¸à³†à²‚): Period = ${results.medium.period.toFixed(2)}s<br>
+      • ಕಿರಿದಾದ (50ಸೆಂ): Period = ${results.short.period.toFixed(2)}s<br>
+      • ಮಧ್ಯಮ (100ಸೆಂ): Period = ${results.medium.period.toFixed(2)}s<br>
       • Long (150cm): Period = ${results.long.period.toFixed(2)}s<br><br>
-      <strong>ತೀರ್ಮಾನ:</strong> à²‰à²¦à³à²¦ à²Šà²¸à²°à²µà²³à²¿ = à²‰à²¦à³à²¦ ಕಾಲಾವಧಿ!<br>
+      <strong>ತೀರ್ಮಾನ:</strong> ಉದ್ದ ಊಸರವಳಿ = ಉದ್ದ ಕಾಲಾವಧಿ!<br>
       When length doubled (50→100cm), period increased by ~${((results.medium.period / results.short.period - 1) * 100).toFixed(0)}%
     `;
   }
 }
 
 function resetExperiment() {
-  clearà²®à²§à³à²¯à²‚à²¤à²°(timerà²®à²§à³à²¯à²‚à²¤à²°);
+  clearInterval(timerInterval);
   isRunning = false;
   results = { short: null, medium: null, long: null };
   
