@@ -49,15 +49,15 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
-.ವೇಗ-control {
+.speed-control {
   margin-bottom: 12px;
 }
 
-.ವೇಗ-control label {
+.speed-control label {
   font-size: 11px;
   font-weight: 600;
   color: #37474f;
@@ -65,7 +65,7 @@ body {
   margin-bottom: 6px;
 }
 
-.ವೇಗ-control input[type="range"] {
+.speed-control input[type="range"] {
   width: 100%;
   height: 10px;
   border-radius: 5px;
@@ -74,7 +74,7 @@ body {
   -webkit-appearance: none;
 }
 
-.ವೇಗ-control input[type="range"]::-webkit-slider-thumb {
+.speed-control input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 24px;
   height: 24px;
@@ -82,10 +82,10 @@ body {
   background: #2196f3;
   cursor: pointer;
   border: 3px solid #fff;
-  box-ನೆರಳು: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-.ವೇಗ-value {
+.speed-value {
   text-align: center;
   font-size: 18px;
   font-weight: 700;
@@ -227,15 +227,15 @@ body {
 <div class="concept-card">
   <div class="concept-title">📚 ಏಕರೂಪ ರೇಖೀಯ ಚಲನೆ ಎಂದರೇನು?</div>
   <div class="concept-text">
-    ವಸ್ತು <strong>ಸಮ ರೇಖೀಯ ಚಲನೆ</strong> ಅದು ಚಲಿಸಿದಾಗ <strong>ನೇರ ರೇಖೆಯಲ್ಲಿ</strong> at <strong>ಸ್ಥಿರ ವೇಗ</strong>. à²…à²¦à³ à²’à²³à²—à³Šà²‚à²¡à²¿à²¦à³† <strong>à²¸à²®à²¾à²¨ à²¸à²®à²¯à²¦à²²à³à²²à²¿ à²¸à²®à²¾à²¨ à²¦à³‚à²°</strong>.
+    ವಸ್ತು <strong>ಸಮ ರೇಖೀಯ ಚಲನೆ</strong> ಅದು ಚಲಿಸಿದಾಗ <strong>ನೇರ ರೇಖೆಯಲ್ಲಿ</strong> at <strong>ಸ್ಥಿರ ವೇಗ</strong>. ಅದು ಒಳಗೊಂಡಿದೆ <strong>ಸಮಾನ ಸಮಯದಲ್ಲಿ ಸಮಾನ ದೂರ</strong>.
   </div>
 </div>
 
 <div class="sim-card">
-  <div class="ವೇಗ-control">
-    <label>🚆 Set à²°à³ˆà²²à³ ವೇಗ:</label>
-    <input type="range" id="ವೇಗ-slider" min="10" max="100" value="50" oninput="updateವೇಗ(this.value)">
-    <div class="ವೇಗ-value" id="speed-value">50 km/h</div>
+  <div class="speed-control">
+    <label>🚆 Set ರೈಲು ವೇಗ:</label>
+    <input type="range" id="speed-slider" min="10" max="100" value="50" oninput="updateSpeed(this.value)">
+    <div class="speed-value" id="speed-value">50 km/h</div>
   </div>
   
   <div class="motion-visual">
@@ -290,10 +290,10 @@ body {
 <div class="characteristic-box">
   <div class="char-title">✨ ಮುಖ್ಯ ಲಕ್ಷಣಗಳು</div>
   <div class="char-text">
-    • ವೇಗ is <strong>à²¸à³à²¥à²¿à²°</strong> à²‰à²¦à³à²¦à²•à³à²•à³‚<br>
-    • <strong>à²¸à²®à²¾à²¨ à²¦à³‚à²°</strong> à²¸à²®à²¾à²¨ à²¸à²®à²¯à²¦à²²à³à²²à²¿<br>
+    • ವೇಗ is <strong>ಸ್ಥಿರ</strong> ಉದ್ದಕ್ಕೂ<br>
+    • <strong>ಸಮಾನ ದೂರ</strong> ಸಮಾನ ಸಮಯದಲ್ಲಿ<br>
     • ದೂರ-time graph is a <strong>ನೇರ ರೇಖೆಯಲ್ಲಿ</strong><br>
-    • ರೇಖೆ ಏರಿದಷ್ಟು <strong>à²µà³‡à²— à²¹à³†à²šà³à²šà³</strong>
+    • ರೇಖೆ ಏರಿದಷ್ಟು <strong>ವೇಗ ಹೆಚ್ಚು</strong>
   </div>
 </div>
 
@@ -303,7 +303,7 @@ body {
 let isMoving = false;
 let animationId;
 let time = 0;
-let ವೇಗ = 50; // km/h
+let speed = 50; // km/h
 let position = 0;
 let dataPoints = [];
 
@@ -311,9 +311,9 @@ const train = document.getElementById('train');
 const canvas = document.getElementById('graph-canvas');
 const ctx = canvas.getContext('2d');
 
-function updateವೇಗ(value) {
-  ವೇಗ = parseInt(value);
-  document.getElementById('speed-value').textContent = `${ವೇಗ} km/h`;
+function updateSpeed(value) {
+  speed = parseInt(value);
+  document.getElementById('speed-value').textContent = `${speed} km/h`;
   if (!isMoving) {
     updateDataTable();
     drawGraph();
@@ -330,18 +330,18 @@ function startMotion() {
 function animate() {
   if (!isMoving) return;
   
-  // Update time (accelerated: 1 real à²¸à³†à²•à³†à²‚à²¡à³ = 1 simulated à²¸à³†à²•à³†à²‚à²¡à³)
+  // Update time (accelerated: 1 real ಸೆಕೆಂಡ್ = 1 simulated ಸೆಕೆಂಡ್)
   time += 0.05;
   
-  // ಲೆಕ್ಕ ಹಾಕಿ position: distance = ವೇಗ * time
+  // ಲೆಕ್ಕ ಹಾಕಿ position: distance = speed * time
   // Convert ವೇಗ from km/h to m/s: divide by 3.6
-  const ವೇಗMS = ವೇಗ / 3.6;
-  position = ವೇಗMS * time;
+  const speedMS = speed / 3.6;
+  position = speedMS * time;
   
   // Update train position (10km track = 340px)
-  const maxದೂರ = 10000; // 10 km in meters
+  const maxDistance = 10000; // 10 km in meters
   const trackWidth = 340;
-  const trainLeft = 10 + (position / maxದೂರ) * trackWidth;
+  const trainLeft = 10 + (position / maxDistance) * trackWidth;
   train.style.left = `${Math.min(trainLeft, 350)}px`;
   
   // Record data point
@@ -354,12 +354,12 @@ function animate() {
   // Update table
   for (let i = 1; i <= 4; i++) {
     if (time >= i) {
-      const d = ವೇಗMS * i;
+      const d = speedMS * i;
       document.getElementById(`d${i}`).textContent = `${d.toFixed(0)} m`;
     }
   }
   
-  if (position < maxದೂರ && time < 10) {
+  if (position < maxDistance && time < 10) {
     animationId = requestAnimationFrame(animate);
   } else {
     isMoving = false;
@@ -389,9 +389,9 @@ function resetMotion() {
 }
 
 function updateDataTable() {
-  const ವೇಗMS = ವೇಗ / 3.6;
+  const speedMS = speed / 3.6;
   for (let i = 1; i <= 4; i++) {
-    const d = ವೇಗMS * i;
+    const d = speedMS * i;
     document.getElementById(`d${i}`).textContent = `${d.toFixed(0)} m`;
   }
 }
@@ -435,9 +435,9 @@ function drawGraph() {
   }
   
   // Draw line (uniform motion = ನೇರ ರೇಖೆಯಲ್ಲಿ)
-  const ವೇಗMS = ವೇಗ / 3.6;
+  const speedMS = speed / 3.6;
   const maxTime = 5;
-  const maxDist = ವೇಗMS * maxTime;
+  const maxDist = speedMS * maxTime;
   
   ctx.strokeStyle = '#2196f3';
   ctx.lineWidth = 3;
@@ -445,7 +445,7 @@ function drawGraph() {
   ctx.moveTo(padding, h - padding);
   
   for (let t = 0; t <= maxTime; t += 0.1) {
-    const d = ವೇಗMS * t;
+    const d = speedMS * t;
     const x = padding + (t / maxTime) * (w - 2 * padding);
     const y = h - padding - (d / maxDist) * (h - 2 * padding);
     ctx.lineTo(x, y);
@@ -466,7 +466,7 @@ function drawGraph() {
 }
 
 // Initialize
-updateವೇಗ(50);
+updateSpeed(50);
 drawGraph();
 </script>
 </body>

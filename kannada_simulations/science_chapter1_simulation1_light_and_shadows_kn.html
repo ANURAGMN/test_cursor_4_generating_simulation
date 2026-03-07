@@ -35,7 +35,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 8px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   margin-bottom: 12px;
 }
 
@@ -62,7 +62,7 @@ svg { width: 100%; height: 100%; }
   padding: 6px 8px;
   font-size: 11px;
   line-height: 1.3;
-  box-ನೆರಳು: 0 3px 8px rgba(0,0,0,0.12);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
 }
 
 /* ---------- Overlays ---------- */
@@ -75,7 +75,7 @@ svg { width: 100%; height: 100%; }
   padding: 6px 8px;
   font-size: 11px;
   line-height: 1.4;
-  box-ನೆರಳು: 0 3px 8px rgba(0,0,0,0.12);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
 }
 
 .control-toggle {
@@ -274,8 +274,8 @@ function createSimulation(containerId, showHoverHint) {
   }
 
   function render(){
-    const lx=120+(à²¸à³à²¥à²¿à²¤à²¿.d-1)*20;
-    const h=50+(à²¸à³à²¥à²¿à²¤à²¿.s-1)*12;
+    const lx=120+(state.d-1)*20;
+    const h=50+(state.s-1)*12;
     const y=LS_Y-h/2;
 
     light.setAttribute("cx",lx);
@@ -299,7 +299,7 @@ function createSimulation(containerId, showHoverHint) {
     rb2.setAttribute("x1",OBJ_X); rb2.setAttribute("y1",y+h);
     rb2.setAttribute("x2",SCREEN_X); rb2.setAttribute("y2",bY);
 
-    if(à²¸à³à²¥à²¿à²¤à²¿.type==="ಪಾರದರ್ಶಕ"){
+    if(state.type==="ಪಾರದರ್ಶಕ"){
       ನೆರಳು.style.display="none";
     } else {
       ನೆರಳು.style.display="block";
@@ -307,14 +307,14 @@ function createSimulation(containerId, showHoverHint) {
       ನೆರಳು.setAttribute("y",Math.min(tY,bY));
       ನೆರಳು.setAttribute("height",Math.abs(bY-tY));
       ನೆರಳು.setAttribute("width",20);
-      ನೆರಳು.style.filter = à²¸à³à²¥à²¿à²¤à²¿.type==="ಅರೆಪಾರದರ್ಶಕ" ? "blur(3px)" : "none";
+      ನೆರಳು.style.filter = state.type==="ಅರೆಪಾರದರ್ಶಕ" ? "blur(3px)" : "none";
     }
 
-    md.textContent=à²¸à³à²¥à²¿à²¤à²¿.d.toFixed(1);
-    ms.textContent=à²¸à³à²¥à²¿à²¤à²¿.s.toFixed(1);
-    mt.textContent=typeKn[à²¸à³à²¥à²¿à²¤à²¿.type]||à²¸à³à²¥à²¿à²¤à²¿.type;
-    dval.textContent=à²¸à³à²¥à²¿à²¤à²¿.d.toFixed(1);
-    sval.textContent=à²¸à³à²¥à²¿à²¤à²¿.s.toFixed(1);
+    md.textContent=state.d.toFixed(1);
+    ms.textContent=state.s.toFixed(1);
+    mt.textContent=typeKn[state.type]||state.type;
+    dval.textContent=state.d.toFixed(1);
+    sval.textContent=state.s.toFixed(1);
   }
 
   let dragging=false,x0=0,y0=0;
@@ -324,8 +324,8 @@ function createSimulation(containerId, showHoverHint) {
   };
   c.onpointermove=e=>{
     if(!dragging) return;
-    à²¸à³à²¥à²¿à²¤à²¿.d=Math.min(10,Math.max(1,à²¸à³à²¥à²¿à²¤à²¿.d+(e.clientX-x0)/40));
-    à²¸à³à²¥à²¿à²¤à²¿.s=Math.min(10,Math.max(1,à²¸à³à²¥à²¿à²¤à²¿.s-(e.clientY-y0)/40));
+    state.d=Math.min(10,Math.max(1,state.d+(e.clientX-x0)/40));
+    state.s=Math.min(10,Math.max(1,state.s-(e.clientY-y0)/40));
     x0=e.clientX;y0=e.clientY;
     render();
   };
@@ -333,12 +333,12 @@ function createSimulation(containerId, showHoverHint) {
 
   c.querySelector(".control-toggle").onclick=()=>{
     overlay.classList.toggle("open");
-    dist.value=à²¸à³à²¥à²¿à²¤à²¿.d;
-    size.value=à²¸à³à²¥à²¿à²¤à²¿.s;
+    dist.value=state.d;
+    size.value=state.s;
   };
 
-  dist.oninput=e=>{ à²¸à³à²¥à²¿à²¤à²¿.d=+e.target.value; render(); };
-  size.oninput=e=>{ à²¸à³à²¥à²¿à²¤à²¿.s=+e.target.value; render(); };
+  dist.oninput=e=>{ state.d=+e.target.value; render(); };
+  size.oninput=e=>{ state.s=+e.target.value; render(); };
 
   c.querySelector(".submit-btn").onclick=()=>overlay.classList.remove("open");
 
@@ -346,7 +346,7 @@ function createSimulation(containerId, showHoverHint) {
     b.onclick=()=>{
       c.querySelectorAll(".segmented button").forEach(x=>x.classList.remove("active"));
       b.classList.add("active");
-      à²¸à³à²¥à²¿à²¤à²¿.type=b.dataset.type;
+      state.type=b.dataset.type;
       render();
     };
   });

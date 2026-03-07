@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -151,7 +151,7 @@ body {
 }
 
 .soil-column:hover { transform: scale(1.02); }
-.soil-column.selected { box-ನೆರಳು: 0 0 0 3px #ffeb3b; }
+.soil-column.selected { box-shadow: 0 0 0 3px #ffeb3b; }
 
 .soil-header {
   padding: 8px 4px;
@@ -162,7 +162,7 @@ body {
 }
 
 .gravel-header { background: #6d4c41; }
-.sಮತ್ತು-header { background: #d7ccc8; color: #333; }
+.sand-header { background: #d7ccc8; color: #333; }
 .clay-header { background: #8d6e63; }
 
 .soil-body {
@@ -172,7 +172,7 @@ body {
 }
 
 .gravel-body { background: linear-gradient(180deg, #8d6e63 0%, #6d4c41 100%); }
-.sಮತ್ತು-body { background: linear-gradient(180deg, #d7ccc8 0%, #bcaaa4 100%); }
+.sand-body { background: linear-gradient(180deg, #d7ccc8 0%, #bcaaa4 100%); }
 .clay-body { background: linear-gradient(180deg, #a1887f 0%, #8d6e63 100%); }
 
 .particles {
@@ -194,7 +194,7 @@ body {
 }
 
 .particle.gravel { width: 12px; height: 12px; background: #5d4037; }
-.particle.sಮತ್ತು { width: 5px; height: 5px; background: #ffcc80; }
+.particle.sand { width: 5px; height: 5px; background: #ffcc80; }
 .particle.clay { width: 3px; height: 3px; background: #6d4c41; }
 
 .ನೀರು-drop {
@@ -289,8 +289,8 @@ body {
 .result-item .time { font-size: 16px; font-weight: 700; margin-top: 4px; }
 .result-item .rank { font-size: 10px; margin-top: 2px; }
 
-.result-item.à²®à³Šà²¦à²² .time { color: #4caf50; }
-.result-item.à²¸à³†à²•à³†à²‚à²¡à³ .time { color: #ff9800; }
+.result-item.ಮೊದಲ .time { color: #4caf50; }
+.result-item.ಸೆಕೆಂಡ್ .time { color: #ff9800; }
 .result-item.third .time { color: #f44336; }
 
 .comparison-table {
@@ -343,7 +343,7 @@ body {
 <div class="concept-card">
   <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    <strong>ಅಂತರ್ಸೇಚನ</strong> ನೀರು ನೆಲದ ಒಳಗೆ ಜಿನುಗುವುದು. ವೇಗ ಅವಲಂಬಿಸಿರುತ್ತದೆ <strong>ಕಣದ ಗಾತ್ರ</strong> - à²¦à³Šà²¡à³à²¡ à²•à²£à²—à²³à³ = à²¦à³Šà²¡à³à²¡ à²…à²‚à²¤à²° = à²µà³‡à²—à²µà²¾à²¦ à²¨à³€à²°à²¿à²¨ à²¹à²°à²¿à²µà³!
+    <strong>ಅಂತರ್ಸೇಚನ</strong> ನೀರು ನೆಲದ ಒಳಗೆ ಜಿನುಗುವುದು. ವೇಗ ಅವಲಂಬಿಸಿರುತ್ತದೆ <strong>ಕಣದ ಗಾತ್ರ</strong> - ದೊಡ್ಡ ಕಣಗಳು = ದೊಡ್ಡ ಅಂತರ = ವೇಗವಾದ ನೀರಿನ ಹರಿವು!
   </div>
 </div>
 
@@ -377,20 +377,20 @@ body {
           <div class="ನೀರು-drop" id="water-gravel"></div>
           <div class="ವೇಗ-badge ವೇಗ-fast" id="badge-gravel">⚡ FAST!</div>
           <div class="aquifer-level">
-            <div class="aquifer-label">à²œà²²à²­à³ƒà²¤à³</div>
+            <div class="aquifer-label">ಜಲಭೃತ್</div>
           </div>
         </div>
       </div>
       
       <!-- Sಮತ್ತು Column -->
-      <div class="soil-column" onclick="showSoilInfo('sಮತ್ತು')">
-        <div class="soil-header sಮತ್ತು-header">🏖️ SAND</div>
-        <div class="soil-body sಮತ್ತು-body">
+      <div class="soil-column" onclick="showSoilInfo('sand')">
+        <div class="soil-header sand-header">🏖️ SAND</div>
+        <div class="soil-body sand-body">
           <div class="particles" id="sand-particles"></div>
-          <div class="ನೀರು-drop" id="water-sಮತ್ತು"></div>
-          <div class="ವೇಗ-badge ವೇಗ-medium" id="badge-sಮತ್ತು">💧 à²®à²§à³à²¯à²®</div>
+          <div class="ನೀರು-drop" id="water-sand"></div>
+          <div class="ವೇಗ-badge ವೇಗ-medium" id="badge-sand">💧 ಮಧ್ಯಮ</div>
           <div class="aquifer-level">
-            <div class="aquifer-label">à²œà²²à²­à³ƒà²¤à³</div>
+            <div class="aquifer-label">ಜಲಭೃತ್</div>
           </div>
         </div>
       </div>
@@ -403,7 +403,7 @@ body {
           <div class="ನೀರು-drop" id="water-clay"></div>
           <div class="ವೇಗ-badge ವೇಗ-slow" id="badge-clay">🐢 Slow</div>
           <div class="aquifer-level">
-            <div class="aquifer-label">à²œà²²à²­à³ƒà²¤à³</div>
+            <div class="aquifer-label">ಜಲಭೃತ್</div>
           </div>
         </div>
       </div>
@@ -416,12 +416,12 @@ body {
 <div class="results-panel" id="results" style="display: none;">
   <div class="results-title">🏆 ಅಂತರ್ಸೇಚನ ಓಟ ಫಲಿತಾಂಶs</div>
   <div class="results-grid">
-    <div class="result-item à²®à³Šà²¦à²²">
+    <div class="result-item ಮೊದಲ">
       <div class="name">🪨 ಜಲ್ಲಿ</div>
       <div class="time" id="time-gravel">--</div>
       <div class="rank">🥇 1ನೇ ಸ್ಥಾನ</div>
     </div>
-    <div class="result-item à²¸à³†à²•à³†à²‚à²¡à³">
+    <div class="result-item ಸೆಕೆಂಡ್">
       <div class="name">🏖️ Sಮತ್ತು</div>
       <div class="time" id="time-sand">--</div>
       <div class="rank">🥈 2ನೇ ಸ್ಥಾನ</div>
@@ -444,20 +444,20 @@ body {
   </div>
   <div class="table-row">
     <div class="table-cell">🪨 ಜಲ್ಲಿ</div>
-    <div class="table-cell">à²¦à³Šà²¡à³à²¡</div>
+    <div class="table-cell">ದೊಡ್ಡ</div>
     <div class="table-cell">Big gaps</div>
     <div class="table-cell" style="background:#c8e6c9;">⚡ Fast</div>
   </div>
   <div class="table-row">
     <div class="table-cell">🏖️ Sಮತ್ತು</div>
-    <div class="table-cell">à²®à²§à³à²¯à²®</div>
-    <div class="table-cell">à²®à²§à³à²¯à²® à²…à²‚à²¤à²°</div>
-    <div class="table-cell" style="background:#fff3e0;">💧 à²®à²§à³à²¯à²®</div>
+    <div class="table-cell">ಮಧ್ಯಮ</div>
+    <div class="table-cell">ಮಧ್ಯಮ ಅಂತರ</div>
+    <div class="table-cell" style="background:#fff3e0;">💧 ಮಧ್ಯಮ</div>
   </div>
   <div class="table-row">
     <div class="table-cell">🧱 Clay</div>
     <div class="table-cell">Tiny</div>
-    <div class="table-cell">à²¬à²¹à³à²¤à³‡à²• à²‡à²²à³à²²</div>
+    <div class="table-cell">ಬಹುತೇಕ ಇಲ್ಲ</div>
     <div class="table-cell" style="background:#ffcdd2;">🐢 Very Slow</div>
   </div>
 </div>
@@ -465,9 +465,9 @@ body {
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೈಜ ಪ್ರಭಾವ</div>
   <div class="takeaway-text">
-    • <strong>à²œà²²à³à²²à²¿ à²¹à²¾à²¸à³</strong> à²’à²³à²šà²°à²‚à²¡à²¿à²—à³† à²¬à²³à²•à³†<br>
-    • <strong>Clay soil</strong> à²µà³ˆà²ªà³à²²à²µà³à²¯ à²•à²¾à²°à²£ (ನೀರು à²’à²³à²¸à³‡à²°à²²à³ à²¸à²¾à²§à³à²¯à²µà²¿à²²à³à²²)<br>
-    • <strong>à²•à²¾à²‚à²•à³à²°à³€à²Ÿà³ à²¨à²—à²°à²—à²³à³</strong> prevent infiltration → groundನೀರು depletion!
+    • <strong>ಜಲ್ಲಿ ಹಾಸು</strong> ಒಳಚರಂಡಿಗೆ ಬಳಕೆ<br>
+    • <strong>Clay soil</strong> ವೈಪ್ಲವ್ಯ ಕಾರಣ (ನೀರು ಒಳಸೇರಲು ಸಾಧ್ಯವಿಲ್ಲ)<br>
+    • <strong>ಕಾಂಕ್ರೀಟ್ ನಗರಗಳು</strong> prevent infiltration → groundನೀರು depletion!
   </div>
 </div>
 
@@ -476,17 +476,17 @@ body {
 <script>
 let isRaining = false;
 let timer = 0;
-let timerà²®à²§à³à²¯à²‚à²¤à²°;
-let finishTimes = { gravel: 0, sಮತ್ತು: 0, clay: 0 };
-let ನೀರುPositions = { gravel: 0, sಮತ್ತು: 0, clay: 0 };
+let timerInterval;
+let finishTimes = { gravel: 0, sand: 0, clay: 0 };
+let waterPositions = { gravel: 0, sand: 0, clay: 0 };
 
 // ವೇಗ factors
-const ವೇಗs = { gravel: 8, sಮತ್ತು: 3, clay: 0.8 };
+const speeds = { gravel: 8, sand: 3, clay: 0.8 };
 
 // Generate soil particles
 function generateParticles() {
   const gravelEl = document.getElementById('gravel-particles');
-  const sಮತ್ತುEl = document.getElementById('sand-particles');
+  const sandEl = document.getElementById('sand-particles');
   const clayEl = document.getElementById('clay-particles');
   
   // Gravel - few large particles
@@ -496,7 +496,7 @@ function generateParticles() {
   
   // Sಮತ್ತು - many medium particles
   for (let i = 0; i < 100; i++) {
-    sಮತ್ತುEl.innerHTML += '<div class="particle sಮತ್ತು"></div>';
+    sandEl.innerHTML += '<div class="particle sand"></div>';
   }
   
   // Clay - lots of tiny particles
@@ -510,8 +510,8 @@ function makeItRain() {
   
   isRaining = true;
   timer = 0;
-  finishTimes = { gravel: 0, sಮತ್ತು: 0, clay: 0 };
-  ನೀರುPositions = { gravel: 0, sಮತ್ತು: 0, clay: 0 };
+  finishTimes = { gravel: 0, sand: 0, clay: 0 };
+  waterPositions = { gravel: 0, sand: 0, clay: 0 };
   
   document.getElementById('rain-btn').disabled = true;
   document.getElementById('results').style.display = 'none';
@@ -522,28 +522,28 @@ function makeItRain() {
   });
   
   // Show ನೀರು drops
-  ['gravel', 'sಮತ್ತು', 'clay'].forEach(soil => {
+  ['gravel', 'sand', 'clay'].forEach(soil => {
     const drop = document.getElementById(`ನೀರು-${soil}`);
     drop.classList.add('seeping');
     drop.style.top = '0px';
   });
   
   // ಪ್ರಾರಂಭ timer
-  timerà²®à²§à³à²¯à²‚à²¤à²° = setà²®à²§à³à²¯à²‚à²¤à²°(() => {
+  timerInterval = setInterval(() => {
     timer += 0.1;
-    document.getElementById('timer').textContent = `⏱️ ${timer.toFixed(1)} à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³`;
+    document.getElementById('timer').textContent = `⏱️ ${timer.toFixed(1)} ಸೆಕೆಂಡ್â€Œಗಳು`;
     
     // Update ನೀರು positions
-    ['gravel', 'sಮತ್ತು', 'clay'].forEach(soil => {
-      if (ನೀರುPositions[soil] < 100) {
-        ನೀರುPositions[soil] += ವೇಗs[soil] * (0.8 + Math.rಮತ್ತುom() * 0.4);
+    ['gravel', 'sand', 'clay'].forEach(soil => {
+      if (waterPositions[soil] < 100) {
+        waterPositions[soil] += speeds[soil] * (0.8 + Math.random() * 0.4);
         
         const drop = document.getElementById(`ನೀರು-${soil}`);
         const maxHeight = 150; // pixels
-        const newTop = Math.min(ನೀರುPositions[soil], 100) * maxHeight / 100;
+        const newTop = Math.min(waterPositions[soil], 100) * maxHeight / 100;
         drop.style.top = `${newTop}px`;
         
-        if (ನೀರುPositions[soil] >= 100 && !finishTimes[soil]) {
+        if (waterPositions[soil] >= 100 && !finishTimes[soil]) {
           finishTimes[soil] = timer;
           document.getElementById(`badge-${soil}`).classList.add('show');
         }
@@ -551,14 +551,14 @@ function makeItRain() {
     });
     
     // Check if all finished
-    if (Object.values(ನೀರುPositions).every(p => p >= 100)) {
+    if (Object.values(waterPositions).every(p => p >= 100)) {
       endRace();
     }
   }, 100);
 }
 
 function endRace() {
-  clearà²®à²§à³à²¯à²‚à²¤à²°(timerà²®à²§à³à²¯à²‚à²¤à²°);
+  clearInterval(timerInterval);
   isRaining = false;
   
   document.querySelectorAll('.rain-drop').forEach(drop => {
@@ -570,12 +570,12 @@ function endRace() {
   
   // Update results
   document.getElementById('time-gravel').textContent = `${finishTimes.gravel.toFixed(1)}s`;
-  document.getElementById('time-sand').textContent = `${finishTimes.sಮತ್ತು.toFixed(1)}s`;
+  document.getElementById('time-sand').textContent = `${finishTimes.sand.toFixed(1)}s`;
   document.getElementById('time-clay').textContent = `${finishTimes.clay.toFixed(1)}s`;
 }
 
 function resetRace() {
-  clearà²®à²§à³à²¯à²‚à²¤à²°(timerà²®à²§à³à²¯à²‚à²¤à²°);
+  clearInterval(timerInterval);
   isRaining = false;
   timer = 0;
   
@@ -583,8 +583,8 @@ function resetRace() {
     drop.classList.remove('falling');
   });
   
-  ['gravel', 'sಮತ್ತು', 'clay'].forEach(soil => {
-    ನೀರುPositions[soil] = 0;
+  ['gravel', 'sand', 'clay'].forEach(soil => {
+    waterPositions[soil] = 0;
     const drop = document.getElementById(`ನೀರು-${soil}`);
     drop.classList.remove('seeping');
     drop.style.top = '0px';
@@ -598,8 +598,8 @@ function resetRace() {
 
 function showSoilInfo(soil) {
   const info = {
-    gravel: 'ಜಲ್ಲಿ: à²¦à³Šà²¡à³à²¡ particles with big gaps between them. ನೀರು flows through easily like going through a wide tunnel!',
-    sಮತ್ತು: 'SAND: à²®à²§à³à²¯à²® particles with moderate gaps. ನೀರು can pass through, but slower than gravel.',
+    gravel: 'ಜಲ್ಲಿ: ದೊಡ್ಡ particles with big gaps between them. ನೀರು flows through easily like going through a wide tunnel!',
+    sand: 'SAND: ಮಧ್ಯಮ particles with moderate gaps. ನೀರು can pass through, but slower than gravel.',
     clay: 'CLAY: Tiny particles packed tightly together. Almost no gaps! ನೀರು has a very hard time getting through.'
   };
   alert(info[soil]);

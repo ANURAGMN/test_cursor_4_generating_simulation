@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -107,7 +107,7 @@ body {
   background: #fff;
   border: 3px solid #f44336;
   cursor: pointer;
-  box-ನೆರಳು: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .heat-value {
@@ -190,7 +190,7 @@ body {
   height: 18px;
   background: linear-gradient(180deg, #bdbdbd, #9e9e9e, #bdbdbd);
   border-radius: 4px;
-  box-ನೆರಳು: 0 3px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
   overflow: hidden;
 }
 
@@ -231,13 +231,13 @@ body {
   background: radial-gradient(circle, #ffe082, #ffb74d);
   border-radius: 50%;
   margin-bottom: 3px;
-  box-ನೆರಳು: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
 }
 
 .wax-pin.melted .wax {
   background: transparent;
-  box-ನೆರಳು: none;
+  box-shadow: none;
 }
 
 .wax-pin.melted .pin {
@@ -254,7 +254,7 @@ body {
   background: #fff;
   padding: 2px 6px;
   border-radius: 10px;
-  box-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .timer-display {
@@ -303,10 +303,10 @@ body {
 }
 
 .particle.cold { background: #90a4ae; }
-.particle.warm { background: #ff9800; animation: à²•à²‚à²ªà²¿à²¸à³à²¤à³à²¤à²¦à³† 0.3s linear infinite; }
-.particle.hot { background: #f44336; animation: à²•à²‚à²ªà²¿à²¸à³à²¤à³à²¤à²¦à³† 0.15s linear infinite; }
+.particle.warm { background: #ff9800; animation: ಕಂಪಿಸುತ್ತದೆ 0.3s linear infinite; }
+.particle.hot { background: #f44336; animation: ಕಂಪಿಸುತ್ತದೆ 0.15s linear infinite; }
 
-@keyframes à²•à²‚à²ªà²¿à²¸à³à²¤à³à²¤à²¦à³† {
+@keyframes ಕಂಪಿಸುತ್ತದೆ {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-3px); }
   75% { transform: translateX(3px); }
@@ -447,7 +447,7 @@ body {
     <div class="particle-arrow">→</div>
     <div class="particle cold" id="p4">4</div>
   </div>
-  <div class="particle-label">à²¬à²¿à²¸à²¿ à²•à²£à²—à²³à³ à²µà³‡à²—à²µà²¾à²—à²¿ à²•à²‚à²ªà²¿à²¸à²¿ à²¨à³†à²°à³†à²¯à²µà²°à²¿à²—à³† à²¶à²•à³à²¤à²¿ (à²•à²£ à²šà²²à²¿à²¸à³à²µà³à²¦à²¿à²²à³à²², à²¶à²•à³à²¤à²¿ à²®à²¾à²¤à³à²°!)</div>
+  <div class="particle-label">ಬಿಸಿ ಕಣಗಳು ವೇಗವಾಗಿ ಕಂಪಿಸಿ ನೆರೆಯವರಿಗೆ ಶಕ್ತಿ (ಕಣ ಚಲಿಸುವುದಿಲ್ಲ, ಶಕ್ತಿ ಮಾತ್ರ!)</div>
 </div>
 
 <div class="results-panel">
@@ -476,9 +476,9 @@ body {
   <div class="takeaway-title">🎯 ಇದು ಏನನ್ನು ತೋರಿಸುತ್ತದೆ</div>
   <div class="takeaway-text">
     • ಉಷ್ಣ ಪ್ರಯಾಣ <strong>hot to cold</strong> end<br>
-    • ಜ್ವಾಲೆಗೆ ಹತ್ತಿರದ ಪಿನ್ಗಳು ಬೀಳುತ್ತವೆ <strong>à²®à³Šà²¦à²²</strong><br>
-    • ಹೆಚ್ಚು ಉಷ್ಣ = <strong>à²µà³‡à²—à²µà²¾à²—à²¿</strong> ವಾಹಕತೆ<br>
-    • ಕಣಗಳು <strong>à²•à²‚à²ªà²¿à²¸à³à²¤à³à²¤à²¦à³†</strong> à²†à²¦à²°à³† à²¸à³à²¥à²¾à²¨ à²¬à²¦à²²à²¾à²¯à²¿à²¸à²¬à³‡à²¡à²¿
+    • ಜ್ವಾಲೆಗೆ ಹತ್ತಿರದ ಪಿನ್ಗಳು ಬೀಳುತ್ತವೆ <strong>ಮೊದಲ</strong><br>
+    • ಹೆಚ್ಚು ಉಷ್ಣ = <strong>ವೇಗವಾಗಿ</strong> ವಾಹಕತೆ<br>
+    • ಕಣಗಳು <strong>ಕಂಪಿಸುತ್ತದೆ</strong> ಆದರೆ ಸ್ಥಾನ ಬದಲಾಯಿಸಬೇಡಿ
   </div>
 </div>
 
@@ -487,7 +487,7 @@ body {
 <script>
 let isRunning = false;
 let timer = 0;
-let timerà²®à²§à³à²¯à²‚à²¤à²°;
+let timerInterval;
 let heatLevel = 2;
 let pinDropTimes = [0, 0, 0, 0];
 let droppedPins = [false, false, false, false];
@@ -503,10 +503,10 @@ const particles = [
   document.getElementById('p4')
 ];
 
-// Drop times based on heat level (à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³)
+// Drop times based on heat level (ಸೆಕೆಂಡ್â€Œಗಳು)
 const dropSchedule = {
   1: [4, 6, 8, 10],    // Low heat
-  2: [2, 3.5, 5, 6.5], // à²®à²§à³à²¯à²® heat
+  2: [2, 3.5, 5, 6.5], // ಮಧ್ಯಮ heat
   3: [1, 2, 3, 4]      // High heat
 };
 
@@ -529,7 +529,7 @@ function startExperiment() {
   startBtn.disabled = true;
   
   // ಪ್ರಾರಂಭ timer
-  timerà²®à²§à³à²¯à²‚à²¤à²° = setà²®à²§à³à²¯à²‚à²¤à²°(() => {
+  timerInterval = setInterval(() => {
     timer += 0.1;
     timerDisplay.textContent = `⏱️ ${timer.toFixed(1)}s`;
     
@@ -549,10 +549,10 @@ function startExperiment() {
     // Update particles
     updateParticles();
     
-    // Check if à²ªà³‚à²°à³à²£
+    // Check if ಪೂರ್ಣ
     if (droppedPins.every(d => d)) {
       setTimeout(() => {
-        clearà²®à²§à³à²¯à²‚à²¤à²°(timerà²®à²§à³à²¯à²‚à²¤à²°);
+        clearInterval(timerInterval);
         startBtn.textContent = '✓ ಪೂರ್ಣ!';
       }, 500);
     }
@@ -587,7 +587,7 @@ function updateParticles() {
 }
 
 function resetExperiment() {
-  clearà²®à²§à³à²¯à²‚à²¤à²°(timerà²®à²§à³à²¯à²‚à²¤à²°);
+  clearInterval(timerInterval);
   isRunning = false;
   timer = 0;
   pinDropTimes = [0, 0, 0, 0];

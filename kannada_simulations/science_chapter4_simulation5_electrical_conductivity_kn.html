@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -69,7 +69,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -218,7 +218,7 @@ svg { width: 100%; height: 100%; }
 <div class="concept-card">
   <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    <strong>ವಿದ್ಯುತ್ ವಾಹಕತೆ</strong> ವಿದ್ಯುತ್ ಹರಿಯಲು ಅನುಮತಿಸುವ ಸಾಮರ್ಥ್ಯ. <strong>ಲೋಹಗಳು</strong> ಉತ್ತಮ ವಾಹಕಗಳು; <strong>ಅಲೋಹಗಳು</strong> à²•à²³à²ªà³† à²µà²¾à²¹à²• (à²µà²¾à²¹à²•à²µà²²à³à²²à²¦).
+    <strong>ವಿದ್ಯುತ್ ವಾಹಕತೆ</strong> ವಿದ್ಯುತ್ ಹರಿಯಲು ಅನುಮತಿಸುವ ಸಾಮರ್ಥ್ಯ. <strong>ಲೋಹಗಳು</strong> ಉತ್ತಮ ವಾಹಕಗಳು; <strong>ಅಲೋಹಗಳು</strong> ಕಲಪೆ ವಾಹಕ (ವಾಹಕವಲ್ಲದ).
   </div>
 </div>
 
@@ -234,7 +234,7 @@ svg { width: 100%; height: 100%; }
         <text x="25" y="120" font-size="9" fill="#90a4ae" text-anchor="middle">ಬ್ಯಾಟರಿ</text>
       </g>
       
-      <!-- à²¤à²‚à²¤à²¿à²—à²³à³ -->
+      <!-- ತಂತಿಗಳು -->
       <path d="M 100 140 L 140 140 L 140 100 L 180 100" stroke="#ff5722" stroke-width="4" fill="none" id="wire1"/>
       <path d="M 220 100 L 260 100 L 260 140 L 300 140" stroke="#ff5722" stroke-width="4" fill="none" id="wire2"/>
       
@@ -270,39 +270,39 @@ svg { width: 100%; height: 100%; }
   </div>
   
   <div class="materials-grid">
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('copper', '🥉', true, '#b87333', this)">
+    <div class="material-btn" onclick="selectMaterial('copper', '🥉', true, '#b87333', this)">
       <div class="icon">🥉</div>
       <div class="name">ತಾಮ್ರ</div>
       <div class="type">ಲೋಹ</div>
     </div>
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('iron', '⚙️', true, '#616161', this)">
+    <div class="material-btn" onclick="selectMaterial('iron', '⚙️', true, '#616161', this)">
       <div class="icon">⚙️</div>
       <div class="name">Iron</div>
       <div class="type">ಲೋಹ</div>
     </div>
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('aluminium', '🔘', true, '#bdbdbd', this)">
+    <div class="material-btn" onclick="selectMaterial('aluminium', '🔘', true, '#bdbdbd', this)">
       <div class="icon">🔘</div>
-      <div class="name">à²…à²²à³à²¯à³‚à²®à²¿à²¨à²¿à²¯à²‚</div>
+      <div class="name">ಅಲ್ಯೂಮಿನಿಯಂ</div>
       <div class="type">ಲೋಹ</div>
     </div>
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('rubber', '⚫', false, '#37474f', this)">
+    <div class="material-btn" onclick="selectMaterial('rubber', '⚫', false, '#37474f', this)">
       <div class="icon">⚫</div>
-      <div class="name">à²°à²¬à³à²¬à²°à³</div>
-      <div class="type">à²…à²²à³‹à²¹</div>
+      <div class="name">ರಬ್ಬರ್</div>
+      <div class="type">ಅಲೋಹ</div>
     </div>
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('plastic', '🧊', false, '#90caf9', this)">
+    <div class="material-btn" onclick="selectMaterial('plastic', '🧊', false, '#90caf9', this)">
       <div class="icon">🧊</div>
-      <div class="name">à²ªà³à²²à²¾à²¸à³à²Ÿà²¿à²•à³</div>
-      <div class="type">à²…à²²à³‹à²¹</div>
+      <div class="name">ಪ್ಲಾಸ್ಟಿಕ್</div>
+      <div class="type">ಅಲೋಹ</div>
     </div>
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('wood', '🪵', false, '#8d6e63', this)">
+    <div class="material-btn" onclick="selectMaterial('wood', '🪵', false, '#8d6e63', this)">
       <div class="icon">🪵</div>
       <div class="name">Wood</div>
-      <div class="type">à²…à²²à³‹à²¹</div>
+      <div class="type">ಅಲೋಹ</div>
     </div>
   </div>
   
-  <button class="test-btn" id="test-btn" onclick="testಪದಾರ್ಥ()" disabled>
+  <button class="test-btn" id="test-btn" onclick="testMaterial()" disabled>
     ⚡ ವಾಹಕತೆ ಪರೀಕ್ಷಿಸಿ
   </button>
 </div>
@@ -322,35 +322,35 @@ svg { width: 100%; height: 100%; }
   <div class="learning-title">🔬 ಸರ್ಕ್ಯೂಟ್ ಟೆಸ್ಟರ್ ಪ್ರಯೋಗ</div>
   <div class="learning-text" id="learning-text">
     We'll use a simple circuit with a ಬ್ಯಾಟರಿ ಮತ್ತು bulb to test if materials conduct electricity.<br><br>
-    ಬಲ್ಬ್ ಉಜ್ಜ್ವಲವಾದರೆ → <strong>à²µà²¾à²¹à²•</strong> (à²µà²¿à²¦à³à²¯à³à²¤à³ à²¹à²°à²¿à²¯à³à²¤à³à²¤à²¦à³†)<br>
-    ಬಲ್ಬ್ ಆಫ್ ಉಳಿದರೆ → <strong>à²µà²¾à²¹à²•à²µà²²à³à²²à²¦</strong> (à²µà²¿à²¦à³à²¯à³à²¤à³ à²¨à²¿à²°à³à²¬à²‚à²§à²¿à²¤)
+    ಬಲ್ಬ್ ಉಜ್ಜ್ವಲವಾದರೆ → <strong>ವಾಹಕ</strong> (ವಿದ್ಯುತ್ ಹರಿಯುತ್ತದೆ)<br>
+    ಬಲ್ಬ್ ಆಫ್ ಉಳಿದರೆ → <strong>ವಾಹಕವಲ್ಲದ</strong> (ವಿದ್ಯುತ್ ನಿರ್ಬಂಧಿತ)
   </div>
 </div>
 
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೀವು ಕಲಿಯುವುದು</div>
   <div class="takeaway-text">
-    <strong>ಲೋಹಗಳು</strong> à²µà²¿à²¦à³à²¯à³à²¤à³ à²ªà³à²°à²µà²¾à²¹à²µà²¨à³à²¨à³ à²¸à²¾à²—à²¿à²¸à³à²µ à²®à³à²•à³à²¤ à²‡à²²à³†à²•à³à²Ÿà³à²°à²¾à²¨à³ - à²‰à²¤à³à²¤à²® à²µà²¾à²¹à²•!<br><br>
-    <strong>ಅಲೋಹಗಳು</strong> à²®à³à²•à³à²¤ à²‡à²²à³†à²•à³à²Ÿà³à²°à²¾à²¨à³ à²‡à²²à³à²² - à²µà²¿à²¦à³à²¯à³à²¤à³ à²†à²˜à²¾à²¤à²¦à²¿à²‚à²¦ à²°à²•à³à²·à²¿à²¸à³à²µ à²µà²¾à²¹à²•à²µà²²à³à²²à²¦.<br><br>
-    à²…à²¦à²•à³à²•à³‡ à²¤à²‚à²¤à²¿ à²¤à²¾à²®à³à²° (à²µà²¾à²¹à²•) à²°à²¬à³à²¬à²°à³ à²²à³‡à²ªà²¨ (à²µà²¾à²¹à²•à²µà²²à³à²²à²¦)!
+    <strong>ಲೋಹಗಳು</strong> ವಿದ್ಯುತ್ ಪ್ರವಾಹವನ್ನು ಸಾಗಿಸುವ ಮುಕ್ತ ಇಲೆಕ್ಟ್ರಾನ್ - ಉತ್ತಮ ವಾಹಕ!<br><br>
+    <strong>ಅಲೋಹಗಳು</strong> ಮುಕ್ತ ಇಲೆಕ್ಟ್ರಾನ್ ಇಲ್ಲ - ವಿದ್ಯುತ್ ಆಘಾತದಿಂದ ರಕ್ಷಿಸುವ ವಾಹಕವಲ್ಲದ.<br><br>
+    ಅದಕ್ಕೆ ತಂತಿ ತಾಮ್ರ (ವಾಹಕ) ರಬ್ಬರ್ ಲೇಪನ (ವಾಹಕವಲ್ಲದ)!
   </div>
 </div>
 
 </div>
 
 <script>
-let selectedಪದಾರ್ಥ = null;
+let selectedMaterial = null;
 let selectedBtn = null;
-let isà²µà²¾à²¹à²• = false;
+let isConductor = false;
 let materialColor = '#bdbdbd';
 
 const conductorList = [];
 const insulatorList = [];
 
-const testಪದಾರ್ಥBox = document.getElementById('test-material');
+const testMaterialBox = document.getElementById('test-material');
 const materialIcon = document.getElementById('material-icon');
-const bulbà²—à²¾à²œà³ = document.getElementById('bulb-glass');
-const à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³ = document.getElementById('filament');
+const bulbGlass = document.getElementById('bulb-glass');
+const ಫಿಲಾಮೆಂಟ್ = document.getElementById('filament');
 const bulbGroup = document.getElementById('bulb-group');
 const currentFlow = document.getElementById('current-flow');
 const testBtn = document.getElementById('test-btn');
@@ -358,23 +358,23 @@ const resultBadge = document.getElementById('result-badge');
 const instruction = document.getElementById('instruction');
 const learningText = document.getElementById('learning-text');
 
-function selectಪದಾರ್ಥ(name, icon, conductor, color, btn) {
+function selectMaterial(name, icon, conductor, color, btn) {
   if (btn.classList.contains('tested')) return;
   
   // ಮರುಹೊಂದಿಸಿ previous selection
   document.querySelectorAll('.material-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   
-  selectedಪದಾರ್ಥ = name;
+  selectedMaterial = name;
   selectedBtn = btn;
-  isà²µà²¾à²¹à²• = conductor;
+  isConductor = conductor;
   materialColor = color;
   
   // ಮರುಹೊಂದಿಸಿ visual
-  testಪದಾರ್ಥBox.setAttribute('fill', color);
+  testMaterialBox.setAttribute('fill', color);
   materialIcon.textContent = icon;
-  bulbà²—à²¾à²œà³.setAttribute('fill', '#9e9e9e');
-  à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³.setAttribute('stroke', '#666');
+  bulbGlass.setAttribute('fill', '#9e9e9e');
+  ಫಿಲಾಮೆಂಟ್.setAttribute('stroke', '#666');
   bulbGroup.classList.remove('bulb-on');
   currentFlow.style.display = 'none';
   resultBadge.style.display = 'none';
@@ -391,16 +391,16 @@ function selectಪದಾರ್ಥ(name, icon, conductor, color, btn) {
   `;
 }
 
-function testಪದಾರ್ಥ() {
-  if (!selectedಪದಾರ್ಥ) return;
+function testMaterial() {
+  if (!selectedMaterial) return;
   
   testBtn.disabled = true;
   
   setTimeout(() => {
-    if (isà²µà²¾à²¹à²•) {
+    if (isConductor) {
       // ಲೋಹ - conducts electricity
-      bulbà²—à²¾à²œà³.setAttribute('fill', '#ffeb3b');
-      à²«à²¿à²²à²¾à²®à³†à²‚à²Ÿà³.setAttribute('stroke', '#ff9800');
+      bulbGlass.setAttribute('fill', '#ffeb3b');
+      ಫಿಲಾಮೆಂಟ್.setAttribute('stroke', '#ff9800');
       bulbGroup.classList.add('bulb-on');
       currentFlow.style.display = 'block';
       
@@ -409,32 +409,32 @@ function testಪದಾರ್ಥ() {
       resultBadge.style.display = 'block';
       
       selectedBtn.classList.add('tested', 'conductor');
-      conductorList.push(selectedಪದಾರ್ಥ);
+      conductorList.push(selectedMaterial);
       
       instruction.textContent = '💡 ವಿದ್ಯುತ್ ಹರಿಯುತ್ತದೆ - ಬಲ್ಬ್ ಬೆಳಗುತ್ತದೆ!';
       
       learningText.innerHTML = `
-        <strong style="color:#2e7d32">💡 ${selectedಪದಾರ್ಥ.toUpperCase()} is a CONDUCTOR!</strong><br><br>
+        <strong style="color:#2e7d32">💡 ${selectedMaterial.toUpperCase()} is a CONDUCTOR!</strong><br><br>
         The bulb lights up because <strong>electricity flows through</strong> this metal.<br><br>
-        ಲೋಹಗಳು have <strong>à²®à³à²•à³à²¤ à²‡à²²à³†à²•à³à²Ÿà³à²°à²¾à²¨à³â€Œà²—à²³à³</strong> that can move ಮತ್ತು carry electric current from the ಬ್ಯಾಟರಿ to the bulb.
+        ಲೋಹಗಳು have <strong>ಮುಕ್ತ ಇಲೆಕ್ಟ್ರಾನ್â€Œಗಳು</strong> that can move ಮತ್ತು carry electric current from the ಬ್ಯಾಟರಿ to the bulb.
       `;
     } else {
-      // à²…à²²à³‹à²¹ - insulator
-      bulbà²—à²¾à²œà³.setAttribute('fill', '#757575');
+      // ಅಲೋಹ - insulator
+      bulbGlass.setAttribute('fill', '#757575');
       
       resultBadge.textContent = '🚫 ಅವಾಹಕ - ವಿದ್ಯುತ್ ಇಲ್ಲ!';
       resultBadge.className = 'result-badge insulator';
       resultBadge.style.display = 'block';
       
       selectedBtn.classList.add('tested', 'insulator');
-      insulatorList.push(selectedಪದಾರ್ಥ);
+      insulatorList.push(selectedMaterial);
       
       instruction.textContent = '🚫 ವಿದ್ಯುತ್ ಇಲ್ಲ - ಬಲ್ಬ್ ಆಫ್!';
       
       learningText.innerHTML = `
-        <strong style="color:#c62828">🚫 ${selectedಪದಾರ್ಥ.toUpperCase()} is an INSULATOR!</strong><br><br>
+        <strong style="color:#c62828">🚫 ${selectedMaterial.toUpperCase()} is an INSULATOR!</strong><br><br>
         The bulb stays off because <strong>electricity cannot flow through</strong> this non-metal.<br><br>
-        ಅಲೋಹಗಳು don't have à²®à³à²•à³à²¤ à²‡à²²à³†à²•à³à²Ÿà³à²°à²¾à²¨à³â€Œà²—à²³à³, so they <strong>block electric current</strong>. This makes them useful for safety!
+        ಅಲೋಹಗಳು don't have ಮುಕ್ತ ಇಲೆಕ್ಟ್ರಾನ್â€Œಗಳು, so they <strong>block electric current</strong>. This makes them useful for safety!
       `;
     }
     
@@ -443,7 +443,7 @@ function testಪದಾರ್ಥ() {
     document.getElementById('insulator-items').textContent = insulatorList.length ? insulatorList.join(', ') : '-';
     
     testBtn.textContent = '⚡ ಇನ್ನೊಂದು ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ';
-    selectedಪದಾರ್ಥ = null;
+    selectedMaterial = null;
   }, 500);
 }
 </script>

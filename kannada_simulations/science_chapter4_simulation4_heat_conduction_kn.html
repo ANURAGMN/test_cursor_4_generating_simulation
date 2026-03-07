@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -69,7 +69,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -239,7 +239,7 @@ svg { width: 100%; height: 100%; }
         <text x="20" y="-15" font-size="10" fill="#333" text-anchor="middle">ಲೋಹ</text>
       </g>
       
-      <!-- à²®à²°à²¦ spoon -->
+      <!-- ಮರದ spoon -->
       <g id="wooden-spoon" transform="translate(230, 80)">
         <defs>
           <linearGradient id="woodHeat" x1="0%" y1="100%" x2="0%" y2="0%">
@@ -249,8 +249,8 @@ svg { width: 100%; height: 100%; }
         </defs>
         <ellipse cx="20" cy="100" rx="18" ry="12" fill="url(#woodHeat)"/>
         <rect x="15" y="0" width="10" height="90" rx="3" fill="url(#woodHeat)"/>
-        <circle cx="20" cy="0" r="8" fill="#8d6e63" id="wood-hಮತ್ತುle"/>
-        <text x="20" y="-15" font-size="10" fill="#333" text-anchor="middle">à²®à²°à²¦</text>
+        <circle cx="20" cy="0" r="8" fill="#8d6e63" id="wood-handle"/>
+        <text x="20" y="-15" font-size="10" fill="#333" text-anchor="middle">ಮರದ</text>
       </g>
       
       <!-- Hಮತ್ತು touching ಸೂಚಕ -->
@@ -260,7 +260,7 @@ svg { width: 100%; height: 100%; }
       </g>
       
       <!-- Timer -->
-      <text x="200" y="290" font-size="11" fill="#666" text-anchor="middle" id="timer">à²¸à²®à²¯: 0 à²¸à³†à²•à³†à²‚à²¡à³</text>
+      <text x="200" y="290" font-size="11" fill="#666" text-anchor="middle" id="timer">ಸಮಯ: 0 ಸೆಕೆಂಡ್</text>
     </svg>
   </div>
   
@@ -274,30 +274,30 @@ svg { width: 100%; height: 100%; }
     <div class="icon">🥄</div>
     <div class="name">ಲೋಹ Spoon</div>
     <div class="temp" id="metal-temp">25°C</div>
-    <div class="status" id="metal-status">à²•à³‹à²£à³†à²¯ à²‰à²·à³à²£à²¤à³†</div>
+    <div class="status" id="metal-status">ಕೊಂಡೆಯ ಉಷ್ಣತೆ</div>
   </div>
   <div class="spoon-card" id="wood-card">
     <div class="icon">🥢</div>
-    <div class="name">à²®à²°à²¦ à²šà²®à²š</div>
+    <div class="name">ಮರದ ಚಮಚ</div>
     <div class="temp" id="wood-temp">25°C</div>
-    <div class="status" id="wood-status">à²•à³‹à²£à³†à²¯ à²‰à²·à³à²£à²¤à³†</div>
+    <div class="status" id="wood-status">ಕೊಂಡೆಯ ಉಷ್ಣತೆ</div>
   </div>
 </div>
 
 <div class="learning-panel">
   <div class="learning-title">🔬 ಉಷ್ಣ ವಾಹಕತೆ Experiment</div>
   <div class="learning-text" id="learning-text">
-    à²²à³‹à²¹ à²®à²¤à³à²¤à³ à²®à²°à²¦ à²šà²®à²š à²¬à²¿à²¸à²¿ à²¨à³€à²°à²²à³à²²à²¿ à²‡à²¡à³à²¤à³à²¤à³‡à²µà³† à²¯à²¾à²µ à²¹à²¿à²¡à²¿à²•à³† à²¬à³‡à²— à²¬à²¿à²¸à²¿à²¯à²¾à²—à³à²¤à³à²¤à²¦à³† à²¨à³‹à²¡à³à²¤à³à²¤à³‡à²µà³†.<br><br>
-    à²ªà³à²°à²¯à³‹à²— à²ªà³à²°à²¾à²°à²‚à²­à²¿à²¸à²²à³ à²¬à²Ÿà²¨à³ à²Ÿà³à²¯à²¾à²ªà³ à²®à²¾à²¡à²¿!
+    ಲೋಹ ಮತ್ತು ಮರದ ಚಮಚ ಬಿಸಿ ನೀರಲ್ಲಿ ಇಡುತ್ತೇವೆ ಯಾವ ಹಿಡಿಕೆ ಬೇಗ ಬಿಸಿಯಾಗುತ್ತದೆ ನೋಡುತ್ತೇವೆ.<br><br>
+    ಪ್ರಯೋಗ ಪ್ರಾರಂಭಿಸಲು ಬಟನ್ ಟ್ಯಾಪ್ ಮಾಡಿ!
   </div>
 </div>
 
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೀವು ಕಲಿಯುವುದು</div>
   <div class="takeaway-text">
-    <strong>ಲೋಹಗಳು conduct heat quickly</strong> - à²²à³‹à²¹à²¦ à²šà²®à²š à²¹à²¿à²¡à²¿à²•à³† à²¬à³‡à²— à²¬à²¿à²¸à²¿à²¯à²¾à²—à³à²¤à³à²¤à²¦à³†!<br><br>
-    <strong>à²®à²° à²•à²³à²ªà³† à²µà²¾à²¹à²•</strong> - à²®à²°à²¦ à²šà²®à²š à²¹à²¿à²¡à²¿à²•à³† à²¤à²‚à²ªà²¾à²—à²¿ à²‰à²³à²¿à²¯à³à²¤à³à²¤à²¦à³†.<br><br>
-    à²…à²¦à²•à³à²•à³‡ à²…à²¡à³à²—à³† à²ªà²¾à²¤à³à²°à³† à²²à³‹à²¹ (à²†à²¹à²¾à²° à²¬à²¿à²¸à²¿) à²¹à²¿à²¡à²¿à²•à³† à²®à²° à²…à²¥à²µà²¾ à²ªà³à²²à²¾à²¸à³à²Ÿà²¿à²•à³ (à²¤à²‚à²ªà²¾à²—à²¿)!
+    <strong>ಲೋಹಗಳು conduct heat quickly</strong> - ಲೋಹದ ಚಮಚ ಹಿಡಿಕೆ ಬೇಗ ಬಿಸಿಯಾಗುತ್ತದೆ!<br><br>
+    <strong>ಮರ ಕಲಪೆ ವಾಹಕ</strong> - ಮರದ ಚಮಚ ಹಿಡಿಕೆ ತಂಪಾಗಿ ಉಳಿಯುತ್ತದೆ.<br><br>
+    ಅದಕ್ಕೆ ಅಡುಗೆ ಪಾತ್ರೆ ಲೋಹ (ಆಹಾರ ಬಿಸಿ) ಹಿಡಿಕೆ ಮರ ಅಥವಾ ಪ್ಲಾಸ್ಟಿಕ್ (ತಂಪಾಗಿ)!
   </div>
 </div>
 
@@ -319,12 +319,12 @@ const metalCard = document.getElementById('metal-card');
 const woodCard = document.getElementById('wood-card');
 const metalStatus = document.getElementById('metal-status');
 const woodStatus = document.getElementById('wood-status');
-const metalHಮತ್ತುle = document.getElementById('metal-handle');
+const metalHandle = document.getElementById('metal-handle');
 const steamRise = document.getElementById('steam-rise');
 const steam = document.getElementById('steam');
 const learningText = document.getElementById('learning-text');
-const metalHeatನಿಲ್ಲಿಸಿ = document.getElementById('metal-heat-stop');
-const woodHeatನಿಲ್ಲಿಸಿ = document.getElementById('wood-heat-stop');
+const metalHeatStop = document.getElementById('metal-heat-stop');
+const woodHeatStop = document.getElementById('wood-heat-stop');
 
 function startExperiment() {
   if (experimentRunning) return;
@@ -338,9 +338,9 @@ function startExperiment() {
   
   tempDisplay.textContent = '🌡️ ನೀರು: 80°C - ಉಷ್ಣ ವರ್ಗಾವಣೆ ಗಮನಿಸುತ್ತಿದೆ...';
   
-  interval = setà²®à²§à³à²¯à²‚à²¤à²°(() => {
+  interval = setInterval(() => {
     time++;
-    timer.textContent = `Time: ${time} à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³`;
+    timer.textContent = `Time: ${time} ಸೆಕೆಂಡ್‌ಗಳು`;
     
     // ಲೋಹ heats up quickly
     if (metalTemp < 70) {
@@ -358,12 +358,12 @@ function startExperiment() {
     
     // Update colors based on temperature
     const metalHeatPercent = Math.min((metalTemp - 25) / 45, 1);
-    metalHeatನಿಲ್ಲಿಸಿ.setAttribute('offset', `${metalHeatPercent * 80}%`);
+    metalHeatStop.setAttribute('offset', `${metalHeatPercent * 80}%`);
     
     if (metalTemp > 40) {
       metalCard.classList.add('hot');
       metalStatus.textContent = metalTemp > 60 ? '🔥 Very hot!' : '⚠️ Getting hot';
-      metalHಮತ್ತುle.setAttribute('fill', `rgb(${150 + metalHeatPercent * 105}, ${150 - metalHeatPercent * 100}, ${150 - metalHeatPercent * 100})`);
+      metalHandle.setAttribute('fill', `rgb(${150 + metalHeatPercent * 105}, ${150 - metalHeatPercent * 100}, ${150 - metalHeatPercent * 100})`);
     }
     
     if (woodTemp > 28) {
@@ -373,25 +373,25 @@ function startExperiment() {
     // Update learning text based on progress
     if (time === 5) {
       learningText.innerHTML = `
-        <strong>à²¨à²‚à²¤à²° 5 à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³:</strong><br><br>
-        ಲೋಹ spoon hಮತ್ತುle: <strong style="color:#d32f2f">${Math.round(metalTemp)}°C</strong> - Getting warm!<br>
-        à²®à²°à²¦ spoon hಮತ್ತುle: <strong style="color:#4caf50">${Math.round(woodTemp)}°C</strong> - Still cool<br><br>
-        Heat is transferring à²µà³‡à²—à²µà²¾à²—à²¿ through the metal!
+        <strong>ನಂತರ 5 ಸೆಕೆಂಡ್‌ಗಳು:</strong><br><br>
+        ಲೋಹ spoon handle: <strong style="color:#d32f2f">${Math.round(metalTemp)}°C</strong> - Getting warm!<br>
+        ಮರದ spoon handle: <strong style="color:#4caf50">${Math.round(woodTemp)}°C</strong> - Still cool<br><br>
+        Heat is transferring ವೇಗವಾಗಿ through the metal!
       `;
     }
     
     if (time === 10) {
       learningText.innerHTML = `
-        <strong>à²¨à²‚à²¤à²° 10 à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³:</strong><br><br>
+        <strong>ನಂತರ 10 ಸೆಕೆಂಡ್‌ಗಳು:</strong><br><br>
         ಲೋಹ spoon: <strong style="color:#d32f2f">${Math.round(metalTemp)}°C</strong> - HOT! Don't touch!<br>
-        à²®à²°à²¦ spoon: <strong style="color:#4caf50">${Math.round(woodTemp)}°C</strong> - Safe to hold<br><br>
-        The metal conducts heat much à²µà³‡à²—à²µà²¾à²—à²¿ than wood!
+        ಮರದ spoon: <strong style="color:#4caf50">${Math.round(woodTemp)}°C</strong> - Safe to hold<br><br>
+        The metal conducts heat much ವೇಗವಾಗಿ than wood!
       `;
     }
     
-    // End experiment after 15 à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³
+    // End experiment after 15 ಸೆಕೆಂಡ್‌ಗಳು
     if (time >= 15) {
-      clearà²®à²§à³à²¯à²‚à²¤à²°(interval);
+      clearInterval(interval);
       experimentRunning = false;
       startBtn.textContent = '✅ ಪ್ರಯೋಗ ಪೂರ್ಣ';
       tempDisplay.textContent = '🌡️ ಪ್ರಯೋಗ ಮುಗಿದಿದೆ!';
@@ -400,8 +400,8 @@ function startExperiment() {
       learningText.innerHTML = `
         <strong style="color:#2e7d32">✅ ಪ್ರಯೋಗ ಪೂರ್ಣ!</strong><br><br>
         <strong>ಲೋಹ spoon:</strong> ${Math.round(metalTemp)}°C - Conducted heat quickly (GOOD CONDUCTOR)<br>
-        <strong>à²®à²°à²¦ spoon:</strong> ${Math.round(woodTemp)}°C - Stayed cool (POOR CONDUCTOR/INSULATOR)<br><br>
-        <strong>ತೀರ್ಮಾನ:</strong> ಲೋಹಗಳು transfer heat à²¶à²•à³à²¤à²¿ quickly through their atoms. Wood traps heat ಮತ್ತು doesn't transfer it well.
+        <strong>ಮರದ spoon:</strong> ${Math.round(woodTemp)}°C - Stayed cool (POOR CONDUCTOR/INSULATOR)<br><br>
+        <strong>ತೀರ್ಮಾನ:</strong> ಲೋಹಗಳು transfer heat ಶಕ್ತಿ quickly through their atoms. Wood traps heat ಮತ್ತು doesn't transfer it well.
       `;
     }
   }, 1000);

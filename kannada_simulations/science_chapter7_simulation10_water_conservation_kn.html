@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -271,7 +271,7 @@ body {
   white-space: nowrap;
 }
 
-/* à²à²¸à³ à²¸à³à²¤à³‚à²ª View */
+/* ಐಸ್ ಸ್ತೂಪ View */
 .stupa-view {
   position: relative;
   width: 100%;
@@ -384,23 +384,23 @@ body {
 <div class="concept-card">
   <div class="concept-title">📚 ಮುಖ್ಯ ಪರಿಕಲ್ಪನೆ</div>
   <div class="concept-text">
-    ಭೂಜಲ <strong>ಖಾಲಿಯಾಗುತ್ತಿದೆ</strong> ಅತಿಯಾದ ಬಳಕೆ ಮತ್ತು ಕಡಿಮೆ ಅಂತರ್ಸೇಚನ (ಕಾಂಕ್ರೀಟ್ess vegetation). <strong>Rainನೀರು harvesting</strong> ಮತ್ತು <strong>à²°à²¿à²šà²¾à²°à³à²œà³ à²—à³à²‚à²¡à²¿à²—à²³à³</strong> à²­à²µà²¿à²·à³à²¯à²¦ à²ªà³€à²³à²¿à²—à³†à²—à³† à²­à³‚à²œà²² à²ªà³à²¨à²ƒà²ªà³‚à²°à²£à³†.
+    ಭೂಜಲ <strong>ಖಾಲಿಯಾಗುತ್ತಿದೆ</strong> ಅತಿಯಾದ ಬಳಕೆ ಮತ್ತು ಕಡಿಮೆ ಅಂತರ್ಸೇಚನ (ಕಾಂಕ್ರೀಟ್ess vegetation). <strong>Rainನೀರು harvesting</strong> ಮತ್ತು <strong>ರಿಚಾರ್ಜ್ ಗುಂಡಿಗಳು</strong> ಭವಿಷ್ಯದ ಪೀಳಿಗೆಗೆ ಭೂಜಲ ಪುನಃಪೂರಣೆ.
   </div>
 </div>
 
 <div class="sim-card">
   <div class="method-tabs">
-    <button class="method-tab active" onclick="selectವಿಧಾನ('rwh', this)">
+    <button class="method-tab active" onclick="selectMethod('rwh', this)">
       <span class="emoji">🏠</span>
       ವರ್ಷಾಧಾರ ಸಂಗ್ರಹಣೆ
     </button>
-    <button class="method-tab" onclick="selectವಿಧಾನ('pit', this)">
+    <button class="method-tab" onclick="selectMethod('pit', this)">
       <span class="emoji">🕳️</span>
       ರಿಚಾರ್ಜ್ ಗುಂಡಿ
     </button>
-    <button class="method-tab" onclick="selectವಿಧಾನ('stupa', this)">
+    <button class="method-tab" onclick="selectMethod('stupa', this)">
       <span class="emoji">🏔️</span>
-      à²à²¸à³ à²¸à³à²¤à³‚à²ª
+      ಐಸ್ ಸ್ತೂಪ
     </button>
   </div>
   
@@ -419,7 +419,7 @@ body {
       <div class="pipe"></div>
       <div class="tank">
         <div class="tank-ನೀರು" style="height: 70%;"></div>
-        <div class="tank-label">à²­à²‚à²¡à²¾à²° à²Ÿà³à²¯à²¾à²‚à²•à³</div>
+        <div class="tank-label">ಭಂಡಾರ ಟ್ಯಾಂಕ್</div>
       </div>
     </div>
     
@@ -433,16 +433,16 @@ body {
         <div class="pit-arrow" style="top: 50px; left: 35%;">⬇️</div>
         <div class="pit-arrow" style="top: 60px; left: 55%; animation-delay: 0.5s;">⬇️</div>
       </div>
-      <div class="pit-label">ನೀರು à²­à³‚à²œà²²à²•à³à²•à³† à²’à²³à²¸à³‡à²°à³à²¤à³à²¤à²¦à³†</div>
+      <div class="pit-label">ನೀರು ಭೂಜಲಕ್ಕೆ ಒಳಸೇರುತ್ತದೆ</div>
     </div>
     
-    <!-- à²à²¸à³ à²¸à³à²¤à³‚à²ª View -->
+    <!-- ಐಸ್ ಸ್ತೂಪ View -->
     <div class="stupa-view" id="stupa-view">
       <div class="stupa-moon">🌙</div>
       <div class="mountain-bg"></div>
       <div class="ice-stupa"></div>
       <div class="stupa-ನೀರು">💦</div>
-      <div class="stupa-label">❄️ à²à²¸à³ à²¸à³à²¤à³‚à²ª - Ladakh</div>
+      <div class="stupa-label">❄️ ಐಸ್ ಸ್ತೂಪ - Ladakh</div>
     </div>
   </div>
 </div>
@@ -450,16 +450,16 @@ body {
 <div class="info-panel" id="info-panel">
   <div class="info-title" id="info-title">🏠 ವರ್ಷಾಧಾರ ಸಂಗ್ರಹಣೆ</div>
   <div class="info-text" id="info-text">
-    ಛಾವಣಿಯ ಮೇಲೆ ಬೀಳುವ ಮಳೆನೀರು ಗಟರ್ಸ್ ಮೂಲಕ ಸಂಗ್ರಹs ಮತ್ತು pipes into storage tanks. This ನೀರು can be used for <strong>à²‰à²¦à³à²¯à²¾à²¨, à²¤à³Šà²³à³†à²¯à³à²µà³à²¦à³ à²…à²¥à²µà²¾ à²•à³à²¡à²¿à²¯à³à²µà³à²¦à³</strong> (à²šà²¿à²•à²¿à²¤à³à²¸à³†à²¯ à²¨à²‚à²¤à²°). à²­à³‚à²œà²² à²…à²µà²²à²‚à²¬à²¨à³† à²•à²¡à²¿à²®à³†!
+    ಛಾವಣಿಯ ಮೇಲೆ ಬೀಳುವ ಮಳೆನೀರು ಗಟರ್ಸ್ ಮೂಲಕ ಸಂಗ್ರಹs ಮತ್ತು pipes into storage tanks. This ನೀರು can be used for <strong>ಉದ್ಯಾನ, ತೊಳೆಯುವುದು ಅಥವಾ ಕುಡಿಯುವುದು</strong> (ಚಿಕಿತ್ಸೆಯ ನಂತರ). ಭೂಜಲ ಅವಲಂಬನೆ ಕಡಿಮೆ!
   </div>
 </div>
 
 <div class="problem-box">
   <div class="problem-title">⚠️ The Problem: Groundನೀರು Depletion</div>
   <div class="problem-text">
-    • <strong>à²•à²¾à²‚à²•à³à²°à³€à²Ÿà³ à²®à³‡à²²à³à²®à³ˆ</strong> ನೀರು à²­à³‚à²®à²¿à²—à³† à²’à²³à²¸à³‡à²°à³à²µà³à²¦à³ à²¤à²¡à³†<br>
-    • <strong>à²µà²¨à²¨à²¾à²¶</strong> ನೀರು à²§à²¾à²°à²£ à²•à²¡à²¿à²®à³†<br>
-    • <strong>à²…à²¤à²¿ à²¹à³Šà²°à²¤à³†à²—à³†à²¯à³à²µà²¿à²•à³†</strong> à²•à³ƒà²·à²¿ à²®à²¤à³à²¤à³ à²¨à²—à²°à²—à²³à²¿à²—à³†<br>
+    • <strong>ಕಾಂಕ್ರೀಟ್ ಮೇಲ್ಮೈ</strong> ನೀರು ಭೂಮಿಗೆ ಒಳಸೇರುವುದು ತಡೆ<br>
+    • <strong>ವನನಾಶ</strong> ನೀರು ಧಾರಣ ಕಡಿಮೆ<br>
+    • <strong>ಅತಿ ಹೊರತೆಗೆಯುವಿಕೆ</strong> ಕೃಷಿ ಮತ್ತು ನಗರಗಳಿಗೆ<br>
     • ಭಾರತದ ಅನೇಕ ಪ್ರದೇಶದಲ್ಲಿ ಭೂಜಲ ಇಳಿಯುತ್ತಿದೆ
   </div>
 </div>
@@ -468,9 +468,9 @@ body {
   <div class="takeaway-title">🎯 ನಾವು ಏನು ಮಾಡಬಹುದು?</div>
   <div class="takeaway-text">
     • ಸ್ಥಾಪಿಸಿ <strong>rainನೀರು harvesting</strong> at home<br>
-    • ರಚಿಸಿ <strong>à²°à²¿à²šà²¾à²°à³à²œà³ à²—à³à²‚à²¡à²¿à²—à²³à³</strong> à²‰à²¦à³à²¯à²¾à²¨à²—à²³à²²à³à²²à²¿<br>
-    • <strong>à²®à²° à²¨à³†à²¡à²¿</strong> - à²¬à³‡à²°à³à²—à²³à³ à²’à²³à²¸à³‡à²°à³à²µà²¿à²•à³†à²—à³† à²¸à²¹à²¾à²¯<br>
-    • <strong>à²¨à³€à²°à²¨à³à²¨à³ à²¬à³à²¦à³à²§à²¿à²µà²‚à²¤à²¿à²•à³†à²¯à²¿à²‚à²¦ à²¬à²³à²¸à²¿</strong> - à²¸à³‹à²°à²¿à²•à³† à²¸à²°à²¿à²ªà²¡à²¿à²¸à²¿, à²šà²¿à²•à³à²• à²¸à³à²¨à²¾à²¨<br>
+    • ರಚಿಸಿ <strong>ರಿಚಾರ್ಜ್ ಗುಂಡಿಗಳು</strong> ಉದ್ಯಾನಗಳಲ್ಲಿ<br>
+    • <strong>ಮರ ನೆಡಿ</strong> - ಬೇರುಗಳು ಒಳಸೇರುವಿಕೆಗೆ ಸಹಾಯ<br>
+    • <strong>ನೀರನ್ನು ಬುದ್ಧಿವಂತಿಕೆಯಿಂದ ಬಳಸಿ</strong> - ಸೋರಿಕೆ ಸರಿಪಡಿಸಿ, ಚಿಕ್ಕ ಸ್ನಾನ<br>
     • Support community ನೀರು conservation projects
   </div>
 </div>
@@ -481,7 +481,7 @@ body {
 const methods = {
   rwh: {
     title: '🏠 ವರ್ಷಾಧಾರ ಸಂಗ್ರಹಣೆ',
-    text: 'ಛಾವಣಿಯ ಮೇಲೆ ಬೀಳುವ ಮಳೆನೀರು ಗಟರ್ಸ್ ಮೂಲಕ ಸಂಗ್ರಹs ಮತ್ತು pipes into storage tanks. This ನೀರು can be used for <strong>à²‰à²¦à³à²¯à²¾à²¨, à²¤à³Šà²³à³†à²¯à³à²µà³à²¦à³ à²…à²¥à²µà²¾ à²•à³à²¡à²¿à²¯à³à²µà³à²¦à³</strong> (à²šà²¿à²•à²¿à²¤à³à²¸à³†à²¯ à²¨à²‚à²¤à²°). à²­à³‚à²œà²² à²…à²µà²²à²‚à²¬à²¨à³† à²•à²¡à²¿à²®à³†!'
+    text: 'ಛಾವಣಿಯ ಮೇಲೆ ಬೀಳುವ ಮಳೆನೀರು ಗಟರ್ಸ್ ಮೂಲಕ ಸಂಗ್ರಹs ಮತ್ತು pipes into storage tanks. This ನೀರು can be used for <strong>ಉದ್ಯಾನ, ತೊಳೆಯುವುದು ಅಥವಾ ಕುಡಿಯುವುದು</strong> (ಚಿಕಿತ್ಸೆಯ ನಂತರ). ಭೂಜಲ ಅವಲಂಬನೆ ಕಡಿಮೆ!'
   },
   pit: {
     title: '🕳️ ರಿಚಾರ್ಜ್ ಗುಂಡಿ',
@@ -489,7 +489,7 @@ const methods = {
   },
   stupa: {
     title: '🏔️ ಐಸ್ ಸ್ಟೂಪಾ (ಲಡಾಕ್)',
-    text: 'In cold Ladakh, ನೀರು is sprayed at à²°à²¾à²¤à³à²°à²¿ in winter to form <strong>artificial glaciers</strong> called à²à²¸à³ à²¸à³à²¤à³‚à²ªs. These cone-shaped ice structures slowly melt in summer, providing ನೀರು for farming when it\'s needed most - an ingenious traditional solution!'
+    text: 'In cold Ladakh, ನೀರು is sprayed at ರಾತ್ರಿ in winter to form <strong>artificial glaciers</strong> called ಐಸ್ ಸ್ತೂಪs. These cone-shaped ice structures slowly melt in summer, providing ನೀರು for farming when it\'s needed most - an ingenious traditional solution!'
   }
 };
 
@@ -499,7 +499,7 @@ const stupaView = document.getElementById('stupa-view');
 const infoTitle = document.getElementById('info-title');
 const infoText = document.getElementById('info-text');
 
-function selectವಿಧಾನ(method, btn) {
+function selectMethod(method, btn) {
   document.querySelectorAll('.method-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   

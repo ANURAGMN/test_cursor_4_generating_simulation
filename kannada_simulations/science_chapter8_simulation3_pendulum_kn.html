@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -117,7 +117,7 @@ body {
   height: 15px;
   background: linear-gradient(180deg, #5d4037, #795548);
   border-radius: 3px;
-  box-ನೆರಳು: 0 3px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
 }
 
 .pivot {
@@ -154,7 +154,7 @@ body {
   border-radius: 50%;
   margin: 0 auto;
   margin-top: -5px;
-  box-ನೆರಳು: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .bob.heavy {
@@ -270,15 +270,15 @@ body {
 <div class="concept-card">
   <div class="concept-title">📚 ಸರಳ ಲೋಲಕ ಎಂದರೇನು?</div>
   <div class="concept-text">
-    ಸರಳ ಲೋಲಕ ಒಂದು <strong>bob</strong> (ತೂಕ) ನೇತಾಡುತ್ತಿದೆ <strong>ದಾರ</strong> attached to a fixed point. When displaced ಮತ್ತು released, it swings back ಮತ್ತು forth in a regular pattern called <strong>à²†à²‚à²¦à³‹à²²à²¨</strong>.
+    ಸರಳ ಲೋಲಕ ಒಂದು <strong>bob</strong> (ತೂಕ) ನೇತಾಡುತ್ತಿದೆ <strong>ದಾರ</strong> attached to a fixed point. When displaced ಮತ್ತು released, it swings back ಮತ್ತು forth in a regular pattern called <strong>ಆಂದೋಲನ</strong>.
   </div>
 </div>
 
 <div class="sim-card">
   <div class="controls">
     <div class="control-group">
-      <label>📏 ದಾರದ ಉದ್ದ à²‰à²¦à³à²¦</label>
-      <input type="range" id="length-slider" min="50" max="200" value="100" oninput="updateà²‰à²¦à³à²¦(this.value)">
+      <label>📏 ದಾರದ ಉದ್ದ ಉದ್ದ</label>
+      <input type="range" id="length-slider" min="50" max="200" value="100" oninput="updateLength(this.value)">
       <div class="control-value" id="length-value">100 cm</div>
     </div>
     <div class="control-group">
@@ -298,7 +298,7 @@ body {
     </div>
     
     <div class="mean-position"></div>
-    <div class="mean-label">à²®à²§à³à²¯ à²¸à³à²¥à²¾à²¨</div>
+    <div class="mean-label">ಮಧ್ಯ ಸ್ಥಾನ</div>
     
     <div class="position-markers">
       <span>← ಅತಿ</span>
@@ -307,24 +307,24 @@ body {
   </div>
   
   <div class="control-buttons">
-    <button class="control-btn start-btn" id="start-btn" onclick="startà²Šà²¸à²°à²µà²³à²¿()">▶️ ಪ್ರಾರಂಭ</button>
-    <button class="control-btn stop-btn" onclick="stopà²Šà²¸à²°à²µà²³à²¿()">⏹️ ನಿಲ್ಲಿಸಿ</button>
-    <button class="control-btn reset-btn" onclick="resetà²Šà²¸à²°à²µà²³à²¿()">🔄 ಮರುಹೊಂದಿಸಿ</button>
+    <button class="control-btn start-btn" id="start-btn" onclick="startPendulum()">▶️ ಪ್ರಾರಂಭ</button>
+    <button class="control-btn stop-btn" onclick="stopPendulum()">⏹️ ನಿಲ್ಲಿಸಿ</button>
+    <button class="control-btn reset-btn" onclick="resetPendulum()">🔄 ಮರುಹೊಂದಿಸಿ</button>
   </div>
   
   <div class="measurements">
     <div class="measurement">
-      <div class="label">à²†à²‚à²¦à³‹à²²à²¨à²—à²³à³</div>
+      <div class="label">ಆಂದೋಲನಗಳು</div>
       <div class="value" id="oscillation-count">0</div>
-      <div class="unit">à²ªà³‚à²°à³à²£</div>
+      <div class="unit">ಪೂರ್ಣ</div>
     </div>
     <div class="measurement">
       <div class="label">ಕಾಲಾವಧಿ</div>
       <div class="value" id="time-period">0.00</div>
-      <div class="unit">à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³</div>
+      <div class="unit">ಸೆಕೆಂಡ್â€Œಗಳು</div>
     </div>
     <div class="measurement">
-      <div class="label">à²†à²µà²°à³à²¤à²¨à³†</div>
+      <div class="label">ಆವರ್ತನೆ</div>
       <div class="value" id="frequency">0.00</div>
       <div class="unit">Hz</div>
     </div>
@@ -335,18 +335,18 @@ body {
   <div class="formula-title">📐 ಕಾಲಾವಧಿ Formula</div>
   <div class="formula">T = 2π √(L/g)</div>
   <div class="formula-note">
-    <strong>T</strong> = ಕಾಲಾವಧಿ (à²¸à³†à²•à³†à²‚à²¡à³)<br>
-    <strong>L</strong> = à²Šà²¸à²°à²µà²³à²¿ à²‰à²¦à³à²¦ (à²®à³€à²Ÿà²°à³)<br>
+    <strong>T</strong> = ಕಾಲಾವಧಿ (ಸೆಕೆಂಡ್)<br>
+    <strong>L</strong> = ಊಸರವಳಿ ಉದ್ದ (ಮೀಟರ್)<br>
     <strong>g</strong> = ಗುರುತ್ವ ತ್ವರಣ (9.8 m/s²)<br><br>
-    ⭐ ಗಮನಿಸಿ: <strong>à²¦à³à²°à²µà³à²¯à²°à²¾à²¶à²¿ à²•à²¾à²£à²¿à²¸à³à²µà³à²¦à²¿à²²à³à²²!</strong> ಕಾಲಾವಧಿ à²•à³‡à²µà²² à²‰à²¦à³à²¦à²¦ à²®à³‡à²²à³† à²…à²µà²²à²‚à²¬à²¿à²¤.
+    ⭐ ಗಮನಿಸಿ: <strong>ದ್ರವ್ಯರಾಶಿ ಕಾಣಿಸುವುದಿಲ್ಲ!</strong> ಕಾಲಾವಧಿ ಕೇವಲ ಉದ್ದದ ಮೇಲೆ ಅವಲಂಬಿತ.
   </div>
 </div>
 
 <div class="takeaway">
   <div class="takeaway-title">🎯 ಮುಖ್ಯ ಆವಿಷ್ಕಾರ</div>
   <div class="takeaway-text">
-    • ಕಾಲಾವಧಿ <strong>à²‰à²¦à³à²¦à²¦ à²®à³‡à²²à³† à²…à²µà²²à²‚à²¬à²¿à²¤</strong> - à²‰à²¦à³à²¦ = à²¨à²¿à²§à²¾à²¨<br>
-    • ಕಾಲಾವಧಿ <strong>à²¦à³à²°à²µà³à²¯à²°à²¾à²¶à²¿à²¯ à²®à³‡à²²à³† à²…à²µà²²à²‚à²¬à²¿à²¤à²µà²²à³à²²</strong><br>
+    • ಕಾಲಾವಧಿ <strong>ಉದ್ದದ ಮೇಲೆ ಅವಲಂಬಿತ</strong> - ಉದ್ದ = ನಿಧಾನ<br>
+    • ಕಾಲಾವಧಿ <strong>ದ್ರವ್ಯರಾಶಿಯ ಮೇಲೆ ಅವಲಂಬಿತವಲ್ಲ</strong><br>
     • ಈ ಸ್ಥಿರ ಕಾಲವೇ ಘಡಿಯಾರಗಳಲ್ಲಿ ಲೋಲಕಗಳನ್ನು ಬಳಸಲು ಕಾರಣ!<br>
     • ದ್ರವ್ಯರಾಶಿ ಸ್ಲೈಡರ್ ಬದಲಾಯಿಸಿ - ಅವಧಿ ಒಂದೇ!
   </div>
@@ -358,7 +358,7 @@ body {
 let isSwinging = false;
 let animationId;
 let startTime;
-let à²†à²‚à²¦à³‹à²²à²¨Count = 0;
+let ಆಂದೋಲನCount = 0;
 let lastCrossing = 0;
 let currentAngle = 30; // degrees
 let angularVelocity = 0;
@@ -366,17 +366,17 @@ let length = 100; // cm
 let mass = 100; // g
 
 const pendulum = document.getElementById('pendulum');
-const ದಾರ = document.getElementById('string');
+const wireEl = document.getElementById('string');
 const bob = document.getElementById('bob');
 const g = 980; // cm/s²
 
-function updateà²‰à²¦à³à²¦(value) {
+function updateLength(value) {
   length = parseInt(value);
   document.getElementById('length-value').textContent = `${length} cm`;
   
   // Update visual
-  const visualà²‰à²¦à³à²¦ = 50 + (length - 50) * 0.67; // Scale for display
-  ದಾರ.style.height = `${visualà²‰à²¦à³à²¦}px`;
+  const visualLength = 50 + (length - 50) * 0.67; // Scale for display
+  wireEl.style.height = `${visualLength}px`;
   
   // Update calculated time period
   updateCalculations();
@@ -404,12 +404,12 @@ function updateCalculations() {
   document.getElementById('frequency').textContent = (1 / T).toFixed(2);
 }
 
-function startà²Šà²¸à²°à²µà²³à²¿() {
+function startPendulum() {
   if (isSwinging) return;
   
   isSwinging = true;
   startTime = Date.now();
-  à²†à²‚à²¦à³‹à²²à²¨Count = 0;
+  ಆಂದೋಲನCount = 0;
   lastCrossing = 0;
   currentAngle = 30;
   angularVelocity = 0;
@@ -434,10 +434,10 @@ function animate() {
   // Add small damping
   angularVelocity *= 0.9995;
   
-  // Detect zero crossing (à²†à²‚à²¦à³‹à²²à²¨ à²ªà³‚à²°à³à²£ when crossing from negative to positive)
+  // Detect zero crossing (ಆಂದೋಲನ ಪೂರ್ಣ when crossing from negative to positive)
   if (lastCrossing < 0 && currentAngle >= 0) {
-    à²†à²‚à²¦à³‹à²²à²¨Count++;
-    document.getElementById('oscillation-count').textContent = Math.floor(à²†à²‚à²¦à³‹à²²à²¨Count / 2);
+    ಆಂದೋಲನCount++;
+    document.getElementById('oscillation-count').textContent = Math.floor(ಆಂದೋಲನCount / 2);
   }
   lastCrossing = currentAngle;
   
@@ -447,23 +447,23 @@ function animate() {
   animationId = requestAnimationFrame(animate);
 }
 
-function stopà²Šà²¸à²°à²µà²³à²¿() {
+function stopPendulum() {
   isSwinging = false;
   cancelAnimationFrame(animationId);
   document.getElementById('start-btn').textContent = '▶️ ಪ್ರಾರಂಭ';
   document.getElementById('start-btn').disabled = false;
 }
 
-function resetà²Šà²¸à²°à²µà²³à²¿() {
-  stopà²Šà²¸à²°à²µà²³à²¿();
+function resetPendulum() {
+  stopPendulum();
   currentAngle = 0;
-  à²†à²‚à²¦à³‹à²²à²¨Count = 0;
+  ಆಂದೋಲನCount = 0;
   pendulum.style.transform = 'translateX(-50%) rotate(0deg)';
   document.getElementById('oscillation-count').textContent = '0';
 }
 
 // Initialize
-updateà²‰à²¦à³à²¦(100);
+updateLength(100);
 updateMass(100);
 </script>
 </body>

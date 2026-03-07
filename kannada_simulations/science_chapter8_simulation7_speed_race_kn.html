@@ -49,7 +49,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -242,13 +242,13 @@ body {
   <div class="race-setup">
     <div class="racer-setup">
       <div class="icon">🚶</div>
-      <div class="name">à²¨à²¡à³†à²¦à²¾à²¡à³à²µà²µà²¨à³</div>
+      <div class="name">ನಡೆದಾಡುವವನು</div>
       <input type="number" id="speed-walker" value="5" min="1" max="10">
       <div class="unit">km/h</div>
     </div>
     <div class="racer-setup">
       <div class="icon">🚴</div>
-      <div class="name">à²¸à³ˆà²•à³à²²à²¿à²¸à³à²Ÿà³</div>
+      <div class="name">ಸೈಕ್ಲಿಸ್ಟ್</div>
       <input type="number" id="speed-cyclist" value="20" min="5" max="40">
       <div class="unit">km/h</div>
     </div>
@@ -260,7 +260,7 @@ body {
     </div>
     <div class="racer-setup">
       <div class="icon">🚆</div>
-      <div class="name">à²°à³ˆà²²à³</div>
+      <div class="name">ರೈಲು</div>
       <input type="number" id="speed-train" value="100" min="50" max="200">
       <div class="unit">km/h</div>
     </div>
@@ -274,7 +274,7 @@ body {
     </div>
     
     <div class="finish-line"></div>
-    <div class="finish-label">à²®à³à²—à²¿à²¦à²¿à²¦à³†</div>
+    <div class="finish-label">ಮುಗಿದಿದೆ</div>
     
     <div class="racer racer-walker" id="racer-walker">🚶</div>
     <div class="racer racer-cyclist" id="racer-cyclist">🚴</div>
@@ -297,7 +297,7 @@ body {
   
   <div class="timer-display">
     <div class="timer-time" id="timer">00:00.0</div>
-    <div class="timer-label">à²“à²Ÿ à²¸à²®à²¯ (à²…à²¨à³à²•à²°à²£)</div>
+    <div class="timer-label">ಒಟ್ಟು ಸಮಯ (ಅನುಕರಣ)</div>
   </div>
 </div>
 
@@ -315,13 +315,13 @@ body {
 
 <script>
 let isRacing = false;
-let raceà²®à²§à³à²¯à²‚à²¤à²°;
+let raceInterval;
 let raceTime = 0;
 const distance = 1; // km
 
 const racers = ['walker', 'cyclist', 'car', 'train'];
 const icons = { walker: '🚶', cyclist: '🚴', car: '🚗', train: '🚆' };
-const names = { walker: 'à²¨à²¡à³†à²¦à²¾à²¡à³à²µà²µà²¨à³', cyclist: 'à²¸à³ˆà²•à³à²²à²¿à²¸à³à²Ÿà³', car: 'Car', train: 'à²°à³ˆà²²à³' };
+const names = { walker: 'ನಡೆದಾಡುವವನು', cyclist: 'ಸೈಕ್ಲಿಸ್ಟ್', car: 'Car', train: 'ರೈಲು' };
 
 let positions = {};
 let ವೇಗs = {};
@@ -349,16 +349,16 @@ function startRace() {
   document.getElementById('results-panel').style.display = 'none';
   document.getElementById('calc-box').style.display = 'none';
   
-  // Simulation ವೇಗ factor (1 real à²¸à³†à²•à³†à²‚à²¡à³ = 30 simulated à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³)
+  // Simulation ವೇಗ factor (1 real ಸೆಕೆಂಡ್ = 30 simulated ಸೆಕೆಂಡ್â€Œಗಳು)
   const simFactor = 30;
   
-  raceà²®à²§à³à²¯à²‚à²¤à²° = setà²®à²§à³à²¯à²‚à²¤à²°(() => {
-    raceTime += 0.1 * simFactor; // à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³
+  raceInterval = setಮಧ್ಯಂತರ(() => {
+    raceTime += 0.1 * simFactor; // ಸೆಕೆಂಡ್â€Œಗಳು
     
     // Update positions
     racers.forEach(racer => {
       if (!finishTimes[racer]) {
-        // position = ವೇಗ * time / 3600 (convert à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ to à²—à²‚à²Ÿà³†à²—à²³à³)
+        // position = ವೇಗ * time / 3600 (convert ಸೆಕೆಂಡ್â€Œಗಳು to ಗಂಟೆಗಳು)
         positions[racer] = ವೇಗs[racer] * (raceTime / 3600);
         
         if (positions[racer] >= distance) {
@@ -374,12 +374,12 @@ function startRace() {
     });
     
     // Update timer
-    const à²¨à²¿à²®à²¿à²·à²—à²³à³ = Math.floor(raceTime / 60);
-    const à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ = (raceTime % 60).toFixed(1);
+    const ನಿಮಿಷಗಳು = Math.floor(raceTime / 60);
+    const ಸೆಕೆಂಡ್â€Œಗಳು = (raceTime % 60).toFixed(1);
     document.getElementById('timer').textContent = 
-      `${à²¨à²¿à²®à²¿à²·à²—à²³à³.toದಾರದ ಉದ್ದ().padಪ್ರಾರಂಭ(2, '0')}:${à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³.padಪ್ರಾರಂಭ(4, '0')}`;
+      `${ನಿಮಿಷಗಳು.toString().padStart(2, '0')}:${ಸೆಕೆಂಡ್â€Œಗಳು.padStart(4, '0')}`;
     
-    // Check if race à²ªà³‚à²°à³à²£
+    // Check if race ಪೂರ್ಣ
     if (finishOrder.length === racers.length) {
       endRace();
     }
@@ -387,7 +387,7 @@ function startRace() {
 }
 
 function endRace() {
-  clearà²®à²§à³à²¯à²‚à²¤à²°(raceà²®à²§à³à²¯à²‚à²¤à²°);
+  clearInterval(raceInterval);
   isRacing = false;
   document.getElementById('start-btn').disabled = false;
   
@@ -401,9 +401,9 @@ function endRace() {
   
   finishOrder.forEach((racer, index) => {
     const time = finishTimes[racer];
-    const à²¨à²¿à²®à²¿à²·à²—à²³à³ = Math.floor(time / 60);
-    const à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³ = (time % 60).toFixed(1);
-    const timeStr = à²¨à²¿à²®à²¿à²·à²—à²³à³ > 0 ? `${à²¨à²¿à²®à²¿à²·à²—à²³à³}m ${à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³}s` : `${à²¸à³†à²•à³†à²‚à²¡à³â€Œà²—à²³à³}s`;
+    const ನಿಮಿಷಗಳು = Math.floor(time / 60);
+    const ಸೆಕೆಂಡ್â€Œಗಳು = (time % 60).toFixed(1);
+    const timeStr = ನಿಮಿಷಗಳು > 0 ? `${ನಿಮಿಷಗಳು}m ${ಸೆಕೆಂಡ್â€Œಗಳು}s` : `${ಸೆಕೆಂಡ್â€Œಗಳು}s`;
     
     resultsHTML += `
       <div class="result-row">
@@ -423,7 +423,7 @@ function endRace() {
 }
 
 function resetRace() {
-  clearà²®à²§à³à²¯à²‚à²¤à²°(raceà²®à²§à³à²¯à²‚à²¤à²°);
+  clearInterval(raceInterval);
   isRacing = false;
   raceTime = 0;
   

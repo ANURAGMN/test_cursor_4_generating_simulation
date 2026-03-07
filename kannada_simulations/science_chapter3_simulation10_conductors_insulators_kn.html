@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -69,7 +69,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -271,7 +271,7 @@ svg { width: 100%; height: 100%; }
         <text x="25" y="25" font-size="8" fill="#fff" text-anchor="middle">CELL</text>
       </g>
       
-      <!-- à²¤à²‚à²¤à²¿à²—à²³à³ -->
+      <!-- ತಂತಿಗಳು -->
       <path id="wire-left" d="M 60 100 L 60 60 L 150 60" stroke="#4caf50" stroke-width="3"/>
       <path id="wire-right" d="M 250 60 L 340 60 L 340 100" stroke="#e0e0e0" stroke-width="3"/>
       <path id="wire-bottom" d="M 340 160 L 340 180 L 60 180 L 60 140" stroke="#4caf50" stroke-width="3"/>
@@ -306,37 +306,37 @@ svg { width: 100%; height: 100%; }
   </div>
   
   <div class="materials-grid">
-    <div class="material-btn" onclick="testಪದಾರ್ಥ('spoon', '🥄', true, this)">
+    <div class="material-btn" onclick="testMaterial('spoon', '🥄', true, this)">
       <div class="icon">🥄</div>
       <div class="name">ಲೋಹ Spoon</div>
     </div>
-    <div class="material-btn" onclick="testಪದಾರ್ಥ('key', '🔑', true, this)">
+    <div class="material-btn" onclick="testMaterial('key', '🔑', true, this)">
       <div class="icon">🔑</div>
       <div class="name">Iron Key</div>
     </div>
-    <div class="material-btn" onclick="testಪದಾರ್ಥ('coin', '🪙', true, this)">
+    <div class="material-btn" onclick="testMaterial('coin', '🪙', true, this)">
       <div class="icon">🪙</div>
-      <div class="name">Coin</div>
+      <div class="name">ನಾಣ್ಯ</div>
     </div>
-    <div class="material-btn" onclick="testಪದಾರ್ಥ('foil', '📄', true, this)">
+    <div class="material-btn" onclick="testMaterial('foil', '📄', true, this)">
       <div class="icon">📄</div>
-      <div class="name">à²…à²²à³à²¯à³‚à²®à²¿à²¨à²¿à²¯à²‚ à²«à²¾à²¯à²¿à²²à³</div>
+      <div class="name">ಅಲ್ಯೂಮಿನಿಯಂ ಫಾಯಿಲ್</div>
     </div>
-    <div class="material-btn" onclick="testಪದಾರ್ಥ('plastic', '📏', false, this)">
+    <div class="material-btn" onclick="testMaterial('plastic', '📏', false, this)">
       <div class="icon">📏</div>
-      <div class="name">à²ªà³à²²à²¾à²¸à³à²Ÿà²¿à²•à³ à²¸à³à²•à³‡à²²à³</div>
+      <div class="name">ಪ್ಲಾಸ್ಟಿಕ್ ಸ್ಕೇಲ್</div>
     </div>
-    <div class="material-btn" onclick="testಪದಾರ್ಥ('rubber', '🧽', false, this)">
+    <div class="material-btn" onclick="testMaterial('rubber', '🧽', false, this)">
       <div class="icon">🧽</div>
-      <div class="name">à²°à²¬à³à²¬à²°à³ à²ˆà²°à³‡à²¸à²°à³</div>
+      <div class="name">ರಬ್ಬರ್ ಈರೇಸರ್</div>
     </div>
-    <div class="material-btn" onclick="testಪದಾರ್ಥ('wood', '🪵', false, this)">
+    <div class="material-btn" onclick="testMaterial('wood', '🪵', false, this)">
       <div class="icon">🪵</div>
-      <div class="name">à²®à²°à²¦ à²•à²¡à³à²¡à²¿</div>
+      <div class="name">ಮರದ ಕಡ್ಡಿ</div>
     </div>
-    <div class="material-btn" onclick="testಪದಾರ್ಥ('glass', '🥛', false, this)">
+    <div class="material-btn" onclick="testMaterial('glass', '🥛', false, this)">
       <div class="icon">🥛</div>
-      <div class="name">à²—à²¾à²œà³</div>
+      <div class="name">ಗಾಜು</div>
     </div>
   </div>
 </div>
@@ -357,20 +357,20 @@ svg { width: 100%; height: 100%; }
 </div>
 
 <div class="explanation-panel">
-  <div class="explanation-title">🔬 Why Some ಪದಾರ್ಥs Conduct?</div>
+  <div class="explanation-title">🔬 ಕೆಲವು ಪದಾರ್ಥಗಳು ಏಕೆ ವಾಹಕ?</div>
   <div class="explanation-text" id="explanation-text">
-    ವಾಹಕಗಳು have <strong>à²®à³à²•à³à²¤ à²‡à²²à³†à²•à³à²Ÿà³à²°à²¾à²¨à³â€Œà²—à²³à³</strong> that can move easily, carrying electric current. ಲೋಹಗಳು are excellent conductors because their atoms release electrons that flow freely.<br><br>
-    ಅವಾಹಕಗಳು hold their electrons tightly - they cannot move to carry current. That's why we use plastic to cover wires for safety!
+    ವಾಹಕಗಳಲ್ಲಿ <strong>ಮುಕ್ತ ಇಲೆಕ್ಟ್ರಾನ್‌ಗಳು</strong> ಸುಲಭವಾಗಿ ಚಲಿಸಬಲ್ಲವು, ವಿದ್ಯುತ್ ಪ್ರವಾಹವನ್ನು ಸಾಗಿಸುತ್ತವೆ. ಲೋಹಗಳು ಉತ್ತಮ ವಾಹಕಗಳು – ಅವುಗಳ ಅಣುಗಳು ಸ್ವತಂತ್ರವಾಗಿ ಹರಿಯುವ ಇಲೆಕ್ಟ್ರಾನ್‌ಗಳನ್ನು ಬಿಡುಗಡೆ ಮಾಡುತ್ತವೆ.<br><br>
+    ಅವಾಹಕಗಳು ತಮ್ಮ ಇಲೆಕ್ಟ್ರಾನ್‌ಗಳನ್ನು ಬಿಗಿಯಾಗಿ ಹಿಡಿದಿಟ್ಟುಕೊಳ್ಳುತ್ತವೆ – ಪ್ರವಾಹ ಸಾಗಿಸಲು ಅವು ಚಲಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ಅದಕ್ಕೇ ಭದ್ರತೆಗಾಗಿ ತಂತಿಗಳನ್ನು ಪ್ಲಾಸ್ಟಿಕ್‌ನಿಂದ ಆವರಿಸುತ್ತೇವೆ!
   </div>
 </div>
 
 <div class="safety-panel">
   <div class="safety-title">⚠️ Safety with ವಿದ್ಯುತ್</div>
   <div class="safety-text">
-    <strong>à²¨à²®à³à²® à²¶à²°à³€à²° à²µà²¾à²¹à²•!</strong> à²µà²¿à²¦à³à²¯à³à²¤à³ à²ªà³à²°à²µà²¾à²¹ à²¨à²®à³à²® à²®à³‚à²²à²• à²¹à²°à²¿à²¯à²¬à²¹à³à²¦à³, à²…à²ªà²¾à²¯à²•à²¾à²°à²¿.<br><br>
-    à²­à²¦à³à²°à²¤à²¾ à²¨à²¿à²¯à²®à²—à²³à³:<br>
+    <strong>ನಮ್ಮ ಶರೀರ ವಾಹಕ!</strong> ವಿದ್ಯುತ್ ಪ್ರವಾಹ ನಮ್ಮ ಮೂಲಕ ಹರಿಯಬಹುದು, ಅಪಾಯಕಾರಿ.<br><br>
+    ಭದ್ರತಾ ನಿಯಮಗಳು:<br>
     • ಒದ್ದೆ ಕೈಯಿಂದ ಸ್ವಿಚ್ ಸ್ಪರ್ಶಿಸಬೇಡಿ<br>
-    • Don't use electrical devices near ನೀರು<br>
+    • ನೀರಿನ ಹತ್ತಿರ ವಿದ್ಯುತ್ ಸಾಧನಗಳನ್ನು ಬಳಸಬೇಡಿ<br>
     • ಸಾಕೆಟ್‌ಗೆ ವಸ್ತು ಸೇರಿಸಬೇಡಿ<br>
     • ಪ್ರಯೋಗಗಳಿಗೆ ಬ್ಯಾಟರಿ ಮಾತ್ರ
   </div>
@@ -379,7 +379,7 @@ svg { width: 100%; height: 100%; }
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೀವು ಕಲಿತದ್ದು</div>
   <div class="takeaway-text">
-    <strong>ವಾಹಕಗಳು</strong> (à²²à³‹à²¹à²—à²³à³) à²ªà³à²°à²µà²¾à²¹ à²¹à²°à²¿à²¯à²²à³ à²…à²¨à³à²®à²¤à²¿ - à²¤à²‚à²¤à²¿à²—à²³à²¿à²—à³†. <strong>ಅವಾಹಕಗಳು</strong> (à²ªà³à²²à²¾à²¸à³à²Ÿà²¿à²•à³, à²°à²¬à³à²¬à²°à³, à²®à²°) à²ªà³à²°à²µà²¾à²¹ à²¨à²¿à²°à³à²¬à²‚à²§ - à²­à²¦à³à²°à²¤à²¾ à²†à²µà²°à²£. à²µà²¿à²¦à³à²¯à³à²¤à³ à²¤à²‚à²¤à²¿à²—à²³à²²à³à²²à²¿ à²’à²³à²—à³† à²¤à²¾à²®à³à²° à²¹à³Šà²°à²—à³† à²ªà³à²²à²¾à²¸à³à²Ÿà²¿à²•à³!
+    <strong>ವಾಹಕಗಳು</strong> (ಲೋಹಗಳು) ಪ್ರವಾಹ ಹರಿಯಲು ಅನುಮತಿ - ತಂತಿಗಳಿಗೆ. <strong>ಅವಾಹಕಗಳು</strong> (ಪ್ಲಾಸ್ಟಿಕ್, ರಬ್ಬರ್, ಮರ) ಪ್ರವಾಹ ನಿರ್ಬಂಧ - ಭದ್ರತಾ ಆವರಣ. ವಿದ್ಯುತ್ ತಂತಿಗಳಲ್ಲಿ ಒಳಗೆ ತಾಮ್ರ ಹೊರಗೆ ಪ್ಲಾಸ್ಟಿಕ್!
   </div>
 </div>
 
@@ -389,44 +389,44 @@ svg { width: 100%; height: 100%; }
 const conductors = [];
 const insulators = [];
 
-const bulbà²—à²¾à²œà³ = document.getElementById('bulb-glass');
+const bulbGlass = document.getElementById('bulb-glass');
 const bulbFilament = document.getElementById('bulb-filament');
 const wireRight = document.getElementById('wire-right');
 const resultBadge = document.getElementById('result-badge');
-const testಪದಾರ್ಥEl = document.getElementById('test-material');
+const testMaterialEl = document.getElementById('test-material');
 const materialIcon = document.getElementById('material-icon');
 const materialRect = document.getElementById('material-rect');
 const testLabel = document.getElementById('test-label');
 const explanationText = document.getElementById('explanation-text');
 
 const materialNames = {
-  'spoon': 'ಲೋಹ Spoon',
-  'key': 'Iron Key',
-  'coin': 'Coin',
-  'foil': 'à²…à²²à³à²¯à³‚à²®à²¿à²¨à²¿à²¯à²‚ à²«à²¾à²¯à²¿à²²à³',
-  'plastic': 'à²ªà³à²²à²¾à²¸à³à²Ÿà²¿à²•à³ à²¸à³à²•à³‡à²²à³',
-  'rubber': 'à²°à²¬à³à²¬à²°à³ à²ˆà²°à³‡à²¸à²°à³',
-  'wood': 'à²®à²°à²¦ à²•à²¡à³à²¡à²¿',
-  'glass': 'à²—à²¾à²œà³'
+  'spoon': 'ಲೋಹದ ಚಮಚ',
+  'key': 'ಕಬ್ಬಿಣದ ಕೀಲಿ',
+  'coin': 'ನಾಣ್ಯ',
+  'foil': 'ಅಲ್ಯೂಮಿನಿಯಂ ಫಾಯಿಲ್',
+  'plastic': 'ಪ್ಲಾಸ್ಟಿಕ್ ಸ್ಕೇಲ್',
+  'rubber': 'ರಬ್ಬರ್ ಈರೇಸರ್',
+  'wood': 'ಮರದ ಕಡ್ಡಿ',
+  'glass': 'ಗಾಜು'
 };
 
-function testಪದಾರ್ಥ(id, icon, isà²µà²¾à²¹à²•, btn) {
+function testMaterial(id, icon, isConductor, btn) {
   if (btn.classList.contains('tested')) return;
   
   // Show material in test area
-  testಪದಾರ್ಥEl.style.display = 'block';
+  testMaterialEl.style.display = 'block';
   materialIcon.textContent = icon;
   testLabel.style.display = 'none';
   
   // ಅನಿಮೇಟ್ test
   setTimeout(() => {
-    if (isà²µà²¾à²¹à²•) {
-      // à²µà²¾à²¹à²• - bulb lights up!
+    if (isConductor) {
+      // ವಾಹಕ - bulb lights up!
       wireRight.setAttribute('stroke', '#4caf50');
       wireRight.classList.add('current-flow');
-      bulbà²—à²¾à²œà³.setAttribute('fill', '#ffeb3b');
+      bulbGlass.setAttribute('fill', '#ffeb3b');
       bulbFilament.setAttribute('fill', '#fff');
-      bulbà²—à²¾à²œà³.classList.add('bulb-glow');
+      bulbGlass.classList.add('bulb-glow');
       
       materialRect.setAttribute('fill', '#a5d6a7');
       resultBadge.textContent = '✅ ವಾಹಕ - ಬಲ್ಬ್ ಬೆಳಗುತ್ತದೆ!';
@@ -436,17 +436,17 @@ function testಪದಾರ್ಥ(id, icon, isà²µà²¾à²¹à²•, btn) {
       conductors.push(materialNames[id]);
       
       explanationText.innerHTML = `
-        <strong style="color:#2e7d32">${materialNames[id]} is a CONDUCTOR!</strong><br><br>
-        It allows electric current to pass through. The bulb glows because the circuit is à²ªà³‚à²°à³à²£.<br><br>
-        ಲೋಹಗಳು like iron, copper, ಮತ್ತು aluminium have <strong>à²®à³à²•à³à²¤ à²‡à²²à³†à²•à³à²Ÿà³à²°à²¾à²¨à³â€Œà²—à²³à³</strong> that can move ಮತ್ತು carry current.
+        <strong style="color:#2e7d32">${materialNames[id]} ವಾಹಕ!</strong><br><br>
+        ವಿದ್ಯುತ್ ಪ್ರವಾಹ ಹಾಯಲು ಅನುಮತಿಸುತ್ತದೆ. ಸರ್ಕ್ಯೂಟ್ ಪೂರ್ಣವಾಗಿರುವುದರಿಂದ ಬಲ್ಬ್ ಬೆಳಗುತ್ತದೆ.<br><br>
+        ಕಬ್ಬಿಣ, ತಾಮ್ರ ಮತ್ತು ಅಲ್ಯೂಮಿನಿಯಂ ನಂತಹ ಲೋಹಗಳಲ್ಲಿ <strong>ಮುಕ್ತ ಇಲೆಕ್ಟ್ರಾನ್‌ಗಳು</strong> ಇವೆ – ಚಲಿಸಿ ಪ್ರವಾಹ ಸಾಗಿಸಬಲ್ಲವು.
       `;
     } else {
-      // à²µà²¾à²¹à²•à²µà²²à³à²²à²¦ - bulb stays off
+      // ವಾಹಕವಲ್ಲದ - bulb stays off
       wireRight.setAttribute('stroke', '#e0e0e0');
       wireRight.classList.remove('current-flow');
-      bulbà²—à²¾à²œà³.setAttribute('fill', '#e0e0e0');
+      bulbGlass.setAttribute('fill', '#e0e0e0');
       bulbFilament.setAttribute('fill', '#bdbdbd');
-      bulbà²—à²¾à²œà³.classList.remove('bulb-glow');
+      bulbGlass.classList.remove('bulb-glow');
       
       materialRect.setAttribute('fill', '#ef9a9a');
       resultBadge.textContent = '❌ ಅವಾಹಕ - ವಿದ್ಯುತ್ ಇಲ್ಲ!';
@@ -458,9 +458,9 @@ function testಪದಾರ್ಥ(id, icon, isà²µà²¾à²¹à²•, btn) {
       insulators.push(materialNames[id]);
       
       explanationText.innerHTML = `
-        <strong style="color:#c62828">${materialNames[id]} is an INSULATOR!</strong><br><br>
-        It does NOT allow current to pass. The bulb stays off because the circuit is broken.<br><br>
-        ಪದಾರ್ಥs like plastic, rubber, ಮತ್ತು wood hold their electrons tightly - they cannot move to carry current.
+        <strong style="color:#c62828">${materialNames[id]} ಅವಾಹಕ!</strong><br><br>
+        ಪ್ರವಾಹ ಹಾಯಲು ಅನುಮತಿಸುವುದಿಲ್ಲ. ಸರ್ಕ್ಯೂಟ್ ಮುರಿದಿರುವುದರಿಂದ ಬಲ್ಬ್ ಆಫ್‌ನಲ್ಲೇ ಇರುತ್ತದೆ.<br><br>
+        ಪ್ಲಾಸ್ಟಿಕ್, ರಬ್ಬರ್ ಮತ್ತು ಮರದಂಥ ಪದಾರ್ಥಗಳು ತಮ್ಮ ಇಲೆಕ್ಟ್ರಾನ್‌ಗಳನ್ನು ಬಿಗಿಯಾಗಿ ಹಿಡಿದಿಟ್ಟುಕೊಳ್ಳುತ್ತವೆ – ಪ್ರವಾಹ ಸಾಗಿಸಲು ಚಲಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ.
       `;
     }
     

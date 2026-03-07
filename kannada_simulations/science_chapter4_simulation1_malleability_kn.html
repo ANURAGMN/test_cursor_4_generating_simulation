@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -69,7 +69,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -288,39 +288,39 @@ svg { width: 100%; height: 100%; }
   </div>
   
   <div class="materials-grid">
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('copper', '🥉', true, '#b87333', this)">
+    <div class="material-btn" onclick="selectMaterial('copper', '🥉', true, '#b87333', this)">
       <div class="icon">🥉</div>
       <div class="name">ತಾಮ್ರ</div>
       <div class="type">ಲೋಹ</div>
     </div>
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('aluminium', '🔘', true, '#bdbdbd', this)">
+    <div class="material-btn" onclick="selectMaterial('aluminium', '🔘', true, '#bdbdbd', this)">
       <div class="icon">🔘</div>
-      <div class="name">à²…à²²à³à²¯à³‚à²®à²¿à²¨à²¿à²¯à²‚</div>
+      <div class="name">ಅಲ್ಯೂಮಿನಿಯಂ</div>
       <div class="type">ಲೋಹ</div>
     </div>
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('iron', '⚙️', true, '#616161', this)">
+    <div class="material-btn" onclick="selectMaterial('iron', '⚙️', true, '#616161', this)">
       <div class="icon">⚙️</div>
       <div class="name">Iron</div>
       <div class="type">ಲೋಹ</div>
     </div>
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('coal', '⬛', false, '#263238', this)">
+    <div class="material-btn" onclick="selectMaterial('coal', '⬛', false, '#263238', this)">
       <div class="icon">⬛</div>
       <div class="name">Coal</div>
-      <div class="type">à²…à²²à³‹à²¹</div>
+      <div class="type">ಅಲೋಹ</div>
     </div>
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('sulfur', '🟡', false, '#fdd835', this)">
+    <div class="material-btn" onclick="selectMaterial('sulfur', '🟡', false, '#fdd835', this)">
       <div class="icon">🟡</div>
-      <div class="name">à²¸à²²à³à²«à²°à³</div>
-      <div class="type">à²…à²²à³‹à²¹</div>
+      <div class="name">ಸಲ್ಫರ್</div>
+      <div class="type">ಅಲೋಹ</div>
     </div>
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('chalk', '⬜', false, '#eeeeee', this)">
+    <div class="material-btn" onclick="selectMaterial('chalk', '⬜', false, '#eeeeee', this)">
       <div class="icon">⬜</div>
-      <div class="name">à²¸à³€à²®à³†à²¸à³à²£à³à²£</div>
-      <div class="type">à²…à²²à³‹à²¹</div>
+      <div class="name">ಸೀಸಂಣ್ಣ</div>
+      <div class="type">ಅಲೋಹ</div>
     </div>
   </div>
   
-  <button class="hammer-btn" id="hammer-btn" onclick="hammerಪದಾರ್ಥ()" disabled>
+  <button class="hammer-btn" id="hammer-btn" onclick="hammerMaterial()" disabled>
     🔨 Hammer the ಪದಾರ್ಥ
   </button>
 </div>
@@ -337,26 +337,26 @@ svg { width: 100%; height: 100%; }
 </div>
 
 <div class="learning-panel">
-  <div class="learning-title">🔬 Understಮತ್ತುing ನಮ್ಯತೆ</div>
+  <div class="learning-title">🔬 Understanding ನಮ್ಯತೆ</div>
   <div class="learning-text" id="learning-text">
     ಒಂದು ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ ಮತ್ತು hammer it to see if it's malleable or brittle!<br><br>
-    <strong>à²¤à²Ÿà³à²Ÿà²¬à²¹à³à²¦à²¾à²¦ à²µà²¸à³à²¤à³à²—à²³à³</strong> à²¹à³Šà²¡à³†à²¦à²¾à²— à²¹à²¾à²³à³†à²¯à²¾à²—à²¿ à²šà²ªà³à²ªà²¡à²¿.<br>
-    <strong>à²¸à³à²«à²Ÿà²¿à²• à²µà²¸à³à²¤à³à²—à²³à³</strong> à²¹à³Šà²¡à³†à²¦à²¾à²— à²¤à³à²£à³à²•à³à²—à²³à²¾à²—à²¿ à²’à²¡à³†à²¯à³à²¤à³à²¤à²¦à³†.
+    <strong>ತಟ್ಟಬಹುದಾದ ವಸ್ತುಗಳು</strong> ಹೊಡೆದಾಗ ಹಾಳೆಯಾಗಿ ಚಪ್ಪಡಿ.<br>
+    <strong>ಸ್ಫಟಿಕ ವಸ್ತುಗಳು</strong> ಹೊಡೆದಾಗ ತುಣುಕುಗಳಾಗಿ ಒಡೆಯುತ್ತದೆ.
   </div>
 </div>
 
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೀವು ಕಲಿಯುವುದು</div>
   <div class="takeaway-text">
-    <strong>ಲೋಹಗಳು</strong> à²¤à²¾à²®à³à²°, à²…à²²à³à²¯à³‚à²®à²¿à²¨à²¿à²¯à²‚, à²•à²¬à³à²¬à²¿à²£ à²¤à²Ÿà³à²Ÿà²¬à²¹à³à²¦à²¾à²¦ - à²¤à³†à²³à³ à²¹à²¾à²³à³† (à²®à²¿à² à²¾à²¯à²¿à²¯ à²®à³‡à²²à³† à²¬à³†à²³à³à²³à²¿ à²«à²¾à²¯à²¿à²²à³!).<br><br>
-    <strong>ಅಲೋಹಗಳು</strong> à²•à²²à³à²²à²¿à²¦à³à²¦à²²à³, à²¸à²²à³à²«à²°à³, à²¸à³€à²®à³†à²¸à³à²£à³à²£ à²¸à³à²«à²Ÿà²¿à²• - à²¹à³Šà²¡à³†à²¦à²¾à²— à²’à²¡à³†à²¯à³à²¤à³à²¤à²µà³†.
+    <strong>ಲೋಹಗಳು</strong> ತಾಮ್ರ, ಅಲ್ಯೂಮಿನಿಯಂ, ಕಬ್ಬಿಣ ತಟ್ಟಬಹುದಾದ - ತೆಳು ಹಾಳೆ (ಮಿಠಾಯಿಯ ಮೇಲೆ ಬೆಳ್ಳಿ ಫಾಯಿಲ್!).<br><br>
+    <strong>ಅಲೋಹಗಳು</strong> ಕಲ್ಲಿದ್ದಲು, ಸಲ್ಫರ್, ಸೀಸಂಣ್ಣ ಸ್ಫಟಿಕ - ಹೊಡೆದಾಗ ಒಡೆಯುತ್ತವೆ.
   </div>
 </div>
 
 </div>
 
 <script>
-let selectedಪದಾರ್ಥ = null;
+let selectedMaterial = null;
 let selectedBtn = null;
 let isMalleable = false;
 let materialColor = '#b0bec5';
@@ -373,14 +373,14 @@ const shatterPieces = document.getElementById('shatter-pieces');
 const instruction = document.getElementById('instruction');
 const learningText = document.getElementById('learning-text');
 
-function selectಪದಾರ್ಥ(name, icon, malleable, color, btn) {
+function selectMaterial(name, icon, malleable, color, btn) {
   if (btn.classList.contains('tested')) return;
   
   // ಮರುಹೊಂದಿಸಿ previous selection
   document.querySelectorAll('.material-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   
-  selectedಪದಾರ್ಥ = name;
+  selectedMaterial = name;
   selectedBtn = btn;
   isMalleable = malleable;
   materialColor = color;
@@ -408,8 +408,8 @@ function selectಪದಾರ್ಥ(name, icon, malleable, color, btn) {
   `;
 }
 
-function hammerಪದಾರ್ಥ() {
-  if (!selectedಪದಾರ್ಥ) return;
+function hammerMaterial() {
+  if (!selectedMaterial) return;
   
   hammerBtn.disabled = true;
   
@@ -427,17 +427,17 @@ function hammerಪದಾರ್ಥ() {
       resultBadge.style.display = 'block';
       
       selectedBtn.classList.add('tested', 'malleable');
-      malleableList.push(selectedಪದಾರ್ಥ);
+      malleableList.push(selectedMaterial);
       
       instruction.textContent = '✅ ಲೋಹ ಹಾಳೆಯಾಗಿ ಚಪ್ಪಡಿಯಾಯಿತು!';
       
       learningText.innerHTML = `
-        <strong style="color:#2e7d32">✅ ${selectedಪದಾರ್ಥ.toUpperCase()} is MALLEABLE!</strong><br><br>
+        <strong style="color:#2e7d32">✅ ${selectedMaterial.toUpperCase()} is MALLEABLE!</strong><br><br>
         When hammered, this metal <strong>flattened into a thin sheet</strong> instead of breaking.<br><br>
         This is because metals have atoms arranged in layers that can <strong>slide over each other</strong> when force is applied.
       `;
     } else {
-      // à²…à²²à³‹à²¹ - shatters
+      // ಅಲೋಹ - shatters
       materialShape.classList.add('shatter');
       setTimeout(() => {
         materialShape.style.display = 'none';
@@ -456,12 +456,12 @@ function hammerಪದಾರ್ಥ() {
       selectedBtn.classList.add('tested', 'brittle');
       selectedBtn.classList.add('shake');
       setTimeout(() => selectedBtn.classList.remove('shake'), 200);
-      brittleList.push(selectedಪದಾರ್ಥ);
+      brittleList.push(selectedMaterial);
       
       instruction.textContent = '❌ ಅಲೋಹ ಚೂರುಗಳಾಗಿ ಒಡೆದಿದೆ!';
       
       learningText.innerHTML = `
-        <strong style="color:#c62828">❌ ${selectedಪದಾರ್ಥ.toUpperCase()} is BRITTLE!</strong><br><br>
+        <strong style="color:#c62828">❌ ${selectedMaterial.toUpperCase()} is BRITTLE!</strong><br><br>
         When hammered, this non-metal <strong>broke into pieces</strong> instead of flattening.<br><br>
         ಅಲೋಹಗಳು have atoms that are <strong>rigidly bonded</strong> ಮತ್ತು cannot slide - they crack under force.
       `;
@@ -472,7 +472,7 @@ function hammerಪದಾರ್ಥ() {
     document.getElementById('brittle-items').textContent = brittleList.length ? brittleList.join(', ') : '-';
     
     hammerBtn.textContent = '🔨 ಇನ್ನೊಂದು ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ';
-    selectedಪದಾರ್ಥ = null;
+    selectedMaterial = null;
   }, 300);
 }
 </script>

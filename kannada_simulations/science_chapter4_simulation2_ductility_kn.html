@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: #fff;
   padding: 12px;
-  text-ನೆರಳು: 0 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .header h1 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
@@ -69,7 +69,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 10px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -265,35 +265,35 @@ svg { width: 100%; height: 100%; }
   </div>
   
   <div class="materials-grid">
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('copper', '🥉', true, '#b87333', this)">
+    <div class="material-btn" onclick="selectMaterial('copper', '🥉', true, '#b87333', this)">
       <div class="icon">🥉</div>
       <div class="name">ತಾಮ್ರ</div>
       <div class="type">ಲೋಹ</div>
     </div>
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('gold', '🥇', true, '#ffd700', this)">
+    <div class="material-btn" onclick="selectMaterial('gold', '🥇', true, '#ffd700', this)">
       <div class="icon">🥇</div>
       <div class="name">Gold</div>
       <div class="type">ಲೋಹ</div>
     </div>
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('aluminium', '🔘', true, '#bdbdbd', this)">
+    <div class="material-btn" onclick="selectMaterial('aluminium', '🔘', true, '#bdbdbd', this)">
       <div class="icon">🔘</div>
-      <div class="name">à²…à²²à³à²¯à³‚à²®à²¿à²¨à²¿à²¯à²‚</div>
+      <div class="name">ಅಲ್ಯೂಮಿನಿಯಂ</div>
       <div class="type">ಲೋಹ</div>
     </div>
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('coal', '⬛', false, '#263238', this)">
+    <div class="material-btn" onclick="selectMaterial('coal', '⬛', false, '#263238', this)">
       <div class="icon">⬛</div>
       <div class="name">Coal</div>
-      <div class="type">à²…à²²à³‹à²¹</div>
+      <div class="type">ಅಲೋಹ</div>
     </div>
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('sulfur', '🟡', false, '#fdd835', this)">
+    <div class="material-btn" onclick="selectMaterial('sulfur', '🟡', false, '#fdd835', this)">
       <div class="icon">🟡</div>
-      <div class="name">à²¸à²²à³à²«à²°à³</div>
-      <div class="type">à²…à²²à³‹à²¹</div>
+      <div class="name">ಸಲ್ಫರ್</div>
+      <div class="type">ಅಲೋಹ</div>
     </div>
-    <div class="material-btn" onclick="selectಪದಾರ್ಥ('wood', '🪵', false, '#8d6e63', this)">
+    <div class="material-btn" onclick="selectMaterial('wood', '🪵', false, '#8d6e63', this)">
       <div class="icon">🪵</div>
       <div class="name">Wood</div>
-      <div class="type">à²…à²²à³‹à²¹</div>
+      <div class="type">ಅಲೋಹ</div>
     </div>
   </div>
   
@@ -314,27 +314,27 @@ svg { width: 100%; height: 100%; }
 </div>
 
 <div class="learning-panel">
-  <div class="learning-title">🔬 Understಮತ್ತುing ಸೆಳೆತ</div>
+  <div class="learning-title">🔬 Understanding ಸೆಳೆತ</div>
   <div class="learning-text" id="learning-text">
     ಒಂದು ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ ಮತ್ತು pull it through the die to see if it can be drawn into a wire!<br><br>
-    <strong>à²¸à²¾à²•à²°à³à²·à²• à²µà²¸à³à²¤à³à²—à²³à³</strong> à²¤à³†à²³à³ à²¤à²‚à²¤à²¿à²—à²³à²¾à²—à²¿ à²šà²¾à²šà²¿.<br>
-    <strong>à²¸à²¾à²•à²°à³à²·à²•à²µà²²à³à²²à²¦ à²µà²¸à³à²¤à³à²—à²³à³</strong> break when pulled.
+    <strong>ಸಾಕರ್ಷಕ ವಸ್ತುಗಳು</strong> ತೆಳು ತಂತಿಗಳಾಗಿ ಚಾಚಿ.<br>
+    <strong>ಸಾಕರ್ಷಕವಲ್ಲದ ವಸ್ತುಗಳು</strong> break when pulled.
   </div>
 </div>
 
 <div class="takeaway">
   <div class="takeaway-title">🎯 ನೀವು ಕಲಿಯುವುದು</div>
   <div class="takeaway-text">
-    <strong>ಲೋಹಗಳು</strong> à²¤à²¾à²®à³à²°, à²šà²¿à²¨à³à²¨, à²…à²²à³à²¯à³‚à²®à²¿à²¨à²¿à²¯à²‚ à²¸à²¾à²•à²°à³à²·à²• - à²¤à²‚à²¤à²¿ (à²µà²¿à²¦à³à²¯à³à²¤à³ à²¤à²‚à²¤à²¿!).<br><br>
-    <strong>à²šà²¿à²¨à³à²¨ à²…à²¤à³à²¯à²‚à²¤ à²¸à²¾à²•à²°à³à²·à²•</strong> - 1 à²—à³à²°à²¾à²‚ 2 à²•à²¿à²®à³€ à²‰à²¦à³à²¦à²¦ à²¤à²‚à²¤à²¿à²¯à²¾à²—à²¿ à²Žà²³à³†à²¯à²¬à²¹à³à²¦à³!<br><br>
-    <strong>ಅಲೋಹಗಳು</strong> à²¸à²¾à²•à²°à³à²·à²•à²µà²²à³à²² - à²šà²¾à²šà²¿à²¦à²°à³† à²’à²¡à³†à²¯à³à²¤à³à²¤à²µà³†.
+    <strong>ಲೋಹಗಳು</strong> ತಾಮ್ರ, ಚಿನ್ನ, ಅಲ್ಯೂಮಿನಿಯಂ ಸಾಕರ್ಷಕ - ತಂತಿ (ವಿದ್ಯುತ್ ತಂತಿ!).<br><br>
+    <strong>ಚಿನ್ನ ಅತ್ಯಂತ ಸಾಕರ್ಷಕ</strong> - 1 ಗ್ರಾಂ 2 ಕಿಮೀ ಉದ್ದದ ತಂತಿಯಾಗಿ ಒಳೆಯಬಹುದು!<br><br>
+    <strong>ಅಲೋಹಗಳು</strong> ಸಾಕರ್ಷಕವಲ್ಲ - ಚಾಚಿದರೆ ಒಡೆಯುತ್ತವೆ.
   </div>
 </div>
 
 </div>
 
 <script>
-let selectedಪದಾರ್ಥ = null;
+let selectedMaterial = null;
 let selectedBtn = null;
 let isDuctile = false;
 let materialColor = '#b0bec5';
@@ -345,24 +345,24 @@ const notDuctileList = [];
 const blockShape = document.getElementById('block-shape');
 const blockLabel = document.getElementById('block-label');
 const materialBlock = document.getElementById('material-block');
-const wireಫಲಿತಾಂಶ = document.getElementById('wire-result');
+const wireResult = document.getElementById('wire-result');
 const wireLine = document.getElementById('wire-line');
 const brokenPieces = document.getElementById('broken-pieces');
-const pullingHಮತ್ತು = document.getElementById('pulling-hand');
+const pullingHandle = document.getElementById('pulling-hand');
 const pullBtn = document.getElementById('pull-btn');
 const resultBadge = document.getElementById('result-badge');
 const arrow = document.getElementById('arrow');
 const instruction = document.getElementById('instruction');
 const learningText = document.getElementById('learning-text');
 
-function selectಪದಾರ್ಥ(name, icon, ductile, color, btn) {
+function selectMaterial(name, icon, ductile, color, btn) {
   if (btn.classList.contains('tested')) return;
   
   // ಮರುಹೊಂದಿಸಿ previous selection
   document.querySelectorAll('.material-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   
-  selectedಪದಾರ್ಥ = name;
+  selectedMaterial = name;
   selectedBtn = btn;
   isDuctile = ductile;
   materialColor = color;
@@ -373,9 +373,9 @@ function selectಪದಾರ್ಥ(name, icon, ductile, color, btn) {
   blockShape.setAttribute('width', '80');
   blockShape.setAttribute('height', '50');
   blockShape.style.opacity = '1';
-  wireಫಲಿತಾಂಶ.style.display = 'none';
+  wireResult.style.display = 'none';
   brokenPieces.style.display = 'none';
-  pullingHಮತ್ತು.style.display = 'none';
+  pullingHandle.style.display = 'none';
   resultBadge.style.display = 'none';
   arrow.style.display = 'block';
   
@@ -396,13 +396,13 @@ function selectಪದಾರ್ಥ(name, icon, ductile, color, btn) {
 }
 
 function drawWire() {
-  if (!selectedಪದಾರ್ಥ) return;
+  if (!selectedMaterial) return;
   
   pullBtn.disabled = true;
   arrow.style.display = 'none';
-  pullingHಮತ್ತು.style.display = 'block';
+  pullingHandle.style.display = 'block';
   
-  const saveಪದಾರ್ಥ = selectedಪದಾರ್ಥ;
+  const saveMaterial = selectedMaterial;
   const saveBtn = selectedBtn;
   const saveDuctile = isDuctile;
   const saveColor = materialColor;
@@ -428,9 +428,9 @@ function drawWire() {
       if (frame < totalFrames) {
         requestAnimationFrame(animateStretch);
       } else {
-        // Animation à²ªà³‚à²°à³à²£ - show wire
+        // Animation ಪೂರ್ಣ - show wire
         materialBlock.style.display = 'none';
-        wireಫಲಿತಾಂಶ.style.display = 'block';
+        wireResult.style.display = 'block';
         wireLine.setAttribute('stroke', saveColor);
         
         resultBadge.textContent = '✅ ಸೆಳೆತ - ತಂತಿ ರೂಪುಗೊಂಡಿದೆ!';
@@ -438,24 +438,24 @@ function drawWire() {
         resultBadge.style.display = 'block';
         
         saveBtn.classList.add('tested', 'ductile');
-        ductileList.push(saveಪದಾರ್ಥ);
+        ductileList.push(saveMaterial);
         
         instruction.textContent = '✅ ಲೋಹ ತೆಳು ತಂತಿಯಾಗಿ ಎಳೆಯಲಾಗಿದೆ!';
         
         learningText.innerHTML = `
-          <strong style="color:#2e7d32">✅ ${saveಪದಾರ್ಥ.toUpperCase()} is DUCTILE!</strong><br><br>
+          <strong style="color:#2e7d32">✅ ${saveMaterial.toUpperCase()} is DUCTILE!</strong><br><br>
           When pulled through the die, this metal <strong>stretched into a thin wire</strong> without breaking.<br><br>
           This is because metal atoms can <strong>slide past each other</strong> while maintaining their bonds.
         `;
         
-        updateಫಲಿತಾಂಶs();
+        updateResults();
       }
     };
     
     requestAnimationFrame(animateStretch);
     
   } else {
-    // à²…à²²à³‹à²¹ - breaks with shake effect
+    // ಅಲೋಹ - breaks with shake effect
     let frame = 0;
     const totalFrames = 10;
     
@@ -477,27 +477,27 @@ function drawWire() {
         resultBadge.style.display = 'block';
         
         saveBtn.classList.add('tested', 'not-ductile');
-        notDuctileList.push(saveಪದಾರ್ಥ);
+        notDuctileList.push(saveMaterial);
         
-        instruction.textContent = '❌ à²…à²²à³‹à²¹ broke when pulled!';
+        instruction.textContent = '❌ ಅಲೋಹ broke when pulled!';
         
         learningText.innerHTML = `
-          <strong style="color:#c62828">❌ ${saveಪದಾರ್ಥ.toUpperCase()} is NOT DUCTILE!</strong><br><br>
+          <strong style="color:#c62828">❌ ${saveMaterial.toUpperCase()} is NOT DUCTILE!</strong><br><br>
           When pulled through the die, this non-metal <strong>broke into pieces</strong> instead of stretching.<br><br>
           ಅಲೋಹಗಳು have <strong>rigid bonds</strong> that cannot stretch - they snap under tension.
         `;
         
-        updateಫಲಿತಾಂಶs();
+        updateResults();
       }
     };
     
     requestAnimationFrame(animateBreak);
   }
   
-  selectedಪದಾರ್ಥ = null;
+  selectedMaterial = null;
 }
 
-function updateಫಲಿತಾಂಶs() {
+function updateResults() {
   document.getElementById('ductile-items').textContent = ductileList.length ? ductileList.join(', ') : '-';
   document.getElementById('not-ductile-items').textContent = notDuctileList.length ? notDuctileList.join(', ') : '-';
   pullBtn.textContent = '➡️ ಇನ್ನೊಂದು ಪದಾರ್ಥ ಆಯ್ಕೆಮಾಡಿ';

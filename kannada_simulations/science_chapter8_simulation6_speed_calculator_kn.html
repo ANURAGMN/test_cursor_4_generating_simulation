@@ -63,7 +63,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 12px;
-  box-ನೆರಳು: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   margin-bottom: 10px;
 }
 
@@ -298,7 +298,7 @@ body {
     <span>~40-60 km/h</span>
   </div>
   <div class="example-item">
-    <span>🚆 à²°à³ˆà²²à³</span>
+    <span>🚆 ರೈಲು</span>
     <span>~80-160 km/h</span>
   </div>
   <div class="example-item">
@@ -310,9 +310,9 @@ body {
 <div class="conversion-note">
   <div class="conversion-title">🔄 ಘಟಕ ಪರಿವರ್ತನೆ</div>
   <div class="conversion-text">
-    <strong>km/h to m/s:</strong> 3.6 à²°à²¿à²‚à²¦ à²­à²¾à²—à²¿à²¸à²¿<br>
+    <strong>km/h to m/s:</strong> 3.6 ರಿಂದ ಭಾಗಿಸಿ<br>
     ಉದಾಹರಣೆ: 36 km/h = 36 ÷ 3.6 = 10 m/s<br><br>
-    <strong>m/s to km/h:</strong> 3.6 à²°à²¿à²‚à²¦ à²—à³à²£à²¿à²¸à²¿<br>
+    <strong>m/s to km/h:</strong> 3.6 ರಿಂದ ಗುಣಿಸಿ<br>
     ಉದಾಹರಣೆ: 10 m/s = 10 × 3.6 = 36 km/h
   </div>
 </div>
@@ -387,7 +387,7 @@ function calculate() {
         working = `Time = ದೂರ ÷ ವೇಗ\nTime = ${distance} km ÷ ${ವೇಗ} km/h\nTime = ${result.toFixed(2)} h`;
       }
       label = 'Time';
-      unit = 'à²—à²‚à²Ÿà³†à²—à²³à³';
+      unit = 'ಗಂಟೆಗಳು';
       break;
   }
   
