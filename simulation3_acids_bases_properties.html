@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Properties of Acids & Bases – Explore</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 420px;
+  margin: auto;
+  padding: 10px;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  padding: 12px;
+}
+
+.header h1 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.header p {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 8px 4px;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* ---------- Card ---------- */
+.sim-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  margin-bottom: 12px;
+}
+
+/* ---------- Visual ---------- */
+.visual {
+  position: relative;
+  height: 36vh;
+  min-height: 260px;
+  background: linear-gradient(145deg, #fafafa 0%, #f0f0f0 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  touch-action: none;
+}
+
+svg { width: 100%; height: 100%; }
+
+.static-hint {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 11px;
+  line-height: 1.3;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  z-index: 10;
+}
+
+.metrics {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+}
+
+.metric-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.metric-label {
+  color: #666;
+}
+
+.metric-value {
+  font-weight: 600;
+  color: #007AFF;
+}
+
+.metric-value.acidic { color: #e74c3c; }
+.metric-value.basic { color: #3498db; }
+
+/* ---------- Control Panel ---------- */
+.control-panel {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 8px;
+}
+
+.control-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.substance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.substance-btn {
+  padding: 10px 6px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  font-size: 10px;
+  background: #fff;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.substance-btn.active {
+  border-color: #007AFF;
+  background: #e3f2fd;
+}
+
+.substance-btn .icon { font-size: 20px; display: block; margin-bottom: 4px; }
+
+.submit-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #007AFF;
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ---------- Explore Button ---------- */
+.explore-btn {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.explore-btn:active {
+  transform: scale(0.95);
+}
+
+/* ---------- Property Cards ---------- */
+.property-display {
+  position: absolute;
+  right: 8px;
+  bottom: 50px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 10px;
+  line-height: 1.5;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+  max-width: 140px;
+}
+
+.property-display.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.property-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 11px;
+}
+
+.property-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 3px 0;
+}
+
+.property-icon { font-size: 12px; }
+
+/* ---------- Comparison Table ---------- */
+.comparison {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.comparison-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.comparison-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4px;
+  font-size: 10px;
+}
+
+.comparison-table .header {
+  font-weight: 600;
+  text-align: center;
+  padding: 6px 4px;
+  background: #e0e0e0;
+  border-radius: 4px;
+}
+
+.comparison-table .cell {
+  text-align: center;
+  padding: 6px 4px;
+  background: white;
+  border-radius: 4px;
+}
+
+.comparison-table .cell.acidic { background: #ffebee; color: #c62828; }
+.comparison-table .cell.basic { background: #e3f2fd; color: #1565c0; }
+
+/* ---------- Takeaway ---------- */
+.takeaway {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  display: none;
+}
+
+.takeaway.show {
+  display: block;
+}
+
+.takeaway-title {
+  font-weight: 600;
+  color: #e65100;
+  margin-bottom: 4px;
+}
+
+/* Caution banner */
+.caution {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 10px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.caution-icon { font-size: 16px; }
+</style>
+</head>
+
+<body>
+<div id="app">
+
+<div class="header">
+  <h1>🔬 Properties of Acids & Bases</h1>
+  <p>Discover how they taste and feel</p>
+</div>
+
+<div class="caution">
+  <span class="caution-icon">⚠️</span>
+  <span><strong>Safety Note:</strong> Never taste or touch unknown substances! This simulation shows properties of <em>safe, edible</em> substances only.</span>
+</div>
+
+<div class="section-title">Reference (Acidic - Lemon)</div>
+<div class="sim-card" id="ref"></div>
+
+<div class="section-title">Experiment (Explore different substances)</div>
+<div class="sim-card" id="exp"></div>
+
+<div class="comparison">
+  <div class="comparison-title">📊 Property Comparison</div>
+  <div class="comparison-table">
+    <div class="header">Property</div>
+    <div class="header">Acids</div>
+    <div class="header">Bases</div>
+    <div class="cell">Taste</div>
+    <div class="cell acidic">Sour 😝</div>
+    <div class="cell basic">Bitter 😖</div>
+    <div class="cell">Touch</div>
+    <div class="cell acidic">Normal</div>
+    <div class="cell basic">Soapy/Slippery 🧴</div>
+    <div class="cell">Examples</div>
+    <div class="cell acidic">Lemon, Vinegar</div>
+    <div class="cell basic">Soap, Baking soda</div>
+  </div>
+</div>
+
+<div class="takeaway" id="takeaway">
+  <div class="takeaway-title">💡 What you discovered:</div>
+  <strong>Acidic</strong> substances taste sour (like lemon and vinegar). <strong>Basic</strong> substances feel soapy/slippery and often taste bitter. However, not everything bitter is a base – bitter gourd (karela) is bitter but NOT basic!
+</div>
+
+</div>
+
+<script>
+const SUBSTANCES = {
+  'lemon': { 
+    name: 'Lemon', 
+    icon: '🍋', 
+    type: 'acidic',
+    taste: 'Sour 😝',
+    touch: 'Normal',
+    acid: 'Citric acid',
+    safe: true
+  },
+  'vinegar': { 
+    name: 'Vinegar', 
+    icon: '🍶', 
+    type: 'acidic',
+    taste: 'Sour 😝',
+    touch: 'Normal',
+    acid: 'Acetic acid',
+    safe: true
+  },
+  'amla': { 
+    name: 'Amla (Gooseberry)', 
+    icon: '🫒', 
+    type: 'acidic',
+    taste: 'Sour 😝',
+    touch: 'Normal',
+    acid: 'Ascorbic acid (Vitamin C)',
+    safe: true
+  },
+  'tamarind': { 
+    name: 'Tamarind', 
+    icon: '🌰', 
+    type: 'acidic',
+    taste: 'Sour 😝',
+    touch: 'Sticky',
+    acid: 'Tartaric acid',
+    safe: true
+  },
+  'soap': { 
+    name: 'Soap Solution', 
+    icon: '🧼', 
+    type: 'basic',
+    taste: 'Bitter (Don\'t taste!)',
+    touch: 'Soapy/Slippery 🧴',
+    base: 'Sodium hydroxide',
+    safe: false
+  },
+  'baking': { 
+    name: 'Baking Soda', 
+    icon: '🥄', 
+    type: 'basic',
+    taste: 'Bitter & Salty',
+    touch: 'Slippery when wet 🧴',
+    base: 'Sodium bicarbonate',
+    safe: true
+  },
+  'karela': { 
+    name: 'Bitter Gourd', 
+    icon: '🥒', 
+    type: 'neutral-bitter',
+    taste: 'Bitter 😖',
+    touch: 'Normal',
+    note: 'Bitter but NOT basic!',
+    safe: true
+  },
+  'curd': { 
+    name: 'Curd (Yogurt)', 
+    icon: '🥛', 
+    type: 'acidic',
+    taste: 'Sour 😝',
+    touch: 'Creamy',
+    acid: 'Lactic acid',
+    safe: true
+  }
+};
+
+function createSimulation(containerId, isExperiment) {
+  const c = document.getElementById(containerId);
+  const defaultSubstance = isExperiment ? 'baking' : 'lemon';
+  
+  c.innerHTML = `
+  <div class="visual">
+    <div class="static-hint">
+      ${isExperiment ? '👆 Select substance below & tap "Explore"' : '📊 Reference: Acidic (Lemon)'}
+    </div>
+
+    <svg viewBox="0 0 400 300">
+      <!-- Background -->
+      <rect x="0" y="0" width="400" height="300" fill="#fafafa"/>
+      
+      <!-- Substance Display Area -->
+      <g id="${containerId}-substance-display">
+        <!-- Plate/Container -->
+        <ellipse cx="200" cy="200" rx="100" ry="40" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="2"/>
+        <ellipse cx="200" cy="180" rx="80" ry="30" fill="#fff" stroke="#eeeeee" stroke-width="2"/>
+        
+        <!-- Substance Icon -->
+        <text x="200" y="170" text-anchor="middle" font-size="50" id="${containerId}-icon">${SUBSTANCES[defaultSubstance].icon}</text>
+        
+        <!-- Substance Name -->
+        <text x="200" y="260" text-anchor="middle" font-size="14" fill="#333" font-weight="600" id="${containerId}-name">${SUBSTANCES[defaultSubstance].name}</text>
+      </g>
+      
+      <!-- Hand indicator for touch -->
+      <g id="${containerId}-hand" opacity="0" transform="translate(280, 140)">
+        <text x="0" y="0" font-size="30">👆</text>
+      </g>
+      
+      <!-- Taste indicator -->
+      <g id="${containerId}-taste-indicator" opacity="0" transform="translate(100, 100)">
+        <circle cx="0" cy="0" r="25" fill="#ffeb3b" opacity="0.3"/>
+        <text x="0" y="8" text-anchor="middle" font-size="24" id="${containerId}-taste-emoji">😝</text>
+      </g>
+    </svg>
+
+    <div class="property-display" id="${containerId}-property-card">
+      <div class="property-title" id="${containerId}-prop-title">Properties</div>
+      <div class="property-item"><span class="property-icon">👅</span> <span id="${containerId}-prop-taste">—</span></div>
+      <div class="property-item"><span class="property-icon">✋</span> <span id="${containerId}-prop-touch">—</span></div>
+      <div class="property-item"><span class="property-icon">🧪</span> <span id="${containerId}-prop-chemical">—</span></div>
+    </div>
+
+    ${isExperiment ? '<button class="explore-btn" id="explore-action">🔍 Explore</button>' : ''}
+  </div>
+
+  <div class="metrics">
+    <div class="metric-item"><span class="metric-label">Substance:</span> <span class="metric-value" id="${containerId}-sub-name">${SUBSTANCES[defaultSubstance].name}</span></div>
+    <div class="metric-item"><span class="metric-label">Type:</span> <span class="metric-value ${SUBSTANCES[defaultSubstance].type.includes('acidic') ? 'acidic' : 'basic'}" id="${containerId}-type">${SUBSTANCES[defaultSubstance].type === 'neutral-bitter' ? 'NOT basic!' : SUBSTANCES[defaultSubstance].type.charAt(0).toUpperCase() + SUBSTANCES[defaultSubstance].type.slice(1)}</span></div>
+    <div class="metric-item"><span class="metric-label">Taste:</span> <span class="metric-value" id="${containerId}-taste-val">${isExperiment ? '?' : SUBSTANCES[defaultSubstance].taste}</span></div>
+    <div class="metric-item"><span class="metric-label">Touch:</span> <span class="metric-value" id="${containerId}-touch-val">${isExperiment ? '?' : SUBSTANCES[defaultSubstance].touch}</span></div>
+  </div>
+
+  ${isExperiment ? `
+  <div class="control-panel">
+    <div class="control-label">Select a substance to explore:</div>
+    <div class="substance-grid">
+      <button class="substance-btn" data-sub="lemon"><span class="icon">🍋</span>Lemon</button>
+      <button class="substance-btn active" data-sub="baking"><span class="icon">🥄</span>Baking Soda</button>
+      <button class="substance-btn" data-sub="vinegar"><span class="icon">🍶</span>Vinegar</button>
+      <button class="substance-btn" data-sub="soap"><span class="icon">🧼</span>Soap Solution</button>
+      <button class="substance-btn" data-sub="amla"><span class="icon">🫒</span>Amla</button>
+      <button class="substance-btn" data-sub="tamarind"><span class="icon">🌰</span>Tamarind</button>
+      <button class="substance-btn" data-sub="curd"><span class="icon">🥛</span>Curd</button>
+      <button class="substance-btn" data-sub="karela"><span class="icon">🥒</span>Bitter Gourd</button>
+    </div>
+  </div>
+  ` : ''}`;
+
+  if (!isExperiment) return;
+
+  // State
+  let state = {
+    substance: 'baking',
+    explored: false
+  };
+
+  const icon = c.querySelector(`#${containerId}-icon`);
+  const nameDisplay = c.querySelector(`#${containerId}-name`);
+  const subName = c.querySelector(`#${containerId}-sub-name`);
+  const typeDisplay = c.querySelector(`#${containerId}-type`);
+  const tasteVal = c.querySelector(`#${containerId}-taste-val`);
+  const touchVal = c.querySelector(`#${containerId}-touch-val`);
+  const hand = c.querySelector(`#${containerId}-hand`);
+  const tasteIndicator = c.querySelector(`#${containerId}-taste-indicator`);
+  const tasteEmoji = c.querySelector(`#${containerId}-taste-emoji`);
+  const propertyCard = c.querySelector(`#${containerId}-property-card`);
+  const propTitle = c.querySelector(`#${containerId}-prop-title`);
+  const propTaste = c.querySelector(`#${containerId}-prop-taste`);
+  const propTouch = c.querySelector(`#${containerId}-prop-touch`);
+  const propChemical = c.querySelector(`#${containerId}-prop-chemical`);
+  const exploreBtn = c.querySelector('#explore-action');
+
+  function updateDisplay() {
+    const sub = SUBSTANCES[state.substance];
+    icon.textContent = sub.icon;
+    nameDisplay.textContent = sub.name;
+    subName.textContent = sub.name;
+  }
+
+  function animateExplore() {
+    const sub = SUBSTANCES[state.substance];
+    state.explored = true;
+
+    // Animate hand touch
+    hand.style.transition = 'opacity 0.3s, transform 0.3s';
+    hand.style.opacity = '1';
+    
+    setTimeout(() => {
+      hand.style.transform = 'translate(260, 160)';
+    }, 100);
+
+    setTimeout(() => {
+      // Show taste indicator
+      tasteIndicator.style.transition = 'opacity 0.3s';
+      tasteIndicator.style.opacity = '1';
+      tasteEmoji.textContent = sub.type === 'acidic' ? '😝' : (sub.type === 'basic' ? '😖' : '😐');
+      
+      // Update metrics
+      const typeText = sub.type === 'neutral-bitter' ? 'NOT basic!' : sub.type.charAt(0).toUpperCase() + sub.type.slice(1);
+      typeDisplay.textContent = typeText;
+      typeDisplay.className = `metric-value ${sub.type.includes('acidic') ? 'acidic' : (sub.type === 'basic' ? 'basic' : '')}`;
+      tasteVal.textContent = sub.taste;
+      touchVal.textContent = sub.touch;
+
+      // Show property card
+      propTitle.textContent = sub.name + ' Properties';
+      propTaste.textContent = 'Taste: ' + sub.taste;
+      propTouch.textContent = 'Touch: ' + sub.touch;
+      propChemical.textContent = sub.acid ? sub.acid : (sub.base ? sub.base : (sub.note || '—'));
+      propertyCard.classList.add('show');
+
+      // Show takeaway
+      document.getElementById('takeaway').classList.add('show');
+    }, 600);
+
+    setTimeout(() => {
+      hand.style.opacity = '0';
+      hand.style.transform = 'translate(280, 140)';
+    }, 1200);
+  }
+
+  function resetExplore() {
+    state.explored = false;
+    tasteVal.textContent = '?';
+    touchVal.textContent = '?';
+    typeDisplay.textContent = '?';
+    typeDisplay.className = 'metric-value';
+    tasteIndicator.style.opacity = '0';
+    propertyCard.classList.remove('show');
+  }
+
+  // Event Listeners
+  exploreBtn.onclick = animateExplore;
+
+  c.querySelectorAll('.substance-btn').forEach(btn => {
+    btn.onclick = () => {
+      c.querySelectorAll('.substance-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.substance = btn.dataset.sub;
+      resetExplore();
+      updateDisplay();
+    };
+  });
+
+  updateDisplay();
+}
+
+createSimulation('ref', false);
+createSimulation('exp', true);
+</script>
+</body>
+</html>
